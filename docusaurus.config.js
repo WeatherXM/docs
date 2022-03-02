@@ -9,6 +9,8 @@ const config = {
   favicon: "img/favicon/favicon.ico",
   organizationName: "WeatherXM", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   presets: [
     [
