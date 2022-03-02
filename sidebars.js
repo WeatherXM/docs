@@ -15,28 +15,21 @@ module.exports = {
       label: "WeatherXM Devices",
       items: [
         "wxm-devices/introduction",
-        "wxm-devices/wifi-m5-bundle/wifi-m5-bundle",
-        "wxm-devices/wifi-m5-bundle/glossary",
+				{
+					type: "category",
+					label: "WiFi M5 Bundle with Weather Station",
+					items: [
+	        	"wxm-devices/wifi-m5-bundle/introduction",
+						"wxm-devices/wifi-m5-bundle/contents",
+						"wxm-devices/wifi-m5-bundle/setup-weather-station",
+						"wxm-devices/wifi-m5-bundle/setup-m5",
+						"wxm-devices/wifi-m5-bundle/troubleshooting",
+					],
+					collapsed: false,
+				},
+        "wxm-devices/glossary",
       ],
       collapsed: true,
     },
-  ],
-  wifi_m5_bundle: [
-    {
-      type: "link",
-      label: "<- WiFi M5 Bundle with Weather Station",
-      href: "/wxm-devices/wifi-m5-bundle",
-    },
-    {
-      type: "category",
-      label: "Setup",
-      items: [
-        "wxm-devices/wifi-m5-bundle/setup/contents",
-        "wxm-devices/wifi-m5-bundle/setup/setup-weather-station",
-        "wxm-devices/wifi-m5-bundle/setup/setup-m5",
-        "wxm-devices/wifi-m5-bundle/setup/troubleshooting",
-      ],
-      collapsed: false,
-    },
-  ],
+  ]
 };
