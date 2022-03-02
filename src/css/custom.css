@@ -1,0 +1,139 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #c3317c;
+  --ifm-color-primary-dark: #272dfe;
+  --ifm-color-primary-darker: #171dfe;
+  --ifm-color-primary-darkest: #0107e2;
+  --ifm-color-primary-light: #676bfe;
+  --ifm-color-primary-lighter: #777bfe;
+  --ifm-color-primary-lightest: #a8aaff;
+  --ifm-code-font-size: 95%;
+  --ifm-toc-border-color: #c3317c;
+  --ifm-menu-color-active: #c3317c;
+  --ifm-menu-color-background-active: #f4f7ff;
+  --ifm-menu-color-background-hover: #f4f7ff;
+  --ifm-navbar-link-hover-color: #c3317c;
+  --ifm-color-info: #a334fb;
+  --ifm-tabs-padding-horizontal: 20px;
+  --ifm-tabs-padding-vertical: 10px;
+  --ifm-table-stripe-background: #f6f7fe;
+}
+
+.arrow-right {
+	margin-left: 10px;
+}
+
+.readmeIcon {
+  padding-right: 5px;
+}
+
+.roundedBorders {
+  border-radius: 3%;
+}
+
+.marginTop {
+  margin-top: 50px;
+}
+
+.marginTopBottomNormal {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.menu {
+  padding-top: 80px !important;
+}
+
+.menu__list-item .menu__list .menu__list-item a.menu__link {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #dadfeb;
+}
+
+a {
+  color: #c3317c;
+}
+
+a:hover {
+  color: #9d1f63;
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #cacaca;
+}
+
+.menu__link--sublist:after {
+  background-size: 1.5rem 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2.subtitle {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #464c67;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.quick-links {
+  margin-top: 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.zero-margin {
+  margin: 0px;
+}
+
+p {
+  color: #212529;
+  font-size: 16px;
+  line-height: 1.65rem;
+  font-weight: 400;
+}
+
+a.block {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 996px) {
+  .navbar {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    margin-top: 0;
+  }
+}

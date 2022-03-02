@@ -1,0 +1,216 @@
+---
+id: setup-weather-station
+title: Setting up the Weather station
+sidebar_label: Setting up the Weather Station
+slug: /wxm-devices/wifi-m5-bundle/setup/setup-weather-station
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+Setting up the current weather station is a process of several steps in order to make this system work properly
+and measure weather conditions as accurately as possible.
+
+### Installing U-bolts and metal plate
+
+The U-bolts and the metal plate are used to support the mounting of the outdoor sensor on a pole.
+The straight edge of the metal plate is inserted in a groove on the bottom of the unit (at the opposite side of the solar panel).
+The curved part of the 90-degree angle bent edge of the metal plate should be oriented to the wind sensor in order to “hug” the mounting pole.
+After inserting the metal plate, the U-bolts should be inserted through the respective holes of the metal plate [(Fig. 6)](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#figure-6).
+Loosely screw the nuts on the ends of the U-bolts. They will be tightened later when mounting on the pole (see [Mounting the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#mounting-the-outdoor-sensor)).
+
+#### Figure 6
+
+U-bracket installation
+
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/u-bracket-installation.svg")} />
+
+
+This step is advised to be followed before mounting the wind vane and wind cup assembly in order to avoid damaging such parts.
+
+### Assembling the wind sensor
+
+The wind sensor consists of a part that measures the wind speed (through wind speed cup assembly)
+and another that measures the wind direction (though wind vane).
+Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor [(Figures 7a and 7c)](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#figure-7),
+which is on the opposite side of the rain collector. Be sure that you place the wind cup assembly on the shaft at the top part of the sensor.
+The wind vane should be placed on the shaft at the bottom of the sensor.
+After pushing each of the parts, tighten the set screw, with a Philips screwdriver (size PH0) as shown in [(figures 7b and 7d)](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#figure-7).
+Note that both parts should rotate freely. There should be no noticeable friction when the wind cup assembly rotates.
+However, the wind vane’s movement has a small amount of friction, which assists in providing steady wind direction measurements.
+
+#### Figure 7
+Wind cup assembly installation (a, b) and wind vane installation (c, d) diagrams
+
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-assembly.svg")} />
+
+### Installing batteries
+
+Use a screwdriver to open the battery compartment and insert 2 AA batteries in it (Fig. 8).
+Once the batteries are inserted, the LED indicator on the back of the sensor should turn on for 4 seconds
+and then flash every 16 seconds indicating that the sensor transmits the data.
+Note that the light flashing only indicates the transmission of the data from the outdoor sensor
+and it does not assure the reception of the data by the weather miner.
+
+#### Figure 8
+
+Battery installation diagram
+
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/battery-installation.png")} />
+
+**Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
+Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
+thus no point using rechargeable ones.
+
+Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
+
+The primary power source for the outdoor sensor is the solar panel. When available solar power (sun light) a super capacitor is charged
+and is later used during night and when there is insufficient solar light.
+In climates that frequently sustain temperatures below 0°C (or 32°F) the use of Lithium batteries is suggested
+as these are performing better than Alkaline batteries under such circumstances, but depends on battery manufacturer and quality.
+
+**Note 1:** In case that LED is permanently on or does not light up at all,
+make sure that the batteries are inserted fully and in the correct way.
+
+**Note 2:** Batteries should not be installed backwards. This may permanently damage the outdoor sensor.
+
+**Note 3:** Do not forget to remove the black sticker from the solar panel.
+
+### Mounting the outdoor sensor
+
+If this is the first time that you set up this outdoor sensor,
+then you should make sure that all the parts work properly before mounting the sensor on the pole outdoors.
+Thus, it is important that you are able to read all the measurements on the weather miner’s screen,
+while you keep the outdoor sensor nearby (preferably not closer than 1.5m from the weather miner though).
+
+In case that the communication between the weather miner and the outdoor sensor is problematic, please see [Troubleshooting](/wxm-devices/wifi-m5-bundle/setup/troubleshooting).
+
+If the weather miner receives data in a proper way, then the outdoor sensor could be mounted on a metallic pole.
+Before finally mounting the outdoor sensor, make sure that the communication between the sensor
+and the weather miner still communicate appropriately.
+Otherwise, you may consider placing the outdoor sensor in a smaller distance from the weather miner
+and/or with no obstacles within this distance.
+Please check [Good practice guides for placing the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#good-practice-guides-for-placing-the-outdoor-sensor) for tips on how to find the most appropriate place to install the outdoor sensor.
+
+After fixing any communication issues, the outdoor sensor can be mounted on a pole.
+The two U-bolts can now be used together with the nuts to tighten the outdoor sensor on the pole (which is not included) as shown in [figure 9](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#figure-9-10).
+The U-bolts are able to “hug” a 1-2’’ (2.5-5cm) diameter pole.
+It is very important that the arrow icon together with the “WEST” word on the outdoor sensor
+(between the antenna and the light sensor as shown in [figure 10](/wxm-devices/wifi-m5-bundle/setup/setup-weather-station#figures-9-10)) points to the real west direction in your location.
+This can be confirmed with the assistance of a compass.
+Permanent wind direction error will be introduced when the outdoor sensor is not installed in the right direction.
+The orientation of this outdoor sensor remains the same for the southern hemisphere.
+
+#### Figures 9-10
+
+<div class="row">
+  <div class="col col--8 col--offset-2">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/pole-assembly.png")} />
+  </div>
+</div>
+
+When you are about to fasten the pole on which you have tightened the outdoor sensor, look at the bubble level.
+After fastening the pole, the bubble should be fully inside the red circle.
+If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.
+Adjust the mounting pipe as necessary. If the bubble is close, but not quire inside the circle,
+and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
+and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).
+Now, you may tighten the bolts with a wrench.
+
+### Reset Button and Transmitter LED
+
+Using a bent-open paperclip, press and hold the RESET BUTTON (Fig. 11) to affect a reset:
+the LED turns on while the RESET button is depressed, and you can now let go.
+The LED should then resume as normal, flashing approximately once every 16 seconds.
+
+#### Figure 11
+The reset button.
+
+<div class="row">
+  <div class="col col--8 col--offset-2">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/reset-ws10000.png")} />
+  </div>
+</div>
+
+### Good practice guides for placing the outdoor sensor
+
+It is very important that your weather station collects quality measurements.
+This turns the weather station into a powerful tool for yourself and WeatherXM.
+The values of the various meteorological parameters measured by a weather station can significantly differ depending on the obstacles
+and the material of the surfaces existing around the sensors. For this reason, there is a series of criteria that should be fulfilled:
+
+1. The pole’s height, on which the outdoor sensor will be mounted, should be at least 2 meters.
+   This means that the outdoor sensor should be placed at least 2 meters above the ground and any other horizontal
+   or almost a horizontal surface (e.g., roof) above the sensor. The maximum acceptable pole height is 5 meters.
+   <div class="row">
+     <div class="col">
+       <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ground-height.png")} />
+     </div>
+     <div class="col">
+       <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/roof-deployment.png")} />
+     </div>
+   </div>
+1. The pole should be adequately tightened in order to prevent any pole oscillations in cases of strong winds.
+   This will prevent the rain gauge spoon from faulty swinging and collecting faulty precipitation measurements.
+1. The pole together with the outdoor sensor should be placed in an installation point, which:
+   1. is not affected by the air or smoke flowing out of any chimneys or ventilation systems
+      (as an illustration, consider that wind of a certain direction may move warm smoke towards the sensors).
+      An advisable distance from a heat source is >5 meters (depending on the heat source though),
+      {" "}
+      <div class="row">
+        <div class="col col--5">
+          <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/chimney-deployment.png")} />
+          <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/airflow-deployment.png")} />
+        </div>
+        <div class="col col--7">
+          <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/building-with-pool-in-roof.png")} />
+        </div>
+      </div>
+   1. is not shadowed by any obstacles during the day (consider that the sun typically is higher during summer and lower during winter affecting the shadow caused by an item) and
+      <div class="row">
+        <div class="col col--6 col--offset-3">
+          <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-shadow-soft.png")} />
+        </div>
+      </div>
+   1. has a distance from any obstacles around, which 2-4 times larger than the height of the highest obstacle
+      (e.g., if the highest obstacle around the installation point is a 6-meter tree, ht=6m,
+      and the pole of the outdoor sensor is 2 meters, hp=2m, then the pole should be placed at a distance (dp) of 8-16 meters,
+      2 x (ht-hp) < dp < 4 x (ht-hp). In case the pole is placed on a building’s roof,
+      then the building’s height should be added to the pole’s height).
+      Note that in cases of obstacles with a height >8 meters, you should consider placing the outdoor sensor
+      at a distance 30 times the width and 15 times the height of the obstacles around.
+
+<div class="row">
+  <div class="col col--6">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/wall-rule.svg")} />
+  </div>
+  <div class="col col--6">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/tree-rule.svg")} />
+  </div>
+</div>
+
+Note that all of i., ii. and iii. are important tips for measuring an accurate as possible temperature and humidity,
+while c is important for avoiding faulty precipitation and wind measurements.
+
+### Maintenance of the outdoor sensor
+
+The maintenance of the outdoor sensor is an important process, which should be conducted meticulously over the suggested periods of time.
+This process includes the cleansing of certain parts of the outdoor unit and the checking of the battery level.
+The maintenance process is summarized in the following steps:
+
+1. Clean the rain gauge at least once every 3 months.
+   Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism (Fig. 13),
+   and clean with a damp cloth. Remove any dirt, debris and insects.
+   If bug infestation is an issue, spray the array lightly with insecticide.
+   It is important not to swing the rain gauge spoon during this process,
+   as the weather station will measure and record faulty precipitation.
+   In order to avoid faulty measurements, you may turn off the M5 miner until finishing the entire process.
+
+  #### Figure 12
+  Instructions for opening the rain gauge
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/maintenance.svg")} />
+
+1. Clean the solar panel at least every 3 months with a damp cloth.
+1. Remove any dirt, debris and insects from the thermo-hygro sensor every 12 months. It might be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.
+1. Replace batteries every 1-2 years. If left in too long, the batteries may leak due to environmental challenges.
+   In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
+   When replacing the batteries, apply a corrosion preventive compound on the battery terminals, available at most hardware stores

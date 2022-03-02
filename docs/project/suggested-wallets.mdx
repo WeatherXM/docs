@@ -1,0 +1,141 @@
+---
+id: suggested-wallets
+title: Suggested Wallets
+sidebar_label: Suggested Wallets
+slug: /suggested-wallet
+---
+
+# Suggested Wallets
+
+import Tabs from "@theme/Tabs";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+As we are still in testnet, we connecting a **MetaMask** wallet with WeatherXM. That is because by following
+our guide is fairly easy to use the Polygon's testnet on MetaMask and add a custom token (in our case, the WXM).
+
+## MetaMask
+
+MetaMask is a crypto wallet app and browser extension.
+
+:::note
+Download this wallet only from the [official MetaMask website](https://metamask.io/download/)!
+:::
+
+### Installing and setting up MetaMask
+
+1. MetaMask is available to download and install on Chrome, iOS, or Android through the [MetaMask website](https://metamask.io/download/).
+Always check if you are using the official website to make sure you’re downloading the real MetaMask extension.
+1. After downloading and installing the extension, you’ll be greeted with the MetaMask welcome page. Click [Get Started] to begin.
+1. If you’re creating a new wallet, click the [Create a Wallet] button. You can also import an existing wallet using its seed phrase with the [Import wallet] option.
+1. MetaMask will ask you if you’d like to share anonymous usage data with them to help improve the extension. Accepting or refusing this will not affect your MetaMask usage.
+1. Choose a secure password to log in to your wallet from your browser. Note that this is not your seed phrase. The password is a security measure to prevent anyone using your device from accessing your wallet.
+  If you forget your password, you can always access your crypto with your seed phrase.
+1. After choosing your password, MetaMask will present you with information regarding your wallet’s seed phrase. Make sure to read through it if you aren’t familiar with how a crypto wallet works.
+1. You’ll now be presented with your seed phrase. Click the lock to view the words and take note of them in the correct order. Keep the phrase in a secure place (preferably offline) and never share it with anyone.
+  This string of words is the final backup of your wallet and its contents. Click [Next] to continue.
+1. You’ll now have to repeat your seed phrase by selecting the words at the bottom of the screen in the right order. Click [Confirm] once this is complete.
+1. Your MetaMask wallet will now be set up ready to use. Click [All Done] to view your wallet.
+
+## Add Polygon network
+
+Adding Polygon support to MetaMask is a mandatory step if you want to add the WXM token, view the activity and do some transactions.
+Make sure you follow our step-by-step guide below for adding Polygon Network to MetaMask.
+
+We will provide guidance for both Polygon Mainnet and Mumbai Testnet but
+as we are currently in testnet, **you need to add the Mumbai Testnet network.**
+
+There are two ways to do it:
+
+1. [Using Polygonscan](/suggested-wallet#using-polygonscan)
+1. [Add the Polygon network manually](/suggested-wallet#add-the-polygon-network-manually)
+
+### Using Polygonscan
+
+:::note
+Please make sure you have already installed **[Metamask](https://metamask.io/)**!
+:::
+
+<Tabs
+  defaultValue="mainnet"
+  values={[
+    { label: 'Polygon-Mainnet', value: 'mainnet', },
+    { label: 'Mumbai-Testnet', value: 'mumbai', },
+  ]
+}>
+
+<TabItem value="mainnet">
+
+Please follow the steps to add Polygon’s Mainnet:
+
+- Navigate to [polygonscan.com](https://polygonscan.com/)
+- Scroll down to the bottom of the page and click on the button `Add Polygon Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mainnet.png")} />
+
+- Once you click the button you will see a Metamask Notification, now click on **Approve**.
+You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mainnet-addnetwork.png")} />
+
+</TabItem>
+
+<TabItem value="mumbai">
+
+Please follow the steps to add Polygon's Mumbai-Testnet:
+
+- Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
+- Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mumbai.png")} />
+
+- Once you click the button you will see a Metamask Notification, now click on **Approve**.
+You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-addnetwork.png")} />
+
+</TabItem>
+
+</Tabs>
+
+If you are facing any issue, **Add the Network Manually(steps given below)**
+
+### Add the Polygon network manually
+
+<Tabs
+  defaultValue="mainnet"
+  values={[
+    { label: 'Polygon-Mainnet', value: 'mainnet', },
+    { label: 'Mumbai-Testnet', value: 'mumbai', },
+  ]
+}>
+
+<TabItem value="mainnet">
+To add Polygon’s Mainnet, click on the Network selection dropdown and then click on Custom RPC.
+
+<img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+
+It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Polygon Mainnet` in the Network Name field, URL `https://polygon-rpc.com/` in the New RPC URL field, `137` in Chain ID field, `MATIC` in Currency Symbol field and `https://polygonscan.com/` in Block Explorer URL field.
+
+<img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mainnet.png")} />
+
+Once you’ve added the information click on Save. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+</TabItem>
+
+<TabItem value="mumbai">
+To add Polygon's Mumbai-Testnet, click on the Network selection dropdown and then click on Custom RPC.
+
+<img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+
+It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Matic Mumbai` in the Network Name field, URL `https://rpc-mumbai.maticvigil.com/` in the New RPC URL field, `80001` in Chain ID field, `MATIC` in Currency Symbol field and `https://mumbai.polygonscan.com/` in Block Explorer URL field.
+
+<img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mumbai.png")} />
+
+Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Polygon’s Mumbai-Testnet now in the network dropdown list. You can now close the dialog.
+</TabItem>
+</Tabs>
+
+**You have successfully added Polygon Network to your Metamask!**
+
+## Add WXM in MetaMask
+
+Coming Soon...
