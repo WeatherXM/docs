@@ -6,7 +6,8 @@ module.exports = {
       label: "Project",
       items: [
 				"project/project",
-				"project/suggested-wallets"
+				"project/suggested-wallets",
+				"project/reward-algorithm"
 			],
       collapsed: true,
     },
