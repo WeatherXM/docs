@@ -16,6 +16,9 @@ const config = {
     [
       "@docusaurus/preset-classic",
       {
+        gtag: {
+          trackingID: 'G-E38CY3JRM3'
+        },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
