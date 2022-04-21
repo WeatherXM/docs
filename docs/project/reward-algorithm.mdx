@@ -18,11 +18,11 @@ The algorithm is comprised of three steps:
 
 
 :::note Important
-Connecting a wallet is mandatory for receiving rewards. If a user does not have a wallet connected, the rewards will be lost.
+Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
 :::
 
 ## How Often does the Reward Algorithm run?
-The algorithm runs every day and takes account for the previous day. 
+The algorithm runs every day and takes into account the data for the previous day.
 
 ## Validation
 `validation_score = array_of_hourly_weather_data / 24`
@@ -31,8 +31,8 @@ The algorithm runs every day and takes account for the previous day.
 In the validation step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
   - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
    with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (24-X) objects, 
-  with each object being the station's weather data and X being the number of hours that the station hasn't communicated with our system.
+  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects, 
+  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
 
 That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `validation_score` of `0.0` to `1.0`.
 
