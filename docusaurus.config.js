@@ -35,13 +35,14 @@ const config = {
   themeConfig: {
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       logo: {
         alt: "WeatherXM",
         src: "img/wxm-logo-wide-notagline.svg",
+        srcDark: "img/wxm-logo-wide-notagline-white.svg",
       },
       items: [
         {
