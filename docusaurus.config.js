@@ -23,7 +23,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
           // Please change this to your repo.
-          editUrl: "https://github.com/weatherxm/docs",
+          editUrl: "https://github.com/WeatherXM/docs/blob/main",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
