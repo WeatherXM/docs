@@ -5,27 +5,31 @@ sidebar_label: Suggested Wallets
 slug: /suggested-wallet
 ---
 
-# Suggested Wallets
-
 import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-As we are still in testnet, we connecting a **MetaMask** wallet with WeatherXM. That is because by following
-our guide is fairly easy to use the Polygon's testnet on MetaMask and add a custom token (in our case, the WXM).
+While we are on the testnet, we suggest you use a **MetaMask** wallet with WeatherXM. By following our guide, it's 
+fairly simple to set up a MetaMask wallet and add a custom token (in our case, the WXM token) on Polygon's testnet.
+
+:::note
+The following guide has been written with the **MetaMask browser extention** in mind.
+The steps may vary on other platforms.
+:::
 
 ## MetaMask
 
 MetaMask is a crypto wallet app and browser extension.
 
-:::note
-Download this wallet only from the [official MetaMask website](https://metamask.io/download/)!
+:::caution
+Only install this wallet from the [official MetaMask website](https://metamask.io/download/)!
 :::
+
 
 ### Installing and setting up MetaMask
 
-1. MetaMask is available to download and install on Chrome, iOS, or Android through the [MetaMask website](https://metamask.io/download/).
-Always check if you are using the official website to make sure you’re downloading the real MetaMask extension.
-1. After downloading and installing the extension, you’ll be greeted with the MetaMask welcome page. Click [Get Started] to begin.
+1. MetaMask is available to download and install on Chrome, iOS, and Android through the [MetaMask website](https://metamask.io/download/).
+Always check if you are using the official website to make sure you’re installing the real MetaMask extension.
+1. After installing the extension, you’ll be greeted with the MetaMask welcome page. Click [Get Started] to begin.
 1. If you’re creating a new wallet, click the [Create a Wallet] button. You can also import an existing wallet using its seed phrase with the [Import wallet] option.
 1. MetaMask will ask you if you’d like to share anonymous usage data with them to help improve the extension. Accepting or refusing this will not affect your MetaMask usage.
 1. Choose a secure password to log in to your wallet from your browser. Note that this is not your seed phrase. The password is a security measure to prevent anyone using your device from accessing your wallet.
@@ -34,12 +38,12 @@ Always check if you are using the official website to make sure you’re downloa
 1. You’ll now be presented with your seed phrase. Click the lock to view the words and take note of them in the correct order. Keep the phrase in a secure place (preferably offline) and never share it with anyone.
   This string of words is the final backup of your wallet and its contents. Click [Next] to continue.
 1. You’ll now have to repeat your seed phrase by selecting the words at the bottom of the screen in the right order. Click [Confirm] once this is complete.
-1. Your MetaMask wallet will now be set up ready to use. Click [All Done] to view your wallet.
+1. Your MetaMask wallet will now be set up and ready to use. Click [All Done] to view your wallet.
 
-## Add Polygon network
+## Add Polygon Network
 
-Adding Polygon support to MetaMask is a mandatory step if you want to add the WXM token, view the activity and do some transactions.
-Make sure you follow our step-by-step guide below for adding Polygon Network to MetaMask.
+Adding Polygon Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
+Make sure you follow our step-by-step guide below for adding the Polygon Network to MetaMask.
 
 We will provide guidance for both Polygon Mainnet and Mumbai Testnet but
 as we are currently in testnet, **you need to add the Mumbai Testnet network.**
@@ -52,9 +56,9 @@ There are two ways to do it:
 ### Using Polygonscan
 
 :::note
-Please make sure you have already installed **[Metamask](https://metamask.io/)**!
+Please make sure you have already installed **[MetaMask](https://metamask.io/)**!
 
-**This solution works only in Desktop with the MetaMask browser extension already installed.**
+**This solution works only on desktop with the MetaMask browser extension already installed.**
 :::
 
 <Tabs
@@ -68,7 +72,7 @@ Please make sure you have already installed **[Metamask](https://metamask.io/)**
 <TabItem value="mainnet">
 
 :::note
-This is just for informational purposes. At this stage we are currently in testnet so **you need to add the Mumbai Testnet network.**
+This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Mumbai Testnet network.**
 :::
 
 Please follow the steps to add Polygon’s Mainnet:
@@ -78,8 +82,8 @@ Please follow the steps to add Polygon’s Mainnet:
 
 <img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mainnet.png")} />
 
-- Once you click the button you will see a Metamask Notification, now click on **Approve**.
-You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+You will be directed to Polygon’s Mainnet in the network dropdown list. You can now close the dialog.
 
 <img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mainnet-addnetwork.png")} />
 
@@ -94,8 +98,9 @@ Please follow the steps to add Polygon's Mumbai-Testnet:
 
 <img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mumbai.png")} />
 
-- Once you click the button you will see a Metamask Notification, now click on **Approve**.
-You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+Next, click **Switch Network**.
+You will be switched to Polygon’s Mumbai-Testnet in the network dropdown list. You can now close the dialog.
 
 <img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-addnetwork.png")} />
 
@@ -103,7 +108,7 @@ You will be directly switched to Polygon’s Mainnet now in the network dropdown
 
 </Tabs>
 
-If you are facing any issue, **Add the Network Manually(steps given below)**
+If you face any issues, **Add the Network Manually (steps given below)**
 
 ### Add the Polygon network manually
 
@@ -125,11 +130,11 @@ To add Polygon’s Mainnet, click on the Network selection dropdown and then cli
 
 <img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
 
-It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Polygon Mainnet` in the Network Name field, URL `https://polygon-rpc.com/` in the New RPC URL field, `137` in Chain ID field, `MATIC` in Currency Symbol field and `https://polygonscan.com/` in Block Explorer URL field.
+It will open up a form with 2 tabs on the top: Settings and Info. In the Settings tab you can add `Polygon Mainnet` in the Network Name field, URL `https://polygon-rpc.com/` in the New RPC URL field, `137` in Chain ID field, `MATIC` in Currency Symbol field and `https://polygonscan.com/` in Block Explorer URL field.
 
 <img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mainnet.png")} />
 
-Once you’ve added the information click on Save. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+Once you’ve added the information, click on Save. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
 </TabItem>
 
 <TabItem value="mumbai">
@@ -137,7 +142,7 @@ To add Polygon's Mumbai-Testnet, click on the Network selection dropdown and the
 
 <img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
 
-It will open up a form with 2 tabs on the top, Settings and Info. In the Settings tab you can add `Matic Mumbai` in the Network Name field, URL `https://rpc-mumbai.maticvigil.com/` in the New RPC URL field, `80001` in Chain ID field, `MATIC` in Currency Symbol field and `https://mumbai.polygonscan.com/` in Block Explorer URL field.
+It will open up a form with 2 tabs on the top: Settings and Info. In the Settings tab you can add `Matic Mumbai` in the Network Name field, URL `https://rpc-mumbai.maticvigil.com/` in the New RPC URL field, `80001` in Chain ID field, `MATIC` in Currency Symbol field and `https://mumbai.polygonscan.com/` in Block Explorer URL field.
 
 <img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mumbai.png")} />
 
@@ -145,21 +150,21 @@ Once you’ve added the URL in the New Network field, click on Save. You will be
 </TabItem>
 </Tabs>
 
-**You have successfully added Polygon Network to your Metamask!**
+**You have successfully added the Polygon Network to your MetaMask!**
 
 ## Add WXM in MetaMask
 
-For the WXM token to appear on the wallet UI, you will need to add them manually.
+For the WXM token to appear in the wallet UI, you will need to add it manually.
 Note that your wallet can still receive tokens that haven’t been imported.
 
 :::note IMPORTANT NOTE
-Please make sure you have already added the **Mumbai-Testnet** and you are connected to it by following the guide above!
+Please make sure you have already added the **Mumbai-Testnet** and have connected to it by following the guide above!
 :::
 
 1. First, you will need the following details of the WXM token in order to add it:
-    1. **Token Contract Address:** 0xeCbbbF304fdf91cdDDA6C6643ED1300A552b691A
-    1. **Token Symbol:** WXM
-    1. **Token Decimal:** 18
+    1. **Token Contract Address:** ``0xeCbbbF304fdf91cdDDA6C6643ED1300A552b691A``
+    1. **Token Symbol:** ``WXM``
+    1. **Token Decimal:** ``18``
 
 You can verify those details on [PolygonScan](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a).
 
@@ -167,8 +172,8 @@ You can verify those details on [PolygonScan](https://mumbai.polygonscan.com/tok
 
 <img src={useBaseUrl("img/project/suggested-wallets/metamask-import-tokens.png")} />
 
-3. Copy in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
+3. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
 
 4. Click **[Import Tokens]**.
 
-You have now successfully added the WXM token in your MetaMask wallet.
+**You have now successfully added the WXM token to your MetaMask wallet!**

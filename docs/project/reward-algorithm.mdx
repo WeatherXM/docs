@@ -5,52 +5,48 @@ sidebar_label: Reward Algorithm
 slug: /reward-algorithm
 ---
 
-# Reward Algorithm
-
 Rewarding the members of our network for sharing their local weather data is a crucial part of our system (**currently on testnet**).
 
 Our **Reward Algorithm** is a unique, fair and transparent algorithm that will handle how rewards are being distributed to the network members.
 
-We are currently on the first iteration of that algorithm that has been implemented in a basic way that takes into account only
-if any given weather station is connected or not in our network.
+We are currently on the first iteration of that algorithm, which has been implemented in a basic way: only taking into account whether or not a station is connected to the network.
 
-There are 3 steps on the algorithm:
+The algorithm works in three steps:
   - The minting of the WXM Testnet tokens
   - The validation of the weather stations and their weather data
   - The reward distribution
 
 
 :::note Important
-Connecting a wallet is mandatory for getting rewards. If a user has not connected a wallet, the rewards will be lost.
+Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
 :::
 
-## How Often does the Reward Algorithm runs?
-It runs daily for the day before.
+## How Often does the Reward Algorithm run?
+The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
 
 ## Validation
 `validation_score = array_of_hourly_weather_data / 24`
 
 ### Explanation
-In the validation step, the algorithm takes for any given weather station its weather data for each hour of the previous day.
-  - If the weather station has successfully sent data for each hour the previous day, then the algorithm's input is an array of 24 objects
-  with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours of the previous day then the algorithm's input is an array of (24 - X) objects
-    with each object being the station's weather data and `X` being the amount of hours that the station hasn't communicated with our system.
+In the validation step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
+  - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
+   with each object being the station's weather data.
+  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects, 
+  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
 
-That input is then being used by dividing its length with 24 (the maximum hours per day) to get a `validation_score` of `0.0` to `1.0`.
+That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `validation_score` of `0.0` to `1.0`.
 
 ## Reward distribution
 `weather_station_reward = validation_score * max_daily_reward`
 
 ### Explanation
-After the validation step, the algorithm takes the `validation_score` for any given weather station in our network,
-multiplies it with the `max_daily_reward` that the weather station can get and the result is the amount of the WXM tokens
-that the algorithm distributes to the user who owns that weather station.
+After the validation step, the algorithm takes the `validation_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather 
+station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
 
 <hr />
 
 :::note
-As stated before, this is a basic first iteration. Our current plans are that in the future our algorithm will take into weighted consideration the following:
+As stated before, this is a basic first iteration. Our current plans are that, in the future, our algorithm will take into weighted consideration the following:
   - Location Coverage (density of weather stations in an area)
   - Weather Data Quality
 :::
