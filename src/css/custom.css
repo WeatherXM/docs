@@ -27,13 +27,18 @@
   --ifm-color-link-hover: #9d1f63
 }
 [data-theme='dark'] {
-  --ifm-color-primary: #fd41a2;
-  --ifm-menu-color-background-active: #22252e;
-  --ifm-menu-color-background-hover: #22252e;
-  --ifm-toc-border-color: #c3317c;
-  --ifm-menu-color-active: #fd41a2;
-  --ifm-navbar-link-hover-color: #fd41a2;
-  --ifm-color-link-hover: #d63186
+  --ifm-color-primary: #cc2f80;
+  --ifm-menu-color-background-active: #181a1f;
+  --ifm-menu-color-background-hover: #181a1f;
+  --ifm-toc-border-color: #992360;
+  --ifm-menu-color-active: #cc2f80;
+  --ifm-navbar-link-hover-color: #cc2f80;
+  --ifm-color-link-hover: #d63186;
+  --ifm-background-color: #121212;
+  --ifm-navbar-background-color: #121212
+}
+html[data-theme='dark'] {
+  --ifm-background-color: #121212
 }
 
 .arrow-right {
@@ -98,7 +103,7 @@ h1 {
 }
 
 [data-theme='dark'] h2.subtitle {
-  color: #9ba5db;
+  color: #8188b3;
 }
 
 h2.subtitle {
@@ -144,7 +149,7 @@ a.block {
 @media only screen and (max-width: 996px) {
   [data-theme='dark'] .navbar {
     box-shadow: none;
-    background: rgba(22, 22, 22, 0.7);
+    background: rgba(18, 18, 18, 0.7);
     backdrop-filter: none;
   }
 }
