@@ -13,7 +13,7 @@ We are currently on the first iteration of that algorithm, which has been implem
 
 The algorithm works in three steps:
   - The minting of the WXM Testnet tokens
-  - The validation of the weather stations and their weather data
+  - The calculation of the `reward_score` of any given weather station by validating its weather data
   - The reward distribution
 
 
@@ -24,23 +24,23 @@ Connecting a wallet is mandatory to receive rewards. If a user has not connected
 ## How Often does the Reward Algorithm run?
 The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
 
-## Validation
-`validation_score = array_of_hourly_weather_data / 24`
+## Calculation of the Reward Score
+`reward_score = array_of_hourly_weather_data / 24`
 
 ### Explanation
-In the validation step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
+In the calculation of the `reward_score` step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
   - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
    with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects, 
+  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects,
   with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
 
-That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `validation_score` of `0.0` to `1.0`.
+That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `reward_score` of `0.0` to `1.0`.
 
 ## Reward distribution
-`weather_station_reward = validation_score * max_daily_reward`
+`weather_station_reward = reward_score * max_daily_reward`
 
 ### Explanation
-After the validation step, the algorithm takes the `validation_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather 
+After the calculation of the `reward_score` step, the algorithm takes the `reward_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather
 station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
 
 <hr />
