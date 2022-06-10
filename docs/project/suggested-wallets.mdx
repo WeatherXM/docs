@@ -8,8 +8,8 @@ slug: /suggested-wallet
 import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-While we are on the testnet, we suggest you use a **MetaMask** wallet with WeatherXM. By following our guide, it's 
-fairly simple to set up a MetaMask wallet and add a custom token (in our case, the WXM token) on Polygon's testnet.
+While we are on the testnet, we suggest you use a **MetaMask** wallet with WeatherXM. By following our guide, it's
+fairly simple to set up a MetaMask wallet and add a custom token (in our case, the WXM token) on Polygon Testnet.
 
 :::note
 The following guide has been written with the **MetaMask browser extention** in mind.
@@ -45,8 +45,8 @@ Always check if you are using the official website to make sure you’re install
 Adding Polygon Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
 Make sure you follow our step-by-step guide below for adding the Polygon Network to MetaMask.
 
-We will provide guidance for both Polygon Mainnet and Mumbai Testnet but
-as we are currently in testnet, **you need to add the Mumbai Testnet network.**
+We will provide guidance for both Polygon Mainnet and Testnet (also called Mumbai Testnet) but
+as we are currently in testnet, **you need to add the Testnet network.**
 
 There are two ways to do it:
 
@@ -64,15 +64,15 @@ Please make sure you have already installed **[MetaMask](https://metamask.io/)**
 <Tabs
   defaultValue="mumbai"
   values={[
-    { label: 'Polygon-Mainnet', value: 'mainnet', },
-    { label: 'Mumbai-Testnet', value: 'mumbai', },
+    { label: 'Polygon Mainnet', value: 'mainnet', },
+    { label: 'Polygon Testnet (Mumbai)', value: 'mumbai', },
   ]
 }>
 
 <TabItem value="mainnet">
 
 :::note
-This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Mumbai Testnet network.**
+This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Testnet network.**
 :::
 
 Please follow the steps to add Polygon’s Mainnet:
@@ -91,7 +91,7 @@ You will be directed to Polygon’s Mainnet in the network dropdown list. You ca
 
 <TabItem value="mumbai">
 
-Please follow the steps to add Polygon's Mumbai-Testnet:
+Please follow the steps to add Polygon Testnet (also known as Mumbai Testnet):
 
 - Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
 - Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
@@ -100,7 +100,7 @@ Please follow the steps to add Polygon's Mumbai-Testnet:
 
 - Once you click the button you will see a MetaMask notification, now click on **Approve**.
 Next, click **Switch Network**.
-You will be switched to Polygon’s Mumbai-Testnet in the network dropdown list. You can now close the dialog.
+You will be switched to Polygon Testnet in the network dropdown list. You can now close the dialog.
 
 <img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-addnetwork.png")} />
 
@@ -115,38 +115,40 @@ If you face any issues, **Add the Network Manually (steps given below)**
 <Tabs
   defaultValue="mumbai"
   values={[
-    { label: 'Polygon-Mainnet', value: 'mainnet', },
-    { label: 'Mumbai-Testnet', value: 'mumbai', },
+    { label: 'Polygon Mainnet', value: 'mainnet', },
+    { label: 'Polygon Testnet (Mumbai)', value: 'mumbai', },
   ]
 }>
 
 <TabItem value="mainnet">
 
 :::note
-This is just for informational purposes. At this stage we are currently in testnet so **you need to add the Mumbai Testnet network.**
+This is just for informational purposes. At this stage we are currently in testnet so **you need to add the Polygon Testnet network.**
 :::
 
-To add Polygon’s Mainnet, click on the Network selection dropdown and then click on Custom RPC.
+To add Polygon’s Mainnet, click on the Network selection dropdown and then click on Add Network.
 
-<img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
 
 It will open up a form with 2 tabs on the top: Settings and Info. In the Settings tab you can add `Polygon Mainnet` in the Network Name field, URL `https://polygon-rpc.com/` in the New RPC URL field, `137` in Chain ID field, `MATIC` in Currency Symbol field and `https://polygonscan.com/` in Block Explorer URL field.
 
-<img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mainnet.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mainnet.png")} />
 
-Once you’ve added the information, click on Save. You will be directly switched to Polygon’s Mainnet now in the network dropdown list. You can now close the dialog.
+Once you’ve added the information, click on Save. You will be directly switched to Polygon Mainnet now in the network dropdown list. You can now close the dialog.
 </TabItem>
 
 <TabItem value="mumbai">
-To add Polygon's Mumbai-Testnet, click on the Network selection dropdown and then click on Custom RPC.
 
-<img src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+To add Polygon Testnet (Mumbai), click on the Network selection dropdown and then click on Add Network.
+
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
 
 It will open up a form with 2 tabs on the top: Settings and Info. In the Settings tab you can add `Matic Mumbai` in the Network Name field, URL `https://matic-mumbai.chainstacklabs.com/` in the New RPC URL field, `80001` in Chain ID field, `MATIC` in Currency Symbol field and `https://mumbai.polygonscan.com/` in Block Explorer URL field.
 
-<img src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mumbai.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mumbai.png")} />
 
-Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Polygon’s Mumbai-Testnet now in the network dropdown list. You can now close the dialog.
+Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Polygon Testnet now in the network dropdown list. You can now close the dialog.
 </TabItem>
 </Tabs>
 
