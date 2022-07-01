@@ -42,6 +42,10 @@
   margin-top: 50px;
 }
 
+.marginBottom {
+  margin-bottom: 50px;
+}
+
 .marginTopBottomNormal {
   margin-top: 25px;
   margin-bottom: 25px;
