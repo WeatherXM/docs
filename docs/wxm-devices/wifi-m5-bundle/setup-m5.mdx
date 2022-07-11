@@ -19,13 +19,13 @@ In this chapter, you will find guidance to set up the WXM-M5.
    Although the M5 has a battery, you need to permanently provide a power supply using the usb cable provided.
 1. Once the screen is on, you should notice some icons [(Fig. 14a)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14) on the top-right corner of the screen, which may appear in red color.
    If you have not already powered on your outdoor sensor, you may get “--” instead of measurements on the screen.
-1. Swipe left on the touch screen and press “Configure WiFi” [(Fig. 14b)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14)
-   and reply “Yes'' to the message “This will reset your WiFi settings. Continue?” [(Fig. 14c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14).
+1. Swipe left on the touch screen and press “Configure WiFi” [(Fig. 14c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14)
+   and reply “Yes'' to the message “This will reset your WiFi settings. Continue?” [(Fig. 14d)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14).
 1. The screen will be flashing and some guidelines will appear.
 1. Use your mobile phone to connect to a WiFi network with the name “WXMMinerM5”. Allow some time until your phone connects successfully.
    If the process takes more than a couple of minutes, try the restart button at the bottom of the WXM-M5 or use another mobile phone, tablet or laptop/pc.
 1. Once your device connects to “WXMMinerM5”, a list of all discovered WiFi networks will appear.
-   Choose your 2.4 GHz capable Wi-Fi network, insert the WiFi password and press “Join”. 
+   Choose your 2.4 GHz capable Wi-Fi network, insert the WiFi password and press “Join”.
    Note that the WXM-M5's Wi-Fi chip is only compatible with 2.4 GHz capable Wi-Fi networks.
    In case no Wi-Fi list appears, open a browser, navigate to 10.10.0.1 and follow the previously mentioned process.
 1. A message of success will appear on your phone/tablet/pc screen and the Wi-Fi icon on the WXM-M5’s screen will turn green.
@@ -35,8 +35,10 @@ In this chapter, you will find guidance to set up the WXM-M5.
 
 - a. home screen,
 - b. screen after swiping left on the touch screen and
-- c. screen after pressing the “Configure WiFi” button.
-  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.jpg")} />
+- c. click on the "Configure WiFi" button
+- d. screen after pressing the “Configure WiFi” button.
+
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.png")} />
 
 If batteries have already been placed in the battery compartment of the outdoor sensor (see [Installing Batteries](/wxm-devices/wifi-m5-bundle/setup-weather-station#installing-batteries)),
 the data collected by the sensor should appear on the WXM-M5’s screen.
@@ -56,6 +58,30 @@ If you use the internal GPS antenna, then assure that the WXM-M5 is close by the
 You may claim your WXM-M5 data miner device via the application WeatherXM,
 which can be downloaded from [Play Store for Android](https://play.google.com/store/apps/details?id=com.weatherxm.app) or [via our web dashboard](https://console.weatherxm.com/login).
 Then, after registering and logging into your account, click on “+” and follow the instructions to claim your device.
+
+## Change Frequency
+
+The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
+- Model A: 868 frequency (default)
+- Model B: 915 frequency
+
+If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.
+
+### Steps to change the frequency
+  1. Swipe left on the touch screen [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
+  1. Click the Frequency options and select the new frequency your M5 will listen to [(Fig. 15c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
+  1. A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly. [(Fig. 15d)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
+
+
+#### Figure 15
+
+- a. home screen,
+- b. screen after swiping left on the touch screen and
+- c. screen after pressing the “Frequency” options.
+- d. confirmation dialog after clicking a difference frequency option.
+
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.png")} />
+
 
 ## M5 Antenna Troubleshooting
 
@@ -77,13 +103,13 @@ In case you desire to change the internal/external GPS antenna, follow the follo
 1. Unscrew and remove the four screws behind the WXM-M5.
 1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
 1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
-   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception [(Fig. 15c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15).
+   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception [(Fig. 16c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
 1. Clasp the cap back and screw the device.
 1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
 
 ### Switch external/internal Radio Function (RF) - LoRa antenna
 
-The WXM-M5 beta v1 uses by default the internal LoRa antenna [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15).
+The WXM-M5 beta v1 uses by default the internal LoRa antenna [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
 In case you desire to change the internal/external LoRa antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the WXM-M5.
@@ -91,11 +117,11 @@ In case you desire to change the internal/external LoRa antenna, follow the foll
 1. Remove the gray GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the WXM-M5.
 1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
    Remove the cable, which is connected to a specific reception on the green board and
-   connect the desired cable to the same reception [(Fig. 15b)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15).
+   connect the desired cable to the same reception [(Fig. 16b)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
 1. Clasp the slices and the cap back and screw the device.
 1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
 
-#### Figure 15
+#### Figure 16
 
 Internal parts of the WXM-M5.
 
