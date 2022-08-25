@@ -7,31 +7,44 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #c3317c;
-  --ifm-color-primary-dark: #272dfe;
-  --ifm-color-primary-darker: #171dfe;
-  --ifm-color-primary-darkest: #0107e2;
-  --ifm-color-primary-light: #676bfe;
-  --ifm-color-primary-lighter: #777bfe;
-  --ifm-color-primary-lightest: #a8aaff;
-  --ifm-code-font-size: 95%;
-  --ifm-toc-border-color: #c3317c;
-  --ifm-menu-color-active: #c3317c;
-  --ifm-menu-color-background-active: #f4f7ff;
-  --ifm-menu-color-background-hover: #f4f7ff;
-  --ifm-navbar-link-hover-color: #c3317c;
-  --ifm-color-info: #a334fb;
-  --ifm-tabs-padding-horizontal: 20px;
-  --ifm-tabs-padding-vertical: 10px;
-  --ifm-table-stripe-background: #f6f7fe;
+  --ifm-color-primary: #0A3FAD;
+  --ifm-toc-border-color: #002092;
+  --ifm-menu-color-active: #0A3FAD;
+  --ifm-menu-color-background-active: #FAFAFA;
+  --ifm-menu-color-background-hover: #F2F4F9;
+  --ifm-navbar-link-hover-color: #0467F1;
+  --ifm-color-link-hover: #0467F1;
+  --ifm-navbar-background-color: #F2F4F9;
+
+  --ifm-footer-background-color: #EEF0F4;
+  --ifm-footer-color: var(--textColor);
+  --ifm-background-color: #E4E8F2;
+
+	--textColor: #040404;
 }
 
-.arrow-right {
-	margin-left: 10px;
+[data-theme='dark'] {
+  --ifm-color-primary: #68A4F9;
+  --ifm-toc-border-color: #92BBE8;
+  --ifm-menu-color-active: #68A4F9;
+  --ifm-menu-color-background-active: #31323C;
+  --ifm-menu-color-background-hover: #292931;
+  --ifm-navbar-link-hover-color: #3D7EF6;
+  --ifm-color-link-hover: #3D7EF6;
+  --ifm-navbar-background-color: #292931;
+
+  --ifm-footer-background-color: #1D1E26;
+  --ifm-footer-color: var(--textColor);
+
+	--textColor: #FAFAFA;
 }
 
-.readmeIcon {
-  padding-right: 5px;
+html[data-theme='dark'] {
+  --ifm-background-color: #040404;
+}
+
+.learnMore {
+  text-decoration: underline;
 }
 
 .roundedBorders {
@@ -70,11 +83,11 @@
 }
 
 a {
-  color: #c3317c;
+  color: var(--ifm-color-primary);
 }
 
 a:hover {
-  color: #9d1f63;
+  color: var(--ifm-color-link-hover);
   text-decoration: none;
 }
 
@@ -94,20 +107,17 @@ h1 {
 h2.subtitle {
   font-weight: 300;
   font-size: 1.5rem;
-  color: #464c67;
+  color: var(--textColor);
 }
 
 h3 {
   font-size: 1.5rem;
 }
 
-.quick-links {
+.quickLinks {
   margin-top: 30px;
   font-size: 12px;
   text-transform: uppercase;
-  opacity: 0.5;
-  margin-bottom: 10px;
-  font-weight: 500;
 }
 
 .zero-margin {
@@ -115,7 +125,7 @@ h3 {
 }
 
 p {
-  color: #212529;
+  color: var(--textColor);
   font-size: 16px;
   line-height: 1.65rem;
   font-weight: 400;
@@ -130,7 +140,7 @@ a.block {
 @media only screen and (max-width: 996px) {
   .navbar {
     box-shadow: none;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(----ifm-navbar-background-color);
     backdrop-filter: none;
   }
 }
