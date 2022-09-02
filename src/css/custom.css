@@ -78,12 +78,6 @@ a.menu__link:hover {
   color: var(--ifm-color-link-hover);
 }
 
-a.menu__link:active {
-  color: var(--ifm-color-link-hover);
-  background-color: red;
-  border-radius: 10px;
-}
-
 .flex {
   display: flex;
   justify-content: flex-start;
@@ -97,7 +91,7 @@ a.menu__link:active {
   border-radius: 10px;
 }
 
-a {
+a, .table-of-contents__link {
   color: var(--ifm-color-primary);
 }
 
