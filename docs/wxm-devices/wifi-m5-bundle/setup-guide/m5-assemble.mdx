@@ -1,132 +1,89 @@
 ---
 id: m5-assemble
 title: Assembling WXM-M5
-sidebar_label: Assembling up WXM-M5
+sidebar_label: Assembling WXM-M5
 slug: /wxm-devices/wifi-m5-bundle/setup-guide/assemble-m5
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-The weather station comes together with the WXM-M5 data miner.
-The WXM-M5 receives all the meteorological data, which are measured and transmitted every 16 seconds by the outdoor sensor
-and displays them on its screen.
+Setting up the current weather station is a process of several steps in order to make this system work properly
+and measure weather conditions as accurately as possible.
 
-In this chapter, you will find guidance to set up the WXM-M5.
+## Prerequisites for proper assemblance
 
-## Device Installation
+1. Screwdriver (included)
+1. Metal wrench (included)
+1. Batteries, X3 AA (not included)
 
-1. Find the power button at the left side of the WXM-M5 and press it for 2 seconds until the screen is on.
-   Although the M5 has a battery, you need to permanently provide a power supply using the usb cable provided.
-1. Once the screen is on, you should notice some icons [(Fig. 14a)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14) on the top-right corner of the screen, which may appear in red color.
-   If you have not already powered on your outdoor sensor, you may get “--” instead of measurements on the screen.
-1. Swipe left on the touch screen and press “Configure WiFi” [(Fig. 14c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14)
-   and reply “Yes'' to the message “This will reset your WiFi settings. Continue?” [(Fig. 14d)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-14).
-1. The screen will be flashing and some guidelines will appear.
-1. Use your mobile phone to connect to a WiFi network with the name “WXMMinerM5”. Allow some time until your phone connects successfully.
-   If the process takes more than a couple of minutes, try the restart button at the bottom of the WXM-M5 or use another mobile phone, tablet or laptop/pc.
-1. Once your device connects to “WXMMinerM5”, a list of all discovered WiFi networks will appear.
-   Choose your 2.4 GHz capable Wi-Fi network, insert the WiFi password and press “Join”.
-   Note that the WXM-M5's Wi-Fi chip is only compatible with 2.4 GHz capable Wi-Fi networks.
-   In case no Wi-Fi list appears, open a browser, navigate to 10.10.0.1 and follow the previously mentioned process.
-1. A message of success will appear on your phone/tablet/pc screen and the Wi-Fi icon on the WXM-M5’s screen will turn green.
-   In addition, the date and time will be updated. Note that the time will appear in UTC.
+## Step by step instructions
 
-#### Figure 14
+This step is advised to be followed before mounting the wind vane and wind cup assembly in order to avoid damaging such parts.
+<br/>
 
-- a. home screen,
-- b. screen after swiping left on the touch screen and
-- c. click on the "Configure WiFi" button
-- d. screen after pressing the “Configure WiFi” button.
+### Assembling the wind sensor
 
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.png")} />
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-assembly.png")} />
 
-If batteries have already been placed in the battery compartment of the outdoor sensor (see [Installing Batteries](/wxm-devices/wifi-m5-bundle/setup-weather-station#installing-batteries)),
-the data collected by the sensor should appear on the WXM-M5’s screen.
-In addition, in the “WS” field (on the screen, you should see the “sensor id” number written under the outdoor sensor.
-In case, there is no data on the screen, try to swipe left the screen again and press “Scan weather stations”.
+#### Wind cup assembly installation (a, b) and wind vane installation (c, d) diagrams
 
-Finally, (if you have the WXM-M5 beta V1) plug in the GPS antenna to the port on the gray board of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5)
-and place the WXM-M5 next to a window. Then, swipe right on the screen.
-In a couple of minutes, the variables “Lat”, “Lon” and “Alt” should present values
-corresponding to your latitude, longitude and altitude of your area.
-It is important to assure that the GPS antenna is properly connected and the indications mentioned above
-are shown on the screen in order to participate in the WeatherXM rewarding programme.
-If you use the internal GPS antenna, then assure that the WXM-M5 is close by the window.
+The wind sensor consists of a part that measures the wind speed (through wind speed cup assembly)
+and another that measures the wind direction (though wind vane).
 
-## Registering the device to your account
+Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor [(Figures 7a and 7c)](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-7),
+which is on the opposite side of the rain collector. Be sure that you place the wind cup assembly on the shaft at the top part of the sensor.
+The wind vane should be placed on the shaft at the bottom of the sensor.
 
-You may claim your WXM-M5 data miner device via the application WeatherXM,
-which can be downloaded from [Play Store for Android](https://play.google.com/store/apps/details?id=com.weatherxm.app) or [via our web dashboard](https://console.weatherxm.com/login).
-Then, after registering and logging into your account, click on “+” and follow the instructions to claim your device.
+After pushing each of the parts, tighten the set screw, with a Philips screwdriver (size PH0) as shown in [(figures 7b and 7d)](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-7).
+Note that both parts should rotate freely. There should be no noticeable friction when the wind cup assembly rotates.
+However, the wind vane’s movement has a small amount of friction, which assists in providing steady wind direction measurements.
 
-## Change Frequency
+<br/>
 
-The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
-- Model A: 868 frequency (default)
-- Model B: 915 frequency
+### Installing batteries
 
-If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/battery-installation.png")} />
 
-### Steps to change the frequency
-  1. Swipe left on the touch screen [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
-  1. Click the Frequency options and select the new frequency your M5 will listen to [(Fig. 15c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
-  1. A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly. [(Fig. 15d)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
+#### Battery installation diagram
 
+Use a screwdriver to open the battery compartment and insert 2 AA batteries in it (Fig. 8).
+Once the batteries are inserted, the LED indicator on the back of the sensor should turn on for 4 seconds
+and then flash every 16 seconds indicating that the sensor transmits the data.
+Note that the light flashing only indicates the transmission of the data from the outdoor sensor
+and it does not assure the reception of the data by the weather miner.
 
-#### Figure 15
+**Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
+Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
+thus no point using rechargeable ones.
 
-- a. home screen,
-- b. screen after swiping left on the touch screen and
-- c. screen after pressing the “Frequency” options.
-- d. confirmation dialog after clicking a difference frequency option.
+Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
 
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.png")} />
+The primary power source for the outdoor sensor is the solar panel. When available solar power (sun light) a super capacitor is charged
+and is later used during night and when there is insufficient solar light.
+In climates that frequently sustain temperatures below 0°C (or 32°F) the use of Lithium batteries is suggested
+as these are performing better than Alkaline batteries under such circumstances, but depends on battery manufacturer and quality.
 
+** Do not forget to remove the black sticker from the solar panel.**
 
-## M5 Antenna Troubleshooting
+<br/>
 
-WXM-M5 is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
-while the LoRa antenna is responsible for the communication between the WXM-M5 and the outdoor sensor.
+### Installing U-bolts and metal plate
 
-On the left side of the WXM-M5 you may notice that there are two different slices, a gray for GPS and a blue for LoRa.
-Each of these slices contains a system relevant to the antennas mentioned above.
+<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/u-bracket-installation.png")} />
 
-By default, the external GPS antenna and the internal RF/LoRa antenna are connected, and there is no need to modify this.
+#### U-bracket installation
 
-The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables unless there is a serious problem.
+The U-bolts and the metal plate are used to support the mounting of the outdoor sensor on a pole.
+The straight edge of the metal plate is inserted in a groove on the bottom of the unit (at the opposite side of the solar panel).
+The curved part of the 90-degree angle bent edge of the metal plate should be oriented to the wind sensor in order to “hug” the mounting pole.
+After inserting the metal plate, the U-bolts should be inserted through the respective holes of the metal plate [(Fig. 6)](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-6).
+Loosely screw the nuts on the ends of the U-bolts. They will be tightened later when mounting on the pole (see [Mounting the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup-weather-station#mounting-the-outdoor-sensor)).
 
-### Switch external/internal GPS antenna
+<br/>
 
-The WXM-M5 beta v1 uses by default the external GPS antenna, which should be connected to the port on the gray GPS slice [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
-In case you desire to change the internal/external GPS antenna, follow the following steps:
+## Troubleshooting
 
-1. Unscrew and remove the four screws behind the WXM-M5.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
-1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
-   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception [(Fig. 16c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
-1. Clasp the cap back and screw the device.
-1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
+**Note 1:** In case that LED is permanently on or does not light up at all,
+make sure that the batteries are inserted fully and in the correct way.
 
-### Switch external/internal Radio Function (RF) - LoRa antenna
-
-The WXM-M5 beta v1 uses by default the internal LoRa antenna [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
-In case you desire to change the internal/external LoRa antenna, follow the following steps:
-
-1. Unscrew and remove the four screws behind the WXM-M5.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
-1. Remove the gray GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the WXM-M5.
-1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
-   Remove the cable, which is connected to a specific reception on the green board and
-   connect the desired cable to the same reception [(Fig. 16b)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
-1. Clasp the slices and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
-
-#### Figure 16
-
-Internal parts of the WXM-M5.
-
-- (a) Bottom is the first cap you remove once the WXM-M5 is unscrewed.
-- (b) The gray GPS is the second slice
-- (c) the blue RF LoRa is the third slice
-- (d) The TOP is the rest of WXM-M5 device.
-  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+**Note 2:** Batteries should not be installed backwards. This may permanently damage the outdoor sensor.

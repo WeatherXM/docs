@@ -20,7 +20,6 @@ module.exports = {
 					type: "category",
 					label: "WiFi M5 Weather Station",
 					items: [
-            "wxm-devices/wifi-m5-bundle/wifi-m5-intro",
             {
     					type: "category",
     					label: "WiFi M5 Setup Guide",
@@ -31,7 +30,7 @@ module.exports = {
                 "wxm-devices/wifi-m5-bundle/setup-guide/m5-connect-and-claim",
                 "wxm-devices/wifi-m5-bundle/setup-guide/m5-adding-wallets",
               ],
-              collapsed: true,
+              collapsed: false,
             },
             "wxm-devices/wifi-m5-bundle/m5-troubleshooting",
             "wxm-devices/wifi-m5-bundle/m5-specs",
@@ -43,7 +42,6 @@ module.exports = {
 					type: "category",
 					label: "Helium Weather Station",
 					items: [
-            "wxm-devices/helium/helium-intro",
             {
             type: "category",
   					label: "Helium Station Setup Guide",
@@ -54,7 +52,7 @@ module.exports = {
               "wxm-devices/helium/setup-guide/helium-connect-and-claim",
               "wxm-devices/helium/setup-guide/helium-adding-wallets",
   					],
-  					collapsed: true,
+  					collapsed: false,
           },
             "wxm-devices/helium/helium-troubleshooting",
             "wxm-devices/helium/helium-specs",
@@ -64,7 +62,6 @@ module.exports = {
       ],
       collapsed: false,
     },
-    "wallet/suggested-wallets",
     "glossary/glossary",
   ]
 };

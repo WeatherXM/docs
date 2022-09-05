@@ -74,6 +74,10 @@ html[data-theme='dark'] {
   color: var(--ifm-color-primary);
 }
 
+a.menu__link {
+  color: var(--ifm-color-primary);
+}
+
 a.menu__link:hover {
   color: var(--ifm-color-link-hover);
 }
