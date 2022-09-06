@@ -3,6 +3,7 @@ id: m5-assemble
 title: Assembling WXM-M5
 sidebar_label: Assembling WXM-M5
 slug: /wxm-devices/wifi-m5-bundle/setup-guide/assemble-m5
+hide_table_of_contents: true
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -23,20 +24,24 @@ This step is advised to be followed before mounting the wind vane and wind cup a
 
 ### Assembling the wind sensor
 
-<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-assembly.png")} />
+<section class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-assembly.jpg")} />
+  <div>
+    <h4>Wind cup assembly installation (a, b) and wind vane installation (c, d) diagrams</h4>
+    <p>The wind sensor consists of a part that measures the wind speed (through wind speed cup assembly)
+      and another that measures the wind direction (though wind vane).
+      Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor,
+      which is on the opposite side of the rain collector. Be sure that you place the wind cup assembly on the shaft at the top part of the sensor.
+      The wind vane should be placed on the shaft at the bottom of the sensor.
+      After pushing each of the parts, tighten the set screw, with a Philips screwdriver (size PH0).
+    </p>
+  </div>
+</section>
 
-#### Wind cup assembly installation (a, b) and wind vane installation (c, d) diagrams
-
-The wind sensor consists of a part that measures the wind speed (through wind speed cup assembly)
-and another that measures the wind direction (though wind vane).
-
-Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor [(Figures 7a and 7c)](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-7),
-which is on the opposite side of the rain collector. Be sure that you place the wind cup assembly on the shaft at the top part of the sensor.
-The wind vane should be placed on the shaft at the bottom of the sensor.
-
-After pushing each of the parts, tighten the set screw, with a Philips screwdriver (size PH0) as shown in [(figures 7b and 7d)](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-7).
-Note that both parts should rotate freely. There should be no noticeable friction when the wind cup assembly rotates.
+:::note
+Both parts should rotate freely. There should be no noticeable friction when the wind cup assembly rotates.
 However, the wind vane’s movement has a small amount of friction, which assists in providing steady wind direction measurements.
+:::
 
 <br/>
 
@@ -52,9 +57,11 @@ and then flash every 16 seconds indicating that the sensor transmits the data.
 Note that the light flashing only indicates the transmission of the data from the outdoor sensor
 and it does not assure the reception of the data by the weather miner.
 
+:::caution
 **Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
 Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
 thus no point using rechargeable ones.
+:::
 
 Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
 
@@ -63,7 +70,9 @@ and is later used during night and when there is insufficient solar light.
 In climates that frequently sustain temperatures below 0°C (or 32°F) the use of Lithium batteries is suggested
 as these are performing better than Alkaline batteries under such circumstances, but depends on battery manufacturer and quality.
 
-** Do not forget to remove the black sticker from the solar panel.**
+:::note
+Do not forget to remove the black sticker from the solar panel.
+:::
 
 <br/>
 

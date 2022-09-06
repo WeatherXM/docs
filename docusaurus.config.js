@@ -66,12 +66,18 @@ const config = {
         {
           href: "https://explorer.weatherxm.com/",
           label: "Explorer",
-          position: "left",
+          position: "right",
         },
         {
           href: "https://github.com/WeatherXM/docs",
           label: "GitHub",
-          position: "left",
+          position: "right",
+        },
+        {
+          href: "https://shop.weatherxm.com",
+          label: "Shop",
+          position: "right",
+          id: "docs",
         },
       ],
     },

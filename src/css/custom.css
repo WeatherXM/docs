@@ -64,6 +64,10 @@ html[data-theme='dark'] {
   margin-bottom: 25px;
 }
 
+#__docusaurus main {
+  max-width: 76ch;
+}
+
 .menu {
   padding-top: 80px !important;
 }
@@ -80,6 +84,17 @@ a.menu__link {
 
 a.menu__link:hover {
   color: var(--ifm-color-link-hover);
+}
+
+.navbar__link#docs {
+  background: var(--ifm-color-primary);
+  border-radius: 10px;
+  color: var(--ifm-menu-color-background-active);
+  transition: all .3s ease-out;
+}
+
+.navbar__link#docs:hover {
+  background: var(--ifm-color-link-hover);
 }
 
 .flex {
@@ -144,6 +159,10 @@ p {
   font-weight: 400;
 }
 
+section {
+  margin-bottom: 80px;
+}
+
 a.block {
   display: block;
   width: fit-content;
@@ -152,6 +171,7 @@ a.block {
 
 .product-container {
   display: flex;
+  justify-content: space-between;
 }
 
 .device {
@@ -161,16 +181,21 @@ a.block {
   margin-bottom: 40px;
   position: relative;
   transition: all .3s ease-out;
+  max-width: calc(50% - 10px);
 }
 
 .device:hover {
   box-shadow: 0 40px 34px -20px #00000039;
-  transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -5px, 0);
 }
 
 .device img {
   border-radius: 0;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
+}
+
+.device p {
+  margin-bottom: 0;
 }
 
 .device .device-info {
@@ -181,6 +206,37 @@ a.block {
   background: var(--ifm-menu-color-background-active);
 }
 
+.explanation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.explanation > * {
+  width: calc(50% - 10px);
+}
+
+.explanation.horizontal {
+  flex-direction: column;
+}
+
+.explanation.horizontal > * {
+  width: 100%;
+}
+
+.explanation.horizontal .images {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.explanation.horizontal img {
+  width: calc(50% - 10px);
+}
+
+.explanation img {
+  object-fit: contain;
+}
 
 @media only screen and (max-width: 996px) {
   .navbar {
