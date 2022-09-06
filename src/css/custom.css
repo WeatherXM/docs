@@ -150,6 +150,38 @@ a.block {
   cursor: pointer;
 }
 
+.product-container {
+  display: flex;
+}
+
+.device {
+  border-radius: 10px;
+  box-shadow: 0 20px 24px -14px #00000069;
+  overflow: hidden;
+  margin-bottom: 40px;
+  position: relative;
+  transition: all .3s ease-out;
+}
+
+.device:hover {
+  box-shadow: 0 40px 34px -20px #00000039;
+  transform: translate3d(0, -10px, 0);
+}
+
+.device img {
+  border-radius: 0;
+  padding-bottom: 150px;
+}
+
+.device .device-info {
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  background: var(--ifm-menu-color-background-active);
+}
+
+
 @media only screen and (max-width: 996px) {
   .navbar {
     box-shadow: none;

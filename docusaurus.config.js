@@ -46,20 +46,32 @@ const config = {
       },
       items: [
         {
-          to: "/",
-          label: "Docs",
-          position: "right",
-          activeBaseRegex: `docs`,
+          to: "/project",
+          label: "Project",
+          position: "left",
+          activeBaseRegex: `project`,
+        },
+        {
+          to: "/wxm-devices",
+          label: "WeatherXM Devices",
+          position: "left",
+          activeBaseRegex: `devices`,
+        },
+        {
+          to: "/glossary/glossary",
+          label: "Glossary",
+          position: "left",
+          activeBaseRegex: `glossary`,
         },
         {
           href: "https://explorer.weatherxm.com/",
           label: "Explorer",
-          position: "right",
+          position: "left",
         },
         {
           href: "https://github.com/WeatherXM/docs",
           label: "GitHub",
-          position: "right",
+          position: "left",
         },
       ],
     },
