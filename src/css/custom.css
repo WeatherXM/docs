@@ -65,7 +65,7 @@ html[data-theme='dark'] {
 }
 
 #__docusaurus main {
-  max-width: 76ch;
+  max-width: calc(100% - 600px);
 }
 
 .menu {
@@ -89,6 +89,7 @@ a.menu__link:hover {
 .navbar__link#docs {
   background: var(--ifm-color-primary);
   border-radius: 10px;
+  padding: 5px 20px;
   color: var(--ifm-menu-color-background-active);
   transition: all .3s ease-out;
 }
@@ -161,6 +162,11 @@ p {
 
 section {
   margin-bottom: 80px;
+}
+
+.control img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 a.block {
@@ -236,7 +242,36 @@ a.block {
 
 .explanation img {
   object-fit: contain;
+  border-radius: 20px;
 }
+
+.explanation.two-columns {
+  flex-direction: column;
+}
+
+.explanation.two-columns > * {
+  width: 100%;
+}
+
+.explanation.two-columns ol {
+  columns: 2;
+}
+
+.app-store img {
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 0;
+}
+
+details.alert.alert--info {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-menu-color-background-hover);
+}
+
+details.alert.alert--info summary::before {
+  border-color: transparent transparent transparent var(--ifm-color-primary);
+}
+
 
 @media only screen and (max-width: 996px) {
   .navbar {
@@ -244,6 +279,19 @@ a.block {
     background: var(----ifm-navbar-background-color);
     backdrop-filter: none;
   }
+
+  #__docusaurus main {
+    max-width: 100%;
+  }
+
+  .explanation, .explanation.horizontal .images {
+    flex-direction: column;
+  }
+
+  .explanation > *, .explanation.horizontal img {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {

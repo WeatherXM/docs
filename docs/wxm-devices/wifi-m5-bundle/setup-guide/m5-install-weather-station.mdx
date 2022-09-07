@@ -13,11 +13,19 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 1. Base or bolts to secure in place (not included)
 1. Location and spacing (check installation requirements examples and page)Step by step installation instructions
 
+:::caution
+It is imperative that you properly install your weather station. This will create the necessary conditions for quality weather data collection, which are required for purpose of the WeatherXM network, and the resulting rewards. Faulty installation, will result in less to none WXM rewards.
+:::
 
-## Good practice guides for placing the outdoor sensor
+### Best Practices for Proper Station Installation
 
 It is very important that your weather station collects quality measurements.
 This turns the weather station into a powerful tool for yourself and WeatherXM.
+
+<details class="accordion">
+
+<summary>Proper Installation Best Practices</summary>
+
 The values of the various meteorological parameters measured by a weather station can significantly differ depending on the obstacles
 and the material of the surfaces existing around the sensors. For this reason, there is a series of criteria that should be fulfilled:
 
@@ -31,8 +39,8 @@ and the material of the surfaces existing around the sensors. For this reason, t
     </p>
   </div>
   <div class="images">
-    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ground-height.png")} />
-    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/roof-deployment.png")} />
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ground-height.svg")} />
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/roof-deployment.svg")} />
   </div>
 </section>
 
@@ -56,8 +64,8 @@ The pole together with the outdoor sensor should be placed in an installation po
       </p>
     </div>
     <div class="images">
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/chimney-deployment.png")} />
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/airflow-deployment.png")} />
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/chimney-deployment.svg")} />
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/airflow-deployment.svg")} />
     </div>
   </section>
 
@@ -69,8 +77,8 @@ The pole together with the outdoor sensor should be placed in an installation po
       </p>
     </div>
     <div class="images">
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/building-with-pool-in-roof.png")} />
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-shadow-soft.png")} />
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/building-with-pool-in-roof.svg")} />
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-shadow-soft.svg")} />
     </div>
   </section>
 
@@ -86,14 +94,18 @@ The pole together with the outdoor sensor should be placed in an installation po
          at a distance 30 times the width and 15 times the height of the obstacles around.
       </p>
     </div>
-    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/wall-tree-rules.png")} />
+    <div class="images">
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/wall.svg")} />
+      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/tree.svg")} />
+    </div>
   </section>
 
+</details>
 
 ## Mounting the outdoor sensor
 
 <section class="explanation">
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/pole-assembly.png")} />
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/pole-assembly.svg")} />
   <div>
     <h4>Mounting and aligning sensor</h4>
     <p>If this is the first time that you set up this outdoor sensor,
@@ -101,44 +113,21 @@ The pole together with the outdoor sensor should be placed in an installation po
     Thus, it is important that you are able to read all the measurements on the weather miner’s screen,
     while you keep the outdoor sensor nearby (preferably not closer than 1.5m from the weather miner though).
     When you are about to fasten the pole on which you have tightened the outdoor sensor, look at the bubble level.
-    After fastening the pole, the bubble should be fully inside the red circle.
-    If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.
-    Adjust the mounting pipe as necessary. If the bubble is close, but not quire inside the circle,
-    and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
-    and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).
-    Now, you may tighten the bolts with a wrench.
     </p>
   </div>
 </section>
+
+After fastening the pole, the bubble should be fully inside the red circle.
+If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.
+Adjust the mounting pipe as necessary. If the bubble is close, but not quire inside the circle,
+and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
+and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).
+Now, you may tighten the bolts with a wrench.
 
 :::note
 Note that all of i., ii. and iii. are important tips for measuring an accurate as possible temperature and humidity,
 while iii. is important for avoiding faulty precipitation and wind measurements.
 :::
-
-## Troubleshooting
-
-### No communication between sensor and miner
-
-In case that the communication between the weather miner and the outdoor sensor is problematic, please see [Troubleshooting](/wxm-devices/wifi-m5-bundle/troubleshooting).
-
-If the weather miner receives data in a proper way, then the outdoor sensor could be mounted on a metallic pole.
-Before finally mounting the outdoor sensor, make sure that the communication between the sensor
-and the weather miner still communicate appropriately.
-Otherwise, you may consider placing the outdoor sensor in a smaller distance from the weather miner
-and/or with no obstacles within this distance.
-If the internal LORA antenna is used (default), the distance should not be larger than 50m with no obstacles along the line of sight.
-In case of using the [external LoRa antenna](/wxm-devices/wifi-m5-bundle/setup-m5#switch-externalinternal-radio-function-rf---lora-antenna), this distance may be extended to up to 100m.
-Please check [Good practice guides for placing the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup-weather-station#good-practice-guides-for-placing-the-outdoor-sensor) for tips on how to find the most appropriate place to install the outdoor sensor.
-
-After fixing any communication issues, the outdoor sensor can be mounted on a pole.
-The two U-bolts can now be used together with the nuts to tighten the outdoor sensor on the pole (which is not included) as shown in [figure 9](/wxm-devices/wifi-m5-bundle/setup-weather-station#figure-9-10).
-The U-bolts are able to “hug” a 1-2’’ (2.5-5cm) diameter pole.
-It is very important that the arrow icon together with the “WEST” word on the outdoor sensor
-(between the antenna and the light sensor as shown in [figure 10](/wxm-devices/wifi-m5-bundle/setup-weather-station#figures-9-10)) points to the real west direction in your location.
-This can be confirmed with the assistance of a compass.
-Permanent wind direction error will be introduced when the outdoor sensor is not installed in the right direction.
-The orientation of this outdoor sensor remains the same for the southern hemisphere.
 
 ### Maintenance of the outdoor sensor
 
@@ -146,7 +135,9 @@ The maintenance of the outdoor sensor is an important process, which should be c
 This process includes the cleansing of certain parts of the outdoor unit and the checking of the battery level.
 The maintenance process is summarized in the following steps:
 
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/maintenance.png")} />
+<div class="control">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/maintenance.svg")} />
+</div>
 
   #### Instructions for opening the rain gauge
 

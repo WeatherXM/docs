@@ -10,17 +10,27 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Included
 
-Included in the box is the:
-1. [Outdoor weather station](/wxm-devices/wifi-m5-bundle/setup-guide/m5-contents#outdoor-weather-station)
-1. [M5 weather station gateway](/wxm-devices/wifi-m5-bundle/setup-guide/m5-contents#m5-miner)
-1. Wind cup assembly
-1. Wind vane
-1. Two U-bolts, 4 nuts, 1 metallic plate, small wrench
-1. USB cable
-1. GPS antenna
-1. RF antenna
-1. Flashing module
-1. Screwdriver
+<section class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/contents.svg")} />
+  <div>
+    <h4>Include in the Box</h4>
+    <ol>
+      <li>Wind cup assembly</li>
+      <li><a href="/wxm-devices/wifi-m5-bundle/setup-guide/m5-contents#outdoor-weather-station">Outdoor weather station</a></li>
+      <li>Wind vane</li>
+      <li>Metal plate</li>
+      <li>U-bolts (2X)</li>
+      <li>Bolts (4X)</li>
+      <li>Wrench</li>
+      <li>Screwdriver</li>
+      <li><a href="/wxm-devices/wifi-m5-bundle/setup-guide/m5-contents#m5-miner">M5 weather station gateway</a></li>
+      <li>LoRaWan Antenna</li>
+      <li>Flashing module</li>
+      <li>GPS antenna</li>
+      <li>Power supply calble (USB)</li>
+    </ol>
+  </div>
+</section>
 
 ## Not Included
 
@@ -40,38 +50,49 @@ The outdoor sensor is responsible for:
 1. the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
 1. the wireless transmission of the data to the weather miner.
 
+<section class="explanation two-columns">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000a_b-parts.svg")} />
+  <div>
+    <h4>Components</h4>
+    <ol>
+      <li>Wind Speed Sensor</li>
+      <li>Wind Vane</li>
+      <li>Thermo-hygro sensor</li>
+      <li>Rain collector</li>
+      <li>Bubble level</li>
+      <li>Solar panel</li>
+      <li>Antenna</li>
+      <li>Light sensor</li>
+      <li>U-Bolt</li>
+      <li>Battery compartment</li>
+      <li>Reset button</li>
+      <li>1. LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).</li>
+    </ol>
+  </div>
+</section>
+
 This part of your weather station is placed outdoors.
 For further details about an advisable installation of the outdoor sensor, please see [Installing the M5 Weather Station](/wxm-devices/wifi-m5-bundle/setup-guide/install-weather-station).
 
 The following figures show a sketch of the outdoor sensor. The sketch comes with a description of all the important parts and sensors of it.
 
-<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000a_b-parts.png")} />
-
-#### Components
-
-1. Wind Speed Sensor
-1. Wind Vane
-1. Thermo-hygro sensor
-1. Rain collector
-1. Bubble level
-1. Solar panel
-1. Antenna
-1. Light sensor
-1. U-Bolt
-1. Battery compartment
-1. Reset button
-1. LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).
 
 ### M5 Miner
 
-<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.png")} />
+<section class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.svg")} />
+  <div>
+    <h4>Components</h4>
+    <p>
+      This is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM IoT platform.
+      The weather miner is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C for proper functioning of the barometer),
+      near a window (for better GPS signal). The weather miner should be permanently connected to power and activated in order to be able to receive, record and upload measurements to the internet.
+      The following scheme describes the buttons and connectivities of the WXM-M5 data miner. Briefly, there is a power and a reset button on the WXM-M5, a GPS port for the GPS antenna and a usb type-c port for power supply.
+    </p>
+  </div>
+</section>
 
-This is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM IoT platform.
 
-The weather miner is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of <4°C for proper functioning of the barometer),
-near a window (for better GPS signal). The weather miner should be permanently connected to power and activated in order to be able to receive, record and upload measurements to the internet.
-
-The following scheme describes the buttons and connectivities of the WXM-M5 data miner. Briefly, there is a power and a reset button on the WXM-M5, a GPS port for the GPS antenna and a usb type-c port for power supply.
 
 
 ## What to do is something is missing

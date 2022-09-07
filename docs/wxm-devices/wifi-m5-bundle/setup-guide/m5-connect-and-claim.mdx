@@ -1,6 +1,6 @@
 ---
 id: m5-connect-and-claim
-title: Connect and Claim M5 WiFi Station
+title: Connect and Claim Station
 sidebar_label: Connect and Claim M5 WiFi Station
 slug: /wxm-devices/helium/setup-guide/m5-connect-and-claim
 hide_table_of_contents: true
@@ -16,90 +16,26 @@ In this chapter, you will find guidance to set up the WXM-M5.
 
 ## Prerequisites
 
-1. The staio must be fully assembled (parts and batteries)
+1. The station must be fully assembled (parts and batteries)
 
-## Connect and Claim (via Bluetooth)
+## Step by Step Instructions
 
-1. Connect GPS antenna
-1. Connect LoraWan antenna (if M5 and station are more than 50m apart)
-1. Connect M5 to power source & turn device on
-1. Download WXM app (Android link, iOS link)
-1. Login and tap the "+" button
-1. Provide access to bluetooth when requested
-1. Select your device and verify it on M5
-1. Connect to WiFi network
-1. Confirm station installation Location
-1. Claim your device
+### Connect GPS antenna
 
-## Connect and Claim (manually)
+Attach the GPS antenna to M5. you should hear a "click" when it's properly installed.
 
-1. Connect GPS antenna
-1. Connect LoraWan antenna (if M5 and station are more than 50m apart)
-1. Connect M5 to power source & turn device on
-1. Tap "Claim Device Manually" on M5
-1. Download WXM app (Android link, iOS link)
-1. Login and tap the "+" button
-1. Tap "Claim Device Manually"
-1. Select "WiFi M5 Device"
-1. Connect to M5 via WiFi
-1. Provide WiFi network credentials
-1. Type the 6digits code in app
-1. Confirm station installation Location
-1. Claim your device
+### Connect LoRaWan antenna (Optional)
 
+If the installation of the station and the placement of the M5 miner is more than 50m apart, you must install the LoraWan antenna so that the two can communicate over such distance.
+Please follow the instructions below, or on this [video](https://www.youtube.com/watch?v=FP4rT3FTz0M&t).
 
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.png")} />
+:::caution
+If the station and M5 are more than 50m apart, you must install the LoraWan antenna
+:::
 
-#### Configure WiFi on M5 miner
+<details class="accordion">
 
-- a. home screen,
-- b. screen after swiping left on the touch screen and
-- c. click on the "Configure WiFi" button
-- d. screen after pressing the “Configure WiFi” button.
-
-If batteries have already been placed in the battery compartment of the outdoor sensor (see [Installing Batteries](/wxm-devices/wifi-m5-bundle/setup-weather-station#installing-batteries)),
-the data collected by the sensor should appear on the WXM-M5’s screen.
-In addition, in the “WS” field (on the screen, you should see the “sensor id” number written under the outdoor sensor.
-In case, there is no data on the screen, try to swipe left the screen again and press “Scan weather stations”.
-
-Finally, (if you have the WXM-M5 beta V1) plug in the GPS antenna to the port on the gray board of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5)
-and place the WXM-M5 next to a window. Then, swipe right on the screen.
-In a couple of minutes, the variables “Lat”, “Lon” and “Alt” should present values
-corresponding to your latitude, longitude and altitude of your area.
-It is important to assure that the GPS antenna is properly connected and the indications mentioned above
-are shown on the screen in order to participate in the WeatherXM rewarding programme.
-If you use the internal GPS antenna, then assure that the WXM-M5 is close by the window.
-
-### Registering the device to your account
-
-You may claim your WXM-M5 data miner device via the application WeatherXM,
-which can be downloaded from [Play Store for Android](https://play.google.com/store/apps/details?id=com.weatherxm.app) or [via our web dashboard](https://console.weatherxm.com/login).
-Then, after registering and logging into your account, click on “+” and follow the instructions to claim your device.
-
-### Change Frequency
-
-The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
-- Model A: 868 frequency (default)
-- Model B: 915 frequency
-
-If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.
-
-#### Steps to change the frequency
-  1. Swipe left on the touch screen [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
-  1. Click the Frequency options and select the new frequency your M5 will listen to [(Fig. 15c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
-  1. A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly. [(Fig. 15d)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-15)
-
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.png")} />
-
-#### Changing Frequency
-
-- a. home screen,
-- b. screen after swiping left on the touch screen and
-- c. screen after pressing the “Frequency” options.
-- d. confirmation dialog after clicking a difference frequency option.
-
-
-## Troubleshooting
+<summary>M5 LoRaWan Antenna Installation Instructions</summary>
 
 ### M5 Antenna Troubleshooting
 
@@ -115,19 +51,19 @@ The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables u
 
 ### Switch external/internal GPS antenna
 
-The WXM-M5 beta v1 uses by default the external GPS antenna, which should be connected to the port on the gray GPS slice [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
+The WXM-M5 beta v1 uses by default the external GPS antenna, which should be connected to the port on the gray GPS slice
 In case you desire to change the internal/external GPS antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the WXM-M5.
 1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
 1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
-   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception [(Fig. 16c)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
+   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
 1. Clasp the cap back and screw the device.
-1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
+1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
 
 ### Switch external/internal Radio Function (RF) - LoRa antenna
 
-The WXM-M5 beta v1 uses by default the internal LoRa antenna [(Fig. 15)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
+The WXM-M5 beta v1 uses by default the internal LoRa antenna.
 In case you desire to change the internal/external LoRa antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the WXM-M5.
@@ -135,9 +71,9 @@ In case you desire to change the internal/external LoRa antenna, follow the foll
 1. Remove the gray GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the WXM-M5.
 1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
    Remove the cable, which is connected to a specific reception on the green board and
-   connect the desired cable to the same reception [(Fig. 16b)](/wxm-devices/wifi-m5-bundle/setup-m5#figure-16).
+   connect the desired cable to the same reception.
 1. Clasp the slices and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5 [(Fig. 5)](/wxm-devices/wifi-m5-bundle/contents#figure-5).
+1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
 
 #### Figure 16
 
@@ -148,3 +84,78 @@ Internal parts of the WXM-M5.
 - (c) the blue RF LoRa is the third slice
 - (d) The TOP is the rest of WXM-M5 device.
   <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+
+</details>
+
+### Connect M5 to power source and turn device on
+
+The M5 must be connected to a power source at all times.
+It has a limited battery, but you should not rely on it and keep it away from its power source.
+
+:::caution
+If M5 turns off, you will not receive WXM rewards, as you won't be able to share data with the Network
+:::
+
+### Place M5 near a window (for better GPS singal)
+
+For better GPS signal, it's highly recommended to place the M5 device near a window. Make sure that it has a good GPS coverage at all times.
+
+:::note
+This step could take some time till the device connects to GPS satellites.
+:::
+
+:::caution
+If the GPS signal is lost, you could receive less WXM rewards (or none). This is because we won't be able to verify your location.
+:::
+
+### Change Frequency
+
+The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
+- Model A: 868 frequency (default)
+- Model B: 915 frequency
+
+:::note
+If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.
+:::
+
+#### Steps to change the frequency
+  1. Swipe left on the touch screen
+  1. Click the Frequency options and select the new frequency your M5 will listen to
+  1. A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly
+
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.png")} />
+
+:::caution
+If you don't use the correct frequency as your station, M5 won't be able to communicate with your station, thus you will not share any data, and receive no WXM rewards!
+:::
+
+### Connect M5 to WiFi
+
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.png")} />
+
+By now, your M5 is set and ready for claiming!
+Swipe left to navigate to M5 settings screen. There, tap on "configure WiFi" to get M5 to switch to connect mode.
+
+Once this is done, connect to M5 via WiFi (you should see in the networks screen a "WXM M5 Something").
+
+A popup will open, asking you to select the desired network you'd like to connect the M5. Select the one you want, and provide the password for it.
+
+
+### Download WXM app and login
+
+Download our WXM apps from their respected app stores. Once you have your WXM app, login to your account (same credentials you used to order your station). If you don't remember your credentials, you can always [reset your password](https://weatherxm.com).
+
+<section class="app-store">
+ <a href="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/google-play-badge.svg")}/></a>
+ <a href="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/App_Store_Badge.svg")}/></a>
+
+</section>
+
+
+### Tap the "+" button
+
+### Type the M5 serial number when prompted
+
+### Confirm station installation Location
+
+### Claim your device
