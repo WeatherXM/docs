@@ -24,6 +24,7 @@
 
   --background-color: #DCE0E9;
   --ifm-color-light-2: #EEF0F4;
+  --ifm-color-bluetint: #E4F1FD;
 }
 
 [data-theme='dark'] {
@@ -43,6 +44,7 @@
 
   --background-color: #040404;
   --ifm-color-light-2: #1D1E26;
+  --ifm-color-bluetint: #162351;
 }
 
 html[data-theme='dark'] {
@@ -102,6 +104,15 @@ a.menu__link:hover {
 
 .navbar__link#docs:hover {
   background: var(--ifm-color-link-hover);
+}
+
+.pagination-nav__link {
+  border-color: var(--ifm-color-primary);
+  transition: all .3s ease-out;
+}
+
+.pagination-nav__link:hover {
+  background-color: var(--ifm-color-bluetint);
 }
 
 .flex {
