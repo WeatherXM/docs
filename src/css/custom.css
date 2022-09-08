@@ -325,7 +325,7 @@ details.alert.alert--info summary::before {
     flex-direction: column;
   }
 
-  .explanation > *, .explanation.horizontal img {
+  .explanation > *, .explanation.horizontal img, .explanation.small-big img, .explanation.small-big span {
     width: 100%;
   }
 
