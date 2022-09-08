@@ -288,6 +288,18 @@ a.block {
   border-radius: 0;
 }
 
+.explanation.small-big img {
+  width: calc(100%*1/3 - 10px);
+}
+
+.explanation.small-big > div, .explanation.small-big > span {
+  width: calc(100%*2/3 - 10px);
+}
+
+.explanation.small-big p img {
+  width: 100%;
+}
+
 details.alert.alert--info {
   border-color: var(--ifm-color-primary);
   background-color: var(--ifm-menu-color-background-hover);

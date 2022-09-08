@@ -22,20 +22,32 @@ In this chapter, you will find guidance to set up the WXM-M5.
 
 ### Connect GPS antenna
 
-Attach the GPS antenna to M5. you should hear a "click" when it's properly installed.
+<section class="explanation">
+  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <span>
+    Attach the GPS antenna to M5. you should hear a "click" when it's properly installed.
+  </span>
+</section>
 
 ### Connect LoRaWan antenna (Optional)
 
+<section class="explanation">
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <span>
+
 If the installation of the station and the placement of the M5 miner is more than 50m apart, you must install the LoraWan antenna so that the two can communicate over such distance.
-Please follow the instructions below, or on this [video](https://www.youtube.com/watch?v=FP4rT3FTz0M&t).
+Please follow the instructions below, or on this <a href="https://www.youtube.com/watch?v=FP4rT3FTz0M&t" target="blank">video</a>.
 
 :::caution
 If the station and M5 are more than 50m apart, you must install the LoraWan antenna
 :::
+  </span>
+</section>
 
 <details class="accordion">
 
 <summary>M5 LoRaWan Antenna Installation Instructions</summary>
+
 
 ### M5 Antenna Troubleshooting
 
@@ -75,9 +87,8 @@ In case you desire to change the internal/external LoRa antenna, follow the foll
 1. Clasp the slices and the cap back and screw the device.
 1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
 
-#### Figure 16
+#### Internal parts of the WXM-M5
 
-Internal parts of the WXM-M5.
 
 - (a) Bottom is the first cap you remove once the WXM-M5 is unscrewed.
 - (b) The gray GPS is the second slice
@@ -89,14 +100,24 @@ Internal parts of the WXM-M5.
 
 ### Connect M5 to power source and turn device on
 
+<section class="explanation">
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <span>
 The M5 must be connected to a power source at all times.
 It has a limited battery, but you should not rely on it and keep it away from its power source.
 
 :::caution
-If M5 turns off, you will not receive WXM rewards, as you won't be able to share data with the Network
+If M5 turns off, you will not receive WXM rewards, as you won't be able to share data with the Network. **This will result in no WXM rewards!**
 :::
+  </span>
+</section>
+
 
 ### Place M5 near a window (for better GPS singal)
+
+<section class="explanation">
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <span>
 
 For better GPS signal, it's highly recommended to place the M5 device near a window. Make sure that it has a good GPS coverage at all times.
 
@@ -107,8 +128,15 @@ This step could take some time till the device connects to GPS satellites.
 :::caution
 If the GPS signal is lost, you could receive less WXM rewards (or none). This is because we won't be able to verify your location.
 :::
+  </span>
+</section>
+
 
 ### Change Frequency
+
+<section class="explanation">
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <span>
 
 The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
 - Model A: 868 frequency (default)
@@ -117,6 +145,8 @@ The M5's frequency must be set to match the frequency of your weather station so
 :::note
 **If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.**
 :::
+  </span>
+</section>
 
 #### Steps to change the frequency
 <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.png")} />
@@ -125,8 +155,6 @@ The M5's frequency must be set to match the frequency of your weather station so
   1. Click the Frequency options and select the new frequency your M5 will listen to
   1. A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly
 
-
-
 :::caution
 If you don't use the correct frequency as your station, M5 won't be able to communicate with your station, thus you will not share any data, and receive no WXM rewards!
 :::
@@ -134,6 +162,7 @@ If you don't use the correct frequency as your station, M5 won't be able to comm
 ### Connect M5 to WiFi
 
 <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-first-run.png")} />
+
 
 By now, your M5 is set and ready for claiming!
 Swipe left to navigate to M5 settings screen. There, tap on "configure WiFi" to get M5 to switch to connect mode.
@@ -145,13 +174,18 @@ A popup will open, asking you to select the desired network you'd like to connec
 
 ### Download WXM app and login
 
+
+<section class="explanation">
+  <section class="app-store">
+   <a href="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/google-play-badge.svg")}/></a>
+   <a href="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/App_Store_Badge.svg")}/></a>
+
+  </section>
+  <span>
 Download our WXM apps from their respected app stores. Once you have your WXM app, login to your account (same credentials you used to order your station). If you don't remember your credentials, you can always [reset your password](https://weatherxm.com).
-
-<section class="app-store">
- <a href="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/google-play-badge.svg")}/></a>
- <a href="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank"><img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/App_Store_Badge.svg")}/></a>
-
+</span>
 </section>
+
 
 
 ### Tap the "+" button
@@ -170,32 +204,29 @@ Download our WXM apps from their respected app stores. Once you have your WXM ap
 
 ### Type the M5 serial number when prompted
 
-#### Navigate to M5 Settings and find the device's Serial Number
-<img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-aserial.png")} />
 
-<section class="explanation">
+<section class="explanation small-big">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/serial-number.png")} />
-  <div>
-    <h4>Type in the Serial Number of your M5</h4>
-    <p>
-      Follow the steps shown in the image above to find your M5's Serial Number. You'll need to type this in the WXM app in order to verify that you own this station, and secure it for yourself.
-    </p>
-  </div>
+  <span>
+
+#### Navigate to M5 Settings and find the device's Serial Number
+
+Follow the steps shown in the image below to find your M5's Serial Number. You'll need to type this in the WXM app in order to verify that you own this station, and secure it for yourself.
+
+![Find your serial number](/img/wxm-devices/wifi-m5-bundle/m5-aserial.png)
+  </span>
 </section>
 
 ### Confirm station installation Location
 
 
-<section class="explanation">
+<section class="explanation small-big">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/installation-location.png")} />
-  <div>
-    <h4>Select the Location that you'll Install your Station</h4>
-    <p>
-      Allow access to you location so that the WXM app knows where you are planning to install your WeatherXM Station. Doing so, will make it easier to complete this step.
-    </p>
-  </div>
-</section>
+  <span>
 
+#### Select the Location that you'll Install your Station
+
+Allow access to you location so that the WXM app knows where you are planning to install your WeatherXM Station. Doing so, will make it easier to complete this step.
 
 :::note
 We do not track you, nor do we collect any data about your location.
@@ -204,6 +235,11 @@ We do not track you, nor do we collect any data about your location.
 :::caution
 Make sure you define the location that you will install your station as precise as possible, as this will play it'a part on the quality of data you will share with the network, and thus your overall WXM rewards.
 :::
+  </span>
+</section>
+
+
+
 
 
 ### Claim your device
