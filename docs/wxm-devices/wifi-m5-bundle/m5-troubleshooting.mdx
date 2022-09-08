@@ -10,9 +10,9 @@ hide_table_of_contents: true
 
 ### Outdoor sensor not reporting data to WXM-M5 data miner. There are dashes (--) on the display console.
 
-First make sure you M5 frequency matches your weather station (see [Change frequency](/wxm-devices/wifi-m5-bundle/setup-m5##change--frequency))
+First make sure you M5 frequency matches your weather station (see [Change frequency](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#change-frequency))
 
-Check the transmitter LED on the outdoor sensor (see [Fig. 4] and [Reset Button and Transmitter LED](/wxm-devices/wifi-m5-bundle/setup-weather-station#reset-button-and-transmitter-led) for flashing.
+Check the transmitter LED on the outdoor sensor (see [Reset Button and LED Indicator](/wxm-devices/wifi-m5-bundle/assemble-m5#outdoor-weather-station) for flashing.
 The LED should flash every 16 seconds.
 
 If the LED is not flashing every 16 seconds, replace the batteries in the outdoor sensor.
@@ -33,21 +33,21 @@ The solution may be as simple as powering down and up the WXM-M5. Make sure you 
    or metal wall framing, along the line of sight between the outdoor sensor and WXM-M5.
    Relocate the sensor and console as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the outdoor sensor higher and/or closer.
-1. Use the external RF antenna provided with M5, but this requires you open the M5 (see [Switch external/internal Radio Function (RF) - LoRa antenna](/wxm-devices/wifi-m5-bundle/setup-m5##switch-externalinternal-radio-function-rf---lora-antenna)).
+1. Use the external RF antenna provided with M5, but this requires you open the M5 (see [Switch external/internal Radio Function (RF) - LoRa antenna](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#switch-externalinternal-radio-function-rf---lora-antenna)).
 
 ### Temperature looks higher than expected.
 
 If the temperature is slightly higher (e.g., +2-5°C) than expected,
 then assure that the outdoor sensor is within a significant distance from heat sources
 like ventilation systems and active chimneys.
-Make also sure that the outdoor sensor is mounted on a 2 (or more) meter metallic pole and there are no obstacles close by (see [Good practice guides for placing the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup-weather-station#good-practice-guides-for-placing-the-outdoor-sensor)).
+Make also sure that the outdoor sensor is mounted on a 2 (or more) meter metallic pole and there are no obstacles close by (see [Best Practices for Proper Station Installation](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation)).
 
 ### Other variables, such as wind direction, wind speed, rain height and humidity do not align with an official weather reporting station
 
 Even weather stations, which are close to each other, may obtain slightly different measurements,
 especially for the variables of wind speed and wind direction. However, you should not expect significant deviations
 e.g., from a weather station, which is located within a distance of 1km.
-If there are deviations, please check [Good practice guides for placing the outdoor sensor](/wxm-devices/wifi-m5-bundle/setup-weather-station#good-practice-guides-for-placing-the-outdoor-sensor) for guidelines about the installation of the outdoor sensor.
+If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the outdoor sensor.
 
 ### One or more variables are extremely high, low, or constant for long periods of time.
 
@@ -74,4 +74,4 @@ Make sure you configured the correct SSID and password. Repeat the procedure if 
    for a couple of minutes till “lon”, “lat” and “alt” values appear.
 1. Then, move WXM-M5 indoors placing the GPS antenna next to a window.
 
-If the problem remains and you use the internal GPS antenna, switch to the external antenna (see [Switch external/internal GPS antenna](/wxm-devices/wifi-m5-bundle/setup-m5#switch-externalinternal-gps-antenna)).
+If the problem remains and you use the internal GPS antenna, switch to the external antenna (see [Switch external/internal GPS antenna](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#switch-externalinternal-gps-antenna)).
