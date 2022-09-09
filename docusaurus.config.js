@@ -35,20 +35,33 @@ const config = {
   themeConfig: {
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       logo: {
         alt: "WeatherXM",
         src: "img/wxm-logo-wide-notagline.svg",
+        srcDark: "img/wxm-logo-wide-notagline-white.svg",
       },
       items: [
         {
-          to: "/",
-          label: "Docs",
-          position: "right",
-          activeBaseRegex: `docs`,
+          to: "/project",
+          label: "Project",
+          position: "left",
+          activeBaseRegex: `project`,
+        },
+        {
+          to: "/wxm-devices/wifi-m5-bundle/m5-contents",
+          label: "WeatherXM Devices",
+          position: "left",
+          activeBaseRegex: `devices`,
+        },
+        {
+          to: "/glossary/glossary",
+          label: "Glossary",
+          position: "left",
+          activeBaseRegex: `glossary`,
         },
         {
           href: "https://explorer.weatherxm.com/",
@@ -60,10 +73,15 @@ const config = {
           label: "GitHub",
           position: "right",
         },
+        {
+          href: "https://shop.weatherxm.com",
+          label: "Shop",
+          position: "right",
+          id: "docs",
+        },
       ],
     },
     footer: {
-      style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} WeatherXM. Built with Docusaurus.`,
     },
   },

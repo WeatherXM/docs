@@ -8,7 +8,6 @@ module.exports = {
 				"project/project",
 				"project/tokenomics",
 				"project/reward-algorithm",
-				"project/suggested-wallets"
 			],
       collapsed: true,
     },
@@ -16,22 +15,16 @@ module.exports = {
       type: "category",
       label: "WeatherXM Devices",
       items: [
-        "wxm-devices/introduction",
-				{
-					type: "category",
-					label: "WiFi M5 Bundle with Weather Station",
-					items: [
-	        	"wxm-devices/wifi-m5-bundle/introduction",
-						"wxm-devices/wifi-m5-bundle/contents",
-						"wxm-devices/wifi-m5-bundle/setup-weather-station",
-						"wxm-devices/wifi-m5-bundle/setup-m5",
-						"wxm-devices/wifi-m5-bundle/troubleshooting",
-					],
-					collapsed: false,
-				},
-        "wxm-devices/glossary",
+				"wxm-devices/wifi-m5-bundle/m5-contents",
+				"wxm-devices/wifi-m5-bundle/m5-assemble",
+				"wxm-devices/wifi-m5-bundle/m5-install-weather-station",
+				"wxm-devices/wifi-m5-bundle/m5-connect-and-claim",
+				"wxm-devices/wifi-m5-bundle/m5-adding-wallets",
+				"wxm-devices/wifi-m5-bundle/m5-troubleshooting",
+				"wxm-devices/wifi-m5-bundle/m5-specs"
       ],
-      collapsed: true,
+      collapsed: false,
     },
+    "glossary/glossary",
   ]
 };
