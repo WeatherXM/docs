@@ -116,6 +116,12 @@ a.menu__link:hover {
 
 .pagination-nav__link:hover {
   background-color: var(--ifm-color-bluetint);
+  box-shadow: 0 40px 34px -20px #00000039;
+}
+
+.pagination-nav__link:active, .device a:active {
+  transform: scale3d(.95,.95,1);
+  box-shadow: 0 20px 14px -10px #00000039;
 }
 
 .flex {
@@ -224,12 +230,12 @@ li::marker {
 
 .device:hover {
   box-shadow: 0 40px 34px -20px #00000039;
-  transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -2px, 0);
 }
 
 .device img {
   border-radius: 0;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .device p {
@@ -259,7 +265,7 @@ li::marker {
 }
 
 .app-store a img:hover {
-  transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -2px, 0);
   box-shadow: 0 40px 34px -20px #00000039;
 }
 
