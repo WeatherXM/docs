@@ -1,9 +1,11 @@
 ---
 id: m5-troubleshooting
-title: M5 Troubleshooting
-sidebar_label: M5 Troubleshooting
+title: WXM-WS1000 Troubleshooting
+sidebar_label: WXM-WS1000 Troubleshooting
 slug: /wifi-m5-bundle/m5-troubleshooting
 ---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Weather Sensors
 
@@ -74,3 +76,75 @@ Make sure you configured the correct SSID and password. Repeat the procedure if 
 1. Then, move WXM-M5 indoors placing the GPS antenna next to a window.
 
 If the problem remains and you use the internal GPS antenna, switch to the external antenna (see [Switch external/internal GPS antenna](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#switch-externalinternal-gps-antenna)).
+
+
+## My Station does not connect to the M5
+
+<section class="explanation">
+  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/LoRaWan-antenna.svg")} />
+  <span>
+
+If the installation of the station and the placement of the M5 miner is more than 50 meters / 164 feet apart, you must install the LoRa antenna so that the two can communicate over such distance.
+Please follow the instructions below, or in the video.
+
+[![Instruction on how to switch to LoRa antenna](/img/wxm-devices/wifi-m5-bundle/video-LoRaWan.png)](https://www.youtube.com/watch?v=FP4rT3FTz0M&)
+
+  </span>
+</section>
+
+:::caution
+If the station and M5 are more than 50 meters / 164 feet apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
+:::
+
+<details class="accordion">
+
+<summary>M5 LoRa Antenna Installation Instructions</summary>
+
+
+#### M5 Antenna Troubleshooting
+
+WXM-M5 is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
+while the LoRa antenna is responsible for the communication between the WXM-M5 and the outdoor sensor.
+
+On the left side of the WXM-M5 you may notice that there are two different slices, a gray for GPS and a blue for LoRa.
+Each of these slices contains a system relevant to the antennas mentioned above.
+
+By default, the external GPS antenna and the internal RF/LoRa antenna are connected, and there is no need to modify this.
+
+The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables unless there is a serious problem.
+
+#### Switch external/internal GPS antenna
+
+The WXM-M5 beta v1 uses by default the external GPS antenna, which should be connected to the port on the gray GPS slice
+In case you desire to change the internal/external GPS antenna, follow the following steps:
+
+1. Unscrew and remove the four screws behind the WXM-M5.
+1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
+1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
+   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
+1. Clasp the cap back and screw the device.
+1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
+
+#### Switch external/internal Radio Function (RF) - LoRa antenna
+
+The WXM-M5 beta v1 uses by default the internal LoRa antenna.
+In case you desire to change the internal/external LoRa antenna, follow the following steps:
+
+1. Unscrew and remove the four screws behind the WXM-M5.
+1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
+1. Remove the gray GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the WXM-M5.
+1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
+   Remove the cable, which is connected to a specific reception on the green board and
+   connect the desired cable to the same reception.
+1. Clasp the slices and the cap back and screw the device.
+1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
+
+##### Internal parts of the WXM-M5
+
+- (a) Bottom is the first cap you remove once the WXM-M5 is unscrewed.
+- (b) The gray GPS is the second slice
+- (c) the blue RF LoRa is the third slice
+- (d) The TOP is the rest of WXM-M5 device.
+  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+
+</details>

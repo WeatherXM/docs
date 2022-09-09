@@ -20,7 +20,8 @@ module.exports = {
 				"wxm-devices/wifi-m5-bundle/m5-install-weather-station",
 				"wxm-devices/wifi-m5-bundle/m5-connect-and-claim",
 				"wxm-devices/wifi-m5-bundle/m5-adding-wallets",
-				"wxm-devices/wifi-m5-bundle/m5-troubleshooting"
+				"wxm-devices/wifi-m5-bundle/m5-troubleshooting",
+				"wxm-devices/wifi-m5-bundle/m5-specs"
       ],
       collapsed: false,
     },

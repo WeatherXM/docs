@@ -1,7 +1,7 @@
 ---
 id: m5-connect-and-claim
 title: Connect and Claim Station
-sidebar_label: Connect and Claim M5 WiFi Station
+sidebar_label: Connect and Claim Station
 slug: /wxm-devices/wifi-m5-bundle/m5-connect-and-claim
 ---
 
@@ -31,78 +31,7 @@ In this chapter, you will find guidance to set up the WXM-M5.
 
 <hr/>
 
-### Connect LoRaWan antenna (Optional)
 
-<section class="explanation">
-  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/LoRaWan-antenna.svg")} />
-  <span>
-
-If the installation of the station and the placement of the M5 miner is more than 50m apart, you must install the LoraWan antenna so that the two can communicate over such distance.
-Please follow the instructions below, or in the video.
-
-[![Instruction on how to switch to LoRaWan antenna](/img/wxm-devices/wifi-m5-bundle/video-LoRaWan.png)](https://www.youtube.com/watch?v=FP4rT3FTz0M&)
-
-  </span>
-</section>
-
-:::caution
-If the station and M5 are more than 50m apart, you must install the LoRaWan antenna. Else the station might not be able to properly communicate with M5, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
-:::
-
-<details class="accordion">
-
-<summary>M5 LoRaWan Antenna Installation Instructions</summary>
-
-
-#### M5 Antenna Troubleshooting
-
-WXM-M5 is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
-while the LoRa antenna is responsible for the communication between the WXM-M5 and the outdoor sensor.
-
-On the left side of the WXM-M5 you may notice that there are two different slices, a gray for GPS and a blue for LoRa.
-Each of these slices contains a system relevant to the antennas mentioned above.
-
-By default, the external GPS antenna and the internal RF/LoRa antenna are connected, and there is no need to modify this.
-
-The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables unless there is a serious problem.
-
-#### Switch external/internal GPS antenna
-
-The WXM-M5 beta v1 uses by default the external GPS antenna, which should be connected to the port on the gray GPS slice
-In case you desire to change the internal/external GPS antenna, follow the following steps:
-
-1. Unscrew and remove the four screws behind the WXM-M5.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
-1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
-   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
-1. Clasp the cap back and screw the device.
-1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
-
-#### Switch external/internal Radio Function (RF) - LoRa antenna
-
-The WXM-M5 beta v1 uses by default the internal LoRa antenna.
-In case you desire to change the internal/external LoRa antenna, follow the following steps:
-
-1. Unscrew and remove the four screws behind the WXM-M5.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WXM-M5.
-1. Remove the gray GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the WXM-M5.
-1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
-   Remove the cable, which is connected to a specific reception on the green board and
-   connect the desired cable to the same reception.
-1. Clasp the slices and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WXM-M5.
-
-##### Internal parts of the WXM-M5
-
-- (a) Bottom is the first cap you remove once the WXM-M5 is unscrewed.
-- (b) The gray GPS is the second slice
-- (c) the blue RF LoRa is the third slice
-- (d) The TOP is the rest of WXM-M5 device.
-  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
-
-</details>
-
-<hr/>
 
 ### Connect M5 to power source and turn device on
 
@@ -142,7 +71,7 @@ If the GPS signal is lost, you could receive less WXM rewards (or none). This is
 <hr/>
 
 
-### Change Frequency
+### Change Frequency (Optional)
 
 <section class="explanation">
 <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/frequency.svg")} />
@@ -180,9 +109,13 @@ If you don't use the correct frequency as your station, M5 won't be able to comm
 By now, your M5 is set and ready for claiming!
 Swipe left to navigate to M5 settings screen. There, tap on "configure WiFi" to get M5 to switch to connect mode.
 
-Once this is done, connect to M5 via WiFi (you should see in the networks screen a "WXM M5 Something").
+Once this is done, connect to M5 via WiFi (you should see in the networks screen a "WXMMinerM5").
 
 A popup will open, asking you to select the desired network you'd like to connect the M5. Select the one you want, and provide the password for it.
+
+:::note
+Once the WiFi credentials have been successfully transfered to M5 Miner, the device will reboot, and the WiFi icon will turn green!
+:::
 
 
 <hr/>
