@@ -15,6 +15,7 @@ module.exports = {
       type: "category",
       label: "WeatherXM Devices",
       items: [
+				"wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
 				"wxm-devices/wifi-m5-bundle/m5-contents",
 				"wxm-devices/wifi-m5-bundle/m5-assemble",
 				"wxm-devices/wifi-m5-bundle/m5-install-weather-station",
