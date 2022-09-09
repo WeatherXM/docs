@@ -16,13 +16,14 @@ In this chapter, you will find guidance to set up the WXM-M5.
 ## Prerequisites
 
 1. The station must be fully assembled (parts and batteries)
+1. A working smartphone with connection to the internet
 
 ## Step by Step Instructions
 
 ### Connect GPS antenna
 
 <section class="explanation">
-  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/gps.svg")} />
   <span>
     Attach the GPS antenna to M5. you should hear a "click" when it's properly installed.
   </span>
@@ -33,17 +34,20 @@ In this chapter, you will find guidance to set up the WXM-M5.
 ### Connect LoRaWan antenna (Optional)
 
 <section class="explanation">
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+  <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/LoRaWan-antenna.svg")} />
   <span>
 
 If the installation of the station and the placement of the M5 miner is more than 50m apart, you must install the LoraWan antenna so that the two can communicate over such distance.
-Please follow the instructions below, or on this <a href="https://www.youtube.com/watch?v=FP4rT3FTz0M&t" target="blank">video</a>.
+Please follow the instructions below, or in the video.
 
-:::caution
-If the station and M5 are more than 50m apart, you must install the LoraWan antenna
-:::
+[![Instruction on how to switch to LoRaWan antenna](/img/wxm-devices/wifi-m5-bundle/video-LoRaWan.png)](https://www.youtube.com/watch?v=FP4rT3FTz0M&)
+
   </span>
 </section>
+
+:::caution
+If the station and M5 are more than 50m apart, you must install the LoRaWan antenna. Else the station might not be able to properly communicate with M5, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
+:::
 
 <details class="accordion">
 
@@ -103,7 +107,7 @@ In case you desire to change the internal/external LoRa antenna, follow the foll
 ### Connect M5 to power source and turn device on
 
 <section class="explanation">
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/power-source.svg")} />
   <span>
 The M5 must be connected to a power source at all times.
 It has a limited battery, but you should not rely on it and keep it away from its power source.
@@ -117,10 +121,10 @@ If M5 turns off, you will not receive WXM rewards, as you won't be able to share
 <hr/>
 
 
-### Place M5 near a window (for better GPS singal)
+### Place M5 near a window (for better GPS signal)
 
 <section class="explanation">
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/near-a-window.svg")} />
   <span>
 
 For better GPS signal, it's highly recommended to place the M5 device near a window. Make sure that it has a good GPS coverage at all times.
@@ -141,7 +145,7 @@ If the GPS signal is lost, you could receive less WXM rewards (or none). This is
 ### Change Frequency
 
 <section class="explanation">
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
+<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/frequency.svg")} />
   <span>
 
 The M5's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
@@ -231,7 +235,7 @@ Follow the steps shown in the image below to find your M5's Serial Number. You'l
 <hr/>
 
 
-### Confirm station installation Location
+### Confirm station installation Location & Claim your Device
 
 
 <section class="explanation small-big">
@@ -242,6 +246,13 @@ Follow the steps shown in the image below to find your M5's Serial Number. You'l
 
 Allow access to you location so that the WXM app knows where you are planning to install your WeatherXM Station. Doing so, will make it easier to complete this step.
 
+Alternatively, you can find the location manually using the map.
+
+Once you've found the right location, tap on the checkbox to acknowledge the correctness of the installation location, and then tap on "Claim" button.
+That's it! You;ve now claimed your new WeatherXM Station, and you'll be able to see it's data on your WeatherXM apps!
+
+All you need to do now, is to add your compatible wallet so you can receive WXM rewards. To do so, please follow the instructions in the next chapetr ["Adding Wallets"](/wxm-devices/wifi-m5-bundle/adding-wallet). **Remember that as of today, WXM are on testnet!**
+
 :::note
 We do not track you, nor do we collect any data about your location.
 :::
@@ -251,9 +262,3 @@ Make sure you define the location that you will install your station as precise 
 :::
   </span>
 </section>
-
-
-<hr/>
-
-
-### Claim your device

@@ -25,6 +25,9 @@
   --background-color: #DCE0E9;
   --ifm-color-light-2: #EEF0F4;
   --ifm-color-bluetint: #E4F1FD;
+
+  --ifm-alert-background-color-highlight: #FBDEBC;
+  --ifm-color-warning-dark: #FFAB49;
 }
 
 [data-theme='dark'] {
@@ -73,7 +76,7 @@ html[data-theme='dark'] {
 }
 
 #__docusaurus main {
-  max-width: calc(100% - 600px);
+  max-width: calc(100% - 300px);
 }
 
 .menu {
@@ -192,6 +195,10 @@ a.block {
   cursor: pointer;
 }
 
+li::marker {
+  font-weight: 900;
+}
+
 .main-wrapper {
   background: var(--background-color);
 }
@@ -227,6 +234,16 @@ a.block {
 
 .device p {
   margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.device.no-shadow:hover {
+  box-shadow: none;
+  transform: none;
 }
 
 .device .device-info {
@@ -235,6 +252,15 @@ a.block {
   position: absolute;
   bottom: 0;
   background: var(--ifm-menu-color-background-active);
+}
+
+.app-store a img {
+  transition: all .3s ease-out;
+}
+
+.app-store a img:hover {
+  transform: translate3d(0, -10px, 0);
+  box-shadow: 0 40px 34px -20px #00000039;
 }
 
 .explanation {
@@ -300,15 +326,20 @@ a.block {
   width: 100%;
 }
 
+details summary {
+  text-align: center;
+  font-weight: 900;
+  color: var(--ifm-color-primary);
+}
+
 details.alert.alert--info {
-  border-color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
   background-color: var(--ifm-menu-color-background-hover);
 }
 
 details.alert.alert--info summary::before {
   border-color: transparent transparent transparent var(--ifm-color-primary);
 }
-
 
 @media only screen and (max-width: 996px) {
   .navbar {
