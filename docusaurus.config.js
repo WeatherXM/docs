@@ -13,6 +13,10 @@ const config = {
   trailingSlash: false,
 
   presets: [
+    'docusaurus-plugin-hotjar'
+  ],
+
+  presets: [
     [
       "@docusaurus/preset-classic",
       {
@@ -33,6 +37,9 @@ const config = {
   ],
 
   themeConfig: {
+    hotjar: {
+      applicationId: 2542811,
+    },
     colorMode: {
       defaultMode: "light",
       disableSwitch: false,
