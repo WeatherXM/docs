@@ -8,7 +8,7 @@ Maintained by WeatherXM - Community contributions encouraged.
 
 - [Node.js](https://nodejs.org/en/download) version >= 14
 
-- [Yarn](https://yarnpkg.com/getting-started/install) version >= 1.5
+- [Yarn](https://yarnpkg.com/getting-started/install) version >= 3
 
 ## Installation
 
