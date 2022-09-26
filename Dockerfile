@@ -8,6 +8,9 @@ ENV NPM_CONFIG_COLOR=false
 
 # We'll run the app as the `node` user, so put it in their home directory
 WORKDIR /home/node/app
+# Do the chown so that the node_modules/.cache can be updated
+RUN chown -R node:node /home/node
+
 # Copy the source code over
 COPY --chown=node:node . /home/node/app/
 
