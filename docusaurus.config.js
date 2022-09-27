@@ -14,11 +14,6 @@ const config = {
     deploymentBranch: "gh-pages",
     trailingSlash: false,
 
-    // scripts: [{
-    //     src: "/static/js/loadtag.js",
-    //     async: true,
-    // }, ],
-
     plugins: [
         // ...
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
