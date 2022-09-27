@@ -1,4 +1,5 @@
 const path = require("path");
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -42,7 +43,7 @@ const config = {
 
     themeConfig: {
         hotjar: {
-            applicationId: 2542811,
+            applicationId: process.env.HOTJAR_SITE_ID,
         },
         colorMode: {
             defaultMode: "light",
