@@ -11,9 +11,9 @@ module.exports = function(context) {
         );
     }
 
-    const { siteId } = hotjar;
+    const { applicationId } = hotjar;
 
-    if (!siteId) {
+    if (!applicationId) {
         throw new Error(
             "Error in `themeConfig`. `hotjar` object found but `siteId` prop is missing."
         );
@@ -34,7 +34,7 @@ module.exports = function(context) {
                   function () {
                     (h.hj.q = h.hj.q || []).push(arguments);
                   };
-                h._hjSettings = { hjid: ${siteId}, hjsv: 6 };
+                h._hjSettings = { hjid: ${applicationId}, hjsv: 6 };
                 a = o.getElementsByTagName("head")[0];
                 r = o.createElement("script");
                 r.async = 1;
