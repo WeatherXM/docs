@@ -14,7 +14,7 @@ const config = {
 
     scripts: [{
         src: "/static/js/loadtag.js",
-        async: false,
+        async: true,
     }, ],
 
     presets: ["docusaurus-plugin-hotjar"],
