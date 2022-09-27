@@ -1,3 +1,5 @@
+const path = require("path");
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "WeatherXM Docs",
@@ -12,11 +14,15 @@ const config = {
     deploymentBranch: "gh-pages",
     trailingSlash: false,
 
-    scripts: [{
-        src: "/static/js/loadtag.js",
-        async: true,
-    }, ],
+    // scripts: [{
+    //     src: "/static/js/loadtag.js",
+    //     async: true,
+    // }, ],
 
+    plugins: [
+        // ...
+        path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
+    ],
     presets: ["docusaurus-plugin-hotjar"],
 
     presets: [
@@ -41,7 +47,7 @@ const config = {
 
     themeConfig: {
         hotjar: {
-            applicationId: 2542811,
+            siteId: 2542811,
         },
         colorMode: {
             defaultMode: "light",
