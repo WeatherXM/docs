@@ -42,7 +42,7 @@ const config = {
 
     themeConfig: {
         hotjar: {
-            applicationId: process.env.HOTJAR_SITE_ID,
+            applicationId: 2542811,
         },
         colorMode: {
             defaultMode: "light",
