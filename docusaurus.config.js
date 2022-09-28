@@ -19,7 +19,6 @@ const config = {
         // ...
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
     ],
-    presets: ["docusaurus-plugin-hotjar"],
 
     presets: [
         [
