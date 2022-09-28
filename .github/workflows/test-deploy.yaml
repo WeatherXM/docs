@@ -14,9 +14,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: yarn
+          package-manager: npm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm i -s
       - name: Test build website
-        run: yarn build
+        run: npm run build
