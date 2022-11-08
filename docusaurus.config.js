@@ -68,7 +68,7 @@ const config = {
                     activeBaseRegex: `devices`,
                 },
                 {
-                    to: "/glossary/glossary",
+                    to: "/glossary",
                     label: "Glossary",
                     position: "left",
                     activeBaseRegex: `glossary`,
