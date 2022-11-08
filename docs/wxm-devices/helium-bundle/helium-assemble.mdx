@@ -1,0 +1,174 @@
+---
+id: helium-assemble
+title: Assembling WXM-WS2000 Weather Station
+sidebar_label: Assembling WXM-WS2000
+slug: /wxm-devices/helium-bundle/helium-assemble
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+Setting up the current weather station is a process of several steps in order to make this system work properly
+and measure weather conditions as accurately as possible.
+
+## Prerequisites for proper assembly
+
+1. Screwdriver (included)
+2. Metal wrench (included)
+3. Batteries, X3 AA (not included)
+
+:::caution
+In order to properly deploy the weather station, you will need three (3) AA batteries. These are not included in the box.
+:::
+
+## Main Parts
+
+### Outdoor Weather Station 
+
+The outdoor sensor is a set of sensors encased in a plastic shell that ensures the proper function of the weather station.
+
+The outdoor sensor is responsible for the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
+
+<h4>Components</h4>
+  
+<section class="explanation two-columns">
+    <img src={useBaseUrl("/img/wxm-devices/helium-bundle/ws2000a_b-parts.svg")} />
+  <div>  
+    
+      <ol>
+      <li>Rain gauge</li>
+      <li>Balance indicator</li>
+      <li>UV and Light Intensity sensor</li>
+      <li>Wind vane</li>
+      <li>Wind cups</li>
+      <li>Antenna</li>
+      <li>Solar panel</li>
+      <li>Radiation shield, temperature and humidity sensor, barometric pressure sensor</li>
+      <li>Drain holes</li>
+      <li>Built-in battery box</li>
+      <li>Red LED indicator</li>
+      <li>Config button</li>
+      <li>Mounting clamp</li>
+      <li>Adjustable hinge of solar panel</li>
+      <li>Tipping bucket</li>
+      <li>Rain sensor</li>
+      </ol> 
+  </div>
+</section>
+
+For further details about an advisable installation of the outdoor sensor, please see [Installing the WXM-WS2000 Weather Station](/wxm-devices/helium-bundle/helium-install-weather-station).
+
+<hr/>
+
+## Step by step instructions
+
+### Battery installation diagram (Build-in box)
+
+<div class="control">
+    <img src={useBaseUrl("/img/wxm-devices/helium-bundle/battery diagram-1.svg")} />
+</div>
+
+- **Step 1:** Unscrew the battery door at the bottom of weather station.
+
+- **Step 2:** Insert the 3 AA batteries according to the +/- polarity indicated. Then close the battery door.
+
+- **Step 3:** Tighten the battery door screw.
+
+### Battery installation diagram (External box)
+
+  <div class="control">
+    <img src={useBaseUrl("/img/wxm-devices/helium-bundle/external-battery-box.svg")} />
+  </div>
+
+  - **Step 1:** Slide the battery box lock switch to unlock position. Push to open the battery box door according to the arrow direction.
+
+  - **Step 2:** Insert the 6 AA batteries according to the +/- polarity indicated.
+
+  - **Step 3:**  Place and lock the battery box door.
+
+<div class="control">
+  <img src={useBaseUrl("/img/wxm-devices/helium-bundle/battery-diagram-2.svg")} />
+</div>
+
+  - **Step 4:**  Unscrew the battery door at bottom the of weather station.
+
+  - **Step 5:**  Insert the dummy battery to the battery compartment, make sure the is +/- polarity in correct orientation.
+
+  - **Step 6:**  Replace with the battery door which come along with the external battery box, then tighten the battery door screw.
+
+
+:::caution
+If the dummy battery is not installed in correct orientation, battery power connection will be
+failure and the LED indicator will not be flashing.
+:::
+
+:::caution
+**Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
+Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
+thus no point using rechargeable ones.
+:::
+
+:::caution
+Batteries should not be installed backwards. This may permanently damage the outdoor sensor.
+:::
+
+Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
+
+The primary power source for the outdoor sensor is the solar panel. When available solar power (sun light) a super capacitor is charged
+and is later used during night and when there is insufficient solar light.
+In climates that frequently sustain temperatures below 0°C (or 32°F) the use of Lithium batteries is suggested
+as these are performing better than Alkaline batteries under such circumstances, but depends on battery manufacturer and quality.
+
+:::note Note 2
+In case that LED is permanently on or does not light up at all,
+make sure that the batteries are inserted fully and in the correct way.
+:::
+
+### LED of Sensor Working Status
+
+At the bottom of the weather station are buttons and indicators:
+
+<div class="control">
+    <img src={useBaseUrl("/img/wxm-devices/helium-bundle/button-indicators.svg")} />
+</div>
+
+Once the batteries are inserted, the LED indicator on the back of the sensor should turn on for 4 seconds
+and then flash every 16 seconds indicating that the sensor transmits the data.
+
+### Adjust the solar panel
+
+The tilting angle of solar panel can be adjusted vertically from 0° into 15°, 30°, 45° and 60°positions depending on the area you are living in. For optimal power output year-round,
+please set the tilt angle that is closest to your latitude.
+
+<details class="accordion">
+
+<summary>Set tilt angle of solar panel related to your location</summary>
+
+| Location ( latitude, longtitude)  | Solar panel tilt angle    |     
+| -----------------------           | ------------------------  |
+| Hamburg (53.558, 9.7874)          | 60°                       |
+| Chicago (42.1146, -88.0464)       | 45°                       |
+| Houston (29.7711, -95.3552)       | 30°                       |
+| Bangkok (14.2752, 100.5684)       | 15°                       |
+| Sydney (-33.5738, 151.3053) *     | 30°                       |
+
+** *Sensors installed in Southern Hemisphere must have their solar panels facing North. **
+
+<div class="control">
+    <img src={useBaseUrl("/img/wxm-devices/helium-bundle/tilt-angle.svg")} />
+</div>
+
+</details>
+
+<div class="control">
+  <img src={useBaseUrl("/img/wxm-devices/helium-bundle/adjust-solar-panel.svg")} />
+</div>
+
+- **Step 1:** Remove the solar panel protection film.
+
+- **Step 2:** Loosen the screw lightly until the gears on the opposite side separated from lock position.
+
+- **Step 3:** Adjust the vertical angle of the solar panel (0°, 15°, 30°, 45°, 60°) according to the latitude of your location.
+
+- **Step 4:** Push the gear and tighten the screw until the gears are securely locked.
+
+<hr/>
