@@ -62,7 +62,7 @@ const config = {
                     activeBaseRegex: `project`,
                 },
                 {
-                    to: "/wxm-devices/wifi-m5-bundle/m5-contents",
+                    to: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
                     label: "WeatherXM Devices",
                     position: "left",
                     activeBaseRegex: `devices`,
