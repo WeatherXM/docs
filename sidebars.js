@@ -38,6 +38,7 @@ module.exports = {
 					"wxm-devices/helium-bundle/helium-assemble",
 					"wxm-devices/helium-bundle/helium-install-weather-station",
 					"wxm-devices/helium-bundle/helium-connect-and-claim",
+					"wxm-devices/helium-bundle/helium-update-firmware",
 					"wxm-devices/helium-bundle/helium-troubleshooting",
 					"wxm-devices/helium-bundle/helium-specs"
 	      ],
@@ -47,6 +48,7 @@ module.exports = {
       collapsed: false,
     },
     "wallet/adding-wallet",
+	"account/delete-account",
     "glossary/glossary"
   ]
 };
