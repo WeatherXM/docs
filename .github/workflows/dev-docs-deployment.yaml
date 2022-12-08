@@ -2,8 +2,8 @@ name: Deploy on Staging
 
 on:
   workflow_dispatch:
-    tags:
-      - staging
+  tags:
+    - staging
 
 jobs:
   build:
