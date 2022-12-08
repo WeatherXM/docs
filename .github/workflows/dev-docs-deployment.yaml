@@ -21,7 +21,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Updating docs container...
-          docker stop docs
-          docker rm docs
-          docker build -t docs .
-          docker run -d -p 3006:3006 --restart always --name docs docs
+          docker-compose down
+          docker-compose up -d
