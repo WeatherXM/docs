@@ -14,9 +14,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Updating docs container...
-          git tag --delete staging
-          git pull
-          git fetch --all --tags
-          git checkout tags/staging
           docker-compose down --remove-orphans
           docker-compose up -d --build --force-recreate
