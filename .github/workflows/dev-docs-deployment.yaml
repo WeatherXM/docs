@@ -15,4 +15,4 @@ jobs:
         run: |
           echo Updating docs container...
           docker-compose down --remove-orphans
-          docker-compose up -d
+          docker-compose up -d --build --force-recreate
