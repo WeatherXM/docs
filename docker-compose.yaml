@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  docs:
+    build: .
+    restart: always
+    container_name: docs
+    ports:
+      - 3006:80
