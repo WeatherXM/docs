@@ -1,9 +1,9 @@
 name: Deploy on Staging
 
 on:
-  create:
-    tags:
-      - staging
+  push:
+    branches:
+      - "*"
 
 jobs:
   build:
