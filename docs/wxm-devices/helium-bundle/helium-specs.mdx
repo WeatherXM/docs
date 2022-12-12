@@ -5,11 +5,22 @@ sidebar_label: WXM-WS2000 Specifications
 slug: /helium-specs
 ---
 
+import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Features and Specifications
 
 ### WXM-WS2000
+
+<Tabs
+  defaultValue="metric"
+  values={[
+    { label: 'Mteric', value: 'metric', },
+    { label: 'Imperial', value: 'imperial', },
+  ]
+}>
+
+<TabItem value="metric">
 
 Powered via a small solar panel.
 The maximum communication distance is 2 to 10km depending on the environment.
@@ -106,10 +117,107 @@ The maximum communication distance is 2 to 10km depending on the environment.
 
 ##### * The battery life varies from data upload interval and distance between gateway.
 
+</TabItem>
+
+<TabItem value="imperial">
+
+Powered via a small solar panel.
+The maximum communication distance is 1.24 to 6.21mi depending on the environment.
+
+- #### Air Temperature:
+
+    - Range: -40.0 - 176.0°F
+    - Accuracy: ±0.5°F (0 - 176°F) ±0.6°F (-40 - 32°F)
+    - Resolution: 0.1°F 
+
+- #### Air Humidity
+
+    - Range: 1 - 99% RH
+    - Accuracy: ±3% (1 - 90%RH) ±4% (90 - 99%RH)
+    - Resolution: 1%RH
+
+- #### Rain Hourly Rate:
+
+    - Range: 0 - 17.7in/h
+    - Accuracy: ±7%
+    - Resolution: 0.01mm/h
+
+- #### Barometric Pressure
+
+    - Range: 540 - 1100hPa
+    - Accuracy: ±5hPa(700 - 1100hPa) ±8hPa (540 - 699hPa)
+    - Resolution: 1100hPa
+
+- #### Wind Speed 
+
+    - Range: 0 - 111.8mph
+    - Accuracy: ±0.5mph (<11.1mph) ±10% (>11.1mph)
+    - Resolution: 0.1mph
+
+- #### Wind Direction
+
+    - Range: 0 - 360°
+    - Accuracy: ± 8°
+    - Resolution: 1°
+
+- #### Light Intensity
+
+    - Range: 0 - 200000 lux
+    - Accuracy: ± 5%
+    - Resolution: 1 lux
+
+- #### UV Index
+
+    - Range: 0 - 16.0
+    - Accuracy: ±10%
+    - Resolution: 0.1
+
+### General Parameters
+
+- #### Operating Temperature: 
+    - -4 to +140°F (Use of alkaline batteries suggested) 
+    - -4 to +140°F (Lithium battery)
+
+- #### Operating Humidity:
+
+    - 0 - 99%RH
+
+- #### Device Weight:
+
+    - 3.3lb
+
+- #### Certification:
+
+    - CE / FCC / RoHS
+
+- #### Solar Panel:
+
+    -  0.5W (When there is sunlight, solar panels will be used first, otherwise batteries will be used)
+
+- #### Battery Type:
+
+    - AA size, 1.5V batteries (alkaline or non-rechargeable Lithium battery)
+
+- #### Number of batteries:
+
+    - External battery box: x6 AA batteries
+
+- #### Battery Life:
+
+    - 2 years (solar panel with external battery box, 1h/uplink)
+
+- #### External Battery Box
+
+    - Support x6 AA 1.5V batteries
+    - Cable length: 6.56ft
+    - IP Rating: IPX6
 
 
+##### * The battery life varies from data upload interval and distance between gateway.
 
+</TabItem>
 
+</Tabs>
 
 
 
