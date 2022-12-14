@@ -7,73 +7,18 @@ slug: /wxm-devices/wifi-m5-bundle/assemble-m5
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Setting up the current weather station is a process of several steps in order to make this system work properly
+Setting up the weather station is a process of several steps in order to make this system work properly
 and measure weather conditions as accurately as possible.
 
 ## Prerequisites for proper assembly
 
 1. Screwdriver (included)
 1. Metal wrench (included)
-1. Batteries, X2 AA (not included)
+1. Batteries, x2 AA (not included)
 
 :::caution
 In order to properly deploy the weather station, you will need two (2) AA batteries. These are not included in the box.
 :::
-
-## Main Parts
-
-### Outdoor Weather Station
-
-The outdoor sensor is a set of sensors encased in a plastic shell that ensures the proper function of the weather station.
-
-The outdoor sensor is responsible for:
-
-1. the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
-1. the wireless transmission of the data to the weather miner.
-
-<section class="explanation two-columns">
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000a_b-parts.svg")} />
-  <div>
-    <h4>Components</h4>
-    <ol>
-      <li>Wind Speed Sensor</li>
-      <li>Wind Vane</li>
-      <li>Thermo-hygro sensor</li>
-      <li>Rain collector</li>
-      <li>Bubble level</li>
-      <li>Solar panel</li>
-      <li>Antenna</li>
-      <li>Light sensor</li>
-      <li>U-Bolt</li>
-      <li>Battery compartment</li>
-      <li>Reset button</li>
-      <li>LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).</li>
-    </ol>
-  </div>
-</section>
-
-This part of your weather station is placed outdoors.
-For further details about an advisable installation of the outdoor sensor, please see [Installing the WXM-WS1000 Weather Station](/wxm-devices/wifi-m5-bundle/install-weather-station).
-
-The following figures show a sketch of the outdoor sensor. The sketch comes with a description of all the important parts and sensors of it.
-
-
-### M5 Miner
-
-<section class="explanation">
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.svg")} />
-  <div>
-    <h4>Components</h4>
-    <p>
-      This is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM IoT platform.
-      The weather miner is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C for proper functioning of the barometer),
-      near a window (for better GPS signal). The weather miner should be permanently connected to power and activated in order to be able to receive, record and upload measurements to the internet.
-      The following scheme describes the buttons and connectivities of the WXM-M5 data miner. Briefly, there is a power and a reset button on the WXM-M5, a GPS port for the GPS antenna and a usb type-c port for power supply.
-    </p>
-  </div>
-</section>
-
-<hr/>
 
 ## Step by step instructions
 
@@ -88,7 +33,7 @@ The following figures show a sketch of the outdoor sensor. The sketch comes with
       Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor,
       which is on the opposite side of the rain collector. Be sure that you place the wind cup assembly on the shaft at the top part of the sensor.
       The wind vane should be placed on the shaft at the bottom of the sensor.
-      After pushing each of the parts, tighten the set screw, with a Philips screwdriver (size PH0).
+      After pushing each of the parts, tighten the set screw with a Phillips screwdriver (size PH0).
     </p>
   </div>
 </section>
@@ -109,16 +54,16 @@ However, the wind vane’s movement has a small amount of friction, which assist
 
 #### Battery installation diagram
 
-Use a screwdriver to open the battery compartment and insert 2 AA batteries in it (Fig. 8).
+Use a screwdriver to open the battery compartment and insert 2 AA batteries (Fig. 8).
 Once the batteries are inserted, the LED indicator on the back of the sensor should turn on for 4 seconds
 and then flash every 16 seconds indicating that the sensor transmits the data.
-Note that the light flashing only indicates the transmission of the data from the outdoor sensor
-and it does not assure the reception of the data by the weather miner.
+Note that the LED flashing only indicates the transmission of the data from the outdoor sensor
+and it does not assure the reception of the data by the M5 Miner.
 
 :::caution
 **Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
-Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
-thus no point using rechargeable ones.
+Solar panel is not used for charging the batteries, but only provides power to an internal super capacitor,
+thus no point in using rechargeable ones.
 :::
 
 :::caution
@@ -127,10 +72,10 @@ Batteries should not be installed backwards. This may permanently damage the out
 
 Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
 
-The primary power source for the outdoor sensor is the solar panel. When available solar power (sun light) a super capacitor is charged
+The primary power source for the outdoor sensor is the solar panel. When solar power is available, a super capacitor is charged
 and is later used during night and when there is insufficient solar light.
-In climates that frequently sustain temperatures below 0°C (or 32°F) the use of Lithium batteries is suggested
-as these are performing better than Alkaline batteries under such circumstances, but depends on battery manufacturer and quality.
+In climates that frequently sustain temperatures below 0°C (or 32°F) the use of aithium batteries is recommended
+as these are performing better than alkaline batteries under such circumstances, but depend on battery manufacturer and quality.
 
 #### Remove Sticker from Solar Panel
 
@@ -139,7 +84,7 @@ Remove the black sticker from the solar panel. If not, batteries will deplete an
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/remove-sticker.png")} />
 </div>
 
-:::note Note 2
+:::note
 In case that LED is permanently on or does not light up at all,
 make sure that the batteries are inserted fully and in the correct way.
 :::
@@ -155,7 +100,7 @@ make sure that the batteries are inserted fully and in the correct way.
 #### U-bracket installation
 
 The U-bolts and the metal plate are used to support the mounting of the outdoor sensor on a pole.
-The straight edge of the metal plate is inserted in a groove on the bottom of the unit (at the opposite side of the solar panel).
+The straight edge of the metal plate is inserted in the groove at the bottom of the unit (at the opposite side of the solar panel).
 The curved part of the 90-degree angle bent edge of the metal plate should be oriented to the wind sensor in order to “hug” the mounting pole.
 After inserting the metal plate, the U-bolts should be inserted through the respective holes of the metal plate.
 Loosely screw the nuts on the ends of the U-bolts. They will be tightened later when mounting on the pole (see [Mounting the outdoor sensor](/wxm-devices/wifi-m5-bundle/install-weather-station#mounting-the-outdoor-sensor)).
