@@ -29,10 +29,26 @@ module.exports = {
 	      ],
 	      collapsed: true,
 	    },
+	    {
+	      type: "category",
+	      label: "WXM-WS2000",
+	      items: [
+					"wxm-devices/helium-bundle/wxm-ws2000-introduction",
+					"wxm-devices/helium-bundle/helium-contents",
+					"wxm-devices/helium-bundle/helium-assemble",
+					"wxm-devices/helium-bundle/helium-connect-and-claim",
+					"wxm-devices/helium-bundle/helium-update-firmware",
+					"wxm-devices/helium-bundle/helium-install-weather-station",
+					"wxm-devices/helium-bundle/helium-troubleshooting",
+					"wxm-devices/helium-bundle/helium-specs"
+	      ],
+	      collapsed: true,
+	    }
       ],
       collapsed: false,
     },
     "wallet/adding-wallet",
+	"account/delete-account",
     "glossary/glossary"
   ]
 };
