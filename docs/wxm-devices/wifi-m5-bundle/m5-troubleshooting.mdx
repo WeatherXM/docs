@@ -84,7 +84,7 @@ If the problem remains and you use the internal GPS antenna, switch to the exter
   <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/LoRaWan-antenna.svg")} />
   <span>
 
-If the installation of the station and the placement of the M5 Miner is more than 50m/164ft apart, you must install the LoRa antenna so that the two can communicate over such distance.
+If the installation of the station and the placement of the M5 Miner is more than 50m/~160ft apart, you must install the LoRa antenna so that the two can communicate over such distance.
 Please follow the instructions below, or in the video.
 
 [![Instruction on how to switch to LoRa antenna](/img/wxm-devices/wifi-m5-bundle/video-LoRaWan.png)](https://www.youtube.com/watch?v=FP4rT3FTz0M&)
@@ -93,7 +93,7 @@ Please follow the instructions below, or in the video.
 </section>
 
 :::caution
-If the station and M5 are more than 50n/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5 Miner, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
+If the station and M5 are more than 50m/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5 Miner, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
 :::
 
 <details class="accordion">
@@ -106,8 +106,8 @@ If the station and M5 are more than 50n/164ft apart, you must install the LoRa a
 M5 Miner is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
 while the LoRa antenna is responsible for the communication between the M5 Miner and the weather station.
 
-On the left side of the M5 Miner you may notice that there are two different slices, a grey for GPS and a blue for LoRa.
-Each of these slices contains a system relevant to the antennas mentioned above.
+On the left side of the M5 Miner you may notice that there are two different caps, a grey for GPS and a blue for LoRa.
+Each of these caps contains a system relevant to the antennas mentioned above.
 
 By default, the external GPS antenna and the internal LoRa antenna are connected, and there is no need to modify this.
 
@@ -115,7 +115,7 @@ The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables u
 
 #### Switch external/internal GPS antenna
 
-The M5 Miner beta v1 uses by default the external GPS antenna, which should be connected to the port on the grey GPS slice
+The M5 Miner uses by default the external GPS antenna, which should be connected to the port on the grey GPS cap,
 In case you desire to change the internal/external GPS antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the M5 Miner.
@@ -123,28 +123,31 @@ In case you desire to change the internal/external GPS antenna, follow the follo
 1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
    Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
 1. Clasp the cap back and screw the device.
-1. In case you changed to external GPS antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
+1. In case you changed to the external GPS antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
 
-#### Switch external/internal Radio Function (RF) - LoRa antenna
+#### Switch external/internal LoRa antenna
 
 The M5 Miner beta v1 uses by default the internal LoRa antenna.
 In case you desire to change the internal/external LoRa antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the M5 Miner.
 1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
-1. Remove the grey GPS slice. Again you may use a flat-head screwdriver to separate the slice from the rest of the M5 Miner.
+1. Remove the grey GPS cap. Again you may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
 1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
    Remove the cable, which is connected to a specific reception on the green board and
    connect the desired cable to the same reception.
-1. Clasp the slices and the cap back and screw the device.
+1. Clasp the caps and the cap back and screw the device.
 1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
 
 ##### Internal parts of the M5 Miner
 
-- a. Bottom is the first cap you remove once the M5 Miner is unscrewed.
-- b. The second slice in grey is the GPS
-- c. The third slice in blue is the LoRa
-- d. Top slice is the rest of M5 Miner.
+a. Bottom is the first cap you remove once the M5 Miner is unscrewed.
+
+b. The second cap in grey is the GPS
+
+c. The third cap in blue is the LoRa
+
+d. Top cap in white is the rest of M5 Miner.
   <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.png")} />
 
 </details>
