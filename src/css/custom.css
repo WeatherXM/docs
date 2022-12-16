@@ -222,7 +222,7 @@ li::marker {
   border-radius: 10px;
   box-shadow: 0 20px 24px -14px #00000069;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   position: relative;
   transition: all .3s ease-out;
   max-width: calc(50% - 10px);
@@ -234,8 +234,8 @@ li::marker {
 }
 
 .device img {
-  border-radius: 0;
-  padding-bottom: 100px;
+  border-radius: 10;
+  padding-bottom: -80px;
 }
 
 .device p {
@@ -255,8 +255,8 @@ li::marker {
 .device .device-info {
   padding: 20px;
   border-radius: 10px;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: auto;
   background: var(--ifm-menu-color-background-active);
 }
 
