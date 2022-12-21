@@ -221,11 +221,11 @@ li::marker {
 .device {
   border-radius: 10px;
   box-shadow: 0 20px 24px -14px #00000069;
-  overflow: hidden;
-  margin-bottom: 10px;
-  position: relative;
+  overflow: auto;
+  margin-bottom: auto;
+  position: auto;
   transition: all .3s ease-out;
-  max-width: calc(50% - 10px);
+  max-width: calc(50% - 14px);
 }
 
 .device:hover {
@@ -235,11 +235,11 @@ li::marker {
 
 .device img {
   border-radius: 10;
-  padding-bottom: -80px;
+  margin-bottom: -20px;
 }
 
 .device p {
-  margin-bottom: 0;
+  margin-bottom: auto;
   white-space: pre-wrap;
 }
 
@@ -256,7 +256,7 @@ li::marker {
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  bottom: auto;
+  bottom: flex;
   background: var(--ifm-menu-color-background-active);
 }
 
