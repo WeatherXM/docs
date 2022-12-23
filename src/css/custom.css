@@ -193,6 +193,7 @@ section {
 .control img {
   width: 100%;
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 a.block {
@@ -277,6 +278,7 @@ li::marker {
 
 .explanation > * {
   width: calc(50% - 10px);
+  margin-bottom: 20px;
 }
 
 .explanation.horizontal {

@@ -37,10 +37,14 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 ## You would also need
 
 Not included in the box (yet are necessary for proper use):
-1. Batteries (x2 AA)
-1. Pole
+1. Batteries 1.5V **not rechargeable** (x2 AA)
+1. Metal mounting pole (recommended 50mm/2in pole diameter & at least 2m/6.56ft height)
 1. Tools and parts to secure the pole
 1. USB power supply
+
+:::danger
+If you use rechargeable batteries, you may harm your device
+:::
 
 <hr/>
 
@@ -84,10 +88,9 @@ The following figures show a sketch of the outdoor sensor. The sketch comes with
 
 ### M5 Miner
 
-<section class="explanation">
+<section class="control">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.svg")} />
   <div>
-    <h4>Components</h4>
     <p>
       The M5 Miner is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM network.
       The M5 Miner is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer),
