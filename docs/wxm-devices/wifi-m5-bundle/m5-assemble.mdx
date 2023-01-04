@@ -24,15 +24,16 @@ In order to properly deploy the weather station, you will need two (2) AA batter
 
 ### Assembling the wind sensor
 
-<section class="control">
+<div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-cap-correct-false-position.svg")} />
 
 :::caution
 Be sure that you place the wind cup assembly on the shaft at the top part of the sensor. The wind vane should be placed on the shaft at the bottom of the sensor. 
 :::
+</div>
 
+<div class="control">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-wind-vane-assembly.svg")} />
-  <div>
     <p>The wind sensor consists of a part that measures the wind speed (through wind speed cup assembly)
       and another that measures the wind direction (though wind vane).
       Both wind speed cup assembly and wind vane should be pushed onto the shafts on the part of the outdoor sensor,
@@ -40,15 +41,12 @@ Be sure that you place the wind cup assembly on the shaft at the top part of the
       The wind vane should be placed on the shaft at the bottom of the sensor.
       After pushing each of the parts, tighten the set screw with a Phillips screwdriver (size PH0).
     </p>
-  </div>
-</section>
-
+</div>
 :::note
 Both parts should rotate freely. There should be no noticeable friction when the wind cup assembly rotates.
 However, the wind vane’s movement has a small amount of friction, which assists in providing steady wind direction measurements.
 :::
 
-<br/>
 <hr/>
 
 ### Installing batteries
@@ -62,16 +60,13 @@ However, the wind vane’s movement has a small amount of friction, which assist
   and then flash every 16 seconds indicating that the sensor transmits the data.
   Note that the LED flashing only indicates the transmission of the data from the outdoor sensor
   and it does not assure the reception of the data by the M5 Miner.
-
   Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
-</section>
-</div>
-  <p>
-    The primary power source for the outdoor sensor is the solar panel. When solar power is available, a super capacitor is charged
+  The primary power source for the outdoor sensor is the solar panel. When solar power is available, a super capacitor is charged
   and is later used during night and when there is insufficient solar light.
   In climates that frequently sustain temperatures below 0°C (or 32°F) the use of lithium batteries is recommended
   as these are performing better than alkaline batteries under such circumstances, but depend on battery manufacturer and quality.
-  </p>
+</section>
+</div>
 
 :::danger
 **Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
@@ -88,7 +83,7 @@ Batteries should not be installed backwards. This may permanently damage the out
 
 <div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/remove-sticker.svg")} />
-<section>
+<div>
   <p>
     Remove the black sticker from the solar panel. If not, batteries will deplete and then the station will switch off.
   </p>
@@ -96,7 +91,7 @@ Batteries should not be installed backwards. This may permanently damage the out
 :::note
 In case that LED is permanently on or does not light up at all,make sure that the batteries are inserted fully and in the correct way.
 :::
-</section>
+</div>
 </div>
 
 <hr/>
