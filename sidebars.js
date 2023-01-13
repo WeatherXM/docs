@@ -14,7 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "WeatherXM Devices",
-      items: [
+      items: [ 
 	    {
 	      type: "category",
 	      label: "WXM-WS1000",
@@ -45,10 +45,11 @@ module.exports = {
 	      collapsed: true,
 	    }
       ],
-      collapsed: false,
+      collapsed: true,  
     },
-    "wallet/adding-wallet",
+    "wallet/creating-wallet",
 	"account/delete-account",
-    "glossary/glossary"
+    "glossary/glossary",
+	"faqs/faqs"
   ]
 };
