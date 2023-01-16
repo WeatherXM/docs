@@ -335,7 +335,7 @@ li::marker {
 }
 
 details summary {
-  text-align: left;
+  text-align: center;
   font-weight: 500;
   color: var(--ifm-color-primary);
 }
