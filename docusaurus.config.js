@@ -16,7 +16,19 @@ const config = {
     trailingSlash: false,
 
     plugins: [
-        // ...
+        [
+            require.resolve("@cmfcmf/docusaurus-search-local"),
+            {
+                indexDocs: true,
+                indexBlog: true,
+                indexDocSidebarParentCategories: 0,
+                indexPages: false,
+                language: "en",
+                maxSearchResults: 10,
+            
+            },
+          ],
+
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
     ],
 

@@ -48,10 +48,24 @@
   --background-color: #040404;
   --ifm-color-light-2: #1D1E26;
   --ifm-color-bluetint: #162351;
+
+
+
+
+
 }
 
+
+
+
 html[data-theme='dark'] {
+
   --ifm-background-color: #040404;
+}
+
+.highlight{
+  border-radius: 24px;
+  padding: 5px 10px 5px 10px ;
 }
 
 .learnMore {
@@ -372,6 +386,82 @@ details.alert.alert--info summary::before {
     width: 100%;
   }
 
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .searchBox_ZlJk{
+    width: 60px !important;
+    height: 0px !important;
+    position: absolute !important;
+    right: 0% !important;
+    top: 8px !important;
+  }
+.aa-DetachedSearchButtonPlaceholder{
+  display: none !important;
+}
+.aa-DetachedSearchButton{
+  border: none !important;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {  
+  
+  .searchBox_ZlJk{
+  width: 50px !important;
+  height: 0px !important;
+  position: absolute !important;
+  right: 0% !important;
+  top: 8px !important;
+  
+}
+.aa-DetachedSearchButtonPlaceholder{
+  display: none !important;
+}
+.aa-DetachedSearchButton{
+  border: none !important;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {  .searchBox_ZlJk{
+  width: 50px !important;
+  height: 0px !important;
+  position: absolute !important;
+  right: 0% !important;
+  top: 8px !important;
+}
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .searchBox_ZlJk{
+    width: 300px !important;
+    height: 0px !important;
+    position: absolute !important;
+    left: 45% !important;
+    top: 8px !important;
+  }
+  .aa-DetachedSearchButtonPlaceholder{
+    display: block !important;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+  .searchBox_ZlJk{
+    width: 300px !important;
+    height: 0px !important;
+    position: absolute !important;
+    left: 45% !important;
+    top: 8px !important;
+  }
+  .aa-DetachedSearchButtonPlaceholder{
+    display: block !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
