@@ -21,11 +21,14 @@ const config = {
             {
                 indexDocs: true,
                 indexBlog: true,
-                indexDocSidebarParentCategories: 0,
+                indexDocSidebarParentCategories: 3,
                 indexPages: false,
                 language: "en",
                 maxSearchResults: 10,
-            
+                lunr: {
+                    tokenizerSeparator: /^[A-Z]{1,100}$/,
+                    parentCategoriesBoost: 3, 
+                }
             },
           ],
 
