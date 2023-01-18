@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function BetaTesting() {
   return (
     <span>
-      <Highlight color="#803380">Beta Testing</Highlight>
+      <Highlight color="#6b705c">Beta Testing</Highlight>
     </span>
   );
 }

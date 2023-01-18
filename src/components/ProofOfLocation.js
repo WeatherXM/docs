@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function ProofOfLocation() {
   return (
     <span>
-      <Highlight color="#803380">Proof of location</Highlight>
+      <Highlight color="#662e9b">Proof of location</Highlight>
     </span>
   );
 }

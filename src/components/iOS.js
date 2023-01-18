@@ -1,9 +1,9 @@
 import React from "react";
 import Highlight from "./Highlight";
-export default function iOS() {
+export default function IOS() {
   return (
     <span>
-      <Highlight color="#803380">iOS</Highlight>
+      <Highlight color="#da5552">iOS</Highlight>
     </span>
   );
 }

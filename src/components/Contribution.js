@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function Contribution() {
   return (
     <span>
-      <Highlight color="#803380">Contribution</Highlight>
+      <Highlight color="#132a13">Contribution</Highlight>
     </span>
   );
 }

@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function TokenLaunch() {
   return (
     <span>
-      <Highlight color="#803380">Token launch</Highlight>
+      <Highlight color="#3c096c">Token launch</Highlight>
     </span>
   );
 }

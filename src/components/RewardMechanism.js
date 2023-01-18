@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function RewardMechanism() {
   return (
     <span>
-      <Highlight color="#803380">Reward Mechanism</Highlight>
+      <Highlight color="#43bccd">Reward Mechanism</Highlight>
     </span>
   );
 }

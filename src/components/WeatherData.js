@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function WeatherData() {
   return (
     <span>
-      <Highlight color="#803380">Weather data</Highlight>
+      <Highlight color="#022b3a">Weather data</Highlight>
     </span>
   );
 }

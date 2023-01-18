@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function Orders() {
   return (
     <span>
-      <Highlight color="#803380">Orders</Highlight>
+      <Highlight color="#137547">Orders</Highlight>
     </span>
   );
 }

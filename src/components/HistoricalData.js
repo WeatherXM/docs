@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function HistoricalData() {
   return (
     <span>
-      <Highlight color="#803380">Historical Data</Highlight>
+      <Highlight color="#3d314a">Historical Data</Highlight>
     </span>
   );
 }

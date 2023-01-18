@@ -3,7 +3,7 @@ import Highlight from "./Highlight";
 export default function Explorer() {
   return (
     <span>
-      <Highlight color="#803380">Explorer</Highlight>
+      <Highlight color="#78290f">Explorer</Highlight>
     </span>
   );
 }
