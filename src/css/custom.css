@@ -349,7 +349,7 @@ li::marker {
 }
 
 details summary {
-  text-align: center;
+  text-align: left;
   font-weight: 500;
   color: var(--ifm-color-primary);
 }
