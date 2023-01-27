@@ -49,6 +49,7 @@ module.exports = {
     },
     "wallet/creating-wallet",
 	"account/delete-account",
+	"deployment-examples",
     "glossary/glossary",
 	"faqs/faqs"
   ]
