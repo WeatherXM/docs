@@ -5,7 +5,7 @@ require("dotenv").config();
 const config = {
     title: "WeatherXM Docs",
     tagline: "WeatherXM Documentation Page",
-    url: "https://docs.weatherxm.com",
+    url: "http://192.168.0.6:3000/",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
@@ -16,22 +16,7 @@ const config = {
     trailingSlash: false,
 
     plugins: [
-        [
-            require.resolve("@cmfcmf/docusaurus-search-local"),
-            {
-                indexDocs: true,
-                indexBlog: true,
-                indexDocSidebarParentCategories: 3,
-                indexPages: false,
-                language: "en",
-                maxSearchResults: 10,
-                lunr: {
-                    tokenizerSeparator: /^[A-Z]{1,100}$/,
-                    parentCategoriesBoost: 3, 
-                }
-            },
-          ],
-
+       
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
     ],
 
@@ -56,6 +41,14 @@ const config = {
     ],
 
     themeConfig: {
+        algolia: {
+            apiKey: '5ed17076734af954e373277dcf66ee78',
+            indexName: 'wxm_docs',
+            contextualSearch: true,
+            placeholder: 'Search',
+            appId: 'W1YK5U58GN',
+            // other search parameters
+        },
         hotjar: {
             applicationId: 2542811,
         },
