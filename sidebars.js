@@ -47,8 +47,15 @@ module.exports = {
       ],
       collapsed: true,  
     },
-    "wallet/creating-wallet",
-	"account/delete-account",
+	{
+		type: "category",
+		label: "Account",
+		items: [
+			"account/creating-wallet",
+			"account/delete-account",
+		],
+		collapsed: true,
+	  },
 	"deployment-examples",
     "glossary/glossary",
 	"faqs/faqs"

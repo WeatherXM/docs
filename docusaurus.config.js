@@ -41,14 +41,6 @@ const config = {
     ],
 
     themeConfig: {
-        algolia: {
-            apiKey: '5ed17076734af954e373277dcf66ee78',
-            indexName: 'wxm_docs',
-            contextualSearch: true,
-            placeholder: 'Search',
-            appId: 'W1YK5U58GN',
-            // other search parameters
-        },
         hotjar: {
             applicationId: 2542811,
         },
@@ -63,24 +55,7 @@ const config = {
                 src: "img/wxm-logo-wide-notagline.svg",
                 srcDark: "img/wxm-logo-wide-notagline-white.svg",
             },
-            items: [{
-                    to: "/project",
-                    label: "Project",
-                    position: "left",
-                    activeBaseRegex: `project`,
-                },
-                {
-                    to: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
-                    label: "WeatherXM Devices",
-                    position: "left",
-                    activeBaseRegex: `devices`,
-                },
-                {
-                    to: "/glossary",
-                    label: "Glossary",
-                    position: "left",
-                    activeBaseRegex: `glossary`,
-                },
+            items: [
                 {
                     href: "https://explorer.weatherxm.com/",
                     label: "Explorer",
