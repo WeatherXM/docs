@@ -51,9 +51,8 @@ module.exports = {
 		type: "category",
 		label: "Wallet",
 		items: [
-			"wallet/creating-wallet",
-			"wallet/how-to-join-on-testnet",
-			"wallet/how-to-add-WXM-on-metamask"
+			"wallet/add-edit-wallet",
+			"wallet/how-to-join-on-testnet-and-see-your-tokens",
 		],
 		collapsed: true,
 	  },

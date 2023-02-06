@@ -1,12 +1,16 @@
 ---
-id: how-to-join-on-testnet
-title: How to join on testnet
-sidebar_label: How to join on testnet
-slug: /wallet/how-to-join-on-testnet
+id: how-to-join-on-testnet-and-see-your-tokens
+title: How to join on testnet and see your tokens
+sidebar_label: How to join on testnet and see your tokens
+slug: /wallet/how-to-join-on-testnet-and-see-your-tokens
 ---
 
 import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
+:::tip
+If you don’t have a wallet, [create one](/wallet/create-wallet) which is recommended if you want to see test tokens.
+:::
 
 ### Add Polygon Network
 
@@ -18,8 +22,8 @@ as we are currently in testnet, **you need to add the Testnet network.**
 
 There are two ways to do it:
 
-1. [Using Polygonscan](/wallet/how-to-join-on-testnet#using-polygonscan) **(Only for Desktop with MetaMask browser extension already installed)**
-1. [Add the Polygon network manually](/wallet/how-to-join-on-testnet#add-the-polygon-network-manually)
+1. [Using Polygonscan](/wallet/how-to-join-on-testnet-and-see-your-tokens#using-polygonscan) **(Only for Desktop with MetaMask browser extension already installed)**
+1. [Add the Polygon network manually](/wallet/how-to-join-on-testnet-and-see-your-tokens#add-the-polygon-network-manually)
 
 <hr/>
 
@@ -124,3 +128,31 @@ Once you’ve added the URL in the New Network field, click on Save. You will be
 </Tabs>
 
 **You have successfully added the Polygon Network to your MetaMask!**
+
+<hr/>
+
+### Add WXM token in MetaMask
+
+For the WXM token to appear in the wallet UI, you will need to add it manually.
+Note that your wallet can still receive tokens that haven’t been imported.
+
+:::note IMPORTANT NOTE
+Please make sure you have already added the **Mumbai-Testnet** and have connected to it by following the guide above!
+:::
+
+1. First, you will need the following details of the WXM token in order to add it:
+    1. **Token Contract Address:** ``0xeCbbbF304fdf91cdDDA6C6643ED1300A552b691A``
+    1. **Token Symbol:** ``WXM``
+    1. **Token Decimal:** ``18``
+
+You can verify those details on [PolygonScan](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a).
+
+2. On MetaMask and click **[Import tokens]**.
+
+<img src={useBaseUrl("img/project/suggested-wallets/metamask-import-tokens.png")} />
+
+3. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
+
+4. Click **[Import Tokens]**.
+
+**You have now successfully added the WXM token to your MetaMask wallet!**
