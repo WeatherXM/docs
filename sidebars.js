@@ -51,8 +51,8 @@ module.exports = {
 		type: "category",
 		label: "Wallet",
 		items: [
-			"wallet/add-edit-wallet-adress",
-			"wallet/how-to-join-on-testnet-and-see-your-tokens",
+			"wallet/add-edit-wallet-address",
+			"wallet/how-to-join-on-testnet-and-see-your-tokens"
 		],
 		collapsed: true,
 	  },
