@@ -72,14 +72,14 @@ export const highlight = ({children, color}) => (
 
   ### Wind gusts are lower than I expect. Why?
 
-  Firstly, you need to check if your M5 is up-to-date with the latest firmware version (>3.22) (I don't know if this update is done automtically to everyone or how it works the update process). Secondly, you need to check that the outdoor sensor has no obstacles around. Here there is a tricky point. We firtsly say that the outdoor sensor needs to be 2 x height_of_obstacle, because even this criterion is not always doable and because the other sensors are ok with thsi criterion. However, the WMO criteria here for wind are: a.The wind sensor shall be sited so that any obstacle taller than 4m shall be at a distance equal to 10 times its height. For example, if an obstacle is 6m tall, it shall be no closer than 60m to the wind sensor and b. The wind sensor shall be sited so that any obstacle taller than 8m shall be at a distance of more than 15 times its width. For example, there is a tower that is 9m tall and 10m wide, then the wind sensor shall be sited more than 150m away
+  Firstly, you need to check if your M5 is up-to-date with the latest firmware version (>=0.3.22). Secondly, you need to check that the outdoor sensor has no obstacles around. Here there is a tricky point. We firtsly say that the outdoor sensor needs to be 2 x height_of_obstacle, because even this criterion is not always doable and because the other sensors are ok with thsi criterion. However, the WMO criteria here for wind are: a.The wind sensor shall be sited so that any obstacle taller than 4m shall be at a distance equal to 10 times its height. For example, if an obstacle is 6m tall, it shall be no closer than 60m to the wind sensor and b. The wind sensor shall be sited so that any obstacle taller than 8m shall be at a distance of more than 15 times its width. For example, there is a tower that is 9m tall and 10m wide, then the wind sensor shall be sited more than 150m away
   
   <hr />
 
   ### How often does the M5 transmit data?
 
-  Every 16s
-  
+  The M5 renders information on the screen every 16s and transmits data to the network every 1m (or more in older devices).
+
   <hr />
 
   ### Which is the time period I can track through my historical data?
@@ -108,7 +108,7 @@ export const highlight = ({children, color}) => (
 
   ### What is the ideal distance between stations?
 
-  Is a number that will vary depending on land morphology, local weather characteristics, and the WeatherXM network density. Currently, as a rule of thumb, the ideal distance bewteen two stations is 2.5-5 km.
+  Is a number that will vary depending on land morphology, local weather characteristics, and the WeatherXM network density.
   
   <hr />
 
@@ -353,7 +353,7 @@ export const highlight = ({children, color}) => (
 
   ### How many stations are allowed in a Hex?
 
-  Such details will be defined in our [whitepaper](https://docs.google.com/document/d/1_z-sdCoSpm7H5kH0Ko8grUn7IatmAObSdkQULr21YGc/edit). Currently one station per cell should be the best case scenario.
+  Such details will be defined in our [whitepaper](https://docs.google.com/document/d/1_z-sdCoSpm7H5kH0Ko8grUn7IatmAObSdkQULr21YGc/edit).
 
   <hr />
 
@@ -371,7 +371,7 @@ export const highlight = ({children, color}) => (
 
   ### What happens if multiple people (different wallets) have many stations in the same Hex?
 
-  There will be no issue as long as the stations will be sending accurate weather data, and have the minimum distace between them.
+  There will be no issue as long as the stations will be sending accurate weather data.
 
   <hr/>
 
