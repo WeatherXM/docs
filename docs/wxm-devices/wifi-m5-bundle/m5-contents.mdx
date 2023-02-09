@@ -9,7 +9,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Included
 
-<section class="explanation">
+<div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/contents-included.svg")} />
   <div>
     <h4>Included in the Box</h4>
@@ -30,17 +30,21 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
       <li>Power supply cable (USB-C)</li>
     </ol>
   </div>
-</section>
+</div>
 
 <hr/>
 
 ## You would also need
 
 Not included in the box (yet are necessary for proper use):
-1. Batteries (x2 AA)
-1. Pole
+1. Batteries 1.5V **not rechargeable** (x2 AA)
+1. Metal mounting pole (recommended 50mm/2in pole diameter & at least 2m/6.56ft height)
 1. Tools and parts to secure the pole
 1. USB power supply
+
+:::danger
+If you use rechargeable batteries, you may harm your device
+:::
 
 <hr/>
 
@@ -55,7 +59,7 @@ The outdoor sensor is responsible for:
 1. the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
 1. the wireless transmission of the data to the weather miner.
 
-<section class="explanation two-columns">
+<div class="explanation two-columns">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000a_b-parts.svg")} />
   <div>
     <h4>Components</h4>
@@ -74,7 +78,7 @@ The outdoor sensor is responsible for:
       <li>LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).</li>
     </ol>
   </div>
-</section>
+</div>
 
 This part of your weather station is placed outdoors.
 For further details about an advisable installation of the outdoor sensor, please see [Installing the WXM-WS1000 Weather Station](/wxm-devices/wifi-m5-bundle/install-weather-station).
@@ -84,10 +88,9 @@ The following figures show a sketch of the outdoor sensor. The sketch comes with
 
 ### M5 Miner
 
-<section class="explanation">
+<div class="control">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.svg")} />
   <div>
-    <h4>Components</h4>
     <p>
       The M5 Miner is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM network.
       The M5 Miner is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer),
@@ -95,7 +98,7 @@ The following figures show a sketch of the outdoor sensor. The sketch comes with
       The following graph shows the location of the buttons and the needed connections. Briefly, there is a power and a reset button, a  port for the GPS antenna and a USB Type-C port for power supply.
     </p>
   </div>
-</section>
+</div>
 
 <hr/>
 

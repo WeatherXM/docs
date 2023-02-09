@@ -27,7 +27,7 @@ and the material of the surfaces existing around the sensors. For this reason, t
 
 ### Pole's Height
 
-<section class="explanation horizontal">
+<div class="explanation horizontal">
   <div class="copy">
     <p>
       The pole’s height, on which the outdoor sensor will be mounted, should be at least 2m/6.5ft.
@@ -39,29 +39,31 @@ and the material of the surfaces existing around the sensors. For this reason, t
     <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ground-height.svg")} />
     <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/roof-deployment.svg")} />
   </div>
-</section>
+</div>
 
 <hr/>
 
 ### Pole specifications
 
-<section class="explanation">
-  <div class="copy">
+<div class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/max-pole-diameter.svg")} />
     <p>
       The pole’s diameter should be at least 25mm/1in and maximum 50mm/2in for optimal use. Suggested material should be aluminium.
     </p>
-  </div>
-  <div class="image">
-   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/max-pole-diameter.svg")} />
-  </div>
-</section>
+</div>
 
 <hr/>
 
 ### Tighten Pole
 
+<div class="control">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-tighten-pole.svg")} />
+</div>
+
+<p>
 The pole should be adequately tightened in order to prevent any pole oscillations in cases of strong winds.
 This will prevent the rain gauge spoon from swinging and collecting faulty precipitation measurements.
+</p>
 
 <hr/>
 
@@ -69,20 +71,17 @@ This will prevent the rain gauge spoon from swinging and collecting faulty preci
 
 The pole together with the outdoor sensor should be placed in an installation point, which:
 
-  <section class="explanation horizontal">
-    <div class="copy">
-      <h4>1. Away from heat sources</h4>
-      <p>
-        Is not affected by the air or smoke flowing out of any chimneys or ventilation systems
-        (as an illustration, consider that wind of a certain direction may move warm smoke towards the sensors).
-        An advisable distance from a heat source is >5 meters (depending on the heat source though)
-      </p>
-    </div>
-    <div class="images">
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/chimney-deployment.svg")} />
-      <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/airflow-deployment.svg")} />
-    </div>
-  </section>
+<h4>1. Away from heat sources</h4>
+
+  <p>
+  Is not affected by the air or smoke flowing out of any chimneys or ventilation systems
+  (consider that wind of a certain direction may move warm smoke towards the sensors).
+  An advisable distance from a heat source is >5 meters (depending on the heat source though)
+  </p>
+
+<section class="control">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/away-from-heat-sources.svg")} />
+</section>
 
   <section class="explanation horizontal">
     <div class="copy">
@@ -91,13 +90,13 @@ The pole together with the outdoor sensor should be placed in an installation po
         Is not shadowed by any obstacles during the day (consider that the sun is typically higher during summer and lower during winter affecting the shadow caused by an item)
       </p>
     </div>
-    <div class="images">
+    <div class="explanation">
       <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/building-with-pool-in-roof.svg")} />
       <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/ws1000-shadow-soft.svg")} />
     </div>
   </section>
 
-  <section class="explanation horizontal">
+  <div class="explanation horizontal">
     <div>
       <h4>3. Adequate Distance</h4>
       <p>Has a distance from any obstacles around, which 2-4 times larger than the height of the highest obstacle
@@ -109,12 +108,7 @@ The pole together with the outdoor sensor should be placed in an installation po
          at a distance 30 times the width and 15 times the height of the obstacles around.
       </p>
     </div>
-  </section>
-
-:::note
-All of 1., 2. and 3. are important tips for measuring an accurate as possible temperature and humidity,
-while 3. is important for avoiding faulty precipitation and wind measurements.
-:::
+  </div>
 
 <hr/>
 
@@ -124,26 +118,21 @@ while 3. is important for avoiding faulty precipitation and wind measurements.
 
 ## Mounting the outdoor sensor
 
-<section class="explanation">
+<div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/pole-assembly.svg")} />
-  <div>
-    <h4>Mounting and aligning sensor</h4>
     <p>If this is the first time that you set up this outdoor sensor,
     then you should make sure that all parts work properly before mounting the sensor on the pole outdoors.
     Thus, it is important that you are able to read all the measurements on the M5 Miner's screen,
     while you keep the outdoor sensor nearby (preferably not closer than 1.5m/5ft from the M5 Miner though).
     When you are about to fasten the pole on which you have tightened the outdoor sensor, look at the bubble level.
+    After fastening the pole, the bubble should be fully inside the red circle.
+    If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.
+    Adjust the mounting pole as necessary. If the bubble is close, but not quite inside the circle
+    and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
+    and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).
+    Now, you may tighten the bolts with a wrench.
     </p>
-  </div>
-</section>
-
-After fastening the pole, the bubble should be fully inside the red circle.
-If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.
-Adjust the mounting pole as necessary. If the bubble is close, but not quite inside the circle
-and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
-and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).
-Now, you may tighten the bolts with a wrench.
-
+</div>    
 <hr/>
 
 ### Maintenance of the outdoor sensor
@@ -152,23 +141,25 @@ The maintenance of the outdoor sensor is an important process, which should be c
 This process includes the cleaning of certain parts of the outdoor unit and the replacement of batteries.
 The maintenance process is summarised in the following steps:
 
-<div class="control">
+<div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/maintenance.svg")} />
+  <div>
+    <h4>Instructions for opening the rain gauge</h4>
+    <ol>
+      <li>Clean the rain gauge at least once every 3 months.</li>
+      Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism
+      and clean with a damp cloth. Remove any dirt, debris and insects.
+      If bug infestation is an issue, spray the array lightly with insecticide.
+      It is important not to swing the rain gauge spoon during this process,
+      as the weather station will measure and record faulty precipitation.
+      In order to avoid faulty measurements, you may turn off the M5 miner until finishing the entire process.
+      <li>Clean the solar panel at least every 3 months with a damp cloth.</li>
+      <li>Remove any dirt, debris and insects from the thermo-hygro sensor every 12 months. It may be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.</li>
+    </ol>
+  </div>
 </div>
 
-  ### Instructions for opening the rain gauge
-
-1. Clean the rain gauge at least once every 3 months.
-   Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism
-   and clean with a damp cloth. Remove any dirt, debris and insects.
-   If bug infestation is an issue, spray the array lightly with insecticide.
-   It is important not to swing the rain gauge spoon during this process,
-   as the weather station will measure and record faulty precipitation.
-   In order to avoid faulty measurements, you may turn off the M5 miner until finishing the entire process.
-
-2. Clean the solar panel at least every 3 months with a damp cloth.
-
-3. Remove any dirt, debris and insects from the thermo-hygro sensor every 12 months. It may be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.
-
-4. Replace batteries every 1-2 years. Old batteries may leak due to environmental challenges.
-   In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
+:::note
+Replace batteries every 1 year. Old batteries may leak due to environmental challenges.
+In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
+:::

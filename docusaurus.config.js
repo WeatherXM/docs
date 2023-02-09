@@ -16,7 +16,7 @@ const config = {
     trailingSlash: false,
 
     plugins: [
-        // ...
+       
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
     ],
 
@@ -55,24 +55,7 @@ const config = {
                 src: "img/wxm-logo-wide-notagline.svg",
                 srcDark: "img/wxm-logo-wide-notagline-white.svg",
             },
-            items: [{
-                    to: "/project",
-                    label: "Project",
-                    position: "left",
-                    activeBaseRegex: `project`,
-                },
-                {
-                    to: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
-                    label: "WeatherXM Devices",
-                    position: "left",
-                    activeBaseRegex: `devices`,
-                },
-                {
-                    to: "/glossary",
-                    label: "Glossary",
-                    position: "left",
-                    activeBaseRegex: `glossary`,
-                },
+            items: [
                 {
                     href: "https://explorer.weatherxm.com/",
                     label: "Explorer",

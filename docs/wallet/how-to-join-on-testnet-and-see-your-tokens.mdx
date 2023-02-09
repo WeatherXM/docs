@@ -1,0 +1,158 @@
+---
+id: how-to-join-on-testnet-and-see-your-tokens
+title: How to join on testnet and see your tokens
+sidebar_label: How to join on testnet and see your tokens
+slug: /wallet/how-to-join-on-testnet-and-see-your-tokens
+---
+
+import Tabs from "@theme/Tabs";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+:::tip
+If you don’t have a wallet, [create one](/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+:::
+
+### Add Polygon Network
+
+Adding Polygon Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
+Make sure you follow our step-by-step guide below for adding the Polygon Network to MetaMask.
+
+We will provide guidance for both Polygon Mainnet and Testnet (also called Mumbai Testnet) but
+as we are currently in testnet, **you need to add the Testnet network.**
+
+There are two ways to do it:
+
+1. [Using Polygonscan](/wallet/how-to-join-on-testnet-and-see-your-tokens#using-polygonscan) **(Only for Desktop with MetaMask browser extension already installed)**
+1. [Add the Polygon network manually](/wallet/how-to-join-on-testnet-and-see-your-tokens#add-the-polygon-network-manually)
+
+<hr/>
+
+### Using Polygonscan
+
+:::note
+Please make sure you have already installed **[MetaMask](https://metamask.io/)**!
+
+**This solution works only on desktop with the MetaMask browser extension already installed.**
+:::
+
+<Tabs
+  defaultValue="mumbai"
+  values={[
+    { label: 'Polygon Mainnet', value: 'mainnet', },
+    { label: 'Polygon Testnet (Mumbai)', value: 'mumbai', },
+  ]
+}>
+
+<TabItem value="mainnet">
+
+:::note
+This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Testnet network.**
+:::
+
+Please follow the steps to add Polygon’s Mainnet:
+
+- Navigate to [polygonscan.com](https://polygonscan.com/)
+- Scroll down to the bottom of the page and click on the button `Add Polygon Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mainnet.png")} />
+
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+You will be directed to Polygon’s Mainnet in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mainnet-add-network.png")} />
+
+</TabItem>
+
+<TabItem value="mumbai">
+
+Please follow the steps to add Polygon Testnet (also known as Mumbai Testnet):
+
+- Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
+- Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mumbai.png")} />
+
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+Next, click **Switch Network**.
+You will be switched to Polygon Testnet in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-add-network.png")} />
+
+</TabItem>
+
+</Tabs>
+
+If you face any issues, **Add the Network Manually (steps given below).**
+
+<hr/>
+
+### Add the Polygon network manually
+
+<Tabs
+  defaultValue="mumbai"
+  values={[
+    { label: 'Polygon Mainnet', value: 'mainnet', },
+    { label: 'Polygon Testnet (Mumbai)', value: 'mumbai', },
+  ]
+}>
+
+<TabItem value="mainnet">
+
+:::note
+This is just for informational purposes. At this stage we are currently in testnet so **you need to add the Polygon Testnet network.**
+:::
+
+To add Polygon’s Mainnet, click on the Network selection dropdown and then click on Add Network.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+
+It will open up a new Settings page which contains a form. You can add `Polygon Mainnet` in the **Network Name** field, `https://polygon-rpc.com/` in the **New RPC URL** field, `137` in the **Chain ID** field, `MATIC` in the **Currency Symbol** field and `https://polygonscan.com/` in the **Block Explorer URL** field.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mainnet.png")} />
+
+Once you’ve added the information, click on Save. You will be directly switched to Polygon Mainnet now in the network dropdown list. You can now close the dialog.
+</TabItem>
+
+<TabItem value="mumbai">
+
+To add Polygon Testnet (Mumbai), click on the Network selection dropdown and then click on Add Network.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/select-network.png")} />
+
+It will open up a new Settings page which contains a form. You can add `Polygon Testnet` in the **Network Name** field, `https://matic-mumbai.chainstacklabs.com/` in the **New RPC URL** field, `80001` in the **Chain ID** field, `MATIC` in the **Currency Symbol** field and `https://mumbai.polygonscan.com/` in the **Block Explorer URL** field.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/metamask-settings-mumbai.png")} />
+
+Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Polygon Testnet now in the network dropdown list. You can now close the dialog.
+</TabItem>
+</Tabs>
+
+**You have successfully added the Polygon Network to your MetaMask!**
+
+<hr/>
+
+### Add WXM token in MetaMask
+
+For the WXM token to appear in the wallet UI, you will need to add it manually.
+Note that your wallet can still receive tokens that haven’t been imported.
+
+:::note IMPORTANT NOTE
+Please make sure you have already added the **Mumbai-Testnet** and have connected to it by following the guide above!
+:::
+
+1. First, you will need the following details of the WXM token in order to add it:
+    1. **Token Contract Address:** ``0xeCbbbF304fdf91cdDDA6C6643ED1300A552b691A``
+    1. **Token Symbol:** ``WXM``
+    1. **Token Decimal:** ``18``
+
+You can verify those details on [PolygonScan](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a).
+
+2. On MetaMask and click **[Import tokens]**.
+
+<img src={useBaseUrl("img/project/suggested-wallets/metamask-import-tokens.png")} />
+
+3. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
+
+4. Click **[Import Tokens]**.
+
+**You have now successfully added the WXM token to your MetaMask wallet!**

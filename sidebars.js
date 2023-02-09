@@ -14,7 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "WeatherXM Devices",
-      items: [
+      items: [ 
 	    {
 	      type: "category",
 	      label: "WXM-WS1000",
@@ -45,10 +45,27 @@ module.exports = {
 	      collapsed: true,
 	    }
       ],
-      collapsed: false,
+      collapsed: true,  
     },
-    "wallet/adding-wallet",
-	"account/delete-account",
-    "glossary/glossary"
+	{
+		type: "category",
+		label: "Wallet",
+		items: [
+			"wallet/add-edit-wallet-address",
+			"wallet/how-to-join-on-testnet-and-see-your-tokens"
+		],
+		collapsed: true,
+	  },
+	{
+		type: "category",
+		label: "Account",
+		items: [
+			"account/delete-account",
+		],
+		collapsed: true,
+	  },
+	"deployment-examples",
+    "glossary/glossary",
+	"faqs/faqs"
   ]
 };
