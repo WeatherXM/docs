@@ -5,7 +5,7 @@ require("dotenv").config();
 const config = {
     title: "WeatherXM Docs",
     tagline: "WeatherXM Documentation Page",
-    url: "http://192.168.0.6:3000/",
+    url: "https://docs.weatherxm.com",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",

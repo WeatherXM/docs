@@ -48,18 +48,12 @@
   --background-color: #040404;
   --ifm-color-light-2: #1D1E26;
   --ifm-color-bluetint: #162351;
-
-
-
-
-
 }
 
 
 
 
 html[data-theme='dark'] {
-
   --ifm-background-color: #040404;
 }
 
@@ -370,7 +364,7 @@ details.alert.alert--info summary::before {
 @media only screen and (max-width: 996px) {
   .navbar {
     box-shadow: none;
-    background: var(----ifm-navbar-background-color);
+    background: var(--ifm-navbar-background-color);
     backdrop-filter: none;
   }
 
@@ -392,44 +386,42 @@ details.alert.alert--info summary::before {
 @media only screen and (max-width: 600px) {
   .searchBox_ZlJk{
     width: 60px !important;
-    height: 0px !important;
+    height: 0 !important;
     position: absolute !important;
-    right: 0% !important;
+    right: 0 !important;
     top: 8px !important;
   }
-.aa-DetachedSearchButtonPlaceholder{
-  display: none !important;
-}
-.aa-DetachedSearchButton{
-  border: none !important;
-}
+  .aa-DetachedSearchButtonPlaceholder{
+    display: none !important;
+  }
+  .aa-DetachedSearchButton{
+    border: none !important;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {  
-  
+@media only screen and (min-width: 600px) {
   .searchBox_ZlJk{
-  width: 50px !important;
-  height: 0px !important;
-  position: absolute !important;
-  right: 0% !important;
-  top: 8px !important;
-  
-}
-.aa-DetachedSearchButtonPlaceholder{
-  display: none !important;
-}
-.aa-DetachedSearchButton{
-  border: none !important;
-}
+    width: 50px !important;
+    height: 0 !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 8px !important;
+  }
+  .aa-DetachedSearchButtonPlaceholder{
+    display: none !important;
+  }
+  .aa-DetachedSearchButton{
+    border: none !important;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {  .searchBox_ZlJk{
   width: 50px !important;
-  height: 0px !important;
+  height: 0 !important;
   position: absolute !important;
-  right: 0% !important;
+  right: 0 !important;
   top: 8px !important;
 }
 
@@ -440,7 +432,7 @@ details.alert.alert--info summary::before {
 @media only screen and (min-width: 992px) {
   .searchBox_ZlJk{
     width: 300px !important;
-    height: 0px !important;
+    height: 0 !important;
     position: absolute !important;
     left: 45% !important;
     top: 8px !important;
@@ -454,7 +446,7 @@ details.alert.alert--info summary::before {
 @media only screen and (min-width: 1200px) {
   .searchBox_ZlJk{
     width: 300px !important;
-    height: 0px !important;
+    height: 0 !important;
     position: absolute !important;
     left: 45% !important;
     top: 8px !important;
