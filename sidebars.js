@@ -25,6 +25,7 @@ module.exports = {
 					"wxm-devices/wifi-m5-bundle/m5-install-weather-station",
 					"wxm-devices/wifi-m5-bundle/m5-connect-and-claim",
 					"wxm-devices/wifi-m5-bundle/m5-troubleshooting",
+					"wxm-devices/wifi-m5-bundle/m5-maintenance",
 					"wxm-devices/wifi-m5-bundle/m5-specs"
 	      ],
 	      collapsed: true,
@@ -40,6 +41,7 @@ module.exports = {
 					"wxm-devices/helium-bundle/helium-update-firmware",
 					"wxm-devices/helium-bundle/helium-install-weather-station",
 					"wxm-devices/helium-bundle/helium-troubleshooting",
+					"wxm-devices/helium-bundle/helium-maintenance",
 					"wxm-devices/helium-bundle/helium-specs"
 	      ],
 	      collapsed: true,
