@@ -7,24 +7,11 @@ slug: /tokenomics
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Our token, **WXM** is a new ERC20 token to power the weather data economy.
+Like most networks, the value of our Network is greater than the sum of its parts. Station owners are rewarded according to their contribution to the network and not based on the use of the specific data set they provided. 
 
-:::note
-WeatherXM is based on an EVM compatible chain - we are currently developing on Polygon Testnet but this will be finalized near the token launch.
-:::
+To implement this logic, we introduce a smart contract that distributes a fixed budget of tokens (the $WXM token) to station owners and other stakeholders daily. Any customer who wants to use the Network’s data or services will have to acquire and burn $WXM in return.
 
-### New approach in crowdsourcing weather data.
-WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
-[WXM](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) is currently implemented in [Polygon Mumbai Testnet](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) as an ERC20 token rewarding the closed beta user group.
-
-WXM will be mainly distributed as a reward to users who deploy and maintain weather station creating the first  Web3, decentralised,
-community-driven, global weather station network, secured and transparent by IPFS.
-
-Compatible weather stations are rewarded for sharing local weather data based on a unique and fair algorithm.
-The rewards algorithm will take into weighted consideration among other dimensions the **station’s location** and **quality of the transmitted data**.
-
-- **Location:** Weather station from a rural location will earn a higher reward compared to one situated in a densly covered area.
-- **Quality of Data:** Weather data will be validated against near by stations, 3rd party reanalysis & satellite data and evaluated for their overall quality using machine learning models.
+The following sections describe how the smart contract issues new tokens, and how it distributes them to the Network contributors.
 
 ## WXM Token Distribution
 
@@ -36,45 +23,81 @@ The rewards algorithm will take into weighted consideration among other dimensio
 
 | Distribution               | Percentage  | Amount         |
 | ---------------------------| ----------- | -------------- |
-| **Community Rewards**      | 55%         | 55,000,000 WXM |
-| **Company and investors**  | 30%         | 30,000,000 WXM |
+| **Station Rewards**      | 52%         | 52,000,000 WXM |
+| **Company & investors**    | 30%         | 30,000,000 WXM |
 | **Ecosystem Development**  | 10%         | 10,000,000 WXM |
-| **Liquidity Bootstrap**    | 5%          | 5,000,000 WXM  |
+| **Liquidity Support**      | 5%          | 5,000,000 WXM  |
+|**"Airdrop" to beta participants**| 3%    | 3.000.000 WXM  |
 
-### 55% - Community Rewards:
-Daily rewards to weather miners for providing a complete dataset.
-The complete dataset consists of 24 hour data from a weather station and this dataset
-will be validated (for quality, location, availability, etc)
-and will be rewarded with tokens according to the [Reward Algorithm](/reward-algorithm).
-For now, the daily amount will be minted each day to be rewarded to the weather miners.
+### 55% - Station Rewards:
+tokens will be used for station owners rewards. 3M of this amount will be used to reward beta users.
 
 ### 30% - Company and Investors:
-Wallets controlled by WeatherXM with tokens allocated for our investors and WeatherXM team. **These wallets will follow a typical vesting schedule of 2+ years.**
+will be used to reward the company and the investors for their contributions and work.
 
 ### 10% - Ecosystem Development:
-Reserved for special community-related projects, aligned with the vision of WeatherXM as we prepare for DAO conversion.
+tokens will be reserved for ecosystem development and the formation of the DAO.
 
 ### 5% - Liquidity Bootstrap:
-Liquidity Pool(s) for token exchange management.
+will be used to bootstrap and support $WXM’s liquidity.
 
-## Token Burn and Mint Equilibrium (BME)
+:::note
+Not all tokens will be issued on token launch. More specifically:
+-52M tokens will be  issued linearly, 14,246/day, and will be  distributed daily to weather station owners.
+-30M tokens will be issued daily using a 10-10-80% distribution in the first 3 years (see next section, “Token Emissions”, for details) and will be distributed daily to WeatherXM AG and its Investors.
+-3M tokens will be distributed retrospectively to station owners that participated in the beta phase of the Network (“Airdrop”).
+-A one-off issuance of 10M tokens will take place on token launch. These tokens will be used to support and fund the ecosystem development and the DAO formation.
+-A one-off issuance of 5M tokens will take place on token launch. These tokens will be used to provide market liquidity.
+:::
 
-The burn-and-mint equilibrium model is the WXM token economic structure used by the WeatherXM network.
-This model utilises a mechanism by which tokens bought for the use of weather data & services are removed (burnt) from the total circulation.
+## Architecture
 
-As the Weather network grows in usage and more services are being purchased by customers, circulation supply decreases by burning the equivalent amount of WXM tokens resulting in an increase in WXM token value.
-The reverse occurs if usage decreases, thus creating a dynamic to bring the network to an equilibrium.
 
-BME utilizes a token and credit system:
-  - The price of Weather data Credits (WdC) is fixed in USD (1 WdC = $1).
-  - Weather data Credits are only used internally in customers’ accounts, are not transferable and can only be used to acquire services within the Weather network.
-  - Any WXM token converted to WdC is permanently burned from the circulating supply.
+As more logic is transferred into smart contracts, a need for grouping of functionality and modularity emerges. That is why multiple smart contracts are now created, each with its own logic and design patterns:
 
+- WeatherXM
+- WeatherXMData
+- WeatherStationXM
+- RewardPool
+- BurnPool
+- PriceFeedConsumer
+
+Diagrams illustrating the interaction among the smart contracts, storage slots, classes, etc can be found <a href="https://github.com/WeatherXM/smart-contracts/tree/develop/docs/diagrams">diagrams</a>.
+
+
+## Assumptions
+- Different Admins can be assigned to each contract after deployment to the network by transferring ownership.
+
+- Admin has a lot of power, and is assumed to be the right, fair and just person/party. It is highly advised to have a multisig as admin, rather than just an EOA.
+
+- Company and investors tokens are allocated everyday to a target EoA which is set by the RewardPool Admin. The Distributor, is responsible for initiating the transfer of company and investors tokens daily to the target EoA.
 Weather miners earn rewards by inflationary minting which is independent of the token burning process
 and has a circulation supply cap that once reached,
 the daily minting will be restricted to the number of tokens daily burned, as per data & services consumed.
 
-As it currently stands, for a five-year period, 100 million WXM tokens will be minted following a linear daily minting schedule.
+## Rules
+- Mint only once per day (<a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/emissions.md">Token Emissions</a>) 
+- Anyone can initiate the minting operation daily
+- The daily rewards are calculated externally by the rewarding mechanism and then a merkle tree root hash is submitted to the RewardPool
+- Submitting the root hash once per day
+- Minted tokens in circulation should never be more than maximum supply (100M)
+- The total sum of tokens in the RewardPool must always be enough for everyone to withdraw their full allowance
+- Allocated rewards is calculated based on 3 parameters: the cumulative amount, the address, the cycle and the proof
+- A recipient cannot withdraw more than their allocated allowance in the RewardPool
+- The maximum amount a recipient can withdraw is constrained by the chosen cycle and the provided proof, so use the proof for the latest cycle
+- In each cycle, each recipient has only one valid proof
+- Rewards are allocated daily in the RewardPool per wallet address (NOT weather station)
+- Anyone can burn through the BurnPool contract.
+- Proof of burn (a receipt for a burn operation) is required for the provision of services
+- The remaining tokens which are not assigned to any weather stations in a daily basis are transferred to the <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/pools.md">Bussiness Development pool</a> 
 
-Due to BME (Burn and Mint Equilibrium), in the fifth year a portion of the tokens will be already burned,
-thus minting will continue beyond that year with the previous rate, but always restricted at the 100M cap.
+
+### Burn-And-Mint Equilibrium
+The $WXM token is designed to distribute the value accrued by the commercial use of WeatherXM data to the Network participants. In other words, there is supply (new issuance) and demand (token burn due to commercial uses of the Network’s data) for $WXM, and eventually an equilibrium point is reached.
+
+The only case in which issuance of new tokens can stop is if the maximum supply of 100 million tokens is reached (expected to happen in more than 10 years) and there is zero demand for Network data (i.e. token burns), or if the DAO, which will be in place by then, decides to change the token issuance policy.
+
+
+:::note
+For more information read our public <a href=" https://github.com/WeatherXM/smart-contracts/tree/develop">repo</a> 
+:::
