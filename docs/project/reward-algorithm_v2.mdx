@@ -1,0 +1,52 @@
+---
+id: reward-algorithm_v2
+title: Reward Algorithm_v2
+sidebar_label: Reward Algorithm_v2
+slug: /reward-algorithm_v2
+---
+
+This section describes how we are palanning to reward the community. 
+
+Our **Reward Algorithm** is a unique, fair and transparent algorithm that will handle how rewards are being distributed to the network members.
+## Rewards Allocation Methodology
+
+The rewards allocated for a cell will be distributed to the first N devices with best station reward score, where N=capacity of cell. In case two devices share the same score then they will be sorted based on seniority and the more senior one will get the rewards.
+
+ 
+
+
+:::note For example:
+If the capacity of a cell is 5 but has 6 stations and the Max Cell Reward is 20 WXM then the first 5 devices based on their performance in the previous day `station_reward_score` will be rewarded with a `station_reward_score`*`20/5`. This would have also been the case, if the specific cell had fewer than 5 stations.
+:::
+To read more please see our <a href="https://docs.google.com/document/d/1_z-sdCoSpm7H5kH0Ko8grUn7IatmAObSdkQULr21YGc/edit#heading=h.jgrgzl8vvkoy">whitepaper</a> 
+
+### How Often does the Reward Algorithm run?
+The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
+
+### Relocation
+It is important for WeatherXM that a station remains at the same location throughout its lifetime.
+When a station is relocated, its seniority is reset. To discourage frequent station relocations, a relocation fee must be paid to the Network.
+
+### Maintenance
+To ensure the maximum quality of data, all weather stations will have to be properly maintained over their lifetime.
+
+Instructions on how to maintain the station, as well as notifications about the station’s health are regularly communicated to station owners ensuring their rewards are not affected
+
+
+## Fair, Transparent and Verifiable processes
+The technical stack that will be used to perform the daily token distribution is being designed to be transparent, fair and verifiable.
+
+
+### Transparent
+Data collected by the weather stations will be publicly available on IPFS and/or other decentralised file storage services. Global real time weather data is already available through the WeatherXM explorer. The WeatherXM explorer will continue to be enriched with network data, serving as the main source of truth in regards to the network's status. All smart contracts used to emit and distribute tokens will be made public. Daily rewards distribution will be performed on-chain and all transactions will be publicly available using the blockchain explorer that our smart contracts are deployed on. 
+### Fair
+All rewards will be distributed according to the rules and methods defined in this document and any changes will be publicly discussed before decisions are made. 
+### Verifiable
+All individual scores that lead to the final reward, if reproduced, will produce the same result. For as long as the Company is responsible for calculating these scores and distributing the rewards, all required software, configuration and other technical details required by third parties to reproduce and validate them, will be made publicly available. All relevant software created by the Company for this purpose will be developed and distributed under an open source licence.
+
+## Claiming Rewards
+All station owners can withdraw their rewards at any time without time or other limit. Every owner initiates the process of withdrawing and signs the withdrawal transaction with his private key at the frontend (clients) through Metamask or another wallet, or programmatically by interacting directly with the smart contract. Therefore, a station owner can withdraw only his rewards. During withdrawing, the required parameters by the smart contract are the latest proof, his cumulative rewards, the latest cycle and finally the amount to claim which can be smaller or equal to the total amount of cumulative rewards. The cycle has been introduced in order to track the minting process. Every time a mint is completed, the cycle is increased and then the cycle is used as accessor in the root hashes mapping in the RewardPool.
+ 
+:::note
+ more on  <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/merkle_tree.md">reward claiming</a>.
+:::  

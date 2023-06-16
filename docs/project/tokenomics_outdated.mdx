@@ -1,0 +1,80 @@
+---
+id: tokenomics
+title: Tokenomics
+sidebar_label: Tokenomics
+slug: /tokenomics
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+Our token, **WXM** is a new ERC20 token to power the weather data economy.
+
+:::note
+WeatherXM is based on an EVM compatible chain - we are currently developing on Polygon Testnet but this will be finalized near the token launch.
+:::
+
+### New approach in crowdsourcing weather data.
+WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
+[WXM](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) is currently implemented in [Polygon Mumbai Testnet](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) as an ERC20 token rewarding the closed beta user group.
+
+WXM will be mainly distributed as a reward to users who deploy and maintain weather station creating the first  Web3, decentralised,
+community-driven, global weather station network, secured and transparent by IPFS.
+
+Compatible weather stations are rewarded for sharing local weather data based on a unique and fair algorithm.
+The rewards algorithm will take into weighted consideration among other dimensions the **station’s location** and **quality of the transmitted data**.
+
+- **Location:** Weather station from a rural location will earn a higher reward compared to one situated in a densly covered area.
+- **Quality of Data:** Weather data will be validated against near by stations, 3rd party reanalysis & satellite data and evaluated for their overall quality using machine learning models.
+
+## WXM Token Distribution
+
+**Total supply of the WXM token is 100M (100,000,000) tokens.**
+
+<div class="control">
+  <img src={useBaseUrl("img/project/tokenomics/wxm-distribution.png")} />
+</div>
+
+| Distribution               | Percentage  | Amount         |
+| ---------------------------| ----------- | -------------- |
+| **Community Rewards**      | 55%         | 55,000,000 WXM |
+| **Company and investors**  | 30%         | 30,000,000 WXM |
+| **Ecosystem Development**  | 10%         | 10,000,000 WXM |
+| **Liquidity Bootstrap**    | 5%          | 5,000,000 WXM  |
+
+### 55% - Community Rewards:
+Daily rewards to weather miners for providing a complete dataset.
+The complete dataset consists of 24 hour data from a weather station and this dataset
+will be validated (for quality, location, availability, etc)
+and will be rewarded with tokens according to the [Reward Algorithm](/reward-algorithm).
+For now, the daily amount will be minted each day to be rewarded to the weather miners.
+
+### 30% - Company and Investors:
+Wallets controlled by WeatherXM with tokens allocated for our investors and WeatherXM team. **These wallets will follow a typical vesting schedule of 2+ years.**
+
+### 10% - Ecosystem Development:
+Reserved for special community-related projects, aligned with the vision of WeatherXM as we prepare for DAO conversion.
+
+### 5% - Liquidity Bootstrap:
+Liquidity Pool(s) for token exchange management.
+
+## Token Burn and Mint Equilibrium (BME)
+
+The burn-and-mint equilibrium model is the WXM token economic structure used by the WeatherXM network.
+This model utilises a mechanism by which tokens bought for the use of weather data & services are removed (burnt) from the total circulation.
+
+As the Weather network grows in usage and more services are being purchased by customers, circulation supply decreases by burning the equivalent amount of WXM tokens resulting in an increase in WXM token value.
+The reverse occurs if usage decreases, thus creating a dynamic to bring the network to an equilibrium.
+
+BME utilizes a token and credit system:
+  - The price of Weather data Credits (WdC) is fixed in USD (1 WdC = $1).
+  - Weather data Credits are only used internally in customers’ accounts, are not transferable and can only be used to acquire services within the Weather network.
+  - Any WXM token converted to WdC is permanently burned from the circulating supply.
+
+Weather miners earn rewards by inflationary minting which is independent of the token burning process
+and has a circulation supply cap that once reached,
+the daily minting will be restricted to the number of tokens daily burned, as per data & services consumed.
+
+As it currently stands, for a five-year period, 100 million WXM tokens will be minted following a linear daily minting schedule.
+
+Due to BME (Burn and Mint Equilibrium), in the fifth year a portion of the tokens will be already burned,
+thus minting will continue beyond that year with the previous rate, but always restricted at the 100M cap.
