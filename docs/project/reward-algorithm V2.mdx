@@ -1,8 +1,8 @@
 ---
-id: reward-algorithm_v2
-title: Reward Algorithm_v2
-sidebar_label: Reward Algorithm_v2
-slug: /reward-algorithm_v2
+id: reward-algorithm V2
+title: Reward Algorithm V2
+sidebar_label: Reward Algorithm V2
+slug: /reward-algorithm V2
 ---
 
 This section describes how we are palanning to reward the community. 
@@ -18,7 +18,7 @@ The rewards allocated for a cell will be distributed to the first N devices with
 :::note For example:
 If the capacity of a cell is 5 but has 6 stations and the Max Cell Reward is 20 WXM then the first 5 devices based on their performance in the previous day `station_reward_score` will be rewarded with a `station_reward_score`*`20/5`. This would have also been the case, if the specific cell had fewer than 5 stations.
 :::
-To read more please see our <a href="https://docs.google.com/document/d/1_z-sdCoSpm7H5kH0Ko8grUn7IatmAObSdkQULr21YGc/edit#heading=h.jgrgzl8vvkoy">whitepaper</a> 
+To read more please see our <a href="https://weatherxm.com/whitepaper">whitepaper</a> 
 
 ### How Often does the Reward Algorithm run?
 The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
@@ -48,5 +48,5 @@ All individual scores that lead to the final reward, if reproduced, will produce
 All station owners can withdraw their rewards at any time without time or other limit. Every owner initiates the process of withdrawing and signs the withdrawal transaction with his private key at the frontend (clients) through Metamask or another wallet, or programmatically by interacting directly with the smart contract. Therefore, a station owner can withdraw only his rewards. During withdrawing, the required parameters by the smart contract are the latest proof, his cumulative rewards, the latest cycle and finally the amount to claim which can be smaller or equal to the total amount of cumulative rewards. The cycle has been introduced in order to track the minting process. Every time a mint is completed, the cycle is increased and then the cycle is used as accessor in the root hashes mapping in the RewardPool.
  
 :::note
- more on  <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/merkle_tree.md">reward claiming</a>.
+ More on  <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/merkle_tree.md">reward claiming</a>.
 :::  

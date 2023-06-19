@@ -46,18 +46,18 @@ The following sections describe how the smart contract issues new tokens, and ho
 |**"Airdrop" to beta participants**| 3%    | 3.000.000 WXM  |
 
 #### 55% - Station Rewards:
-tokens will be used for station owners rewards. 3M of this amount will be used to reward beta users.
+Tokens will be used for station owners rewards. 3M of this amount will be used to reward beta users.
 
 #### 30% - Company and Investors:
-will be used to reward the company and the investors for their contributions and work.
+Will be used to reward the company and the investors for their contributions and work.
 
 #### 10% - Ecosystem Development:
-tokens will be reserved for ecosystem development and the formation of the DAO.
+Tokens will be reserved for ecosystem development and the formation of the DAO.
 
 #### 5% - Liquidity Bootstrap:
-will be used to bootstrap and support $WXM’s liquidity.
+Will be used to bootstrap and support $WXM’s liquidity.
 
-#### 3% Airdrop" to beta participants
+#### 3% Airdrop" to beta participants:
 3 million tokens will be used to reward stations that contributed data to the Network during the beta phase. This is not a marketing activity intended to create buzz and awareness, but a reward mechanism for the stations that participated and formed the Network before a reward mechanism was in place.
 
 Beta rewards will be allocated according to the number of days a station has provided valid data to the network during the testnet/beta period. The number of days contributed by each station during the beta period will be calculated using the latest rewards mechanism implemented at the time of the token launch and applied retrospectively to the data the stations provided during the beta period.
@@ -70,7 +70,7 @@ This provides an additional incentive for the early Network adopters to remain i
 
 
 :::note
-To understand better the beta rewards you can read the related blog post <a href="https://blog.weatherxm.com/the-wxm-beta-rewards-program-fe2cbb9778b0">here</a>
+To understand better the "Airdrop" you can read the related blog post <a href="https://blog.weatherxm.com/the-wxm-beta-rewards-program-fe2cbb9778b0">here</a>
 :::
 
 
@@ -94,7 +94,7 @@ As more logic is transferred into smart contracts, a need for grouping of functi
 - BurnPool
 - PriceFeedConsumer
 
-Diagrams illustrating the interaction among the smart contracts, storage slots, classes, etc can be found <a href="https://github.com/WeatherXM/smart-contracts/tree/develop/docs/diagrams">diagrams</a>.
+Diagrams illustrating the interaction among the smart contracts, storage slots, classes, etc can be found <a href="https://github.com/WeatherXM/smart-contracts/tree/develop/docs/diagrams">here</a>.
 
 
 ## Assumptions
@@ -102,10 +102,14 @@ Diagrams illustrating the interaction among the smart contracts, storage slots, 
 
 - Admin has a lot of power, and is assumed to be the right, fair and just person/party. It is highly advised to have a multisig as admin, rather than just an EOA.
 
-- Company and investors tokens are allocated everyday to a target EoA which is set by the RewardPool Admin. The Distributor, is responsible for initiating the transfer of company and investors tokens daily to the target EoA.
+- Company and investors tokens are allocated everyday to a target Externally-owned account (EoA) which is set by the RewardPool Admin. The Distributor, is responsible for initiating the transfer of company and investors tokens daily to the target EoA.
 Weather miners earn rewards by inflationary minting which is independent of the token burning process
 and has a circulation supply cap that once reached,
 the daily minting will be restricted to the number of tokens daily burned, as per data & services consumed.
+
+:::note
+Externally-owned account (EOA) – controlled by anyone with the private keys
+:::
 
 ## Rules implement on the smart contracts
 - Mint only once per day (<a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/emissions.md">Token Emissions</a>) 
