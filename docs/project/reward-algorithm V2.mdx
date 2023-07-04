@@ -8,45 +8,65 @@ slug: /reward-algorithm-V2
 This section describes how we are palanning to reward the community. 
 
 Our **Reward Algorithm** is a unique, fair and transparent algorithm that will handle how rewards are being distributed to the network members.
-## Rewards Allocation Methodology
 
-The rewards allocated for a cell will be distributed to the first N devices with best station reward score, where N=capacity of cell. In case two devices share the same score then they will be sorted based on seniority and the more senior one will get the rewards.
+## Rewarding Mechanism
 
- 
+The rewarding mechanism works in following steps:
+  - The rewarding algorithm is the main part of this mechanism which contributes to the calculation of the `reward_score` of any given weather station by evaluating a number of parameters:
+    - Quality-of-Data (QoD), 
+    - Hardware Class (HC) and
+    - Proof-of-Location (PoL)
+  - The funding of RewardPool with the daily rewards
+  - The claiming of rewards by the users
 
+
+### Explanation
+The daily distribution of rewards will amount to 14246. After the rewarding algorithm assesses the performance of all weather stations, a Merkle tree will be created, and its root hash will be submitted to the RewardPool on a daily basis. The total available amount that can be claimed will also be transferred to the RewardPool. Subsequently, users have the ability to claim their rewards by utilizing specific parameters, including a Merkle proof and the desired amount of rewards they wish to receive. While it is not obligatory to claim rewards on a daily basis, users have the option to claim whenever they desire, as long as it does not exceed the total amount of their rewards.
+:::note Important Notes
+ - Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
+ - The QoD should be 
+:::
+
+## How Often does the Reward Algorithm run?
+The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
+
+## Calculation of the Reward Score
+``
+`reward_score = rewarding_algorithm(QoD, HC, PoL), score ∈[0,1]`
+
+`WSoST = number of weather stations with reward score over a specific threshold`
+
+`max_station_reward = daily_emission / WSoST`
+
+`daily_reward = max_station_reward * reward_score`
+
+### Explanation
+In the calculation of the `reward_score` and `daily_reward`, the algorithm takes into account several parameters and generate three scores for any given weather station.
+  - **Weather Data**: The weather dataset containing information from the preceding day undergoes evaluation using a series of algorithms, generating a Quality-of-Data score for each weather station. The station owner bears the responsibility of deploying and sustaining the stations while ensuring the highest attainable level of weather data quality in accordance with the Network's deployment guidelines.
+  - **Hardware Class**: The inclusion of a variety of hardware options will enable improved pricing, innovation, and resilience, ensuring independence from a sole manufacturer, country of production, and market limitations. Consequently, the Company will assume the duty of assigning "hardware classes" to each approved hardware type. These hardware classes distinguish among stations with distinct capabilities, encompassing sensor accuracy, sensor measurement range, sensor types, and more. As a result, due to these factors, the hardware classes should receive varying rewards, which will be represented by a hardware class score.
+  - **Location**: WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location for its entire duration. When a station undergoes relocation, its seniority is reset, aiming to discourage frequent movements by imposing a relocation fee upon the Network.
+
+Each cell will have a predetermined limit on the number of stations it can accommodate, and these stations will be rewarded accordingly. The top N devices with the highest station reward scores, where N represents the cell's capacity, will qualify for the daily rewards. If two devices happen to have identical scores, their seniority will determine the recipient of the daily rewards, with the more senior device taking precedence. It is important to note that the assessment of reward scores occurs on a daily basis, which means there is no assurance that the most senior weather stations will consistently be eligible for rewards.
 
 :::note For example:
 If the capacity of a cell is 5 but has 6 stations and the Max Cell Reward is 20 WXM then the first 5 devices based on their performance in the previous day `station_reward_score` will be rewarded with a `station_reward_score`*`20/5`. This would have also been the case, if the specific cell had fewer than 5 stations.
 :::
 To read more please see our <a href="https://weatherxm.com/whitepaper">whitepaper</a> 
 
-### How Often does the Reward Algorithm run?
-The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
-
-### Relocation
-It is important for WeatherXM that a station remains at the same location throughout its lifetime.
-When a station is relocated, its seniority is reset. To discourage frequent station relocations, a relocation fee must be paid to the Network.
-
-### Maintenance
-To ensure the maximum quality of data, all weather stations will have to be properly maintained over their lifetime.
-
-Instructions on how to maintain the station, as well as notifications about the station’s health are regularly communicated to station owners ensuring their rewards are not affected
-
-
-## Fair, Transparent and Verifiable processes
-The technical stack that will be used to perform the daily token distribution is being designed to be transparent, fair and verifiable.
-
+## Claiming Rewards
+Station owners have the freedom to claim their rewards at their discretion, without any time restrictions or other limitations. Each owner takes the initiative to initiate the claiming process by signing the claim transaction using their private key through the front end (clients) using tools like Metamask or another wallet. Alternatively, they can programmatically interact with the smart contract to claim their rewards directly. As a result, a station owner is only able to claim the rewards that belong to them, ensuring fairness and accuracy in the reward distribution process.
+ 
+## Reward Mechanism Characteristics
+### Fair, Transparent and Verifiable processes
+The technical stack that will be used to perform the daily rewarding is being designed to be transparent, fair and verifiable.
 
 ### Transparent
-Data collected by the weather stations will be publicly available on IPFS and/or other decentralised file storage services. Global real time weather data is already available through the WeatherXM explorer. The WeatherXM explorer will continue to be enriched with network data, serving as the main source of truth in regards to the network's status. All smart contracts used to emit and distribute tokens will be made public. Daily rewards distribution will be performed on-chain and all transactions will be publicly available using the blockchain explorer that our smart contracts are deployed on. 
+Data collected by the weather stations as well as the daily Merkle tree will be publicly available on IPFS and/or other decentralised file storage services. Global real time weather data is already available through the WeatherXM explorer. The WeatherXM explorer will continue to be enriched with network data, serving as the main source of truth in regards to the network's status. All smart contracts used to emit and distribute tokens will be made public. Daily rewards distribution will be performed on-chain and all transactions will be publicly available using the blockchain explorer that our smart contracts are deployed on. 
 ### Fair
 All rewards will be distributed according to the rules and methods defined in this document and any changes will be publicly discussed before decisions are made. 
 ### Verifiable
 All individual scores that lead to the final reward, if reproduced, will produce the same result. For as long as the Company is responsible for calculating these scores and distributing the rewards, all required software, configuration and other technical details required by third parties to reproduce and validate them, will be made publicly available. All relevant software created by the Company for this purpose will be developed and distributed under an open source licence.
 
-## Claiming Rewards
-All station owners can withdraw their rewards at any time without time or other limit. Every owner initiates the process of withdrawing and signs the withdrawal transaction with his private key at the frontend (clients) through Metamask or another wallet, or programmatically by interacting directly with the smart contract. Therefore, a station owner can withdraw only his rewards. During withdrawing, the required parameters by the smart contract are the latest proof, his cumulative rewards, the latest cycle and finally the amount to claim which can be smaller or equal to the total amount of cumulative rewards. The cycle has been introduced in order to track the minting process. Every time a mint is completed, the cycle is increased and then the cycle is used as accessor in the root hashes mapping in the RewardPool.
- 
 :::note
  More on  <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/merkle_tree.md">reward claiming</a>.
 :::  
