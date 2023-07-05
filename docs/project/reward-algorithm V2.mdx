@@ -26,7 +26,7 @@ Users can claim their rewards by using the Merkle proof. They don't have to clai
 
 :::note Important Notes
  - Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
- - The QoD should be 
+ - The QoD should be over a specific threshold for the station to be rewardable. 
 :::
 
 ## How Often does the Reward Algorithm run?
@@ -52,8 +52,9 @@ Every day, each station gets a `reward_score` based on data of the previous day.
 Each cell has a pre-defined *cell capacity* that depends on its weather characteristics. The cell capacity is the maximum number of stations that may receive rewards in a specific cell. If more than N=cell capacity stations are active in a cell during a specific day, the first N stations (ordered first by *reward_score*, then by seniority) will receive rewards. In over-crowded cells, while senior stations have a small advantage, it is important to point out that a newer station with better data will receive rewards before a senior station with lower quality data.
 
 :::note For example:
-If the capacity of a cell is 5 but has 6 stations and *reward_score=10* then the first 5 devices based on their performance in the previous day will be awarded *station_reward_score x 10*. If there are two stations in the 5th place, with exactly the same *station_reward_score*, then the more senior of the two will get the rewards.
+If the capacity of a cell is 5, but has 6 stations with a random *reward_score*, then only the first 5 devices with the highest *reward_score* will be rewarded. If there are two stations in the 5th place, with exactly the same *station_reward_score*, then the more senior of the two will get the rewards
 :::
+
 To read more please see our <a href="https://weatherxm.com/whitepaper">whitepaper</a> 
 
 ## Claiming Rewards
@@ -70,7 +71,7 @@ Data collected by the weather stations as well as the daily Merkle tree will be 
 ### Fair
 All rewards will be distributed according to the rules and methods defined in this document and any changes will be publicly discussed before decisions are made. 
 ### Verifiable
-All individual scores that lead to the final reward, if reproduced, will produce the same result. For as long as WeatherXM AG is responsible to calculate these scores and distribute the rewards, all required software, configuration and other technical details needed by a a third party to reproduce and validate them, will be made publicly available. All relevant software created by WeatherXM AG for this purpose will be developed and distributed under an open source licence.
+All individual scores that lead to the final reward, if reproduced, will produce the same result. For as long as WeatherXM AG is responsible to calculate these scores and distribute the rewards, all required software, configuration and other technical details needed by a third party to reproduce and validate them, will be made publicly available. All relevant software created by WeatherXM AG for this purpose will be developed and distributed under an open source licence.
 
 :::note
  More on  <a href="https://github.com/WeatherXM/smart-contracts/blob/develop/docs/merkle_tree.md">reward claiming</a>.
