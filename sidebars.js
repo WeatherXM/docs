@@ -8,6 +8,7 @@ module.exports = {
 				"project/project",
 				"project/tokenomics",
 				"project/reward-algorithm",
+				"project/reward-algorithm-V2",
 			],
       collapsed: true,
     },
