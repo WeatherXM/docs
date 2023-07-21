@@ -1,21 +1,21 @@
 ---
-id: reward-algorithm
-title: Reward Algorithm
-sidebar_label: Reward Algorithm
-slug: /reward-algorithm
+id: reward-mechanism
+title: Reward Mechanism
+sidebar_label: Reward Mechanism
+slug: /reward-mechanism
 ---
 
 Rewarding the members of our network for sharing their local weather data is a crucial part of our system (**currently on testnet**).
 
-Our **Reward Algorithm** is a unique, fair and transparent algorithm that will handle how rewards are being distributed to the network members.
+Our **Reward Distribution Mechanism** is a unique, fair and transparent algorithm that will handle how rewards are being distributed to the network members.
+
+## Reward Distribution Mechanism
 
 We are currently on the first iteration of that algorithm, which has been implemented in a basic way: only taking into account whether or not a station is connected to the network.
 
-The algorithm works in three steps:
-  - The minting of the WXM Testnet tokens
-  - The calculation of the `reward_score` of any given weather station by validating its weather data
-  - The reward distribution
-
+The reward distribution mechanism has two parts:
+  - **The reward algorithm** which calculates the `actual_reward` for each weather station by evaluating its weather data for the previous day
+  - The daily **reward distribution** of rewards to the station owners
 
 :::note Important
 Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
