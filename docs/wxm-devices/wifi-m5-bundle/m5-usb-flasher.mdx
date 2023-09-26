@@ -24,10 +24,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/usb-flasher-1.png")} alt="Launch Flasher Tool"/>
   <div>
     <ol>
-    <li>Download and install the Flasher Tool</li>
+    <li><a href="https://github.com/WeatherXM/m5_flasher/releases">Download</a> and install the Flasher Tool for your OS</li>
+    Under Assets select:
     <ol>
-      <li>Windows ========= MISSING LINK !!! ==========</li>
-      <li>Linux ========= MISSING LINK !!! ==========</li>
+        <li>Windows:  <code class="lang-bash">weatherxm_m5_flasher_*.exe</code></li>
+        <li>Linux:  <code class="lang-bash">weatherxm_m5_flasher_*.deb</code></li>
     </ol>
     <li>Open the Flasher Tool on your computer</li>
     </ol>
@@ -92,7 +93,11 @@ If your M5 Miner did not restart automatically, press and hold the power button 
 :::
 
 <h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="linux-users">Linux Users</h3>
+<h3>Windows</h3>
+<p>Runs on Windows 10/11. Windows 7 not supported.</p>
+<p>You will be greeted by the "Windows prevented an unrecognized application from running.". This is because the binary is not signed. Click More Info > Run Anyway to proceed.</p>
+<h3>Linux</h3>
+<p>Tested only on Debian based distros.</p>
 <p>If you encounter issues during the flashing process, follow these steps:</p>
 <ol>
 <li><p>If flashing fails immediately after pressing the "update" button, it may be due to insufficient privileges to access the serial port. In Debian-based distributions, run the following command:</p>
@@ -106,4 +111,3 @@ If your M5 Miner did not restart automatically, press and hold the power button 
 </li>
 </ol>
 <p>If you have any further questions or encounter any issues during the update process, don't hesitate to reach out to our support team for assistance. We are here to help you keep your M5 Miner up to date and running smoothly.</p>
-
