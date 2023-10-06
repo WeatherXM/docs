@@ -7,15 +7,15 @@ slug: /wxm-devices/wifi-m5-bundle/m5-usb-flasher
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 <h2 id="introduction">Introduction</h2>
-<p>If you are currently using a WXM-M5 with firmware version 0.3.11, it's essential to update your device using the Flasher Tool. This version is considered obsolete and cannot receive updates through the "Over The Air" (OTA) method anymore due to significant differences in the underlying operating system. To ensure your WXM-M5 continues to operate efficiently and receive rewards, you must perform a full firmware flash using a USB cable.</p>
+<p>If you are currently using a WXM-M5 with firmware version 0.3.12, it's essential to update your device using the Flasher Tool. This version is considered obsolete and cannot receive updates through the "Over The Air" (OTA) method anymore due to significant differences in the underlying operating system. To ensure your WXM-M5 continues to operate efficiently and receive rewards, you must perform a full firmware flash using a USB cable.</p>
 <p>This guide will walk you through the step-by-step process of updating your WXM-M5 to the latest firmware version, ensuring you stay up to date with the latest features, security enhancements and continue to receive rewards.</p>
 
 :::tip
-To check the version of your WXM-M5, swipe to the left-most screen (about). If your version is newer than 0.3.11 you do not need to proceed with this update as your device will receive updates automatically.
+To check the version of your WXM-M5, swipe to the left-most screen (about). If your version is newer than 0.3.12 you do not need to proceed with this update as your device will receive updates automatically.
 :::
 
 :::warning
-Support for M5 devices running v0.3.11 will be discontinued from November 2023 and they will cease to receive rewards shortly thereafter.
+Support for M5 devices running v0.3.12 will be discontinued from November 2023 and they will cease to receive rewards shortly thereafter. It is important to follow the instructions on this page to update your device.
 :::
 
 <h2 id="how-to-update-your-wxm-m5">How to Update Your WXM-M5</h2>
@@ -23,7 +23,7 @@ Support for M5 devices running v0.3.11 will be discontinued from November 2023 a
 <p><strong>Step 1: Prepare Your Equipment</strong></p>
 <p>Before starting, ensure you have the following:</p>
 <ul>
-<li>A WXM-M5 powered on, running firmware version 0.3.11</li>
+<li>A WXM-M5 powered on, running firmware version 0.3.12</li>
 <li>A USB Type-C cable to connect your WXM-M5 to your computer</li>
 <li>A computer running the Flasher Tool</li>
 </ul>
@@ -99,11 +99,15 @@ Do not disconnect the USB cable until the update is successfully completed
 :::note
 If your WXM-M5 did not restart automatically, press and hold the power button until it turns off and then power it back on.
 :::
-
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3>Windows</h3>
 <p>The flasher tool runs on Windows 10/11. Windows 7 is not supported.</p>
 <p>When you run the tool, you will be greeted by the "Windows prevented an unrecognized application from running.". This is because the binary is not signed. Click More Info > Run Anyway to proceed.</p>
+<h4>When I connect my M5 no ports appear.</h4>
+<p>First, check if your USB cable is not damaged. It is recommended to try another cable to get this out of the way. If your M5 still doesn't appear in the port list, open Device Manager and check under "Ports (COM & LPT)". If no devices appear in the list your cable is most likely damaged. If a device with an exclamation mark appears or is in any other kind of errorneous state, your computer most likely lacks the USB drivers. Download and install the drivers from the <a href="https://www.wch-ic.com/downloads/CH343SER_EXE.html">USB chip manufacturers' website</a>.</p>
+<h4>I get an error about VCRUNTIMEXXX.dll missing</h4>
+<p>Your windows installation is missing the MSVC runtime libraries. Download and install them from <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">Microsoft's website.</a> It is recommended to install both the x86 and x64 versions.</p>
+
 <h3>Linux</h3>
 <p>Tested only on Debian based distributions.</p>
 <p>If you encounter issues during the flashing process, follow these steps:</p>
