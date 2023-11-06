@@ -7,6 +7,7 @@ slug: /wallet/add-edit-wallet-address
 ---
 
 import Tabs from "@theme/Tabs";
+import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 :::tip
@@ -19,9 +20,21 @@ If you don’t have a wallet, [create one](/wallet/add-edit-wallet-address#how-t
 To add your wallet address, go to settings screen and tap "My wallet", then fill or scan your wallet address where you can find at your metamask account, read and accept the terms and services and acknowledge that you have ownership and full access to this wallet.
 
 <div class="explanation small-big">
-    <img src={useBaseUrl("img/wallet/new-wallet-address-empty.svg")} />
-    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-scan-QR.svg")} />
-    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-filled.svg")} />
+    <ThemedImage
+        alt="new-wallet-address-empty"
+        sources={{
+            light: useBaseUrl("img/wallet/new-wallet-address-empty-light.jpg"),
+            dark: useBaseUrl("img/wallet/new-wallet-address-empty-dark.jpg")
+        }}
+    />
+    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-scan-QR.png")} />
+    <ThemedImage
+        alt="new-wallet-address-empty"
+        sources={{
+            light: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-wallet-addition-light.jpg"),
+            dark: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-wallet-addition-dark.jpg")
+        }}
+    />
 </div>
 
 <hr/>
@@ -31,9 +44,27 @@ To add your wallet address, go to settings screen and tap "My wallet", then fill
 To edit or change your wallet address, go to settings screen and tap "My wallet" and tap on "Edit Wallet Address". In order to edit the Wallet Address you need to confirm you are the owner of this account.
 
 <div class="explanation small-big">
-    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-filled-and-saved.svg")} />
-    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-confirm-wallet-addition.svg")} />
-    <img src={useBaseUrl("img/wallet/new-wallet-address-screen-confirm-and-save.svg")} />
+    <ThemedImage
+        alt="new-wallet-address-empty"
+        sources={{
+            light: useBaseUrl("img/wallet/new-wallet-address-screen-filled-and-saved-light.jpg"),
+            dark: useBaseUrl("img/wallet/new-wallet-address-screen-filled-and-saved-dark.jpg")
+        }}
+    />
+    <ThemedImage
+        alt="new-wallet-address-empty"
+        sources={{
+            light: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-and-save-light.jpg"),
+            dark: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-and-save-dark.jpg")
+        }}
+    />
+    <ThemedImage
+        alt="new-wallet-address-empty"
+        sources={{
+            light: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-wallet-addition-light.jpg"),
+            dark: useBaseUrl("img/wallet/new-wallet-address-screen-confirm-wallet-addition-dark.jpg")
+        }}
+    />
 </div>
 
 <hr/>
