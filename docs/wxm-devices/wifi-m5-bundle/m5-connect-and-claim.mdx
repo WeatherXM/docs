@@ -5,11 +5,22 @@ sidebar_label: Connect and Claim Station
 slug: /wxm-devices/wifi-m5-bundle/m5-connect-and-claim
 ---
 
+import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
+
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+  </TabItem>
+</Tabs>
+
 
 The weather station comes together with the M5 Miner.
 The M5 Miner receives all the meteorological data, which are measured and transmitted every 16 seconds by the outdoor sensor
 and displays them on its screen.
+
 
 In this chapter, you will find guidance to set up the M5 Miner.
 
@@ -17,6 +28,9 @@ In this chapter, you will find guidance to set up the M5 Miner.
 
 1. The station must be fully assembled (parts and batteries)
 1. A working smartphone with connection to the internet
+
+
+
 
 ## Step by Step Instructions
 
@@ -30,8 +44,6 @@ In this chapter, you will find guidance to set up the M5 Miner.
 </div>
 
 <hr/>
-
-
 
 ### Connect M5 Miner to power source and turn device on
 
@@ -75,8 +87,18 @@ If the GPS signal is lost, you could receive less WXM rewards (or none). This is
 
 ### Change Frequency (Optional)
 
+
 <div class="explanation">
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/frequency.svg")} />
+
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/frequency-new.svg")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/frequency.svg")} />
+  </TabItem>
+</Tabs>
+
   <span>
 
 The M5 Miner's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
@@ -92,12 +114,26 @@ If unsure, check the sticker under the station or the box that came in it.
 
 ### Steps to change the frequency
 <div>
-  <img class="control" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.svg")} />
-  <ol>
-    <li>Swipe left on the touch screen</li>
-    <li>Click the Frequency options and select the new frequency your M5 Miner will listen to</li>
-    <li>A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly</li>
-  </ol>
+  
+  <Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img class="control" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency-new.svg")} />
+    <ol>
+        <li>Swipe right on the touch screen</li>
+        <li>Click the Frequency options and select the new frequency your M5 Miner will listen to</li>
+        <li>A confirmation dialog will open. Read it carefully and click "Continue" or "Cancel" accordingly</li>
+    </ol>
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img class="control" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-change-frequency.svg")} />
+    <ol>
+        <li>Swipe left on the touch screen</li>
+        <li>Click the Frequency options and select the new frequency your M5 Miner will listen to</li>
+        <li>A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly</li>
+    </ol>
+  </TabItem>
+</Tabs>
+  
 </div>
 
 :::caution
@@ -108,7 +144,15 @@ If you don't use the correct frequency as your weather station, M5 Miner will no
 
 ### Connect M5 Miner to WiFi
 
-<img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-configure-wifi.svg")} />
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-configure-wifi-new.svg")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-configure-wifi.svg")} />
+  </TabItem>
+</Tabs>
+
 
 
 By now, your M5 Miner is set and ready for claiming!
@@ -165,15 +209,24 @@ Once the WiFi credentials have been successfully transferred to M5 Miner, the de
 
 
 <div class="explanation small-big">
+    
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/serial-number.jpg")} />
-  <span>
+  <div>
 
-#### Navigate to M5 Miner Settings and find the device's Serial Number
+#### Navigate to M5 Miner and find the device's Serial Number
 
 Follow the steps shown in the image below to find your M5 Miner's Serial Number. You'll need to type this in the WeatherXM app in order to verify that you own this station and secure it for yourself.
+    
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img object-fit="contain" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-serial-new.svg")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-serial.svg")} />
+  </TabItem>
+</Tabs>
 
-![Find your serial number](/img/wxm-devices/wifi-m5-bundle/m5-serial.svg)
-  </span>
+  </div>
 </div>
 
 <hr/>
