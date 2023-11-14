@@ -5,7 +5,7 @@ sidebar_label: Proof of Location  (PoL)
 slug: /project/proof-of-location
 ---
 
-PoL is a rational number in the range [0,1].
+
 An algorithm evaluates location data associated with the station, their accuracy, and consistency. It generates a score which is a confidence indicator about the station’s location. WeatherXM places great importance on station continuity, and discourage relocations.
 
 
@@ -21,3 +21,7 @@ PoL_Threshold is a dynamic value, and is recalculated every time a station’s l
 It is important for the Network that a station remains at the same location throughout its lifetime.
 When a weather station undergoes relocation, its Proof of Location score reduces to 0 for 7 days and its seniority is reset. 
 After 7 days, the station’s PoL is recalculated, and if it is greater than or equal to PoL_Threshold, the station is considered for inclusion in the WeatherXM network.
+
+:::note
+PoL is a rational number in the range [0,1]
+::: 
