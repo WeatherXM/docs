@@ -4,3 +4,56 @@ title: Quality of Data (QoD)
 sidebar_label: Quality of Data (QoD)
 slug: /project/quality-of-data
 ---
+
+
+
+QoD is an algorithm evaluates the quality of weather data provided by a weather station. 
+The score calculated indicates the confidence level about the quality of the weather data received by a station. 
+We need meaningful and usable data and the QoD score is an attempt to quantify this metric. 
+The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
+achieve the best QoD score possible.
+
+:::note
+QoD is a rational number in the range [0,1]
+:::  
+
+Actually, It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
+QoD involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
+
+QoD algorithm, Version 1 (v1), boasts the ability to handle time series data with varying intervals and can process data from weather stations with different capabilities and specifications. 
+It includes two types of checks:
+
+#### Out-of-Bounds Checks (OBC): 
+These identify values that fall outside the limits specified by the manufacturer of each sensor.
+#### Self-Quality Checks (SQC): 
+These are on the lookout for unnaturally flat values, spikes or drops in reported measurements, and lack of sufficient data to compute an average.
+The outcome of this process is an hourly report for each station, offering two key pieces of information:
+
+- the percentage of valid data points reported 
+- text annotations per meteorological variable (temperature, relative humidity, wind speed, wind direction, atmospheric pressure, and illuminance) that describe issues in data quality.
+
+#### QoD v1 represents a major milestone for us, serving a dual purpose.
+
+Firstly, it empowers us to build an “enhanced dataset” exclusively comprised of data that meet specific quality criteria. This enhanced dataset is incredibly valuable for the commercial applications of WeatherXM data.
+
+Secondly, it provides a transparent and verifiable mechanism for assigning a daily QoD score to each station. 
+This score plays a key role in our station rewards system: Stations providing high-quality data receive full rewards, while those with lower QoD scores get less.
+
+This is a very high-level, quite simplified, overview of the process.
+If you’re eager to dive into the nitty-gritty details, including how we handle varying data rates, or out-of-bounds and self quality checks, 
+we have a comprehensive <a href="https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub.">
+technical description of the process available </a>  
+
+### Quality-of-Data Threshold (QoD_Threshold): 
+QoD_Threshold is a rational number in the range [0,1]
+This number indicates the minimum QoD score a station must have on a given day in order to be eligible for rewards.
+
+
+### Quality-of-Data v1.5 
+additionally includes: 
+
+- ISD (Indoors Station Detector) witch detects stations that have not been deployed outdoors by analysing and comparing observed and theoretical solar irradiance.
+
+The ISD process results in a unique daily score that is 0 for a weather station that was detected to be indoors and 1 for an outdoor weather station. 
+To conserve and manage our computational resources more efficiently, stations receiving a value of 0 from the ISD process are excluded from the OBC-SQC process.
+
