@@ -20,40 +20,117 @@ QoD is a rational number in the range [0,1]
 Actually, It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
 QoD involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
 
-QoD algorithm, Version 1 (v1), boasts the ability to handle time series data with varying intervals and can process data from weather stations with different capabilities and specifications. 
-It includes two types of checks:
+This mechanism includes the following 3 control points and their respective checks:
+1. Self Check
+  * Out-of-Bounds Check (OBC) (QoD v1.0)
+  * Self Quality Check (SQC) (QoD v1.0)
+  * Indoor Station Detector (ISD) (Qod v1.1)
+2. Reference Check
+  * Comparative Quality Control (CQC) (QoD v1.3)
+3. Deployment status 
+  * Solar Obstacle Detector (SOD) (QoD v1.2)
+  * Wind Obstacle Detector (WOD) (QoD v2.0)
 
-#### Out-of-Bounds Checks (OBC): 
-These identify values that fall outside the limits specified by the manufacturer of each sensor.
-#### Self-Quality Checks (SQC): 
-These are on the lookout for unnaturally flat values, spikes or drops in reported measurements, and lack of sufficient data to compute an average.
-The outcome of this process is an hourly report for each station, offering two key pieces of information:
 
-- the percentage of valid data points reported 
-- text annotations per meteorological variable (temperature, relative humidity, wind speed, wind direction, atmospheric pressure, and illuminance) that describe issues in data quality.
+## 1.Self Check
+Self-check is the basic component of the QoD mechanism, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
 
-#### QoD v1 represents a major milestone for us, serving a dual purpose.
+a. **Out-of-Bounds Check (OBC)** 
+OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
+As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
 
-Firstly, it empowers us to build an “enhanced dataset” exclusively comprised of data that meet specific quality criteria. This enhanced dataset is incredibly valuable for the commercial applications of WeatherXM data.
 
-Secondly, it provides a transparent and verifiable mechanism for assigning a daily QoD score to each station. 
-This score plays a key role in our station rewards system: Stations providing high-quality data receive full rewards, while those with lower QoD scores get less.
+b. **Self Quality Check (SQC)**
+SQC is the process that identifies unexpected behaviour in the measured parameters, which could be attributed to a defective sensor or an improper station deployment. 
+It should be noted that OBC is included in SQC as the first step of this process. 
+The final result of this process is the annotation of the data in 3 levels:
 
-This is a very high-level, quite simplified, overview of the process.
-If you’re eager to dive into the nitty-gritty details, including how we handle varying data rates, or out-of-bounds and self quality checks, 
-we have a comprehensive <a href="https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub.">
-technical description of the process available </a>  
+- raw (16’’ or else depending on weather station’s specs)
 
-### Quality-of-Data Threshold (QoD_Threshold): 
-QoD_Threshold is a rational number in the range [0,1]
+- minute (1’ or 2’ depending on the parameter)
+
+- hourly (aiming to reward each of 24 slots of a day)
+
+The following processes take place (excluding OBC):
+
+1. Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
+
+2. Looking for time-slots with no data
+
+3. Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
+
+4. Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
+
+5. Calculating the percentage of valid data within a certain period (minute, hour)
+
+The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
+
+c. **Indoors Station Detector (ISD)**
+The purpose of this mechanism is to identify all the stations located in a house or a box. 
+This process requires solar irradiance, latitude, longitude and day of the year. 
+
+
+## 2.Reference Check
+This part of QoD focuses on comparing the data of a weather station with:
+
+a. another neighbouring reliable weather station of the WXM network
+
+b. another neighbouring reliable 3rd party weather station
+
+c. 3rd party post-processed modelled weather data (a process similar to data assimilation)
+
+The Reference Check may be able to detect abnormal behaviour of the parameters measured by a station. 
+Such a control could give insight in the quality of both data and deployment 
+(e.g., temperature diurnal cycle of a station agrees with a reference timeseries, temperature of a station is usually higher because it is close to a chimney etc).
+
+
+
+### Comparative Quality Control (CQC)
+In order to apply this control we deploy the Comparative Quality Control (CQC), 
+which falls into an internal and external version depending on the type of data used for the analysis 
+(internal -using data owned by WXM- and external -using 3rd party data-). 
+Reference Check should run once per day together with Self Check.
+
+## 3.Deployment Status
+The Deployment Status control can be used as an identifier of the obstacles around a weather station. As solar irradiance and wind are parameters that are fairly sensitive to obstacle interventions, two different processes have been designed to determine the quality of deployment:
+
+a. Solar Obstacle Detector (SOD)
+
+b. Wind Obstacle Detector (WOD)
+
+Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
+This means that the Deployment Status part of QoD can only be used to characterise the deployment of a weather station.
+
+### Solar Obstacle Detector (SOD)
+This process examines the solar irradiance parameter comparing it with the theoretical solar irradiance expected for a given location and day of the year. Note that the theoretical solar irradiance is the total amount of solar irradiance that arrives at a horizontal surface on the Earth under clear sky conditions. 
+Because of that, a long period of data is required for detecting a totally clear-sky day. This method:
+
+- detects a clear sky day
+
+- compares theoretical and observed solar irradiance on a clear-sky day
+
+- compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)
+
+The limitations of this method are that:
+
+- only south horizon of a station can be examined for obstacles
+
+- the solar angle is different from a season to another, thus different obstacles may be visible at different period of the year
+
+Despite of such limitations, it is still a useful method for detecting obstacles that may affect solar irradiance, but also the other parameters.
+
+### Wind Obstacle Detector (WOD)
+As wind is the most demanding (in terms of fulfilling the WMO deployment criteria) parameter, this method should be able to identify any significant obstacles around a weather station.
+
+The basic idea is that we collect measurements of significant wind (e.g., >5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.
+
+This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
+
+## QoD Threshold
+QoD_Threshold is a rational number in the range [0,1]. 
 This number indicates the minimum QoD score a station must have on a given day in order to be eligible for rewards.
 
-
-### Quality-of-Data v1.5 
-additionally includes: 
-
-- ISD (Indoors Station Detector) witch detects stations that have not been deployed outdoors by analysing and comparing observed and theoretical solar irradiance.
-
-The ISD process results in a unique daily score that is 0 for a weather station that was detected to be indoors and 1 for an outdoor weather station. 
-To conserve and manage our computational resources more efficiently, stations receiving a value of 0 from the ISD process are excluded from the OBC-SQC process.
-
+## References
+- [Whitepaper](https://www.weatherxm.com/whitepaper)
+- [QoD Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
+- [Technical description of the process for QoD v1.0](https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub)
