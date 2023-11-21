@@ -21,14 +21,13 @@ QoD involves a series of techniques and processes designed to help us distinguis
 This mechanism includes the following 3 control points and their respective checks:
 1. Self Check
     * Out-of-Bounds Check (OBC) (QoD v1.0)
-    * Self Quality Check (SQC) (QoD v1.0)
-    * Indoor Station Detector (ISD) (Qod v1.1)
+    * Self Quality Check (SQC) (QoD v1.0) 
 2. Reference Check
     * Comparative Quality Control (CQC) (QoD v1.3)
 3. Deployment status 
+    * Indoor Station Detector (ISD) (Qod v1.1)
     * Solar Obstacle Detector (SOD) (QoD v1.2)
-    * Wind Obstacle Detector (WOD) (QoD v1.4)
-
+    * Wind Obstacle Detector (WOD) (TBD)
 
 ## 1. Self Check
 Self-check is the basic component of the QoD mechanism, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
@@ -56,9 +55,6 @@ The following processes take place (excluding OBC):
 
 The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
 
-### c. Indoors Station Detector (ISD)
-The purpose of this mechanism is to identify all the stations located in a house or a box. 
-This process requires solar irradiance, latitude, longitude and day of the year. 
 
 ## 2. Reference Check
 This part of QoD focuses on comparing the data of a weather station with:
@@ -88,6 +84,8 @@ a. Solar Obstacle Detector (SOD)
 
 b. Wind Obstacle Detector (WOD)
 
+c. Indoor Station Detector (ISD)
+
 Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
 This means that the Deployment Status part of QoD can only be used to characterise the deployment of a weather station.
 
@@ -111,6 +109,10 @@ As wind is the most demanding (in terms of fulfilling the WMO deployment criteri
 The basic idea is that we collect measurements of significant wind (e.g., >5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.
 
 This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
+
+### c. Indoors Station Detector (ISD)
+The purpose of this mechanism is to identify all the stations located in a house or a box. 
+This process requires solar irradiance, latitude, longitude and day of the year. 
 
 ## QoD Threshold
 QoD_Threshold is a rational number in the range [0,1]. 
