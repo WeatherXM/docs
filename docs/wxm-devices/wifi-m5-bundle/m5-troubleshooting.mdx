@@ -67,9 +67,9 @@ If you have never been able to configure WiFi  to a working state, make sure you
 
 Make sure you configured the correct SSID and password. Repeat the procedure if necessary to verify.
 
-## GPS Signal
+## GPS Location
 
-### Arrow icon is red
+### No location (GPS) data (Arrow icon is red)
 If the GPS (arrow) icon on your M5's UI is red, it means that there is no GPS signal:
 <div class="explanation">
 <Tabs groupId="wg1000_ui">
@@ -81,7 +81,8 @@ If the GPS (arrow) icon on your M5's UI is red, it means that there is no GPS si
   </TabItem>
 </Tabs>
 </div>
-Make sure your GPS antenna is firmly connected to the right spot:
+
+Make sure your GPS antenna is firmly connected to the right connector:
 <div class="explanation">
 <img src={useBaseUrl("img/wxm-devices//wifi-m5-bundle/gps.png")} />
 </div>
@@ -93,6 +94,14 @@ And then proceed to the following steps:
 
 If the problem remains, make sure the external antenna is selected in your M5's GPS stack (Read more on the bottom of this page).
 
+### Location not verified
+You receive a "location not verified" error on your mobile app when the [Proof of Location (PoL) mechanism](/project/proof-of-location) flags your weather station because the location reported by its **GPS receiver(s)** is different than the location you declared during the setup and claiming of the station. This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
+
+This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
+
+:::caution
+The "relocate station" function is **not yet available** as Proof of Location is running in **test-mode** on the beta testnet. This means that even if PoL flags your station for location errors **your rewards will NOT be affected** until the "relocate function" is available for use. Users will be given enough time to update the location of their stations to the actual location before the Reward Mechanism will actually start applying relocation penalties to the stations that are reporting wrong locations.
+:::
 
 ## My Station does not connect to the M5 Miner
 
