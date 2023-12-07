@@ -4,7 +4,7 @@ title: WXM-WS1000 Troubleshooting
 sidebar_label: WXM-WS1000 Troubleshooting
 slug: /wifi-m5-bundle/m5-troubleshooting
 ---
-
+import Tabs from "@theme/Tabs";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Weather Station
@@ -69,13 +69,29 @@ Make sure you configured the correct SSID and password. Repeat the procedure if 
 
 ## GPS Signal
 
-### No GPS signal (no values of latitude, longitude, and altitude)
+### Arrow icon is red
+If the GPS (arrow) icon on your M5's UI is red, it means that there is no GPS signal:
+<div class="explanation">
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-no-gps-signal-new.png")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-no-gps-signal.png")} />
+  </TabItem>
+</Tabs>
+</div>
+Make sure your GPS antenna is firmly connected to the right spot:
+<div class="explanation">
+<img src={useBaseUrl("img/wxm-devices//wifi-m5-bundle/gps.png")} />
+</div>
+And then proceed to the following steps:
 
-1. Move your M5 Miner outdoors (with the GPS antenna connected, if you use the external one)
-   for a couple of minutes till “lon”, “lat” and “alt” values appear.
+1. Move your M5 Miner outdoors (with the GPS antenna connected)
+   for a couple of minutes until the GPS icons becomes green.
 1. Then, move M5 Miner indoors placing the GPS antenna next to a window.
 
-If the problem remains and you use the internal GPS antenna, switch to the external antenna (Read more on the bottom of this page).
+If the problem remains, make sure the external antenna is selected in your M5's GPS stack (Read more on the bottom of this page).
 
 
 ## My Station does not connect to the M5 Miner
