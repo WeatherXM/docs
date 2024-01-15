@@ -8,7 +8,7 @@ slug: /reward-mechanism
 ## Introduction
 
 :::important
-The Reward Mechanism is currently at **version 1.0**. This page serves as both an informational resource about its current status and a glimpse into its future.
+The Reward Mechanism is currently at **version 2.0**. This page serves as both an informational resource about its current status and a how we got here.
 :::
 
 The Reward Mechanism has undergone a progressive evolution across its versions, each iteration introducing refinements to bolster fairness and transparency in the rewarding process for weather station owners contributing data to the network.
@@ -20,131 +20,9 @@ The Reward Mechanism has undergone a progressive evolution across its versions, 
  Business Boost rewards added an additional layer of fairness by incorporating predefined criteria, while the Merkle Tree structure facilitated a verifiable and transparent mechanism for users to validate the distribution of their rewards.
  This evolutionary trajectory underscores a commitment to refining the Reward Mechanism, making it more inclusive, nuanced, and transparent to build trust among weather station owners participating in the network.
 
-
-## Reward mechanism v1.0
-
-The first iteration of **Reward Mechanism** operates in the following way: only taking into account whether or not a station is connected to the network.
-
-The reward distribution mechanism has two parts:
-  - **The reward algorithm** which calculates the `actual_reward` for each weather station by evaluating its weather data for the previous day
-  - The daily **reward distribution** of rewards to the station owners
-
-:::note Important
-Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-:::
-
-### How Often does the Reward Algorithm run?
-The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
-
-### Calculation of the Reward Score
-`reward_score = array_of_hourly_weather_data / 24`
-
-### Explanation
-In the calculation of the `reward_score` step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
-  - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
-   with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects,
-  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
-
-That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `reward_score` of `0.0` to `1.0`.
-
-After the calculation of the `reward_score` step, the algorithm takes the `reward_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather
-station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
-
-The formulas which are used to calculate the daily reward per weather station is the following:
-```
-rewardable_count = Count(all_provisioned_weather_stations)
-max_daily_reward = daily_emission / rewardable_count
-weather_station_reward = reward_score * max_daily_reward
-```
-### Reward Distribution Mechanism
-All daily `actual_reward` per weather station are transferred to the wallet address already set by the user.
-This is a bulk transfer operations which happens once in a daily schedule and as a result the users get their daily rewards to their wallets.
-Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards. 
-
-
-## Reward mechanism v1.5
-This section describes the updated **Reward Mechanism** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network.
-
-:::note Important Notes
-* Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-* Criteria that should be met for a weather station to be rewardable:
-  * QoD over qod_threshold
-  * PoL over pol_threshold
-  * weather station’s owner should have an active wallet
-
-:::
-
-### Daily Rewards Calculation Process
-The Reward Mechanism calculates the amount of tokens that will be distributed to users by completing the following phase:
-
-1. Actual Rewards calculation
-
-#### 1. Actual Rewards calculation
-Actual rewards are calculated taking into account the performance of the weather station for the previous day. 
-
-This is a short summary of the criteria used:
-
-* **Proof-of-Location (PoL)**: An algorithm that evaluates the data about the location of the weather station, its accuracy, consistency, and unison with the location the owner registered on the weather station claiming. 
-It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
-When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/project/proof-of-location).
-
-* **Quality-of-Data (QoD)**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
- WeatherXM values weather stations that produce meaningful and usable data and the QoD score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
- guidelines in order to consistently achieve the best QoD score possible. Read more about the [Quality of Data (QoD) mechanism](/project/quality-of-data).
-
-* **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
-increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](project/hardware-class).
-
-* **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
-If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](project/cell-capacity).
-
-
-We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
-
-a. The following variables have known values at the start of each day:
-
-* `daily_emission`: the amount of tokens that are available for allocation on the given day
-* `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
-* `pol_threshold`: the number denoting the cutoff threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `qod_threshold`: the number denoting the cutoff threshold for QoD: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
-* `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
-
-b. To calculate the rewardable count of devices per **HC**:
-
-* we exclude weather stations that are owned by users with no wallet address specified
-* we count the weather stations with **qod_score** and **pol_score** over the respected specified thresholds, `qod_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
-
-c. To calculate the **max_reward_per_hardware_class (MRPHC)**:
-
-```
-total_weights = sum(rewardable_count_per_hardware_class[i] * weight_per_hardware_class[i]), i = 1..n, where n = total number of HC
-```
-
-For every HC:
-
-```
-tokens_per_hardware_class = daily_emission * (rewardable_count_per_hardware_class * weight_per_hardware_class) / total_weights
-
-max_reward_per_hardware_class = tokens_per_hardware_class / rewardable_count_per_hardware_class
-```
-
-d. To calculate the **reward_score** and **actual_reward**:
-
-```
-reward_score = pol_score * qod_score
-
-actual_reward = reward_score * max_reward_per_hardware_class
-```
-
-e. To identify overcrowded cells and decide which of the weather stations will be excluded from rewarding:
-
-* we iterate over available cells and check whether it is overcrowded
-* in case it is indeed overcrowded, we sort the neighboring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
-
 ## Reward mechanism v2.0
 
-This section describes the updated **Reward Mechanism v1.5** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network.
+The Reward Mechanism v2.0 is the latest iteration of the rewarding mechanism. It is a significant advancement over the previous version, v1.5, and it introduces the following enhancements:
 
 ### High-level flow
 
@@ -305,6 +183,129 @@ The lifecycle of rewards from the rewarding mechanism to the users' wallets:
 * The **RewardVault** funds the **RewardPool** with the daily emission of $WXM
 * The **Business Development Pool** funds daily the **RewardPool** with the business boost of $WXM
 * The station owners withdraw their rewards programmatically or through the WeatherXM Platform by interacting with the **RewardPool**
+
+
+
+## Reward mechanism v1.5 
+This section describes the updated **Reward Mechanism** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network. (depricarted)
+
+:::note Important Notes
+* Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
+* Criteria that should be met for a weather station to be rewardable:
+  * QoD over qod_threshold
+  * PoL over pol_threshold
+  * weather station’s owner should have an active wallet
+
+:::
+
+### Daily Rewards Calculation Process
+The Reward Mechanism calculates the amount of tokens that will be distributed to users by completing the following phase:
+
+1. Actual Rewards calculation
+
+#### 1. Actual Rewards calculation
+Actual rewards are calculated taking into account the performance of the weather station for the previous day. 
+
+This is a short summary of the criteria used:
+
+* **Proof-of-Location (PoL)**: An algorithm that evaluates the data about the location of the weather station, its accuracy, consistency, and unison with the location the owner registered on the weather station claiming. 
+It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
+When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/project/proof-of-location).
+
+* **Quality-of-Data (QoD)**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
+ WeatherXM values weather stations that produce meaningful and usable data and the QoD score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
+ guidelines in order to consistently achieve the best QoD score possible. Read more about the [Quality of Data (QoD) mechanism](/project/quality-of-data).
+
+* **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
+increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](project/hardware-class).
+
+* **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
+If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](project/cell-capacity).
+
+
+We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
+
+a. The following variables have known values at the start of each day:
+
+* `daily_emission`: the amount of tokens that are available for allocation on the given day
+* `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
+* `pol_threshold`: the number denoting the cutoff threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
+* `qod_threshold`: the number denoting the cutoff threshold for QoD: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
+* `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
+
+b. To calculate the rewardable count of devices per **HC**:
+
+* we exclude weather stations that are owned by users with no wallet address specified
+* we count the weather stations with **qod_score** and **pol_score** over the respected specified thresholds, `qod_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
+
+c. To calculate the **max_reward_per_hardware_class (MRPHC)**:
+
+```
+total_weights = sum(rewardable_count_per_hardware_class[i] * weight_per_hardware_class[i]), i = 1..n, where n = total number of HC
+```
+
+For every HC:
+
+```
+tokens_per_hardware_class = daily_emission * (rewardable_count_per_hardware_class * weight_per_hardware_class) / total_weights
+
+max_reward_per_hardware_class = tokens_per_hardware_class / rewardable_count_per_hardware_class
+```
+
+d. To calculate the **reward_score** and **actual_reward**:
+
+```
+reward_score = pol_score * qod_score
+
+actual_reward = reward_score * max_reward_per_hardware_class
+```
+
+e. To identify overcrowded cells and decide which of the weather stations will be excluded from rewarding:
+
+* we iterate over available cells and check whether it is overcrowded
+* in case it is indeed overcrowded, we sort the neighboring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
+
+## Reward mechanism v1.0
+
+The first iteration of **Reward Mechanism** operates in the following way: only taking into account whether or not a station is connected to the network. (depricarted)
+
+The reward distribution mechanism has two parts:
+  - **The reward algorithm** which calculates the `actual_reward` for each weather station by evaluating its weather data for the previous day
+  - The daily **reward distribution** of rewards to the station owners
+
+:::note Important
+Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
+:::
+
+### How Often does the Reward Algorithm run?
+The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
+
+### Calculation of the Reward Score
+`reward_score = array_of_hourly_weather_data / 24`
+
+### Explanation
+In the calculation of the `reward_score` step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
+  - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
+   with each object being the station's weather data.
+  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects,
+  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
+
+That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `reward_score` of `0.0` to `1.0`.
+
+After the calculation of the `reward_score` step, the algorithm takes the `reward_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather
+station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
+
+The formulas which are used to calculate the daily reward per weather station is the following:
+```
+rewardable_count = Count(all_provisioned_weather_stations)
+max_daily_reward = daily_emission / rewardable_count
+weather_station_reward = reward_score * max_daily_reward
+```
+### Reward Distribution Mechanism
+All daily `actual_reward` per weather station are transferred to the wallet address already set by the user.
+This is a bulk transfer operations which happens once in a daily schedule and as a result the users get their daily rewards to their wallets.
+Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards. 
+
 
 
 ## Links
