@@ -1,0 +1,83 @@
+---
+id: how-to-join-arbitrum-and-see-your-tokens
+title: How to join on testnet and see your tokens
+sidebar_label: How to join  Arbitrum and see your tokens
+slug: /wallet/how-to-join-arbitrum-and-see-your-tokens
+---
+
+import Tabs from "@theme/Tabs";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+:::tip
+If you don’t have a wallet, [create one](/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+:::
+
+### Add Arbitrum Network to Metamask
+
+Adding Arbitrum Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
+Make sure you follow our step-by-step guide below for adding the Arbitrum Network to MetaMask.
+
+We will provide guidance for both Arbitum Mainnet and Testnet (also called Sepolia Testnet) but
+as we are currently in testnet, **you need to add the Testnet network.**
+
+There are two ways to do it:
+
+1. [Using Arbiscan](/wallet/how-to-join-on-testnet-and-see-your-tokens#using-polygonscan) **(Only for Desktop with MetaMask browser extension already installed)**
+1. [Add the Arbitrum network manually](/wallet/how-to-join-on-testnet-and-see-your-tokens#add-the-polygon-network-manually)
+
+<hr/>
+
+### Using Arbiscan
+
+:::note
+Please make sure you have already installed **[MetaMask](https://metamask.io/)**!
+
+**This solution works only on desktop with the MetaMask browser extension already installed.**
+:::
+
+<Tabs
+  defaultValue="Sepolia"
+  values={[
+    { label: 'Arbirum One Mainnet', value: 'mainnet', },
+    { label: 'Arbitrum One Testnet (Sepolia)', value: 'Sepolia', },
+  ]
+}>
+
+<TabItem value="mainnet">
+
+:::note
+This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Testnet network.**
+:::
+
+Please follow the steps to add Polygon’s Mainnet:
+
+- Navigate to [Arbiscan.io](https://arbiscan.io/)
+- Scroll down to the bottom of the page and click on the button `Add Arbitrum One Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/Arbitrum-One.png")} />
+
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+You will be directed to Polygon’s Mainnet in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mainnet-add-network.png")} />
+
+</TabItem>
+
+<TabItem value="mumbai">
+
+Please follow the steps to add Polygon Testnet (also known as Mumbai Testnet):
+
+- Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
+- Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mumbai.png")} />
+
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+Next, click **Switch Network**.
+You will be switched to Polygon Testnet in the network dropdown list. You can now close the dialog.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-add-network.png")} />
+
+</TabItem>
+
+</Tabs>

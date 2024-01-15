@@ -58,7 +58,8 @@ module.exports = {
 		label: "Wallet",
 		items: [
 			"wallet/add-edit-wallet-address",
-			"wallet/how-to-join-on-testnet-and-see-your-tokens"
+			"wallet/how-to-join-on-testnet-and-see-your-tokens",
+			"wallet/how-to-join-arbitrum-and-see-your-tokens"
 		],
 		collapsed: true,
 	  },
