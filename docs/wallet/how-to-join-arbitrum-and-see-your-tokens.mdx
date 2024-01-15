@@ -1,7 +1,7 @@
 ---
 id: how-to-join-arbitrum-and-see-your-tokens
-title: How to join on testnet and see your tokens
-sidebar_label: How to join  Arbitrum and see your tokens
+title: How to join Arbitrum  and see your tokens
+sidebar_label: How to join  Arbitrum  and see your tokens
 slug: /wallet/how-to-join-arbitrum-and-see-your-tokens
 ---
 
@@ -15,15 +15,11 @@ If you don’t have a wallet, [create one](/wallet/add-edit-wallet-address#how-t
 ### Add Arbitrum Network to Metamask
 
 Adding Arbitrum Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
-Make sure you follow our step-by-step guide below for adding the Arbitrum Network to MetaMask.
+Make sure you follow our step-by-step guide below for adding the Arbitrum One Network to MetaMask.
 
 We will provide guidance for both Arbitum Mainnet and Testnet (also called Sepolia Testnet) but
 as we are currently in testnet, **you need to add the Testnet network.**
 
-There are two ways to do it:
-
-1. [Using Arbiscan](/wallet/how-to-join-on-testnet-and-see-your-tokens#using-polygonscan) **(Only for Desktop with MetaMask browser extension already installed)**
-1. [Add the Arbitrum network manually](/wallet/how-to-join-on-testnet-and-see-your-tokens#add-the-polygon-network-manually)
 
 <hr/>
 
@@ -36,9 +32,9 @@ Please make sure you have already installed **[MetaMask](https://metamask.io/)**
 :::
 
 <Tabs
-  defaultValue="Sepolia"
+  defaultValue="mainnet"
   values={[
-    { label: 'Arbirum One Mainnet', value: 'mainnet', },
+    { label: 'Arbitrum One Mainnet', value: 'mainnet', },
     { label: 'Arbitrum One Testnet (Sepolia)', value: 'Sepolia', },
   ]
 }>
@@ -49,35 +45,88 @@ Please make sure you have already installed **[MetaMask](https://metamask.io/)**
 This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Testnet network.**
 :::
 
-Please follow the steps to add Polygon’s Mainnet:
+Please follow the steps to add Arbitrum One Mainnet:
 
 - Navigate to [Arbiscan.io](https://arbiscan.io/)
 - Scroll down to the bottom of the page and click on the button `Add Arbitrum One Network`
 
-<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/Arbitrum-One.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("/img/wallet/Arbitrum-One.png")} alt="Arbitrum One" />
 
 - Once you click the button you will see a MetaMask notification, now click on **Approve**.
-You will be directed to Polygon’s Mainnet in the network dropdown list. You can now close the dialog.
+You will be directed to Arbitrum's Mainnet in the network dropdown list. You can now close the dialog.
 
-<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mainnet-add-network.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("/img/wallet/approve_on_metamask.png")} />
+
+
+<hr/>
+
+:::tip
+Alternatively you can add Arbitrum One Mainnet by following the steps below:
+
+Visit: [Chainlist](https://chainlist.org/chain/42161) and then click on the button `Add to Metamask`.
+:::
 
 </TabItem>
 
-<TabItem value="mumbai">
+<TabItem value="Sepolia">
 
-Please follow the steps to add Polygon Testnet (also known as Mumbai Testnet):
+Please follow the steps to add Arbitum one Testnet (also known as Sepolia Testnet):
 
-- Navigate to [mumbai.polygonscan.com](https://mumbai.polygonscan.com/)
-- Scroll down to the bottom of the page and click on the button `Add Mumbai Network`
+1. Make sure that you have successfully added Arbitrum One Mainnet to your Metamask.
+2. Open Metamask and look for the network selection tool located at the upper left corner.
+3. Enable the "Show Test Networks" option.
+4. From the dropdown list, select "Sepolia" test network.
 
-<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/polygonscan-mumbai.png")} />
+<img class="marginTopBottomNormal" src={useBaseUrl("/img/wallet/add_sepolia_testnet.png")} />
 
-- Once you click the button you will see a MetaMask notification, now click on **Approve**.
-Next, click **Switch Network**.
-You will be switched to Polygon Testnet in the network dropdown list. You can now close the dialog.
+:::tip 
+Alternatively you can add Arbitrum One Testnet by following the steps below:
 
-<img class="marginTopBottomNormal" src={useBaseUrl("img/project/suggested-wallets/mumbai-add-network.png")} />
+Visit the official [Arbitrum One Testnet](https://testnet.arbiscan.io/) and then click on the button `Add to Metamask`.
 
+or
+
+Visit the official Documentation [Arbitrum One Testnet](https://developer.offchainlabs.com/docs/developer_quickstart) and then click on the button `Add to Metamask`.
+:::
 </TabItem>
 
 </Tabs>
+
+
+
+<hr/>
+
+
+
+### Add WXM token in MetaMask
+
+For the WXM token to appear in the wallet UI, you will need to add it manually.
+Note that your wallet can still receive tokens that haven’t been imported.
+
+:::note IMPORTANT NOTE
+Please make sure you have already added the **Mumbai-Testnet** and have connected to it by following the guide above!
+:::
+
+1. First, you will need the following details of the WXM token in order to add it:
+    1. **Token Contract Address:** ``0xDce8e61d46091C2b963785437D02eE1e4F3F7B36``
+    1. **Token Symbol:** ``MXW``
+    1. **Token Decimal:** ``18``
+
+You can verify those details on [Sepolia Arbiscan](https://sepolia.arbiscan.io/address/0xDce8e61d46091C2b963785437D02eE1e4F3F7B36).
+
+
+2. On MetaMask and click **[Import tokens]**.
+
+<img src={useBaseUrl("/img/wallet/add_WXM_toMetamask.png")} />
+
+3. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
+
+4. Click **[Import Tokens]**.
+
+**You have now successfully added the WXM token to your MetaMask wallet!**
+
+:::note
+The ticker symbol for WXM is temprorarily until mainet **MXW**.
+:::
+
+
