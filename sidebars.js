@@ -11,7 +11,8 @@ module.exports = {
 				"project/quality-of-data",
 				"project/proof-of-location",
 				"project/cell-capacity",
-				"project/hardware-class"
+				"project/hardware-class",
+				"project/rewards-claiming"
 			],
       collapsed: true,
     },
