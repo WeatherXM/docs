@@ -1,7 +1,7 @@
 ---
 id: how-to-join-arbitrum-and-see-your-tokens
-title: How to join Arbitrum  and see your tokens
-sidebar_label: How to join  Arbitrum  and see your tokens
+title: How to join Arbitrum Sepolia and see your tokens
+sidebar_label: How to join  Arbitrum Sepolia and see your tokens
 slug: /wallet/how-to-join-arbitrum-and-see-your-tokens
 ---
 
@@ -12,13 +12,17 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 If you don’t have a wallet, [create one](/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
 :::
 
-### Add Arbitrum Network to Metamask
+### Add Arbitrum Sepolia Network to Metamask
 
-Adding Arbitrum Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
-Make sure you follow our step-by-step guide below for adding the Arbitrum One Network to MetaMask.
+Adding Arbitrum Sepolia Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
+Make sure you follow our step-by-step guide below for adding the Arbitrum Sepolia Network to MetaMask.
 
-We will provide guidance for both Arbitum Mainnet and Testnet (also called Sepolia Testnet) but
-as we are currently in testnet, **you need to add the Testnet network.**
+As we are currently in testnet, **you need to add the Sepolia Testnet network.**
+
+There are two ways to do it:
+
+1. [Using Arbiscan](/wallet/how-to-join-arbitrum-and-see-your-tokens#using-arbiscan) **(Only for Desktop with MetaMask browser extension already installed)**
+1. [Add the Arbitrum Sepolia Testnet network manually](/wallet/how-to-join-arbitrum-and-see-your-tokens#add-the-arbitrum-sepolia-testnet-manually)
 
 
 <hr/>
@@ -32,17 +36,29 @@ Please make sure you have already installed **[MetaMask](https://metamask.io/)**
 :::
 
 <Tabs
-  defaultValue="mainnet"
+  defaultValue="sepolia"
   values={[
-    { label: 'Arbitrum One Mainnet', value: 'mainnet', },
-    { label: 'Arbitrum One Testnet (Sepolia)', value: 'Sepolia', },
+    { label: 'Arbitrum Sepolia Testnet', value: 'sepolia', },
+    { label: 'Arbitrum One Mainnet', value: 'mainnet', }
   ]
 }>
+
+<TabItem value="sepolia">
+
+
+You can add Arbitrum Sepolia Testnet by following the steps below:
+
+- Visit the official [Arbitrum Sepolia Testnet](https://sepolia.arbiscan.io/) and then click on the button `Add to Metamask`.
+
+<img class="marginTopBottomNormal" src={useBaseUrl("/img/wallet/Sepolia-testnet.png")} alt="Arbitrum Sepolia Testnet" />
+
+
+</TabItem>
 
 <TabItem value="mainnet">
 
 :::note
-This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Testnet network.**
+This is just for informational purposes. At this stage we are currently in testnet so **you will need to add the Sepolia Testnet network.**
 :::
 
 Please follow the steps to add Arbitrum One Mainnet:
@@ -68,24 +84,25 @@ Visit: [Chainlist](https://chainlist.org/chain/42161) and then click on the butt
 
 </TabItem>
 
-<TabItem value="Sepolia">
-
- 
-You can add Arbitrum One Testnet by following the steps below:
-
-- Visit the official [Arbitrum One Testnet](https://sepolia.arbiscan.io/) and then click on the button `Add to Metamask`.
-
-<img class="marginTopBottomNormal" src={useBaseUrl("/img/wallet/Sepolia-testnet.png")} alt="Arbitrum One Testnet" />
-
-
-</TabItem>
-
 </Tabs>
 
 
+If you face any issues adding Arbitrum Sepolia network, **Add the Sepolia Testnet Manually (steps given below).**
 
 <hr/>
 
+### Add the Arbitrum Sepolia Testnet Manually
+
+To add Arbitrum Sepolia Testnet, click on the Network selection dropdown and then click on Add Network and add a custom network.
+
+In the form that pops up, populate the fields as following:
+- Network name: Arbitrum Sepolia
+- New RPC URL: The URL of an RPC Server in the Arbitrum Sepolia testnet. You can see a [list of available servers here](https://chainlist.org/chain/421614?testnets=true).
+- Chain ID: 421614
+- Currency Symbol: ETH
+- Block Explorer URL: https://sepolia.arbiscan.com/
+
+Once you’ve added the URL in the New Network field, click on Save. You will be directly switched to Arbitrum Sepolia testnet now in the network dropdown list. You can now close the dialog.
 
 
 ### Add WXM token in MetaMask
@@ -94,7 +111,7 @@ For the WXM token to appear in the wallet UI, you will need to add it manually.
 Note that your wallet can still receive tokens that haven’t been imported.
 
 :::note IMPORTANT NOTE
-Please make sure you have already added the **Sepolia-Testnet** and have connected to it by following the guide above!
+Please make sure you have already added the **Arbitrum Sepolia Testnet** and have connected to it by following the guide above!
 :::
 
 1. First, you will need the following details of the WXM token in order to add it:
@@ -107,8 +124,6 @@ You can verify those details on [Sepolia Arbiscan](https://sepolia.arbiscan.io/a
 
 2. On MetaMask and click **[Import tokens]**.
 
-<img src={useBaseUrl("/img/wallet/add_WXM_toMetamask.png")} />
-
 3. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
 
 4. Click **[Import Tokens]**.
@@ -116,4 +131,7 @@ You can verify those details on [Sepolia Arbiscan](https://sepolia.arbiscan.io/a
 **You have now successfully added the WXM token to your MetaMask wallet!**
 
 
+### Get some free testnet ETH from a faucet
 
+In order to be able to [claim your rewards](/project/rewards-claiming) you will need some testnet ETH for the gas fees. You can take some for free
+by using [this faucet](https://arbitrum-faucet.com/).
