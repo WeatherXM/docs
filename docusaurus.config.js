@@ -62,6 +62,11 @@ const config = {
                     position: "right",
                 },
                 {
+                    href: "https://weatherxm.com/whitepaper",
+                    label: "Whitepaper",
+                    position: "right",
+                },
+                {
                     href: "https://github.com/WeatherXM/docs",
                     label: "GitHub",
                     position: "right",
