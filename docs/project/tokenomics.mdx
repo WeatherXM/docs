@@ -15,13 +15,13 @@ WeatherXM is based on an EVM compatible chain - we are currently developing on P
 
 ### New approach in crowdsourcing weather data.
 WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
-[WXM](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) is currently implemented in [Polygon Mumbai Testnet](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) as an ERC20 token rewarding the closed beta user group.
+[WXM](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) is currently implemented in [Arbitrum Sepolia Testnet](https://sepolia.arbiscan.io/address/0xbacef2640862b42eeccfeab9bf750476ae7decc6) as an ERC20 token rewarding the closed beta user group.
 
 
 
 Like most networks, the value of our Network is greater than the sum of its parts. Station owners are rewarded according to their contribution to the network and not based on the use of the specific data set they provided. 
 
-To implement this logic, we introduce a smart contract that distributes a fixed budget of tokens (the $WXM token) to station owners and other stakeholders daily. Any customer who wants to use the Network’s data or services will have to acquire and burn $WXM in return.
+To implement this logic, we introduce a smart contract that distributes a fixed budget of tokens (the $WXM token) to station owners and other stakeholders daily. Any customer who wants to use the Network’s data or services will have to acquire $WXM.
 
 The following sections describe how the smart contract issues new tokens, and how it distributes them to the Network contributors.
 
@@ -41,20 +41,22 @@ The following sections describe how the smart contract issues new tokens, and ho
 | ---------------------------| ----------- | -------------- |
 | **Station Rewards**      | 52%         | 52,000,000 WXM |
 | **Company & investors**    | 30%         | 30,000,000 WXM |
-| **Ecosystem Development**  | 10%         | 10,000,000 WXM |
+| **Treasury**  | 10%         | 10,000,000 WXM |
 | **Liquidity Support**      | 5%          | 5,000,000 WXM  |
 |**"Airdrop" to beta participants**| 3%    | 3.000.000 WXM  |
 
 #### 55% - Station Rewards:
-Tokens will be used for station owners rewards. 3M of this amount will be used to reward beta users.
+Tokens will be used for station owners rewards. 3M of this amount will be used to gradually reward beta users.
 
 #### 30% - Company and Investors:
-Will be used to reward the company and the investors for their contributions and work.
+30M tokens will be used to reward the company and the investors for their contributions and work. They will be unlocked daily using a 10-10-80% distribution in the first 3 years.
 
-#### 10% - Ecosystem Development:
-Tokens will be reserved for ecosystem development and the formation of the DAO.
 
-#### 5% - Liquidity Bootstrap:
+#### 10% - Treasury
+10M tokens will be allocated to the DAO treasury to support the WeatherXM ecosystem development. Tokens will be unlocked linearly during a 5 year period, starting from the day of the token launch.
+
+
+#### 5% - Liquidity support:
 Will be used to bootstrap and support $WXM’s liquidity.
 
 #### 3% Airdrop" to beta participants:
@@ -74,11 +76,11 @@ To understand better the "Airdrop" you can read the related blog post <a href="h
 :::
 
 
-Not all tokens will be issued on token launch. More specifically:
+All tokens will be minted on token launch. More specifically:
 - 52M tokens will be  issued linearly, 14,246 per day, and will be  distributed daily to weather station owners.
 - 30M tokens will be issued daily using a 10-10-80% distribution in the first 3 years and will be distributed daily to WeatherXM AG and its Investors.
 - 3M tokens will be distributed retrospectively to station owners that participated in the beta phase of the Network (“Airdrop”).
-- A one-off issuance of 10M tokens will take place on token launch. These tokens will be used to support and fund the ecosystem development and the DAO formation.
+- 10M tokens will be liearly unlocked the first 5 years. These tokens will be used to support and fund the ecosystem development.
 - A one-off issuance of 5M tokens will take place on token launch. These tokens will be used to provide market liquidity.
 
 
