@@ -52,21 +52,6 @@ export const highlight = ({children, color}) => (
 
 ##  <Highlight color="#68a4f9">Data</Highlight>
 
-  ### My M5 is not showing any data, what may be the issue?
-
-  Check if the selected frequency is the correct one, if the small red light on the outdoor sensor is blinking every 16s, the battery polarity and that there is a clear line of sight at 2 meters between the M5 and the outdoor sensor and make sure that you have removed the cover from the solar panel. If the issue persists,  move the outdoor sensor and the WXM-M5 closer together, but not closer than 5 ft (1.5m). Also check that there are no metal barriers like aluminum siding, or metal wall framing, along the line of sight between the outdoor sensor and WXM-M5. Relocate the sensor and console as necessary to avoid obstacles. Depending on natural barriers you may also have to move the outdoor sensor higher and/or closer.If nothing of the above works, try switching to the external RF antenna.
-
-  <hr />
-
-  ### My miner is showing extremely wrong variables, what can I do?
-
-  Try to reset the outdoor sensor. If that doesn't work, try to reset the M5 and if after that the issue is still there, change the batteries of the outdoor sensor. If none of the above work, send a bug report to the [issue tracker](https://github.com/WeatherXM/issue-tracker) or contact us directly at hello@weatherxm.com
-
-  <hr />
-
-  ### How much data is stored on M5 that's uploaded, once connection reestablishes?
-
-  A few hours worth of data but this might change in the future
   
   <hr />
 
@@ -74,18 +59,7 @@ export const highlight = ({children, color}) => (
 
   Firstly, you need to check if your M5 is up-to-date with the latest firmware version (>=0.3.22). Secondly, you need to check that the outdoor sensor has no obstacles around. Here there is a tricky point. We firstly say that the outdoor sensor needs to be `2 x height_of_obstacle`, because even this criterion is not always doable and because the other sensors are ok with this criterion. However, the WMO criteria here for wind are: a.The wind sensor shall be sited so that any obstacle taller than 4m shall be at a distance equal to 10 times its height. For example, if an obstacle is 6m tall, it shall be no closer than 60m to the wind sensor and b. The wind sensor shall be sited so that any obstacle taller than 8m shall be at a distance of more than 15 times its width. For example, there is a tower that is 9m tall and 10m wide, then the wind sensor shall be sited more than 150m away
   
-  <hr />
-
-  ### How often does the M5 transmit data?
-
-  The M5 renders information on the screen every 16s and transmits data to the network every 1m (or more in older devices).
-
-  <hr />
-
-  ### Which is the time period I can track through my historical data?
-
-  You can track the historical data of the last seven days.
-  
+    
   <hr />
 
   ### How do you know people are not faking the location of their station on the map?
