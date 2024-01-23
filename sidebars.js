@@ -68,6 +68,7 @@ module.exports = {
 		label: "Account",
 		items: [
 			"account/delete-account",
+			"account/change-password"
 		],
 		collapsed: true,
 	  },
