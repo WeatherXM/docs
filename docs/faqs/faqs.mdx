@@ -56,27 +56,15 @@ export const highlight = ({children, color}) => (
 
   ### Is there a chance for my host/friend to be able to have access at my station's data?
 
-  Yes! It was a common feature request so we have immplemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favorite" any station you like by clicking on the heart shaped button while using our mobile Apps.
-  The station will appear under your owned station.
+  Yes! It was a common feature request so we have implemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favorite" any station you like by clicking on the heart shaped button while using our mobile App.
+  The station will appear in your station list.
     
 
   <hr />
-
-  ### Wind gusts are lower than I expect. Why?
-
-  Firstly, you need to check if your M5 is up-to-date with the latest firmware version (>=0.3.22). Secondly, you need to check that the outdoor sensor has no obstacles around. Here there is a tricky point. 
-  We firstly say that the outdoor sensor needs to be `2 x height_of_obstacle`, because even this criterion is not always doable and because the other sensors are ok with this criterion. 
-  However, the WMO criteria here for wind are:
-  1. The wind sensor shall be sited so that any obstacle taller than 4m shall be at a distance equal to 10 times its height. For example, if an obstacle is 6m tall, it shall be no closer than 60m to the wind sensor and 
-  2. The wind sensor shall be sited so that any obstacle taller than 8m shall be at a distance of more than 15 times its width. For example, there is a tower that is 9m tall and 10m wide, then the wind sensor shall be sited more than 150m away
-  
-    
-  <hr />
-
 
 ### How do you know people are not faking the location of their station on the map?
 
-In addition to the cryptographic proofs from all station Data sent to WeatherXM Network, we have designed and immplement a unique Proof of Location algorithm to safeguard the accirancy of the weather station location. Read more at the [PoL section of the documentation](/project/proof-of-location)
+In addition to the cryptographic proofs from all station data sent to the WeatherXM Network, we have designed and implemented a unique Proof of Location algorithm to safeguard the accuracy of the weather station location. Read more at the [PoL section of the documentation](/project/proof-of-location).
 
 
 
@@ -111,8 +99,7 @@ In addition to the cryptographic proofs from all station Data sent to WeatherXM 
 
   ### Can I connect my Helium compatible station to any Helium around or should I request access from someone?
 
-  You can connect your Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The way the Helium network works is that the closest active gateway will pick up your station's data and forward it to the Helium network. 
-  You can't choose which gateway will pick up your station's data.
+  You can connect your Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The gateway that will handle your packet is usually the fastest to respond but this is influenced by numerous factors. This means that the closest Helium gateway will not be necessarily the one that will pick up your packet, nor your can choose or influence this.
 
   <hr />
 
@@ -132,8 +119,7 @@ In addition to the cryptographic proofs from all station Data sent to WeatherXM 
 
   ### Which is the recommended frequency for my country?
 
-  We approximately follow the [frequency assignments of
-  TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
+  We approximately follow the [frequency assignments of TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
 
 
 ## <Highlight color="#68a4f9">Rewards</Highlight>
@@ -180,7 +166,7 @@ In addition to the cryptographic proofs from all station Data sent to WeatherXM 
 
   ### Can I receive my invoice before my order ships?
 
-  You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com)
+  You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com).
   <hr />
 
   ### Do I have to pay custom fees?
@@ -234,22 +220,6 @@ In addition to the cryptographic proofs from all station Data sent to WeatherXM 
 
 
 
-## <Highlight color="#68a4f9">Software</Highlight>
-
- 
-  ### In order for the Helium stations to work, should they be in a Helium hexagon or the principle is the same as for the WiFi stations?
-
-  Helium weather stations transmit data by using the helium network. In order to work properly they should be in a place where there is Helium coverage.
-  
-  <hr />
-
-  ### Can one device be added to two multiple phones so two people can monitor it?
-
-  Currently, you can login to the app from multiple phones.
-  
-  <hr />
-
-  
 
 
 
