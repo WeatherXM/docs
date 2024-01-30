@@ -52,43 +52,29 @@ export const highlight = ({children, color}) => (
 
 ##  <Highlight color="#68a4f9">Data</Highlight>
 
-  
-  <hr />
-
-  ### Wind gusts are lower than I expect. Why?
-
-  Firstly, you need to check if your M5 is up-to-date with the latest firmware version (>=0.3.22). Secondly, you need to check that the outdoor sensor has no obstacles around. Here there is a tricky point. We firstly say that the outdoor sensor needs to be `2 x height_of_obstacle`, because even this criterion is not always doable and because the other sensors are ok with this criterion. However, the WMO criteria here for wind are: a.The wind sensor shall be sited so that any obstacle taller than 4m shall be at a distance equal to 10 times its height. For example, if an obstacle is 6m tall, it shall be no closer than 60m to the wind sensor and b. The wind sensor shall be sited so that any obstacle taller than 8m shall be at a distance of more than 15 times its width. For example, there is a tower that is 9m tall and 10m wide, then the wind sensor shall be sited more than 150m away
-  
-    
-  <hr />
-
-  ### How do you know people are not faking the location of their station on the map?
-
-  We use proof of location protocols.
-
-  <hr />
+   
 
   ### Is there a chance for my host/friend to be able to have access at my station's data?
 
-  We will have a "follow a station" feature soon so that guests or hosts will be able to have their own accounts.
-  
+  Yes! It was a common feature request so we have implemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favorite" any station you like by clicking on the heart shaped button while using our mobile App.
+  The station will appear in your station list.
+    
+
   <hr />
 
-  ### Why is my UV index 0?
+### How do you know people are not faking the location of their station on the map?
 
-  Ensure that the black cover has been removed from the solar panel.
+In addition to the cryptographic proofs from all station data sent to the WeatherXM Network, we have designed and implemented a unique Proof of Location algorithm to safeguard the accuracy of the weather station location. Read more at the [PoL section of the documentation](/project/proof-of-location).
+
+
+
 
   ## <Highlight color="#68a4f9">Hardware</Highlight>
 
-  ### What is the ideal distance between stations?
-
-  Is a number that will vary depending on land morphology, local weather characteristics, and the WeatherXM network density.
   
-  <hr />
-
   ### Can I connect my WXM station with a 3rd party station?
 
-  Our weather stations are custom built, they are developed to connect to our network with our firmware and software implementations. Our next milestone is to develop the SDR miner where third party stations will be able to connect and join our network.
+  Our weather stations are custom built, they are developed to connect to our network with our firmware and software implementations. The SDR receiver is no longer on our roadmap.
   
   <hr />
 
@@ -113,100 +99,47 @@ export const highlight = ({children, color}) => (
 
   ### Can I connect my Helium compatible station to any Helium around or should I request access from someone?
 
-  You can connect your Helium compatible station anywhere with Helium network coverage or near a Helium gateway.
+  You can connect your Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The gateway that will handle your packet is usually the fastest to respond but this is influenced by numerous factors. This means that the closest Helium gateway will not necessarily be the one that will pick up your packet, nor your can choose or influence this.
 
   <hr />
 
   ### Will it make a big difference if I place my station on the balcony instead of the roof?
 
-  It is recommended that you place your station on the roof and the reason is because there aren't so many obstacles as there are on a balcony (e.g walls), that will reduce the quality of your data, therefore the amount of your rewards.
+  It is mandatory that you place your station on the roof and the reason is because there aren't so many obstacles as there are on a balcony (e.g walls), that will reduce the quality of your data, therefore the amount of your rewards. 
+  You can also check the [deployment examples](/deployment-examples) for inspiration.
   
   <hr />
 
-  ### Does the weather station need to be powered by USB?
-
-  The outdoor sensor contains a super capacitor and a solar panel as well as an input for 2 AA batteries so it doesn't need to be powered by USB, but the M5 which is an indoor device should always be powered by USB.
-  
-  <hr />
-
+ 
   ### Is any of your stations suitable for very cold climates? 
 
   For very cold climates that have snow most of the year, we will be launching soon a special weather station with a heater suitable for these weather conditions. 
-
-  <hr/>
-
-  ### If I have a wifi repeater, will it affect my M5 connection?
-
-  Yes, usually wifi issues for M5 are caused from repeaters.
-  
-  <hr />
-
-  ### What kind of batteries should I use for my station? 
-
-  The batteries used must be Lithium AA non-rechargeable.
-
-  <hr/>
-
-  ### It has rained through the day but M5 shows 0mm/h. Is there a problem with my sensor?
-
-  No. For now the M5 screen shows only the instant rain rate, which is measured in millimeters per hour (mm/h). This parameter indicates the intensity of rain occurring ath the moment we look at M5. In the future we may add total daily precipitation on M5 screen.
-  
-  <hr />
-
-  ### Pressure on M5 appears to be very low relatively to other reference stations of national or private networks etc. Why?
-
-  For now we present only the absolute pressure and not the Mean Sea Level Pressure (MSLP). That means that the displayed pressure are affected by the elevation of your area. We work to consider the elevation given by your GPS in order to show the MSLP, which is commonly used.
-  
-  <hr />
-
-  ### If I place my station somewhere that it doesn't show a pre-existing Hex in your explorer, is there going to be a new Hex for me or will I get in the Hex that already exists?
-
-  We don't have the exact meters to tell you yet, but it seems you will have your own Hex.Your station should be 2.5-5 km far from the other station.
-  
+ 
   <hr />
 
   ### Which is the recommended frequency for my country?
 
-  We approximately follow the [frequency assignments of
-  TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
+  We approximately follow the [frequency assignments of TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
 
 
 ## <Highlight color="#68a4f9">Rewards</Highlight>
 
-  ### What time do the rewards appear everyday?
-
-  Rewards appear once a day at 05:00 PM UTC.
-  
-  <hr />
-
-  ### Will the mainnet launch take place only after 10k/20k stations are online?
-
-  This was our initial estimation but if we were able to test the network with the current available stations, so the number of stations online is not a limitation any more.
-  
-  <hr />
-
-  ### How can one contribute to tokenomics?
-
-  You can contribute by completing this [form](https://docs.google.com/forms/d/e/1FAIpQLSc4enJItd1l0lJWx6pEcAQCoMJ1OvihVbfGe1hB2jtVLUnE2w/viewform).
-  
-  <hr />
-
+ 
   ### How can I start receiving rewards?
 
-  If you have already set up your station and claimed your device via the app, please add Metamask and follow the instructions [here](https://docs.weatherxm.com/account/creating-wallet).
+  If you have already set up your station and claimed your device via the app, please add Metamask and follow the instructions [here](/wallet/add-edit-wallet-address) and then follow this guide to [claim your rewards](/project/rewards-claiming).
   
   <hr />
 
   ### When will mainnet launch?
 
-  According to our [whitepaper](https://docs.google.com/document/d/1_z-sdCoSpm7H5kH0Ko8grUn7IatmAObSdkQULr21YGc/edit)
-  we will launch our token in Q4 2023.
+  The WXM token will be live in mid to end of February 2024!!
 
   <hr />
 
   ### Will testnet tokens be converted to real tokens after token launch?
 
-  Testnet tokens don't have any value and are used for testing purposes but in any case all beta testers will get some extra rewards in the form of an Airdrop when the token launch takes place.
+  Testnet tokens don't have any value and are used for testing purposes. Upon Token Launch a  "beta rewards program" will begin where you will be able to earn some extra tokens for your contributions to the network. You can read more details in our blog post [here](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7). 
   
   <hr />
 
@@ -214,88 +147,55 @@ export const highlight = ({children, color}) => (
 
   We are covering the HNT/DC fees.
   
-  <hr />
-
-  ### Will I get rewarded if I place a weather station in a big city like the one I live in ?
-
-  If you have a proper setup you will be rewarded according to the accuracy and quality of your data, therefore you can be fully rewarded.
-  
-  <hr />
-
-  ### Why did the rewards get reduced?
-
-  This is because more stations were added to our network.
-  
-  <hr />
-
-  ### Why did I stop getting rewards?
-
-  There are many factors:
-  - First, ensure a connection between the station and the M5. 
-  - Ensure that all three signals in the right-up corner on your M5 are green.
-  - It is important to have connected to your wallet.
-  - If the issue persists contact us at hello@weatherxm.com.
-
 <hr />
 
   ### Can I change my wallet address in the future?
 
   For now we support only MetaMask as it has a very good testnet support and our dev team prefer it. When we move on Mainnet you will be able to use your preferable wallet.
 
+<hr />
+
+  ### How many stations are allowed in a Hex?
+
+  Such details will be defined in our [whitepaper](https://weatherxm.com/whitepaper).
+
+<hr />
+
 
 ## <Highlight color="#68a4f9">Sales</Highlight>
 
   ### Can I receive my invoice before my order ships?
 
-  You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us at hello@weatherxm.com
-
+  You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com).
   <hr />
 
   ### Do I have to pay custom fees?
 
-  We do the custom clearance for EU,USA,CAand UK so you won't have to pay any custom fees.
+  We do the custom clearance for EU,USA,CA and UK so you won't have to pay any custom fees.
 
   <hr />
 
   ### When will my order ship?
 
-  We are improving our logistic methods and you will receive your order in 1-2 month.
-
-  <hr/>
-
-  ### How can I purchase one of your stations?
-
-  You can visit our [e-shop](https://shop.weatherxm.com/) and create an account so you will be able to purchase the device of your choice.
-  
-  <hr />
-
-  ### When will Helium compatible stations start shipping?
-
-  Our first batch of the helium compatible devices shipped at January 2023 and we will keep shipping every week.
-  
-  <hr />
-
-  ### Do you use timestamp for shipping the orders?
-
-  Yes, we ship them according to the timestamp an order got filled.
-  
+  We are improving our logistic methods and you will receive your order in 1-2 weeks.
+ 
   <hr />
 
   ### Can I change my shipping address?
 
-  As long as your order hasn't shipped you can send us an email at hello@weatherxm.com and we will change it for you.
+  As long as your order hasn't shipped you can contact us through [support](https://support.weatherxm.com) and we will change it for you.
   
   <hr />
 
   ### Can I request a refund?
 
-  You can request a refund by sending us an email at hello@weatherxm.com
+  You can request a refund by sending us a message through [support](https://support.weatherxm.com) and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
   
   <hr />
 
   ### Can I cancel my order if it has already been shipped?
 
-  You can not cancel it if it has already been shipped but you can deny the delivery when it reaches to your door and we will refund you according to our [refund policy](https://weatherxm.com/legal/terms-conditions/).
+  You can not cancel it if it has already been shipped but you can deny the delivery when it reaches to your door and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
   
   <hr />
 
@@ -313,171 +213,13 @@ export const highlight = ({children, color}) => (
 
   ### How much time does it take for the refund to reflect to my bank account?
 
-  It takes from 3-7 working days for the amount of the refund to reflect to your bank account.
-  
-  <hr />
-
-  ### It has been more than 20 days and I haven't received my refund since I cancelled my order
-
   Note that refunds take 3-15 working days to reflect on your bank account.
-  If it hasn't been reflected in your bank account after 15 days you should contact your bank in order to file a dispute.
-
-
-## <Highlight color="#68a4f9">Software</Highlight>
-
-  ### How many stations are allowed in a Hex?
-
-  Such details will be defined in our [whitepaper](https://weatherxm.com/whitepaper).
+  If it hasn't been reflected in your bank account after 15 days you should contact us by sending a message through [support](https://support.weatherxm.com)
 
   <hr />
 
-  ### Can I place 5 stations in the same Hex?
-
-  In case you place 5 stations in the same Hex your rewards will be split, we don't know exactly how much since such info will be defined in our whitepaper.
-  
-  <hr />
-
-  ### What happens if multiple people (different wallets) have many stations in the same Hex?
-
-  There will be no issue as long as the stations will be sending accurate weather data.
-
-  <hr/>
-
-  ### In order for the Helium stations to work, should they be in a Helium hexagon or the principle is the same as for the WiFi stations?
-
-  Helium weather stations transmit data by using the helium network. In order to work properly they should be in a place where there is Helium coverage.
-  
-  <hr />
-
-  ### Can one device be added to two multiple phones so two people can monitor it?
-
-  Currently, you can login to the app from multiple phones.
-  
-  <hr />
-
-  ### Will the Helium compatible station use my hotspot or will it be assigned to the new one? And how long will the batteries last?
-
-  It uses the nearest hotspot and we are not able yet to know in which hotspot it will be assigned. The batteries last for about 2 years due to the super capacitor which stores energy from the solar panel.
-  
-  <hr />
-
-  ### Is the exact location of my station shown on the explorer?
-
-  The location shown is approximate for security reasons.
-
-  <hr/>
-
-  ### I don't see the WiFi name WXM MinerM5 for initial setup on the app
-
-  It might take sometimes for it to connect. Please make sure that your Wi-Fi supports 2.4 GHz signals and you may also need to try from a different phone.
-
-  <hr/>
-
-  ### Will the Helium compatible station use my hotspot or will it be assigned to the new one? 
-
-  It uses the nearest hotspot and we are not able yet to know in which hotspot it will be assigned.
-
-  <hr/>
-
-  ### What does a Hex represent?
-
-  We have split the earth into hexes and each hex represents a piece of land ~5 square km each. The team is still working on the final size of the hexes.
-  
-  <hr />
-
-  ### I don't see the WiFi name WXMMinerM5 for initial setup on the app
-
-  It might take sometimes for it to connect. Please make sure that your Wi-Fi supports 2.4 GHz signals and you may also need to try from a different phone
-  
-  <hr />
-
-  ### I have successfully claimed my device but I am not able to login to the app
-
-  Please try to uninstall and reinstall the app again on your mobile phone and also try to use the web app from a pc in case you have not tried that already.
-  
-  <hr />
-
-  ### How long does it take for my device to show up on the explorer?
-
-  It might take 30-60 minutes to show up on our explorer.
-  
-  <hr />
-
-  ### Is there a limit on the devices I can add on my account?
-
-  There is no limit at the moment , but this might change in the future.
-  
-
-## <Highlight color="#68a4f9">Troubleshooting</Highlight>
-
-  ### Where can I find instructions on how to set up my station?
-
-  Please check our guide [here](https://docs.weatherxm.com/wxm-devices/wifi-m5-bundle/assemble-m5).
-
-  <hr/>
-
-  ### My M5 is unable to connect to the outdoor sensor. Why?
-
-  Possible reasons are wrong frequency on your M5, the distance between your M5 and the outdoor sensor is longer than 50 to 100 meters, or the M5 is behind a wall or other obstacle with extremely good insulation or materials that block the signal.
-
-  <hr />
-
-  ### Why is my station showing offline?
-
-  Assuming that the M5 unit is powered on, this may be due to bad internet connection or bad RF connection between the M5 and the outdoor station.
-  
-  <hr />
-
-  ### My M5's internet connection sign on the screen is red. What can I do?
-
-  Try to restart your M5, if that doesn't work try to restart your router and at last try resetting your M5.
-  
-  <hr />
-
-  ### What should I do if my M5 is stuck/unresponsive?
-
-  Please do not restart it and contact us via our [support email](mailto:hello@weatherxm.com) or via the [contact form on our website](https://weatherxm.com/contact-us/) to debug it and find the reason of the issue.
-  
-  <hr />
-
-  ### I can not claim my device
-
-  Please send us your email address and the serial number of your device or the name of your station and our support team will help you.
-  
-  <hr />
-
-  ### The GPS sign on my M5 is red, what can I do?
-
-  Please check that the plug is firmly placed, then move the M5 with the GPS antenna outside for some minutes and move it close to a window. 
-
-  <hr />
-
-  ### Can I restart my M5 if it is unresponsive or frozen?
-
-  In this case contact the team for debugging instructions and do not restart it.
-  
-  <hr />
-
-  ### What can I do if my M5 is switching off frequently?
-
-  Please disconnect the M5 from the power source, let it turn off by itself and reconnect it after 15-20 minutes.
 
 
-## <Highlight color="#68a4f9">Beta testing</Highlight>
 
-  ### How do I get in the beta-group?
 
-  Please contact us via our [support email](mailto:hello@weatherxm.com) or via the [contact form on our website](https://weatherxm.com/contact-us/) and provide the following info: email address and serial number of your device or station name.
 
-  <hr />
-
-  ### Who is considered to be a beta-tester?
-
-  Anyone who has his station up and running before mainnet launch.
-  
-  <hr />
-
-  ### I would like to be the brand ambassador of WeatherXM
-
-  We appreciate your support and your interest in our project.
-  To apply, please fill the [Affiliate form](https://weatherxm.com/affiliate-area/) and we will review your request.
