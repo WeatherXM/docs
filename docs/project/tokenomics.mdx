@@ -15,7 +15,7 @@ WeatherXM is based on an EVM compatible chain - we are currently developing on A
 
 ### New approach in crowdsourcing weather data.
 WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
-[WXM](https://mumbai.polygonscan.com/token/0xecbbbf304fdf91cddda6c6643ed1300a552b691a) is currently implemented in [Arbitrum Sepolia Testnet](https://sepolia.arbiscan.io/address/0xbacef2640862b42eeccfeab9bf750476ae7decc6) as an ERC20 token rewarding the closed beta user group.
+$WXM is currently implemented in [Arbitrum Sepolia Testnet](https://sepolia.arbiscan.io/address/0xbacef2640862b42eeccfeab9bf750476ae7decc6) as an ERC20 token rewarding the closed beta user group.
 
 
 
@@ -29,11 +29,7 @@ The following sections describe how the smart contract issues new tokens, and ho
 
 **Total supply of the WXM token is 100M (100,000,000) tokens.**
 
-<div class="control">
 
-  <img src={useBaseUrl("img/project/tokenomics/wxm-distribution.png")} />
- 
-</div>
 
 
 
@@ -43,13 +39,14 @@ The following sections describe how the smart contract issues new tokens, and ho
 | **Initial Supporters**    | 30%         | 30,000,000 WXM |
 | **Treasury**  | 10%         | 10,000,000 WXM |
 | **Liquidity Support**      | 5%          | 5,000,000 WXM  |
-|**"Airdrop" to beta participants**| 3%    | 3.000.000 WXM  |
+|**Beta Rewards**| 3%    | 3.000.000 WXM  |
 
 #### 55% - Station Rewards:
 Tokens will be used for station owners rewards. 3M of this amount will be used to gradually reward beta users.
 
 #### 30% - Initial Supporters:
-30M tokens will be used to reward the company and the investors for their contributions and work. They will be unlocked daily using a 10-10-80% distribution in the first 3 years.
+
+30M tokens will be allocated to initial supporters of the project. They will be unlocked daily using a 10-10-80% distribution in the first 3 years.
 
 
 #### 10% - Treasury
@@ -59,27 +56,25 @@ Tokens will be used for station owners rewards. 3M of this amount will be used t
 #### 5% - Liquidity support:
 Will be used to bootstrap and support $WXM’s liquidity.
 
-#### 3% Airdrop" to beta participants:
+#### 3% Beta Rewards:
 3 million tokens will be used to reward stations that contributed data to the Network during the beta phase. This is not a marketing activity intended to create buzz and awareness, but a reward mechanism for the stations that participated and formed the Network before a reward mechanism was in place.
 
-Beta rewards will be allocated according to the number of days a station has provided valid data to the network during the testnet/beta period. The number of days contributed by each station during the beta period will be calculated using the latest rewards mechanism implemented at the time of the token launch and applied retrospectively to the data the stations provided during the beta period.
- 
-Beta rewards will be distributed to beneficiaries gradually on top of the rewards they would normally receive for operating their stations, until all beta rewards allocated to them are distributed.
+More specifically, the 3,000,000 tokens will be allocated to stations based on the percentage of rewardable station-hours each station provided to the Network.
 
-For example, a station that provided data for 100 days before the token launch, will receive their beta rewards throughout the first 100 days after the token launch.
+A rewardable station hour is an hour during which the station sent at least one valid weather data package to the network. Proof-of-Location (PoL) is not taken into account during the calculation of the Beta Rewards.
 
 This provides an additional incentive for the early Network adopters to remain in the network, maximising their station data value due to seniority and providing additional incentive for early members to actively participate in future Network governance.
 
 
 :::note
-To understand better the "Airdrop" you can read the related blog post <a href="https://blog.weatherxm.com/the-wxm-beta-rewards-program-fe2cbb9778b0">here</a>
+To understand better the "Beta rewards" you can read the related blog post <a href="https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7">here</a>
 :::
 
 
 All tokens will be minted on token launch. More specifically:
 - 52M tokens will be  issued linearly, 14,246 per day, and will be  distributed daily to weather station owners.
 - 30M tokens will be issued daily using a 10-10-80% distribution in the first 3 years and will be distributed daily to WeatherXM AG and its Investors.
-- 3M tokens will be distributed retrospectively to station owners that participated in the beta phase of the Network (“Airdrop”).
+- 3M tokens will be distributed retrospectively to station owners that participated in the beta phase of the Network ("Beta Rewards").
 - 10M tokens will be linearly unlocked the first 5 years. These tokens will be used to support and fund the ecosystem development.
 - A one-off issuance of 5M tokens will take place on token launch. These tokens will be used to provide market liquidity.
 
