@@ -52,7 +52,7 @@ module.exports = {
     },
 	{
 		type: "category",
-		label: "rewards",
+		label: "Rewards",
 		items: [
 				  
 				  "rewards/reward-mechanism",
@@ -92,9 +92,9 @@ module.exports = {
 	  }, 
 
 	
-	"Introduction",
+	"introduction",
 	"the-$WXM-token",  
 	"glossary/glossary",
-	"Help Center/FAQ"
+	"help-center/faq"
   ]
 };
