@@ -1,21 +1,7 @@
 module.exports = {
   docs: [
     "home",
-    {
-      type: "category",
-      label: "Project",
-      items: [
-				"project/project",
-				"project/tokenomics",
-				"project/reward-mechanism",
-				"project/quality-of-data",
-				"project/proof-of-location",
-				"project/cell-capacity",
-				"project/hardware-class",
-				"project/rewards-claiming"
-			],
-      collapsed: true,
-    },
+   
     {
       type: "category",
       label: "WeatherXM Devices",
@@ -56,6 +42,20 @@ module.exports = {
     },
 	{
 		type: "category",
+		label: "Rewards",
+		items: [
+				  
+				  "Rewards/reward-mechanism",
+				  "Rewards/quality-of-data",
+				  "Rewards/proof-of-location",
+				  "Rewards/cell-capacity",
+				  "Rewards/hardware-class",
+				  "Rewards/rewards-claiming"
+			  ],
+		collapsed: true,
+	  },
+	{
+		type: "category",
 		label: "Wallet",
 		items: [
 			"wallet/add-edit-wallet-address",
@@ -72,6 +72,8 @@ module.exports = {
 		],
 		collapsed: true,
 	  },
+	"Introduction",
+	"The $WXM Token",  
 	"deployment-examples",
     "glossary/glossary",
 	"faqs/faqs"
