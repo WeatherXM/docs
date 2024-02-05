@@ -52,15 +52,15 @@ module.exports = {
     },
 	{
 		type: "category",
-		label: "Rewards",
+		label: "rewards",
 		items: [
 				  
-				  "Rewards/reward-mechanism",
-				  "Rewards/quality-of-data",
-				  "Rewards/proof-of-location",
-				  "Rewards/cell-capacity",
-				  "Rewards/hardware-class",
-				  "Rewards/rewards-claiming"
+				  "rewards/reward-mechanism",
+				  "rewards/quality-of-data",
+				  "rewards/proof-of-location",
+				  "rewards/cell-capacity",
+				  "rewards/hardware-class",
+				  "rewards/rewards-claiming"
 			  ],
 		collapsed: true,
 	  },
@@ -93,7 +93,7 @@ module.exports = {
 
 	
 	"Introduction",
-	"The $WXM Token",  
+	"the-$WXM-token",  
 	"glossary/glossary",
 	"Help Center/FAQ"
   ]
