@@ -64,24 +64,34 @@ module.exports = {
 			  ],
 		collapsed: true,
 	  },
-	{
+	  {
 		type: "category",
-		label: "Wallet",
+		label: "Mobile App",
+
 		items: [
-			"wallet/add-edit-wallet-address",
-			"wallet/how-to-join-arbitrum-and-see-your-tokens"
+			{
+				type: "category",
+				label: "Wallet",
+				items: [
+					"wallet/add-edit-wallet-address",
+					"wallet/how-to-join-arbitrum-and-see-your-tokens"
+				],
+				collapsed: true,
+			  },
+			  {
+				type: "category",
+				label: "Account",
+				items: [
+					"account/delete-account",
+					"account/change-password"
+				],
+				collapsed: true,
+			  },
 		],
 		collapsed: true,
-	  },
-	{
-		type: "category",
-		label: "Account",
-		items: [
-			"account/delete-account",
-			"account/change-password"
-		],
-		collapsed: true,
-	  },
+	  }, 
+
+	
 	"Introduction",
 	"The $WXM Token",  
 	"glossary/glossary",
