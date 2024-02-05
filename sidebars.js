@@ -52,7 +52,7 @@ module.exports = {
     },
 	{
 		type: "category",
-		label: "rewards",
+		label: "Rewards",
 		items: [
 				  
 				  "rewards/reward-mechanism",
