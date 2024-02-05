@@ -6,6 +6,15 @@ module.exports = {
       type: "category",
       label: "WeatherXM Devices",
       items: [ 
+		{
+			type: "category",
+			label: "Deployment Examples",
+			items: [
+					  "wxm-devices/deployment-examples",
+			],
+			collapsed: true,
+		  },
+
 	    {
 	      type: "category",
 	      label: "WXM-WS1000",
@@ -36,6 +45,7 @@ module.exports = {
 					"wxm-devices/helium-bundle/helium-specs"
 	      ],
 	      collapsed: true,
+		  
 	    }
       ],
       collapsed: true,  
@@ -74,8 +84,7 @@ module.exports = {
 	  },
 	"Introduction",
 	"The $WXM Token",  
-	"deployment-examples",
-    "glossary/glossary",
-	"faqs/faqs"
+	"glossary/glossary",
+	"Help Center/FAQ"
   ]
 };
