@@ -55,12 +55,12 @@ module.exports = {
 		label: "Rewards",
 		items: [
 				  
-				  "rewards/reward-mechanism",
-				  "rewards/quality-of-data",
-				  "rewards/proof-of-location",
-				  "rewards/cell-capacity",
-				  "rewards/hardware-class",
-				  "rewards/rewards-claiming"
+				  "Rewards/reward-mechanism",
+				  "Rewards/quality-of-data",
+				  "Rewards/proof-of-location",
+				  "Rewards/cell-capacity",
+				  "Rewards/hardware-class",
+				  "Rewards/rewards-claiming"
 			  ],
 		collapsed: true,
 	  },
