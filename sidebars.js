@@ -1,25 +1,11 @@
 module.exports = {
   docs: [
     "home",
+	"introduction",
     {
       type: "category",
-      label: "Project",
+      label: "Deploy a WeatherXM Device",
       items: [
-				"project/project",
-				"project/tokenomics",
-				"project/reward-mechanism",
-				"project/quality-of-data",
-				"project/proof-of-location",
-				"project/cell-capacity",
-				"project/hardware-class",
-				"project/rewards-claiming"
-			],
-      collapsed: true,
-    },
-    {
-      type: "category",
-      label: "WeatherXM Devices",
-      items: [ 
 	    {
 	      type: "category",
 	      label: "WXM-WS1000",
@@ -50,30 +36,46 @@ module.exports = {
 					"wxm-devices/helium-bundle/helium-specs"
 	      ],
 	      collapsed: true,
-	    }
+		  
+	    },
+		"wxm-devices/deployment-examples",
       ],
       collapsed: true,  
     },
 	{
 		type: "category",
-		label: "Wallet",
+		label: "Rewards",
 		items: [
-			"wallet/add-edit-wallet-address",
-			"wallet/how-to-join-arbitrum-and-see-your-tokens"
+				  "rewards/reward-mechanism",
+				  "rewards/quality-of-data",
+				  "rewards/proof-of-location",
+				  "rewards/cell-capacity",
+				  "rewards/hardware-class",
+				  "rewards/rewards-claiming"
 		],
 		collapsed: true,
 	  },
-	{
+	  {
 		type: "category",
-		label: "Account",
+		label: "Mobile App",
+
 		items: [
-			"account/delete-account",
-			"account/change-password"
+			{
+				type: "category",
+				label: "Wallet",
+				items: [
+					"wallet/add-edit-wallet-address",
+					"wallet/how-to-join-arbitrum-and-see-your-tokens"
+				],
+				collapsed: true,
+			},
+            "account/delete-account",
+            "account/change-password"
 		],
 		collapsed: true,
 	  },
-	"deployment-examples",
-    "glossary/glossary",
-	"faqs/faqs"
+	"tokenomics",
+	"glossary/glossary",
+	"help-center/faqs"
   ]
 };
