@@ -95,6 +95,6 @@ module.exports = {
 	"introduction",
 	"the-$WXM-token",  
 	"glossary/glossary",
-	"help-center/faq"
+	"help-center/faqs"
   ]
 };
