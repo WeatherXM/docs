@@ -1,20 +1,11 @@
 module.exports = {
   docs: [
     "home",
-   
+	"introduction",
     {
       type: "category",
-      label: "WeatherXM Devices",
-      items: [ 
-		{
-			type: "category",
-			label: "Deployment Examples",
-			items: [
-					  "wxm-devices/deployment-examples",
-			],
-			collapsed: true,
-		  },
-
+      label: "Deploy a WeatherXM Device",
+      items: [
 	    {
 	      type: "category",
 	      label: "WXM-WS1000",
@@ -46,7 +37,8 @@ module.exports = {
 	      ],
 	      collapsed: true,
 		  
-	    }
+	    },
+		"wxm-devices/deployment-examples",
       ],
       collapsed: true,  
     },
@@ -54,14 +46,13 @@ module.exports = {
 		type: "category",
 		label: "Rewards",
 		items: [
-				  
-				  "Rewards/reward-mechanism",
-				  "Rewards/quality-of-data",
-				  "Rewards/proof-of-location",
-				  "Rewards/cell-capacity",
-				  "Rewards/hardware-class",
-				  "Rewards/rewards-claiming"
-			  ],
+				  "rewards/reward-mechanism",
+				  "rewards/quality-of-data",
+				  "rewards/proof-of-location",
+				  "rewards/cell-capacity",
+				  "rewards/hardware-class",
+				  "rewards/rewards-claiming"
+		],
 		collapsed: true,
 	  },
 	  {
@@ -77,23 +68,13 @@ module.exports = {
 					"wallet/how-to-join-arbitrum-and-see-your-tokens"
 				],
 				collapsed: true,
-			  },
-			  {
-				type: "category",
-				label: "Account",
-				items: [
-					"account/delete-account",
-					"account/change-password"
-				],
-				collapsed: true,
-			  },
+			},
+            "account/delete-account",
+            "account/change-password"
 		],
 		collapsed: true,
-	  }, 
-
-	
-	"introduction",
-	"the-$WXM-token",  
+	  },
+	"tokenomics",
 	"glossary/glossary",
 	"help-center/faqs"
   ]
