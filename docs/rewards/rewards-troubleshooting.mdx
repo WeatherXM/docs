@@ -7,101 +7,110 @@ slug: /project/rewards-troubleshooting
 
 A guide to interpreting mobile app error messages, understanding their meanings, and taking appropriate actions to resolve them.
 
-### No wallet
+## No wallet
 
 It seems that you haven't connected a wallet to your account yet. Please note that in order to receive rewards, you must connect a wallet address. Here's what you need to do:
 
-1. First, learn how to add or edit a wallet address [How to add/edit a wallet address](/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) .
-2. Then, follow the instructions for [How to join Arbitrum Sepolia and see your tokens](/wallet/how-to-join-arbitrum-and-see-your-tokens#add-arbitrum-sepolia-network-to-metamask).
+1. First, learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
+2. Then, follow the instructions for [joining Arbitrum Sepolia and see your $WXM tokens](/wallet/how-to-join-arbitrum-and-see-your-tokens#add-arbitrum-sepolia-network-to-metamask).
 
-Once you've completed these steps, you'll be all set to claim your rewards. Check back tomorrow and see "How to Claim Rewards" for further guidance.
+Once you've completed the above steps, you'll be all set to claim your rewards. Check back tomorrow and see "[How to Claim Rewards](/project/rewards-claiming)" for further guidance.
 
 <hr/>
 
-### No Station Data 
+## No Station Data
 
 It seems that your station sent no data at all. 
 That either means that your station was offline or not connected to the network. 
 
 Here's what you need to do:
 
-**For WS-1000 (wifi or M5 version)**
+### For the WS-1000 (WiFi/M5 version)
 
-1. Check if the station's battery level is low through mobile app settings
+1. Check if the station's battery level is low through mobile app settings.
 If the battery is low, the connection between your station and the M5 gateway will be unstable, resulting in data loss. 
-2. Follow the Troubleshooting guide here [No WiFi connection](/wifi-m5-bundle/m5-troubleshooting#no-wifi--connection).
+2. Follow the Troubleshooting guide regarding [No WiFi connection](/wifi-m5-bundle/m5-troubleshooting#no-wifi--connection).
 3. Check that your station connection (RF) to the gateway is stable by following the guide [here](/wifi-m5-bundle/m5-troubleshooting#weather-station-not-reporting-data-to-m5-miner-there-are-dashes----on-the-display-console).
-4. Also read through the guide to add the included external antenna [here](/wifi-m5-bundle/m5-troubleshooting#my-station-does-not-connect-to-the-m5-miner). 
+4. Also read through the guide to add the included external antenna [here](/wifi-m5-bundle/m5-troubleshooting#my-station-does-not-connect-to-the-m5-miner).
 
-**For WS-2000 (Helium version)**
+### For the WS-2000 (Helium version)
 
-1. Check if the station's battery level is low through mobile app settings
+1. Check if the station's battery level is low through mobile app settings.
 2. Check for [Helium coverage](https://docs.weatherxm.com/helium-bundle/helium-troubleshooting#how-to-see-if-there-is-helium-coverage-in-your-area) in your area.
 
 <hr/>
 
-### Sensor Problems
+## Sensor Problems
 
-Weather data packets failed to pass our quality checks. We evaluate all data packets sent by our weather stations by our QoD (Quality of Data) algorithm. You can read more [here](https://docs.weatherxm.com/project/quality-of-data).
+Weather data packets failed to pass our quality checks. We evaluate all data packets sent by our weather stations using our QoD (Quality of Data) algorithm. You can read more about this algorithm [here](https://docs.weatherxm.com/project/quality-of-data).
 There are several reasons that you may experience this error, which includes:
 
-- Out-of-bounds data
+- Out of bounds data
 - Spikes on data 
-- Constant Values
+- Constant values
 - Frozen sensor
 
-Check that your station is deployed correctly [station deployment](/deployment-examples), and observe it for  a couple of days before contacting our support team. If you still receive the error, you are advise to contact our support team for more guidance. 
+Check out our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly,
+and observe it for a couple of days before contacting our support team. If you still receive the error, you are advised to contact our [support team](https://support.weatherxm.com) for more guidance.
+<hr/>
+
+## Weather Data Gaps
+Some data gaps were detected during our data quality checks.
+Indoor or outdoor units are not properly connected to the network, or to each other.
+
+Here's what you need to do:
+
+### For the WS-1000 (WiFi/M5 version)
+
+1. Check if the station's battery level is low through mobile app settings.
+If the battery is low, the connection between your station and the M5 gateway will be unstable, resulting in data loss.
+2. Follow the Troubleshooting guide regarding [No WiFi connection](/wifi-m5-bundle/m5-troubleshooting#no-wifi--connection).
+3. Check that your station connection (RF) to the gateway is stable by following the guide [here](/wifi-m5-bundle/m5-troubleshooting#weather-station-not-reporting-data-to-m5-miner-there-are-dashes----on-the-display-console).
+4. Also read through the guide to add the included external antenna [here](/wifi-m5-bundle/m5-troubleshooting#my-station-does-not-connect-to-the-m5-miner).
+
+### For the WS-2000 (Helium version)
+
+1. Check if the station's battery level is low through mobile app settings.
+2. Check for [Helium coverage](https://docs.weatherxm.com/helium-bundle/helium-troubleshooting#how-to-see-if-there-is-helium-coverage-in-your-area) in your area.
 
 <hr/>
 
-### Weather Data Gaps
+## Bad Station Deployment
 
-Weather data packets failed to pass our quality checks. We evaluate all data packets sent by our weather stations by our QoD (Quality of Data) algorithm. You can read more [here](https://docs.weatherxm.com/project/quality-of-data).
-There are several reasons that you may experience this error, which includes:
-
-- Out-of-bounds data
-- Spikes on data 
-- Constant Values
-- Frozen sensor
-
-Check that your station is deployed correctly [station deployment](/deployment-examples), and observe it for  a couple of days before contacting our support team. If you still receive the error, you are advise to contact our support team for more guidance. 
-
-<hr/>
-
-### Bad Station Deployment
-
-It seems like your station needs some improvement on how and where is deployed. 
-Check our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for some inspiration on how and where you should install your weather station.
+It seems like your station needs some improvement in terms of how and where it is deployed.
+Check out our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for some inspiration on how and where you should install your weather station.
 
 It is mandatory to have a proper installation to receive the maximum amount of rewards.
-Our QoD algorithm runs every day, and your data is being evaluated Read more [here](/project/quality-of-data).
+Our QoD algorithm runs every day to evaluate your data. You can read more about this algorithm [here](/project/quality-of-data).
 
 <hr/>
 
+## No location Data
 
-### No location Data
+Your station did not report any GPS location and was suspended from rewards because it didn't send any GPS data.
 
 Please make sure to check the troubleshooting guides depending on your weather station before contacting our [support team](https://support.weatherxm.com). 
 
 **For WS-1000 (wifi or M5 version)**
 
-1. [No Locationon](/wifi-m5-bundle/m5-troubleshooting#no-location-gps-data-arrow-icon-is-red)
-2. [No GPS signal](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#place-m5-near-a-window-for-better-gps-signal)
+1. [No location (GPS) data (arrow icon is red)](/wifi-m5-bundle/m5-troubleshooting#no-location-gps-data-arrow-icon-is-red)
+2. [Place the M5 near a window (for better GPS signal)](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#place-m5-near-a-window-for-better-gps-signal)
 
 **For WS-2000 (Helium version)**
 
-1. [No location](/helium-bundle/helium-troubleshooting#no-location-gps-data)
-2. [Installing Instructions](/wxm-devices/helium-bundle/helium-install-weather-station)
+1. [No location (GPS) data](/helium-bundle/helium-troubleshooting#no-location-gps-data)
+2. [Installation instructions](/wxm-devices/helium-bundle/helium-install-weather-station)
 
 <hr/>
 
-### Location Not Verified
-It seems that your location is different from the one you set during your station claim.
+## Location Not Verified
+
+It seems that your location is different from the one you set while claiming your station.
 Please verify your location through the mobile app (Station details -> Settings -> Edit Location)
-In detail  the [Proof of Location (PoL) mechanism](/project/proof-of-location) flaged your weather station because the location reported by its GPS receiver(s) is different than the location you declared during the setup and claiming of the station. 
+In detail, the [Proof of Location (PoL) mechanism](/project/proof-of-location) flagged your weather station because the location reported by its GPS receiver(s) is different than the location you declared during the setup and claiming of the station.
 
 This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
-This incurs a "relocation penalty," meaning your station will be exempt from reward distribution until you verify the location or relocate the weather station (move to another cell) 
+Your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app.
 
 :::note
 During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes
@@ -110,13 +119,13 @@ During the beta phase and while the project is still on a test-net, the Proof of
 
 <hr/>
 
-### User Relocation Penalty
+## User Relocation Penalty
 
-It seems like you used the relocation feature or you edited the location of your weather station through the app.
-Please wait 7 days and your Weather station will start to gain rewards again.
+It seems like you used the relocation feature and you edited the location of your weather station through the app.
+Please wait 7 days and your weather station will start earning rewards again.
 
 :::note
-During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes
+During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes.
 :::
 
 <hr/>
