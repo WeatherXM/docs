@@ -37,8 +37,8 @@ Here's what you need to do:
     <ol>
       <li>RF connection with the station.</li>
       <li>Connection to WeatherXM Network.</li>
-      <li>GPS reciver.</li>
-      <li>WiFi coneection.</li>
+      <li>GPS receiver.</li>
+      <li>WiFi connection.</li>
     </ol>
   </div>
 </div>
@@ -63,32 +63,37 @@ If the battery is low, the connection between your station and the M5 gateway wi
 
 ## Sensor Problems
 
-We have discovered that the weather data packets did not meet our quality standards. 
-To ensure the accuracy of the information sent by our weather stations, we evaluate all data packets using our Quality of Data (QoD) algorithm. For more information about this algorithm, please refer to this link. 
-There reasons why you may be encountering this error, and they are as follows with the proposed asctions to take:
+We have discovered that the weather data packets received, did not meet our quality standards. 
+To ensure the accuracy of the information sent by our weather stations, we evaluate all data packets using our Quality of Data (QoD) algorithm. For more information about this algorithm, please refer to this [QoD](/project/quality-of-data). 
+
+Following are the errors and the appropriate actions you can take to resolve the issues:
 
 #### Out of bounds data 
-OBC means that a sensor sends  a completely irrational value, which implies a faulty sensor. So, the user may need to contact [support](https://support.weatherxm.com)  for sensor replacement.
+OBC, means that a sensor sends a completely irrational value, which implies to a faulty sensor. It is recommended that you observe it for a few days before reaching out to our [support team](https://support.weatherxm.com)  for sensor replacement.
 
 #### Spikes on data 
-You should first check your station is optimally deployed and then you should contact [support ](https://support.weatherxm.com).
+You should first check your station if it is optimally deployed and then you should contact [support ](https://support.weatherxm.com).
 
 #### Constant values 
-You should first check your station is optimally deployed and then you should contact [support ](https://support.weatherxm.com).
+You should first check your station if it is optimally deployed and then you should contact [support ](https://support.weatherxm.com).
 
 #### Frozen sensor
 You should remove excess snow or ice from the weather station, and make sure wind cups and wind vanes rotate freely.
 
 
 Take a look at our out our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
-It is recommended that you observe it for a few days before reaching out to our [support team](https://support.weatherxm.com) if you encounter any errors. In case you still receive the error, please do not hesitate to contact our [support team](https://support.weatherxm.com) for further guidance.
 
+:::tip
+It is recommended that you observe it for a few days before reaching out to our [support team](https://support.weatherxm.com) if you encounter any errors. 
+In case you still receive the error after a couple of days, please do not hesitate to contact our [support team](https://support.weatherxm.com) for further guidance.
+:::
 
 <hr/>
 
 ## Weather Data Gaps
+
 Some data gaps were detected during our data quality checks.
-Indoor or outdoor units are not properly connected to the network, or to each other.
+Perhaps the indoor or outdoor units are not properly connected to the network, or to each other.
 
 Here's what you need to do:
 
@@ -102,8 +107,8 @@ Here's what you need to do:
     <ol>
       <li>RF connection with the station.</li>
       <li>Connection to WeatherXM Network.</li>
-      <li>GPS reciver.</li>
-      <li>WiFi coneection.</li>
+      <li>GPS receiver.</li>
+      <li>WiFi connection.</li>
     </ol>
   </div>
 </div>
@@ -153,8 +158,13 @@ Your weather station was suspended from rewards because it did not report GPS da
 
 ## Location Not Verified
 
-t appears that the location of your weather station is different from the one you had originally set while claiming it. 
-Please verify your location through the mobile app (Station details -> Settings -> Edit Location)
+It appears that the location of your weather station is different from the one you had originally set while claiming it. 
+Please verify your location through the mobile app. (See the screenshots below for guidance)
+<div class="explanation small-big">
+ <img src={useBaseUrl("/img/project/settings.png")} />
+ <img src={useBaseUrl("/img/project/edit_location.png")} />
+ <img src={useBaseUrl("/img/project/edit_location2.png")} />
+</div>
 
 In detail, the [Proof of Location (PoL) mechanism](/project/proof-of-location) flagged your weather station because the location reported by its GPS receiver(s) is different than the location you declared during the setup and claiming of the station.
 
@@ -165,7 +175,7 @@ As a result, your station will not be eligible for reward distribution until it 
 
 :::tip
 When discussing the weather, we always mention a specific location, either directly or indirectly. Therefore, the data provided by weather stations in the WeatherXM Network is meaningless unless we know the location of each station at all times.
- It is crucial for the stability of the Network to have weather stations that can report their current location and remain stationary.
+It is crucial for the stability of the Network to have weather stations that can report their current location and remain stationary.
 :::
 
 :::note
