@@ -1,0 +1,66 @@
+---
+id: beta-rewards
+title: Beta Rewards
+sidebar_label: Beta Rewards
+slug: /project/beta-rewards
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+
+$WXM is a governance token that allows token holders to participate in the governance process of the project. However, it is important to acknowledge the contribution of station owners who joined the project before the token was launched. 
+As a form of gratitude, the stations that participated in the network during the beta period (before the Token Launch Day) will receive Beta rewards for 465 days, in addition to the daily rewards. The project has reserved 3M WXM for Beta rewards, read more at [Token Allocation](/tokenomics#wxm-token-distribution) section.
+
+
+### Eligibility
+
+- “Beta Rewards” will be allocated to users based on the number of valid station hours they provided to the network before the token launch 
+- They will be awarded based on the quality of the data stations will provide after the token launch.
+
+:::info
+A rewardable station hour is an hour during which the station sent at least one valid weather data package to the network.
+:::
+
+**[Proof of Location (PoL) mechanism](/project/proof-of-location) is not taken into account during the calculation of the Beta Rewards.**
+
+Any tokens that have not been awarded during this period will go back to the Association treasury.
+
+
+
+### Calculation
+
+The following calculations will take place for each station `s`, the day before the Token Launch:
+
+1. `RewardableBetaHours[s]`.  
+This is the total number of hours the station provided valid data during the Beta period.  
+A rewardable hour is an hour during which the station sent at least one valid weather data point.
+2. `StationBetaRewards[s] = 3000000 * RewardableBetaHours[s]/Sum(RewardableBetaHours of all stations)`  
+This is the percentage of the 3m tokens that correspond to the rewardable hours the station provided.
+3. `DailyBetaRewards[s] = StationBetaRewards[s]/365`  
+This is the beta rewards allocated daily to this station.
+
+Stations must have a wallet defined to be part of the Beta Rewards allocation.
+
+### Claim
+
+For 425 days after the Token Launch, **in addition to their daily rewards**, stations will be able to claim beta rewards as follows:
+
+`BetaRewards[s] = DailyBetaRewards[s] * QoD_Score`
+
+So each one of the stations that participated during the Beta period, every day after the Token Launch, and for 365 days, they will be able to claim:
+
+`Rewards = DailyRewards + BetaRewards`
+
+<hr/>
+
+:::warning
+In order to get allocated any Beta Rewards, stations must be associated with an Ethereum wallet address.
+If you are a station owner that has not set a wallet, make sure you do it now. You can do it by following the instructions in the [Wallets](/wallet/add-edit-wallet-address) section.
+:::
+
+:::tip
+You can always read more at the [WeatherXM Network](https://weatherxm.network/)  website.
+:::
+
+### Links
+- [Medium Article on Beta Rewards](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7)
