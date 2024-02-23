@@ -16,7 +16,7 @@ It seems that you haven't connected a wallet to your account yet. Please note th
 1. Learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
 2. Then, follow the instructions for [joining Arbitrum Sepolia and see your $WXM tokens](/wallet/how-to-join-arbitrum-and-see-your-tokens#add-arbitrum-sepolia-network-to-metamask).
 
-Once you've completed the above steps, you'll be all set to claim your rewards. Check back tomorrow and see "[How to Claim Rewards](/project/rewards-claiming)" for further guidance.
+Once you've completed the above steps, you'll be all set to claim your rewards. Please wait until the [Quality of Data (QoD) algorithm](/project/quality-of-data) completes. This usually takes until the following day and see "[How to Claim Rewards](/project/rewards-claiming)" for further guidance.
 
 <hr/>
 
@@ -27,7 +27,7 @@ It seems that your station did not transmit any data at all, which may indicate 
 
 Here's what you need to do:
 
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 <div class="explanation">
    <img src={useBaseUrl("/img/project/m5-ui-new_numbered.jpg")} />
@@ -63,22 +63,44 @@ If the battery is low, the connection between your station and the M5 gateway wi
 
 ## Sensor Problems
 
-We have discovered that the weather data packets received, did not meet our quality standards. 
+If you got this error, it means our data evaluation services detected that the received weather packets, did not meet our quality standards. 
 To ensure the accuracy of the information sent by our weather stations, we evaluate all data packets using our [Quality of Data (QoD) algorithm](/project/quality-of-data). For more information about this algorithm, please refer to this [here](/project/quality-of-data). 
 
 Below are some of the possible errors and the appropriate actions you can take to resolve the issues:
 
 
 #### Out of Bounds Data 
-It's possible that a sensor sends a completely irrational value, which implies to a faulty sensor. It is recommended that you observe it for a few days before reaching out to our [support team](https://support.weatherxm.com)  for sensor replacement.
+It's possible that a sensor sends a completely irrational value, which implies to a faulty sensor. If this error persists for multiple days, it is recommended to perform a complete **power cycle**.
+
+##### Power cycle procedure:
+1. Remove batteries.
+2. Cover the solar panel so the station isn't powered by the panel while the batteries are out.
+3. Press the reset button a few times to drain all stored power.
+4. Wait a few minutes.
+5. Put batteries back in place and wait for the station to boot up.
+
+If the above doesn't work, you should contact our [support team](https://support.weatherxm.com)  for sensor replacement.
 
 #### Spikes on Data 
-You should first check your station if it is optimally deployed and then you should contact [support](https://support.weatherxm.com). Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
+One or more of your sensor are exhibiting irrational spikes. You should first check your station if it is optimally deployed and then you should contact [support](https://support.weatherxm.com). 
+Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
 
 
 
 #### Constant Values 
-You should first check your station if it is optimally deployed and then you should contact [support](https://support.weatherxm.com). Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
+One or more of your sensors report constant values which implies a bad installation, or less often, a problematic sensor. If your station is optimally installed and the constant value errors persist for a few days, 
+you should perform a **power cycle** and if you continue to receive it, contact [support](https://support.weatherxm.com).
+
+Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
+
+##### Power cycle procedure:
+1. Remove batteries.
+2. Cover the solar panel so the station isn't powered by the panel while the batteries are out.
+3. Press the reset button a few times to drain all stored power.
+4. Wait a few minutes.
+5. Put batteries back in place and wait for the station to boot up.
+
+If the above doesn't work, you should contact our [support team](https://support.weatherxm.com)  for sensor replacement.
 
 #### Frozen Sensor
 You should remove excess snow or ice from the weather station, and make sure wind cups and wind vanes rotate freely.
@@ -99,7 +121,7 @@ Perhaps the indoor or outdoor units are not properly connected to the network, o
 
 Here's what you need to do:
 
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 <div class="explanation">
    <img src={useBaseUrl("/img/project/m5-ui-new_numbered.jpg")} />
@@ -146,7 +168,7 @@ We recommend that you take a look at our [Deployment Examples](/deployment-examp
 
 Your weather station was suspended from rewards because it did not report GPS data. Please check the troubleshooting guides for your station below, before contacting our support team.[support team](https://support.weatherxm.com). 
 
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 1. [No location (GPS) data (arrow icon is red)](/wifi-m5-bundle/m5-troubleshooting#no-location-gps-data-arrow-icon-is-red)
 2. [Place the M5 near a window (for better GPS signal)](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#place-m5-near-a-window-for-better-gps-signal)
@@ -181,7 +203,7 @@ It is crucial for the stability of the Network to have weather stations that can
 :::
 
 :::note
-During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes
+During the beta phase and while the project is still on a testnet, the [Proof of Location (PoL) mechanism](/project/proof-of-location) penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes, however this may change once the project moves to mainnet.
 :::
 
 
@@ -195,7 +217,7 @@ It seems like you used the relocation feature and you edited the location of you
 WeatherXM places great importance on station continuity, and discourage relocations therefore It is important for the Network that a station remains at the same location throughout its lifetime.
 
 :::note
-During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes.
+During the beta phase and while the project is still on a testnet, the [Proof of Location (PoL) mechanism](/project/proof-of-location) penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes, however this may change once the project moves to mainnet.
 :::
 
 <hr/>
