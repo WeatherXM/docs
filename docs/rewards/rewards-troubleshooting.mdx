@@ -13,21 +13,21 @@ A guide to interpreting mobile app error messages, understanding their meanings,
 
 It seems that you haven't connected a wallet to your account yet. Please note that in order to receive rewards, you must connect a wallet address. Here's what you need to do:
 
-1. First, learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
+1. Learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
 2. Then, follow the instructions for [joining Arbitrum Sepolia and see your $WXM tokens](/wallet/how-to-join-arbitrum-and-see-your-tokens#add-arbitrum-sepolia-network-to-metamask).
 
-Once you've completed the above steps, you'll be all set to claim your rewards. Check back tomorrow and see "[How to Claim Rewards](/project/rewards-claiming)" for further guidance.
+Once you've completed the above steps, you'll be all set to claim your rewards. Please wait until the [Reward Mechanism (RM) ](/reward-mechanism) completes. This usually takes until the following day and see "[How to Claim Rewards](/project/rewards-claiming)" for further guidance.
 
 <hr/>
 
 ## No Station Data
 
-It seems that your station sent no data at all. 
-That either means that your station was offline or not connected to the network. 
+It seems that your station did not transmit any data at all, which may indicate that it was either offline or not connected to the network.
+
 
 Here's what you need to do:
 
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 <div class="explanation">
    <img src={useBaseUrl("/img/project/m5-ui-new_numbered.jpg")} />
@@ -37,14 +37,14 @@ Here's what you need to do:
     <ol>
       <li>RF connection with the station.</li>
       <li>Connection to WeatherXM Network.</li>
-      <li>GPS reciver.</li>
-      <li>WiFi coneection.</li>
+      <li>GPS receiver.</li>
+      <li>WiFi connection.</li>
     </ol>
   </div>
 </div>
 
 1. Check if the station's battery level is low through mobile app settings.
-If the battery is low, the connection between your station and the M5 gateway will be unstable, resulting in data loss.
+If the battery is low, the connection between your station and the M5 gateway will be unstable resulting in data loss.
 <div class="explanation small-big">
   <img src={useBaseUrl("/img/project/settings_through_the_app.png")} />
   <img src={useBaseUrl("/img/project/battery_level.png")} />
@@ -63,25 +63,65 @@ If the battery is low, the connection between your station and the M5 gateway wi
 
 ## Sensor Problems
 
-Weather data packets failed to pass our quality checks. We evaluate all data packets sent by our weather stations using our QoD (Quality of Data) algorithm. You can read more about this algorithm [here](https://docs.weatherxm.com/project/quality-of-data).
-There are several reasons that you may experience this error, which includes:
+If you got this error, it means our data evaluation services detected that the received weather packets, did not meet our quality standards. 
+To ensure the accuracy of the information sent by our weather stations, we evaluate all data packets using our [Quality of Data (QoD) algorithm](/project/quality-of-data). For more information about this algorithm, please refer to this [here](/project/quality-of-data). 
 
-- Out of bounds data
-- Spikes on data 
-- Constant values
-- Frozen sensor
+Below are some of the possible errors and the appropriate actions you can take to resolve the issues:
 
-Check out our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly,
-and observe it for a couple of days before contacting our support team. If you still receive the error, you are advised to contact our [support team](https://support.weatherxm.com) for more guidance.
+
+#### Out of Bounds Data 
+It's possible that a sensor sends a completely irrational value, which implies to a faulty sensor. If this error persists for multiple days, it is recommended to perform a complete **power cycle**.
+
+##### Power cycle procedure:
+1. Remove batteries.
+2. Cover the solar panel so the station isn't powered by the panel while the batteries are out.
+3. Press the reset button a few times to drain all stored power.
+4. Wait a few minutes.
+5. Put batteries back in place and wait for the station to boot up.
+
+If the above doesn't work, you should contact our [support team](https://support.weatherxm.com)  for sensor replacement.
+
+#### Spikes on Data 
+One or more of your sensors are exhibiting irrational spikes. You should first check your station if it is optimally deployed and then you should contact [support](https://support.weatherxm.com). 
+Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
+
+
+
+#### Constant Values 
+One or more of your sensors report constant values which implies a bad installation, or less often, a problematic sensor. If your station is optimally installed and the constant value errors persist for a few days, 
+you should perform a **power cycle** and if you continue to receive it, contact [support](https://support.weatherxm.com).
+
+Take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) to ensure that your station is deployed correctly.
+
+##### Power cycle procedure:
+1. Remove batteries.
+2. Cover the solar panel so the station isn't powered by the panel while the batteries are out.
+3. Press the reset button a few times to drain all stored power.
+4. Wait a few minutes.
+5. Put batteries back in place and wait for the station to boot up.
+
+If the above doesn't work, you should contact our [support team](https://support.weatherxm.com)  for sensor replacement.
+
+#### Frozen Sensor
+You should remove excess snow or ice from the weather station, and make sure wind cups and wind vanes rotate freely.
+
+
+
+:::tip
+If you encounter any errors, it is recommended that you observe it for a few days before reaching out to our [support team](https://support.weatherxm.com). 
+In case you still receive the error after a couple of days, please do not hesitate to contact our [support team](https://support.weatherxm.com) for further guidance.
+:::
+
 <hr/>
 
 ## Weather Data Gaps
+
 Some data gaps were detected during our data quality checks.
-Indoor or outdoor units are not properly connected to the network, or to each other.
+Perhaps the indoor or outdoor units are not properly connected to the network, or to each other.
 
 Here's what you need to do:
 
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 <div class="explanation">
    <img src={useBaseUrl("/img/project/m5-ui-new_numbered.jpg")} />
@@ -91,8 +131,8 @@ Here's what you need to do:
     <ol>
       <li>RF connection with the station.</li>
       <li>Connection to WeatherXM Network.</li>
-      <li>GPS reciver.</li>
-      <li>WiFi coneection.</li>
+      <li>GPS receiver.</li>
+      <li>WiFi connection.</li>
     </ol>
   </div>
 </div>
@@ -117,21 +157,18 @@ If the battery is low, the connection between your station and the M5 gateway wi
 
 ## Bad Station Deployment
 
-It seems like your station needs some improvement in terms of how and where it is deployed.
-Check out our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for some inspiration on how and where you should install your weather station.
+It appears that your weather station could benefit from some improvements in terms of its deployment. The [Quality of Data (QoD) algorithm](/project/quality-of-data) evaluates all data packet received by a weather station every day, so a proper installation becomes mandatory to receive the maximum amount of rewards.
+We recommend that you take a look at our [Deployment Examples](/deployment-examples) and [Best Practices](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for inspiration on how and where to install your station.
 
-It is mandatory to have a proper installation to receive the maximum amount of rewards.
-Our QoD algorithm runs every day to evaluate your data. You can read more about this algorithm [here](/project/quality-of-data).
+
 
 <hr/>
 
 ## No location Data
 
-Your station did not report any GPS location and was suspended from rewards because it didn't send any GPS data.
+Your weather station was suspended from rewards because it did not report GPS data. Please check the troubleshooting guides for your station below, before contacting our support team.[support team](https://support.weatherxm.com). 
 
-Please make sure to check the troubleshooting guides depending on your weather station before contacting our [support team](https://support.weatherxm.com). 
-
-### For the WS-1000 (WiFi/M5 version)
+### For the M5 (WG1000 - WiFi gateway)
 
 1. [No location (GPS) data (arrow icon is red)](/wifi-m5-bundle/m5-troubleshooting#no-location-gps-data-arrow-icon-is-red)
 2. [Place the M5 near a window (for better GPS signal)](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#place-m5-near-a-window-for-better-gps-signal)
@@ -145,15 +182,28 @@ Please make sure to check the troubleshooting guides depending on your weather s
 
 ## Location Not Verified
 
-It seems that your location is different from the one you set while claiming your station.
-Please verify your location through the mobile app (Station details -> Settings -> Edit Location)
+It appears that the location of your weather station is different from the one you had originally set while claiming it. 
+Please verify your location through the mobile app.
+<div class="explanation small-big">
+ <img src={useBaseUrl("/img/project/settings.png")} />
+ <img src={useBaseUrl("/img/project/edit_location.png")} />
+ <img src={useBaseUrl("/img/project/edit_location2.png")} />
+</div>
+
 In detail, the [Proof of Location (PoL) mechanism](/project/proof-of-location) flagged your weather station because the location reported by its GPS receiver(s) is different than the location you declared during the setup and claiming of the station.
 
-This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
-Your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app.
+This could happen because either you have moved your station from its initial installation site, or you had declared a wrong location during the onboarding process of the station on your mobile app. 
+
+
+As a result, your station will not be eligible for reward distribution until it is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app.
+
+:::tip
+When discussing the weather, we always mention a specific location, either directly or indirectly. Therefore, the data provided by weather stations in the WeatherXM Network is meaningless unless we know the location of each station at all times.
+It is crucial for the stability of the Network to have weather stations that can report their current location and remain stationary.
+:::
 
 :::note
-During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes
+During the beta phase and while the project is still on a testnet, the [Proof of Location (PoL) mechanism](/project/proof-of-location) penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes, however this may change once the project moves to mainnet.
 :::
 
 
@@ -161,11 +211,13 @@ During the beta phase and while the project is still on a test-net, the Proof of
 
 ## User Relocation Penalty
 
-It seems like you used the relocation feature and you edited the location of your weather station through the app.
-Please wait 7 days and your weather station will start earning rewards again.
+Our [Proof of Location (PoL) mechanism](/project/proof-of-location) reported a relocation event. 
+It seems like you used the relocation feature and you edited the location of your weather station through the app. Please wait 7 days and your weather station will start earning rewards again.
+
+WeatherXM places great importance on station continuity, and discourage relocations therefore It is important for the Network that a station remains at the same location throughout its lifetime.
 
 :::note
-During the beta phase and while the project is still on a test-net, the Proof of Location penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes.
+During the beta phase and while the project is still on a testnet, the [Proof of Location (PoL) mechanism](/project/proof-of-location) penalty imposed to devices that went through a relocation is reduced to 2 days for testing purposes, however this may change once the project moves to mainnet.
 :::
 
 <hr/>
