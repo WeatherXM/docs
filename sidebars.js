@@ -52,7 +52,8 @@ module.exports = {
 				  "rewards/cell-capacity",
 				  "rewards/hardware-class",
 				  "rewards/rewards-claiming",
-				  "rewards/rewards-troubleshooting"
+				  "rewards/rewards-troubleshooting",
+				  "rewards/reward-boosts"
 		],
 		collapsed: true,
 	  },
