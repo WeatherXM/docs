@@ -1,43 +1,45 @@
 ---
 id: reward-boosts
-title: Rewards Boosts
+title: Reward Boosts
 sidebar_label: Rewards Boosts
-slug: /project/rewards-boosts
+slug: /project/reward-boosts
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-## Overview
-In addition to the **Base Rewards**, a device already gets for contributing to weather data during the regular daily distribution. Learn more about the daily rewards [Reward Mechanism (RM) ](/reward-mechanism).
+### Overview
+
+**Reward boosts** are additional rewards given to devices that contribute weather data during daily distribution, added to their **base rewards**. Learn more about the daily rewards at the [Reward Mechanism (RM) ](/reward-mechanism) section.
 
 **Reward Boosts** rewards devices with extra $WXM tokens for meeting specific criteria. 
 
-So far the following **Reward Boosts** are implemented:
+So far the following **Reward Boosts** are sheduled to be implemented:
 
 ### Beta Rewards
 
-According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation) 3M $WXM are reserved to reward stations that participated to the network before the Token Launch Day ("Beta period").
+According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Token Launch Day ("Beta period").
 
 Beta rewards distribution will last 425 days, with Day 1 being the Token Launch day.
 
-Calculation:
+#### Calculation:
 
 The following calculations will take place for each station, the day before the Token Launch:
 
-`RewardableBetaHours[s]`.
+`RewardableBetaHours[s]`:
 This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
 
-`StationBetaRewards[s] = 3000000 * RewardableBetaHours[s]/Sum(RewardableBetaHours of all stations)`
-This is the percentage of the 3m tokens that correspond to the rewardable hours the station provided.
-`DailyBetaRewards[s] = StationBetaRewards[s]/365`
+`StationBetaRewards[s] = 3000000 * RewardableBetaHours[s]/Sum(RewardableBetaHours of all stations)`:
+This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
 
-This is the beta rewards allocated daily to this station.
+`DailyBetaRewards[s] = StationBetaRewards[s]/365`: This is the beta rewards allocated daily to this station.
+
+
 
 
 :::info
-Stations must have a wallet defined to be part of the Beta Rewards allocation.
+Each user who has a station eligible for beta rewards, must have a wallet defined to be part of the Beta Rewards allocation. Learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
 :::
 
 :::note
@@ -49,19 +51,19 @@ The Beta Rewards allocation is managed by the [WeatherXM Network](https://weathe
 Cell Boost is a mechanism that can be used to incentivize waether stations to be deployed on a specific cell. 
 
 
-#### Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
+### Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
 
 
-- As part of the &&Beta Rewards** program, the first 100 devices that join the network will receive tokens.
-- Backfill of rewards that were not allocated to certain devices due to malfunctions in the Quality of Data (QoD) mechanism](/project/quality-of-data) or [Proof of Location (PoL) mechanism](/project/proof-of-location).
-- Public Goods Funding (PGF) for devices that are deployed and contribute to the network in a humanitarian way, such as providing data in an underserved area or during a specific time. 
+- As part of the **Beta Rewards** program, the first 100 devices that join the network will receive tokens.
+- Backfill of rewards that were not allocated to certain devices due to malfunctions in the [Quality of Data (QoD) mechanism](/project/quality-of-data) or [Proof of Location (PoL) mechanism](/project/proof-of-location).
+- Public Goods Funding, for devices that are deployed and contribute to the network in a humanitarian way, such as providing data in an underserved area or during a specific time. 
 - Devices that contribute to the network during a specific event, such as a natural disaster, will receive a boost in rewards.
 - Demand driven rewards, a third party who needs data from specific cells.
 
 :::tip
-The **Rewards Boost** is a mechanism that can be used to incentivize specific behavior from devices. It is a flexible mechanism that can be used to incentivize any behavior that is beneficial to the network.
+The **Reward boosts** is a mechanism that can be used to incentivize specific behavior from devices. It is a flexible mechanism that can be used to incentivize any behavior that is beneficial to the network.
 :::
 
 :::info
-All the above are **examples** of reward programs that may be implemented using the Rewards Boost mechanism. 
+All the above are **examples** of reward programs that may be implemented. 
 ::: 

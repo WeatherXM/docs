@@ -51,9 +51,9 @@ module.exports = {
 				  "rewards/proof-of-location",
 				  "rewards/cell-capacity",
 				  "rewards/hardware-class",
-				  "rewards/rewards-claiming",
+				  "rewards/reward-boosts",
 				  "rewards/rewards-troubleshooting",
-				  "rewards/reward-boosts"
+				  "rewards/rewards-claiming"
 		],
 		collapsed: true,
 	  },
