@@ -8,29 +8,31 @@ slug: /project/cell-capacity
 
 **Cell Capacity (CC)** is a parameter that is used to define the maximum number of stations that may receive rewards in a specific cell.
 
-Each cell has a predefined cell capacity that depends on its geospatial characteristics. 
-The cell's capacity is the maximum number of stations that may receive rewards in a specific cell. 
-If 'N' weather stations are rewardable in a cell with a capacity CC during a specific day, if N>CC, then only the first N stations 
-(ordered first by their reward score defined below, and then by seniority) will receive rewards.
-The Cell's Capacity is a parameter that is used to define the maximum number of stations that may receive rewards in a specific cell.
+
+Each cell has a predetermined capacity that depends on its unique geospatial features. The capacity of a cell is the maximum number of weather stations that are eligible for rewards in that particular cell. 
+If there are 'N' rewardable weather stations in a cell with a capacity of 'CC' on a given day, and if N exceeds CC, then only the first N stations 
+(ordered first by their reward score, defined in the [Reward Mechanism (RM) ](/reward-mechanism) section, and then by seniority) will receive rewards.
+
+:::tip
+Cell capacity is a parameter that is used to define the maximum number of stations that are eligible for rewards in a specific cell. Every cell has a predefined capacity that depends on its geospatial characteristics*.
+:::
 
 ### Last Claim Time (LCT): 
 Claim time is a unix timestamp (integer).
-Last Claim Time is set to the timestamp of the last claim of the station. It is used as a seniority indicator ( LCT1<LCT2 then station 1 is more senior than station 2).
+Last Claim Time is set to the timestamp of the last claim of the station. It is used as a **seniority indicator** ( LCT1<LCT2 then station 1 is more senior than station 2).
 
-### Cell Position 
-As long as the station's position is inside the maximum capacity range it will be rewarded, whereas getting out of that range will result in no rewards.
-A station's position in a cell is calculated using its reward score and the station's seniority as criteria.
-
+### Cell Ranking:
+Cell ranking is a way to measure how well a station performs compared to others within the same area, which is about 5 square kilometers (2 square miles) on the planet. Each station is ranked every day based on their reward score and seniority. 
+If a station's ranking is above the capacity threshold, it will be rewarded. 
+However, if the ranking falls below the threshold, the station won't receive any rewards. For instance, in a cell with a maximum capacity of 5 stations, a station that is ranked 3rd would be rewarded, but a station ranked 7th would not receive any rewards.
 
 
 
 ## Related articles
-- [Whitepaper](https://www.weatherxm.com/whitepaper)
 - [We are opening the WeatherXM cell modelling to the world (WeatherXM Blog)](https://blog.weatherxm.com/we-are-opening-the-weatherxm-cell-modelling-to-the-world-b827f1c10c2d)
 - [Defining the density of a multi purpose global weather network (WeatherXM Blog)](https://blog.weatherxm.com/defining-the-density-of-a-multi-purpose-global-weather-network-ea5f4190f91a)
 
 
 :::note
-Cell Capacity is an integer number > 0.
-:::  
+The cell capacity is currently set to the fixed value of 10 rewardable stations, for every cell.
+:::
