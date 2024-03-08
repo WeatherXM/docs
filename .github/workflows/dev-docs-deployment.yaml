@@ -1,4 +1,4 @@
-name: Deploy on Staging
+name: Deploy on Dev Server
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted]
+    runs-on: [dev-machine]
     steps:
       - uses: actions/checkout@v3
       - name: Run a multi-line script
