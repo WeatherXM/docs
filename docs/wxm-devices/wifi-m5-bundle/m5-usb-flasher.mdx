@@ -14,7 +14,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 To check the version of your WXM-M5, swipe to the left-most screen (about). If your version is newer than 0.3.12 you do not need to proceed with this update as your device will receive updates automatically.
 :::
 
-:::warning
+:::danger
 Support for M5 devices running v0.3.12 will be discontinued from November 2023 and they will cease to receive rewards shortly thereafter. It is important to follow the instructions on this page to update your device.
 :::
 
@@ -35,10 +35,8 @@ Support for M5 devices running v0.3.12 will be discontinued from November 2023 a
     <ol>
     <li><a href="https://github.com/WeatherXM/wxm_m5_flasher/releases">Download</a> and install the Flasher Tool for your OS</li>
     Under Assets select:
-    <ol>
-        <li>Windows:  <code class="lang-bash">weatherxm_m5_flasher_*.exe</code></li>
-        <li>Linux:  <code class="lang-bash">weatherxm_m5_flasher_*.deb</code></li>
-    </ol>
+        <ol><li>Windows:  <code class="lang-bash">weatherxm_m5_flasher_\*.exe</code></li>
+        <li>Linux:  <code class="lang-bash">weatherxm_m5_flasher_\*.deb</code></li></ol>
     <li>Open the Flasher Tool on your computer</li>
     </ol>
 
@@ -112,14 +110,10 @@ If your WXM-M5 did not restart automatically, press and hold the power button un
 <p>Tested only on Debian based distributions.</p>
 <p>If you encounter issues during the flashing process, follow these steps:</p>
 <ol>
-<li><p>If flashing fails immediately after pressing the "update" button, it may be due to insufficient privileges to access the serial port. In Debian-based distributions, run the following command to add your user to the appropriate group:</p>
-<pre><code class="lang-bash">sudo adduser $USER dialout
-</code></pre>
-<p>After running this command, log out and then log back in, and retry the update process. If the issue persists, try running the Flasher Tool with sudo:</p>
-<pre><code class="lang-bash">sudo /opt/wxm_m5_flasher/run.sh
-</code></pre>
-</li>
+<li><p>If flashing fails immediately after pressing the "update" button, it may be due to insufficient privileges to access the serial port. In Debian-based distributions, run the following command to add your user to the appropriate group:
+<pre><code class="lang-bash">sudo adduser $USER dialout</code></pre>
+After running this command, log out and then log back in, and retry the update process. If the issue persists, try running the Flasher Tool with sudo:
+<pre><code class="lang-bash">sudo /opt/wxm_m5_flasher/run.sh</code></pre></p></li>
 </ol>
-<p>If you have any further questions or encounter any issues during the update process, don't hesitate to reach out to our support team for assistance. We are here to help you keep your M5 up to date and running smoothly.
-<br/>
+<p>If you have any further questions or encounter any issues during the update process, don't hesitate to reach out to our support team for assistance. We are here to help you keep your M5 up to date and running smoothly.<br></br>
 <strong> Be sure to include the contents of your log file for further analysis.</strong> To access the log file, click "Log" in the top right corner of the Flasher Tool window.</p>
