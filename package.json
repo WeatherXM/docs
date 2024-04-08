@@ -1,40 +1,41 @@
 {
-    "name": "docs",
-    "version": "0.1.1",
-    "private": true,
-    "scripts": {
-        "docusaurus": "docusaurus",
-        "start": "docusaurus start",
-        "build": "docusaurus build",
-        "swizzle": "docusaurus swizzle",
-        "deploy": "docusaurus deploy",
-        "serve": "docusaurus serve",
-        "spellcheck": "cspell \"docs/**\" --show-suggestions"
-    },
-    "dependencies": {
-        "@cmfcmf/docusaurus-search-local": "^1.1.0",
-        "@docusaurus/core": "^3.1.1",
-        "@docusaurus/preset-classic": "^3.1.1",
-        "@mdx-js/react": "^3.0.1",
-        "clsx": "^2.1.0",
-        "cspell": "^8.6.1",
-        "docusaurus-lunr-search": "^3.3.2",
-        "dotenv": "^16.4.5",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "yarn": "^1.22.22"
-    },
-    "browserslist": {
-        "production": [
-            ">0.5%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "packageManager": "yarn@3.2.3"
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "spellcheck": "cspell \"docs/**\" --show-suggestions",
+    "spellcheck-on-pr": "cspell --no-must-find-files --file-list stdin"
+  },
+  "dependencies": {
+    "@cmfcmf/docusaurus-search-local": "^1.1.0",
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
+    "@mdx-js/react": "^3.0.1",
+    "clsx": "^2.1.0",
+    "cspell": "^8.6.1",
+    "docusaurus-lunr-search": "^3.3.2",
+    "dotenv": "^16.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "yarn": "^1.22.22"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "yarn@3.2.3"
 }
