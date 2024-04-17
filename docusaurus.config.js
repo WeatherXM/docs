@@ -16,7 +16,6 @@ const config = {
     trailingSlash: false,
 
     plugins: [
-       
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
     ],
 
@@ -72,6 +71,11 @@ const config = {
                     position: "right",
                 },
                 {
+                    href: "https://support.weatherxm.com",
+                    label: "Help Center",
+                    position: "right",
+                },
+                {
                     href: "https://shop.weatherxm.com",
                     label: "Shop",
                     position: "right",
@@ -80,7 +84,8 @@ const config = {
             ],
         },
         footer: {
-            copyright: `Copyright © ${new Date().getFullYear()} WeatherXM. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} WeatherXM`,
+            style: "light",
         },
     },
 };
