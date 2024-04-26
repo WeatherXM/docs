@@ -11,9 +11,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Weather Station
 
-### Weather station not reporting data to M5 Miner. There are dashes (--) on the display console.
+### Weather station not reporting data to M5 Gateway. There are dashes (--) on the display console.
 
-First make sure you M5 Miner frequency matches your weather station (see [Change frequency](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#change-frequency-optional))
+First make sure you M5 Gateway frequency matches your weather station (see [Change frequency](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#change-frequency-optional))
 
 Check the LED on the weather station (see [Reset Button and LED Indicator](/wxm-devices/wifi-m5-bundle/assemble-m5#outdoor-weather-station)) for flashing.
 The LED should flash every 16 seconds.
@@ -21,20 +21,20 @@ The LED should flash every 16 seconds.
 If the LED is not flashing every 16 seconds, replace the batteries in the weather station.
 If the batteries were recently replaced, check the polarity.
 
-If the above does not solve the issue, there may be a temporary loss of communication due to reception loss related to interference or other location factors, or the M5 Miner has not been reset.
-The solution may be as simple as powering down and up the M5 Miner. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+If the above does not solve the issue, there may be a temporary loss of communication due to reception loss related to interference or other location factors, or the M5 Gateway has not been reset.
+The solution may be as simple as powering down and up the M5 Gateway. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
 
-1. With the weather station array and M5 Miner 3m/10ft away from each other,
+1. With the weather station array and M5 Gateway 3m/10ft away from each other,
    remove the batteries from the weather station and wait 10 seconds. Put the batteries back in.
-1. M5 Miner should display all the observations measured by the weather station.
-1. Try to place the M5 Miner at the desirable point and check that it receives data.
-   Ensure the power adapter if used is not too close to the M5 Miner and the M5 Miner is not close to other electrical noise generating devices
+1. M5 Gateway should display all the observations measured by the weather station.
+1. Try to place the M5 Gateway at the desirable point and check that it receives data.
+   Ensure the power adapter if used is not too close to the M5 Gateway and the M5 Gateway is not close to other electrical noise generating devices
    such as TVs, monitors, computers and transmitting devices.
-1. If you still have intermittent problems, move the weather station and the M5 Miner closer together,
+1. If you still have intermittent problems, move the weather station and the M5 Gateway closer together,
    but not closer than 1.5m/5ft or further than 50m/164ft if you use the internal (external) LoRa antenna.
    Also check that there are no metal barriers like aluminum siding
-   or metal wall framing along the line of sight between the weather station and M5 Miner.
-   Relocate the weather station and M5 Miner as necessary to avoid obstacles.
+   or metal wall framing along the line of sight between the weather station and M5 Gateway.
+   Relocate the weather station and M5 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 1. Use the external LoRa antenna provided with M5, but this requires you open the M5 (Read more on the bottom of this page).
 
@@ -69,7 +69,7 @@ For now we present only the absolute pressure and not the Mean Sea Level Pressur
 Check for the WiFi  symbol on the top-right corner of the display.
 
 - If wireless connectivity is operational, the WiFi  icon will appear in green.
-- If the symbol appears in red, but you do remember configuring it successfully before, check that the M5 Miner and Internet router are close enough.
+- If the symbol appears in red, but you do remember configuring it successfully before, check that the M5 Gateway and Internet router are close enough.
 
 If you have never been able to configure WiFi  to a working state, make sure your WiFi  supports 2.4 GHz signals. The console does not support WiFi that uses the 5 GHz spectrum.
 
@@ -115,9 +115,9 @@ Make sure your GPS antenna is firmly connected to the right connector:
 </div>
 And then proceed to the following steps:
 
-1. Move your M5 Miner outdoors (with the GPS antenna connected)
+1. Move your M5 Gateway outdoors (with the GPS antenna connected)
    for a couple of minutes until the GPS icons becomes green.
-1. Then, move M5 Miner indoors placing the GPS antenna next to a window.
+1. Then, move M5 Gateway indoors placing the GPS antenna next to a window.
 
 If the problem remains, make sure the external antenna is selected in your M5's GPS stack (Read more on the bottom of this page).
 
@@ -127,7 +127,7 @@ You receive a "location not verified" error on your mobile app when the [Proof o
 This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
 
 
-## My Station does not connect to the M5 Miner
+## My Station does not connect to the M5 Gateway
 
 <div class="explanation vertical">
 
@@ -135,12 +135,12 @@ This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weat
    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/lorawan-antenna.svg")} />
 </div>
 <p>
-If the installation of the station and the placement of the M5 Miner is more than 50m/~160ft apart, you must install the LoRa antenna so that the two can communicate over such distance.
+If the installation of the station and the placement of the M5 Gateway is more than 50m/~160ft apart, you must install the LoRa antenna so that the two can communicate over such distance.
 Please follow the instructions below, or in the video.
 </p>
 
 :::caution
-If the station and M5 are more than 50m/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5 Miner, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
+If the station and M5 are more than 50m/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5 Gateway, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
 :::
 
 <details class="accordion">
@@ -148,12 +148,12 @@ If the station and M5 are more than 50m/164ft apart, you must install the LoRa a
 <summary>M5 LoRa Antenna Installation Instructions</summary>
 
 
-#### M5 Miner Antenna Troubleshooting
+#### M5 Gateway Antenna Troubleshooting
 
-M5 Miner is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
-while the LoRa antenna is responsible for the communication between the M5 Miner and the weather station.
+M5 Gateway is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
+while the LoRa antenna is responsible for the communication between the M5 Gateway and the weather station.
 
-On the left side of the M5 Miner you may notice that there are two different caps, a grey for GPS and a blue for LoRa.
+On the left side of the M5 Gateway you may notice that there are two different caps, a grey for GPS and a blue for LoRa.
 Each of these caps contains a system relevant to the antennas mentioned above.
 
 By default, the external GPS antenna and the internal LoRa antenna are connected, and there is no need to modify this.
@@ -162,39 +162,39 @@ The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables u
 
 #### Switch external/internal GPS antenna
 
-The M5 Miner uses by default the external GPS antenna, which should be connected to the port on the grey GPS cap,
+The M5 Gateway uses by default the external GPS antenna, which should be connected to the port on the grey GPS cap,
 In case you desire to change the internal/external GPS antenna, follow the following steps:
 
-1. Unscrew and remove the four screws behind the M5 Miner.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
+1. Unscrew and remove the four screws behind the M5 Gateway.
+1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Gateway.
 1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
    Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
 1. Clasp the cap back and screw the device.
-1. In case you changed to the external GPS antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
+1. In case you changed to the external GPS antenna, connect the external antenna to the corresponding port on the side of the M5 Gateway.
 
 #### Switch external/internal LoRa antenna
 
-The M5 Miner beta v1 uses by default the internal LoRa antenna.
+The M5 Gateway beta v1 uses by default the internal LoRa antenna.
 In case you desire to change the internal/external LoRa antenna, follow the following steps:
 
-1. Unscrew and remove the four screws behind the M5 Miner.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
-1. Remove the grey GPS cap. Again you may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
+1. Unscrew and remove the four screws behind the M5 Gateway.
+1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Gateway.
+1. Remove the grey GPS cap. Again you may use a flat-head screwdriver to separate the cap from the rest of the M5 Gateway.
 1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
    Remove the cable, which is connected to a specific reception on the green board and
    connect the desired cable to the same reception.
 1. Clasp the caps and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
+1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the M5 Gateway.
 
-##### Internal parts of the M5 Miner
+##### Internal parts of the M5 Gateway
 
-a. Bottom is the first cap you remove once the M5 Miner is unscrewed.
+a. Bottom is the first cap you remove once the M5 Gateway is unscrewed.
 
 b. The second cap in grey is the GPS
 
 c. The third cap in blue is the LoRa
 
-d. Top cap in white is the rest of M5 Miner.
+d. Top cap in white is the rest of M5 Gateway.
 
 <div class="control">
    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.svg")} />
