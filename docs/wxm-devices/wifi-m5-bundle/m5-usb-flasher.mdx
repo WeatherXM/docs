@@ -7,24 +7,24 @@ slug: /wxm-devices/wifi-m5-bundle/m5-usb-flasher
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 <h2 id="introduction">Introduction</h2>
-<p>If you are currently using a WXM-M5 with firmware version 0.3.12, it's essential to update your device using the Flasher Tool. This version is considered obsolete and cannot receive updates through the "Over The Air" (OTA) method anymore due to significant differences in the underlying operating system. To ensure your WXM-M5 continues to operate efficiently and receive rewards, you must perform a full firmware flash using a USB cable.</p>
-<p>This guide will walk you through the step-by-step process of updating your WXM-M5 to the latest firmware version, ensuring you stay up to date with the latest features, security enhancements and continue to receive rewards.</p>
+<p>If you are currently using a WG1000 Gateway with firmware version 0.3.12, it's essential to update your device using the Flasher Tool. This version is considered obsolete and cannot receive updates through the "Over The Air" (OTA) method anymore due to significant differences in the underlying operating system. To ensure your WXM-M5 continues to operate efficiently and receive rewards, you must perform a full firmware flash using a USB cable.</p>
+<p>This guide will walk you through the step-by-step process of updating your WG1000 Gateway to the latest firmware version, ensuring you stay up to date with the latest features, security enhancements and continue to receive rewards.</p>
 
 :::tip
 To check the version of your WXM-M5, swipe to the left-most screen (about). If your version is newer than 0.3.12 you do not need to proceed with this update as your device will receive updates automatically.
 :::
 
 :::danger
-Support for M5 devices running v0.3.12 will be discontinued from November 2023 and they will cease to receive rewards shortly thereafter. It is important to follow the instructions on this page to update your device.
+Support for WG1000 Gateway devices running v0.3.12 will be discontinued from November 2023 and they will cease to receive rewards shortly thereafter. It is important to follow the instructions on this page to update your device.
 :::
 
-<h2 id="how-to-update-your-wxm-m5">How to Update Your WXM-M5</h2>
-<p>Follow these instructions carefully to update your WXM-M5's firmware using the Flasher Tool. We've included screenshots to help you navigate the process.</p>
+<h2 id="how-to-update-your-wxm-m5">How to Update Your WG1000 Gateway</h2>
+<p>Follow these instructions carefully to update your WG1000 Gateway's firmware using the Flasher Tool. We've included screenshots to help you navigate the process.</p>
 <p><strong>Step 1: Prepare Your Equipment</strong></p>
 <p>Before starting, ensure you have the following:</p>
 <ul>
-<li>A WXM-M5 powered on, running firmware version 0.3.12</li>
-<li>A USB Type-C cable to connect your WXM-M5 to your computer</li>
+<li>A WG1000 Gateway powered on, running firmware version 0.3.12</li>
+<li>A USB Type-C cable to connect your WG1000 Gateway to your computer</li>
 <li>A computer running the Flasher Tool</li>
 </ul>
 
@@ -47,20 +47,20 @@ If any device is found under the Serial port, temporarily unplug it before conti
 </div>
 
 
-<p><strong>Step 3: Connect your WXM-M5</strong></p>
+<p><strong>Step 3: Connect your WG1000 Gateway</strong></p>
 <div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/usb-flasher-2.png")} alt="Connect Your WXM-M5"/>
   <ol>
   <li>Plug one end of the USB cable into your computer's USB port</li>
-  <li>Plug the other end of the USB cable into your WXM-M5. If your M5 was off, it will turn on automatically.</li>
+  <li>Plug the other end of the USB cable into your WXM-M5. If your WG1000 Gateway was off, it will turn on automatically.</li>
   </ol>
 </div>
 
-<p><strong>Step 4: Select your WXM-M5</strong></p>
+<p><strong>Step 4: Select your WG1000 Gateway</strong></p>
 <div class="explanation">
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/usb-flasher-3.png")} alt="Select Your WXM-M5"/>
   <div>
-    <p>In the Flasher Tool under "serial port", you can see all the devices connected to the virtual serial ports on your computer. Confirm that the port of your M5 is selected. Usually the device with the largest suffix number is the one that was connected more recently.</p>
+    <p>In the Flasher Tool under "serial port", you can see all the devices connected to the virtual serial ports on your computer. Confirm that the port of your WG1000 Gateway is selected. Usually the device with the largest suffix number is the one that was connected more recently.</p>
 
 :::note
 Serial port name may differ depending on your OS.
@@ -74,7 +74,7 @@ Serial port name may differ depending on your OS.
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/usb-flasher-4.png")} alt="Start the Update Process"/>
   <div>
     <ol>
-    <li>Double-check that your WXM-M5 is connected to your computer via USB</li>
+    <li>Double-check that your WG1000 Gateway is connected to your computer via USB</li>
     <li>Click on the "Update" button in the Flasher Tool</li>
     </ol>
 
@@ -92,17 +92,17 @@ Do not disconnect the USB cable until the update is successfully completed
 :::
 
 <p><strong>Step 7: Verify the Update</strong></p>
-<p>Once the update is complete, your WXM-M5 will restart automatically. You can verify the successful update by checking the firmware version on the WXM-M5's screen.</p>
+<p>Once the update is complete, your WG1000 Gateway will restart automatically. You can verify the successful update by checking the firmware version on the WXM-M5's screen.</p>
 
 :::note
-If your WXM-M5 did not restart automatically, press and hold the power button until it turns off and then power it back on.
+If your WG1000 Gateway did not restart automatically, press and hold the power button until it turns off and then power it back on.
 :::
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3>Windows</h3>
 <p>The flasher tool runs on Windows 10/11. Windows 7 is not supported.</p>
 <p>When you run the tool, you will be greeted by the "Windows prevented an unrecognized application from running.". This is because the binary is not signed. Click More Info > Run Anyway to proceed.</p>
-<h4>When I connect my M5 no ports appear.</h4>
-<p>First, check if your USB cable is not damaged. It is recommended to try another cable to get this out of the way. If your M5 still doesn't appear in the port list, open Device Manager and check under "Ports (COM & LPT)". If no devices appear in the list your cable is most likely damaged. If a device with an exclamation mark appears or is in any other kind of erroneous state, your computer most likely lacks the USB drivers. Download and install the drivers from the <a href="https://www.wch-ic.com/downloads/CH343SER_EXE.html">USB chip manufacturers' website</a>.</p>
+<h4>When I connect my WG1000 Gateway no ports appear.</h4>
+<p>First, check if your USB cable is not damaged. It is recommended to try another cable to get this out of the way. If your WG1000 Gateway still doesn't appear in the port list, open Device Manager and check under "Ports (COM & LPT)". If no devices appear in the list your cable is most likely damaged. If a device with an exclamation mark appears or is in any other kind of erroneous state, your computer most likely lacks the USB drivers. Download and install the drivers from the <a href="https://www.wch-ic.com/downloads/CH343SER_EXE.html">USB chip manufacturers' website</a>.</p>
 <h4>I get an error about VCRUNTIMEXXX.dll missing</h4>
 <p>Your windows installation is missing the MSVC runtime libraries. Download and install them from <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">Microsoft's website.</a> It is recommended to install both the x86 and x64 versions.</p>
 
@@ -115,5 +115,5 @@ If your WXM-M5 did not restart automatically, press and hold the power button un
 After running this command, log out and then log back in, and retry the update process. If the issue persists, try running the Flasher Tool with sudo:
 <pre><code class="lang-bash">sudo /opt/wxm_m5_flasher/run.sh</code></pre></p></li>
 </ol>
-<p>If you have any further questions or encounter any issues during the update process, don't hesitate to reach out to our support team for assistance. We are here to help you keep your M5 up to date and running smoothly.<br></br>
+<p>If you have any further questions or encounter any issues during the update process, don't hesitate to reach out to our support team for assistance. We are here to help you keep your WG1000 Gateway up to date and running smoothly.<br></br>
 <strong> Be sure to include the contents of your log file for further analysis.</strong> To access the log file, click "Log" in the top right corner of the Flasher Tool window.</p>
