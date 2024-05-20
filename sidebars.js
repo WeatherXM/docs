@@ -8,7 +8,7 @@ module.exports = {
       items: [
 	    {
 	      type: "category",
-	      label: "WXM-WS1000",
+	      label: "WeatherXM M5 bundle (WB1000)",
 	      items: [
 					"wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
 					"wxm-devices/wifi-m5-bundle/m5-contents",
@@ -23,7 +23,7 @@ module.exports = {
 	    },
 	    {
 	      type: "category",
-	      label: "WXM-WS2000",
+	      label: "WeatherXM Helium station (WS2000)" ,
 	      items: [
 					"wxm-devices/helium-bundle/wxm-ws2000-introduction",
 					"wxm-devices/helium-bundle/helium-contents",
