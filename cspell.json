@@ -1,20 +1,41 @@
 // cSpell Settings
 {
-    // Version of the setting file.  Always 0.2
-    "version": "0.2",
-    // language - current active spelling language
-    "language": "en",
-    // words - list of words to be always considered correct
-    "words": [
-        "tokenomics",
-        "Keppas",
-				"polygonscan",
-				"crowdsourcing",
-				"IPFS",
-				"ATECC",
-				"SSID",
-				"aluminium",
-				"hecto",
-				
-    ]
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en-GB",
+  // words - list of words to be always considered correct
+  "words": [
+    "tokenomics",
+    "Keppas",
+    "polygonscan",
+    "crowdsourcing",
+    "IPFS",
+    "ATECC",
+    "SSID",
+    "aluminium",
+    "hecto",
+    "Merkle",
+    "geospatial",
+    "neighbouring",
+    "timeseries",
+    "adduser",
+    "dialout",
+    "VCRUNTIMEXXX",
+    "hygro",
+    "klux",
+    "milli",
+    "underserved",
+    "MRPHC",
+    "Chainlist",
+    "Ηelium",
+    "unpair",
+    "MSLP",
+    "lorawan",
+    "weatherxm",
+    "MSVC",
+    "wifi",
+    "rewardable",
+    "inapp"
+  ]
 }
