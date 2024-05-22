@@ -9,23 +9,23 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## WG1200 Gateway (D1 WiFi)
+## WG1200 Gateway
 
 <img object-fit="contain" src={useBaseUrl("/img/home/wg1200-gateway.png")} />
 
-The weather station comes together with the D1 Gateway.
-The D1 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
+The weather station comes together with the WG1200 Gateway.
+The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
 and displays them on its screen.
 
 
-In this chapter, you will find guidance to set up the D1 Gateway.
+In this chapter, you will find guidance to set up the WG1200 Gateway.
 <hr/>
 
 ## Prerequisites
 
 1. The station must be fully assembled (parts and batteries).
 1. A working smartphone with connection to the internet.
-3. A reliable 2.4 GHz WiFi network (**5 GHz is not supported**) for the WG1200 Gateway (D1 WiFi) to connect to.
+3. A reliable 2.4 GHz WiFi network (**5 GHz is not supported**) for the WG1200 Gateway to connect to.
 
 <hr/>
 
@@ -35,16 +35,16 @@ In this chapter, you will find guidance to set up the D1 Gateway.
 
 
 
-### Connect D1 Gateway to power source and turn device on
+### Connect WG1200 Gateway to power source and turn the gateway on
 
 
   
-- The D1 Gateway must be connected to a power source at all times.
+- The WG1200 Gateway must be connected to a power source at all times.
 
 
 :::caution
-If D1 Gateway turns off, you will not receive $WXM rewards, as you will not be able to share data with the WeatherXM network. **This will result in no $WXM rewards!**
-D1 does not have a battery, so it must be connected to a power source at all times.
+If WG1200 Gateway turns off, you will not receive $WXM rewards, as you will not be able to share data with the WeatherXM network. **This will result in no $WXM rewards!**
+WG1200 does not have a battery, so it must be connected to a power source at all times.
 :::
 
 
@@ -68,42 +68,42 @@ If unsure, check the sticker under the station or the box that came in it.
 
 <hr/>
 
-### Connect D1 Gateway to WiFi
+### Connect WG1200 Gateway to WiFi
 
 <img 
   src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-Wifi.jpg")} 
-  style={{ width: '200px', height: 'auto', objectFit: 'contain' }} 
+  style={{ width: '250px', height: 'auto', objectFit: 'contain' }} 
 />
 
 
-By now, your D1 Gateway is set and ready for claiming!
+By now, your WG1200 Gateway is set and ready for claiming!
 Swipe left to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
 
-Once this is done, connect to D1 Gateway via WiFi (you should see in the networks screen a "WXM_WG1200").
+Once this is done, connect to WG1200 Gateway via WiFi (you should see in the networks screen a "WXM_WG1200").
 
 A popup will open, asking you to select the desired network you'd like to connect the D1 Gateway. Select the one you want and provide the password for it.
 
 In case of a successful connection, and the popup does't open, navigate with your browser to 10.10.0.1 and follow the instructions displayed. 
 
 :::note
-Once the WiFi credentials have been successfully transferred to D1 Gateway, the device will reboot and the WiFi icon will turn green!
+Once the WiFi credentials have been successfully transferred to WG1200 Gateway, the device will reboot and the WiFi icon will turn green!
 :::
 
 <hr/>
 
-### Enter the D1 Gateway Claiming Process
+### Enter the WG1200 Gateway Claiming Process
 <img 
   src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-Wifi.jpg")} 
-  style={{ width: '200px', height: 'auto', objectFit: 'contain' }} 
+  style={{ width: '250px', height: 'auto', objectFit: 'contain' }} 
 />
 
-- Select the Claim Device option, a QR code will appear on the screen.
+Select the Claim Device option, a QR code will appear on the screen.
 
-Next, you will need to scan the QR code that appears on the D1 Gateway screen with your WeatherXM app.
+Next, you will need to scan the QR code that appears on the WG1200 Gateway screen with your WeatherXM app.
 
 <img 
   src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-QR.jpg")} 
-  style={{ width: '200px', height: 'auto', objectFit: 'contain' }} 
+  style={{ width: '250px', height: 'auto', objectFit: 'contain' }} 
 />
 
 ### Download WeatherXM app and login
@@ -121,7 +121,21 @@ Next, you will need to scan the QR code that appears on the D1 Gateway screen wi
 <hr/>
 
 ### WeatherXM App - Claim Device
+### Tap the "+" button
 
+<div class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/pus-button.svg")} />
+  <div>
+    <h4>Start the Claiming Process</h4>
+    <p>
+      Once you've logged in to your WeatherXM app, you will see an empty device list (assuming this is your first station setup). At the bottom right corner, you will see a "+" button. Tap it to start the claiming process of your station. Once you've done this, you'll be able to view all data of this station.
+    </p>
+  </div>
+</div>
+
+:::caution
+Your first rewards will appear after 24 hours of the station being online.
+:::  
 
 <div class="explanation">
         <img style={{width:"calc(100%*1/3 - 10px)"}} src={useBaseUrl("/img/wxm-devices/D1-bundle/select-your-station.png")} />
@@ -139,31 +153,24 @@ Next, you will need to scan the QR code that appears on the D1 Gateway screen wi
 <hr/>
 
 
-### Confirm station installation Location & Claim your Device
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <img 
+    src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-Location.png")} 
+    style={{ width: '250px', height: 'auto', objectFit: 'contain', marginRight: '20px' }} 
+  />
+  <div>
+    <h3>Confirm station installation Location & Claim your Device</h3>
+    <h4>Select the Location that you'll Install your Station</h4>
+    <p>Allow access to your location so that the WeatherXM app knows where you are planning to install your weather station. Doing so will make it easier to complete this step.</p>
+    <p>Alternatively, you can find the location manually using the map.</p>
+    <p>Once you've found the right location, tap on the checkbox to confirm and then tap on the "Claim" button.</p>
+    <p>All you need to do now, is to add your compatible wallet so you can receive WXM rewards. To do so, please follow the instructions in the chapter <a href="/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask">"Add/edit wallet address"</a>.</p>
+  </div>
+</div>
 
-<img 
-  src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-Location.png")} 
-  style={{ width: '200px', height: 'auto', objectFit: 'contain' }} 
-/>
-
-
-#### Select the Location that you'll Install your Station
-
-Allow access to your location so that the WeatherXM app knows where you are planning to install your weather station. Doing so will make it easier to complete this step.
-
-Alternatively, you can find the location manually using the map.
-
-Once you've found the right location, tap on the checkbox to confirm and then tap on "Claim" button.
-
-All you need to do now, is to add your compatible wallet so you can receive WXM rewards. To do so, please follow the instructions in the chapter  ["Add/edit wallet address"](/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask). 
-
-<img 
-  src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-successful-claim.png")} 
-  style={{ width: '200px', height: 'auto', objectFit: 'contain' }} 
-/>
-
- 
-That's it! You've now claimed your new weather station and you'll be able to see its data on your WeatherXM app!
+   
+   
+**That's it! You've now claimed your new weather station and you'll be able to see its data on your WeatherXM app!**
 
 
 :::note
@@ -183,7 +190,6 @@ Your first rewards will appear after 24 hours of the station being online.
 :::info 
 Usually, it takes up to 30 minutes for the station to appear on the [explorer](https://explorer.weatherxm.com/stats)
 :::
-
 
 
 
