@@ -40,7 +40,7 @@ module.exports = {
 	    },
 		{
 			type: "category",
-			label: "D1 Bundle",
+			label: "WeatherXM D1 bundle (WB1200)",
 			items: [
 					  "wxm-devices/D1-bundle/D1-bundle-introduction",
 					  "wxm-devices/D1-bundle/D1-contents",

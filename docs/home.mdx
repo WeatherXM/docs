@@ -13,38 +13,41 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 WeatherXM is a community-powered weather network that rewards weather station owners and provides accurate weather services to Web3 enterprises.
 WeatherXM weather stations are the world’s first to natively support Web3 technologies.
 
-<section class="product-container">
-  <div class="device">
+
+<section className="product-container" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+  <div className="device" style={{ flex: 1, margin: '10px', minWidth: '200px', boxSizing: 'border-box', border: '1px solid #ddd', padding: '20px', textAlign: 'center' }}>
     <a href="/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction">
-      <img src={useBaseUrl("img/home/m5.png")} />
-      <div class="device-info">
-        <h4>WXM-WS1000</h4>
-        <p>This is our developer friendly, local weather data miner bundled with an easy to set up all-in-one weather station.</p>
+      <img src={useBaseUrl("img/home/m5.png")} style={{ maxWidth: '100%', height: 'auto' }} />
+      <div className="device-info" style={{ marginTop: '10px' }}>
+        <h4 style={{ margin: '10px 0 5px' }}>WXM-WS1000</h4>
+        <p style={{ margin: 0 }}>This is our developer friendly, local weather data miner bundled with an easy to set up all-in-one weather station.</p>
       </div>
     </a>
   </div>
   
-  <div class="device">
+  <div className="device" style={{ flex: 1, margin: '10px', minWidth: '200px', boxSizing: 'border-box', border: '1px solid #ddd', padding: '20px', textAlign: 'center' }}>
     <a href="/wxm-devices/helium-bundle/wxm-ws2000-introduction">
-      <img src={useBaseUrl("/img/home/helium.png")} />
-      <div class="device-info">
-        <h4>WXM-WS2000</h4>
-        <p>Compatible all-in-one weather station. Connects to Helium network and submits weather data to WeatherXM.</p>
+      <img src={useBaseUrl("/img/home/helium.png")} style={{ maxWidth: '100%', height: 'auto' }} />
+      <div className="device-info" style={{ marginTop: '10px' }}>
+        <h4 style={{ margin: '10px 0 5px' }}>WXM-WS2000</h4>
+        <p style={{ margin: 0 }}>Compatible all-in-one weather station. Connects to Helium network and submits weather data to WeatherXM.</p>
       </div>
     </a>
   </div>
 
-  <div class="device">
+  <div className="device" style={{ flex: 1, margin: '10px', minWidth: '200px', boxSizing: 'border-box', border: '1px solid #ddd', padding: '20px', textAlign: 'center' }}>
     <a href="/wxm-devices/D1-bundle/wb1200-introduction.mdx">
-      <img src={useBaseUrl("/img/home/D1-bundle.webp")} />
-      <div class="device-info">
-        <h4>WB1200</h4>
-        <p>The WB1200 is a bundle product that combines the WS1001 weather station with our open source WXM D1 WiFi gateway. Get yours today and start earning $WXM tokens for contributing device data to the Network.</p>
+      <img src={useBaseUrl("/img/home/D1-bundle.webp")} style={{ maxWidth: '100%', height: 'auto' }} />
+      <div className="device-info" style={{ marginTop: '10px' }}>
+        <h4 style={{ margin: '10px 0 5px' }}>WB1200</h4>
+        <p style={{ margin: 0 }}>The WB1200 is a bundle product that combines the WS1001 weather station with our open source WXM D1 WiFi gateway. Get yours today and start earning $WXM tokens for contributing device data to the Network.</p>
       </div>
     </a>
   </div>
 </section>
 
+
+ 
 <div class=" no-shadow">
   <h3>WeatherXM Project</h3>
   <p>WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.</p>
@@ -60,3 +63,4 @@ WeatherXM weather stations are the world’s first to natively support Web3 tech
 </div>
 <br></br>
 <p>Join our <a href="https://weatherxm.com/discord" target="_blank" rel="noopener noreferrer">Discord Community Server</a>.</p>
+

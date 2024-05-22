@@ -1,7 +1,7 @@
 ---
 id: D1-troubleshooting
-title: WXM-WS1000 Troubleshooting
-sidebar_label: WXM-WS1000 Troubleshooting
+title: WeatherXM D1 bundle (WB1200) Troubleshooting
+sidebar_label: D1 Bundle Troubleshooting
 slug: /wxm-devices/D1-bundle/D1-troubleshooting
 ---
 
@@ -11,46 +11,45 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Weather Station
 
-### Weather station not reporting data to M5 Miner. There are dashes (--) on the display console.
+### Weather station not reporting data to WG1200 Gateway. There are dashes (--) on the display console.
 
-First make sure you M5 Miner frequency matches your weather station (see [Change frequency](/wxm-devices/wifi-m5-bundle/m5-connect-and-claim#change-frequency-optional))
+First make sure you WG1200 Gateway frequency matches your weather station (see [Change frequency](/wxm-devices/D1-bundle/D1-connect-and-claim#change-frequency-optional))
 
-Check the LED on the weather station (see [Reset Button and LED Indicator](/wxm-devices/wifi-m5-bundle/assemble-m5#outdoor-weather-station)) for flashing.
+Check the LED on the weather station (see [Reset Button and LED Indicator](/wxm-devices/D1-bundle/D1-assemble#outdoor-weather-station)) for flashing.
 The LED should flash every 16 seconds.
 
 If the LED is not flashing every 16 seconds, replace the batteries in the weather station.
 If the batteries were recently replaced, check the polarity.
 
-If the above does not solve the issue, there may be a temporary loss of communication due to reception loss related to interference or other location factors, or the M5 Miner has not been reset.
-The solution may be as simple as powering down and up the M5 Miner. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+If the above does not solve the issue, there may be a temporary loss of communication due to reception loss related to interference or other location factors, or the D1 Gateway has not been reset.
+The solution may be as simple as powering down and up the WG1200 Gateway. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
 
-1. With the weather station array and M5 Miner 3m/10ft away from each other,
+1. With the weather station array and WG1200 Gateway 3m/10ft away from each other,
    remove the batteries from the weather station and wait 10 seconds. Put the batteries back in.
-1. M5 Miner should display all the observations measured by the weather station.
-1. Try to place the M5 Miner at the desirable point and check that it receives data.
-   Ensure the power adapter if used is not too close to the M5 Miner and the M5 Miner is not close to other electrical noise generating devices
+1. WG1200 Gateway should display all the observations measured by the weather station.
+1. Try to place the WG1200 Gateway at the desirable point and check that it receives data.
+   Ensure the power adapter if used is not too close to the D1Gateway and the D1 Gateway is not close to other electrical noise generating devices
    such as TVs, monitors, computers and transmitting devices.
-1. If you still have intermittent problems, move the weather station and the M5 Miner closer together,
-   but not closer than 1.5m/5ft or further than 50m/164ft if you use the internal (external) LoRa antenna.
+1. If you still have intermittent problems, move the weather station and the WG1200 Gateway closer together,
+   but not closer than 1.5m/5ft or further than 50m/164ft.
    Also check that there are no metal barriers like aluminum siding
-   or metal wall framing along the line of sight between the weather station and M5 Miner.
-   Relocate the weather station and M5 Miner as necessary to avoid obstacles.
+   or metal wall framing along the line of sight between the weather station and WG1200 Gateway.
+   Relocate the weather station and WG1200 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
-1. Use the external LoRa antenna provided with M5, but this requires you open the M5 (Read more on the bottom of this page).
 
 ### Temperature looks higher than expected.
 
 If the temperature is slightly higher (e.g., +2 - 5°C/35-41°F) than expected,
 then assure that the weather station is within a significant distance from heat sources
 like ventilation systems and active chimneys.
-Also make sure that the weather station is mounted on a 2m/6.5ft (or more) metallic pole and there are no obstacles close by (see [Best Practices for Proper Station Installation](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation)).
+Also make sure that the weather station is mounted on a 2m/6.5ft (or more) metallic pole and there are no obstacles close by reading [deployments examples for Proper Station Installation](/wxm-devices/deployment-examples).
 
 ### Other variables, such as wind direction, wind speed, rain height and humidity do not align with an official weather reporting station
 
 Even weather stations, which are close to each other, may obtain slightly different measurements,
 especially for the variables of wind speed and wind direction. However, you should not expect significant deviations
 e.g., from a weather station, which is located within a distance of 1km/0.6mi.
-If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/wifi-m5-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
+If there are deviations, please check [deployments examples for Proper Station Installation](/wxm-devices/deployment-examples) for guidelines about the installation of the weather station.
 
 ### One or more variables are extremely high, low, or constant for long periods of time.
 
@@ -78,7 +77,7 @@ Make sure you configured the correct SSID and password. Repeat the procedure if 
  <hr />
 
 ### Wifi Repeater
-Usually, using a WiFi repeater is not an issue, but in some cases it may affect your M5’s connection. If you are experiencing issues with your M5, try to connect it directly to your router and see if the problem persists. If it does not, 
+Usually, using a WiFi repeater is not an issue, but in some cases it may affect your Gateway's connection. If you are experiencing issues with your D1 Gatweway, try to connect it directly to your router and see if the problem persists. If it does not, 
 then the issue is with the repeater. If it does, please contact us through [support](https://support.weatherxm.com).
 
  <hr />
@@ -88,139 +87,36 @@ D1 Gateway is designed to work **only** at the 2.4GHz frequency. Please make sur
 
 <hr />
 
-### I don't see the Wi-Fi name "WXM MinerM5" for initial setup on the app.
+### I don't see the Wi-Fi name "WXM_WG1200" for initial setup on the app.
 
-It might take some time and attempts for it to connect. Please make sure that your Wi-Fi supports 2.4 GHz signals. You may also need to try from a different phone. You can also watch our instructional [video](https://www.youtube.com/watch?v=sUJEwuFq1CE).
+It might take some time and attempts for it to connect. Please make sure that your Wi-Fi supports 2.4 GHz signals. You may also need to try from a different phone. If you are still experiencing issues, please contact us through [support](https://support.weatherxm.com).
 
 <hr />
 
-## GPS Location
-
-### No location (GPS) data (Arrow icon is red)
-If the GPS (arrow) icon on your M5's UI is red, it means that there is no GPS signal:
-<div class="explanation">
-<Tabs groupId="wg1000_ui">
-  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
-    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-no-gps-signal-new.png")} />
-  </TabItem>
-  <TabItem value="wg1000_ui_old" label="Older UI versions">
-    <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-no-gps-signal.png")} />
-  </TabItem>
-</Tabs>
-</div>
-
-Make sure your GPS antenna is firmly connected to the right connector:
-<div class="explanation">
-<img src={useBaseUrl("img/wxm-devices//wifi-m5-bundle/gps.png")} />
-</div>
-And then proceed to the following steps:
-
-1. Move your M5 Miner outdoors (with the GPS antenna connected)
-   for a couple of minutes until the GPS icons becomes green.
-1. Then, move M5 Miner indoors placing the GPS antenna next to a window.
-
-If the problem remains, make sure the external antenna is selected in your M5's GPS stack (Read more on the bottom of this page).
 
 ### Location not verified
 You receive a "location not verified" error on your mobile app when the [Proof of Location (PoL) mechanism](/project/proof-of-location) flags your weather station because the location reported by its **GPS receiver(s)** is different than the location you declared during the setup and claiming of the station. This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
 
 This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
 
-
-## My Station does not connect to the M5 Miner
-
-<div class="explanation vertical">
-
-   [![Instruction on how to switch to LoRa antenna](/img/wxm-devices/wifi-m5-bundle/video-LoRaWan.png)](https://www.youtube.com/watch?v=FP4rT3FTz0M&)
-   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/lorawan-antenna.svg")} />
-</div>
-<p>
-If the installation of the station and the placement of the M5 Miner is more than 50m/~160ft apart, you must install the LoRa antenna so that the two can communicate over such distance.
-Please follow the instructions below, or in the video.
-</p>
-
-:::caution
-If the station and M5 are more than 50m/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with M5 Miner, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
-:::
-
-<details class="accordion">
-
-<summary>M5 LoRa Antenna Installation Instructions</summary>
-
-
-#### M5 Miner Antenna Troubleshooting
-
-M5 Miner is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
-while the LoRa antenna is responsible for the communication between the M5 Miner and the weather station.
-
-On the left side of the M5 Miner you may notice that there are two different caps, a grey for GPS and a blue for LoRa.
-Each of these caps contains a system relevant to the antennas mentioned above.
-
-By default, the external GPS antenna and the internal LoRa antenna are connected, and there is no need to modify this.
-
-The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables unless there is a serious problem.
-
-#### Switch external/internal GPS antenna
-
-The M5 Miner uses by default the external GPS antenna, which should be connected to the port on the grey GPS cap,
-In case you desire to change the internal/external GPS antenna, follow the following steps:
-
-1. Unscrew and remove the four screws behind the M5 Miner.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
-1. You will notice two small cables, one coming from the port on the side and one coming from a small chip.
-   Remove the cable, which is connected to a specific reception on the green board and connect the desired cable to the same reception.
-1. Clasp the cap back and screw the device.
-1. In case you changed to the external GPS antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
-
-#### Switch external/internal LoRa antenna
-
-The M5 Miner beta v1 uses by default the internal LoRa antenna.
-In case you desire to change the internal/external LoRa antenna, follow the following steps:
-
-1. Unscrew and remove the four screws behind the M5 Miner.
-1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
-1. Remove the grey GPS cap. Again you may use a flat-head screwdriver to separate the cap from the rest of the M5 Miner.
-1. You will notice two small cables, one coming from the port on the side and one coming from an edge of the green board.
-   Remove the cable, which is connected to a specific reception on the green board and
-   connect the desired cable to the same reception.
-1. Clasp the caps and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the M5 Miner.
-
-##### Internal parts of the M5 Miner
-
-a. Bottom is the first cap you remove once the M5 Miner is unscrewed.
-
-b. The second cap in grey is the GPS
-
-c. The third cap in blue is the LoRa
-
-d. Top cap in white is the rest of M5 Miner.
-
-<div class="control">
-   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/hardware-parts.svg")} />
-</div>
-</details>
-
-
 ## Other Issues
 
 
-
-### My M5 is stuck/unresponsive.
+### My D1 Gateway is stuck/unresponsive.
   
 Please do not restart it and contact us through [support](https://support.weatherxm.com) to debug it and find the reason of the issue
 
 <hr />
 
-### What can I do if my M5 is switching off frequently?
+### What can I do if my D1 Gateway is switching off frequently?
 
-Please disconnect the M5 from the power source, let it turn off by itself and reconnect it after 15-20 minutes. You can also try using a different USB cable and another wall adapter. If none of the previous work, try removing the four screws of the M5 bundle, separate the stacks and tighten the screws again.
+Please disconnect the D1 Gateway from the power source and plug it back to the power soure. You can also try using a different USB cable and another wall adapter.
 
 <hr />
 
 ### Why is my station showing offline?
 
-Assuming that the M5 unit is powered on, this may be due to a bad internet connection or bad RF connection between the M5 and the outdoor station.  
+Assuming that the D1 Gateway unit is powered on, this may be due to a bad internet connection or bad RF connection between the D1 Gateway and the outdoor station.  
 
 <hr />
 
