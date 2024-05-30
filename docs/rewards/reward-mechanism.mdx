@@ -50,11 +50,8 @@ Base rewards calculation follows the **Actual Rewards Calculation** already intr
 
 #### 2. Business Boost rewards calculation
 
-The business boost use cases reward specific devices with a predefined amount of tokens from the Business Development Pool for a period of time. In this phase, all business boost rewards are calculated for each active business boost use case and they are assigned to the eligible devices. The business boost rewards are calculated using the following formula per active business boost use case:
+The business boost use cases reward specific devices with a predefined amount of tokens from the Business Development Pool for a period of time. In this phase, all business boost rewards are calculated for each active business boost use case and they are assigned to the eligible devices.
 
-```
-business_boost_reward = (business_boost_total_rewards / business_boost_duration) / number_of_business_boost_stations
-```
 
 
 #### 3. Cumulative Rewards Calculation
@@ -68,7 +65,7 @@ cumulative_rewards_per_customer = sum(base_reward[i] + business_boost_reward[i])
 
 #### 4. Merkle Tree Creation
 
-In the final phase, the cumulative rewards coupled with the users' wallet addresses are utilized to create the Merkle tree. The root hash of the Merkle tree is submitted daily in the smart contract to enable $WXM rewards withdrawal by the users.
+In the final phase, the cumulative rewards coupled with the users' wallet addresses are utilised to create the Merkle tree. The root hash of the Merkle tree is submitted daily in the smart contract to enable $WXM rewards withdrawal by the users.
 
 #### Pseudocode
 
@@ -229,8 +226,8 @@ a. The following variables have known values at the start of each day:
 
 * `daily_emission`: the amount of tokens that are available for allocation on the given day
 * `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
-* `pol_threshold`: the number denoting the cutoff threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `qod_threshold`: the number denoting the cutoff threshold for QoD: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
+* `pol_threshold`: the number denoting the cut-off threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
+* `qod_threshold`: the number denoting the cut-off threshold for QoD: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
 * `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
 
 b. To calculate the rewardable count of devices per **HC**:
@@ -263,7 +260,7 @@ actual_reward = reward_score * max_reward_per_hardware_class
 e. To identify overcrowded cells and decide which of the weather stations will be excluded from rewarding:
 
 * we iterate over available cells and check whether it is overcrowded
-* in case it is indeed overcrowded, we sort the neighboring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
+* in case it is indeed overcrowded, we sort the neighbouring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
 
 ## Reward mechanism v1.0
 
@@ -309,7 +306,7 @@ Due to blockchain limitations on the number of atomic transfer transactions that
 
 
 ## Links
-- [Whitepaper](https://www.weatherxm.com/whitepaper)
+- [WeatherXM Network](https://weatherxm.network/)
 - [Quality of Data (QoD) mechanism](/project/quality-of-data)
 - [Proof of Location (PoL) mechanism](/project/proof-of-location)
 - [Cell Capacity (CC)](project/cell-capacity)
