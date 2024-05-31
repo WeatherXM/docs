@@ -14,7 +14,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 **Reward Boosts** reward stations with extra $WXM tokens for meeting specific criteria. 
 
-So far the following **Reward Boosts** are sheduled to be implemented:
+So far the following **Reward Boosts** are scheduled to be implemented:
 
 ### Beta Rewards
 
@@ -35,8 +35,22 @@ This is the percentage of the 3M tokens that correspond to the rewardable hours 
 
 `DailyBetaRewards[s] = StationBetaRewards[s]/365`: This is the beta rewards allocated daily to this station.
 
+### Beta Rewards Dilution - A fix
 
+Initially, the reward allocation formula caused dilution as the launch day was delayed, disadvantaging long-term station owners. 
 
+#### Updated Beta Rewards Allocation 
+
+The updated approach involves calculating beta rewards twice: once at the end of February 2024 and again just of the project's beta phase (May 27 2024) . 
+Each station will receive the higher reward from these two calculations, ensuring fairer distribution of rewards across both old and new stations
+
+Read more about the Beta Rewards Dilution fix [here](https://blog.weatherxm.com/a-fix-for-beta-rewards-dilution-493f1a81a28d).
+
+#### Beta Rewards Table (BRT)
+  
+The project's Beta period officially ended on May 27th (UTC). All station-hours accumulated up to this date are included in the final calculation and all stations are rewarded for participating in the Beta period with a daily Reward Boost.
+
+Download the BRT here: [CSV](https://weatherxm.network/wxm-brt-final.csv)
 
 :::info
 Each user who has a station eligible for beta rewards, must have a wallet defined to be part of the Beta Rewards allocation. Learn [how to add or edit a wallet address](/wallet/add-edit-wallet-address).
@@ -48,7 +62,7 @@ The Beta Rewards allocation is managed by the [WeatherXM Network](https://weathe
 
 ### Cell Boost
 
-Cell Boost is a mechanism that can be used to incentivize waether stations deployments on specific cells/areas of interest. 
+Cell Boost is a mechanism that can be used to incentivize weather stations deployments on specific cells/areas of interest. 
 
 
 ### Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
