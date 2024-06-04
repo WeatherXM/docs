@@ -53,7 +53,8 @@ module.exports = {
 				  "rewards/hardware-class",
 				  "rewards/reward-boosts",
 				  "rewards/rewards-troubleshooting",
-				  "rewards/rewards-claiming"
+				  "rewards/rewards-claiming",
+				  "rewards/how-to-join-arbitrum-and-see-your-tokens"
 		],
 		collapsed: true,
 	  },
@@ -66,8 +67,7 @@ module.exports = {
 				type: "category",
 				label: "Wallet",
 				items: [
-					"wallet/add-edit-wallet-address",
-					"wallet/how-to-join-arbitrum-and-see-your-tokens"
+					"wallet/add-edit-wallet-address"
 				],
 				collapsed: true,
 			},
