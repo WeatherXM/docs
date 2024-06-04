@@ -61,6 +61,11 @@ const config = {
                     position: "right",
                 },
                 {
+                    href: "https://claim.weatherxm.com/",
+                    label: "Claim Rewards",
+                    position: "right",
+                },
+                {
                     href: "https://weatherxm.com/whitepaper",
                     label: "Whitepaper",
                     position: "right",
