@@ -31,7 +31,9 @@ In this chapter, you will find guidance to set up the WG1000 Gateway.
 
 1. The station must be fully assembled (parts and batteries).
 1. A working smartphone with connection to the internet.
-3. A reliable 2.4 GHz WiFi network (5 GHz is not supported) for the WG1000 Gateway to connect to.
+1. A reliable 2.4 GHz WiFi network (5 GHz is not supported) for the WG1000 Gateway to connect to.
+1. The WeatherXM app installed on your smartphone. [See](/wxm-devices/D1-bundle/D1-connect-and-claim#download-weatherxm-app-and-login)
+
 
 <hr/>
 
@@ -127,6 +129,7 @@ If unsure, check the sticker under the station or the box that came in it.
         <li>Swipe right on the touch screen</li>
         <li>Click the Frequency options and select the new frequency your WG1000 Gateway will listen to</li>
         <li>A confirmation dialog will open. Read it carefully and click "Continue" or "Cancel" accordingly</li>
+        
     </ol>
   </TabItem>
   <TabItem value="wg1000_ui_old" label="Older UI versions">
@@ -154,9 +157,12 @@ If you don't use the correct frequency as your weather station, WG1000 Gateway w
     <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-configure-wifi-new.png")} />
 
 By now, your WG1000 Gateway is set and ready for claiming!
-Swipe right to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
+- Swipe right to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
+- An Access Point will be created with SSID "WXMMinerM5", you should connect to it from your smartphone.
+- Once connected, a popup will appear on your smartphone to enter your WiFi credentials.
+- Enter your WiFi credentials and click "Save"
+- WG1000 Gateway will restart and connect to your WiFi network
 
-Once this is done, connect to WG1000 Gateway via WiFi (you should see in the networks screen a "WXMMinerM5").
 
 A popup will open, asking you to select the desired network you'd like to connect the WG1000 Gateway. Select the one you want and provide the password for it.
   </TabItem>
@@ -164,9 +170,11 @@ A popup will open, asking you to select the desired network you'd like to connec
     <img class="marginTop" src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-configure-wifi.png")} />
 
 By now, your WG1000 Gateway is set and ready for claiming!
-Swipe left to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
-
-Once this is done, connect to WG1000 Gateway via WiFi (you should see in the networks screen a "WXMMinerM5").
+- Swipe right to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
+- An Access Point will be created with SSID "WXMMinerM5", you should connect to it from your smartphone.
+- Once connected, a popup will appear on your smartphone to enter your WiFi credentials.
+- Enter your WiFi credentials and click "Save"
+- WG1000 Gateway will restart and connect to your WiFi network
 
 A popup will open, asking you to select the desired network you'd like to connect the WG1000 Gateway. Select the one you want and provide the password for it.
   </TabItem>
@@ -177,7 +185,10 @@ A popup will open, asking you to select the desired network you'd like to connec
 
 
 :::note
-Once the WiFi credentials have been successfully transferred to WG1000 Gateway, the device will reboot and the WiFi icon will turn green!
+Once the WiFi credentials have been successfully transferred to WG1000 Gateway, the device will restart and the WiFi icon will turn green!
+:::
+:::note
+While you are connected to the "WXMMinerM5" network, you will not have internet access.
 :::
 
 <hr/>

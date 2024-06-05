@@ -12,6 +12,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 ## Weather Station
 
 ### Weather station not reporting data to WG1200 Gateway. There are dashes (--) on the display console.
+  <img src={useBaseUrl("/img/wxm-devices/D1-bundle/RF-signal-lost.png")} />
+  
+If the error message "No Weather Station Signal" is displayed on the WG1200 Gateway, the WG1200 Gateway is not receiving RF signals. 
+This can be due to a variety of reasons: 
+Here are some steps to troubleshoot the issue:
 
 First make sure you WG1200 Gateway frequency matches your weather station (see [Change frequency](/wxm-devices/D1-bundle/D1-connect-and-claim#change-frequency-optional))
 
@@ -37,6 +42,17 @@ The solution may be as simple as powering down and up the WG1200 Gateway. Make s
    Relocate the weather station and WG1200 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 
+### Station Signal is Low displayed on the WG1200 Gateway.
+  <img src={useBaseUrl("/img/wxm-devices/D1-bundle/low-signal.png")} />
+
+When the RF connection with the Weather Station is weak, the WG1200 Gateway will display "Station Signal is Low" resulting to [Data Gaps](/rewards-troubleshooting#weather-data-gaps) and reduced Rewards. 
+- If the signal is low, make sure the weather station is within the range of 50m/164ft from the WG1200 Gateway.
+- If the weather station is within the range, try to move the WG1200 Gateway in another location to improve the signal quality.
+
+:::note
+Low signal quality may be due to obstacles between the weather station and the WG1200 Gateway, such as walls, trees, or other buildings.
+:::
+
 ### Temperature looks higher than expected.
 
 If the temperature is slightly higher (e.g., +2 - 5°C/35-41°F) than expected,
@@ -51,10 +67,21 @@ especially for the variables of wind speed and wind direction. However, you shou
 e.g., from a weather station, which is located within a distance of 1km/0.6mi.
 If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
 
+### WG1200 Gateway displays "Station Reported Abnormal Values".
+ <img src={useBaseUrl("/img/wxm-devices/D1-bundle/Abnormal-values.png")} style={{ width: '88%', height: 'auto', marginBottom: '20px' }} />
+
+This message is displayed when the weather station reports values that are out of the ordinary. This can be due to a variety of reasons, such as:
+- Spikes on the data measured.
+- One or more variables are constant for long periods of time.
+
+Please make sure you have followed [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
+
+
 ### One or more variables are extremely high, low, or constant for long periods of time.
+ <img src={useBaseUrl("/img/wxm-devices/D1-bundle/Low-battery.png")} />
+If your WG1200 Gateway displays "Station Battery Level is Low" on the screen, the weather station will run out of battery soon.
 
-
-Change the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
 
 ### Pressure on WG1200 Gateway appears to be very low relatively to other reference stations of national or private networks etc. 
 
@@ -64,15 +91,16 @@ For now we present only the absolute pressure and not the Mean Sea Level Pressur
 ## WiFi  Connectivity
 
 ### No WiFi  connection
+  <img src={useBaseUrl("/img/wxm-devices/D1-bundle/lost-internet-connection.png")} />
+ When the WiFi  connection is lost, the warning "No Internet connection" is displayed on the WG1200 Gateway.
+ This can be due to a variety of reasons:
+Here are some steps to troubleshoot the issue:
 
-Check for the WiFi  symbol on the top-right corner of the display.
+- Make sure the WiFi  network is working properly.
+-If you have never been able to configure WiFi  to a working state, make sure your WiFi  supports 2.4 GHz signals. The gateway does not support WiFi that uses the 5 GHz spectrum.
+- Make sure you configured the correct SSID and password. Repeat the [procedure](/wxm-devices/D1-bundle/D1-connect-and-claim#connect-wg1200-gateway-to-wifi) if necessary to verify. 
 
-- If wireless connectivity is operational, the WiFi  icon will appear in green.
-- If the symbol appears in red, but you do remember configuring it successfully before, check that the WG1200 Gateway and Internet router are close enough.
-
-If you have never been able to configure WiFi  to a working state, make sure your WiFi  supports 2.4 GHz signals. The gateway does not support WiFi that uses the 5 GHz spectrum.
-
-Make sure you configured the correct SSID and password. Repeat the procedure if necessary to verify.
+If you are still experiencing issues, please contact us through [support](https://support.weatherxm.com).
 
  <hr />
 
