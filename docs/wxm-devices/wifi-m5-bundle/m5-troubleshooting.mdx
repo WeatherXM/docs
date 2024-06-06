@@ -31,12 +31,12 @@ The solution may be as simple as powering down and up the WG1000 Gateway. Make s
    Ensure the power adapter if used is not too close to the WG1000 Gateway and the WG1000 Gateway is not close to other electrical noise generating devices
    such as TVs, monitors, computers and transmitting devices.
 1. If you still have intermittent problems, move the weather station and the WG1000 Gateway closer together,
-   but not closer than 1.5m/5ft or further than 50m/164ft if you use the internal (external) LoRa antenna.
+   but not closer than 1.5m/5ft or further than 50m/164ft if you use the internal (external) RF antenna.
    Also check that there are no metal barriers like aluminum siding
    or metal wall framing along the line of sight between the weather station and WG1000 Gateway.
    Relocate the weather station and WG1000 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
-1. Use the external LoRa antenna provided with M5, but this requires you open the WG1000 Gateway (Read more on the bottom of this page).
+1. Use the external RF antenna provided with M5, but this requires you open the WG1000 Gateway (Read more on the bottom of this page).
 
 ### Temperature looks higher than expected.
 
@@ -140,23 +140,23 @@ Please follow the instructions below, or in the video.
 </p>
 
 :::caution
-If the station and WG1000 Gateway are more than 50m/164ft apart, you must install the LoRa antenna. Else the station might not be able to properly communicate with WG1000 gateway, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
+If the station and WG1000 Gateway are more than 50m/164ft apart, you must install the RF antenna. Else the station might not be able to properly communicate with WG1000 gateway, resulting in less to none data being shared to the network, and thus reduce WXM rewards.
 :::
 
 <details class="accordion">
 
-<summary>WG1000 Gateway LoRa Antenna Installation Instructions</summary>
+<summary>WG1000 Gateway RF Antenna Installation Instructions</summary>
 
 
 #### WG1000 Gateway Antenna Troubleshooting
 
-WG1000 Gateway is equipped with two antennas, the GPS and the LoRa. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
-while the LoRa antenna is responsible for the communication between the WG1000 Gateway and the weather station.
+WG1000 Gateway is equipped with two antennas, the GPS and the RF. The GPS antenna is used to determine the location (coordinates) and altitude of the weather station,
+while the RF antenna is responsible for the communication between the WG1000 Gateway and the weather station.
 
-On the left side of the WG1000 Gateway you may notice that there are two different caps, a grey for GPS and a blue for LoRa.
+On the left side of the WG1000 Gateway you may notice that there are two different caps, a grey for GPS and a blue for RF (LoRa protocol) .
 Each of these caps contains a system relevant to the antennas mentioned above.
 
-By default, the external GPS antenna and the internal LoRa antenna are connected, and there is no need to modify this.
+By default, the external GPS antenna and the internal RF antenna are connected, and there is no need to modify this.
 
 The antenna plugs are VERY SENSITIVE so it is NOT recommended to switch cables unless there is a serious problem.
 
@@ -172,10 +172,10 @@ In case you desire to change the internal/external GPS antenna, follow the follo
 1. Clasp the cap back and screw the device.
 1. In case you changed to the external GPS antenna, connect the external antenna to the corresponding port on the side of the WG1000 Gateway.
 
-#### Switch external/internal LoRa antenna
+#### Switch external/internal RF antenna
 
-The WG1000 Gateway beta v1 uses by default the internal LoRa antenna.
-In case you desire to change the internal/external LoRa antenna, follow the following steps:
+The WG1000 Gateway beta v1 uses by default the internal RF antenna.
+In case you desire to change the internal/external RF antenna, follow the following steps:
 
 1. Unscrew and remove the four screws behind the WG1000 Gateway.
 1. Remove the first cap. You may use a flat-head screwdriver to separate the cap from the rest of the WG1000 Gateway.
@@ -184,7 +184,7 @@ In case you desire to change the internal/external LoRa antenna, follow the foll
    Remove the cable, which is connected to a specific reception on the green board and
    connect the desired cable to the same reception.
 1. Clasp the caps and the cap back and screw the device.
-1. In case you changed to external LoRa antenna, connect the external antenna to the corresponding port on the side of the WG1000 Gateway.
+1. In case you changed to external RF antenna, connect the external antenna to the corresponding port on the side of the WG1000 Gateway (LoRa cap).
 
 ##### Internal parts of the WG1000 Gateway
 
@@ -192,7 +192,7 @@ a. Bottom is the first cap you remove once the WG1000 Gateway is unscrewed.
 
 b. The second cap in grey is the GPS
 
-c. The third cap in blue is the LoRa
+c. The third cap in blue is the LoRa (RF Connection for the weather station)
 
 d. Top cap in white is the rest of WG1000 Gateway.
 
