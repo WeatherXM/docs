@@ -42,7 +42,9 @@ The solution may be as simple as powering down and up the WG1200 Gateway. Make s
    Relocate the weather station and WG1200 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 
-### Device Alert "Station Signal is Low"
+<hr />
+
+### Device Alert: "Station Signal is Low"
 <img className="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/Station_signal_low.png")} style={{ width: '45%', height: 'auto' }} alt="Signal Low" />
 When the RF connection with the Weather Station is weak, the WG1200 Gateway will display "Station Signal is Low" resulting to [Data Gaps](/project/rewards-troubleshooting#weather-data-gaps) and reduced Rewards. 
 - If the signal is low, make sure the weather station is within the range of 50m/164ft from the WG1200 Gateway.
@@ -52,19 +54,7 @@ When the RF connection with the Weather Station is weak, the WG1200 Gateway will
 Low signal quality may be due to obstacles between the weather station and the WG1200 Gateway, such as walls, trees, or other buildings.
 :::
 
-### Temperature looks higher than expected.
-
-If the temperature is slightly higher (e.g., +2 - 5°C/35-41°F) than expected,
-then assure that the weather station is within a significant distance from heat sources
-like ventilation systems and active chimneys.
-Also make sure that the weather station is mounted on a 2m/6.5ft (or more) metallic pole and there are no obstacles close by reading [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation).
-
-### Other variables, such as wind direction, wind speed, rain height and humidity do not align with an official weather reporting station
-
-Even weather stations, which are close to each other, may obtain slightly different measurements,
-especially for the variables of wind speed and wind direction. However, you should not expect significant deviations
-e.g., from a weather station, which is located within a distance of 1km/0.6mi.
-If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
+<hr />
 
 ### Device Alert "Station Reported Abnormal Values".
 <img className="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/station_abnormal_values.png")} style={{ width: '45%', height: 'auto' }} alt="Abnormal Values" />
@@ -78,7 +68,9 @@ Please make sure you have followed [Best Practices for Proper Station Installati
 
 If you are still experiencing issues, please contact us through [support](https://support.weatherxm.com).
 
-### Device Alert "Station Battery Level is Low"
+<hr />
+
+### Device Alert: "Station Battery Level is Low"
 
 <img className="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/Station_battery_low.png")} style={{ width: '45%', height: 'auto' }} alt="Battery Low" />
 
@@ -86,19 +78,41 @@ If your WG1200 Gateway displays "Station Battery Level is Low" on the screen, th
 
 Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
 
+<hr />
+
+### Temperature looks higher than expected.
+
+If the temperature is slightly higher (e.g., +2 - 5°C/35-41°F) than expected,
+then assure that the weather station is within a significant distance from heat sources
+like ventilation systems and active chimneys.
+Also make sure that the weather station is mounted on a 2m/6.5ft (or more) metallic pole and there are no obstacles close by reading [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation).
+
+<hr />
+
+### Other variables, such as wind direction, wind speed, rain height and humidity do not align with an official weather reporting station
+
+Even weather stations, which are close to each other, may obtain slightly different measurements,
+especially for the variables of wind speed and wind direction. However, you should not expect significant deviations
+e.g., from a weather station, which is located within a distance of 1km/0.6mi.
+If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/D1-bundle/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
+
+<hr />
+
 ### One or more variables are extremely high, low, or constant for long periods of time.
 
 If you notice that some variables are extreme or constant it is possible you need to replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
 
+<hr />
 
 ### Pressure on WG1200 Gateway appears to be very low relatively to other reference stations of national or private networks etc. 
 
 For now we present only the absolute pressure and not the Mean Sea Level Pressure (MSLP). That means that the displayed pressure are affected by the elevation of your area. We work to consider the elevation given by your GPS in order to show the MSLP, which is commonly used.
 
+<hr />
 
 ## WiFi  Connectivity
 
-### Device Alert "No Internet connection"
+### Device Alert: "No Internet connection"
 
 <img className="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/Station_no_wifi.png")} style={{ width: '45%', height: 'auto' }} alt="No WiFi" />
 
