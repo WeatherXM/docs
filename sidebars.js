@@ -38,6 +38,21 @@ module.exports = {
 	      collapsed: true,
 		  
 	    },
+		{
+			type: "category",
+			label: "WeatherXM D1 bundle (WB1200)",
+			items: [
+					  "wxm-devices/D1-bundle/D1-bundle-introduction",
+					  "wxm-devices/D1-bundle/D1-contents",
+					  "wxm-devices/D1-bundle/D1-assemble",
+					  "wxm-devices/D1-bundle/install-weather-station",
+					  "wxm-devices/D1-bundle/D1-connect-and-claim",
+					  "wxm-devices/D1-bundle/D1-troubleshooting",
+					  "wxm-devices/D1-bundle/maintenance",
+					  "wxm-devices/D1-bundle/D1-specs"
+			],
+			collapsed: true,
+		  },
 		"wxm-devices/deployment-examples",
       ],
       collapsed: true,  
