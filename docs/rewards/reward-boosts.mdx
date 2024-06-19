@@ -16,7 +16,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 So far the following **Reward Boosts** are scheduled to be implemented:
 
-### Beta Rewards
+## Beta Rewards
 
 According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
 
@@ -26,15 +26,19 @@ Beta rewards distribution will last 425 days.
 
 The following calculations will take place for each station, the day before the Mainnet Launch:
 
-$$RewardableBetaHours[s]$$: This is the total number of hours the station provided valid data during the Beta period.
+$$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
 
-$$StationBetaRewards[s]$$: This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
+$$StationBetaRewards[i]$$: This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
 $$
-StationBetaRewards[s] = \frac{3000000 \times \text{RewardableBetaHours}[s]}{\sum (\text{RewardableBetaHours of all stations})}
+StationBetaRewards[i] = \frac{3000000 \times \text{RewardableBetaHours}[i]}{\sum (\text{RewardableBetaHours of all stations})}
 $$
 
-`DailyBetaRewards[s] = StationBetaRewards[s]/365`: This is the beta rewards allocated daily to this station.
+$$
+DailyBetaRewards[i] = \frac{\text{StationBetaRewards}[i]}{365}
+
+$$
+ This is the beta rewards allocated daily to this station.
 
 ### Beta Rewards Dilution - A fix
 
