@@ -33,7 +33,7 @@ const config = {
                     routeBasePath: "/",
                     // Please change this to your repo.
                     editUrl: "https://github.com/WeatherXM/docs/blob/main",
-                    emarkPlugins: [remarkMath],
+                    remarkPlugins: [remarkMath],
                     rehypePlugins: [rehypeKatex],
                 },
                 theme: {
