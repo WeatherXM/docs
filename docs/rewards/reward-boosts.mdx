@@ -31,9 +31,14 @@ This is the total number of hours the station provided valid data during the Bet
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
 
 `StationBetaRewards[s] = 3000000 * RewardableBetaHours[s]/Sum(RewardableBetaHours of all stations)`:
+$$
+StationBetaRewards[s] = \frac{3000000 \times \text{RewardableBetaHours}[s]}{\sum (\text{RewardableBetaHours of all stations})}
+$$
+
 This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
 
 `DailyBetaRewards[s] = StationBetaRewards[s]/365`: This is the beta rewards allocated daily to this station.
+
 
 ### Beta Rewards Dilution - A fix
 
