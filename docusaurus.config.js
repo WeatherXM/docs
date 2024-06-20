@@ -1,5 +1,7 @@
 const path = require("path");
 require("dotenv").config();
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -42,6 +44,8 @@ const config = {
                     routeBasePath: "/",
                     // Please change this to your repo.
                     editUrl: "https://github.com/WeatherXM/docs/blob/main",
+                    remarkPlugins: [remarkMath],
+                    rehypePlugins: [rehypeKatex],
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
@@ -104,6 +108,16 @@ const config = {
             style: "light",
         },
     },
+
+stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],   
 };
 
 module.exports = config;

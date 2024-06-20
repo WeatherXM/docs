@@ -8,7 +8,7 @@ slug: /project/reward-boosts
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 
-### Overview
+## Overview
 
 **Reward boosts** are additional rewards given to stations that contribute weather data during daily distribution, in addition to the [**base rewards**](/reward-mechanism#daily-rewards-calculation-process). Learn more about the daily rewards in the [Reward Mechanism (RM) ](/reward-mechanism) section.
 
@@ -16,37 +16,41 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 So far the following **Reward Boosts** are scheduled to be implemented:
 
-### Beta Rewards
+## Beta Rewards
 
 According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
 
 Beta rewards distribution will last 425 days.
 
-#### Calculation:
+### Calculation
 
 The following calculations will take place for each station, the day before the Mainnet Launch:
 
-`RewardableBetaHours[s]`:
-This is the total number of hours the station provided valid data during the Beta period.
+$$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
 
-`StationBetaRewards[s] = 3000000 * RewardableBetaHours[s]/Sum(RewardableBetaHours of all stations)`:
-This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
+$$StationBetaRewards[i]$$: This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
+$$
+StationBetaRewards[i] = \frac{3000000 \times \text{RewardableBetaHours}[i]}{\sum (\text{RewardableBetaHours of all stations})}
+$$
 
-`DailyBetaRewards[s] = StationBetaRewards[s]/365`: This is the beta rewards allocated daily to this station.
+$$DailyBetaRewards[i]$$: This is the beta rewards allocated daily to this station.
+$$
+DailyBetaRewards[i] = \frac{\text{StationBetaRewards}[i]}{365}
+$$
 
-### Beta Rewards Dilution - A fix
+## Beta Rewards Dilution - A fix
 
 Initially, the reward allocation formula caused dilution as the launch day was delayed, disadvantaging long-term station owners. 
 
-#### Updated Beta Rewards Allocation 
+### Updated Beta Rewards Allocation 
 
 The updated approach involves calculating beta rewards twice: once at the end of February 2024 and again just at the end of the project's beta phase (May 27 2024).
 Each station will receive the higher reward of these two calculations, ensuring fairer distribution of rewards across both old and new stations.
 
 Read more about the Beta Rewards Dilution fix [here](https://blog.weatherxm.com/a-fix-for-beta-rewards-dilution-493f1a81a28d).
 
-#### Beta Rewards Table (BRT)
+### Beta Rewards Table (BRT)
   
 The project's Beta period officially ended on May 27th (UTC). All station-hours accumulated up to this date are included in the final calculation and all stations are rewarded for participating in the Beta period with a daily Reward Boost.
 
@@ -60,12 +64,12 @@ Each user who has a station eligible for beta rewards, must have a wallet define
 The Beta Rewards allocation is managed by the [WeatherXM Network](https://weatherxm.network).
 :::
 
-### Cell Boost
+## Cell Boost
 
 Cell Boost is a mechanism that can be used to incentivise weather stations deployments on specific cells/areas of interest. 
 
 
-### Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
+## Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
 
 
 - Backfill of rewards that were not allocated to certain devices due to malfunctions in the [Quality of Data (QoD) mechanism](/project/quality-of-data) or [Proof of Location (PoL) mechanism](/project/proof-of-location).
