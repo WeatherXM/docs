@@ -3675,6 +3675,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/plugin-client-redirects@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@docusaurus/plugin-client-redirects@npm:3.4.0"
+  dependencies:
+    "@docusaurus/core": 3.4.0
+    "@docusaurus/logger": 3.4.0
+    "@docusaurus/utils": 3.4.0
+    "@docusaurus/utils-common": 3.4.0
+    "@docusaurus/utils-validation": 3.4.0
+    eta: ^2.2.0
+    fs-extra: ^11.1.1
+    lodash: ^4.17.21
+    tslib: ^2.6.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: ebeff632ca5bf82a115459026c401759e3631442197d892f808e5608dacdfbcb13592b4a9c8b3718c8f25c6fac3471ceeafa4fd2f10f73ffe4b6693b7a3e29f9
+  languageName: node
+  linkType: hard
+
 "@docusaurus/plugin-content-blog@npm:3.4.0":
   version: 3.4.0
   resolution: "@docusaurus/plugin-content-blog@npm:3.4.0"
@@ -7048,6 +7068,7 @@ __metadata:
   resolution: "docs@workspace:."
   dependencies:
     "@docusaurus/core": ^3.4.0
+    "@docusaurus/plugin-client-redirects": ^3.4.0
     "@docusaurus/preset-classic": ^3.4.0
     "@mdx-js/react": ^3.0.1
     clsx: ^2.1.1
