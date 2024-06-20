@@ -17,6 +17,17 @@ const config = {
 
     plugins: [
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
+        [
+            '@docusaurus/plugin-client-redirects',
+            {
+                redirects: [
+                    {
+                        to: '/rewards/how-to-join-arbitrum-and-see-your-tokens',
+                        from: '/wallet/how-to-join-arbitrum-and-see-your-tokens',
+                    }
+                ]
+            }
+        ]
     ],
 
     presets: [
