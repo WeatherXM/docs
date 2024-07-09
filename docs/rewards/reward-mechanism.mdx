@@ -30,11 +30,9 @@ Every day, the reward algorithm assesses the performance of all weather stations
 
 Users have the option to withdraw their rewards either by accessing the Merkle proof on the WeatherXM Platform or by retrieving the Merkle proof from IPFS and programmatically initiating the procedure. At any given time users have the flexibility to withdraw any amount they desire, provided it does not exceed the total allocated amount.
 
-
 ### Daily Rewards Calculation Process
 
 The Reward Mechanism calculates the amount of tokens that will be allocated to users by completing the following phases:
-
 
 1. Base Rewards calculation
 2. Business Boost Rewards calculation
@@ -181,8 +179,6 @@ The lifecycle of rewards from the rewarding mechanism to the users' wallets:
 * The **Business Development Pool** funds daily the **RewardPool** with the business boost of $WXM
 * The station owners withdraw their rewards programmatically or through the WeatherXM Platform by interacting with the **RewardPool**
 
-
-
 ## Reward mechanism v1.5 
 This section describes the updated **Reward Mechanism** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network. (deprecated)
 
@@ -198,9 +194,7 @@ This section describes the updated **Reward Mechanism** that will be used to all
 ### Daily Rewards Calculation Process
 The Reward Mechanism calculates the amount of tokens that will be distributed to users by completing the following phase:
 
-1. Actual Rewards calculation
-
-#### 1. Actual Rewards calculation
+#### Actual Rewards calculation
 Actual rewards are calculated taking into account the performance of the weather station for the previous day. 
 
 This is a short summary of the criteria used:
@@ -218,7 +212,6 @@ increased sensor accuracy or range, new sensor types, or other capabilities that
 
 * **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
 If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](project/cell-capacity).
-
 
 We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
 
@@ -301,9 +294,7 @@ weather_station_reward = reward_score * max_daily_reward
 ### Reward Distribution Mechanism
 All daily `actual_reward` per weather station are transferred to the wallet address already set by the user.
 This is a bulk transfer operations which happens once in a daily schedule and as a result the users get their daily rewards to their wallets.
-Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards. 
-
-
+Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards.
 
 ## Links
 - [WeatherXM Network](https://weatherxm.network/)
