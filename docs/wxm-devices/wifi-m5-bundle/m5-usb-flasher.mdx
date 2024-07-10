@@ -5,6 +5,7 @@ slug: /wxm-devices/wifi-m5-bundle/m5-usb-flasher
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 
 <h2 id="introduction">Introduction</h2>
 <p>If you are currently using a WG1000 Gateway with firmware version 0.3.12, it's essential to update your device using the Flasher Tool. This version is considered obsolete and cannot receive updates through the "Over The Air" (OTA) method any longer due to significant differences in the underlying operating system. To ensure your WXM-M5 continues to operate efficiently and receive rewards, you must perform a full firmware flash using a USB cable.</p>
@@ -33,7 +34,7 @@ Support for WG1000 Gateway devices running v0.3.12 will be discontinued from Nov
   <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/usb-flasher-1.png")} alt="Launch Flasher Tool"/>
   <div>
     <ol>
-    <li><a href="https://github.com/WeatherXM/wxm_m5_flasher/releases">Download</a> and install the Flasher Tool for your OS</li>
+    <li><Link to="https://github.com/WeatherXM/wxm_m5_flasher/releases">Download</Link> and install the Flasher Tool for your OS</li>
     Under Assets select:
         <ol><li>Windows: `weatherxm_m5_flasher_*.exe`</li>
         <li>Linux: `weatherxm_m5_flasher_*.deb`</li></ol>
@@ -102,9 +103,9 @@ If your WG1000 Gateway did not restart automatically, press and hold the power b
 <p>The flasher tool runs on Windows 10/11. Windows 7 is not supported.</p>
 <p>When you run the tool, you will be greeted by the "Windows prevented an unrecognised application from running.". This is because the binary is not signed. Click More Info > Run Anyway to proceed.</p>
 <h4>When I connect my WG1000 Gateway no ports appear.</h4>
-<p>First, check if your USB cable is not damaged. It is recommended to try another cable to get this out of the way. If your WG1000 Gateway still doesn't appear in the port list, open Device Manager and check under "Ports (COM & LPT)". If no devices appear in the list your cable is most likely damaged. If a device with an exclamation mark appears or is in any other kind of erroneous state, your computer most likely lacks the USB drivers. Download and install the drivers from the <a href="https://www.wch-ic.com/downloads/CH343SER_EXE.html">USB chip manufacturers' website</a>.</p>
+<p>First, check if your USB cable is not damaged. It is recommended to try another cable to get this out of the way. If your WG1000 Gateway still doesn't appear in the port list, open Device Manager and check under "Ports (COM & LPT)". If no devices appear in the list your cable is most likely damaged. If a device with an exclamation mark appears or is in any other kind of erroneous state, your computer most likely lacks the USB drivers. Download and install the drivers from the <Link to="https://www.wch-ic.com/downloads/CH343SER_EXE.html">USB chip manufacturers' website</Link>.</p>
 <h4>I get an error about VCRUNTIMEXXX.dll missing</h4>
-<p>Your windows installation is missing the MSVC runtime libraries. Download and install them from <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">Microsoft's website.</a> It is recommended to install both the x86 and x64 versions.</p>
+<p>Your windows installation is missing the MSVC runtime libraries. Download and install them from <Link to="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">Microsoft's website.</Link> It is recommended to install both the x86 and x64 versions.</p>
 
 <h3>Linux</h3>
 <p>Tested only on Debian based distributions.</p>

@@ -4,65 +4,69 @@ title: Homepage
 hide_title: true
 sidebar_label: Home
 slug: /
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 
-## Welcome aboard 
+## Welcome aboard
 
 WeatherXM is a community-powered weather network that rewards weather station owners and provides accurate weather services to Web3 enterprises.
 WeatherXM weather stations are the world’s first to natively support Web3 technologies.
-
-
   
  <section class="product-container">
   <div class="device">
-    <a href="/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction">
+    <Link to="/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction">
       <img src={useBaseUrl("img/home/m5.png")} />
       <div class="device-info">
         <h4>WeatherXM M5 bundle (WB1000)</h4>
         <p>This is our developer friendly, local weather data miner bundled with an easy to set up all-in-one weather station.</p>
       </div>
-    </a>
+    </Link>
   </div>
   <div class="device">
-    <a href="/wxm-devices/helium-bundle/wxm-ws2000-introduction">
+    <Link to="/wxm-devices/helium-bundle/wxm-ws2000-introduction">
       <img src={useBaseUrl("/img/home/helium.png")} />
       <div class="device-info">
         <h4>WeatherXM Helium station (WS2000)</h4>
         <p>Compatible all-in-one weather station. Connects to Helium network and submits weather data to WeatherXM.</p>
       </div>
-    </a>
+    </Link>
   </div>
 </section>
 
 <section class="product-container">
   <div class="device" >
-    <a href="wxm-devices/D1-bundle/D1-bundle-introduction">
+    <Link to="wxm-devices/D1-bundle/D1-bundle-introduction">
       <img src={useBaseUrl("/img/home/D1-bundle.webp")} />
       <div class="device-info" >
         <h4>WeatherXM D1 bundle (WB1200)</h4>
         <p>The WB1200 is a bundle product that combines the WS1001 weather station with our open source WeatherXM WG1200 Gateway.</p>
       </div>
-    </a>
+    </Link>
   </div>
 </section>
 
+<h3>WeatherXM Project</h3>
 
- 
-<div class=" no-shadow">
-  <h3>WeatherXM Project</h3>
-  <p>WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.</p>
-    <p>They are all-in-one, easy to deploy, energy and communication autonomous, and designed for large-scale deployment.
-    WeatherXM makes weather-related smart contracts on-chain a reality.</p>
-    <p>This documentation site attempts to explain various aspects of the WeatherXM project.</p>
-    <p><b>Thank you for supporting WeatherXM!</b></p>
-  <h5 class="quickLinks">Quick Links</h5>
-  <a className="block" href="/tokenomics">&#8226; The $WXM Token</a>
-  <a className="block" href="/reward-mechanism/">&#8226; Reward Mechanism</a>
-  <a className="block" href="/project/quality-of-data/">&#8226; Quality of Data (QoD)</a>
-  <a className="block" href="/project/proof-of-location/">&#8226; Proof of Location (PoL)</a>
-</div>
+WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.
+
+They are all-in-one, easy to deploy, energy and communication autonomous, and designed for large-scale deployment.
+WeatherXM makes weather-related smart contracts on-chain a reality.
+
+This documentation site attempts to explain various aspects of the WeatherXM project.
+
+<h4>Thank you for supporting WeatherXM!</h4>
+<h5 class="quickLinks">Quick Links</h5>
+
+<Link to="/tokenomics">&#8226; The $WXM Token</Link>
 <br></br>
-<p>Join our <a href="https://weatherxm.com/discord" target="_blank" rel="noopener noreferrer">Discord Community Server</a>.</p>
+<Link to="/reward-mechanism/">&#8226; Reward Mechanism</Link>
+<br></br>
+<Link to="/project/quality-of-data/">&#8226; Quality of Data (QoD)</Link>
+<br></br>
+<Link to="/project/proof-of-location/">&#8226; Proof of Location (PoL)</Link>
+<br></br><br></br>
+Join our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
 

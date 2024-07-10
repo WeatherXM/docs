@@ -8,208 +8,152 @@ slug: /faqs
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Highlight from "@site/src/components/Highlight";
-import Hardware from "@site/src/components/Hardware";
-import Connectivity from "@site/src/components/Connectivity";
-import Onboarding from "@site/src/components/Onboarding";
-import Claiming from "@site/src/components/Claiming";
-import RewardMechanism from "@site/src/components/RewardMechanism";
-import RewardsDistribution from "@site/src/components/RewardsDistribution";
-import WeatherData from "@site/src/components/WeatherData";
-import HistoricalData from "@site/src/components/HistoricalData";
-import B2B from "@site/src/components/B2B";
-import TokenLaunch from "@site/src/components/TokenLaunch";
-import Explorer from "@site/src/components/Explorer";
-import Troubleshooting from "@site/src/components/Troubleshooting";
-import Orders from "@site/src/components/Orders";
-import Shipping from "@site/src/components/Shipping";
-import Fees from "@site/src/components/Fees";
-import M5 from "@site/src/components/M5";
-import Helium from "@site/src/components/Helium";
-import API from "@site/src/components/API";
-import Tokenomics from "@site/src/components/Tokenomics";
-import Contribution from "@site/src/components/Contribution";
-import Installation from "@site/src/components/Installation";
-import ProofOfLocation from "@site/src/components/ProofOfLocation";
-import BetaTesting from "@site/src/components/BetaTesting";
-import Refund from "@site/src/components/Refund";
-import IOS from "@site/src/components/IOS";
-import Invoicing from "@site/src/components/Invoicing";
-import Discord from "@site/src/components/Discord";
-
-export const highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
 
 :::tip
 Remember that you always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
 :::
 
+## <Highlight color="#68a4f9">Data</Highlight>
 
-<!--<Hardware /> <Connectivity /> <Onboarding /> <API /> <B2B /> <BetaTesting /> <Claiming /> <Contribution /> <Explorer /> <Fees /> <Helium /> <HistoricalData /> <Installation /> <Invoicing /> <IOS /> <M5 /> <Orders /> <ProofOfLocation /> <Refund /> <RewardMechanism /> <RewardsDistribution /> <Shipping /> <TokenLaunch /> <Tokenomics /> <Troubleshooting /> <WeatherData /> -->
+### Is there a chance for my host/friend to be able to have access to my station's data?
 
-##  <Highlight color="#68a4f9">Data</Highlight>
+Yes! It was a common feature request so we have implemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favourite" any station you like by clicking on the heart shaped button while using our mobile App.
+The station will appear in your station list.
 
-   
-
-  ### Is there a chance for my host/friend to be able to have access to my station's data?
-
-  Yes! It was a common feature request so we have implemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favourite" any station you like by clicking on the heart shaped button while using our mobile App.
-  The station will appear in your station list.
-    
-  <hr />
+<hr />
 
 ### How do you know people are not faking the location of their station on the map?
 
 In addition to the cryptographic proofs from all station data sent to the WeatherXM Network, we have designed and implemented a unique Proof of Location algorithm to safeguard the accuracy of the weather station location. Read more at the [PoL section of the documentation](/project/proof-of-location).
 
+## <Highlight color="#68a4f9">Hardware</Highlight>
 
+### Can I connect my WXM station with a 3rd party station?
 
+Our weather stations are custom built, they are developed to connect to our network with our firmware and software implementations. The SDR receiver is no longer on our roadmap.
 
-  ## <Highlight color="#68a4f9">Hardware</Highlight>
+<hr />
 
-  
-  ### Can I connect my WXM station with a 3rd party station?
+### What are the differences between the WG1000 gateway  station and the WXM Helium compatible station?
 
-  Our weather stations are custom built, they are developed to connect to our network with our firmware and software implementations. The SDR receiver is no longer on our roadmap.
-  
-  <hr />
+1. The WeatherXM Helium station has an integrated (located within the weather station) Helium-compatible LoRaWAN chip, crypto chip, and GPS while the Wi-Fi bundle has a Wi-Fi gateway, crypto chip, and GPS located within the external WG1000 gateway.
+1. WeatherXM Helium station can only connect to the Helium Network while the Wi-Fi bundle can only connect to Wi-Fi.
+1. The WeatherXM helium weather station has a larger solar panel which allows it to do processing standalone (in the station itself) while the Wi-Fi bundle's station has a smaller solar panel since the processing is done by the external WG1000 display and Wi-Fi gateway (located indoors) which the station communicates to over RF.
+1. The WeatherXM Helium bundle does not contain any type of display to view weather data. Weather data will have to be viewed from the WeatherXM app.
 
-  ### What are the differences between the WG1000 gateway  station and the WXM Helium compatible station?
+<hr />
 
-  <ol>
-    <li>The WeatherXM Helium station has an integrated (located within the weather station) Helium-compatible LoRaWAN chip, crypto chip, and GPS while the Wi-Fi bundle has a Wi-Fi gateway, crypto chip, and GPS located within the external WG1000 gateway. </li>
-    <li>WeatherXM Helium station can only connect to the Helium Network while the Wi-Fi bundle can only connect to Wi-Fi.</li>
-    <li>The WeatherXM helium weather station has a larger solar panel which allows it to do processing standalone (in the station itself) while the Wi-Fi bundle's station has a smaller solar panel since the processing is done by the external WG1000 display and Wi-Fi gateway (located indoors) which the station communicates to over RF.</li>
-    <li>The WeatherXM Helium bundle does not contain any type of display to view weather data. Weather data will have to be viewed from the WeatherXM app.</li>
-  </ol>
-  
-  <hr />
+### Can I connect my WeatherXM Helium compatible station to any Helium around or should I request access from someone?
 
-  ### Can I connect my WeatherXM Helium compatible station to any Helium around or should I request access from someone?
+You can connect your WeatherXM Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The gateway that will handle your packet is usually the fastest to respond but this is influenced by numerous factors. This means that the closest Helium gateway will not necessarily be the one that will pick up your packet, nor you can choose or influence this.
 
-  You can connect your WeatherXM Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The gateway that will handle your packet is usually the fastest to respond but this is influenced by numerous factors. This means that the closest Helium gateway will not necessarily be the one that will pick up your packet, nor you can choose or influence this.
+<hr />
 
-  <hr />
+### Will it make a big difference if I place my station on the balcony instead of the roof?
 
-  ### Will it make a big difference if I place my station on the balcony instead of the roof?
+It is mandatory that you place your station on the roof and the reason is because there aren't so many obstacles as there are on a balcony (e.g walls), that will reduce the quality of your data, therefore the amount of your rewards.
+You can also check the [deployment examples](/deployment-examples) for inspiration.
 
-  It is mandatory that you place your station on the roof and the reason is because there aren't so many obstacles as there are on a balcony (e.g walls), that will reduce the quality of your data, therefore the amount of your rewards. 
-  You can also check the [deployment examples](/deployment-examples) for inspiration.
-  
-  <hr />
+<hr />
 
- 
-  ### Is any of your stations suitable for very cold climates? 
+### Is any of your stations suitable for very cold climates?
 
-  For very cold climates that have snow most of the year, we will be launching soon a special weather station with a heater suitable for these weather conditions. 
- 
-  <hr />
+For very cold climates that have snow most of the year, we will be launching soon a special weather station with a heater suitable for these weather conditions.
 
-  ### Which is the recommended frequency for my country?
+<hr />
 
-  We approximately follow the [frequency assignments of TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
+### Which is the recommended frequency for my country?
 
+We approximately follow the [frequency assignments of TTN per country](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/).
 
 ## <Highlight color="#68a4f9">Rewards</Highlight>
 
- 
-  ### How can I start receiving rewards?
+### How can I start receiving rewards?
 
-  If you have already set up your station and claimed your device via the app, please add Metamask and follow the instructions [here](/wallet/add-edit-wallet-address) and then follow this guide to [claim your rewards](/project/rewards-claiming).
-  
-  <hr />
-
-
-  ### How can I check my rewards?
-
-  You can check your rewards by using our mobile App and follow this guide to [claim your rewards](/project/rewards-claiming).
-
-   <hr />
-
-  ### Do I have to pay for the HNT/DC fees?
-
-  We are covering the HNT/DC fees.
-  
-<hr />
-
-  ### Can I change my wallet address in the future?
-
-  You can change your wallet address in the future. Just so you know, rewards are allocated daily per your wallet, if you change wallet in the future then the rewards up to that moment are allocated to your previous wallet.
-  Unclaimed rewards cannot be transferred to a new wallet and can only be claimed by the connected wallet address at the time of rewards allocation.
+If you have already set up your station and claimed your device via the app, please add Metamask and follow the instructions [here](/wallet/add-edit-wallet-address) and then follow this guide to [claim your rewards](/project/rewards-claiming).
 
 <hr />
 
-  ### How many stations are allowed in a Hex?
+### How can I check my rewards?
 
-  Such details will be defined in by the [WeatherXM Network](https://weatherxm.network/).
+You can check your rewards by using our mobile App and follow this guide to [claim your rewards](/project/rewards-claiming).
 
 <hr />
 
+### Do I have to pay for the HNT/DC fees?
+
+We are covering the HNT/DC fees.
+
+<hr />
+
+### Can I change my wallet address in the future?
+
+You can change your wallet address in the future. Just so you know, rewards are allocated daily per your wallet, if you change wallet in the future then the rewards up to that moment are allocated to your previous wallet.
+Unclaimed rewards cannot be transferred to a new wallet and can only be claimed by the connected wallet address at the time of rewards allocation.
+
+<hr />
+
+### How many stations are allowed in a Hex?
+
+Such details will be defined in by the [WeatherXM Network](https://weatherxm.network/).
+
+<hr />
 
 ## <Highlight color="#68a4f9">Sales</Highlight>
 
-  ### Can I receive my invoice before my order ships?
+### Can I receive my invoice before my order ships?
 
-  You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com).
-  <hr />
+You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com).
+<hr />
 
-  ### Do I have to pay custom fees?
+### Do I have to pay custom fees?
 
-  We do the custom clearance for EU, USA, CA and UK so you won't have to pay any custom fees.
+We do the custom clearance for EU, USA, CA and UK so you won't have to pay any custom fees.
 
-  <hr />
+<hr />
 
-  ### When will my order ship?
+### When will my order ship?
 
-  We are improving our logistic methods and you will receive your order in 1-2 weeks.
- 
-  <hr />
+We are improving our logistic methods and you will receive your order in 1-2 weeks.
 
-  ### Can I change my shipping address?
+<hr />
 
-  As long as your order hasn't shipped you can contact us through [support](https://support.weatherxm.com) and we will change it for you.
-  
-  <hr />
+### Can I change my shipping address?
 
-  ### Can I request a refund?
+As long as your order hasn't shipped you can contact us through [support](https://support.weatherxm.com) and we will change it for you.
 
-  You can request a refund by sending us a message through [support](https://support.weatherxm.com) and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
-  
-  <hr />
+<hr />
 
-  ### Can I cancel my order if it has already been shipped?
+### Can I request a refund?
 
-  You can not cancel it if it has already been shipped but you can deny the delivery when it reaches to your door and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
-  
-  <hr />
+You can request a refund by sending us a message through [support](https://support.weatherxm.com) and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
 
-  ### Where do you ship the devices from?
+<hr />
 
-  We ship from China and then the devices are distributed to our warehouses in US/CA/UK/EU.
-  
-  <hr />
+### Can I cancel my order if it has already been shipped?
 
-  ### How can I purchase more than 2 weather stations?
+You can not cancel it if it has already been shipped but you can deny the delivery when it reaches to your door and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
 
-  You can complete our [bulk sales](https://pages.weatherxm.com/bulk-order-form) form and we will contact you as soon as possible.
-  
-  <hr />
+<hr />
 
-  ### How much time does it take for the refund to reflect to my bank account?
+### Where do you ship the devices from?
 
-  Note that refunds take 3-15 working days to reflect on your bank account.
-  If it hasn't been reflected in your bank account after 15 days you should contact us by sending a message through [support](https://support.weatherxm.com)
+We ship from China and then the devices are distributed to our warehouses in US/CA/UK/EU.
 
-  <hr />
+<hr />
 
+### How can I purchase more than 2 weather stations?
+
+You can complete our [bulk sales](https://pages.weatherxm.com/bulk-order-form) form and we will contact you as soon as possible.
+
+<hr />
+
+### How much time does it take for the refund to reflect to my bank account?
+
+Note that refunds take 3-15 working days to reflect on your bank account.
+If it hasn't been reflected in your bank account after 15 days you should contact us by sending a message through [support](https://support.weatherxm.com)
+
+<hr />
 
 :::tip
 Remember that you always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
