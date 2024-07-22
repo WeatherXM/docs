@@ -1,8 +1,8 @@
 ---
-id: Pulse-connect-and-claim
-title: Connect and Claim Station
-sidebar_label: Connect and Claim Station
-slug: /wxm-devices/Pulse-bundle/Pulse-connect-and-claim
+id: pulse-connect-and-claim
+title: Connect and Claim the Gateway
+sidebar_label: Gateway Claiming
+slug: /wxm-devices/pulse-bundle/pulse-connect-and-claim
 ---
 
 import Tabs from "@theme/Tabs";
@@ -10,46 +10,41 @@ import TabItem from "@theme/TabItem";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 
-## WG1200 Gateway
+## WG3000 Gateway
 
-<img object-fit="contain" src={useBaseUrl("/img/home/WG1200-gateway-side.png")} style={{ width: '50%', height: 'auto' }}/>
+<img object-fit="contain" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse.png")} style={{ width: '60%', height: 'auto' }}/>
 
-The weather station comes together with the WG1200 Gateway.
-The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
-and displays them on its screen.
-
-In this chapter, you will find guidance to set up the WG1200 Gateway.
+The weather station comes together with the WG3000 Gateway.
+The WG3000 Gateway receives all the meteorological data plus the location of the weather station, and forwards it to the WeatherXM network via cellular networks.
+In this chapter, you will find guidance to set up the WG3000 Gateway.
 <hr/>
 
 ## Prerequisites
 
 1. The station must be fully assembled (parts and batteries).
 1. A working smartphone with connection to the internet.
-1. A reliable 2.4 GHz WiFi network (**5 GHz is not supported**) for the WG1200 Gateway to connect to.
 1. The [WeatherXM](/wxm-devices/D1-bundle/D1-connect-and-claim#download-weatherxm-app-and-login) Application installed on your smartphone.
 
 <hr/>
 
 ## Step by Step Instructions
 
-### Connect WG1200 Gateway to power source and turn the gateway on
+### Connect WG3000 Gateway to power source and turn the gateway on
  
-- The WG1200 Gateway must be connected to a power source at all times.
+- The WG3000 Gateway must be placed on a sunny surface, facing south, and with no obstacles in front of it.
 
-:::caution
-If WG1200 Gateway turns off, you will not receive \$WXM rewards, as you will not be able to share data with the WeatherXM network. **This will result in no $WXM rewards!**
-WG1200 does not have a battery, so it must be connected to a power source at all times.
-:::
+
 <hr/>
 
 ### Change Frequency (Optional)
 
 <div class="explanation">
-  <img src={useBaseUrl("/img/wxm-devices/D1-bundle/D1-set_freq.png")} />
+  <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse.png")} />
   <span>
-The WG1200 Gateway's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
+The WG3000 Gateway's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
 - Model A: 868 MHz (default)
 - Model B: 915 MHz
+- Model C: 921 MHz
 
 :::note
 **If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.**
@@ -59,49 +54,23 @@ If unsure, check the sticker under the station or the box that came in it.
 </div>
 
 ### Steps to change the frequency
-<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/Image_1_Swipe-right.png")} style={{ width: '24%', height: 'auto' }} />
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/Image_2_select_freq.png")} style={{ width: '24%', height: 'auto' }} />
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/Image_3_set_freq.png")} style={{ width: '24%', height: 'auto' }} />
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/Set_Frequency.png")} style={{ width: '24%', height: 'auto'  }} />
-</div>
-<br></br>
-1. Swipe right on the touch screen.
-1. Click the Frequency options and select the new frequency your WG1200 Gateway will listen to.
-1. A confirmation dialog will open. Read it carefully and click "Continue" or "Cancel" accordingly.
-1. Finally, your WG1200 Gateway will restart after setting the frequency to the selected one.
+1. Navigate to the "Device Settings" menu by pressing the arrow keys on your WG3000 Gateway.
+  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_device_settings_root.png")} style={{ width: '40%', height: 'auto' }} />
+2. Click the Frequency options and select the new frequency your WG3000 Gateway will listen to.  
+  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_lora_freq.png")} style={{ width: '40%', height: 'auto' }} />
+3. Select the new frequency by pressing the "OK" button. 
+  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_1.png")} style={{ width: '40%', height: 'auto' }} />
+  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_2.png")} style={{ width: '40%', height: 'auto'  }} />
+  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_3.png")} style={{ width: '40%', height: 'auto'  }} />
+4. The Gateway will now reboot to accept the new frequency. 
+
 
 :::caution
-If you don't use the correct frequency as your weather station, WG1200 Gateway will not be able to communicate with your weather station, thus you will not send any weather data and receive no WXM rewards!
+If you don't use the correct frequency as your weather station, WG3000 Gateway will not be able to communicate with your weather station, thus you will not send any weather data and receive no WXM rewards!
 :::
 
 <hr/>
 
-### Connect WG1200 Gateway to WiFi
-<div style={{ display: 'flex' }}>
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/D1-Wifi.png")} style={{ width: '24%', height: 'auto', marginBottom: 'auto' }} />
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/D1_waiting_connection.png")} style={{ width: '24%', height: 'auto', marginBottom: 'auto' }} />
-  <img class="control" src={useBaseUrl("img/wxm-devices/D1-bundle/D1_connected.png")} style={{ width: '24%', height: 'auto', marginBottom: 'auto' }} />
-</div>
-<br></br>
-1. Swipe right on the touch screen and select the Configure WiFi option.
-1. The WG1200 Gateway will restart to enter configuration mode.
-1. An Access Point will be created with SSID "WXM_WG1200", you should connect to it from your smartphone. It is normal not having internet connection while connected to it.
-1. Once connected, a popup will appear on your smartphone to enter your WiFi credentials.
-1. Enter your WiFi credentials and click "Save".
-1. The WG1200 Gateway will restart and connect to your WiFi network.
-
-By now, your WG1200 Gateway is set and ready for claiming.
-
-:::tip
-In case of a successful connection, and the popup doesn’t open, navigate with your browser to 10.10.0.1 and follow the instructions displayed.
-:::
-
-:::note
-While you are connected to the "WXM_WG1200" network, you will not have internet access.
-:::
-
-<hr/>
 
 ### Download WeatherXM app and login
 
@@ -133,20 +102,17 @@ Your first rewards will appear after 24 hours of the station being online.
 
 <hr/>
 
-### Prepare for claiming your WG1200 Gateway
+### Prepare for claiming your WG3000 Gateway
 
 <div class="explanation">
-    <img style={{width:"calc(100%*1/3 - 10px)"}} src={useBaseUrl("img/wxm-devices/D1-bundle/D1-claim-prepare.jpeg")} />
+    <img style={{width:"calc(100%*1/3 - 10px)"}} src={useBaseUrl("/img/wxm-devices/pulse-bundle/Pulse-claiming.jpeg")} />
     <div style={{width:"calc(100%*2/3 - 10px)"}} >
 
-    #### Navigate to WG1200 Gateway and reveal the QR code
+    #### Find the barcode on the WG3000 Gateway
 
-    - Swipe right on the touch screen and select the "Claim Device" option, a QR code will appear.
+    - You can find the barcode on the back of the WG3000 Gateway. You will need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
 
-    You'll need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
-
-    <img class="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/D1_claim.gif")} style={{ width: '50%', height: 'auto' }} />
-    <img class="control" src={useBaseUrl("/img/wxm-devices/D1-bundle/D1_QR_Claim_static.png")} style={{ width: '50%', height: 'auto' }} />
+  
   </div>
 </div>
 
@@ -155,11 +121,32 @@ In case you have trouble scanning the QR code, you can manually type the serial 
 :::
 
 <hr/>
+### Enter your Claiming key
+
+<div class="explanation">
+    <img style={{width:"calc(100%*1/3 - 10px)"}} src={useBaseUrl("/img/wxm-devices/pulse-bundle/Pulse-claiming-key.jpeg")} />
+    <div style={{width:"calc(100%*2/3 - 10px)"}} >
+
+    #### Navigate to W3000 Gateway and reveal the claiming key
+
+    - Navigate to "Devise Settings" menu by pressing the arrow keys on your WG3000 right on the touch screen and select the "Claim Device" option, a QR code will appear.
+
+    You'll need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
+
+    <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_claiming_key.gif")} style={{ width: '100%', height: 'auto' }} />
+  </div>
+</div>
+
+:::tip
+The claiming key is a 6 digits code that is used to claim your station. The device remains on claiming mode for 10 minutes. If you don't claim it in this time, you will need to repeat the process.
+:::
+
+<hr/>
 
 ### Confirm station installation Location & Claim your Device
 
 <div class="explanation small-big">
-  <img src={useBaseUrl("img/wxm-devices/D1-bundle/D1-Location.png")} />
+  <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse-location.jpeg")} />
   <span>
 
 #### Select the Location that you'll Install your Station
