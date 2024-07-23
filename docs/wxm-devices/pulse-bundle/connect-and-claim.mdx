@@ -1,8 +1,8 @@
 ---
-id: pulse-connect-and-claim
+id: connect-and-claim
 title: Connect and Claim the Gateway
 sidebar_label: Gateway Claiming
-slug: /wxm-devices/pulse-bundle/pulse-connect-and-claim
+slug: /wxm-devices/pulse-bundle/connect-and-claim
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -51,16 +51,22 @@ If unsure, check the sticker under the station or the box that came in it.
 
 ### Steps to change the frequency
 1. Navigate to the "Device Settings" menu by pressing the arrow keys on your WG3000 Gateway.
-  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_device_settings_root.png")} style={{ width: '40%', height: 'auto' }} />
-2. Click the Frequency options and select the new frequency your WG3000 Gateway will listen to.  
-  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_lora_freq.png")} style={{ width: '40%', height: 'auto' }} />
-3. Select the new frequency by pressing the "OK" button. 
-  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_1.png")} style={{ width: '40%', height: 'auto' }} />
-  <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_2.png")} style={{ width: '40%', height: 'auto'  }} />
+    <div class="explanation">
+        <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_device_settings_root.png")} />
+    </div>
+2. Click the Frequency options and select the new frequency your WG3000 Gateway will listen to.
+    <div class="explanation">
+        <img class="control" src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_lora_freq.png")} />
+    </div>
+3. Select the new frequency by pressing the "OK" button.
+    <div class="explanation">
+      <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_1.png")} />
+      <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_freq_2.png")} />
+    </div>
 4. The Gateway will now reboot to accept the new frequency. 
 
 :::caution
-If you don't use the correct frequency as your weather station, WG3000 Gateway will not be able to communicate with your weather station, thus you will not send any weather data and receive no WXM rewards!
+If you don't use the correct frequency as your weather station, WG3000 Gateway will not be able to communicate with your weather station, thus you will not send any weather data and receive any $WXM rewards!
 :::
 
 <hr/>
@@ -103,14 +109,12 @@ Your first rewards will appear after 24 hours of the station being online.
 
     #### Find the barcode on the WG3000 Gateway
 
-    - You can find the barcode on the back of the WG3000 Gateway. You will need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
-
-  
+    You can find the barcode on the back of the WG3000 Gateway. You will need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
   </div>
 </div>
 
 :::tip
-In case you have trouble scanning the QR code, you can manually type the serial number and claiming key.
+In case you have trouble scanning the barcode, you can manually type the serial number and claiming key.
 :::
 
 <hr/>
@@ -122,7 +126,7 @@ In case you have trouble scanning the QR code, you can manually type the serial 
 
     #### Navigate to W3000 Gateway and reveal the claiming key
 
-    - Navigate to "Devise Settings" menu by pressing the arrow keys on your WG3000 right on the screen and select the "Claim Device" option, a QR code will appear.
+    Navigate to "Devise Settings" menu by pressing the arrow keys on your WG3000 right on the screen and select the "Claim Device" option, a QR code will appear.
 
     You'll need to scan the QR code in the WeatherXM app in order to verify that you own this station and secure it for yourself.
 
@@ -131,7 +135,7 @@ In case you have trouble scanning the QR code, you can manually type the serial 
 </div>
 
 :::tip
-The claiming key is a 6 digits code that is used to claim your station. The device remains on claiming mode for 10 minutes. If you don't claim it in this time, you will need to repeat the process.
+The claiming key is a 6 digits code that is used to claim your station. The device remains on claiming mode for 10 minutes. If you don't claim it in this timeframe, you will need to repeat the process.
 :::
 
 <hr/>
