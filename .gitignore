@@ -18,6 +18,9 @@
 # Webstorm
 .idea/
 
+# VS Code
+.vscode/*
+
 # Yarn
 .pnp.*
 .yarn/*
