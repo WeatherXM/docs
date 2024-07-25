@@ -83,6 +83,10 @@ html[data-theme='dark'] {
   margin-bottom: 25px;
 }
 
+.marginBottomSmall {
+  margin-bottom: 15px;
+}
+
 #__docusaurus main {
   max-width: calc(100% - 300px);
 }
