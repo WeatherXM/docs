@@ -1,9 +1,9 @@
 ---
-id: wxm-ws1000-introduction
-title: Introduction of M5 bundle (WB1000)
+id: introduction
+title: Introduction of Pulse bundle (WB3000)
 hide_title: false
 sidebar_label: Introduction
-slug: /wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction
+slug: /wxm-devices/pulse-bundle/introduction
 hide_table_of_contents: false
 ---
 
@@ -12,10 +12,11 @@ import Link from "@docusaurus/Link";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
 <div class="control">
-   <img src={useBaseUrl("img/home/m5.png")} />
+   <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse_bundle.png")} />
 </div>
 
 <hr />
@@ -29,44 +30,44 @@ Let's see what are the necessary steps in order to properly assemble, install, c
 
 Make sure that everything is in order and you're all set to proceed with station assembly.
 
-<Link to="/wxm-devices/wifi-m5-bundle/m5-contents">View Contents</Link>
+<Link to="/wxm-devices/pulse-bundle/contents">View Contents</Link>
 
 ### Assemble your weather station
 
 Assemble all parts and make sure all sensors work as expected. For this step, **you will need 2 AA batteries that are not included in the box.**
 
-<Link to="/wxm-devices/wifi-m5-bundle/assemble-m5">View Station Assembly Instructions</Link>
+<Link to="/wxm-devices/pulse-bundle/assemble-weather-station">View Station Assembly Instructions</Link>
 
 ### Install your weather station
 
 This is one of the most important steps, as proper installation is key in order to collect valid weather data. For this step, **you will need a pole that is at least 2m/6.5ft and a way to secure it in place (both not included in the box).** Here you will also see the best practices on how to properly install the station according to WMO.
 
-<Link to="/wxm-devices/wifi-m5-bundle/install-weather-station">View Station Installation Instructions</Link>
+<Link to="/wxm-devices/pulse-bundle/install-weather-station">View Station Installation Instructions</Link>
 
 ### Connect and claim station
 
-Once you've finished with installation, you can connect your station to your WG1000 Gateway and claim them as your own in WeatherXM network. To do this, **you will need to download our WeatherXM app (<Link to="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank">Android</Link> and <Link to="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank">iOS</Link>).**
+Once you've finished with installation, you can connect your station to your WG3000 Gateway and claim them as your own in WeatherXM network. To do this, **you will need to download our WeatherXM app (<Link to="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank">Android</Link> and <Link to="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank">iOS</Link>).**
 
-<Link to="/wxm-devices/wifi-m5-bundle/m5-connect-and-claim">View Connect and Claim Instructions</Link>
+<Link to="/wxm-devices/pulse-bundle/connect-and-claim">View Connect and Claim Instructions</Link>
 
 ### Add your ERC20 compatible wallet
 
-In order to receive $WXM rewards, you will need to connect an ERC20 compatible wallet which supports Arbitrum One Network. We have prepared a guide to do so using MetaMask (although it is not mandatory to use this).
+In order to receive WXM rewards, you will need to connect an ERC20 compatible wallet which supports Arbitrum Sepolia Testnet. We have prepared a guide to do so using MetaMask (although it is not mandatory to use this).
 
 <Link to="/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask">View Wallet Addition Instructions</Link>
 
 ## Features and Specifications
 
-### WG1000 Gateway
+### WG3000 Gateway
 
-- Capacitive touch screen
-- ATECC608 hardware encryption
-- GPS + BLE + RF
-- Forwards weather data via WiFi
-- Powered by USB
+- Cellular (2G/3G/LTE) + GPS + LoRa
+- Hardware encryption 
+- Forwards weather data via Cellular networks (Integrated SIM card)
+- Powered by integrated battery and solar panel (ext. power supplies supported)
 - Over-the-air firmware upgradable
+- Reporting Interval: 20min
 
-### WS1000 Weather Station
+### WS1001 Weather Station
 
 <Tabs
   defaultValue="metric"
@@ -78,8 +79,8 @@ In order to receive $WXM rewards, you will need to connect an ERC20 compatible w
 
 <TabItem value="metric">
 
-Powered via a small solar panel and batteries and communicates with the WG1000 Gateway via RF (Radio Frequencies).
-The maximum distance between this station and the WG1000 Gateway is 100m with line of sight.
+Powered via a small solar panel and batteries and communicates with the WG3000 Gateway via RF (Radio Frequencies).
+The maximum distance between this station and the WG3000 Gateway is 100m with line of sight.
 - #### Temperature:
 
   - Range: -40 ~ +60°C
@@ -118,14 +119,14 @@ The maximum distance between this station and the WG1000 Gateway is 100m with li
   - Resolution: 0.06Pa
 
 - #### Sensor :
-  - Reporting Interval: 16 seconds
-
+  - GPS sensor Integrated
+  - Reporting Interval: 20sec
 </TabItem>
 
 <TabItem value="imperial">
 
-Powered via a small solar panel and batteries and communicates with the WG1000 Gateway via RF (Radio Frequencies).
-The maximum distance between this station and the WG1000 Gateway is 328ft with line of sight.
+Powered via a small solar panel and batteries and communicates with the WG3000 Gateway via RF (Radio Frequencies).
+The maximum distance between this station and the WG3000 Gateway is 328ft with line of sight.
 - #### Temperature:
 
   - Range: -40 ~ +140 °F
@@ -164,7 +165,8 @@ The maximum distance between this station and the WG1000 Gateway is 328ft with l
   - Resolution: 0.06Pa
 
 - #### Sensor :
-  - Reporting Interval: 16 seconds
+  - GPS sensor Integrated
+  - Reporting Interval: 20sec 
 
 </TabItem>
 

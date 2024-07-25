@@ -1,8 +1,8 @@
 ---
-id: m5-contents
-title: Box Contents of M5 bundle (WB1000)
+id: contents
+title: Box Contents of Pulse bundle (WB3000)
 sidebar_label: Box Contents
-slug: /wxm-devices/wifi-m5-bundle/m5-contents
+slug: /wxm-devices/pulse-bundle/contents
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -11,34 +11,24 @@ import Link from "@docusaurus/Link";
 ## Included
 
 <div class="explanation">
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/contents-included.svg")} />
+<img src={useBaseUrl("img/wxm-devices/pulse-bundle/pulse-contents-included.png")}
+     style={{width: '50%', height: 'auto'}} />
   <div>
     <h4>Included in the Box</h4>
     <ol>
       <li>Wind speed sensor</li>
       <li>Weather station</li>
       <li>Wind vane</li>
-      <li>Metal plate</li>
-      <li>U-bolts (x2)</li>
-      <li>Nuts (x4)</li>
-      <li>Wrench</li>
-      <li>Screwdriver</li>
-      <li>Allen key</li>
-      <li>WG1000 Gateway</li>
-      <li>External RF Antenna</li>
-      <li>Reset jumper (not included in very early models)</li>
-      <li>GPS antenna</li>
+      <li>Bracket (for WG3000 Gateway)</li>
+      <li>Bracket (for pole mounting)</li>
+      <li>Jubilee clips (x2)</li>
+      <li>Screws for securing the bracket to WG3000 Gateway (x3)</li>
+      <li>Screws and fischer wall plugs (x2) </li>
+      <li>WG3000 Gateway</li>
       <li>Power supply cable (USB-C)</li>
     </ol>
   </div>
 </div>
-
-:::danger
-The reset jumper (#12 above) is used for recovery purposes and troubleshooting. Do not connect it to your WG1000 Gateway unless instructed by support or you know what you're doing.
-Using it without proper reason may result in loss of data which will affect your rewards.
-:::
-
-<hr/>
 
 ## Not Included
 
@@ -46,7 +36,6 @@ You would also need:
 1. Batteries 1.5V **not rechargeable** (x2 AA)
 1. Metal mounting pole (recommended 50mm/2in pole diameter & at least 2m/6.56ft height)
 1. Tools and parts to secure the pole
-1. USB power supply
 
 :::danger
 If you use rechargeable batteries, you may harm your device
@@ -81,29 +70,24 @@ The outdoor sensor is responsible for:
       <li>U-Bolts</li>
       <li>Battery compartment</li>
       <li>Reset button</li>
-      <li>LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).</li>
+      <li>LED Indicator: light on for 4s on powers up. Then the LED will flash once every 20 seconds (the sensor transmission update period).</li>
     </ol>
   </div>
 </div>
 
 This part of your weather station is placed outdoors.
-For further details about an advisable installation of the outdoor sensor, please see [Installing the WS1000 Weather Station](/wxm-devices/wifi-m5-bundle/install-weather-station).
+For further details about an advisable installation of the outdoor sensor, please see [Installing the WS1001 Weather Station](/wxm-devices/pulse-bundle/install-weather-station).
 
 The above figures show a sketch of the outdoor sensor. The sketch comes with a description of all the important parts and sensors of it.
 
-### WG1000 Gateway
+### WG3000 Gateway
 
 <div class="control">
-  <img src={useBaseUrl("img/wxm-devices/wifi-m5-bundle/m5-contents.svg")} />
+  <img src={useBaseUrl("/img/wxm-devices/pulse-bundle/pulse.png")} style={{ width: '60%', height: 'auto' }} />
 </div>
-The WG1000 Gateway is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM network.
+The WG3000 Gateway is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via cellular connection  to the WeatherXM network.
 
-The WG1000 Gateway is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer),
-near a window (for better GPS signal).
-
-The WG1000 Gateway should be permanently connected to power and powered on in order to be able to receive, record and upload measurements to the Internet.
-
-The above graph shows the location of the buttons and the needed connections. Briefly, there is a power and a reset button, a  port for the GPS antenna and a USB Type-C port for power supply.
+The WG3000 Gateway is advised to be placed outdoors, ideally on a the same pole as the Weather Station, to ensure the best possible connection to the cellular network and with the Weather Station.
 
 <hr/>
 

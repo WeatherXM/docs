@@ -20,12 +20,24 @@ const config = {
     plugins: [
         path.resolve(__dirname, "plugins/docusaurus-plugin-hotjar"),
         [
-            '@docusaurus/plugin-client-redirects',
+            "@docusaurus/plugin-client-redirects",
             {
                 redirects: [
                     {
-                        to: '/rewards/how-to-join-arbitrum-and-see-your-tokens',
-                        from: '/wallet/how-to-join-arbitrum-and-see-your-tokens',
+                        to: "/rewards/how-to-join-arbitrum-and-see-your-tokens",
+                        from: "/wallet/how-to-join-arbitrum-and-see-your-tokens",
+                    },
+                    {
+                        to: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction#features-and-specifications",
+                        from: "/m5-specs",
+                    },
+                    {
+                        to: "/wxm-devices/helium-bundle/wxm-ws2000-introduction#features-and-specifications",
+                        from: "/helium-specs",
+                    },
+                    {
+                        to: "/wxm-devices/D1-bundle/D1-bundle-introduction#features-and-specifications",
+                        from: "/wxm-devices/D1-bundle/D1-specs",
                     }
                 ]
             }
