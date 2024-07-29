@@ -39,13 +39,13 @@ module.exports = {
           type: "category",
           label: "D1 (WB1200)",
           items: [
-            "wxm-devices/D1-bundle/D1-bundle-introduction",
-            "wxm-devices/D1-bundle/D1-contents",
-            "wxm-devices/D1-bundle/D1-assemble",
-            "wxm-devices/D1-bundle/install-weather-station",
-            "wxm-devices/D1-bundle/D1-connect-and-claim",
-            "wxm-devices/D1-bundle/maintenance",
-            "wxm-devices/D1-bundle/D1-troubleshooting"
+            "wxm-devices/d1/introduction",
+            "wxm-devices/d1/contents",
+            "wxm-devices/d1/assemble",
+            "wxm-devices/d1/install-weather-station",
+            "wxm-devices/d1/connect-and-claim",
+            "wxm-devices/d1/maintenance",
+            "wxm-devices/d1/troubleshooting"
           ],
           collapsed: true
           },

@@ -35,7 +35,7 @@ const config = {
             from: "/helium-specs"
           },
           {
-            to: "/wxm-devices/D1-bundle/D1-bundle-introduction#features-and-specifications",
+            to: "/wxm-devices/d1/introduction#features-and-specifications",
             from: "/wxm-devices/D1-bundle/D1-specs"
           },
           {
@@ -85,6 +85,10 @@ const config = {
           {
             to: "/faq",
             from: "/faqs"
+          },
+          {
+            to: "/wxm-devices/deployment-examples",
+            from: "/deployment-examples"
           }
         ]
       }
