@@ -49,6 +49,38 @@ const config = {
           {
             to: "/mobile-app/delete-account",
             from: "/account/delete-account"
+          },
+          {
+            to: "/rewards/cell-capacity",
+            from: "/project/cell-capacity"
+          },
+          {
+            to: "/rewards/hardware-class",
+            from: "/project/hardware-class"
+          },
+          {
+            to: "/rewards/proof-of-location",
+            from: "/project/proof-of-location"
+          },
+          {
+            to: "/rewards/quality-of-data",
+            from: "/project/quality-of-data"
+          },
+          {
+            to: "/rewards/reward-boosts",
+            from: "/project/reward-boosts"
+          },
+          {
+            to: "/rewards/reward-mechanism",
+            from: "/reward-mechanism"
+          },
+          {
+            to: "/rewards/rewards-claiming",
+            from: "/project/rewards-claiming"
+          },
+          {
+            to: "/rewards/rewards-troubleshooting",
+            from: "/project/rewards-troubleshooting"
           }
         ]
       }

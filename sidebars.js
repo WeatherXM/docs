@@ -71,34 +71,34 @@ module.exports = {
       type: "category",
       label: "Rewards",
       items: [
-            "rewards/reward-mechanism",
-            "rewards/quality-of-data",
-            "rewards/proof-of-location",
-            "rewards/cell-capacity",
-            "rewards/hardware-class",
-            "rewards/reward-boosts",
-            "rewards/rewards-troubleshooting",
-            "rewards/rewards-claiming",
-            "rewards/how-to-join-arbitrum-and-see-your-tokens"
+        "rewards/reward-mechanism",
+        "rewards/quality-of-data",
+        "rewards/proof-of-location",
+        "rewards/cell-capacity",
+        "rewards/hardware-class",
+        "rewards/reward-boosts",
+        "rewards/rewards-troubleshooting",
+        "rewards/rewards-claiming",
+        "rewards/how-to-join-arbitrum-and-see-your-tokens"
       ],
       collapsed: true,
     },
 	  {
-		type: "category",
-		label: "Mobile App",
-		items: [
-			{
-				type: "category",
-				label: "Wallet",
-				items: [
-					"mobile-app/wallet/add-edit-wallet-address"
-				],
-				collapsed: true,
-			},
-      "mobile-app/delete-account",
-      "mobile-app/change-password"
-		],
-		collapsed: true,
+      type: "category",
+      label: "Mobile App",
+      items: [
+        {
+          type: "category",
+          label: "Wallet",
+          items: [
+            "mobile-app/wallet/add-edit-wallet-address"
+          ],
+          collapsed: true,
+        },
+        "mobile-app/delete-account",
+        "mobile-app/change-password"
+      ],
+      collapsed: true,
 	  },
     "tokenomics",
     "glossary/glossary",
