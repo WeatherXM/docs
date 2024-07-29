@@ -101,7 +101,7 @@ module.exports = {
       collapsed: true,
 	  },
     "tokenomics",
-    "glossary/glossary",
-    "help-center/faqs"
+    "glossary",
+    "faq"
   ]
 };

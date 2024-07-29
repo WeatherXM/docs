@@ -81,6 +81,10 @@ const config = {
           {
             to: "/rewards/rewards-troubleshooting",
             from: "/project/rewards-troubleshooting"
+          },
+          {
+            to: "/faq",
+            from: "/faqs"
           }
         ]
       }
