@@ -89,6 +89,34 @@ const config = {
           {
             to: "/wxm-devices/deployment-examples",
             from: "/deployment-examples"
+          },
+          {
+            to: "/wxm-devices/d1/introduction",
+            from: "/wxm-devices/D1-bundle/D1-bundle-introduction"
+          },
+          {
+            to: "/wxm-devices/d1/contents",
+            from: "/wxm-devices/D1-bundle/D1-contents"
+          },
+          {
+            to: "/wxm-devices/d1/assemble",
+            from: "/wxm-devices/D1-bundle/D1-assemble"
+          },
+          {
+            to: "/wxm-devices/d1/install-weather-station",
+            from: "/wxm-devices/D1-bundle/install-weather-station"
+          },
+          {
+            to: "/wxm-devices/d1/connect-and-claim",
+            from: "/wxm-devices/D1-bundle/D1-connect-and-claim"
+          },
+          {
+            to: "/wxm-devices/d1/maintenance",
+            from: "/wxm-devices/D1-bundle/maintenance"
+          },
+          {
+            to: "/wxm-devices/d1/troubleshooting",
+            from: "/wxm-devices/D1-bundle/D1-troubleshooting"
           }
         ]
       }
