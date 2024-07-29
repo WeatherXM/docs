@@ -53,13 +53,13 @@ module.exports = {
             type: "category",
             label: "Pulse (WB3000)",
             items: [
-              "wxm-devices/pulse-bundle/introduction",
-              "wxm-devices/pulse-bundle/contents",
-              "wxm-devices/pulse-bundle/assemble-weather-station",
-              "wxm-devices/pulse-bundle/install-weather-station",
-              "wxm-devices/pulse-bundle/connect-and-claim",
-              "wxm-devices/pulse-bundle/maintenance",
-              "wxm-devices/pulse-bundle/troubleshooting"
+              "wxm-devices/pulse/introduction",
+              "wxm-devices/pulse/contents",
+              "wxm-devices/pulse/assemble",
+              "wxm-devices/pulse/install-weather-station",
+              "wxm-devices/pulse/connect-and-claim",
+              "wxm-devices/pulse/maintenance",
+              "wxm-devices/pulse/troubleshooting"
             ],
             collapsed: true
           },

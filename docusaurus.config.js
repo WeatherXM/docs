@@ -117,6 +117,34 @@ const config = {
           {
             to: "/wxm-devices/d1/troubleshooting",
             from: "/wxm-devices/D1-bundle/D1-troubleshooting"
+          },
+          {
+            to: "/wxm-devices/pulse/introduction",
+            from: "/wxm-devices/pulse-bundle/introduction"
+          },
+          {
+            to: "/wxm-devices/pulse/contents",
+            from: "/wxm-devices/pulse-bundle/contents"
+          },
+          {
+            to: "/wxm-devices/pulse/assemble",
+            from: "/wxm-devices/pulse-bundle/assemble-weather-station"
+          },
+          {
+            to: "/wxm-devices/pulse/install-weather-station",
+            from: "/wxm-devices/pulse-bundle/install-weather-station"
+          },
+          {
+            to: "/wxm-devices/pulse/connect-and-claim",
+            from: "/wxm-devices/pulse-bundle/connect-and-claim"
+          },
+          {
+            to: "/wxm-devices/pulse/maintenance",
+            from: "/wxm-devices/pulse-bundle/maintenance"
+          },
+          {
+            to: "/wxm-devices/pulse/troubleshooting",
+            from: "/wxm-devices/pulse-bundle/troubleshooting"
           }
         ]
       }
