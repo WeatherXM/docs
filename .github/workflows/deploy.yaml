@@ -15,12 +15,10 @@ jobs:
         with:
           node-version: 20.x
           cache: yarn
-
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build website
         run: yarn build
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
