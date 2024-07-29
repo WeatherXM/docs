@@ -27,7 +27,7 @@ const config = {
             from: "/wallet/how-to-join-arbitrum-and-see-your-tokens"
           },
           {
-            to: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction#features-and-specifications",
+            to: "/wxm-devices/m5/introduction#features-and-specifications",
             from: "/m5-specs"
           },
           {
@@ -177,6 +177,38 @@ const config = {
           {
             to: "/wxm-devices/helium/troubleshooting",
             from: "/wxm-devices/helium-bundle/helium-troubleshooting"
+          },
+          {
+            to: "/wxm-devices/m5/introduction",
+            from: "/wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction"
+          },
+          {
+            to: "/wxm-devices/m5/contents",
+            from: "/wxm-devices/wifi-m5-bundle/m5-contents"
+          },
+          {
+            to: "/wxm-devices/m5/assemble",
+            from: "/wxm-devices/wifi-m5-bundle/m5-assemble"
+          },
+          {
+            to: "/wxm-devices/m5/connect-and-claim",
+            from: "/wxm-devices/wifi-m5-bundle/m5-connect-and-claim"
+          },
+          {
+            to: "/wxm-devices/m5/install-weather-station",
+            from: "/wxm-devices/wifi-m5-bundle/m5-install-weather-station"
+          },
+          {
+            to: "/wxm-devices/m5/maintenance",
+            from: "/wxm-devices/wifi-m5-bundle/m5-maintenance"
+          },
+          {
+            to: "/wxm-devices/m5/troubleshooting",
+            from: "/wxm-devices/wifi-m5-bundle/m5-troubleshooting"
+          },
+          {
+            to: "/wxm-devices/m5/usb-flasher",
+            from: "/wxm-devices/wifi-m5-bundle/m5-usb-flasher"
           }
         ]
       }

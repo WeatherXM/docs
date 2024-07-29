@@ -10,13 +10,13 @@ module.exports = {
           type: "category",
           label: "M5 (WB1000)",
           items: [
-            "wxm-devices/wifi-m5-bundle/wxm-ws1000-introduction",
-            "wxm-devices/wifi-m5-bundle/m5-contents",
-            "wxm-devices/wifi-m5-bundle/m5-assemble",
-            "wxm-devices/wifi-m5-bundle/m5-install-weather-station",
-            "wxm-devices/wifi-m5-bundle/m5-connect-and-claim",
-            "wxm-devices/wifi-m5-bundle/m5-maintenance",
-            "wxm-devices/wifi-m5-bundle/m5-troubleshooting"
+            "wxm-devices/m5/introduction",
+            "wxm-devices/m5/contents",
+            "wxm-devices/m5/assemble",
+            "wxm-devices/m5/install-weather-station",
+            "wxm-devices/m5/connect-and-claim",
+            "wxm-devices/m5/maintenance",
+            "wxm-devices/m5/troubleshooting"
           ],
           collapsed: true
         },
