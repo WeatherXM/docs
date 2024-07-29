@@ -24,14 +24,14 @@ module.exports = {
           type: "category",
           label: "Helium (WS2000)" ,
           items: [
-            "wxm-devices/helium-bundle/wxm-ws2000-introduction",
-            "wxm-devices/helium-bundle/helium-contents",
-            "wxm-devices/helium-bundle/helium-assemble",
-            "wxm-devices/helium-bundle/helium-connect-and-claim",
-            "wxm-devices/helium-bundle/helium-update-firmware",
-            "wxm-devices/helium-bundle/helium-install-weather-station",
-            "wxm-devices/helium-bundle/helium-maintenance",
-            "wxm-devices/helium-bundle/helium-troubleshooting"
+            "wxm-devices/helium/introduction",
+            "wxm-devices/helium/contents",
+            "wxm-devices/helium/assemble",
+            "wxm-devices/helium/connect-and-claim",
+            "wxm-devices/helium/update-firmware",
+            "wxm-devices/helium/install-weather-station",
+            "wxm-devices/helium/maintenance",
+            "wxm-devices/helium/troubleshooting"
           ],
           collapsed: true
         },

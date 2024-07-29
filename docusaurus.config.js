@@ -31,7 +31,7 @@ const config = {
             from: "/m5-specs"
           },
           {
-            to: "/wxm-devices/helium-bundle/wxm-ws2000-introduction#features-and-specifications",
+            to: "/wxm-devices/helium/introduction#features-and-specifications",
             from: "/helium-specs"
           },
           {
@@ -145,6 +145,38 @@ const config = {
           {
             to: "/wxm-devices/pulse/troubleshooting",
             from: "/wxm-devices/pulse-bundle/troubleshooting"
+          },
+          {
+            to: "/wxm-devices/helium/introduction",
+            from: "/wxm-devices/helium-bundle/wxm-ws2000-introduction"
+          },
+          {
+            to: "/wxm-devices/helium/contents",
+            from: "/wxm-devices/helium-bundle/helium-contents"
+          },
+          {
+            to: "/wxm-devices/helium/assemble",
+            from: "/wxm-devices/helium-bundle/helium-assemble"
+          },
+          {
+            to: "/wxm-devices/helium/connect-and-claim",
+            from: "/wxm-devices/helium-bundle/helium-connect-and-claim"
+          },
+          {
+            to: "/wxm-devices/helium/update-firmware",
+            from: "/wxm-devices/helium-bundle/helium-update-firmware"
+          },
+          {
+            to: "/wxm-devices/helium/install-weather-station",
+            from: "/wxm-devices/helium-bundle/helium-install-weather-station"
+          },
+          {
+            to: "/wxm-devices/helium/maintenance",
+            from: "/wxm-devices/helium-bundle/helium-maintenance"
+          },
+          {
+            to: "/wxm-devices/helium/troubleshooting",
+            from: "/wxm-devices/helium-bundle/helium-troubleshooting"
           }
         ]
       }
