@@ -1,0 +1,113 @@
+---
+title: Box Contents of M5 bundle (WB1000)
+sidebar_label: Box Contents
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
+
+## Included
+
+<div class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/m5/m5-contents-included.svg")} />
+  <div>
+    <h4>Included in the Box</h4>
+    <ol>
+      <li>Wind speed sensor</li>
+      <li>Weather station</li>
+      <li>Wind vane</li>
+      <li>Metal plate</li>
+      <li>U-bolts (x2)</li>
+      <li>Nuts (x4)</li>
+      <li>Wrench</li>
+      <li>Screwdriver</li>
+      <li>Allen key</li>
+      <li>WG1000 Gateway</li>
+      <li>External RF Antenna</li>
+      <li>Reset jumper (not included in very early models)</li>
+      <li>GPS antenna</li>
+      <li>Power supply cable (USB-C)</li>
+    </ol>
+  </div>
+</div>
+
+:::danger
+The reset jumper (#12 above) is used for recovery purposes and troubleshooting. Do not connect it to your WG1000 Gateway unless instructed by support or you know what you're doing.
+Using it without proper reason may result in loss of data which will affect your rewards.
+:::
+
+<hr/>
+
+## Not Included
+
+You would also need:
+1. Batteries 1.5V **not rechargeable** (x2 AA)
+1. Metal mounting pole (recommended 50mm/2in pole diameter & at least 2m/6.56ft height)
+1. Tools and parts to secure the pole
+1. USB power supply
+
+:::danger
+If you use rechargeable batteries, you may harm your device
+:::
+
+<hr/>
+
+## Main Parts
+
+### Outdoor Weather Station
+
+The outdoor sensor is a set of sensors encased in a plastic shell that ensures the proper function of the weather station.
+
+The outdoor sensor is responsible for:
+
+1. the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
+1. the wireless transmission of the data to the weather miner.
+
+<div class="explanation two-columns">
+  <img src={useBaseUrl("img/wxm-devices/m5/ws1000-parts.svg")} />
+  <div>
+    <h4>Components</h4>
+    <ol>
+      <li>Wind Speed Sensor</li>
+      <li>Wind Vane</li>
+      <li>Thermo-hygro sensor</li>
+      <li>Rain collector</li>
+      <li>Bubble level</li>
+      <li>Solar panel</li>
+      <li>Antenna</li>
+      <li>Light sensor</li>
+      <li>U-Bolts</li>
+      <li>Battery compartment</li>
+      <li>Reset button</li>
+      <li>LED Indicator: light on for 4s on powers up. Then the LED will flash once every 16 seconds (the sensor transmission update period).</li>
+    </ol>
+  </div>
+</div>
+
+This part of your weather station is placed outdoors.
+For further details about an advisable installation of the outdoor sensor, please see [Installing the WS1000 Weather Station](/wxm-devices/m5/install-weather-station).
+
+The above figures show a sketch of the outdoor sensor. The sketch comes with a description of all the important parts and sensors of it.
+
+### WG1000 Gateway
+
+<div class="control">
+  <img src={useBaseUrl("img/wxm-devices/m5/m5-contents.svg")} />
+</div>
+The WG1000 Gateway is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to IPFS and the WeatherXM network.
+
+The WG1000 Gateway is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer),
+near a window (for better GPS signal).
+
+The WG1000 Gateway should be permanently connected to power and powered on in order to be able to receive, record and upload measurements to the Internet.
+
+The above graph shows the location of the buttons and the needed connections. Briefly, there is a power and a reset button, a  port for the GPS antenna and a USB Type-C port for power supply.
+
+<hr/>
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
+

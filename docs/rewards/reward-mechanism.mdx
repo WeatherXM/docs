@@ -1,8 +1,6 @@
 ---
-id: reward-mechanism
 title: Reward Mechanism
 sidebar_label: Reward Mechanism
-slug: /reward-mechanism
 ---
 
 ## Introduction
@@ -201,17 +199,17 @@ This is a short summary of the criteria used:
 
 * **Proof-of-Location (PoL)**: An algorithm that evaluates the data about the location of the weather station, its accuracy, consistency, and unison with the location the owner registered on the weather station claiming. 
 It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
-When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/project/proof-of-location).
+When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/rewards/proof-of-location).
 
 * **Quality-of-Data (QoD)**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
  WeatherXM values weather stations that produce meaningful and usable data and the QoD score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
- guidelines in order to consistently achieve the best QoD score possible. Read more about the [Quality of Data (QoD) mechanism](/project/quality-of-data).
+ guidelines in order to consistently achieve the best QoD score possible. Read more about the [Quality of Data (QoD) mechanism](/rewards/quality-of-data).
 
 * **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
-increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](project/hardware-class).
+increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](/rewards/hardware-class).
 
 * **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
-If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](project/cell-capacity).
+If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](/rewards/cell-capacity).
 
 We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
 
@@ -298,7 +296,7 @@ Due to blockchain limitations on the number of atomic transfer transactions that
 
 ## Links
 - [WeatherXM Network](https://weatherxm.network/)
-- [Quality of Data (QoD) mechanism](/project/quality-of-data)
-- [Proof of Location (PoL) mechanism](/project/proof-of-location)
-- [Cell Capacity (CC)](project/cell-capacity)
-- [Hardware class](project/hardware-class)
+- [Quality of Data (QoD) mechanism](/rewards/quality-of-data)
+- [Proof of Location (PoL) mechanism](/rewards/proof-of-location)
+- [Cell Capacity (CC)](/rewards/cell-capacity)
+- [Hardware class](/rewards/hardware-class)

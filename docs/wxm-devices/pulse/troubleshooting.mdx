@@ -1,0 +1,106 @@
+---
+title: Troubleshooting of Pulse Bundle (WB3000)
+sidebar_label: Troubleshooting
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+## Weather Station
+
+### Data Gaps
+    
+If the error message "Data gaps" is displayed on the mobile app, the WG300 Gateway is not receiving RF signals. 
+This can be due to a variety of reasons. 
+Here are some steps to troubleshoot the issue:
+
+First make sure you WG3000 Gateway frequency matches your weather station (see [Change frequency](/wxm-devices/pulse/connect-and-claim#change-frequency-optional)
+Check the LED on the weather station (see [Reset Button and LED Indicator](/wxm-devices/pulse/assemble) for flashing.
+The LED should flash every 20 seconds.
+
+If the LED is not flashing every 20 seconds, replace the batteries in the weather station.
+If the batteries were recently replaced, check the polarity.
+
+If the above does not solve the issue, there may be a temporary loss of communication due to reception loss related to interference or other location factors.
+Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+
+1. With the weather station array and WG3000 Gateway 3m/10ft away from each other,
+   remove the batteries from the weather station and wait 10 seconds. Put the batteries back in.
+
+2. Try to place the WG3000 Gateway at the desirable point and check that it receives data.
+
+3. If you still have intermittent problems, move the weather station and the WG3000 Gateway closer together,
+   but not closer than 1.5m/5ft or further than 50m/164ft.
+   Also check that there are no metal barriers like aluminum siding
+   or metal wall framing along the line of sight between the weather station and WG3000 Gateway.
+   Relocate the weather station and WG3000 Gateway as necessary to avoid obstacles.
+   Depending on natural barriers you may also have to move the weather station higher and/or closer.
+
+:::note
+It is recommended to place the WG3000 Gateway on the same pole as the weather station.
+:::
+
+<hr />
+
+### Station Battery Level is Low
+
+If your Mobile App reports "Station Battery Level is Low" on the screen, the weather station will run out of battery soon.
+
+Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+
+<hr />
+
+### Temperature looks higher than expected.
+
+If the temperature is slightly higher (e.g., +2 - 5°C/35-41°F) than expected,
+then assure that the weather station is within a significant distance from heat sources
+like ventilation systems and active chimneys.
+Also make sure that the weather station is mounted on a 2m/6.5ft (or more) metallic pole and there are no obstacles close by reading [Best Practices for Proper Station Installation](/wxm-devices/pulse/install-weather-station#best-practices-for-proper-station-installation).
+
+<hr />
+
+### Other variables, such as wind direction, wind speed, rain height and humidity do not align with an official weather reporting station
+
+Even weather stations, which are close to each other, may obtain slightly different measurements,
+especially for the variables of wind speed and wind direction. However, you should not expect significant deviations
+e.g., from a weather station, which is located within a distance of 1km/0.6mi.
+If there are deviations, please check [Best Practices for Proper Station Installation](/wxm-devices/pulse/install-weather-station#best-practices-for-proper-station-installation) for guidelines about the installation of the weather station.
+
+<hr />
+
+### One or more variables are extremely high, low, or constant for long periods of time.
+
+If you notice that some variables are extreme or constant it is possible you need to replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+
+<hr />
+
+### Reported pressure appears to be very low relatively to other reference stations of national or private networks etc. 
+
+For now we present only the absolute pressure and not the Mean Sea Level Pressure (MSLP). That means that the displayed pressure are affected by the elevation of your area. We work to consider the elevation given by your GPS in order to show the MSLP, which is commonly used.
+
+<hr />
+
+## GPS Location
+
+### Location not verified
+You receive a "location not verified" error on your mobile app when the [Proof of Location (PoL) mechanism](/rewards/proof-of-location) flags your weather station because the location reported by its **GPS receiver(s)** is different than the location you declared during the setup and claiming of the station. This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
+
+This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
+
+## Other Issues
+
+### My WG3000 Gateway is stuck/unresponsive.
+  
+Please do not restart it and contact us through [support](https://support.weatherxm.com) to debug it and find the reason of the issue.
+
+<hr />
+
+### Why is my station showing offline?
+
+Assuming that the WG3000 Gateway unit is placed outdoors facing south, this may be due to a bad RF connection between that Gateway and the outdoor station.
+Please make sure that the WG3000 Gateway is placed outdoors, ideally on the same pole as the Weather Station, to ensure the best possible connection to the cellular network and with the Weather Station.
+
+<hr />
+ 
+:::note
+if you are still experiencing issues, please contact us through [support](https://support.weatherxm.com)
+:::

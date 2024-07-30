@@ -1,0 +1,281 @@
+---
+title: Connect and Claim the Gateway
+sidebar_label: Gateway Claiming
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
+
+## WG1000 Gateway
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+  <img object-fit="contain" src={useBaseUrl("img/wxm-devices/m5/m5-ui-new.png")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+  <img object-fit="contain" src={useBaseUrl("img/wxm-devices/m5/m5-ui.png")} />
+  </TabItem>
+</Tabs>
+
+The weather station comes together with the  WG1000 Gateway.
+The WG1000 Gateway receives all the meteorological data, which are measured and transmitted every 16 seconds by the outdoor sensor
+and displays them on its screen.
+
+In this chapter, you will find guidance to set up the WG1000 Gateway.
+<hr/>
+
+## Prerequisites
+
+1. The station must be fully assembled (parts and batteries).
+1. A working smartphone with connection to the internet.
+1. The [WeatherXM](//wxm-devices/m5/connect-and-claim#download-weatherxm-app-and-login) Application installed on your smartphone.
+1. A reliable 2.4 GHz WiFi network (5 GHz is not supported) for the WG1000 Gateway to connect to.
+
+<hr/>
+
+## Step by Step Instructions
+
+### Connect GPS antenna
+
+<div class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/m5/m5-gps.png")} />
+  <span>
+    Attach the GPS antenna to WG1000 Gateway. You should hear a "click" when it's properly installed.
+  </span>
+</div>
+
+<hr/>
+
+### Connect M5 Gateway to power source and turn device on
+
+<div class="explanation">
+<img src={useBaseUrl("img/wxm-devices/m5/power-source.png")} />
+  <span>
+  <p>
+    The WG1000 Gateway must be connected to a power source at all times.
+    It has a limited battery, but you should not rely on it.
+  </p>
+
+:::caution
+If WG1000 Gateway turns off, you will not receive $WXM rewards, as you will not be able to share data with the WeatherXM network. **This will result in no WXM rewards!**
+:::
+  </span>
+</div>
+
+<hr/>
+
+### Place WG1000 Gateway near a window (for better GPS signal)
+
+<div class="explanation">
+<img src={useBaseUrl("img/wxm-devices/m5/near-a-window.png")} />
+  <span>
+
+For better GPS signal, it's highly recommended to place the WG1000 Gateway device near a window. Make sure that it has a good GPS coverage at all times.
+
+:::note
+This step could take some time till the device connects to GPS satellites.
+:::
+
+:::caution
+If the GPS signal is lost, you could receive less WXM rewards (or none). This is because we will not be able to verify your location.
+:::
+  </span>
+</div>
+
+<hr/>
+
+### Change Frequency (Optional)
+
+<div class="explanation">
+
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img src={useBaseUrl("img/wxm-devices/m5/m5-frequency-new.png")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img src={useBaseUrl("img/wxm-devices/m5/m5-frequency.png")} />
+  </TabItem>
+</Tabs>
+
+  <span>
+
+The WG1000 Gateway's frequency must be set to match the frequency of your weather station so it can listen for the weather data it transmits. There are 2 frequencies available:
+- Model A: 868 MHz (default)
+- Model B: 915 MHz
+
+:::note
+**If your weather station is 868 MHz, you don't need to change anything as it is configured to this value by default.**
+If unsure, check the sticker under the station or the box that came in it.
+:::
+  </span>
+</div>
+
+### Steps to change the frequency
+<div>
+
+  <Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img class="control" src={useBaseUrl("img/wxm-devices/m5/m5-change-frequency-new.png")} />
+    <ol>
+        <li>Swipe right on the touch screen</li>
+        <li>Click the Frequency options and select the new frequency your WG1000 Gateway will listen to</li>
+        <li>A confirmation dialog will open. Read it carefully and click "Continue" or "Cancel" accordingly</li>
+        
+    </ol>
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img class="control" src={useBaseUrl("img/wxm-devices/m5/m5-change-frequency.png")} />
+    <ol>
+        <li>Swipe left on the touch screen</li>
+        <li>Click the Frequency options and select the new frequency your WG1000 Gateway will listen to</li>
+        <li>A confirmation dialog will open. Read it carefully and click "Yes" or "No" accordingly</li>
+    </ol>
+  </TabItem>
+</Tabs>
+
+</div>
+
+:::caution
+If you don't use the correct frequency as your weather station, WG1000 Gateway will not be able to communicate with your weather station, thus you will not send any weather data and receive any $WXM rewards!
+:::
+
+<hr/>
+
+### Connect WG1000 Gateway to WiFi
+
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img src={useBaseUrl("img/wxm-devices/m5/m5-configure-wifi-new.png")} />
+
+By now, your WG1000 Gateway is set and ready for claiming!
+- Swipe right to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
+- An Access Point will be created with SSID "WXMMinerM5", you should connect to it from your smartphone.
+- Once connected, a popup will appear on your smartphone to enter your WiFi credentials.
+- Enter your WiFi credentials and click "Save"
+- WG1000 Gateway will restart and connect to your WiFi network
+
+
+A popup will open, asking you to select the desired network you'd like to connect the WG1000 Gateway. Select the one you want and provide the password for it.
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img class="marginTop" src={useBaseUrl("img/wxm-devices/m5/m5-configure-wifi.png")} />
+
+By now, your WG1000 Gateway is set and ready for claiming!
+- Swipe right to navigate to the settings screen. There, tap on "Configure WiFi" to switch to connect mode.
+- An Access Point will be created with SSID "WXMMinerM5", you should connect to it from your smartphone.
+- Once connected, a popup will appear on your smartphone to enter your WiFi credentials.
+- Enter your WiFi credentials and click "Save"
+- WG1000 Gateway will restart and connect to your WiFi network
+
+A popup will open, asking you to select the desired network you'd like to connect the WG1000 Gateway. Select the one you want and provide the password for it.
+  </TabItem>
+</Tabs>
+
+
+:::note
+Once the WiFi credentials have been successfully transferred to WG1000 Gateway, the device will restart and the WiFi icon will turn green!
+:::
+:::note
+While you are connected to the "WXMMinerM5" network, you will not have internet access.
+:::
+
+<hr/>
+
+### Download WeatherXM app and login
+
+<div class="explanation">
+  <div class="app-store">
+   <Link to="https://play.google.com/store/apps/details?id=com.weatherxm.app&hl=en&gl=US" target="blank"><img src={useBaseUrl("img/wxm-devices/google-play-badge.svg")}/></Link>
+   <Link to="https://apps.apple.com/ie/app/weatherxm/id1629841929" target="blank"><img src={useBaseUrl("img/wxm-devices/app-store-badge.svg")}/></Link>
+
+  </div>
+  <span>Download our WeatherXM apps from their respective app store. Once you have your WeatherXM app, login to your account (you have to create a new WeatherXM account).</span>
+</div>
+<hr/>
+
+### How to properly configure your WG1000 Gateway's WiFi network step by step (Video)
+
+<Link to="https://www.youtube.com/watch?v=sUJEwuFq1CE" target="blank"><img src={useBaseUrl("img/wxm-devices/m5/m5-setup-wifi-config.png")}/></Link>
+
+<hr/>
+
+### Tap the "+" button
+
+<div class="explanation">
+  <img src={useBaseUrl("img/wxm-devices/plus-button.svg")} />
+  <div>
+    <h4>Start the Claiming Process</h4>
+    <p>
+      Once you've logged in to your WeatherXM app, you will see an empty device list (assuming this is your first station setup). At the bottom right corner, you will see a "+" button. Tap it to start the claiming process of your station. Once you've done this, you'll be able to view all data of this station.
+    </p>
+  </div>
+</div>
+
+:::caution
+Your first rewards will appear after 24 hours of the station being online.
+:::  
+
+<hr/>
+
+### Type the WG1000 Gateway serial number when prompted
+
+<div class="explanation">
+        <img style={{width:"calc(100%*1/3 - 10px)"}} src={useBaseUrl("img/wxm-devices/m5/m5-serial-number.jpg")} />
+  <div style={{width:"calc(100%*2/3 - 10px)"}} >
+
+#### Navigate to WG1000 Gateway and find the device's Serial Number
+
+Follow the steps shown in the image below to find your WG1000 Gateway's Serial Number. You'll need to type this in the WeatherXM app in order to verify that you own this station and secure it for yourself.
+
+<Tabs groupId="wg1000_ui">
+  <TabItem value="wg1000_ui_new" label="UI versions > 0.10.0">
+    <img object-fit="contain" src={useBaseUrl("img/wxm-devices/m5/m5-serial-new.png")} />
+  </TabItem>
+  <TabItem value="wg1000_ui_old" label="Older UI versions">
+    <img src={useBaseUrl("img/wxm-devices/m5/m5-serial.png")} />
+  </TabItem>
+</Tabs>
+
+  </div>
+</div>
+
+<hr/>
+
+### Confirm station installation Location & Claim your Device
+
+<div class="explanation small-big">
+  <img src={useBaseUrl("img/wxm-devices/m5/installation-location.svg")} />
+  <span>
+
+#### Select the Location that you'll Install your Station
+
+Allow access to your location so that the WeatherXM app knows where you are planning to install your weather station. Doing so will make it easier to complete this step.
+
+Alternatively, you can find the location manually using the map.
+
+Once you've found the right location, tap on the checkbox to confirm and then tap on "Claim" button.
+
+All you need to do now, is to add your compatible wallet so you can receive WXM rewards. To do so, please follow the instructions in the chapter  ["Add/edit wallet address"](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask).
+
+That's it! You've now claimed your new weather station and you'll be able to see its data on your WeatherXM app!
+
+:::note
+We do not track you, nor do we collect any data about your location.
+:::
+
+:::caution
+Make sure you define the location that you will install your station as precisely as possible, as this is important for the quality of data you will share with the network and thus your overall WXM rewards.
+:::
+
+:::caution
+Your first rewards will appear after 24 hours of the station being online.
+:::  
+
+
+  </span>
+</div>
+
+:::info 
+Usually, it takes up to 30 minutes for the station to appear on the [explorer](https://explorer.weatherxm.com/stats)
+:::
