@@ -149,11 +149,11 @@ module.exports = [
   },
   {
     to: "/wxm-devices/helium/maintenance",
-    from: "/wxm-devices/helium-bundle/helium-maintenance"
+    from: "/wxm-devices/wifi-helium-bundle/helium-maintenance"
   },
   {
     to: "/wxm-devices/helium/troubleshooting",
-    from: "/wxm-devices/helium-bundle/helium-troubleshooting"
+    from: "/helium-bundle/helium-troubleshooting"
   },
   {
     to: "/wxm-devices/m5/introduction",
@@ -165,7 +165,7 @@ module.exports = [
   },
   {
     to: "/wxm-devices/m5/assemble",
-    from: "/wxm-devices/wifi-m5-bundle/m5-assemble"
+    from: "/wxm-devices/wifi-m5-bundle/assemble-m5"
   },
   {
     to: "/wxm-devices/m5/connect-and-claim",
@@ -173,7 +173,7 @@ module.exports = [
   },
   {
     to: "/wxm-devices/m5/install-weather-station",
-    from: "/wxm-devices/wifi-m5-bundle/m5-install-weather-station"
+    from: "/wxm-devices/wifi-m5-bundle/install-weather-station"
   },
   {
     to: "/wxm-devices/m5/maintenance",
@@ -181,7 +181,7 @@ module.exports = [
   },
   {
     to: "/wxm-devices/m5/troubleshooting",
-    from: "/wxm-devices/wifi-m5-bundle/m5-troubleshooting"
+    from: "/wifi-m5-bundle/m5-troubleshooting"
   },
   {
     to: "/wxm-devices/m5/usb-flasher",
