@@ -12331,8 +12331,8 @@ __metadata:
   linkType: hard
 
 "rehype-katex@npm:7":
-  version: 7.0.0
-  resolution: "rehype-katex@npm:7.0.0"
+  version: 7.0.1
+  resolution: "rehype-katex@npm:7.0.1"
   dependencies:
     "@types/hast": ^3.0.0
     "@types/katex": ^0.16.0
@@ -12341,7 +12341,7 @@ __metadata:
     katex: ^0.16.0
     unist-util-visit-parents: ^6.0.0
     vfile: ^6.0.0
-  checksum: 3184cf7635e63039a5d455e27718cbc99998cc7bfcc15422badf5da892887f4200f3ee54a6617aa231aa15d46cb678716c112b6b7f9cef11a8653e5d518ad6f0
+  checksum: d8f90f2b481fcf8a922410b812dbaed253a488bf61f4981b7b37d4983845060c1fcefb1690063e31ecfb941fb6ef6858e1a044e2f8c6146687266df1f6423a7b
   languageName: node
   linkType: hard
 
