@@ -8,8 +8,12 @@ The **Proof-of-Location** algorithm evaluates location data associated with the 
 ### Proof-of-Location (PoL): 
 PoL is a rational number in the range [0,1].
 A station’s PoL must be greater than or equal to PoL_Threshold to be considered for inclusion in WeatherXM's **Rewarding Mechanism**.
-- PoL: is calculated based on the station’s location, and the station’s PoL history. 
 - PoL: is a dynamic value, and is recalculated every time a station’s location is updated.
+
+#### Calculation:
+Currently, PoL is calculated daily using Location packets from the previous day.
+For all station types, including M5/D1, Pulse and H1, at least one accurate Location Packet is required to determine the Location.
+For H1 stations, if no Location packets are available, the PoL algorithm will rely on data from the day before.
 
 ### Relocation
 It is important for the Network that a station remains at the same location throughout its lifetime.
