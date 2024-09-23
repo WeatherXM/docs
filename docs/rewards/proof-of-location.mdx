@@ -11,9 +11,9 @@ A station’s PoL must be greater than or equal to PoL_Threshold to be considere
 PoL: is a dynamic value, and is recalculated every time a station’s location is updated.
 
 ### Calculation:
-Currently, PoL is calculated daily using Location packets from the previous day.
-For all station types, including M5/D1, Pulse and H1, at least one accurate Location Packet is required to determine the Location.
-For H1 stations, if no Location packets are available, the PoL algorithm will rely on data from the day before.
+Currently, PoL is calculated daily using Location Packets.
+- For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.
+- For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.
 
 ## Relocation
 It is important for the Network that a station remains at the same location throughout its lifetime.
