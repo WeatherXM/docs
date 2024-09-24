@@ -53,11 +53,11 @@ The final result of this process is the annotation of the data in 3 levels:
 
 The following processes take place (excluding OBC):
 
-1. Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
-2. Looking for time-slots with no data
-3. Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
-4. Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
-5. Calculating the percentage of valid data within a certain period (minute, hour)
+- Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
+- Looking for time-slots with no data
+- Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
+- Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
+- Calculating the percentage of valid data within a certain period (minute, hour)
 
 The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
 
