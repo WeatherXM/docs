@@ -1,214 +1,392 @@
-
 ---
-title:Frequency Plans
+title: Frequency Plans
 hide_title: true
 sidebar_label: Frequency Plans
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+<h2>
+  In this page you can find a mapping table listing all ISM band frequency plans per country, 
+  as well as the corresponding frequency used by our products in these countries.
+</h2> 
+
+:::tip
+If a country’s frequency is marked as “-” or it is not listed, you are advised to check with the 
+country's regulations and use the appropriate frequency.
+:::
+
+### A
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Afghanistan        | AF           | -       | -         | -          |
+| Aland Islands      | AX           | EU868         | EU868           | EU868            |
+| Albania            | AL           | EU868         | EU868           | EU868            |
+| Algeria            | DZ           | AS923_3       | US915           | AS923_3          |
+| American Samoa     | AS           | US915         | US915           | US915            |
+| Andorra            | AD           | EU868         | EU868           | EU868            |
+| Angola             | AO           | -       | -         | -          |
+| Anguilla           | AI           | AU915_SB1     | US915           | AU915            |
+| Antarctica - Chilean | AQ          | -       | -         | -          |
+| Antarctica - Australian | AQ       | -       | -         | -          |
+| Antarctica - British | AQ         | -       | -         | -          |
+| Antarctica - Argentine | AQ       | -       | -         | -          |
+| Antigua and Barbuda | AG          | -       | -         | -          |
+| Argentina          | AR           | AU915_SB1     | US915           | AU915            |
+| Armenia            | AM           | EU868         | EU868           | EU868            |
+| Aruba              | AW           | -       | -         | -          |
+| Australia          | AU           | AU915_SB2     | US915           | AU915            |
+| Austria            | AT           | EU868         | EU868           | EU868            |
 
 
-| Country                | Country Code | Helium Frequency | ISM Frequency | Comparison              |
-|------------------------|--------------|------------------|---------------|-------------------------|
-| Afghanistan            | AF           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Åland Islands           | AX           | EU868            | EU868         | Match                   |
-| Albania                 | AL           | EU868            | EU868         | Match                   |
-| Algeria                 | DZ           | AS923_3          | AS923_3       | Match                   |
-| American Samoa          | AS           | US915            | US915         | Match                   |
-| Andorra                 | AD           | EU868            | EU868         | Match                   |
-| Angola                 | AO           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Anguilla               | AI           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Argentina               | AR           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Armenia                 | AM           | EU868            | EU868         | Match                   |
-| Aruba                  | AW           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Australia               | AU           | AU915            | **AU915_SB2** | Different Frequencies    |
-| Austria                 | AT           | EU868            | EU868         | Match                   |
-| Bahamas                 | BS           | US915            | US915         | Match                   |
-| Bahrain                 | BH           | EU868            | EU868         | Match                   |
-| Bangladesh              | BD           | AS923_1          | AS923_1       | Match                   |
-| Barbados                | BB           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Belarus                 | BY           | EU868            | EU868         | Match                   |
-| Belgium                 | BE           | EU868            | EU868         | Match                   |
-| Belize                  | BZ           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Benin                   | BJ           | EU868            | EU868         | Match                   |
-| Bermuda                 | BM           | US915            | US915         | Match                   |
-| Bhutan                  | BT           | EU868            | EU868         | Match                   |
-| Bolivia                 | BO           | AS923_1          | AS923_1       | Match                   |
-| Bosnia and Herzegovina   | BA           | EU868            | EU868         | Match                   |
-| Botswana                | BW           | EU868            | EU868         | Match                   |
-| Brazil                  | BR           | AU915            | **AU915_SB2** | Different Frequencies    |
-| Brunei                 | BN           | AS923_1          | AS923_1       | Match                   |
-| Bulgaria               | BG           | EU868            | EU868         | Match                   |
-| Cambodia                | KH           | AS923_1          | AS923_1       | Match                   |
-| Canada                  | CA           | US915            | US915         | Match                   |
-| Cape Verde              | CV           | EU868            | EU868         | Match                   |
-| Cayman Islands          | KY           | US915            | US915         | Match                   |
-| Chile                   | CL           | AU915            | **AU915_SB1** | Different Frequencies    |
-| China                   | CN           | CN470            | CN470         | Match                   |
-| Colombia                | CO           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Comoros                 | KM           | EU868            | EU868         | Match                   |
-| Costa Rica              | CR           | AS923_1          | AS923_1       | Match                   |
-| Croatia                 | HR           | EU868            | EU868         | Match                   |
-| Cuba                    | CU           | AS923_3          | AS923_3       | Match                   |
-| Cyprus                  | CY           | EU868            | EU868         | Match                   |
-| Czech Republic          | CZ           | EU868            | EU868         | Match                   |
-| Denmark                 | DK           | EU868            | EU868         | Match                   |
-| Dominica                | DM           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Dominican Republic       | DO           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Ecuador                 | EC           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Egypt                   | EG           | EU868            | EU868         | Match                   |
-| El Salvador             | SV           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Equatorial Guinea       | GQ           | EU868            | EU868         | Match                   |
-| Estonia                 | EE           | EU868            | EU868         | Match                   |
-| Ethiopia               | ET           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Falkland Islands        | FK           | EU868            | EU868         | Match                   |
-| Faroe Islands           | FO           | EU868            | EU868         | Match                   |
-| Fiji                    | FJ           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Finland                 | FI           | EU868            | EU868         | Match                   |
-| France                  | FR           | EU868            | EU868         | Match                   |
-| French Guiana           | GF           | EU868            | EU868         | Match                   |
-| French Polynesia        | PF           | EU868            | EU868         | Match                   |
-| Gabon                   | GA           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Gambia                  | GM           | Unknown          | **EU433**     | Different Frequencies    |
-| Georgia                | GE           | EU868            | EU868         | Match                   |
-| Germany                 | DE           | EU868            | EU868         | Match                   |
-| Ghana                   | GH           | Unknown          | **EU433**     | Different Frequencies    |
-| Gibraltar              | GI           | EU868            | EU868         | Match                   |
-| Greece                  | GR           | EU868            | EU868         | Match                   |
-| Greenland               | GL           | EU868            | EU868         | Match                   |
-| Grenada                 | GD           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Guadeloupe              | GP           | EU868            | EU868         | Match                   |
-| Guam                    | GU           | US915            | US915         | Match                   |
-| Guatemala               | GT           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Guyana                  | GY           | US915            | US915         | Match                   |
-| Honduras                | HN           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Hong Kong               | HK           | AS923_1          | AS923_1       | Match                   |
-| Hungary                 | HU           | EU868            | EU868         | Match                   |
-| Iceland                 | IS           | EU868            | EU868         | Match                   |
-| India                   | IN           | IN865            | IN865         | Match                   |
-| Indonesia               | ID           | AS923_2          | AS923_2       | Match                   |
-| Iran                    | IR           | EU868            | EU868         | Match                   |
-| Iraq                    | IQ           | EU868            | EU868         | Match                   |
-| Ireland                 | IE           | EU868            | EU868         | Match                   |
-| Isle of Man             | IM           | EU868            | EU868         | Match                   |
-| Israel                  | IL           | AS923_4          | AS923_4       | Match                   |
-| Italy                   | IT           | EU868            | EU868         | Match                   |
-| Jamaica                 | JM           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Japan                   | JP           | AS923_1          | AS923_1       | Match                   |
-| Jersey                  | JE           | EU868            | EU868         | Match                   |
-| Jordan                  | JO           | IN865            | IN865         | Match                   |
-| Kazakhstan              | KZ           | IN865            | IN865         | Match                   |
-| Kenya                   | KE           | EU868            | EU868         | Match                   |
-| Kiribati                | KI           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Kosovo                  | XK           | EU868            | EU868         | Match                   |
-| Kuwait                  | KW           | EU868            | EU868         | Match                   |
-| Kyrgyzstan              | KG           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Laos                    | LA           | AS923_1          | AS923_1       | Match                   |
-| Latvia                  | LV           | EU868            | EU868         | Match                   |
-| Lebanon                 | LB           | EU868            | EU868         | Match                   |
-| Lesotho                 | LS           | EU868            | **EU433**     | Different Frequencies    |
-| Liberia                 | LR           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Libya                   | LY           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Liechtenstein           | LI           | EU868            | EU868         | Match                   |
-| Lithuania               | LT           | EU868            | EU868         | Match                   |
-| Luxembourg              | LU           | EU868            | EU868         | Match                   |
-| Madagascar              | MG           | EU868            | EU868         | Match                   |
-| Malawi                  | MW           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Malaysia                | MY           | AS923_1          | AS923_1       | Match                   |
-| Maldives                | MV           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Mali                    | ML           | EU433            | **EU868**     | Different Frequencies    |
-| Malta                   | MT           | EU868            | EU868         | Match                   |
-| Marshall Islands        | MH           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Martinique              | MQ           | EU868            | EU868         | Match                   |
-| Mauritania              | MR           | EU868            | EU868         | Match                   |
-| Mauritius               | MU           | EU868            | **EU433**     | Different Frequencies    |
-| Mexico                  | MX           | US915            | US915         | Match                   |
-| Moldova                 | MD           | EU868            | EU868         | Match                   |
-| Monaco                  | MC           | EU868            | EU868         | Match                   |
-| Mongolia                | MN           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Montenegro              | ME           | EU868            | EU868         | Match                   |
-| Montserrat              | MS           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Morocco                 | MA           | EU433            | **EU868**     | Different Frequencies    |
-| Mozambique              | MZ           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Myanmar                 | MM           | AS923_1          | AS923_1       | Match                   |
-| Namibia                 | NA           | EU868            | EU868         | Match                   |
-| Nauru                   | NR           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Nepal                   | NP           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Netherlands             | NL           | EU868            | EU868         | Match                   |
-| New Zealand             | NZ           | AS923_1          | AS923_1       | Match                   |
-| Nicaragua               | NI           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Niger                   | NE           | IN865            | IN865         | Match                   |
-| Nigeria                 | NG           | EU868            | EU868         | Match                   |
-| Niue                    | NU           | AS923_1          | AS923_1       | Match                   |
-| Norfolk Island          | NF           | AU915            | **AU915_SB2** | Different Frequencies    |
-| North Korea             | KP           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Northern Mariana Islands | MP          | US915            | US915         | Match                   |
-| Norway                  | NO           | EU868            | EU868         | Match                   |
-| Oman                    | OM           | EU868            | EU868         | Match                   |
-| Pakistan                | PK           | AS923            | AS923         | Match                   |
-| Palau                   | PW           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Panama                  | PA           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Papua New Guinea        | PG           | AS923_1          | AS923_1       | Match                   |
-| Paraguay                | PY           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Peru                    | PE           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Philippines             | PH           | AS923_3          | AS923_3       | Match                   |
-| Poland                  | PL           | EU868            | EU868         | Match                   |
-| Portugal                | PT           | EU868            | EU868         | Match                   |
-| Puerto Rico             | PR           | US915            | US915         | Match                   |
-| Qatar                   | QA           | EU868            | EU868         | Match                   |
-| Republic of the Congo   | CG           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Romania                 | RO           | EU868            | EU868         | Match                   |
-| Russia                  | RU           | RU864            | **EU868**     | Different Frequencies    |
-| Rwanda                  | RW           | EU868            | EU868         | Match                   |
-| Saint Kitts and Nevis   | KN           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Saint Lucia             | LC           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Saint Vincent and the Grenadines | VC  | AU915            | **AU915_SB1** | Different Frequencies    |
-| Samoa                   | WS           | AS923_1          | AS923_1       | Match                   |
-| San Marino              | SM           | EU868            | EU868         | Match                   |
-| Saudi Arabia            | SA           | EU868            | EU868         | Match                   |
-| Senegal                 | SN           | EU868            | EU868         | Match                   |
-| Serbia                  | RS           | EU868            | EU868         | Match                   |
-| Seychelles              | SC           | EU433            | **EU868**     | Different Frequencies    |
-| Sierra Leone            | SL           | EU868            | EU868         | Match                   |
-| Singapore               | SG           | AS923_1          | AS923_1       | Match                   |
-| Slovakia                | SK           | EU868            | EU868         | Match                   |
-| Slovenia                | SI           | EU868            | EU868         | Match                   |
-| Solomon Islands         | SB           | AS923_1          | AS923_1       | Match                   |
-| Somalia                 | SO           | EU868            | EU868         | Match                   |
-| South Africa            | ZA           | EU868            | EU868         | Match                   |
-| South Korea             | KR           | KR920            | KR920         | Match                   |
-| Spain                   | ES           | EU868            | EU868         | Match                   |
-| Sri Lanka               | LK           | AS923_1          | AS923_1       | Match                   |
-| Sudan                   | SD           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Suriname                | SR           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Swaziland               | SZ           | EU868            | **EU433**     | Different Frequencies    |
-| Sweden                  | SE           | EU868            | EU868         | Match                   |
-| Switzerland             | CH           | EU868            | EU868         | Match                   |
-| Syria                   | SY           | EU868            | EU868         | Match                   |
-| Taiwan                  | TW           | AS923_1          | AS923_1       | Match                   |
-| Tajikistan              | TJ           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Tanzania                | TZ           | AS923_1          | AS923_1       | Match                   |
-| Thailand                | TH           | AS923_1          | AS923_1       | Match                   |
-| Timor-Leste             | TL           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Togo                    | TG           | EU433            | **EU868**     | Different Frequencies    |
-| Tokelau                 | TK           | AS923_1          | AS923_1       | Match                   |
-| Tonga                   | TO           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Trinidad and Tobago      | TT          | AU915            | **AU915_SB1** | Different Frequencies    |
-| Tunisia                 | TN           | EU868            | EU868         | Match                   |
-| Turkey                  | TR           | EU868            | EU868         | Match                   |
-| Turkmenistan            | TM           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Turks and Caicos Islands | TC          | AU915            | **AU915_SB1** | Different Frequencies    |
-| Tuvalu                  | TV           | Unknown          | Unknown       | Match (Both Unknown)     |
-| Uganda                  | UG           | AS923_1          | AS923_1       | Match                   |
-| Ukraine                 | UA           | EU868            | EU868         | Match                   |
-| United Arab Emirates     | AE          | EU868            | EU868         | Match                   |
-| United Kingdom          | GB           | EU868            | EU868         | Match                   |
-| United States           | US           | US915            | US915         | Match                   |
-| Uruguay                 | UY           | AU915            | **AU915_SB1** | Different Frequencies    |
-| Uzbekistan              | UZ           | EU868            | EU868         | Match                   |
-| Vanuatu                 | VU           | AS923_3          | AS923_3       | Match                   |
-| Venezuela               | VE           | AS923_1          | AS923_1       | Match                   |
-| Vietnam                 | VN           | AS923_2          | AS923_2       | Match                   |
-| Zambia                  | ZM           | EU868            | EU868         | Match                   |
-| Zimbabwe                | ZW           | EU868            | EU868         | Match                   |
+### B
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Bahamas            | BS           | US915         | US915           | US915            |
+| Bahrain            | BH           | EU868         | EU868           | EU868            |
+| Bangladesh         | BD           | AS923_1       | US915           | AS923_1          |
+| Barbados           | BB           | AU915_SB1     | US915           | AU915            |
+| Belarus            | BY           | EU868         | EU868           | EU868            |
+| Belgium            | BE           | EU868         | EU868           | EU868            |
+| Belize             | BZ           | AU915_SB1     | US915           | AU915            |
+| Benin              | BJ           | EU868         | EU868           | EU868            |
+| Bermuda            | BM           | US915         | US915           | US915            |
+| Bhutan             | BT           | EU868         | EU868           | EU868            |
+| Bolivia            | BO           | AS923_1       | US915           | AS923_1          |
+| Bonaire, Sint Eustatius & Saba | BQ | EU868      | EU868           | EU868            |
+| Bosnia and Herzegovina | BA       | EU868         | EU868           | EU868            |
+| Botswana           | BW           | EU868         | EU868           | EU868            |
+| Bouvet Island      | BV           | EU868         | EU868           | EU868            |
+| Brazil             | BR           | AU915_SB2     | US915           | AU915            |
+| British Indian Ocean Territory | IO | -     | -         | -          |
+| British Virgin Islands | VG       | AU915_SB1     | US915           | AU915            |
+| Brunei             | BN           | AS923_1       | AS923_1         | AS923_1          |
+| Bulgaria           | BG           | EU868         | EU868           | EU868            |
+| Burkina Faso       | BF           | -       | -         | -          |
+| Burundi            | BI           | EU868         | EU868           | EU868            |
+
+### C
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Cambodia           | KH           | AS923_1       | US915           | AS923_1          |
+| Canada             | CA           | US915         | US915           | US915            |
+| Cape Verde         | CV           | EU868         | EU868           | EU868            |
+| Cayman Islands     | KY           | US915         | US915           | US915            |
+| Central African Republic | CF      | -       | -         | -          |
+| Chad               | TD           | -       | -         | -          |
+| Chile              | CL           | AU915_SB1     | US915           | AU915            |
+| Christmas Island   | CX           | AU915_SB2     | US915           | AU915            |
+| Cocos (Keeling) Islands | CC      | AU915_SB2     | US915           | AU915            |
+| Colombia           | CO           | AU915_SB1     | US915           | AU915            |
+| Comoros            | KM           | EU868         | EU868           | EU868            |
+| Congo (DRC)        | CD           | -       | -         | -          |
+| Congo (Republic)   | CG           | -       | -         | -          |
+| Cook Islands       | CK           | AS923_1       | US915           | AS923_1          |
+| Costa Rica         | CR           | AS923_1       | US915           | AS923_1          |
+| Côte d'Ivoire      | CI           | EU868         | EU868           | EU868            |
+| Croatia            | HR           | EU868         | EU868           | EU868            |
+| Cuba               | CU           | AS923_3       | US915           | AS923_3          |
+| Curaçao            | CW           | AS923_1       | US915           | AS923_1          |
+| Cyprus             | CY           | EU868         | EU868           | EU868            |
+| Czech Republic     | CZ           | EU868         | EU868           | EU868            |
+
+### D
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Denmark            | DK           | EU868         | EU868           | EU868            |
+| Djibouti           | DJ           | -       | -         | -          |
+| Dominica           | DM           | AU915_SB1     | US915           | AU915            |
+| Dominican Republic | DO           | AU915_SB1     | US915           | AU915            |
+
+### E
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Ecuador            | EC           | AU915_SB1     | US915           | AU915            |
+| Egypt              | EG           | EU868         | EU868           | EU868            |
+| El Salvador        | SV           | AU915_SB1     | US915           | AU915            |
+| Equatorial Guinea  | GQ           | EU868         | EU868           | EU868            |
+| Eritrea            | ER           | -       | -         | -          |
+| Estonia            | EE           | EU868         | EU868           | EU868            |
+| Eswatini (Swaziland) | SZ         | -       | -         | -          |
+| Ethiopia           | ET           | -       | -         | -          |
+
+### F
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Falkland Islands   | FK           | EU868         | EU868           | EU868            |
+| Faroe Islands      | FO           | EU868         | EU868           | EU868            |
+| Fiji               | FJ           | -       | -         | -          |
+| Finland            | FI           | EU868         | EU868           | EU868            |
+| France             | FR           | EU868         | EU868           | EU868            |
+| French Guiana      | GF           | EU868         | EU868           | EU868            |
+| French Polynesia   | PF           | EU868         | EU868           | EU868            |
+| French Southern Territories | TF | EU868         | EU868           | EU868            |
+
+### G
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Gabon              | GA           | EU868         | EU868           | EU868            |
+| Gambia             | GM           | EU868         | EU868           | EU868            |
+| Georgia            | GE           | EU868         | EU868           | EU868            |
+| Germany            | DE           | EU868         | EU868           | EU868            |
+| Ghana              | GH           | EU868         | EU868           | EU868            |
+| Gibraltar          | GI           | EU868         | EU868           | EU868            |
+| Greece             | GR           | EU868         | EU868           | EU868            |
+| Greenland          | GL           | EU868         | EU868           | EU868            |
+| Grenada            | GD           | AU915_SB1     | US915           | AU915            |
+| Guadeloupe         | GP           | EU868         | EU868           | EU868            |
+| Guam               | GU           | US915         | US915           | US915            |
+| Guatemala          | GT           | AU915_SB1     | US915           | AU915            |
+| Guernsey           | GG           | EU868         | EU868           | EU868            |
+| Guinea             | GN           | EU868         | EU868           | EU868            |
+| Guinea-Bissau      | GW           | -       | -         | -          |
+| Guyana             | GY           | AU915_SB1     | US915           | AU915            |
+
+### H
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Haiti              | HT           | AU915_SB1     | US915           | AU915            |
+| Honduras           | HN           | AU915_SB1     | US915           | AU915            |
+| Hong Kong          | HK           | AS923_1       | US915           | AS923_1          |
+| Hungary            | HU           | EU868         | EU868           | EU868            |
+
+### I
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Iceland            | IS           | EU868         | EU868           | EU868            |
+| India              | IN           | IN865         | IN865           | IN865            |
+| Indonesia          | ID           | AS923_2       | US915           | AS923_2          |
+| Iran               | IR           | AS923_3       | US915           | AS923_3          |
+| Iraq               | IQ           | AS923_1       | US915           | AS923_1          |
+| Ireland            | IE           | EU868         | EU868           | EU868            |
+| Isle of Man        | IM           | EU868         | EU868           | EU868            |
+| Israel             | IL           | EU868         | EU868           | EU868            |
+| Italy              | IT           | EU868         | EU868           | EU868            |
+
+### J
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Jamaica            | JM           | AU915_SB1     | US915           | AU915            |
+| Japan              | JP           | AS923_1       | AS923_1         | AS923_1          |
+| Jersey             | JE           | EU868         | EU868           | EU868            |
+| Jordan             | JO           | EU868         | EU868           | EU868            |
+
+### K
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Kazakhstan         | KZ           | EU868         | EU868           | EU868            |
+| Kenya              | KE           | EU868         | EU868           | EU868            |
+| Kiribati           | KI           | -       | -         | -          |
+| Korea, North       | KP           | -       | -         | -          |
+| Korea, South       | KR           | KR920         | KR920           | KR920            |
+| Kuwait             | KW           | EU868         | EU868           | EU868            |
+| Kyrgyzstan         | KG           | EU868         | EU868           | EU868            |
+
+### L
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Laos               | LA           | AS923_1       | US915           | AS923_1          |
+| Latvia             | LV           | EU868         | EU868           | EU868            |
+| Lebanon            | LB           | EU868         | EU868           | EU868            |
+| Lesotho            | LS           | EU868         | EU868           | EU868            |
+| Liberia            | LR           | -       | -         | -          |
+| Libya              | LY           | EU868         | EU868           | EU868            |
+| Liechtenstein      | LI           | EU868         | EU868           | EU868            |
+| Lithuania          | LT           | EU868         | EU868           | EU868            |
+| Luxembourg         | LU           | EU868         | EU868           | EU868            |
+
+### M
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Macao              | MO           | AS923_1       | US915           | AS923_1          |
+| Madagascar         | MG           | EU868         | EU868           | EU868            |
+| Malawi             | MW           | EU868         | EU868           | EU868            |
+| Malaysia           | MY           | AS923_1       | US915           | AS923_1          |
+| Maldives           | MV           | EU868         | EU868           | EU868            |
+| Mali               | ML           | EU868         | EU868           | EU868            |
+| Malta              | MT           | EU868         | EU868           | EU868            |
+| Marshall Islands   | MH           | AU915_SB1     | US915           | AU915            |
+| Martinique         | MQ           | EU868         | EU868           | EU868            |
+| Mauritania         | MR           | EU868         | EU868           | EU868            |
+| Mauritius          | MU           | EU868         | EU868           | EU868            |
+| Mayotte            | YT           | EU868         | EU868           | EU868            |
+| Mexico             | MX           | AU915_SB2     | US915           | AU915            |
+| Micronesia         | FM           | AU915_SB2     | US915           | AU915            |
+| Moldova            | MD           | EU868         | EU868           | EU868            |
+| Monaco             | MC           | EU868         | EU868           | EU868            |
+| Montenegro         | ME           | EU868         | EU868           | EU868            |
+| Montserrat         | MS           | AU915_SB1     | US915           | AU915            |
+| Morocco            | MA           | EU868         | EU868           | EU868            |
+| Mozambique         | MZ           | EU868         | EU868           | EU868            |
+| Myanmar            | MM           | AS923_1       | US915           | AS923_1          |
+
+### N
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Namibia            | NA           | EU868         | EU868           | EU868            |
+| Nauru              | NR           | -       | -         | -          |
+| Nepal              | NP           | AS923_1       | US915           | AS923_1          |
+| Netherlands        | NL           | EU868         | EU868           | EU868            |
+| New Caledonia      | NC           | EU868         | EU868           | EU868            |
+| New Zealand        | NZ           | AS923_1       | US915           | AS923_1          |
+| Nicaragua          | NI           | AU915_SB1     | US915           | AU915            |
+| Niger              | NE           | EU868         | EU868           | EU868            |
+| Nigeria            | NG           | EU868         | EU868           | EU868            |
+| Niue               | NU           | AS923_1       | US915           | AS923_1          |
+| Norfolk Island     | NF           | AU915_SB2     | US915           | AU915            |
+| Northern Mariana Islands | MP      | US915         | US915           | US915            |
+| Norway             | NO           | EU868         | EU868           | EU868            |
+
+### O
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Oman               | OM           | EU868         | EU868           | EU868            |
+
+### P
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Pakistan           | PK           | AS923_1       | US915           | AS923_1          |
+| Palau              | PW           | -       | -         | -          |
+| Palestinian Territories | PS      | -       | -         | -          |
+| Panama             | PA           | AU915_SB1     | US915           | AU915            |
+| Papua New Guinea   | PG           | AS923_1       | US915           | AS923_1          |
+| Paraguay           | PY           | AU915_SB1     | US915           | AU915            |
+| Peru               | PE           | AU915_SB1     | US915           | AU915            |
+| Philippines        | PH           | AS923_1       | US915           | AS923_1          |
+| Pitcairn Islands   | PN           | -       | -         | -          |
+| Poland             | PL           | EU868         | EU868           | EU868            |
+| Portugal           | PT           | EU868         | EU868           | EU868            |
+| Puerto Rico        | PR           | US915         | US915           | US915            |
+
+### Q
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Qatar              | QA           | EU868         | EU868           | EU868            |
+
+### R
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Réunion            | RE           | EU868         | EU868           | EU868            |
+| Romania            | RO           | EU868         | EU868           | EU868            |
+| Russia             | RU           | RU864         | EU868           | RU864            |
+| Rwanda             | RW           | EU868         | EU868           | EU868            |
+
+### S
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Sahrawi Arab Democratic Republic | EH | -   | -         | -          |
+| Saint Barthelemy   | BL           | EU868         | EU868           | EU868            |
+| Saint Helena       | SH           | -       | -         | -          |
+| Saint Kitts and Nevis | KN        | AU915_SB1     | US915           | AU915            |
+| Saint Lucia        | LC           | AU915_SB1     | US915           | AU915            |
+| Saint Martin       | MF           | EU868         | EU868           | EU868            |
+| Saint Pierre and Miquelon | PM    | EU868         | EU868           | EU868            |
+| Saint Vincent and the Grenadines | VC | AU915_SB1 | US915           | AU915            |
+| Samoa              | WS           | EU868         | EU868           | EU868            |
+| San Marino         | SM           | EU868         | EU868           | EU868            |
+| Saudi Arabia       | SA           | EU868         | EU868           | EU868            |
+| Senegal            | SN           | EU868         | EU868           | EU868            |
+| Serbia             | RS           | EU868         | EU868           | EU868            |
+| Seychelles         | SC           | EU868         | EU868           | EU868            |
+| Sierra Leone       | SL           | EU868         | EU868           | EU868            |
+| Singapore          | SG           | AS923_1       | US915           | AS923_1          |
+| Slovakia           | SK           | EU868         | EU868           | EU868            |
+| Slovenia           | SI           | EU868         | EU868           | EU868            |
+| Solomon Islands    | SB           | AS923_1       | US915           | AS923_1          |
+| Somalia            | SO           | EU868         | EU868           | EU868            |
+| South Africa       | ZA           | EU868         | EU868           | EU868            |
+| South Georgia and the South Sandwich Islands | GS | EU868         | EU868           | EU868            |
+| South Korea        | KR           | KR920         | US915           | KR920            |
+| South Sudan        | SS           | -       | -         | -          |
+| Spain              | ES           | EU868         | EU868           | EU868            |
+| Sri Lanka          | LK           | AS923_1       | US915           | AS923_1          |
+| Sudan              | SD           | -       | -         | -          |
+| Suriname           | SR           | AU915_SB1     | US915           | AU915            |
+| Svalbard and Jan Mayen | SJ        | EU868         | EU868           | EU868            |
+| Sweden             | SE           | EU868         | EU868           | EU868            |
+| Switzerland        | CH           | EU868         | EU868           | EU868            |
+| Syria              | SY           | EU868         | EU868           | EU868            |
+
+### T
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Taiwan             | TW           | AS923_1       | US915           | AS923_1          |
+| Tajikistan         | TJ           | -       | -         | -          |
+| Tanzania           | TZ           | AS923_1       | US915           | AS923_1          |
+| Thailand           | TH           | AS923_1       | US915           | AS923_1          |
+| Timor-Leste        | TL           | -       | -         | -          |
+| Togo               | TG           | EU868         | EU868           | EU868            |
+| Tokelau            | TK           | AS923_1       | US915           | AS923_1          |
+| Tonga              | TO           | AU915_SB1     | US915           | AU915            |
+| Trinidad and Tobago | TT          | AU915_SB1     | US915           | AU915            |
+| Tunisia            | TN           | EU868         | EU868           | EU868            |
+| Turkey             | TR           | EU868         | EU868           | EU868            |
+| Turkmenistan       | TM           | -       | -         | -          |
+| Turks and Caicos Islands | TC      | AU915_SB1     | US915           | AU915            |
+| Tuvalu             | TV           | -       | -         | -          |
+
+### U
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| U.S. Minor Outlying Islands | UM | US915         | US915           | US915            |
+| U.S. Virgin Islands | VI         | US915         | US915           | US915            |
+| Uganda             | UG           | AS923_1       | US915           | AS923_1          |
+| Ukraine            | UA           | EU868         | EU868           | EU868            |
+| United Arab Emirates | AE         | EU868         | EU868           | EU868            |
+| United Kingdom     | GB           | EU868         | EU868           | EU868            |
+| United States      | US           | US915         | US915           | US915            |
+| Uruguay            | UY           | AU915_SB1     | US915           | AU915            |
+| Uzbekistan         | UZ           | EU868         | EU868           | EU868            |
+
+### V
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Vanuatu            | VU           | AS923_3       | US915           | AS923_3          |
+| Vatican City       | VA           | EU868         | EU868           | EU868            |
+| Venezuela          | VE           | AS923_1       | US915           | AS923_1          |
+| Vietnam            | VN           | AS923_2       | US915           | AS923_2          |
+| Virgin Islands (UK)| VG           | AU915_SB1     | US915           | AU915            |
+
+### W
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Wallis and Futuna  | WF           | EU868         | EU868           | EU868            |
+| Western Sahara     | EH           | -       | -         | -          |
+
+### Y
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Yemen              | YE           | -       | -         | -          |
+
+### Z
+
+| Country            | Country Code | ISM Frequency | WS/WG1000 Freq. | WS2000 Frequency |
+|--------------------|--------------|---------------|-----------------|------------------|
+| Zambia             | ZM           | EU868         | EU868           | EU868            |
+| Zimbabwe           | ZW           | EU868         | EU868           | EU868            |
+
+
