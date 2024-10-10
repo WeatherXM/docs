@@ -64,6 +64,7 @@ module.exports = {
             collapsed: true
           },
           "wxm-devices/deployment-examples",
+          "wxm-devices/frequency-plans",
         ],
         collapsed: true,
     },
