@@ -17,6 +17,7 @@
     "@docusaurus/plugin-client-redirects": "^3.5.2",
     "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.1",
+    "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.1",
     "cspell": "^8.14.4",
     "dotenv": "^16.4.5",
