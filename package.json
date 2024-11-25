@@ -13,9 +13,9 @@
     "spellcheck-on-pr": "cspell --no-must-find-files --file-list stdin"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.6.1",
-    "@docusaurus/plugin-client-redirects": "^3.6.1",
-    "@docusaurus/preset-classic": "^3.6.1",
+    "@docusaurus/core": "^3.6.3",
+    "@docusaurus/plugin-client-redirects": "^3.6.3",
+    "@docusaurus/preset-classic": "^3.6.3",
     "@mdx-js/react": "^3.1.0",
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.1",
