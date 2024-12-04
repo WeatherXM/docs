@@ -89,6 +89,11 @@ const config = {
             position: "right"
           },
           {
+            href: "https://weatherxm.network",
+            label: "WeatherXM Network Association",
+            position: "right",
+          },
+          {
             href: "https://shop.weatherxm.com",
             label: "Shop",
             position: "right",
