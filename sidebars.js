@@ -73,7 +73,7 @@ module.exports = {
       label: "Rewards",
       items: [
         "rewards/reward-mechanism",
-        "rewards/quality-of-data",
+        "rewards/data-quality",
         "rewards/proof-of-location",
         "rewards/cell-capacity",
         "rewards/hardware-class",
