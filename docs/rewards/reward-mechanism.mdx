@@ -12,7 +12,7 @@ The Reward Mechanism is currently at **version 2.0**. This page serves as both a
 The Reward Mechanism has undergone a progressive evolution across its versions, each iteration introducing refinements to bolster fairness and transparency in the rewarding process for weather station owners contributing data to the network.
 
 - In its inaugural version (v1.0), the mechanism primarily gauged a station's eligibility based on its connection status to the network and the requirement for active wallet ownership, resulting in a somewhat simplistic reward calculation. In this version, the users received in a daily basis the WXM testnet rewards at their wallets.
-- The subsequent release, v1.5, marked a significant advancement by expanding the criteria for reward eligibility. This version incorporated additional factors such as the Quality-of-Data (QoD), Proof-of-Location (PoL), Hardware-Classes (HC) and the Cell-Capacity (CP). 
+- The subsequent release, v1.5, marked a significant advancement by expanding the criteria for reward eligibility. This version incorporated additional factors such as the Data Quality, Proof-of-Location (PoL), Hardware-Classes (HC) and the Cell-Capacity (CP). 
  These additions contributed to a more sophisticated and equitable system, ensuring that rewards were allocated based on data quality, accurate location proof, and user engagement. 
 - The third iteration, v2.0, will introduce substantial enhancements, including the incorporation of Business Boost rewards and the implementation of a Merkle Tree structure for transparent reward distribution. The utilization of Merkle Tree will lead users in withdrawing, whenever they choose to do, their rewards from the smart contract.
  Business Boost rewards added an additional layer of fairness by incorporating predefined criteria, while the Merkle Tree structure facilitated a verifiable and transparent mechanism for users to validate the distribution of their rewards.
@@ -183,7 +183,7 @@ This section describes the updated **Reward Mechanism** that will be used to all
 :::note Important Notes
 * Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
 * Criteria that should be met for a weather station to be rewardable:
-  * QoD over qod_threshold
+  * Data quality over qod_threshold
   * PoL over pol_threshold
   * weather station’s owner should have an active wallet
 
@@ -201,9 +201,9 @@ This is a short summary of the criteria used:
 It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
 When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/rewards/proof-of-location).
 
-* **Quality-of-Data (QoD)**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
- WeatherXM values weather stations that produce meaningful and usable data and the QoD score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
- guidelines in order to consistently achieve the best QoD score possible. Read more about the [Quality of Data (QoD) mechanism](/rewards/quality-of-data).
+* **Data Quality**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
+ WeatherXM values weather stations that produce meaningful and usable data and the Data Quality score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
+ guidelines in order to consistently achieve the best Data Quality score possible. Read more about the [Data Quality algorithm](/rewards/quality-of-data).
 
 * **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
 increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](/rewards/hardware-class).
@@ -218,7 +218,7 @@ a. The following variables have known values at the start of each day:
 * `daily_emission`: the amount of tokens that are available for allocation on the given day
 * `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
 * `pol_threshold`: the number denoting the cut-off threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `qod_threshold`: the number denoting the cut-off threshold for QoD: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
+* `qod_threshold`: the number denoting the cut-off threshold for Data Quality: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
 * `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
 
 b. To calculate the rewardable count of devices per **HC**:
@@ -296,7 +296,7 @@ Due to blockchain limitations on the number of atomic transfer transactions that
 
 ## Links
 - [WeatherXM Network](https://weatherxm.network/)
-- [Quality of Data (QoD) mechanism](/rewards/quality-of-data)
+- [Data Quality algorithm](/rewards/quality-of-data)
 - [Proof of Location (PoL) mechanism](/rewards/proof-of-location)
 - [Cell Capacity (CC)](/rewards/cell-capacity)
 - [Hardware class](/rewards/hardware-class)
