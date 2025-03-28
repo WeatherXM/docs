@@ -40,7 +40,7 @@ module.exports = [
     from: "/project/proof-of-location"
   },
   {
-    to: "/rewards/quality-of-data",
+    to: "/rewards/data-quality",
     from: "/project/quality-of-data"
   },
   {
