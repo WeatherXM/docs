@@ -44,8 +44,8 @@ module.exports = [
     from: "/project/quality-of-data"
   },
   {
-    to: "/rewards/quality-of-data",
-    from: "/rewards/data-quality"
+    to: "/rewards/data-quality",
+    from: "/rewards/quality-of-data"
   },
   {
     to: "/rewards/reward-boosts",
