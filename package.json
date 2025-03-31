@@ -22,7 +22,7 @@
     "cspell": "^8.17.5",
     "dotenv": "^16.4.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.1.0",
     "rehype-katex": "7",
     "remark-math": "6",
     "yarn": "^1.22.22"
