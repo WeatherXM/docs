@@ -44,6 +44,10 @@ module.exports = [
     from: "/project/quality-of-data"
   },
   {
+    to: "/rewards/quality-of-data",
+    from: "/rewards/data-quality"
+  },
+  {
     to: "/rewards/reward-boosts",
     from: "/project/reward-boosts"
   },
