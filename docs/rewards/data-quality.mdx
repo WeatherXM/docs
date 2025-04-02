@@ -15,7 +15,7 @@ We need meaningful and usable data and the Data Quality score is an attempt to q
 The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
 achieve the best Data Quality score possible.
 
-><img src={useBaseUrl("/img/rewards/qod-v1.png")} alt="QoD current state" />
+><img src={useBaseUrl("/img/rewards/data-quality-v1.png")} alt="QoD current state" />
 
 It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
 Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
@@ -33,7 +33,7 @@ This mechanism includes the following 3 control points and their respective chec
 
 The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
 
-<img src={useBaseUrl("/img/rewards/qod-components-categories.png")}/>
+<img src={useBaseUrl("/img/rewards/data-quality-components-categories.png")}/>
 
 ## 1. Self Check
 Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
@@ -118,7 +118,7 @@ Data_Quality_Threshold is a rational number in the range [0,1].
 This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
 
 ## Data Quality Components Outcome
-><img src={useBaseUrl("/img/rewards/qod-components-data-annotations.png")} alt="The Data Quality Components" />
+><img src={useBaseUrl("/img/rewards/data-quality-components-data-annotations.png")} alt="The Data Quality Components" />
 
 :::note
 Data Quality score is a rational number in the range [0,1]
