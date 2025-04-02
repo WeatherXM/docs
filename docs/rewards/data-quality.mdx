@@ -1,42 +1,42 @@
 ---
-title: Quality of Data (QoD)
-sidebar_label: Quality of Data (QoD)
+title: Data Quality
+sidebar_label: Data Quality
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 :::info
-QoD is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future.
+Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future.
 :::
 
-**QoD** is an algorithm that evaluates the quality of weather data provided by a weather station. 
+**Data Quality** is an algorithm that evaluates the quality of weather data provided by a weather station. 
 The calculated score indicates the confidence level in the quality of the weather data received from a station. 
-We need meaningful and usable data and the QoD score is an attempt to quantify this metric. 
+We need meaningful and usable data and the Data Quality score is an attempt to quantify this metric. 
 The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
-achieve the best QoD score possible.
+achieve the best Data Quality score possible.
 
-><img src={useBaseUrl("/img/rewards/qod-v1.png")} alt="QoD current state" />
+><img src={useBaseUrl("/img/rewards/data-quality-v1.png")} alt="QoD current state" />
 
 It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
-QoD involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
+Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
 
 This mechanism includes the following 3 control points and their respective checks:
 1. Self Check
-    * Out-of-Bounds Check (OBC) (QoD v1.0)
-    * Self Quality Check (SQC) (QoD v1.0) 
+    * Out-of-Bounds Check (OBC) (Data Quality v1.0)
+    * Self Quality Check (SQC) (Data Quality v1.0) 
 2. Reference Check
-    * Comparative Quality Control (CQC) (QoD v1.3)
+    * Comparative Quality Control (CQC) (Data Quality v1.3)
 3. Deployment status 
-    * Indoor Station Detector (ISD) (Qod v1.1)
-    * Solar Obstacle Detector (SOD) (QoD v1.2)
+    * Indoor Station Detector (ISD) (Data Quality v1.1)
+    * Solar Obstacle Detector (SOD) (Data Quality v1.2)
     * Wind Obstacle Detector (WOD) (TBD)
 
-The QoD mechanism is designed to be a daily process, with the exception of the Deployment Status.
+The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
 
-<img src={useBaseUrl("/img/rewards/qod-components-categories.png")}/>
+<img src={useBaseUrl("/img/rewards/data-quality-components-categories.png")}/>
 
 ## 1. Self Check
-Self-check is the basic component of the QoD mechanism, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
+Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
 
 ### a. Out-of-Bounds Check (OBC)
 OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
@@ -62,7 +62,7 @@ The following processes take place (excluding OBC):
 The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
 
 ## 2. Reference Check
-This part of QoD focuses on comparing the data of a weather station with:
+This part of Data Quality algorithm focuses on comparing the data of a weather station with:
 
 a. Another neighbouring reliable weather station of the WXM network<br></br>
 b. Another neighbouring reliable 3rd party weather station<br></br>
@@ -86,7 +86,7 @@ b. Solar Obstacle Detector (SOD)<br></br>
 c. Wind Obstacle Detector (WOD)
 
 Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
-This means that the Deployment Status part of QoD can only be used to characterise the deployment of a weather station.
+This means that the Deployment Status part of Data Quality algorithm can only be used to characterise the deployment of a weather station.
 
 ### a. Indoors Station Detector (ISD)
 The purpose of this mechanism is to identify all the stations located in a house or a box.
@@ -113,18 +113,18 @@ The basic idea is that we collect measurements of significant wind (e.g., >5m/s)
 
 This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
 
-## QoD Threshold
-QoD_Threshold is a rational number in the range [0,1]. 
-This number indicates the minimum QoD score a station must have on a given day in order to be eligible for rewards.
+## Data Quality Threshold
+Data_Quality_Threshold is a rational number in the range [0,1]. 
+This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
 
-## QoD Components Outcome
-><img src={useBaseUrl("/img/rewards/qod-components-data-annotations.png")} alt="The QoD Components" />
+## Data Quality Components Outcome
+><img src={useBaseUrl("/img/rewards/data-quality-components-data-annotations.png")} alt="The Data Quality Components" />
 
 :::note
-QoD score is a rational number in the range [0,1]
+Data Quality score is a rational number in the range [0,1]
 :::  
 
 ## References
 - [WeatherXM Network](https://weatherxm.network/)
-- [QoD Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
-- [Technical description of the process for QoD v1.0](https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub)
+- [Data Quality Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
+- [Technical description of the process for Data Quality v1.0](https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub)
