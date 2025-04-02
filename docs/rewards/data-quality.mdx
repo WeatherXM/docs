@@ -22,13 +22,13 @@ Data Quality algorithm involves a series of techniques and processes designed to
 
 This mechanism includes the following 3 control points and their respective checks:
 1. Self Check
-    * Out-of-Bounds Check (OBC) (QoD v1.0)
-    * Self Quality Check (SQC) (QoD v1.0) 
+    * Out-of-Bounds Check (OBC) (Data Quality v1.0)
+    * Self Quality Check (SQC) (Data Quality v1.0) 
 2. Reference Check
-    * Comparative Quality Control (CQC) (QoD v1.3)
+    * Comparative Quality Control (CQC) (Data Quality v1.3)
 3. Deployment status 
-    * Indoor Station Detector (ISD) (Qod v1.1)
-    * Solar Obstacle Detector (SOD) (QoD v1.2)
+    * Indoor Station Detector (ISD) (Data Qualuty v1.1)
+    * Solar Obstacle Detector (SOD) (Data Quality v1.2)
     * Wind Obstacle Detector (WOD) (TBD)
 
 The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
@@ -114,7 +114,7 @@ The basic idea is that we collect measurements of significant wind (e.g., >5m/s)
 This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
 
 ## Data Quality Threshold
-QoD_Threshold is a rational number in the range [0,1]. 
+Data_Quality_Threshold is a rational number in the range [0,1]. 
 This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
 
 ## Data Quality Components Outcome
@@ -127,4 +127,4 @@ Data Quality score is a rational number in the range [0,1]
 ## References
 - [WeatherXM Network](https://weatherxm.network/)
 - [Data Quality Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
-- [Technical description of the process for QoD v1.0](https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub)
+- [Technical description of the process for Data Quality v1.0](https://docs.google.com/document/d/e/2PACX-1vRAkDVFpRxqZyP0CAAEtqxtE61VTpAnP02k25BB25F9HUcvIILwBX4-gKt6YP4f1L3mSN2SLNK5aKzJ/pub)

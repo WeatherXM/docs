@@ -90,9 +90,9 @@ for cell in cells:
       device.reward_reason = 'NO_WALLET'
       device.base_reward = 0
       continue
-    if qod_score < qod_threshold:
+    if data_quality_score < data_quality_threshold:
       device.reward_score = 0
-      device.reward_reason = 'QOD_THRESHOLD'
+      device.reward_reason = 'DATA_QUALITY_THRESHOLD'
       device.base_reward = 0
       continue
     if pol_score < pol_threshold:
@@ -100,7 +100,7 @@ for cell in cells:
       device.reward_reason = 'POL_THRESHOLD'
       device.base_reward = 0
       continue
-    device.reward_score = reward_algorithm(device.pol_score, device.qod_score)
+    device.reward_score = reward_algorithm(device.pol_score, device.data_quality_score)
     cell_devices.push(device)
     rewardable[device.hardware_class].count += 1
     rewardable[device.hardware_class].push(device)
@@ -183,7 +183,7 @@ This section describes the updated **Reward Mechanism** that will be used to all
 :::note Important Notes
 * Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
 * Criteria that should be met for a weather station to be rewardable:
-  * Data quality over qod_threshold
+  * Data quality over data_quality_threshold
   * PoL over pol_threshold
   * weather station’s owner should have an active wallet
 
@@ -218,13 +218,13 @@ a. The following variables have known values at the start of each day:
 * `daily_emission`: the amount of tokens that are available for allocation on the given day
 * `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
 * `pol_threshold`: the number denoting the cut-off threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `qod_threshold`: the number denoting the cut-off threshold for Data Quality: weather stations with `qod_score < qod_threshold` are **excluded** from rewarding
+* `data_quality_threshold`: the number denoting the cut-off threshold for Data Quality: weather stations with `data_quality_score < data_quality_threshold` are **excluded** from rewarding
 * `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
 
 b. To calculate the rewardable count of devices per **HC**:
 
 * we exclude weather stations that are owned by users with no wallet address specified
-* we count the weather stations with **qod_score** and **pol_score** over the respected specified thresholds, `qod_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
+* we count the weather stations with **data_quality_score** and **pol_score** over the respected specified thresholds, `data_quality_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
 
 c. To calculate the **max_reward_per_hardware_class (MRPHC)**:
 
@@ -243,7 +243,7 @@ max_reward_per_hardware_class = tokens_per_hardware_class / rewardable_count_per
 d. To calculate the **reward_score** and **actual_reward**:
 
 ```
-reward_score = pol_score * qod_score
+reward_score = pol_score * data_quality_score
 
 actual_reward = reward_score * max_reward_per_hardware_class
 ```
