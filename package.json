@@ -19,7 +19,7 @@
     "@mdx-js/react": "^3.1.0",
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.1",
-    "cspell": "^8.19.2",
+    "cspell": "^8.19.3",
     "dotenv": "^16.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
