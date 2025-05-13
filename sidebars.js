@@ -102,6 +102,7 @@ module.exports = {
       collapsed: true,
 	  },
     "tokenomics",
+    "pro-services",
     "glossary",
     "faq"
   ]
