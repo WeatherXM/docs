@@ -102,7 +102,7 @@ module.exports = {
       collapsed: true,
 	  },
     "tokenomics",
-    "pro-services",
+    "weatherxm-pro",
     "glossary",
     "faq"
   ]
