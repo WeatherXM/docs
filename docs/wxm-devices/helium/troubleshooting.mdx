@@ -117,11 +117,20 @@ Close the application and start the process again. If the problem persists, pres
 ### Factory reset
 
 <div class="explanation small-big">
-  <img src={useBaseUrl("img/wxm-devices/helium/reset-station.svg")} />
   <span>
 
-To factory reset, hold down the middle button on the bottom of the weather station, count to ~10 and release. The LED will start flashing very quickly as an indication that the factory reset has succeeded and then the station will restart.
+During factory reset all settings are reverted to the factory state, this includes the **frequency** configuration as well as the erasing of all **bonded mobile devices**.
 
+The erasing of the bonding information from the station results in the station "forgetting" all the mobile devices that have paired to it, so they will not be able to connect to the station anymore as they still hold old bonding data that is now outdated. In order to be able to pair with the station again **the station must be unpaired on the mobile device as well**, by removing it from the Bluetooth paired devices menu.
+
+:::warning
+It is recommended to unpair the station from your mobile device's bluetooth menu, **right before** performing the factory reset. This ensures you’ll be able to successfully pair again after the reset, during which the station will reboot and remain in pairing mode for a few minutes.
+::: 
+
+After factory reset is complete and the station is paired to the mobile device again, the **frequency** needs to be set to the proper frequency used in your region via the station settings menu on your app or your station will not be able to join the network.
+
+To perform the factory reset, hold down the middle button on the bottom of the weather station, count to ~10 and release. The LED will start flashing very quickly as an indication that the factory reset has succeeded and then the station will restart.
+<img src={useBaseUrl("img/wxm-devices/helium/reset-station.svg")} />
 </span>
 </div>
 

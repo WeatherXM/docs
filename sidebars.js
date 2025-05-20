@@ -22,7 +22,7 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Helium (WS2000)" ,
+          label: "Helium (WS2000/1)" ,
           items: [
             "wxm-devices/helium/introduction",
             "wxm-devices/helium/contents",
