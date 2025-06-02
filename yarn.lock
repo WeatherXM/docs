@@ -5,46 +5,46 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@algolia/autocomplete-core@npm:1.17.7":
-  version: 1.17.7
-  resolution: "@algolia/autocomplete-core@npm:1.17.7"
+"@algolia/autocomplete-core@npm:1.17.9":
+  version: 1.17.9
+  resolution: "@algolia/autocomplete-core@npm:1.17.9"
   dependencies:
-    "@algolia/autocomplete-plugin-algolia-insights": 1.17.7
-    "@algolia/autocomplete-shared": 1.17.7
-  checksum: 17236cfb4eccc4a706ce42ff09f9b9e819c38a650f96dc124b4168a626303a1d00ee407c46cdd9ff19fcaf344815cf222cc14c0b5364f6cb2f55f0a62677b9a4
+    "@algolia/autocomplete-plugin-algolia-insights": 1.17.9
+    "@algolia/autocomplete-shared": 1.17.9
+  checksum: dde242b1a2d8485e6c7bc94d00e25d707aa66dcd276ee1dde13213f1620bf6a1d289a61c657e40c707ca726a8aa009ab5e8229f92ae5cf22266de490b0634d20
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-plugin-algolia-insights@npm:1.17.7":
-  version: 1.17.7
-  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.17.7"
+"@algolia/autocomplete-plugin-algolia-insights@npm:1.17.9":
+  version: 1.17.9
+  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.17.9"
   dependencies:
-    "@algolia/autocomplete-shared": 1.17.7
+    "@algolia/autocomplete-shared": 1.17.9
   peerDependencies:
     search-insights: ">= 1 < 3"
-  checksum: 18e9ad58d421b7744e697e91253a6c95287e3c1194c0c8bdf1179a26b422cca069a7da102b2fcf9257bb85efd53db6131995cda3df8ab262424fed87a88c0a9d
+  checksum: 32761d44a407d7c5ecfae98bb78b45a1ca85c59f44167ea36057315fb357c49684e9126bb7a67a513a27bda60a9661cecd6215f2daa903288860201b0b18c745
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-preset-algolia@npm:1.17.7":
-  version: 1.17.7
-  resolution: "@algolia/autocomplete-preset-algolia@npm:1.17.7"
+"@algolia/autocomplete-preset-algolia@npm:1.17.9":
+  version: 1.17.9
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.17.9"
   dependencies:
-    "@algolia/autocomplete-shared": 1.17.7
+    "@algolia/autocomplete-shared": 1.17.9
   peerDependencies:
     "@algolia/client-search": ">= 4.9.1 < 6"
     algoliasearch: ">= 4.9.1 < 6"
-  checksum: d8e7e000fc027e15a0173a2cabb7821d902f71f03957f3bad7bb2bfd7ee58825e96e2efa57be559312e33d1bf07f658469fdc209286dbab05d8dada2d7a18531
+  checksum: 0dac2aae02121d37466b4ce1ca533420b25cd70e218a9e645e6194bd84a6012a0e94c22125437adb89599ecf14e4488882f91da382c6c9a8d9447e929b317522
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-shared@npm:1.17.7":
-  version: 1.17.7
-  resolution: "@algolia/autocomplete-shared@npm:1.17.7"
+"@algolia/autocomplete-shared@npm:1.17.9":
+  version: 1.17.9
+  resolution: "@algolia/autocomplete-shared@npm:1.17.9"
   peerDependencies:
     "@algolia/client-search": ">= 4.9.1 < 6"
     algoliasearch: ">= 4.9.1 < 6"
-  checksum: 8aff3df580bdb3eeffce36225b04e4352f837aea37032fd6358d9c43b2eeab23cda4f217f7c0f0b8346b630c57c89ad415f8da308544f009b5e26256f9c3b59e
+  checksum: f16223f5995db0deb014a066e3587ec2da76e62b861aa21411be92cb255b7023507803283803d8c960b396a2c6b690951337c32fef34f68c59ecfb3822dee577
   languageName: node
   linkType: hard
 
@@ -4055,25 +4055,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docsearch/css@npm:3.8.2":
-  version: 3.8.2
-  resolution: "@docsearch/css@npm:3.8.2"
-  checksum: 9d38cd17b3fc156f57d189ecccb9fbb4f208650dc6039aba6bd73d90174d9801b796421936673cba6bafe1c58302ea48ff5aeea7c803cf229fb1ee2708085a02
+"@docsearch/css@npm:3.9.0":
+  version: 3.9.0
+  resolution: "@docsearch/css@npm:3.9.0"
+  checksum: 8e6f5a995d17881c76b31e5364274b3387917ccbc417ba183009f2655dd507244f7009d27807675f09011efcd8e13d80505e7e17eff1a5d93bcd71324a5fc262
   languageName: node
   linkType: hard
 
-"@docsearch/react@npm:^3.8.1":
-  version: 3.8.2
-  resolution: "@docsearch/react@npm:3.8.2"
+"@docsearch/react@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@docsearch/react@npm:3.9.0"
   dependencies:
-    "@algolia/autocomplete-core": 1.17.7
-    "@algolia/autocomplete-preset-algolia": 1.17.7
-    "@docsearch/css": 3.8.2
+    "@algolia/autocomplete-core": 1.17.9
+    "@algolia/autocomplete-preset-algolia": 1.17.9
+    "@docsearch/css": 3.9.0
     algoliasearch: ^5.14.2
   peerDependencies:
-    "@types/react": ">= 16.8.0 < 19.0.0"
-    react: ">= 16.8.0 < 19.0.0"
-    react-dom: ">= 16.8.0 < 19.0.0"
+    "@types/react": ">= 16.8.0 < 20.0.0"
+    react: ">= 16.8.0 < 20.0.0"
+    react-dom: ">= 16.8.0 < 20.0.0"
     search-insights: ">= 1 < 3"
   peerDependenciesMeta:
     "@types/react":
@@ -4084,7 +4084,7 @@ __metadata:
       optional: true
     search-insights:
       optional: true
-  checksum: b307eee7c657f0c21e8a2b1c28a1d451de83434232e128b13c54c8c219a6d5f2d302ce2ca2a824eb730d5ea25cfccb1dce0e4fc1291f36f31f810841f4a25891
+  checksum: af6c531af5f4c10fb57d4d29ae47fe297e4201c5130492e2c73c34306348bf87ab05b7eeae2cb83a6c33dbe8da3754b82275b86ae0116df65f34a9e51f9291bc
   languageName: node
   linkType: hard
 
@@ -4108,6 +4108,29 @@ __metadata:
     fs-extra: ^11.1.1
     tslib: ^2.6.0
   checksum: 1a620722de3e6090a409e2e14c8d5f779b735ad33961b12ec0e53f48b04bacb6a49b48de73a5a3f5f9f8c4487e032ec5f8a354c50fcb429445d7df9949e5491d
+  languageName: node
+  linkType: hard
+
+"@docusaurus/babel@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/babel@npm:3.8.0"
+  dependencies:
+    "@babel/core": ^7.25.9
+    "@babel/generator": ^7.25.9
+    "@babel/plugin-syntax-dynamic-import": ^7.8.3
+    "@babel/plugin-transform-runtime": ^7.25.9
+    "@babel/preset-env": ^7.25.9
+    "@babel/preset-react": ^7.25.9
+    "@babel/preset-typescript": ^7.25.9
+    "@babel/runtime": ^7.25.9
+    "@babel/runtime-corejs3": ^7.25.9
+    "@babel/traverse": ^7.25.9
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    babel-plugin-dynamic-import-node: ^2.3.3
+    fs-extra: ^11.1.1
+    tslib: ^2.6.0
+  checksum: 2f32b8d6666a35b1f98187b51408b34e468159cc8e748eee3d7aa02c4613c703bd3a3e0dc025fa478f2990bceb3b25fc4849cfe0aa9013f61e3b3deb8f17aab5
   languageName: node
   linkType: hard
 
@@ -4146,6 +4169,43 @@ __metadata:
     "@docusaurus/faster":
       optional: true
   checksum: a4278095ff7480d2ed63dd66a96f9913284dc8cae05d489bee9964fdf22a34fc4c5ddb4712f544aaed6e6bb60dac0701a27437f37040895fc6504f8432eb1c64
+  languageName: node
+  linkType: hard
+
+"@docusaurus/bundler@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/bundler@npm:3.8.0"
+  dependencies:
+    "@babel/core": ^7.25.9
+    "@docusaurus/babel": 3.8.0
+    "@docusaurus/cssnano-preset": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    babel-loader: ^9.2.1
+    clean-css: ^5.3.2
+    copy-webpack-plugin: ^11.0.0
+    css-loader: ^6.8.1
+    css-minimizer-webpack-plugin: ^5.0.1
+    cssnano: ^6.1.2
+    file-loader: ^6.2.0
+    html-minifier-terser: ^7.2.0
+    mini-css-extract-plugin: ^2.9.1
+    null-loader: ^4.0.1
+    postcss: ^8.4.26
+    postcss-loader: ^7.3.3
+    postcss-preset-env: ^10.1.0
+    terser-webpack-plugin: ^5.3.9
+    tslib: ^2.6.0
+    url-loader: ^4.1.1
+    webpack: ^5.95.0
+    webpackbar: ^6.0.1
+  peerDependencies:
+    "@docusaurus/faster": "*"
+  peerDependenciesMeta:
+    "@docusaurus/faster":
+      optional: true
+  checksum: bb05acf9ca97b6d109843a93536ca4a4b76de6a28497dd9901e17aea7b0a62ca307036bdae69a1969f5383d9f31a00b4e1eb2faf9bfb5750f153492e21ec3a58
   languageName: node
   linkType: hard
 
@@ -4205,6 +4265,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/core@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/core@npm:3.8.0"
+  dependencies:
+    "@docusaurus/babel": 3.8.0
+    "@docusaurus/bundler": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
+    boxen: ^6.2.1
+    chalk: ^4.1.2
+    chokidar: ^3.5.3
+    cli-table3: ^0.6.3
+    combine-promises: ^1.1.0
+    commander: ^5.1.0
+    core-js: ^3.31.1
+    detect-port: ^1.5.1
+    escape-html: ^1.0.3
+    eta: ^2.2.0
+    eval: ^0.1.8
+    execa: 5.1.1
+    fs-extra: ^11.1.1
+    html-tags: ^3.3.1
+    html-webpack-plugin: ^5.6.0
+    leven: ^3.1.0
+    lodash: ^4.17.21
+    open: ^8.4.0
+    p-map: ^4.0.0
+    prompts: ^2.4.2
+    react-helmet-async: "npm:@slorber/react-helmet-async@1.3.0"
+    react-loadable: "npm:@docusaurus/react-loadable@6.0.0"
+    react-loadable-ssr-addon-v5-slorber: ^1.0.1
+    react-router: ^5.3.4
+    react-router-config: ^5.1.1
+    react-router-dom: ^5.3.4
+    semver: ^7.5.4
+    serve-handler: ^6.1.6
+    tinypool: ^1.0.2
+    tslib: ^2.6.0
+    update-notifier: ^6.0.2
+    webpack: ^5.95.0
+    webpack-bundle-analyzer: ^4.10.2
+    webpack-dev-server: ^4.15.2
+    webpack-merge: ^6.0.1
+  peerDependencies:
+    "@mdx-js/react": ^3.0.0
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  bin:
+    docusaurus: bin/docusaurus.mjs
+  checksum: 7a3eb546f753fc2599d0722c663603d36c303657864235970a97ee6f7b8889654a55f64d185bf323f265b3d609bc9ffb309ae972b87a94180af7a4900836e2f0
+  languageName: node
+  linkType: hard
+
 "@docusaurus/cssnano-preset@npm:3.7.0":
   version: 3.7.0
   resolution: "@docusaurus/cssnano-preset@npm:3.7.0"
@@ -4217,6 +4333,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/cssnano-preset@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/cssnano-preset@npm:3.8.0"
+  dependencies:
+    cssnano-preset-advanced: ^6.1.2
+    postcss: ^8.4.38
+    postcss-sort-media-queries: ^5.2.0
+    tslib: ^2.6.0
+  checksum: 6b0b58111024ccb8a0d88adedbfd3f0ddb040b28ee19c3e065ffea7f44da0f5a4f7a23bc5fc96c6a9d2b9500cbed55111be6872f13084533d39e6f2961c6b6b2
+  languageName: node
+  linkType: hard
+
 "@docusaurus/logger@npm:3.7.0":
   version: 3.7.0
   resolution: "@docusaurus/logger@npm:3.7.0"
@@ -4224,6 +4352,16 @@ __metadata:
     chalk: ^4.1.2
     tslib: ^2.6.0
   checksum: 22e0cfbaf2775bb813d424385b17cc72343dae2e10c9a3bd43cb8e6ab929322313b4a00cadfa3b1f0589003dd561c49fa523f87a31ed02a8f27d17a677d19d8a
+  languageName: node
+  linkType: hard
+
+"@docusaurus/logger@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/logger@npm:3.8.0"
+  dependencies:
+    chalk: ^4.1.2
+    tslib: ^2.6.0
+  checksum: 6899b3aa66d3738caa1bb8299fd86471c1b0fbf7c2596bb7424f3eef3fa3ec4c6324190116cb394ec93e9f9a9cb15baffa6e4a1e2e958538f961b77ebde25fcb
   languageName: node
   linkType: hard
 
@@ -4262,21 +4400,56 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/module-type-aliases@npm:3.7.0"
+"@docusaurus/mdx-loader@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/mdx-loader@npm:3.8.0"
   dependencies:
-    "@docusaurus/types": 3.7.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
+    "@mdx-js/mdx": ^3.0.0
+    "@slorber/remark-comment": ^1.0.0
+    escape-html: ^1.0.3
+    estree-util-value-to-estree: ^3.0.1
+    file-loader: ^6.2.0
+    fs-extra: ^11.1.1
+    image-size: ^2.0.2
+    mdast-util-mdx: ^3.0.0
+    mdast-util-to-string: ^4.0.0
+    rehype-raw: ^7.0.0
+    remark-directive: ^3.0.0
+    remark-emoji: ^4.0.0
+    remark-frontmatter: ^5.0.0
+    remark-gfm: ^4.0.0
+    stringify-object: ^3.3.0
+    tslib: ^2.6.0
+    unified: ^11.0.3
+    unist-util-visit: ^5.0.0
+    url-loader: ^4.1.1
+    vfile: ^6.0.1
+    webpack: ^5.88.1
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 632ab60e11d094c9de0ce14d5186c5f522eb081f69a48d4d80ceaa78e68cc90cf4f8f331e56bdbb03527aa618ef33202fe605cb093a38189865ed64d63fe7c69
+  languageName: node
+  linkType: hard
+
+"@docusaurus/module-type-aliases@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/module-type-aliases@npm:3.8.0"
+  dependencies:
+    "@docusaurus/types": 3.8.0
     "@types/history": ^4.7.11
     "@types/react": "*"
     "@types/react-router-config": "*"
     "@types/react-router-dom": "*"
-    react-helmet-async: "npm:@slorber/react-helmet-async@*"
+    react-helmet-async: "npm:@slorber/react-helmet-async@1.3.0"
     react-loadable: "npm:@docusaurus/react-loadable@6.0.0"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 6fa31e416e81b0763c42ec5593f06e48950223ae4df47060a60baa84a70f5e955987f028d04087e8ecd0ce12e831087b00fc435c375536a8665440bd13a74e6a
+  checksum: ad767cf79c0710d1be767bf0229a0594566a2680e37eec8a24cb95afe306e7fe86a0a7b896e40e9d5e7b510b10e5a46f410bc598c9e491b74974c25f9e0f9f13
   languageName: node
   linkType: hard
 
@@ -4300,23 +4473,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-blog@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-content-blog@npm:3.7.0"
+"@docusaurus/plugin-content-blog@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-content-blog@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/logger": 3.7.0
-    "@docusaurus/mdx-loader": 3.7.0
-    "@docusaurus/theme-common": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-common": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/theme-common": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     cheerio: 1.0.0-rc.12
     feed: ^4.2.2
     fs-extra: ^11.1.1
     lodash: ^4.17.21
-    reading-time: ^1.5.0
+    schema-dts: ^1.1.2
     srcset: ^4.0.0
     tslib: ^2.6.0
     unist-util-visit: ^5.0.0
@@ -4326,148 +4499,161 @@ __metadata:
     "@docusaurus/plugin-content-docs": "*"
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 2a36adc80a9f9d6de472cb2844445084f58ac08f222f5037dfcb8b2beddc524c4cef63f4a3926f750539f36b53337159121d744b68a4a9d2d301c064bded03c6
+  checksum: c378ee92e87f04df5332e4f340410cbf7e7b07abdccb717155e7667594281aab6dc6b652d66efb45d76a17455ef57326ca32ca665aad6aeb8034afa83010746a
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-content-docs@npm:3.7.0"
+"@docusaurus/plugin-content-docs@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-content-docs@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/logger": 3.7.0
-    "@docusaurus/mdx-loader": 3.7.0
-    "@docusaurus/module-type-aliases": 3.7.0
-    "@docusaurus/theme-common": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-common": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/module-type-aliases": 3.8.0
+    "@docusaurus/theme-common": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     "@types/react-router-config": ^5.0.7
     combine-promises: ^1.1.0
     fs-extra: ^11.1.1
     js-yaml: ^4.1.0
     lodash: ^4.17.21
+    schema-dts: ^1.1.2
     tslib: ^2.6.0
     utility-types: ^3.10.0
     webpack: ^5.88.1
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 933936fcbfd8552f775443e93daf0e05ac233b458e574d05214949970731b1ca0e6b9cb919fd63648f54af3a7395f713c3c0e25dfdece2a4bfc599ad2de5e21c
+  checksum: 89b819bf094696250741d07e8b34004b1051810df3259af6d5e8f2117282e596cb693f9641a45aa678d8677f061af06a3c1bcb31d8e1d66974b500fefe39b419
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-pages@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-content-pages@npm:3.7.0"
+"@docusaurus/plugin-content-pages@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-content-pages@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/mdx-loader": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     fs-extra: ^11.1.1
     tslib: ^2.6.0
     webpack: ^5.88.1
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: bdb2a4655e1067262075503e80fc2302addbe3f15f3fa3cd41df49ecf5bbf5f6df282263a0f340e405a2859369b0fda5e4a4c494b6a82c7f345d06e916be168f
+  checksum: c97294e7289d2906b18c94971fa6160f6422674874d1eb605580e99cf50b970c8a2e43b835739ca58f04ac63109040af3f512eca6b166ef6e6e76e88093f2b3a
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-debug@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-debug@npm:3.7.0"
+"@docusaurus/plugin-css-cascade-layers@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-css-cascade-layers@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
+    tslib: ^2.6.0
+  checksum: a5b28775d1095a029441d71aecb0e271d900ac82f2e7e5ca035d62859a06d655b9fd446e2467eed0ecd27342a31f40eae1450e2767571e488b1e9f0b39705f2e
+  languageName: node
+  linkType: hard
+
+"@docusaurus/plugin-debug@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-debug@npm:3.8.0"
+  dependencies:
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
     fs-extra: ^11.1.1
-    react-json-view-lite: ^1.2.0
+    react-json-view-lite: ^2.3.0
     tslib: ^2.6.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 5daca21e8162060742c9656bebab59bff4e519a260a21c40f4a024d509a08d6505eb60663953e5382787bd1104a43c2deea8fffb47f1f4dd3e1205cfa6bb4670
+  checksum: 5be1a46fcd8c5cb4b218c470946e0f715f153f6360adbfb139818a96acfdd586d0c6f83d8055e8fefbaca98a17593489a230842f01300439e2e4c94a39c63ed5
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-google-analytics@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-google-analytics@npm:3.7.0"
+"@docusaurus/plugin-google-analytics@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-google-analytics@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     tslib: ^2.6.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 09eda2b1fbf577f70fee4bbe22683208fb77fc5a402cd70c06236a1a97d10f48c7fdce91cc4d489eb1f8a44adc56c8fd7dcd3b3d2cefc76a1d86cf7fc1213166
+  checksum: 6e3d80545da6f4bff49c506d96b6542c2a8495bb5014501bd788c400f6534d6b707dd63488b194481cc12aab96b4a83ea0e210f4a598386d0d893dede651faa5
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-google-gtag@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-google-gtag@npm:3.7.0"
+"@docusaurus/plugin-google-gtag@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-google-gtag@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     "@types/gtag.js": ^0.0.12
     tslib: ^2.6.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: d09eb00798c8091581fe670a9a15ea5de933afee54e5ed66e1d283812adf001062a7e14f1106fc3b6dd264048df56aa2a5cc066c647c7456788f814a81788b42
+  checksum: 19a9e203e2dae863392081ab845c3002313ca9f7779ca6598c2d4863edb4cf8598538b616297a992cec3da48f90871c6881085ff8cdb9fd4cd5f704943be181e
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-google-tag-manager@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-google-tag-manager@npm:3.7.0"
+"@docusaurus/plugin-google-tag-manager@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-google-tag-manager@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     tslib: ^2.6.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 83906f1fd7e00869de53917ba881ec1e3fb68a7c8e04aeae40d9e5f03a172186ef77754182d1ccba1065616ffac31dbc9d572ee0b6ba3750c5aaead08cf0db4d
+  checksum: 4ef3d7485ab3779fe2656a4e8b3f558ce65a8410bc3d492cf216fd7a68b636a6bbaae832ecf519e94d3d7e6489ce09bcd9a7c51a73c7221235833f1d0fd5f8bd
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-sitemap@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-sitemap@npm:3.7.0"
+"@docusaurus/plugin-sitemap@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-sitemap@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/logger": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-common": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     fs-extra: ^11.1.1
     sitemap: ^7.1.1
     tslib: ^2.6.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: ed03a2d306642ed099305ae8c1b8f40a52dc36f5a82ac57df14216eeec04214b5e85985aabcce41d4e422fbb77ee67719d07df103d72f864eda1cec65c478a96
+  checksum: 7249c8fdfd643063a3b591e0fc3d56269f6f8d8ca0f2b68872c3a6a270ab9942bc35e355e7382faca323b5bdf5416840cdf01bd0658e59221337afbb2cb1e214
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-svgr@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/plugin-svgr@npm:3.7.0"
+"@docusaurus/plugin-svgr@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-svgr@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     "@svgr/core": 8.1.0
     "@svgr/webpack": ^8.1.0
     tslib: ^2.6.0
@@ -4475,52 +4661,53 @@ __metadata:
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 2ada44b314f21ff824b9df9a9872cb5fdc942133151111c214d7d47ff1a8c271c5e02f35fe6d6ff9768c35fd5f797e8a7e3e26e7467066271143c9988fd2cbce
+  checksum: 03cf4f87373d345be70c7958258302d57c7d2fab43ca94170a7eddc0ad2699dade7c50eb98fb17535022d3b20a526c8e99e884b14b87135c809a8ef9eb54bbc5
   languageName: node
   linkType: hard
 
-"@docusaurus/preset-classic@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/preset-classic@npm:3.7.0"
+"@docusaurus/preset-classic@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/preset-classic@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/plugin-content-blog": 3.7.0
-    "@docusaurus/plugin-content-docs": 3.7.0
-    "@docusaurus/plugin-content-pages": 3.7.0
-    "@docusaurus/plugin-debug": 3.7.0
-    "@docusaurus/plugin-google-analytics": 3.7.0
-    "@docusaurus/plugin-google-gtag": 3.7.0
-    "@docusaurus/plugin-google-tag-manager": 3.7.0
-    "@docusaurus/plugin-sitemap": 3.7.0
-    "@docusaurus/plugin-svgr": 3.7.0
-    "@docusaurus/theme-classic": 3.7.0
-    "@docusaurus/theme-common": 3.7.0
-    "@docusaurus/theme-search-algolia": 3.7.0
-    "@docusaurus/types": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/plugin-content-blog": 3.8.0
+    "@docusaurus/plugin-content-docs": 3.8.0
+    "@docusaurus/plugin-content-pages": 3.8.0
+    "@docusaurus/plugin-css-cascade-layers": 3.8.0
+    "@docusaurus/plugin-debug": 3.8.0
+    "@docusaurus/plugin-google-analytics": 3.8.0
+    "@docusaurus/plugin-google-gtag": 3.8.0
+    "@docusaurus/plugin-google-tag-manager": 3.8.0
+    "@docusaurus/plugin-sitemap": 3.8.0
+    "@docusaurus/plugin-svgr": 3.8.0
+    "@docusaurus/theme-classic": 3.8.0
+    "@docusaurus/theme-common": 3.8.0
+    "@docusaurus/theme-search-algolia": 3.8.0
+    "@docusaurus/types": 3.8.0
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 560205e072dc983705b6794e22d546ced4a2a4589bc93c8be8c3962b37279e33f2580a72c7a3d2a4db74c955dffca1ece66c01645c3dea6287c2870bdbf005a0
+  checksum: 244b2a7ce037a0329a26f0ac6668d75d1742f83382628892a883ca42f4ae09e2f80e3961d6a7b21efad440e18e4767f558347ce619c083f5a382928f2cd55275
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-classic@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/theme-classic@npm:3.7.0"
+"@docusaurus/theme-classic@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/theme-classic@npm:3.8.0"
   dependencies:
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/logger": 3.7.0
-    "@docusaurus/mdx-loader": 3.7.0
-    "@docusaurus/module-type-aliases": 3.7.0
-    "@docusaurus/plugin-content-blog": 3.7.0
-    "@docusaurus/plugin-content-docs": 3.7.0
-    "@docusaurus/plugin-content-pages": 3.7.0
-    "@docusaurus/theme-common": 3.7.0
-    "@docusaurus/theme-translations": 3.7.0
-    "@docusaurus/types": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-common": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/module-type-aliases": 3.8.0
+    "@docusaurus/plugin-content-blog": 3.8.0
+    "@docusaurus/plugin-content-docs": 3.8.0
+    "@docusaurus/plugin-content-pages": 3.8.0
+    "@docusaurus/theme-common": 3.8.0
+    "@docusaurus/theme-translations": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     "@mdx-js/react": ^3.0.0
     clsx: ^2.0.0
     copy-text-to-clipboard: ^3.2.0
@@ -4537,18 +4724,18 @@ __metadata:
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 2a6029657e4f0221adfe53ed44f770a48bcccf4cf7668af6b51e0e18d7b330d5bfe32865fbf86bd9c793a2598be4a4e65693c929f17a66ac3f555e0ce6d14992
+  checksum: a68c28f1b533e301793114347e05915b86d653ea8fed96c15cc0f1f17689fc2cc1416ec2f6a36dd1cbaff9d5f5eecad5e22a1d63dc8cd861c729244a050a2ffa
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-common@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/theme-common@npm:3.7.0"
+"@docusaurus/theme-common@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/theme-common@npm:3.8.0"
   dependencies:
-    "@docusaurus/mdx-loader": 3.7.0
-    "@docusaurus/module-type-aliases": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-common": 3.7.0
+    "@docusaurus/mdx-loader": 3.8.0
+    "@docusaurus/module-type-aliases": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
     "@types/history": ^4.7.11
     "@types/react": "*"
     "@types/react-router-config": "*"
@@ -4561,22 +4748,22 @@ __metadata:
     "@docusaurus/plugin-content-docs": "*"
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 7b5c7db66185066b1b4f8394595bcb7b3869b925199def22b382ebb0fbb44e4d40c293abdd8fb719fc299169d6e0fa3f305c6f25af1b5839ab8186f7383eb749
+  checksum: 2b0c33d8c2d1da03b84966b96104d0b47f6e3ffaec72eac345a36a5ab30372510ab3f6927970f048b9520d816a3129e0441a50432a8ca11aaca4436f4e6e77d7
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-search-algolia@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/theme-search-algolia@npm:3.7.0"
+"@docusaurus/theme-search-algolia@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/theme-search-algolia@npm:3.8.0"
   dependencies:
-    "@docsearch/react": ^3.8.1
-    "@docusaurus/core": 3.7.0
-    "@docusaurus/logger": 3.7.0
-    "@docusaurus/plugin-content-docs": 3.7.0
-    "@docusaurus/theme-common": 3.7.0
-    "@docusaurus/theme-translations": 3.7.0
-    "@docusaurus/utils": 3.7.0
-    "@docusaurus/utils-validation": 3.7.0
+    "@docsearch/react": ^3.9.0
+    "@docusaurus/core": 3.8.0
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/plugin-content-docs": 3.8.0
+    "@docusaurus/theme-common": 3.8.0
+    "@docusaurus/theme-translations": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-validation": 3.8.0
     algoliasearch: ^5.17.1
     algoliasearch-helper: ^3.22.6
     clsx: ^2.0.0
@@ -4588,17 +4775,17 @@ __metadata:
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 9910c63abadcce7a1fc05c45a91560c9f792e724ad5a78a26c13d0ba37dab6f306daa8be5be63ae5d3f26f941b059777c0901519c84fe42ad42042f6fcaa7e65
+  checksum: 704d61c2f7652df4e24cd52d10eff4c282785983be60bff8d5ec3ce697de784519d026eb05699c1c458f0004f73393b516e1812835ef32758c9a2a2ada5bd4c6
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-translations@npm:3.7.0":
-  version: 3.7.0
-  resolution: "@docusaurus/theme-translations@npm:3.7.0"
+"@docusaurus/theme-translations@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/theme-translations@npm:3.8.0"
   dependencies:
     fs-extra: ^11.1.1
     tslib: ^2.6.0
-  checksum: 800166bc415efd5be73e268de2a3da040a477ce47b296684fecc698f61a1175a971c196a418934f663db5892a1aa217e47351959f443e647092fae00798f994d
+  checksum: 8a23a1ecc266856c0fe943fd469b50df282c3f68d59e706dc9339127474ca5c8ac0153758f636d832ba3da22b5695da8a430edea4144e6d4a0f50f052e4d3acd
   languageName: node
   linkType: hard
 
@@ -4622,6 +4809,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/types@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/types@npm:3.8.0"
+  dependencies:
+    "@mdx-js/mdx": ^3.0.0
+    "@types/history": ^4.7.11
+    "@types/react": "*"
+    commander: ^5.1.0
+    joi: ^17.9.2
+    react-helmet-async: "npm:@slorber/react-helmet-async@1.3.0"
+    utility-types: ^3.10.0
+    webpack: ^5.95.0
+    webpack-merge: ^5.9.0
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 4073ddcaf7994264d6f9a0bfb5c699f702663c0b28562fe75cb6b3d8a7c35fbdc8bca996678189cb53c5750e33005602a0f6a9552dc370ea057f512105a1d680
+  languageName: node
+  linkType: hard
+
 "@docusaurus/utils-common@npm:3.7.0":
   version: 3.7.0
   resolution: "@docusaurus/utils-common@npm:3.7.0"
@@ -4629,6 +4836,16 @@ __metadata:
     "@docusaurus/types": 3.7.0
     tslib: ^2.6.0
   checksum: 3938f9fada19a641009c3a5517b754a1ba4e9f8aa3edaff27ba24cfd927c234fb0e598ab076c4abf82537fc09976a547d18a00b7e97e9b704d7784102dc500a5
+  languageName: node
+  linkType: hard
+
+"@docusaurus/utils-common@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/utils-common@npm:3.8.0"
+  dependencies:
+    "@docusaurus/types": 3.8.0
+    tslib: ^2.6.0
+  checksum: 9391bcbf49e59a331ae91715ad5310083dbfb925f258f7a9b21543395e977f4f70316f74440b2c41a1a189d956a838ce557221cfdc120329166113dc499080b6
   languageName: node
   linkType: hard
 
@@ -4645,6 +4862,22 @@ __metadata:
     lodash: ^4.17.21
     tslib: ^2.6.0
   checksum: b5f1e4ce126e5f08ad190b2e09504f4530408ad06f33798625827fa635199a5c781cb89edafba5402aefc0001a1896d949013b46d1d37d6506e82eaa1353abdf
+  languageName: node
+  linkType: hard
+
+"@docusaurus/utils-validation@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/utils-validation@npm:3.8.0"
+  dependencies:
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/utils": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    fs-extra: ^11.2.0
+    joi: ^17.9.2
+    js-yaml: ^4.1.0
+    lodash: ^4.17.21
+    tslib: ^2.6.0
+  checksum: c78df1f903c63b86a954768e16cc4d3e32eeab8c08ca72b42fe6a99559753c9b0a821ba92829fe339bd280e791568f4a30057c5908893df52c5fcb721f11047b
   languageName: node
   linkType: hard
 
@@ -4673,6 +4906,35 @@ __metadata:
     utility-types: ^3.10.0
     webpack: ^5.88.1
   checksum: c488addc4e605200149976f95695fd0a567d502b1bcc8d0c0b042cdee5860223f2e46df6b0f2d13aa349c15a1c28c3dcb9eef5e6e0758e6881c70102f967acb2
+  languageName: node
+  linkType: hard
+
+"@docusaurus/utils@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/utils@npm:3.8.0"
+  dependencies:
+    "@docusaurus/logger": 3.8.0
+    "@docusaurus/types": 3.8.0
+    "@docusaurus/utils-common": 3.8.0
+    escape-string-regexp: ^4.0.0
+    execa: 5.1.1
+    file-loader: ^6.2.0
+    fs-extra: ^11.1.1
+    github-slugger: ^1.5.0
+    globby: ^11.1.0
+    gray-matter: ^4.0.3
+    jiti: ^1.20.0
+    js-yaml: ^4.1.0
+    lodash: ^4.17.21
+    micromatch: ^4.0.5
+    p-queue: ^6.6.2
+    prompts: ^2.4.2
+    resolve-pathname: ^3.0.0
+    tslib: ^2.6.0
+    url-loader: ^4.1.1
+    utility-types: ^3.10.0
+    webpack: ^5.88.1
+  checksum: c054dfb9a68c579fbe9ee3bb9db4f6dd193077b3c211fb4d47ba0a3434bb17e9af353638dbef2341138d7bffc33eefa0708de59a6e7e2c3781a40fc382eb9988
   languageName: node
   linkType: hard
 
@@ -7827,7 +8089,7 @@ __metadata:
   dependencies:
     "@docusaurus/core": ^3.7.0
     "@docusaurus/plugin-client-redirects": ^3.7.0
-    "@docusaurus/preset-classic": ^3.7.0
+    "@docusaurus/preset-classic": ^3.8.0
     "@mdx-js/react": ^3.1.0
     "@tippyjs/react": ^4.2.6
     clsx: ^2.1.1
@@ -8300,7 +8562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^4.0.0":
+"eventemitter3@npm:^4.0.0, eventemitter3@npm:^4.0.4":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 1875311c42fcfe9c707b2712c32664a245629b42bb0a5a84439762dd0fd637fc54d078155ea83c2af9e0323c9ac13687e03cfba79b03af9f40c89b4960099374
@@ -8314,7 +8576,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^5.0.0":
+"execa@npm:5.1.1, execa@npm:^5.0.0":
   version: 5.1.1
   resolution: "execa@npm:5.1.1"
   dependencies:
@@ -9559,6 +9821,15 @@ __metadata:
   bin:
     image-size: bin/image-size.js
   checksum: 23b3a515dded89e7f967d52b885b430d6a5a903da954fce703130bfb6069d738d80e6588efd29acfaf5b6933424a56535aa7bf06867e4ebd0250c2ee51f19a4a
+  languageName: node
+  linkType: hard
+
+"image-size@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "image-size@npm:2.0.2"
+  bin:
+    image-size: bin/image-size.js
+  checksum: 33c3fafdd8af6bb2727bca51c4bae6e6dac16e9715337a6685a1af29fcbf7a2f9ec75eeaaa61e82d20f74d6f1fa748110936e32b1dbea4521217133eb159a29d
   languageName: node
   linkType: hard
 
@@ -11781,6 +12052,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-finally@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "p-finally@npm:1.0.0"
+  checksum: 93a654c53dc805dd5b5891bab16eb0ea46db8f66c4bfd99336ae929323b1af2b70a8b0654f8f1eae924b2b73d037031366d645f1fd18b3d30cbd15950cc4b1d4
+  languageName: node
+  linkType: hard
+
 "p-limit@npm:^2.0.0":
   version: 2.3.0
   resolution: "p-limit@npm:2.3.0"
@@ -11844,6 +12122,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-queue@npm:^6.6.2":
+  version: 6.6.2
+  resolution: "p-queue@npm:6.6.2"
+  dependencies:
+    eventemitter3: ^4.0.4
+    p-timeout: ^3.2.0
+  checksum: 832642fcc4ab6477b43e6d7c30209ab10952969ed211c6d6f2931be8a4f9935e3578c72e8cce053dc34f2eb6941a408a2c516a54904e989851a1a209cf19761c
+  languageName: node
+  linkType: hard
+
 "p-retry@npm:^4.5.0":
   version: 4.6.2
   resolution: "p-retry@npm:4.6.2"
@@ -11851,6 +12139,15 @@ __metadata:
     "@types/retry": 0.12.0
     retry: ^0.13.1
   checksum: 45c270bfddaffb4a895cea16cb760dcc72bdecb6cb45fef1971fa6ea2e91ddeafddefe01e444ac73e33b1b3d5d29fb0dd18a7effb294262437221ddc03ce0f2e
+  languageName: node
+  linkType: hard
+
+"p-timeout@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "p-timeout@npm:3.2.0"
+  dependencies:
+    p-finally: ^1.0.0
+  checksum: 3dd0eaa048780a6f23e5855df3dd45c7beacff1f820476c1d0d1bcd6648e3298752ba2c877aa1c92f6453c7dd23faaf13d9f5149fc14c0598a142e2c5e8d649c
   languageName: node
   linkType: hard
 
@@ -13194,7 +13491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-helmet-async@npm:@slorber/react-helmet-async@*, react-helmet-async@npm:@slorber/react-helmet-async@1.3.0":
+"react-helmet-async@npm:@slorber/react-helmet-async@1.3.0":
   version: 1.3.0
   resolution: "@slorber/react-helmet-async@npm:1.3.0"
   dependencies:
@@ -13217,12 +13514,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-json-view-lite@npm:^1.2.0":
-  version: 1.3.0
-  resolution: "react-json-view-lite@npm:1.3.0"
+"react-json-view-lite@npm:^2.3.0":
+  version: 2.4.1
+  resolution: "react-json-view-lite@npm:2.4.1"
   peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-  checksum: 612d129c9a0b3429e540226b43d9c6113638a1814fd39a12dbdc0e1e6a13cf0d018193d8c21dbf8f3d1ca747667b0a0e5d37ab3532c63571e113cf571b589b6a
+    react: ^18.0.0 || ^19.0.0
+  checksum: 0b7397e190c67410dc07b45aae78bc675638ca5e48da3e7c041860556d4257eaf8424f76819d9591fceedd86c15d99829e723b412e224bc354c7eff61b3bf755
   languageName: node
   linkType: hard
 
@@ -13336,13 +13633,6 @@ __metadata:
   dependencies:
     picomatch: ^2.2.1
   checksum: 1ced032e6e45670b6d7352d71d21ce7edf7b9b928494dcaba6f11fba63180d9da6cd7061ebc34175ffda6ff529f481818c962952004d273178acd70f7059b320
-  languageName: node
-  linkType: hard
-
-"reading-time@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "reading-time@npm:1.5.0"
-  checksum: e27bc5a70ba0f4ac337896b18531b914d38f4bee67cbad48029d0c11dd0a7a847b2a6bba895ab7ce2ad3e7ecb86912bdc477d8fa2d48405a3deda964be54d09b
   languageName: node
   linkType: hard
 
@@ -13841,6 +14131,13 @@ __metadata:
   version: 0.26.0
   resolution: "scheduler@npm:0.26.0"
   checksum: c63a9f1c0e5089b537231cff6c11f75455b5c8625ae09535c1d7cd0a1b0c77ceecdd9f1074e5e063da5d8dc11e73e8033dcac3361791088be08a6e60c0283ed9
+  languageName: node
+  linkType: hard
+
+"schema-dts@npm:^1.1.2":
+  version: 1.1.5
+  resolution: "schema-dts@npm:1.1.5"
+  checksum: afca7df65a9d714d4aee367f9ea0e8a5a6f62e212457f240c90ded1ab954499a0e0a21bad097ffc810f03e2ea384985b2c2e08c2eb1cf0ec1780fc15b8b16d3f
   languageName: node
   linkType: hard
 
@@ -14683,6 +14980,13 @@ __metadata:
     fdir: ^6.4.4
     picomatch: ^4.0.2
   checksum: 3a2e87a2518cb3616057b0aa58be4f17771ae78c6890556516ae1e631f8ce4cfee1ba1dcb62fcc54a64e2bdd6c3104f4f3d021e1a3e3f8fb0875bca380b913e5
+  languageName: node
+  linkType: hard
+
+"tinypool@npm:^1.0.2":
+  version: 1.1.0
+  resolution: "tinypool@npm:1.1.0"
+  checksum: fc7ed0174a31ed0325f55e69bde00ffbdf569321c87ac7a3e2398f63edd786c101cabbfce217e34437aa85548bda4eb69026b837cb29ecbb64e9d2c98fc840a6
   languageName: node
   linkType: hard
 
