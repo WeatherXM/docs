@@ -7840,7 +7840,7 @@ __metadata:
     "@tippyjs/react": ^4.2.6
     clsx: ^2.1.1
     cspell: ^9.1.5
-    dotenv: ^17.0.1
+    dotenv: ^17.2.0
     react: ^19.1.0
     react-dom: ^19.1.0
     rehype-katex: 7
@@ -7946,10 +7946,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^17.0.1":
-  version: 17.0.1
-  resolution: "dotenv@npm:17.0.1"
-  checksum: e8c0261ef103de9fcd33266c312425f30417b1ffa822d5e8091788574555bb75f4640ed194d174095085d6416a56b2f43b28dc4e4c60c99c6dc1a124a8b80348
+"dotenv@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "dotenv@npm:17.2.0"
+  checksum: 389d25dac7afeb1890bcd113c84d8d8175e95967559e90b8a6c8dc19bfc81ad3ede0036873c459cd8de1f90055a88232ddf74c550bcd2ea7a94b8d570f116470
   languageName: node
   linkType: hard
 
