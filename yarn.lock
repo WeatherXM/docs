@@ -7841,7 +7841,7 @@ __metadata:
     clsx: ^2.1.1
     cspell: ^9.2.0
     dotenv: ^17.2.1
-    react: ^19.1.0
+    react: ^19.1.1
     react-dom: ^19.1.1
     rehype-katex: 7
     remark-math: 6
@@ -13085,10 +13085,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^19.1.0":
-  version: 19.1.0
-  resolution: "react@npm:19.1.0"
-  checksum: c0905f8cfb878b0543a5522727e5ed79c67c8111dc16ceee135b7fe19dce77b2c1c19293513061a8934e721292bfc1517e0487e262d1906f306bdf95fa54d02f
+"react@npm:^19.1.1":
+  version: 19.1.1
+  resolution: "react@npm:19.1.1"
+  checksum: f2f18fea5deac87b1167365bd5160bcba64d383c26a37afa905b714ca424f423ef97d8daf53f041ab9ac25a06357fafcf0b5d3b6b84c9d1eace0e621bfeae629
   languageName: node
   linkType: hard
 
