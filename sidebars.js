@@ -103,6 +103,7 @@ module.exports = {
 	  },
     "tokenomics",
     "weatherxm-pro",
+    "weather-research",
     "glossary",
     "faq"
   ]
