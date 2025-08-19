@@ -1,0 +1,162 @@
+---
+id: obc-sqc-annotations
+title: Out-of-Bounds (OBC) and Self Quality Checks (SQC) - Annotations
+sidebar_label: Out-of-Bounds (OBC) and Self Quality Checks (SQC) - Annotations
+slug: /weather-and-science/quality-mechanisms/obc-sqc-annotations.mdx
+---
+
+# Out-of-Bounds (OBC) and Self Quality Checks (SQC) Annotations
+
+The QoD algorithm produces annotation codes associated with various weather parameters to provide a detailed description of a specific condition for each parameter. These codes serve as a standard format of communication between the various services that use them and they will be mapped to user-friendly messages on the clients.
+
+## Parameters under Investigation
+
+The following is a table of all parameters characterized by QoD.
+
+<p align="center"><b>Table – Parameters considered in the analysis</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Index</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Temperature</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Wind speed</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Wind direction</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Pressure</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Illuminance</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Accumulated precipitation</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+## Hourly Level Annotation
+
+<p align="center"><b>Table – List of annotations and their definitions</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Annotation</th>
+      <th>Annotation code</th>
+      <th>Derives from level</th>
+      <th>Applies to</th>
+      <th>Description</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OBC</td>
+      <td>OBC</td>
+      <td>Raw</td>
+      <td>All parameters</td>
+      <td>Values out of bounds, related to the sensor’s spec. Faulty sensor or firmware.</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Raw spikes</td>
+      <td>SPIKE_INST</td>
+      <td>Raw</td>
+      <td>All except precipitation and wind direction</td>
+      <td>Two consecutive values vary more than physically possible. Faulty sensor or bad deployment.</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>No median</td>
+      <td>NO_MEDIAN</td>
+      <td>Raw</td>
+      <td>All except precipitation and wind direction</td>
+      <td>Not enough data points to infer the median value of the aggregated time window. Connection issues (internet or Helium network). Useful also to identify the reason for spikes.</td>
+      <td>&lt;=1.0.2</td>
+    </tr>
+    <tr>
+      <td>Unidentified spikes</td>
+      <td>UNIDENTIFIED_SPIKE</td>
+      <td>Raw</td>
+      <td>All except precipitation and wind direction</td>
+      <td>Two consecutive values vary more than physically possible, but not enough data points to infer the median and identify which values are erroneous. Faulty sensor or bad deployment.</td>
+      <td>&gt;=1.0.4</td>
+    </tr>
+    <tr>
+      <td>N/A data</td>
+      <td>NO_DATA</td>
+      <td>Raw</td>
+      <td>All parameters</td>
+      <td>No data in the aggregated time window. Connection issues (internet or Helium network).</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Short Constant</td>
+      <td>SHORT_CONST</td>
+      <td>Raw</td>
+      <td>All except precipitation</td>
+      <td>Value not changed in the aggregated time window, shorter than the entire reference day (e.g. a few hours). Faulty sensor or bad deployment.</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Long Constant</td>
+      <td>LONG_CONST</td>
+      <td>Raw</td>
+      <td>All except humidity, illuminance, precipitation</td>
+      <td>Value not changed for 24 hours. Faulty sensor or bad deployment.</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Frozen Sensor</td>
+      <td>FROZEN_SENSOR</td>
+      <td>Raw</td>
+      <td>Wind speed and wind direction</td>
+      <td>Not measuring wind speed, wind direction is constant and temperature below zero. Frozen sensor.</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Minute Spikes</td>
+      <td>ANOMALOUS_INCREASE</td>
+      <td>Minute</td>
+      <td>All except precipitation and wind direction</td>
+      <td>Two consecutive minute averages vary more than physically possible. Bad deployment (possible) / Faulty Sensor (less possible).</td>
+      <td>1.0.0</td>
+    </tr>
+    <tr>
+      <td>Unidentified change</td>
+      <td>UNIDENTIFIED_ANOMALOUS_CHANGE</td>
+      <td>Minute</td>
+      <td>All except precipitation and wind direction</td>
+      <td>Two consecutive values vary more than physically possible, but not enough data points to infer the median and identify which values are erroneous. Bad deployment (possible) / Faulty Sensor (less possible).</td>
+      <td>&gt;=1.0.4</td>
+    </tr>
+  </tbody>
+</table>
+
+
+Note that there are two spike annotations. The one arises in raw level and the other in minute level. In order to distinguish between them, we refer to the raw spike annotation as SPIKE_INST and to the minute spike as ANOMALOUS_INCREASE. Thus, SPIKE_INST implies that there was an instant spike in one or more of the data packets that we received and is highly likely to be due to faulty sensor and less (but still) likely to be due to bad deployment. On the other hand, ANOMALOUS_INCREASE implies that there was suspicious change when comparing consecutive minute averages. This could be possibly due to bad deployment (e.g., gradual increase in temperature due to a chimney that started working), but we cannot exclude the case of faulty sensor.
+UNIDENTIFIED_SPIKE and UNIDENTIFIED_ANOMALOUS_CHANGE label all values that appear suspicious for spikes or dips, in contrast to "SPIKE_INST" and "ANOMALOUS_INCREASE" annotations, which exclusively label the spike or dip value itself. This implies that the user will receive a different Quality of Data (QoD) score if either of the first two annotations is activated, compared to the two latter annotations.
