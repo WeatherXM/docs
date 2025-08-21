@@ -37,7 +37,7 @@ The checks performed are:
 - **Check for suspicious spikes** over short time intervals, which may occur either due to poor station placement or because of a faulty sensor. For example, a temperature change &gt;3°C within 1 minute is considered unrealistic. If the station’s sampling interval is greater than 1 minute, the respective threshold is increased linearly, provided that the sampling rate remains below 10 minutes.
 - **Check for gaps in the data**. Each station model, according to its specifications, is capable of sending data packets at a specific time interval. If the number of packets received on an hourly basis is lower than the threshold set by the specifications, this indicates a problem in data transmission (e.g., poor 4G/Wi-Fi/Helium signal).
 
-Similar checks (for stagnation and spikes), but with different time windows (based on WMO –[Guide to the Global Observing System (WMO-No. 488), pg.200](https://library.wmo.int/viewer/35699/?offset=#page=214&viewer=picture&o=search&n=0&q=suspicious)– guidelines as well as our [own data analysis](/weather-and-science/r&d/constancy-analysis-report.mdx)), are carried out for all parameters (see [full documentation](/weather-and-science/quality-mechanisms/obc-sqc-documentation.mdx)).
+Similar checks (for stagnation and spikes), but with different time windows (based on WMO –[Guide to the Global Observing System (WMO-No. 488), pg.200](https://library.wmo.int/viewer/35699/?offset=#page=214&viewer=picture&o=search&n=0&q=suspicious)– guidelines as well as our [own data analysis](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx)), are carried out for all parameters (see [full documentation](/weather-and-science/quality-mechanisms/obc-sqc-documentation.mdx)).
 
 Finally, the ratio of invalid to expected valid data is calculated on an hourly basis in order to determine the final score of successful meteorological observations.
 
@@ -69,7 +69,7 @@ Note that the short description is statistically derived, and the actual status 
 | INDOORS ALMOST FROZEN      | The station looks like indoors almost due to freezing conditions                  | NO              |
 | BAD DEPLOYMENT FROZEN      | The station looks like bad deployment due to freezing conditions                  | NO              |
 | PROBABLY DEPLOYMENT FROZEN | The station looks like probably bad deployment due to freezing conditions         | NO              |
-| UNKNOWN                    | Less than 40% of the expected data during the period of the day with solar irradiance >0.1 W/m² | NO |
+| UNKNOWN                    | Less than 40% of the expected data during the period of the day with solar irradiance >0.1 W m<sup>−2</sup> | NO |
 
 
 ## Station Photo Verification (SPV)

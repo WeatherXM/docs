@@ -28,7 +28,7 @@ The theoretical diurnal solar irradiance varies with the latitude, the day (of t
 
 | Constant Variable        | Value                                     |
 |--------------------------|-------------------------------------------|
-| Solar Constant (σ)       | 1367 W/m²                                |
+| Solar Constant (σ)       | 1367 W m<sup>−2</sup>                                |
 | Reflective Coefficient   | 0.2 (for ordinary ground or grass)       |
 
 The Julian day can be calculated using the datetime module in python and the following commands:
@@ -152,7 +152,7 @@ $$
 Eventually, the total radiation (**IC**) that hits the light sensor is considered to be the summation of **IBC** and **IDC**:
 
 $$
-IC = IBC + IDC \quad \text{(in W/m²)} \tag{14}
+IC = IBC + IDC \quad \text{(in W m<sup>−2</sup>)} \tag{14}
 $$
 
 In order to apply a more realistic approach that is closer to the observed solar radiation, we used monthly constants suggested by the *Nijegorodov Model* (Nijegorodov, 1996; Ahmad and Tiwari, 2011) (**Table 3**).
