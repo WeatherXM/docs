@@ -1,0 +1,206 @@
+---
+id: theoretical-solar-radiation
+title: Theoretical solar Irradiance
+sidebar_label: Theoretical Solar Irradiance
+slug: /weather-and-science/r&d/theoretical-solar-radiation
+---
+
+# Theoretical Solar Irradiance
+Dr. Stavros Keppas, 07/06/2023
+
+## Calculating the theoretical solar irradiance
+
+The theoretical diurnal solar irradiance varies with the latitude, the day (of the year) and the time during the day. It can be calculated through the calculations described below (Mikulović et al., 2015). This methodology has been developed in order to be applied on data of 1-minute temporal resolution. The input variables are displayed in Table 1, while the required for calculations constants are shown in Table 2.  
+
+**Table 1** - Input variables and their format/units
+
+| Variable      | Format and Units                                   |
+|---------------|---------------------------------------------------|
+| Latitude      | decimal in °, e.g., 40.52° (use 2 decimals)       |
+| Longitude     | decimal in °, e.g., 15.25° (use 2 decimals)       |
+| Date          | YYYY-MM-DD, e.g., 2022-08-01                      |
+| DT (Local Hour - GMT) | In hours                                 |
+| Local Hour    | Integer between 0-23                              |
+| Local Minute  | Integer between 0-59                              |
+| Julian Day    | e.g., 25/2 is the day 56                          |
+
+**Table 2** - Constants that are used in the calculations
+
+| Constant Variable        | Value                                     |
+|--------------------------|-------------------------------------------|
+| Solar Constant (σ)       | 1367 W m<sup>−2</sup>                                |
+| Reflective Coefficient   | 0.2 (for ordinary ground or grass)       |
+
+The Julian day can be calculated using the datetime module in python and the following commands:
+<div style={{ textAlign: "center" }}>
+```python
+fmt='%Y-%m-%d'
+sdtdate = datetime.strptime(date, fmt)
+sdtdate = sdtdate.timetuple()
+local_day = sdtdate.tm_yday
+```
+</div>
+Then, a series of calculations for the last 30-minutes in a 1-minute time interval to obtain the theoretical solar irradiance. Firstly, we calculate the **Sky Diffusion factor (SDF):**
+
+$$
+SDF = 0.095 + 0.04 \cdot \sin\left(\frac{360}{d_{totyear}} \cdot (d_{Julian} - 100) \cdot \frac{\pi}{180}\right) \tag{1}
+$$
+
+Where $d_{totyear}$ is the total number of days of the current year (365 for a typical year or 366 for a leap year) and $d_{Julian}$ the Julian day (see Table 1).
+
+Next, through the **Equation of Time (EoT)** we calculate the deviation between the solar time and the time shown by a typical clock:
+
+$$
+EoT = 9.87 \cdot \sin(2b) - 7.53 \cdot \cos(b) - 1.5 \cdot \sin(b) \tag{2}
+$$
+
+Where
+
+$$
+b = \frac{360}{d_{totyear} - 1} \cdot (d_{Julian} - 81) \cdot \frac{\pi}{180}
+$$
+
+The angle $\delta$ between the equator and the line drawn from the centre of the sun to the centre of the Earth can be obtained by the following equation:
+
+$$
+\delta = 23.45 \cdot \sin\!\left(\frac{360}{d_{totyear}} \cdot (d_{Julian} - 81) \cdot \frac{\pi}{180}\right) \tag{3}
+$$
+
+We also need to know the local time at which the sun is at the zenith (thus the local time of the solar noon) **SN**:
+
+$$
+SN = \frac{(12 \cdot 60) - 4 \cdot (Lon - LSTM) - EoT}{60} \tag{4}
+$$
+
+Where **Lon** is the longitude of the region and **LSTM** the local meridian calculated as:
+
+$$
+LSTM = 15 \cdot DT
+$$  
+
+(for **DT** and **EoT** see Table 1).
+
+Then, we calculate the angle that the Earth must or has rotated so the sun is directly above the meridian of the region:
+
+$$
+HRA = 15 \cdot (SN - LT) \tag{5}
+$$
+
+Where **LT** is the local time in decimal format, calculated as:
+
+$$
+LT = local\_hour + \frac{local\_minute}{60}
+$$
+
+Next, we can now calculate the altitude (**SA**) of the sun from the horizon:
+
+$$
+SA = \frac{180}{\pi} \cdot \arcsin\Big( 
+\cos\Big(\frac{Lat \cdot \pi}{180}\Big) \cdot \cos\Big(\frac{\delta \cdot \pi}{180}\Big) \cdot \cos\Big(\frac{HRA \cdot \pi}{180}\Big) 
++ \sin\Big(\frac{Lat \cdot \pi}{180}\Big) \cdot \sin\Big(\frac{\delta \cdot \pi}{180}\Big) 
+\Big) \tag{6}
+$$
+
+Where **Lat** is the latitude and **Lon** is the longitude of the region.
+
+The Extraterrestrial Solar Insolation (**IO**), which is the solar radiation that hits the top of the atmosphere, is given by:
+
+$$
+IO = \sigma \cdot \Big( 1 + 0.034 \cdot \cos\Big(\frac{360 \cdot d_{Julian}}{d_{totyear}} \cdot \frac{\pi}{180}\Big) \Big) \tag{7}
+$$
+
+Where **σ** is the solar constant (see Table 1).
+
+The Apparent Extraterrestrial Solar Insolation (**A**), then, is given by the following formula:
+
+$$
+A = 1160 + 75 \cdot \sin\Big( \frac{360}{d_{totyear}} (d_{Julian} - 275) \cdot \frac{\pi}{180} \Big) \tag{7}
+$$
+
+In order to simulate the average clarity of the atmosphere, we need to estimate its optical depth (**OD**):
+
+$$
+OD = 0.174 + 0.035 \cdot \sin\Big( \frac{360}{d_{totyear}} (d_{Julian} - 100) \cdot \frac{\pi}{180} \Big) \tag{8}
+$$
+
+However, we also need the **Air Mass Ratio (AMR)**, which is a measure indicating the distance that the solar ray travels within the atmosphere:
+
+$$
+AMR = \Bigg| \frac{1}{\sin\Big(\frac{SA \cdot \pi}{180}\Big)} \Bigg| \tag{9}
+$$
+
+We should also consider that the light sensor is a horizontally-aligned surface. In this case, the angle of incidence (**AoI**) is:
+
+$$
+AoI = \sin\Big(\frac{SA \cdot \pi}{180}\Big) \cdot \cos(0) \tag{10}
+$$
+
+Then, we are finally able to estimate the clear sky irradiance at Earth’s surface that hits a surface facing directly to the sun (**IB**), the irradiance that reaches the horizontally-aligned surface (**IBC**) and the irradiance reaching the surface after diffusion (**IDC**):
+
+$$
+IB = A \cdot e^{(-1) \cdot OD \cdot AMR} \quad \text{(If SA = 0, IB = 0)} \tag{11}
+$$
+
+$$
+IBC = IB \cdot AoI \tag{12}
+$$
+
+$$
+IDC = SDF \cdot IB \tag{13}
+$$
+
+Eventually, the total radiation (**IC**) that hits the light sensor is considered to be the summation of **IBC** and **IDC**:
+
+$$
+IC = IBC + IDC \quad \text{(in W m<sup>−2</sup>)} \tag{14}
+$$
+
+In order to apply a more realistic approach that is closer to the observed solar radiation, we used monthly constants suggested by the *Nijegorodov Model* (Nijegorodov, 1996; Ahmad and Tiwari, 2011) (**Table 3**).
+
+<div style={{ textAlign: "center" }}>
+
+**Table 3 - Monthly constants for correcting theoretical solar radiation as suggested by Nijegorodov (1996).**
+
+| Month | Jan  | Feb  | Mar  | Apr  | May  | Jun  | Jul  | Aug  | Sep  | Oct  | Nov  | Dec  |
+|:------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| **a** | 1163 | 1151 | 1142 | 1146 | 1152 | 1157 | 1158 | 1152 | 1150 | 1156 | 1167 | 1169 |
+| **b** | 0.177| 0.174| 0.170| 0.165| 0.162| 0.160| 0.159| 0.164| 0.167| 0.172| 0.174| 0.177 |
+| **c** | 0.114| 0.112| 0.110| 0.105| 0.101| 0.098| 0.100| 0.103| 0.107| 0.111| 0.113| 0.115 |
+
+</div>
+
+Then, cos(θ<sub>z</sub>) (θ<sub>z</sub> is the solar zenith angle) is given by:
+
+$$
+\cos(\theta_z) = \sin(\text{lat}) \cdot \sin(\delta) + \cos(\text{lat}) \cdot \cos(\delta) \cdot \cos(\text{HRA}) \tag{15}
+$$
+
+In order to avoid any weird values (when solar angle is around the sunrise or sunset time) in the latter calculations:
+
+$$
+\cos(\theta_z) = 0.1 \quad \text{when} \quad \cos(\theta_z) < 0.001
+$$
+
+Then, **IBC** is calculated from the following relationship instead of (12) (therefore (10) should not be used as well):
+
+$$
+IBC_{NM} = A \cdot \exp \left( \frac{-B}{\cos(\theta_z)} \right) \tag{16}
+$$
+
+Where *A* and *B* are given in **Table 3**.
+
+Next, **IDC** is corrected as:
+
+$$
+IDC_{NM} = C \cdot IDC \tag{17}
+$$
+
+Where *C* are given in **Table 3**.
+
+Finally, replacing (14), we use $IBC_{NM}$ and $IDC_{NM}$ in the following equation to calculate **IC**:
+
+$$
+IC = IBC_{NM} \cdot \cos(\theta_z) + IDC \tag{18}
+$$
+
+Note that $IC < 0$ should be replaced by $0 \, W/m^2$.

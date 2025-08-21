@@ -1,0 +1,44 @@
+---
+id: obc-sqc-score-calculation
+title: OBC and SQC Score Calculation
+sidebar_label: OBC and SQC Score Calculation
+slug: /weather-and-science/quality-mechanisms/obc-sqc-score-calculation.mdx
+---
+
+# Out-of-Bounds (OBC) and Self Quality Checks (SQC) Score Calculation
+
+QoD v1.0.0 includes three control processes:
+    a. OBC (Out-of-Bounds Check)
+    b. SQC (Self-Quality Check)
+
+The OBC and SQC processes produce hourly scores per weather station, which range between 0-1 depending on the availability of the clear (valid and available) data. Here, we describe the method of converting hourly scores per parameter to a daily score per weather station.
+
+The Out-of-Bounds (OBC) and Self-Quality Checks (SQC) are the two basic processes that run together to finally: 
+    a. annotate weather data in hourly level depending on their quality,
+    b. produce a unique daily score and annotations per weather station
+
+Internally, the OBC and SQC processes look into each of the 7 meteorological parameters (temperature, relative humidity, wind speed, wind direction, pressure, illuminance and precipitation). Precipitation passes only through the OBC process, as it needs more complex techniques to detect faults in such measurements.
+
+At the end of the OBC/SQC processes, considering that we always check a 24-hour period of data, each meteorological parameter comes with 24 hourly scores (S<sub>hourly</sub>), which arise from the availability of the clear (valid and available) data and range between 0-1.
+
+The way from S<sub>hourly</sub> per parameter to a total daily score (S<sub>total</sub>) per station is described in the following steps:
+
+
+Firstly, we calculate the **daily score per parameter** (S<sub>daily parameter</sub>):
+
+$$
+S_{\text{daily parameter}_{i}} = 1/24 \sum_{j=1}^{24} S_{\text{hourly}_{i,j}}
+$$
+
+Where:
+    i has range 1 to 7, as the number of the, under examination, meteorological parameters
+    j is the hour ranging between 1-24 (or 0-23)
+
+Finally, the **total daily score** (S<sub>total</sub>) is calculated as follows:
+
+$$
+S_{\text{total}} = \frac{1}{n} \sum_{i=\text{obc-sqc - 1}}^{n} S_{\text{daily parameter}_{i}}
+$$
+
+Where: 
+    n is the number of meteorological parameters (for now n=7)

@@ -1,0 +1,366 @@
+---
+id: obc-sqc-documentation
+title: Out-of-Bounds (OBC) and Self Quality Checks (SQC)
+sidebar_label: Out-of-Bounds (OBC) and Self Quality Checks (SQC)
+slug: /weather-and-science/quality-mechanisms/obc-sqc-documentation.mdx
+---
+
+# Obstacle Impact on Temperature and Wind
+
+Data quality serves as the mechanism used to differentiate between accurate and erroneous data recorded by a weather station. To achieve this, we employ a series of techniques and processes that scrutinise different aspects related to data quality.
+The current iteration of the Data Quality algorithm incorporates control checks to pinpoint instances where a sensor records values beyond the limits specified by the manufacturer, identifies unusual jumps, recognises constant values, or determines if there is insufficient data to compute an average.
+
+The processes included in the Data Quality mechanism v1 are divided into two categories:
+- Out-of-Bounds Check (OBC)
+- Self Quality Check (SQC)
+
+Data Quality v1 is able to process:
+- Time series with an interval &lt;30 seconds (High Temporal Resolution Time series - **HTRT**)
+- Time series with a time interval ≥1 minute (Low Temporal Resolution Time series - **LTRT**). We consider that the value provided on this time interval (e.g., 3 minutes) time interval is the outcome derived from the averaging of a sequence of internally recorded measurements.
+
+The **final output of the Data Quality mechanism** is an hourly **percentage** of valid/available data and the corresponding **text annotations per meteorological variable** (temperature, relative humidity, wind speed, wind direction, atmospheric pressure, illuminance and precipitation). However, there is a [post Data Quality score process](/weather-and-science/quality-mechanisms/obc-sqc-score-calculation.mdx) that aggregates all the annotations and scores into a daily output per station.
+
+Before moving forward to the description of the Data Quality mechanism, we should note that the input data has been standardised over time (resampling). Weather stations may transmit data at varying non-fixed time intervals. This implies that even if a station's specification indicates a recording frequency of 16 seconds, the actual interval can fluctuate, ranging from a few seconds to several minutes. To ensure that the quality control operates on a time-normalised dataset, a new timeframe is established with a fixed interval (determined by the theoretical recording frequency (fr) of the station model, such as 16’’ for the WG1000 - M5 model).
+
+## 1. Filling Ignoring period - Filling No-Data Slots
+
+To ensure the proper functioning of certain SQC processes, an ignoring time period is established (**Table 1**). In practice, all time slots within the ignoring period that lack data are filled with the most recent valid value. Subsequently, this newly filled time series is exclusively employed for scrutinising constant data and anomalous jumps at the raw scale level (see **section 3**).
+
+***Table 1** – Ignoring period for the available weather station models.*
+| Weather Station Model | Ignoring Period [seconds] |
+|:---------------------:|:-------------------------:|
+| WG1000 (M5)           | 60                        |
+| WS2000 (Helium)       | 180                       |
+
+## 2. Out-of-Bounds Check (OBC)
+
+OBC is a simple process aimed at identifying values for each parameter that exceed the limits set by the manufacturer. The OBC proves highly valuable in identifying sensors that might be experiencing technical malfunctions. OBC is a simple check for temperature, relative humidity, wind speed/direction, atmospheric pressure, illuminance and precipitation that stands alone.
+
+Particularly for the parameter of precipitation, OBC applies to the variable “accumulated precipitation”. As OBC for precipitation looks at the accumulated precipitation difference between two consecutive time steps, it should be applied over the filled time series produced in **section 1**. This allows for a discrimination of faulty precipitation rates, even under the lack of data for a predefined short period of time. The upper cut-off limit used for this process is time dependent, as its default unit is in mm/sec. Thus, this limit is adjusted depending on the recording frequency of the station model (e.g., from 0.254mm/sec to 4.064mm/16sec) and, eventually, the OBC is applied on the difference of the “accumulated precipitation”. In case of a no-data slot that has been filled (according to the process in **section 1**), the precipitation cut-off threshold is reduced to the corresponding time (e.g., for a data temporal resolution of 16’’, if time slots at 16’’, 32’’ and 48’’ have no data and have been filled with the value of the latest valid measurement at 00’’, and the next available measurement is at 64’’, the cut-off limit will gradually increase for each filled time step till the next valid datum, such as 4.064, 8.128, 12.192, 16.256mm).
+
+Currently, there are two sets of outdoor sensors (WS1000 and WS2000), each accompanied by its own respective specifications outlined in **Tables 2 and 3**.
+
+***Table 2** - Manufacturer’s limits for WS1000 (M5) sensors.*
+| Parameter                | Lower Limit | Upper Limit |
+|:------------------------:|:-----------:|:-----------:|
+| Temperature [°C]         | -40         | 60          |
+| Relative Humidity [%]    | 10          | 99          |
+| Wind Direction [°]       | 0           | 359         |
+| Wind Speed [m/s]         | 0           | 50          |
+| Atmospheric Pressure [mb]| 300         | 1100        |
+| Illuminance [Lux]        | 0           | 400000      |
+| Precipitation [mm]       | 0           | 0.254/sec   |
+
+***Table 3** - Manufacturer’s limits for WS2000 (Helium) sensors.*
+| Parameter                 | Lower Limit | Upper Limit |
+|:-------------------------:|:-----------:|:-----------:|
+| Temperature [°C]          | -40         | 80          |
+| Relative Humidity [%]     | 1           | 99          |
+| Wind Direction [°]        | 0           | 359         |
+| Wind Speed [m/s]          | 0           | 50          |
+| Atmospheric Pressure [mb] | 540         | 1100        |
+| Illuminance [Lux]         | 0           | 200000      |
+| Precipitation [mm]        | 0           | 0.254/sec   |
+
+
+## 3. Self Quality Check (SQC)
+
+SQC is a process that aims to detect anomalous behaviour of weather observations due to faulty sensors or not proper deployments using only the data of a single weather station itself. The thresholds, but also the assumptions that lead to the final result, are based on the ([WMO](https://library.wmo.int/viewer/35699/?offset=#page=214&viewer=picture&o=search&n=0&q=suspicious)) and ([European Commission](https://publications.jrc.ec.europa.eu/repository/handle/JRC128152)) general guidelines. However, our further data analysis based on data from the WeatherXM network results in corrected and less strict thresholds at some SQC checks.
+
+As there are weather stations that transmit data at various time intervals, ranging from a few seconds to several minutes, SQC should be capable of annotating data regardless of the temporal resolution of a data time series. However, it is important to highlight that temporal resolutions exceeding 1’ may not be suitable for achieving rigorous control checks.
+
+SQC consists of a series of controls per parameter (temperature, relative humidity, wind speed, wind direction, atmospheric pressure and illuminance) at different time scales, which differ for different temporal resolutions (HTRT, LTRT). Note that precipitation is excluded from SQC, as it requires a careful and more complex quality control.
+
+A HTRT passes through (**Table 4**):
+a. raw scale level control (every single of the raw data is checked for suspicious jumps, unavailable and constant data), 
+b. minute scale level control (1-minute averaged data are checked for suspicious jumps and unavailable data)
+c. hourly scale level control (final counting of invalid/unavailable hourly time slots)
+
+For LTRT, practically only the raw (which is now called inter-minute scale level) and the hourly scale levels are applied, as the minute averaging is not applicable  (**Table 5**).
+
+*Table 4 - All the control processes that extend across the three time scale levels for the case of a weather station that records data every 30 seconds or less (e.g., WG1000 (M5)).*
+| Control Process of HTRTs (&lt;30 sec) | Time Scale   | Control Check Type                          |
+|:---------------------------------:|:------------:|:-------------------------------------------:|
+| Raw Scale                          | &lt;30 sec      | Constant data detection <br/> Unavailable data detection |
+| Minute Scale                       | 1 minute     | Suspicious Jump Detection <br/> Unavailable data detection |
+| Hourly Scale                       | 1 hour       | Suspicious Jump Detection <br/> Counting of invalid hourly time slots |
+
+
+*Table 5 - All the control processes that extend across the two time scale levels for the case of a weather station that records data every 1 minute or more (e.g., WS2000 (Helium)).*
+| Control Process of LTRTs (≥1 min) | Time Scale        | Control Check Type                          |
+|:--------------------------------:|:-----------------:|:-------------------------------------------:|
+| Inter-Minute Scale                | ≥1 min            | Constant data detection <br/> Unavailable data detection |
+| Hourly Scale                      | 1 hour            | Suspicious Jump Detection <br/> Counting of invalid hourly time slots |
+
+There are three basic processes to check **Constancy**, **Availability** and **Fluctuation** of the data, these are **a. Constant data detection, b. Unavailable data detection and c. Suspicious jump detection**.
+
+### a.Constancy Checks
+The constant data detection process aims to identify whether a sensor is recording unchanging values due to technical disruptions or improper deployment. This process is applied to raw data to ensure that even insignificant alterations over a span of a few seconds are taken into account. According to WMO recommendations, the parameters of temperature, relative humidity, wind speed, wind direction and atmospheric pressure should not remain constant for more than 1 hour. However, our current approach employs a more flexible strategy, employing different thresholds according to our data analysis ([see the report](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx)).
+While constant data typically raises suspicion, there are certain cases that warrant exclusion. For instance, during foggy or fairly wet conditions, there is often a prolonged period of constant relative humidity/temperature/wind spanning hours, and thus, such cases are excluded from this process (**Table 6**  - Constancy Duration Threshold). Regarding wind speed, constant, but non-zero wind speed under freezing temperatures is considered as faulty (due to faulty sensor). Note that in the particular case of WS2000, constant annotations on wind speed measurements are removed if wind direction comes with no constant annotations (this applies to all types of constant annotations). Regarding illuminance, we establish a maximum threshold for constant illuminance when it is not equal to 0 lux. This is because it may remain at ≠0Lux for extended hours during the night, but it should not remain constant at a specific value for an extended period during the day.
+Finally, a second set of constancy checks is established to mainly identify faulty sensors (**Table 6** - Constancy Duration Max Threshold). Consequently, any time series under investigation is marked as erroneous when the data remain constant for 1440 minutes without any additional specific conditions. It is worth noting that relative humidity has been excluded from this criterion due to its potential to remain constant for longer durations (as explained in [the report](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx)). In addition, illuminance and pressure are also excluded since the initial set of criteria (with a 120-minute threshold) adequately addresses constancy checks for this parameter.
+
+<p align="center"><b>Table 6</b> - Duration thresholds for the constant data detection process.</p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Constancy Duration Threshold (minutes)</th>
+      <th>Constancy Duration Max Threshold (minutes)</th>
+      <th>Control Checks (annotated as faulty)</th>
+      <th>Exclusions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Temperature</td>
+      <td align="center">240</td>
+      <td align="center">1440</td>
+      <td>Constant values when RH<sub>median</sub> &lt; 95%<br/>Constant values when RH<sub>median</sub> ≥ 95%</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Relative Humidity</td>
+      <td align="center">360</td>
+      <td align="center">–</td>
+      <td>Constant values when RH<sub>median</sub> &lt; 95%<br/>Constant values when RH<sub>median</sub> ≥ 95%</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td align="center">360</td>
+      <td align="center">1440</td>
+      <td>
+        Constant wind speed = 0 m/s when T<sub>median</sub> &gt; 0°C<br/>
+        Constant values when T<sub>median</sub> &lt; 0°C (frozen)<br/>
+        Constant wind speed = 0 m/s when RH<sub>median</sub> &lt; 85%<br/>
+        Constant wind speed ≠ 0 m/s<br/>
+        Constant values when RH<sub>median</sub> ≥ 85%
+      </td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Wind Direction</td>
+      <td align="center">360</td>
+      <td align="center">1440</td>
+      <td>
+        Constant wind direction when T<sub>median</sub> &gt; 0°C<br/>
+        Constant wind direction when RH<sub>median</sub> &lt; 85%<br/>
+        Constant values when T<sub>median</sub> ≤ 0°C<br/>
+        Constant values when RH<sub>median</sub> ≥ 85%
+      </td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Atmospheric Pressure</td>
+      <td align="center">120</td>
+      <td align="center">–</td>
+      <td>Constant pressure regardless of the pressure value</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>Illuminance</td>
+      <td align="center">120</td>
+      <td align="center">–</td>
+      <td>Constant illuminance when ≠ 0 Lux<br/>Constant illuminance when = 0 Lux</td>
+      <td>–</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### b. Unavailable Data Detection
+
+Having already resampled the timeframe, we then check for no-data timeslots. We count the no-data time slots at both raw and minute scale levels. Note that in minute scale level, a no-data timeslot may arise due to lack of raw data within a certain minute or invalidity of data (e.g., see **section 3c**).
+
+In order to be able to produce 1-10min averages (as [WMO](https://library.wmo.int/viewer/35699/?offset=#page=213&viewer=picture&o=search&n=0&q=suspicious) recommends), one valid (which has passed all the previous control checks) data package per minute and one per 3 minutes is required for HTRTs and LTRTs respectively (**Table 7**). Note that in both cases a data package is the result of averaging measurements within that period of time (which coincides with the uplink rate of each weather station e.g., 16’’ and 3’ for WS1000 and WS2000).  However, in cases of weather stations at remote places with difficulties in connection and power, even a single data package per hour is still valuable (e.g., comparing with numerical model outputs) and should be scored by the Data Quality mechanism. Finally, no-data slots are counted in the Minute/Inter-Minute level (HTRTs/LTRTs) and the hourly result eventually contributes to the final Data Quality score.
+
+<p align="center"><b>Table 7 - Maximum and minimum expected (with no penalty) number of data packages per weather station type.</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center">Station Type</th>
+      <th align="center">Maximum No of Data Packages per Hour</th>
+      <th align="center">Minimum No of Data Packages with no Penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">WS1000</td>
+      <td align="center">225</td>
+      <td align="center">60 (1/minute)</td>
+    </tr>
+    <tr>
+      <td align="center">WS2000</td>
+      <td align="center">20</td>
+      <td align="center">18 (~1/3minutes)</td>
+    </tr>
+  </tbody>
+</table>
+
+To generate 1-10 minute averages, a valid data package is required for each minute (for HTRTs) and one every three minutes (for LTRTs). A data package, resulting from averaged measurements within the specified time period, aligns with the uplink rate of each weather station, such as 16’’ and 3’ for WS1000 and WS2000, respectively. It's important to note that, in instances where weather stations face challenges in connectivity and power (e.g., stations on mountain tops), even a single data package per hour holds value (e.g., for comparison with numerical model outputs) and should be assessed by the Data Quality mechanism. Additionally, no-data slots are considered at the Minute/Inter-Minute level (HTRTs/LTRTs), and the hourly outcome ultimately contributes to the final Data Quality score.
+
+### c. Suspicious Jump Detection
+
+Suspicious jump detection is employed to detect abrupt and unusual changes in a parameter occurring within a short period of time. Such changes are often attributed to technical disruptions, although in fewer instances, they may result from improper deployment. This process is applied along both raw and minute scale levels for HTRTs (**Table 8**), while it operates solely at the raw data scale for LTRTs (**Table 9**). The LTRTs’ thresholds are applied in a proportional way till the pre-defined upper limit (**Table 9**). For instance, if the temperature jump threshold for a 1-min interval is 3°C, it will be 9°C for a 3-min interval, but will never exceed the upper limit of 15°C. The upper limits are recommended by the European Commission for consecutive 1-hour averaged values. We highlight the lack of RH upper limit prompting us to make an arbitrary yet logical decision to set the value at 80%. In case of a faulty jump detection, an additional check is conducted to label the subsequent value as faulty if it equals the previously identified faulty value.
+
+To overcome the challenge of distinguishing a faulty value from two consecutive ones, we require a minimum of 67% of the data within the past 10-minute window to calculate the median for HTRTs (60-min window for LTRTs). Subsequently, we compare both the two consecutive values with the calculated median, eventually categorising the one with the largest absolute difference from the median as faulty. The same process applies on both raw and (inter-minute) scale levels. Note that if the median cannot be calculated, then no decision can be taken and the datum is annotated as not available.
+
+<p align="center"><b>Table 8 - Jump thresholds for the raw and minute scale levels for HTRTs. There are no jump thresholds for wind direction observations.</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center"> </th>
+      <th align="center">Temperature</th>
+      <th align="center">RH</th>
+      <th align="center">Wind Spd</th>
+      <th align="center">Wind Dir</th>
+      <th align="center">Pressure</th>
+      <th align="center">Illuminance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><b>Raw scale level jump threshold</b></td>
+      <td align="center">≤2°C</td>
+      <td align="center">≤5%</td>
+      <td align="center">≤20m/s</td>
+      <td align="center">-</td>
+      <td align="center">≤0.5mb</td>
+      <td align="center">≤97600Lux</td>
+    </tr>
+    <tr>
+      <td align="center"><b>Minute scale level jump threshold</b></td>
+      <td align="center">≤3°C</td>
+      <td align="center">≤10%</td>
+      <td align="center">≤10m/s</td>
+      <td align="center">-</td>
+      <td align="center">≤0.8mb</td>
+      <td align="center">≤97600Lux</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p align="center"><b>Table 9 - Jump thresholds for the raw and minute scale levels for LTRTs. There are no jump thresholds for wind direction observations.</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center"> </th>
+      <th align="center">Temperature</th>
+      <th align="center">RH</th>
+      <th align="center">Wind Speed</th>
+      <th align="center">Wind Dir</th>
+      <th align="center">Pressure</th>
+      <th align="center">Illuminance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><b>Inter-Minute scale level jump threshold</b></td>
+      <td align="center">≤3°C</td>
+      <td align="center">≤10%</td>
+      <td align="center">≤10m/s</td>
+      <td align="center">-</td>
+      <td align="center">≤0.8mb</td>
+      <td align="center">≤97600Lux</td>
+    </tr>
+    <tr>
+      <td align="center"><b>Upper Limit</b></td>
+      <td align="center">15°C</td>
+      <td align="center">80%</td>
+      <td align="center">15m/s</td>
+      <td align="center">-</td>
+      <td align="center">15mb</td>
+      <td align="center">146400Lux</td>
+    </tr>
+  </tbody>
+</table>
+
+### d. Interpreting the Annotations
+
+At both of the raw and (inter-) minute scale levels various text annotations are assigned to every single value for each of the 7 investigated meteorological variables (**Table 10**). At the hourly scale level, all the unique text annotations produced in the previous levels are gathered to provide information about all the detected faults within the hourly slot. 
+
+Detailed description of the derived annotations can be found here.
+
+<p align="center"><b>Table 10 - All the possible annotations derived from Data Quality v1 and reach the hourly/daily level.</b></p>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center">Annotation Code</th>
+      <th align="center">Derivation level</th>
+      <th align="center">Applies to</th>
+      <th align="center">Process</th>
+      <th align="center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">1<br/>OBC</td>
+      <td align="center">Raw</td>
+      <td align="center">All parameters</td>
+      <td align="center">OBC</td>
+      <td align="center">Value is out of manufacturer’s bounds</td>
+    </tr>
+    <tr>
+      <td align="center">2<br/>SPIKE_INST</td>
+      <td align="center">Raw</td>
+      <td align="center">All except precipitation and wind direction</td>
+      <td align="center">Suspicious Jump Detection</td>
+      <td align="center">Value represents a meteorologically unreasonable spike/dip</td>
+    </tr>
+    <tr>
+      <td align="center">3<br/>UNIDENTIFIED SPIKE</td>
+      <td align="center">Raw</td>
+      <td align="center">All except precipitation and wind direction</td>
+      <td align="center">Suspicious Jump Detection</td>
+      <td align="center">Group of consecutive values with large difference, but not enough data to identify the true spike</td>
+    </tr>
+    <tr>
+      <td align="center">4<br/>NO_DATA</td>
+      <td align="center">Raw</td>
+      <td align="center">All parameters</td>
+      <td align="center">Unavailable Data Detection</td>
+      <td align="center">No data received in the expected timeslot</td>
+    </tr>
+    <tr>
+      <td align="center">5<br/>SHORT_CONST</td>
+      <td align="center">Raw</td>
+      <td align="center">All except precipitation</td>
+      <td align="center">Constancy Checks</td>
+      <td align="center">Parameter remains constant for longer than expected</td>
+    </tr>
+    <tr>
+      <td align="center">6<br/>LONG_CONST</td>
+      <td align="center">Raw</td>
+      <td align="center">All except humidity, illuminance, precipitation</td>
+      <td align="center">Constancy Checks</td>
+      <td align="center">Parameter remains constant for longer than expected</td>
+    </tr>
+    <tr>
+      <td align="center">7<br/>FROZEN_SENSOR</td>
+      <td align="center">Raw</td>
+      <td align="center">Wind speed and wind direction</td>
+      <td align="center">Constancy Checks</td>
+      <td align="center">Parameter remains constant for longer than expected due to low temperatures</td>
+    </tr>
+    <tr>
+      <td align="center">8<br/>ANOMALOUS_INCREASE</td>
+      <td align="center">Minute</td>
+      <td align="center">All except precipitation and wind direction</td>
+      <td align="center">Suspicious Jump Detection</td>
+      <td align="center">Value represents a meteorologically unreasonable spike/dip</td>
+    </tr>
+    <tr>
+      <td align="center">9<br/>UNIDENTIFIED_ANOMALOUS_INCREASE</td>
+      <td align="center">Minute</td>
+      <td align="center">All except precipitation and wind direction</td>
+      <td align="center">Suspicious Jump Detection</td>
+      <td align="center">Group of consecutive values with large difference, but not enough data to identify the true spike</td>
+    </tr>
+  </tbody>
+</table>
