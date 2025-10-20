@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-rewards/data-quality" data-has-hydrated="false">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v3.9.1">
+<meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Data Quality | WeatherXM Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.weatherxm.com/rewards/data-quality"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Data Quality | WeatherXM Docs"><meta data-rh="true" name="description" content="Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future."><meta data-rh="true" property="og:description" content="Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future."><link data-rh="true" rel="icon" href="/img/favicon/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.weatherxm.com/rewards/data-quality"><link data-rh="true" rel="alternate" href="https://docs.weatherxm.com/rewards/data-quality" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.weatherxm.com/rewards/data-quality" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Quality","item":"https://docs.weatherxm.com/rewards/data-quality"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E38CY3JRM3"></script>
@@ -12,9 +12,9 @@
 
 <script>!function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2542811,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document)</script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4a05f89b.css">
-<script src="/assets/js/runtime~main.4d2d307a.js" defer="defer"></script>
-<script src="/assets/js/main.3646d890.js" defer="defer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.64f29ada.css">
+<script src="/assets/js/runtime~main.8ac2ab60.js" defer="defer"></script>
+<script src="/assets/js/main.34f84c49.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -33,51 +33,51 @@ achieve the best Data Quality score possible.</p>
 Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.</p>
 <p>This mechanism includes the following 3 control points and their respective checks:</p>
 <ol>
-<li>Self Check<!-- -->
+<li class="">Self Check<!-- -->
 <ul>
-<li>Out-of-Bounds Check (OBC) (Data Quality v1.0)</li>
-<li>Self Quality Check (SQC) (Data Quality v1.0)</li>
+<li class="">Out-of-Bounds Check (OBC) (Data Quality v1.0)</li>
+<li class="">Self Quality Check (SQC) (Data Quality v1.0)</li>
 </ul>
 </li>
-<li>Reference Check<!-- -->
+<li class="">Reference Check<!-- -->
 <ul>
-<li>Comparative Quality Control (CQC) (Data Quality v1.3)</li>
+<li class="">Comparative Quality Control (CQC) (Data Quality v1.3)</li>
 </ul>
 </li>
-<li>Deployment status<!-- -->
+<li class="">Deployment status<!-- -->
 <ul>
-<li>Indoor Station Detector (ISD) (Data Quality v1.1)</li>
-<li>Solar Obstacle Detector (SOD) (Data Quality v1.2)</li>
-<li>Wind Obstacle Detector (WOD) (TBD)</li>
+<li class="">Indoor Station Detector (ISD) (Data Quality v1.1)</li>
+<li class="">Solar Obstacle Detector (SOD) (Data Quality v1.2)</li>
+<li class="">Wind Obstacle Detector (WOD) (TBD)</li>
 </ul>
 </li>
 </ol>
 <p>The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.</p>
 <img src="/img/rewards/data-quality-components-categories.png">
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-self-check">1. Self Check<a href="#1-self-check" class="hash-link" aria-label="Direct link to 1. Self Check" title="Direct link to 1. Self Check" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-self-check">1. Self Check<a href="#1-self-check" class="hash-link" aria-label="Direct link to 1. Self Check" title="Direct link to 1. Self Check" translate="no">​</a></h2>
 <p>Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-out-of-bounds-check-obc">a. Out-of-Bounds Check (OBC)<a href="#a-out-of-bounds-check-obc" class="hash-link" aria-label="Direct link to a. Out-of-Bounds Check (OBC)" title="Direct link to a. Out-of-Bounds Check (OBC)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-out-of-bounds-check-obc">a. Out-of-Bounds Check (OBC)<a href="#a-out-of-bounds-check-obc" class="hash-link" aria-label="Direct link to a. Out-of-Bounds Check (OBC)" title="Direct link to a. Out-of-Bounds Check (OBC)" translate="no">​</a></h3>
 <p>OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
 As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="b-self-quality-check-sqc">b. Self Quality Check (SQC)<a href="#b-self-quality-check-sqc" class="hash-link" aria-label="Direct link to b. Self Quality Check (SQC)" title="Direct link to b. Self Quality Check (SQC)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-self-quality-check-sqc">b. Self Quality Check (SQC)<a href="#b-self-quality-check-sqc" class="hash-link" aria-label="Direct link to b. Self Quality Check (SQC)" title="Direct link to b. Self Quality Check (SQC)" translate="no">​</a></h3>
 <p>SQC is the process that identifies unexpected behaviour in the measured parameters, which could be attributed to a defective sensor or an improper station deployment.
 It should be noted that OBC is included in SQC as the first step of this process.
 The final result of this process is the annotation of the data in 3 levels:</p>
 <ul>
-<li>Raw (16’’ or else depending on weather station’s specs)</li>
-<li>Minute (1’ or 2’ depending on the parameter)</li>
-<li>Hourly (aiming to reward each of 24 slots of a day)</li>
+<li class="">Raw (16’’ or else depending on weather station’s specs)</li>
+<li class="">Minute (1’ or 2’ depending on the parameter)</li>
+<li class="">Hourly (aiming to reward each of 24 slots of a day)</li>
 </ul>
 <p>The following processes take place (excluding OBC):</p>
 <ul>
-<li>Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)</li>
-<li>Looking for time-slots with no data</li>
-<li>Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)</li>
-<li>Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes</li>
-<li>Calculating the percentage of valid data within a certain period (minute, hour)</li>
+<li class="">Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)</li>
+<li class="">Looking for time-slots with no data</li>
+<li class="">Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)</li>
+<li class="">Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes</li>
+<li class="">Calculating the percentage of valid data within a certain period (minute, hour)</li>
 </ul>
 <p>The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-reference-check">2. Reference Check<a href="#2-reference-check" class="hash-link" aria-label="Direct link to 2. Reference Check" title="Direct link to 2. Reference Check" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-reference-check">2. Reference Check<a href="#2-reference-check" class="hash-link" aria-label="Direct link to 2. Reference Check" title="Direct link to 2. Reference Check" translate="no">​</a></h2>
 <p>This part of Data Quality algorithm focuses on comparing the data of a weather station with:</p>
 <p>a. Another neighbouring reliable weather station of the WXM network<br>
 b. Another neighbouring reliable 3rd party weather station<br>
@@ -85,52 +85,52 @@ c. 3rd party post-processed modelled weather data (a process similar to data ass
 <p>The Reference Check may be able to detect abnormal behaviour of the parameters measured by a station.
 Such a control could give insight in the quality of both data and deployment
 (e.g., temperature diurnal cycle of a station agrees with a reference timeseries, temperature of a station is usually higher because it is close to a chimney etc).</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="comparative-quality-control-cqc">Comparative Quality Control (CQC)<a href="#comparative-quality-control-cqc" class="hash-link" aria-label="Direct link to Comparative Quality Control (CQC)" title="Direct link to Comparative Quality Control (CQC)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="comparative-quality-control-cqc">Comparative Quality Control (CQC)<a href="#comparative-quality-control-cqc" class="hash-link" aria-label="Direct link to Comparative Quality Control (CQC)" title="Direct link to Comparative Quality Control (CQC)" translate="no">​</a></h3>
 <p>In order to apply this control we deploy the Comparative Quality Control (CQC),
 which falls into an internal and external version depending on the type of data used for the analysis
 (internal -using data owned by WXM- and external -using 3rd party data-).
 Reference Check should run once per day together with Self Check.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-deployment-status">3. Deployment Status<a href="#3-deployment-status" class="hash-link" aria-label="Direct link to 3. Deployment Status" title="Direct link to 3. Deployment Status" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-deployment-status">3. Deployment Status<a href="#3-deployment-status" class="hash-link" aria-label="Direct link to 3. Deployment Status" title="Direct link to 3. Deployment Status" translate="no">​</a></h2>
 <p>The Deployment Status control can be used as an identifier of the obstacles around a weather station. As solar irradiance and wind are parameters that are fairly sensitive to obstacle interventions, two different processes have been designed to determine the quality of deployment:</p>
 <p>a. Indoor Station Detector (ISD)<br>
 b. Solar Obstacle Detector (SOD)<br>
 c. Wind Obstacle Detector (WOD)</p>
 <p>Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year.
 This means that the Deployment Status part of Data Quality algorithm can only be used to characterise the deployment of a weather station.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-indoors-station-detector-isd">a. Indoors Station Detector (ISD)<a href="#a-indoors-station-detector-isd" class="hash-link" aria-label="Direct link to a. Indoors Station Detector (ISD)" title="Direct link to a. Indoors Station Detector (ISD)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-indoors-station-detector-isd">a. Indoors Station Detector (ISD)<a href="#a-indoors-station-detector-isd" class="hash-link" aria-label="Direct link to a. Indoors Station Detector (ISD)" title="Direct link to a. Indoors Station Detector (ISD)" translate="no">​</a></h3>
 <p>The purpose of this mechanism is to identify all the stations located in a house or a box.
 This process requires solar irradiance, latitude, longitude and day of the year.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="b-solar-obstacle-detector-sod">b. Solar Obstacle Detector (SOD)<a href="#b-solar-obstacle-detector-sod" class="hash-link" aria-label="Direct link to b. Solar Obstacle Detector (SOD)" title="Direct link to b. Solar Obstacle Detector (SOD)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-solar-obstacle-detector-sod">b. Solar Obstacle Detector (SOD)<a href="#b-solar-obstacle-detector-sod" class="hash-link" aria-label="Direct link to b. Solar Obstacle Detector (SOD)" title="Direct link to b. Solar Obstacle Detector (SOD)" translate="no">​</a></h3>
 <p>This process examines the solar irradiance parameter comparing it with the theoretical solar irradiance expected for a given location and day of the year. Note that the theoretical solar irradiance is the total amount of solar irradiance that arrives at a horizontal surface on the Earth under clear sky conditions.
 Because of that, a long period of data is required for detecting a totally clear-sky day. This method:</p>
 <ul>
-<li>Detects a clear sky day</li>
-<li>Compares theoretical and observed solar irradiance on a clear-sky day</li>
-<li>Compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)</li>
+<li class="">Detects a clear sky day</li>
+<li class="">Compares theoretical and observed solar irradiance on a clear-sky day</li>
+<li class="">Compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)</li>
 </ul>
 <p>The limitations of this method are that:</p>
 <ul>
-<li>Only south horizon of a station can be examined for obstacles</li>
-<li>The solar angle is different from a season to another, thus different obstacles may be visible at different period of the year</li>
+<li class="">Only south horizon of a station can be examined for obstacles</li>
+<li class="">The solar angle is different from a season to another, thus different obstacles may be visible at different period of the year</li>
 </ul>
 <p>Despite of such limitations, it is still a useful method for detecting obstacles that may affect solar irradiance, but also the other parameters.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="c-wind-obstacle-detector-wod">c. Wind Obstacle Detector (WOD)<a href="#c-wind-obstacle-detector-wod" class="hash-link" aria-label="Direct link to c. Wind Obstacle Detector (WOD)" title="Direct link to c. Wind Obstacle Detector (WOD)" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-wind-obstacle-detector-wod">c. Wind Obstacle Detector (WOD)<a href="#c-wind-obstacle-detector-wod" class="hash-link" aria-label="Direct link to c. Wind Obstacle Detector (WOD)" title="Direct link to c. Wind Obstacle Detector (WOD)" translate="no">​</a></h3>
 <p>As wind is the most demanding (in terms of fulfilling the WMO deployment criteria) parameter, this method should be able to identify any significant obstacles around a weather station.</p>
 <p>The basic idea is that we collect measurements of significant wind (e.g., &gt;5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.</p>
 <p>This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-quality-threshold">Data Quality Threshold<a href="#data-quality-threshold" class="hash-link" aria-label="Direct link to Data Quality Threshold" title="Direct link to Data Quality Threshold" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-quality-threshold">Data Quality Threshold<a href="#data-quality-threshold" class="hash-link" aria-label="Direct link to Data Quality Threshold" title="Direct link to Data Quality Threshold" translate="no">​</a></h2>
 <p>Data_Quality_Threshold is a rational number in the range [0,1].
 This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-quality-components-outcome">Data Quality Components Outcome<a href="#data-quality-components-outcome" class="hash-link" aria-label="Direct link to Data Quality Components Outcome" title="Direct link to Data Quality Components Outcome" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-quality-components-outcome">Data Quality Components Outcome<a href="#data-quality-components-outcome" class="hash-link" aria-label="Direct link to Data Quality Components Outcome" title="Direct link to Data Quality Components Outcome" translate="no">​</a></h2>
 <blockquote>
 <img src="/img/rewards/data-quality-components-data-annotations.png" alt="The Data Quality Components">
 </blockquote>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Data Quality score is a rational number in the range [0,1]</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
 <ul>
-<li><a href="https://weatherxm.network/" target="_blank" rel="noopener noreferrer">WeatherXM Network</a></li>
-<li><a href="https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367" target="_blank" rel="noopener noreferrer">Data Quality Simplified - Medium article</a></li>
-<li><a href="https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub" target="_blank" rel="noopener noreferrer">Technical description of the process for Data Quality v1.0</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/WeatherXM/docs/blob/main/docs/rewards/data-quality.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/rewards/reward-mechanism"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Reward Mechanism</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/rewards/proof-of-location"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Proof of Location  (PoL)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-self-check" class="table-of-contents__link toc-highlight">1. Self Check</a><ul><li><a href="#a-out-of-bounds-check-obc" class="table-of-contents__link toc-highlight">a. Out-of-Bounds Check (OBC)</a></li><li><a href="#b-self-quality-check-sqc" class="table-of-contents__link toc-highlight">b. Self Quality Check (SQC)</a></li></ul></li><li><a href="#2-reference-check" class="table-of-contents__link toc-highlight">2. Reference Check</a><ul><li><a href="#comparative-quality-control-cqc" class="table-of-contents__link toc-highlight">Comparative Quality Control (CQC)</a></li></ul></li><li><a href="#3-deployment-status" class="table-of-contents__link toc-highlight">3. Deployment Status</a><ul><li><a href="#a-indoors-station-detector-isd" class="table-of-contents__link toc-highlight">a. Indoors Station Detector (ISD)</a></li><li><a href="#b-solar-obstacle-detector-sod" class="table-of-contents__link toc-highlight">b. Solar Obstacle Detector (SOD)</a></li><li><a href="#c-wind-obstacle-detector-wod" class="table-of-contents__link toc-highlight">c. Wind Obstacle Detector (WOD)</a></li></ul></li><li><a href="#data-quality-threshold" class="table-of-contents__link toc-highlight">Data Quality Threshold</a></li><li><a href="#data-quality-components-outcome" class="table-of-contents__link toc-highlight">Data Quality Components Outcome</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 WeatherXM</div></div></div></footer></div>
+<li class=""><a href="https://weatherxm.network/" target="_blank" rel="noopener noreferrer" class="">WeatherXM Network</a></li>
+<li class=""><a href="https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367" target="_blank" rel="noopener noreferrer" class="">Data Quality Simplified - Medium article</a></li>
+<li class=""><a href="https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub" target="_blank" rel="noopener noreferrer" class="">Technical description of the process for Data Quality v1.0</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/WeatherXM/docs/blob/main/docs/rewards/data-quality.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/rewards/reward-mechanism"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Reward Mechanism</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/rewards/proof-of-location"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Proof of Location  (PoL)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-self-check" class="table-of-contents__link toc-highlight">1. Self Check</a><ul><li><a href="#a-out-of-bounds-check-obc" class="table-of-contents__link toc-highlight">a. Out-of-Bounds Check (OBC)</a></li><li><a href="#b-self-quality-check-sqc" class="table-of-contents__link toc-highlight">b. Self Quality Check (SQC)</a></li></ul></li><li><a href="#2-reference-check" class="table-of-contents__link toc-highlight">2. Reference Check</a><ul><li><a href="#comparative-quality-control-cqc" class="table-of-contents__link toc-highlight">Comparative Quality Control (CQC)</a></li></ul></li><li><a href="#3-deployment-status" class="table-of-contents__link toc-highlight">3. Deployment Status</a><ul><li><a href="#a-indoors-station-detector-isd" class="table-of-contents__link toc-highlight">a. Indoors Station Detector (ISD)</a></li><li><a href="#b-solar-obstacle-detector-sod" class="table-of-contents__link toc-highlight">b. Solar Obstacle Detector (SOD)</a></li><li><a href="#c-wind-obstacle-detector-wod" class="table-of-contents__link toc-highlight">c. Wind Obstacle Detector (WOD)</a></li></ul></li><li><a href="#data-quality-threshold" class="table-of-contents__link toc-highlight">Data Quality Threshold</a></li><li><a href="#data-quality-components-outcome" class="table-of-contents__link toc-highlight">Data Quality Components Outcome</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 WeatherXM</div></div></div></footer></div>
 </body>
 </html>
