@@ -50,7 +50,7 @@ WeatherXM weather stations are not generic sensors. They are purpose-built devic
 
 All stations run custom WeatherXM firmware that is remotely updateable (FOTA updates). This allows continuous improvement of measurement techniques, calibration logic, and data processing without hardware replacement. The same update mechanism is also used to add new features over time, keeping deployed stations up to date and allowing improvements to be rolled out across the entire network in controlled way.
 
-Every data point produced by a station is cryptographically signed at the source. This signature proves that the data originated from a specific physical station and that it has not been altered in transit or storage. As a result users can verify authenticity rather than rely on trust assumptions.
+Every data point produced by a station is cryptographically signed at the source. Stations sample environmental data every 16–20 seconds (depending on the model), then aggregate these high-frequency readings inside the device into 1–3 minute data packets (depending on the configured mode) before signing and transmission. This signature proves that the data originated from a specific physical station and that it has not been altered in transit or storage. As a result, users can verify authenticity rather than rely on trust assumptions.
 
 Each station also includes a GPS receiver. The reported location is cryptographically signed and can be verified ensuring that both the measurements and their geographic location originate from the device. This prevents location spoofing and enforces the integrity of hyperlocal weather data across the network.
 
