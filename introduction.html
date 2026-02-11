@@ -13,7 +13,7 @@
 <script>!function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2542811,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document)</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.64f29ada.css">
-<script src="/assets/js/runtime~main.89219ae2.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.281065fb.js" defer="defer"></script>
 <script src="/assets/js/main.98f53392.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -42,7 +42,7 @@ More on <a class="" href="/rewards/reward-mechanism">Reward Mechanism</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="weather-stations">Weather stations<a href="#weather-stations" class="hash-link" aria-label="Direct link to Weather stations" title="Direct link to Weather stations" translate="no">​</a></h3>
 <p>WeatherXM weather stations are not generic sensors. They are purpose-built devices designed to operate as trusted, upgradeable data sources in a decentralised network.</p>
 <p>All stations run custom WeatherXM firmware that is remotely updateable (FOTA updates). This allows continuous improvement of measurement techniques, calibration logic, and data processing without hardware replacement. The same update mechanism is also used to add new features over time, keeping deployed stations up to date and allowing improvements to be rolled out across the entire network in controlled way.</p>
-<p>Every data point produced by a station is cryptographically signed at the source. This signature proves that the data originated from a specific physical station and that it has not been altered in transit or storage. As a result users can verify authenticity rather than rely on trust assumptions.</p>
+<p>Every data point produced by a station is cryptographically signed at the source. Stations sample environmental data every 16–20 seconds (depending on the model), then aggregate these high-frequency readings inside the device into 1–3 minute data packets (depending on the configured mode) before signing and transmission. This signature proves that the data originated from a specific physical station and that it has not been altered in transit or storage. As a result, users can verify authenticity rather than rely on trust assumptions.</p>
 <p>Each station also includes a GPS receiver. The reported location is cryptographically signed and can be verified ensuring that both the measurements and their geographic location originate from the device. This prevents location spoofing and enforces the integrity of hyperlocal weather data across the network.</p>
 <p>Together, remote upgradable firmware, on device cryptographic signing, and GPS backed location verification form the technical foundation that differentiates WeatherXM stations and enables a verifiable, high quality weather data economy.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-quality">Data Quality<a href="#data-quality" class="hash-link" aria-label="Direct link to Data Quality" title="Direct link to Data Quality" translate="no">​</a></h3>
