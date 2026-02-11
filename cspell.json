@@ -69,6 +69,8 @@
     "yday",
     "totyear",
     "LSTM",
-    "Bigg"
+    "Bigg",
+    "FOTA",
+    "updateable"
   ]
 }
