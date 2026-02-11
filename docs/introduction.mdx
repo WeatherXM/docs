@@ -9,8 +9,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 <div class="row">
   <div class="col col--8">
-      <h1></h1>
-      <h2 className="subtitle">WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.</h2>
+    <h1></h1>
+    <h2 className="subtitle">
+      WeatherXM creates an entirely new weather data economy that rewards people
+      who deploy and maintain weather stations.
+    </h2>
   </div>
 </div>
 
@@ -19,11 +22,12 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 </div>
 
 ## Introduction
-***Enter Weather 3.0***
+
+**_Enter Weather 3.0_**
 
 **WeatherXM** is a unique weather network that relies on the power of the community to deploy and maintain weather stations.
 By doing so, participants not only contribute to the network's growth but also get rewarded with the WXM token.
-The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6). 
+The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 
 WeatherXM has a vision to become the largest, most decentralised, and most distributed weather network in the world.
 You can stay updated on the current state of the network by checking out our [explorer](https://explorer.weatherxm.com).
@@ -31,6 +35,7 @@ You can stay updated on the current state of the network by checking out our [ex
 Some significant milestones we have achieved so far:
 
 ### Reward Mechanism
+
 Current [Reward Mechanism v2.0](/rewards/reward-mechanism) includes significant improvements over previous versions.
 Business Boost rewards have been added, with predefined criteria for fairness.
 A Merkle Tree structure has been implemented for transparent reward distribution.
@@ -39,29 +44,35 @@ The Merkle Tree structure facilitates a verifiable and transparent mechanism for
 These improvements aim to refine the Reward Mechanism, making it more inclusive, nuanced, and transparent to build trust among weather station owners participating in the network.
 More on [Reward Mechanism](/rewards/reward-mechanism).
 
-### Data Quality
-[Data Quality](/rewards/data-quality) is an algorithm that assesses the quality of weather data provided by a weather station. The score it generates shows how confident we can be in the quality of the data received. Our goal is to make sure that the data we receive is meaningful and usable, and the Data Quality  score helps us measure this metric. Ultimately, we want to encourage weather station owners to follow our guidelines so that they can consistently achieve the best possible Data Quality score.
+### Weather stations
 
-To achieve this, Data Quality Algorithm  relies on a range of techniques and processes designed to help us differentiate between expected and unexpected data behaviors.
+WeatherXM weather stations are not generic sensors. They are purpose-built devices designed to operate as trusted, upgradeable data sources in a decentralised network.
+
+All stations run custom WeatherXM firmware that is remotely updateable (FOTA updates). This allows continuous improvement of measurement techniques, calibration logic, and data processing without hardware replacement. The same update mechanism is also used to add new features over time, keeping deployed stations up to date and allowing improvements to be rolled out across the entire network in controlled way.
+
+Every data point produced by a station is cryptographically signed at the source. This signature proves that the data originated from a specific physical station and that it has not been altered in transit or storage. As a result users can verify authenticity rather than rely on trust assumptions.
+
+Each station also includes a GPS receiver. The reported location is cryptographically signed and can be verified ensuring that both the measurements and their geographic location originate from the device. This prevents location spoofing and enforces the integrity of hyperlocal weather data across the network.
+
+Together, remote upgradable firmware, on device cryptographic signing, and GPS backed location verification form the technical foundation that differentiates WeatherXM stations and enables a verifiable, high quality weather data economy.
+
+### Data Quality
+
+[Data Quality](/rewards/data-quality) is an algorithm that assesses the quality of weather data provided by a weather station. The score it generates shows how confident we can be in the quality of the data received. Our goal is to make sure that the data we receive is meaningful and usable, and the Data Quality score helps us measure this metric. Ultimately, we want to encourage weather station owners to follow our guidelines so that they can consistently achieve the best possible Data Quality score.
+
+To achieve this, Data Quality Algorithm relies on a range of techniques and processes designed to help us differentiate between expected and unexpected data behaviors.
 More on [Data Quality](/rewards/data-quality).
 
 ### WeatherXM Pro
+
 [WeatherXM Pro](/weatherxm-pro) is our premium service that provides enhanced access to hyperlocal weather data, advanced analytics,
 and integration-ready tools — designed for professionals, developers, and businesses that rely on accurate, location-specific forecasts and hyperlocal data.
 
 ### WeatherXM Devices
+
 Currently we use 4 main types of devices:
+
 - [WeatherXM M5 Bundle (WB1000)](/wxm-devices/m5/introduction) which is the WiFi version
 - [WeatherXM Helium Version (WS2000) ](/wxm-devices/helium/introduction) which is the Helium version
 - [WeatherXM D1 bundle (WB1200)](/wxm-devices/d1/introduction) which is the upgraded WiFi version
 - [WeatherXM Pulse bundle (WB3000)](/wxm-devices/pulse/introduction) which is the 4G/LTE version
-
-
-
-
-
-
-
-
-
-
