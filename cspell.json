@@ -71,6 +71,9 @@
     "LSTM",
     "Bigg",
     "FOTA",
-    "updateable"
+    "updateable",
+    "SADC",
+    "CRASA",
+    "Leste"
   ]
 }
