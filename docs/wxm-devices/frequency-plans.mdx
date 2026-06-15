@@ -14,7 +14,7 @@ country's regulations and use the appropriate frequency. You can find the respec
 regulatory body for each country in the list [here](https://en.wikipedia.org/wiki/List_of_telecommunications_regulatory_bodies#By_country).
 :::
 
-Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content/uploads/2020/11/RP_2-1.0.2.pdf)
+Source: [LoRaWAN Regional Parameters RP002-1.0.5](https://resources.lora-alliance.org/technical-specifications/rp002-1-0-5-lorawan-regional-parameters) (Published October 8, 2025). This document describes Regional Parameters worldwide, and the country cross-reference table is intended as a quick reference of unlicensed bands and suggested channel plans.
 
 ## A
 
@@ -115,7 +115,7 @@ Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content
 | Equatorial Guinea      | GQ           | EU868         | EU868              | ✓              |
 | Eritrea                | ER           | -             | <FreqExplanation/> | Not Supported  |
 | Estonia                | EE           | EU868         | EU868              | ✓              |
-| Eswatini (Swaziland)   | SZ           | -             | <FreqExplanation/> | Not Supported  |
+| Eswatini (Swaziland)   | SZ           | EU868*        | EU868              | ✓              |
 | Ethiopia               | ET           | -             | <FreqExplanation/> | Not Supported  |
 
 ## F
@@ -204,7 +204,7 @@ Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content
 | Laos             | LA           | AS923_1       | AS923              | ✓              |
 | Latvia           | LV           | EU868         | EU868              | ✓              |
 | Lebanon          | LB           | EU868         | EU868              | ✓              |
-| Lesotho          | LS           | EU433         | <FreqExplanation/> | Not Supported  |
+| Lesotho          | LS           | EU868*        | EU868              | ✓              |
 | Liberia          | LR           | -             | <FreqExplanation/> | Not Supported  |
 | Libya            | LY           | AS923_3       | US915              | ✓             |
 | Liechtenstein    | LI           | EU868         | EU868              | ✓              |
@@ -218,7 +218,7 @@ Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content
 | Macau              | MO           | AS923_1       | AS923              | ✓              |
 | North Macedonia    | MK           | EU868         | EU868              | ✓              |
 | Madagascar         | MG           | EU868         | EU868              | ✓              |
-| Malawi             | MW           | -             | <FreqExplanation/> | Not Supported  |
+| Malawi             | MW           | EU868*        | EU868              | ✓              |
 | Malaysia           | MY           | AS923_1       | AS923              | ✓              |
 | Maldives           | MV           | EU868         | EU868              | ✓              |
 | Mali               | ML           | EU433         | <FreqExplanation/> | Not Supported  |
@@ -236,7 +236,7 @@ Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content
 | Montenegro         | ME           | EU868         | EU868              | ✓              |
 | Montserrat         | MS           | AU915_SB1     | US915 and AS923    | ✓              |
 | Morocco            | MA           | EU868         | EU868              | ✓              |
-| Mozambique         | MZ           | -             | <FreqExplanation/> | Not Supported  |
+| Mozambique         | MZ           | EU868*        | EU868              | ✓              |
 | Myanmar            | MM           | AS923_1       | AS923              | ✓              |
 
 ## N
@@ -398,6 +398,7 @@ Source: [LoRa-Alliance Regional Parameters](https://lora-alliance.org/wp-content
 | Zambia   | ZM           | EU868         | EU868       | ✓     |
 | Zimbabwe | ZW           | EU868         | EU868       | ✓     |
 
+\* **Note for Eswatini, Lesotho, Malawi, and Mozambique:** TTN/CRASA references point toward EU863-870/EU433 for several SADC/CRASA countries, but the LoRaWAN regional parameters RP002-1.0.5 leave some of these blank or less explicit. We suggest using **EU868** for these countries, but recommend verifying with your local telecommunications regulatory body.
 
 :::info
 Updated March 2025.
