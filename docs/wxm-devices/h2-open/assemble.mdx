@@ -1,0 +1,50 @@
+---
+title: Assembling WeatherXM H2 Open Edition (WS2001)
+sidebar_label: Assembly
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+Setting up the weather station is a process of several steps in order to ensure the sensor array operates reliably and measures weather conditions as accurately as possible.
+
+## Prerequisites for proper assembly
+
+1. Screwdriver (not included)
+2. Metal wrench (not included)
+3. 3× AA 1.5V batteries (internal) or 6× AA batteries (external battery pack). **Non-rechargeable** (not included).
+
+:::danger 
+Do not use rechargeable batteries. They can damage the power circuitry.
+:::
+
+:::warning
+Using old and new batteries together, especially low-quality or used ones, increases fire risk. For safety, use high-quality batteries of the same age and type. Lithium batteries are strongly recommended for deployments experiencing sub-zero temperatures.
+::: 
+
+## Step by step instructions
+
+### 1. Battery Installation
+
+#### Built-in Battery Compartment
+- Unscrew the battery compartment door at the bottom of the H2 weather station.
+- Insert 3× AA batteries according to the marked `+/-` polarity.
+- Seal the door securely to maintain the IPX6 weatherproof rating.
+
+#### External Battery Pack (if used)
+<div class="control">
+    <img src={useBaseUrl("/img/wxm-devices/helium/external-battery-box.svg")} alt="External battery box diagram" />
+</div>
+
+- **Step 1:** Slide the battery box lock switch to the unlock position. Push to open the battery box door according to the arrow direction.
+- **Step 2:** Insert 6× AA batteries according to the `+/-` polarity indicated.
+- **Step 3:** Place and lock the battery box door.
+- **Step 4:** Connect the waterproof cable to the station base.
+
+### 2. Inspect Power LED
+Once the batteries are inserted, observe the red LED indicator on the underside of the sensor array. It will flash to indicate that the microcontroller is powered on and booting.
+
+### 3. Attach Rain Funnel
+Align the rain gauge funnel over the measuring mechanism on top of the sensor body. Rotate the funnel clockwise until it firmly clicks into the locked position.
+
+### 4. Adjust Solar Panel
+Loosen the hinge screw on the solar collector bracket. Angle the collector toward the equator (facing South in the Northern Hemisphere, North in the Southern Hemisphere) at an angle roughly equal to your site's latitude, then retighten the screw.

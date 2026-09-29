@@ -37,6 +37,19 @@ module.exports = {
         },
         {
           type: "category",
+          label: "H2 Open Edition (WS2001)",
+          items: [
+            "wxm-devices/h2-open/introduction",
+            "wxm-devices/h2-open/contents",
+            "wxm-devices/h2-open/assemble",
+            "wxm-devices/h2-open/install-weather-station",
+            "wxm-devices/h2-open/maintenance",
+            "wxm-devices/h2-open/troubleshooting"
+          ],
+          collapsed: true
+        },
+        {
+          type: "category",
           label: "D1 (WB1200)",
           items: [
             "wxm-devices/d1/introduction",

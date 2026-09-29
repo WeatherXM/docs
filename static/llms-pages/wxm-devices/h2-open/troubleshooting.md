@@ -1,0 +1,76 @@
+# Troubleshooting WeatherXM H2 Open Edition (WS2001)
+
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/troubleshooting
+
+This guide covers common troubleshooting scenarios when deploying and registering the WeatherXM H2 Open Edition weather station on The Things Network, ChirpStack, or private LoRaWAN gateways.
+
+---
+
+### 1. Station Does Not Power On / LED Does Not Flash
+
+When batteries are first installed, the red LED indicator on the underside of the sensor array should flash briefly.
+
+- **Check Battery Polarity:** Ensure all 3× AA batteries (or 6× AA in the external pack) are aligned correctly matching the `+/-` markings.
+- **Check Battery Voltage:** Ensure you are using fresh, high-quality 1.5V non-rechargeable batteries (Lithium recommended).
+- **Inspect Contacts:** Check that battery springs and contacts are clean and dry.
+
+:::danger
+Never use rechargeable batteries (e.g. NiMH, Li-ion 3.7V). They can damage the power circuitry.
+:::
+
+---
+
+### 2. Device Fails to Join the LoRaWAN Network (OTAA Timeout)
+
+If your LoRaWAN Network Server (The Things Stack Console, ChirpStack) shows no Join Request or Join Accept:
+
+1. **Verify Gateway Coverage & Proximity:** Ensure there is an active LoRaWAN gateway in range. Check your gateway's live traffic log to verify whether uplink packets are being received.
+2. **Double-Check EUI and Keys:**
+   - **DevEUI:** Exactly 16 hexadecimal characters matching the device label.
+   - **AppEUI / JoinEUI:** Exactly 16 hexadecimal characters.
+   - **AppKey:** Exactly 32 hexadecimal characters. A single typo in the AppKey prevents cryptographic derivation of session keys during the OTAA handshake.
+3. **Verify Regional Frequency Plan:**
+   - **Europe:** EU863-870
+   - **North America:** US902-928 (FSB 2 for TTN)
+   - **Australia:** AU915-928 (FSB 2)
+4. **Trigger Manual Join:** Press the configuration / join button on the underside of the weather station once to trigger an immediate OTAA Join Request.
+
+---
+
+### 3. Web Bluetooth (BLE) Flasher Troubleshooting
+
+When connecting the sensor to [flasher.weatherxm.com](https://flasher.weatherxm.com) to verify firmware or adjust frequency plans:
+
+- **Browser Requirement:** Web Bluetooth requires a compatible browser such as Google Chrome, Microsoft Edge, or Chromium on desktop or Android.
+- **5-Minute Pairing Window:** For security and battery conservation, the station enables Bluetooth advertising for **5 minutes** after inserting batteries or pressing the configuration button. If connection fails, press the configuration button or power-cycle the device and retry scanning immediately.
+- **Pairing PIN:** When prompted by your operating system, enter the default pairing PIN: `000000`.
+
+---
+
+### 4. Telemetry Uplinks Arrive but Payload Is Not Decoded
+
+If your network server receives raw hex uplinks (e.g., `01 01 10 00 E4 02 01 ...`) on `FPort 1` but displays unparsed bytes:
+
+- Ensure you have pasted the custom JavaScript payload formatter into your application settings under **Payload formatters > Uplink**.
+- Refer to [Introduction & Setup Guide](/wxm-devices/h2-open/introduction#step-6-payload-formatter-decoder) for the complete, tested decoder script.
+
+---
+
+### 5. Inaccurate Wind Direction
+
+If wind direction measurements appear offset:
+
+- Ensure the **North (N)** arrow embossed on top of the sensor casing points precisely towards True North. Use a magnetic compass corrected for local magnetic declination, or a smartphone GPS compass app.
+
+---
+
+### 6. Rain Gauge Tipping Bucket False Triggers
+
+- **Pole Oscillation:** If wind causes high rainfall rates during dry windy conditions, ensure the mounting pole is securely braced and rigid. Mechanical swaying can oscillate the internal tipping spoon.
+- **Leveling:** Check that the spirit bubble level on top of the casing is perfectly centered.
+
+---
+
+## Community & Support
+
+Join fellow builders in the <Link to="https://weatherxm.com/discord">WeatherXM Discord Server</Link> or contact our team via [WeatherXM Support](https://support.weatherxm.com).

@@ -9,5 +9,5 @@ In this section you can find material that has resulted from internal research c
 ## Contents
 
 - [**Obstacle Impact on Temperature and Wind**](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx): Analysis of experimental data for the investigation of the effect of obstacles (such as walls) in close proximity around a station on temperature and wind parameters.
-- [**SQC - Constancy Analysis Report**](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx): Analysis of data from properly deployed WeatherXM stations distributed worldwide, with the aim of determining the conditions under which various parameters can remain constant for hours.
+- [**SQC - Constancy Analysis Report**](/weather-and-science/quality-mechanisms/constancy-analysis-report): Analysis of data from properly deployed WeatherXM stations distributed worldwide, with the aim of determining the conditions under which various parameters can remain constant for hours.
 - [**Theoretical Solar Irradiance**](/weather-and-science/r&d/theoretical-solar-radiation.mdx): The method used for calculating the theoretical solar irradiance for a given date of the year and location of the world.
