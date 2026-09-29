@@ -1,0 +1,55 @@
+# How to join Arbitrum and see your tokens
+
+Canonical: https://docs.weatherxm.com/rewards/how-to-join-arbitrum-and-see-your-tokens
+
+:::tip
+If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+:::
+
+## Add Arbitrum One Network to Metamask
+
+Adding Arbitrum One Network support to MetaMask is a mandatory step in order to add the WXM token, view activity, and make transactions.
+Make sure you follow our step-by-step guide below for adding the Arbitrum One Network to MetaMask.
+
+You can add Arbitrum One Network to MetaMask by following the instructions below:
+
+### Using Arbiscan
+
+:::note
+Please make sure you have already installed **[MetaMask](https://metamask.io/)**!
+
+**This solution works only on desktop with the MetaMask browser extension already installed.**
+:::
+
+Please follow the steps to add Arbitrum One Mainnet:
+
+- Navigate to [Arbiscan.io](https://arbiscan.io/)
+- Scroll down to the bottom of the page and click on the button `Add Arbitrum One Network`
+  ![Arbitrum One](image)
+
+- Once you click the button you will see a MetaMask notification, now click on **Approve**.
+You will be directed to Arbitrum's Mainnet in the network dropdown list. You can now close the dialog.
+  
+
+<hr/>
+
+## Add WXM token in MetaMask
+
+For the WXM token to appear in the wallet UI, you will need to add it manually.
+Note that your wallet can still receive tokens that haven’t been imported.
+
+:::note IMPORTANT NOTE
+Please make sure you have already added the **Arbitrum One** and have connected to it by following the guide above!
+:::
+
+1. First, you will need the following details of the WXM token in order to add it:
+    1. **Token Contract Address:** ``0xB6093B61544572Ab42A0E43AF08aBaFD41bf25A6``
+    1. **Token Symbol:** ``WXM``
+    1. **Token Decimal:** ``18``
+
+    You can verify those details on [Arbiscan](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
+1. On MetaMask and click **[Import tokens]**.
+1. Paste in the WXM’s contract address and MetaMask should automatically fill in the rest of the details. If not, add them manually. To finish, click **[Add Custom Token]**.
+1. Click **[Import Tokens]**.
+
+**You have now successfully added the WXM token to your MetaMask wallet!**

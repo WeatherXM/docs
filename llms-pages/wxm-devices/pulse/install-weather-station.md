@@ -1,0 +1,29 @@
+# Installing WS1001 Weather station
+
+Canonical: https://docs.weatherxm.com/wxm-devices/pulse/install-weather-station
+
+## Prerequisites for proper installation
+1. Pole of at least 2m/6.5ft (not included)
+1. Base or bolts to secure in place (not included)
+1. Location and spacing (<Link to="/wxm-devices/pulse/install-weather-station#best-practices-for-proper-station-installation">Best Practices for Proper Station Installation</Link>)
+
+:::caution
+It is imperative that you properly install your weather station. This will create the necessary conditions for quality weather data collection, which are required for the purpose of the WeatherXM network and the resulting rewards. Faulty installation, will result in less to none WXM rewards.
+:::
+
+<InstallationBestPracticesWS100x />
+
+<hr/>
+
+## Mounting the outdoor sensor
+
+  
+    If this is the first time that you set up this outdoor sensor,
+    then you should make sure that all parts work properly before mounting the sensor on the pole outdoors.<br />
+    When you are about to fasten the pole on which you have tightened the outdoor sensor, look at the bubble level.
+    After fastening the pole, the bubble should be fully inside the red circle.<br />
+    If it is not, wind direction, speed, and rain readings may not operate correctly or accurately.<br />
+    Adjust the mounting pole as necessary. If the bubble is close, but not quite inside the circle
+    and you cannot adjust the mounting pole, you may try small wooden or heavy cardboard shims between the outdoor sensor
+    and the top of the mounting pole to achieve the desired result (this will require loosening the bolts and some experimentation).<br />
+    Now, you may tighten the bolts with a wrench.

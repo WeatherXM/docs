@@ -1,0 +1,405 @@
+# Frequency Plans
+
+Canonical: https://docs.weatherxm.com/wxm-devices/frequency-plans
+
+In this page you can find a mapping table listing all ISM band frequency plans per country,
+as well as the corresponding frequency used by our products in these countries.
+
+:::tip
+If a country's ISM frequency is marked as "-" or it is not listed, you are advised to check with the
+country's regulations and use the appropriate frequency. You can find the respective
+regulatory body for each country in the list [here](https://en.wikipedia.org/wiki/List_of_telecommunications_regulatory_bodies#By_country).
+:::
+
+Source: [LoRaWAN Regional Parameters RP002-1.0.5](https://resources.lora-alliance.org/technical-specifications/rp002-1-0-5-lorawan-regional-parameters) (Published October 8, 2025). This document describes Regional Parameters worldwide, and the country cross-reference table is intended as a quick reference of unlicensed bands and suggested channel plans.
+
+## A
+
+| Country            | Country Code | ISM Frequency | D1/M5/Pulse version | H1/H2        |
+|--------------------|--------------|---------------|----------------|---------------|
+| Afghanistan        | AF           | -             | <FreqExplanation/> | Check Helium Explorer |
+| Aland Islands      | AX           | EU868         | EU868              | ✓             |
+| Albania            | AL           | EU868         | EU868              | ✓             |
+| Algeria            | DZ           | EU868         | EU868              | ✓             |
+| American Samoa     | AS           | US915         | US915              | ✓             |
+| Andorra            | AD           | EU868         | EU868              | ✓             |
+| Angola             | AO           | EU868         | EU868              | ✓             |
+| Anguilla           | AI           | AU915_SB1     | US915 and AS923    | ✓             |
+| Antarctica - Chilean | AQ         | -             | <FreqExplanation/> | Check Helium Explorer |
+| Antarctica - Australian | AQ      | -             | <FreqExplanation/> | Check Helium Explorer |
+| Antarctica - British | AQ         | -             | <FreqExplanation/> | Check Helium Explorer |
+| Antarctica - Argentine | AQ       | -             | <FreqExplanation/> | Check Helium Explorer |
+| Antigua and Barbuda | AG          | -             | <FreqExplanation/> | Check Helium Explorer |
+| Argentina          | AR           | AU915_SB1     | US915 and AS923    | ✓             |
+| Armenia            | AM           | EU868         | EU868              | ✓             |
+| Aruba              | AW           | -             | <FreqExplanation/> | Check Helium Explorer |
+| Australia          | AU           | AU915_SB2     | US915 and AS923    | ✓             |
+| Austria            | AT           | EU868         | EU868              | ✓             |
+| Azerbaijan         | AZ           | EU868         | EU868              | ✓             |
+
+## B
+
+| Country                        | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2         |
+|--------------------------------|--------------|---------------|--------------------|---------------|
+| Bahamas                        | BS           | US915         | US915              | ✓             |
+| Bahrain                        | BH           | EU868         | EU868              | ✓             |
+| Bangladesh                     | BD           | AS923_1       | AS923              | ✓             |
+| Barbados                       | BB           | AU915_SB1     | US915 and AS923    | ✓             |
+| Belarus                        | BY           | EU868         | EU868              | ✓             |
+| Belgium                        | BE           | EU868         | EU868              | ✓             |
+| Belize                         | BZ           | AU915_SB1     | US915 and AS923    | ✓             |
+| Benin                          | BJ           | EU868         | EU868              | ✓             |
+| Bermuda                        | BM           | US915         | US915              | ✓             |
+| Bhutan                         | BT           | EU868         | EU868              | ✓             |
+| Bolivia                        | BO           | AS923_1       | US915 and AS923    | ✓             |
+| Bonaire, Sint Eustatius & Saba | BQ           | EU868         | EU868              | ✓             |
+| Bosnia and Herzegovina         | BA           | EU868         | EU868              | ✓             |
+| Botswana                       | BW           | EU868         | EU868              | ✓             |
+| Bouvet Island                  | BV           | EU868         | EU868              | ✓             |
+| Brazil                         | BR           | AU915_SB2     | US915 and AS923    | ✓             |
+| British Indian Ocean Territory | IO           | -             | <FreqExplanation/> | Check Helium Explorer |
+| British Virgin Islands         | VG           | AU915_SB1     | US915 and AS923    | ✓             |
+| Brunei                         | BN           | AS923_1       | AS923              | ✓             |
+| Bulgaria                       | BG           | EU868         | EU868              | ✓             |
+| Burkina Faso                   | BF           | EU868         | EU868              | ✓             |
+| Burundi                        | BI           | EU868         | EU868              | ✓             |
+
+## C
+
+| Country                   | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|---------------------------|--------------|---------------|--------------------|----------------|
+| Cambodia                  | KH           | AS923_1       | AS923              | ✓              |
+| Cameroon                  | CM           | EU433         | <FreqExplanation/> | Check Helium Explorer  |
+| Canada                    | CA           | US915         | US915              | ✓              |
+| Cape Verde                | CV           | EU868         | EU868              | ✓              |
+| Cayman Islands            | KY           | US915         | US915              | ✓              |
+| Central African Republic  | CF           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Chad                      | TD           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Chile                     | CL           | AU915_SB1     | US915 and AS923    | ✓              |
+| China                     | CN           | CN470         | <FreqExplanation/> | ✓              |
+| Christmas Island          | CX           | AU915_SB2     | US915 and AS923    | ✓              |
+| Cocos (Keeling) Islands   | CC           | AU915_SB2     | US915 and AS923    | ✓              |
+| Colombia                  | CO           | AU915_SB1     | US915 and AS923    | ✓              |
+| Comoros                   | KM           | EU868         | EU868              | ✓              |
+| Congo (DRC)               | CD           | EU868         | EU868              | ✓              |
+| Congo (Republic)          | CG           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Cook Islands              | CK           | AS923_1       | US915 and AS923    | ✓              |
+| Costa Rica                | CR           | AS923_1       | AS923              | ✓              |
+| Côte d'Ivoire             | CI           | EU868         | EU868              | ✓              |
+| Croatia                   | HR           | EU868         | EU868              | ✓              |
+| Cuba                      | CU           | AS923_3       | US915              | ✓              |
+| Curaçao                   | CW           | AS923_1       | AS923              | ✓              |
+| Cyprus                    | CY           | EU868         | EU868              | ✓              |
+| Czech Republic            | CZ           | EU868         | EU868              | ✓              |
+
+## D
+
+| Country            | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2         |
+|--------------------|--------------|---------------|--------------------|---------------|
+| Denmark            | DK           | EU868         | EU868              | ✓             |
+| Djibouti           | DJ           | -             | <FreqExplanation/> | Check Helium Explorer |
+| Dominica           | DM           | AU915_SB1     | US915 and AS923    | ✓             |
+| Dominican Republic | DO           | AU915_SB1     | US915 and AS923    | ✓             |
+
+## E
+
+| Country                | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|------------------------|--------------|---------------|--------------------|----------------|
+| Ecuador                | EC           | AU915_SB1     | US915 and AS923    | ✓              |
+| Egypt                  | EG           | EU868         | EU868              | ✓              |
+| El Salvador            | SV           | AU915_SB1     | US915 and AS923    | ✓              |
+| Equatorial Guinea      | GQ           | EU868         | EU868              | ✓              |
+| Eritrea                | ER           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Estonia                | EE           | EU868         | EU868              | ✓              |
+| Eswatini (Swaziland)   | SZ           | EU868*        | EU868              | ✓              |
+| Ethiopia               | ET           | -             | <FreqExplanation/> | Check Helium Explorer  |
+
+## F
+
+| Country                    | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|----------------------------|--------------|---------------|--------------------|----------------|
+| Falkland Islands            | FK           | EU868         | EU868              | ✓              |
+| Faroe Islands               | FO           | EU868         | EU868              | ✓              |
+| Fiji                        | FJ           | EU868         | EU868              | ✓              |
+| Finland                     | FI           | EU868         | EU868              | ✓              |
+| France                      | FR           | EU868         | EU868              | ✓              |
+| French Guiana               | GF           | EU868         | EU868              | ✓              |
+| French Polynesia            | PF           | EU868         | EU868              | ✓              |
+| French Southern Territories | TF           | EU868         | EU868              | ✓              |
+
+## G
+
+| Country           | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|-------------------|--------------|---------------|--------------------|----------------|
+| Gabon             | GA           | EU868         | EU868              | ✓              |
+| Gambia            | GM           | EU433         | <FreqExplanation/> | Check Helium Explorer  |
+| Gaza Strip        | PS           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Georgia           | GE           | EU868         | EU868              | ✓              |
+| Germany           | DE           | EU868         | EU868              | ✓              |
+| Ghana             | GH           | EU868         | EU868              | ✓              |
+| Gibraltar         | GI           | EU868         | EU868              | ✓              |
+| Greece            | GR           | EU868         | EU868              | ✓              |
+| Greenland         | GL           | EU868         | EU868              | ✓              |
+| Grenada           | GD           | AU915_SB1     | US915 and AS923    | ✓              |
+| Guadeloupe        | GP           | EU868         | EU868              | ✓              |
+| Guam              | GU           | US915         | US915              | ✓              |
+| Guatemala         | GT           | AU915_SB1     | US915 and AS923    | ✓              |
+| Guernsey          | GG           | EU868         | EU868              | ✓              |
+| Guinea            | GN           | EU433         | <FreqExplanation/> | Check Helium Explorer  |
+| Guinea-Bissau     | GW           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Guyana            | GY           | US915         | US915              | ✓              |
+
+## H
+
+| Country                           | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|-----------------------------------|--------------|---------------|--------------------|----------------|
+| Haiti                             | HT           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Heard Island and McDonald Islands | HM           | AU915_SB2     | US915 and AS923    | ✓              |
+| Honduras                          | HN           | AU915_SB1     | US915 and AS923    | ✓              |
+| Hong Kong                         | HK           | AS923_1       | AS923               | ✓              |
+| Hungary                           | HU           | EU868         | EU868              | ✓              |
+
+## I
+
+| Country          | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2 |
+|------------------|--------------|---------------|--------------------|-------|
+| Iceland          | IS           | EU868         | EU868              | ✓     |
+| India            | IN           | IN865         | <FreqExplanation/> | ✓     |
+| Indonesia        | ID           | AS923_2       | AS923              | ✓     |
+| Iran             | IR           | EU868         | EU868              | ✓     |
+| Iraq             | IQ           | EU868         | EU868              | ✓     |
+| Ireland          | IE           | EU868         | EU868              | ✓     |
+| Isle of Man      | IM           | EU868         | EU868              | ✓     |
+| Israel           | IL           | AS923_4       | <FreqExplanation/> | ✓     |
+| Italy            | IT           | EU868         | EU868              | ✓     |
+
+## J
+
+| Country  | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2  |
+|----------|--------------|---------------|--------------------|--------|
+| Jamaica  | JM           | AU915_SB1     | US915 and AS923    | ✓      |
+| Japan    | JP           | AS923_1       | AS923              | ✓      |
+| Jersey   | JE           | EU868         | EU868              | ✓      |
+| Jordan   | JO           | EU868         | EU868              | ✓      |
+
+## K
+
+| Country    | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|------------|--------------|---------------|--------------------|----------------|
+| Kazakhstan | KZ           | IN865         | <FreqExplanation/> | ✓              |
+| Kenya      | KE           | EU868         | EU868              | ✓              |
+| Kiribati   | KI           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Kosovo     | XK           | EU868         | EU868              | ✓              |
+| Kuwait     | KW           | EU868         | EU868              | ✓              |
+| Kyrgyzstan | KG           | -             | <FreqExplanation/> | Check Helium Explorer  |
+
+## L
+
+| Country          | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|------------------|--------------|---------------|--------------------|----------------|
+| Laos             | LA           | AS923_1       | AS923              | ✓              |
+| Latvia           | LV           | EU868         | EU868              | ✓              |
+| Lebanon          | LB           | EU868         | EU868              | ✓              |
+| Lesotho          | LS           | EU868*        | EU868              | ✓              |
+| Liberia          | LR           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Libya            | LY           | AS923_3       | US915              | ✓             |
+| Liechtenstein    | LI           | EU868         | EU868              | ✓              |
+| Lithuania        | LT           | EU868         | EU868              | ✓              |
+| Luxembourg       | LU           | EU868         | EU868              | ✓              |
+
+## M
+
+| Country            | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2          |
+|--------------------|--------------|---------------|--------------------|----------------|
+| Macau              | MO           | AS923_1       | AS923              | ✓              |
+| North Macedonia    | MK           | EU868         | EU868              | ✓              |
+| Madagascar         | MG           | EU868         | EU868              | ✓              |
+| Malawi             | MW           | EU868*        | EU868              | ✓              |
+| Malaysia           | MY           | AS923_1       | AS923              | ✓              |
+| Maldives           | MV           | EU868         | EU868              | ✓              |
+| Mali               | ML           | EU433         | <FreqExplanation/> | Check Helium Explorer  |
+| Malta              | MT           | EU868         | EU868              | ✓              |
+| Marshall Islands   | MH           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Martinique         | MQ           | EU868         | EU868              | ✓              |
+| Mauritania         | MR           | EU868         | EU868              | ✓              |
+| Mauritius          | MU           | EU868         | EU868              | ✓              |
+| Mayotte            | YT           | EU868         | EU868              | ✓              |
+| Mexico             | MX           | US915         | US915              | ✓              |
+| Micronesia         | FM           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Moldova            | MD           | EU868         | EU868              | ✓              |
+| Monaco             | MC           | EU868         | EU868              | ✓              |
+| Mongolia           | MN           | -             | <FreqExplanation/> | Check Helium Explorer  |
+| Montenegro         | ME           | EU868         | EU868              | ✓              |
+| Montserrat         | MS           | AU915_SB1     | US915 and AS923    | ✓              |
+| Morocco            | MA           | EU868         | EU868              | ✓              |
+| Mozambique         | MZ           | EU868*        | EU868              | ✓              |
+| Myanmar            | MM           | AS923_1       | AS923              | ✓              |
+
+## N
+
+| Country                  | Country Code | ISM Frequency | D1/M5/Pulse version          | H1/H2          |
+|--------------------------|--------------|---------------|----------------------|----------------|
+| Namibia                  | NA           | EU868         | EU868                    | ✓              |
+| Nauru                    | NR           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Nepal                    | NP           | IN865         | <FreqExplanation/>   | ✓              |
+| Netherlands              | NL           | EU868         | EU868              | ✓              |
+| Netherlands Antilles     | AN           | EU868         | EU868              | ✓              |
+| New Caledonia            | NC           | EU868         | EU868              | ✓              |
+| New Zealand              | NZ           | AS923_1       | US915 and AS923      | ✓              |
+| Nicaragua                | NI           | AU915_SB1     | US915 and AS923      | ✓              |
+| Niger                    | NE           | IN865         | <FreqExplanation/>   | ✓              |
+| Nigeria                  | NG           | EU868         | EU868              | ✓              |
+| Niue                     | NU           | AS923_1       | US915 and AS923      | ✓              |
+| Norfolk Island           | NF           | AU915_SB2     | US915 and AS923      | ✓              |
+| North Korea              | KP           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Northern Mariana Islands | MP           | US915         | US915              | ✓              |
+| Norway                   | NO           | EU868         | EU868              | ✓              |
+
+## O
+
+| Country  | Country Code | ISM Frequency | D1/M5/Pulse version | H1/H2 |
+|----------|--------------|---------------|-------------|-------|
+| Oman     | OM           | EU868         | EU868     | ✓     |
+
+## P
+
+| Country                 | Country Code | ISM Frequency | D1/M5/Pulse version          | H1/H2          |
+|-------------------------|--------------|---------------|----------------------|----------------|
+| Pakistan                | PK           | AS923_1       | AS923                | ✓              |
+| Palau                   | PW           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Palestinian Territories | PS           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Panama                  | PA           | AU915_SB1     | US915 and AS923      | ✓              |
+| Papua New Guinea        | PG           | AS923_1       | US915 and AS923      | ✓              |
+| Paraguay                | PY           | AU915_SB1     | US915 and AS923      | ✓              |
+| Peru                    | PE           | AU915_SB1     | US915 and AS923      | ✓              |
+| Philippines             | PH           | AS923_3       | US915                | ✓              |
+| Pitcairn Islands        | PN           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Poland                  | PL           | EU868         | EU868                | ✓              |
+| Portugal                | PT           | EU868         | EU868                | ✓              |
+| Puerto Rico             | PR           | US915         | US915                | ✓              |
+
+## Q
+
+| Country | Country Code | ISM Frequency | D1/M5/Pulse version | H1/H2 |
+|---------|--------------|---------------|-------------|-------|
+| Qatar   | QA           | EU868         | EU868     | ✓     |
+
+## R
+
+| Country            | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2 |
+|--------------------|--------------|---------------|--------------------|-------|
+| Réunion            | RE           | EU868         | EU868              | ✓     |
+| Romania            | RO           | EU868         | EU868              | ✓     |
+| Russia             | RU           | RU864         | <FreqExplanation/> | ✓     |
+| Rwanda             | RW           | EU868         | EU868              | ✓     |
+
+## S
+
+| Country                                  | Country Code | ISM Frequency | D1/M5/Pulse version          | H1/H2          |
+|------------------------------------------|--------------|---------------|----------------------|----------------|
+| Sahrawi Arab Democratic Republic         | EH           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Saint Barthelemy                         | BL           | EU868         | EU868                    | ✓              |
+| Saint Helena                             | SH           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Saint Kitts and Nevis                    | KN           | AU915_SB1     | US915 and AS923      | ✓              |
+| Saint Lucia                              | LC           | AU915_SB1     | US915 and AS923      | ✓              |
+| Saint Martin                             | MF           | EU868         | EU868                | ✓              |
+| Saint Pierre and Miquelon                | PM           | EU868         | EU868                | ✓              |
+| Saint Vincent and the Grenadines         | VC           | AU915_SB1     | US915 and AS923      | ✓              |
+| Samoa                                    |              | EU868         | EU868                | ✓              |
+| San Marino                               | SM           | EU868         | EU868                | ✓              |
+| São Tomé and Príncipe                    | ST           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Saudi Arabia                             | SA           | EU868         | EU868                | ✓              |
+| Senegal                                  | SN           | EU868         | EU868                | ✓              |
+| Serbia                                   | RS           | EU868         | EU868                | ✓              |
+| Seychelles                               | SC           | EU433         | <FreqExplanation/>   | Check Helium Explorer  |
+| Sierra Leone                             | SL           | EU868         | EU868                | ✓              |
+| Singapore                                | SG           | AS923_1       | AS923                | ✓              |
+| Slovakia                                 | SK           | EU868         | EU868                | ✓              |
+| Slovenia                                 | SI           | EU868         | EU868                | ✓              |
+| Solomon Islands                          | SB           | AS923_1       | AS923                | ✓              |
+| Somalia                                  | SO           | EU868         | EU868                | ✓              |
+| South Africa                             | ZA           | EU868         | EU868                | ✓              |
+| South Georgia and the South Sandwich Islands | GS       | EU868         | EU868                | ✓              |
+| South Korea                              | KR           | KR920         | <FreqExplanation/>   | ✓              |
+| South Sudan                              | SS           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Spain                                    | ES           | EU868         | EU868                | ✓              |
+| Sri Lanka                                | LK           | AS923_1       | AS923                | ✓              |
+| Sudan                                    | SD           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Suriname                                 | SR           | AU915_SB1     | US915 and AS923      | ✓              |
+| Svalbard and Jan Mayen                   | SJ           | EU868         | EU868                | ✓              |
+| Sweden                                   | SE           | EU868         | EU868                | ✓              |
+| Switzerland                              | CH           | EU868         | EU868                | ✓              |
+| Syria                                    | SY           | EU868         | EU868                | ✓              |
+
+## T
+
+| Country                  | Country Code | ISM Frequency | D1/M5/Pulse version          | H1/H2          |
+|--------------------------|--------------|---------------|----------------------|----------------|
+| Taiwan                   | TW           | AS923_1       | AS923                | ✓              |
+| Tajikistan               | TJ           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Tanzania                 | TZ           | AS923_1       | AS923                | ✓              |
+| Thailand                 | TH           | AS923_1       | AS923                | ✓              |
+| Timor-Leste              | TL           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Togo                     | TG           | EU433         | <FreqExplanation/>   | Check Helium Explorer  |
+| Tokelau                  | TK           | AS923_1       | AS923                | ✓              |
+| Tonga                    | TO           | AU915_SB1     | US915 and AS923      | ✓              |
+| Trinidad and Tobago      | TT           | AU915_SB1     | US915 and AS923      | ✓              |
+| Tunisia                  | TN           | EU868         | EU868                | ✓              |
+| Turkey                   | TR           | EU868         | EU868                | ✓              |
+| Turkmenistan             | TM           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+| Turks and Caicos Islands | TC           | AU915_SB1     | US915 and AS923      | ✓              |
+| Tuvalu                   | TV           | -             | <FreqExplanation/>   | Check Helium Explorer  |
+
+## U
+
+| Country                     | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2         |
+|-----------------------------|--------------|---------------|--------------------|---------------|
+| U.S. Minor Outlying Islands | UM           | US915         | US915              | ✓             |
+| U.S. Virgin Islands         | VI           | US915         | US915              | ✓             |
+| Uganda                      | UG           | EU868         | EU868              | ✓             |
+| Ukraine                     | UA           | EU868         | EU868              | ✓             |
+| United Arab Emirates        | AE           | EU868         | EU868              | ✓             |
+| United Kingdom              | GB           | EU868         | EU868              | ✓             |
+| United States               | US           | US915         | US915              | ✓             |
+| Uruguay                     | UY           | AU915_SB1     | US915 and AS923    | ✓             |
+| Uzbekistan                  | UZ           | EU868         | EU868              | ✓             |
+
+## V
+
+| Country             | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2 |
+|---------------------|--------------|---------------|--------------------|-------|
+| Vanuatu             | VU           | AS923_3       | US915              | ✓     |
+| Vatican City        | VA           | EU868         | EU868              | ✓     |
+| Venezuela           | VE           | AS923_1       | AS923              | ✓     |
+| Vietnam             | VN           | AS923_2       | AS923              | ✓     |
+| Virgin Islands (UK) | VG           | AU915_SB1     | US915 and AS923    | ✓     |
+
+## W
+
+| Country           | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2         |
+|-------------------|--------------|---------------|--------------------|---------------|
+| Wallis and Futuna | WF           | EU868         | EU868              | ✓             |
+| Western Sahara    | EH           | -             | <FreqExplanation/> | Check Helium Explorer |
+
+## Y
+
+| Country    | Country Code | ISM Frequency | D1/M5/Pulse version        | H1/H2         |
+|------------|--------------|---------------|--------------------|---------------|
+| Yemen      | YE           | -             | <FreqExplanation/> | Check Helium Explorer |
+
+## Z
+
+| Country  | Country Code | ISM Frequency | D1/M5/Pulse version | H1/H2 |
+|----------|--------------|---------------|-------------|-------|
+| Zambia   | ZM           | EU868         | EU868       | ✓     |
+| Zimbabwe | ZW           | EU868         | EU868       | ✓     |
+
+\* **Note for Eswatini, Lesotho, Malawi, and Mozambique:** TTN/CRASA references point toward EU863-870/EU433 for several SADC/CRASA countries, but the LoRaWAN regional parameters RP002-1.0.5 leave some of these blank or less explicit. We suggest using **EU868** for these countries, but recommend verifying with your local telecommunications regulatory body.
+
+:::info
+Updated March 2025.
+:::
+
+:::note
+You can always contact us contact us through our [support](https://support.weatherxm.com) page for more information regarding devices without an exact frequency match to your country.
+:::

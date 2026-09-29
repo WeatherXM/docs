@@ -1,0 +1,28 @@
+# Proof of Location (PoL)
+
+Canonical: https://docs.weatherxm.com/rewards/proof-of-location
+
+The **Proof-of-Location** algorithm evaluates location data associated with the station, their accuracy, and consistency. It generates a score which is a confidence indicator about the station’s location. WeatherXM places great importance on station continuity, and discourage relocations.
+
+## Proof-of-Location (PoL) 
+PoL is a rational number in the range [0,1].
+A station’s PoL must be greater than or equal to <code>PoL_Threshold</code> to be considered for inclusion in WeatherXM's **Rewarding Mechanism**.
+PoL is a dynamic value, and is recalculated every time a station’s location is updated.
+
+### Calculation:
+Currently, PoL is calculated daily using Location Packets.
+- For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.
+- For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.
+
+## Relocation
+It is important for the Network that a station remains at the same location throughout its lifetime.
+When a weather station undergoes relocation, its Proof of Location score reduces to 0 for 7 days and its seniority is reset. 
+After 7 days, the station’s PoL is recalculated, and if it is greater than or equal to PoL_Threshold, the station is considered for inclusion in the [WeatherXM Network](https://weatherxm.network/).
+
+:::info
+Proof of Location penalty imposed to devices that went through a relocation is currently reduced to 2 days. This is a temporary measure and will be reverted back to 7 days.
+:::
+
+:::note
+PoL is a rational number in the range [0,1]
+:::

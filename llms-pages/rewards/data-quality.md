@@ -1,0 +1,125 @@
+# Data Quality
+
+Canonical: https://docs.weatherxm.com/rewards/data-quality
+
+:::info
+Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future.
+:::
+
+**Data Quality** is an algorithm that evaluates the quality of weather data provided by a weather station. 
+The calculated score indicates the confidence level in the quality of the weather data received from a station. 
+We need meaningful and usable data and the Data Quality score is an attempt to quantify this metric. 
+The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
+achieve the best Data Quality score possible.
+
+>![QoD current state](image)
+
+It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
+Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
+
+This mechanism includes the following 3 control points and their respective checks:
+1. Self Check
+    * Out-of-Bounds Check (OBC) (Data Quality v1.0)
+    * Self Quality Check (SQC) (Data Quality v1.0) 
+2. Reference Check
+    * Comparative Quality Control (CQC) (Data Quality v1.3)
+3. Deployment status 
+    * Indoor Station Detector (ISD) (Data Quality v1.1)
+    * Solar Obstacle Detector (SOD) (Data Quality v1.2)
+    * Wind Obstacle Detector (WOD) (TBD)
+
+The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
+
+## 1. Self Check
+Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
+
+### a. Out-of-Bounds Check (OBC)
+OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
+As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
+
+### b. Self Quality Check (SQC)
+SQC is the process that identifies unexpected behaviour in the measured parameters, which could be attributed to a defective sensor or an improper station deployment. 
+It should be noted that OBC is included in SQC as the first step of this process. 
+The final result of this process is the annotation of the data in 3 levels:
+
+- Raw (16’’ or else depending on weather station’s specs)
+- Minute (1’ or 2’ depending on the parameter)
+- Hourly (aiming to reward each of 24 slots of a day)
+
+The following processes take place (excluding OBC):
+
+- Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
+- Looking for time-slots with no data
+- Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
+- Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
+- Calculating the percentage of valid data within a certain period (minute, hour)
+
+The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
+
+## 2. Reference Check
+This part of Data Quality algorithm focuses on comparing the data of a weather station with:
+
+a. Another neighbouring reliable weather station of the WXM network<br></br>
+b. Another neighbouring reliable 3rd party weather station<br></br>
+c. 3rd party post-processed modelled weather data (a process similar to data assimilation)
+
+The Reference Check may be able to detect abnormal behaviour of the parameters measured by a station. 
+Such a control could give insight in the quality of both data and deployment 
+(e.g., temperature diurnal cycle of a station agrees with a reference timeseries, temperature of a station is usually higher because it is close to a chimney etc).
+
+### Comparative Quality Control (CQC)
+In order to apply this control we deploy the Comparative Quality Control (CQC), 
+which falls into an internal and external version depending on the type of data used for the analysis 
+(internal -using data owned by WXM- and external -using 3rd party data-). 
+Reference Check should run once per day together with Self Check.
+
+## 3. Deployment Status
+The Deployment Status control can be used as an identifier of the obstacles around a weather station. As solar irradiance and wind are parameters that are fairly sensitive to obstacle interventions, two different processes have been designed to determine the quality of deployment:
+
+a. Indoor Station Detector (ISD)<br></br>
+b. Solar Obstacle Detector (SOD)<br></br>
+c. Wind Obstacle Detector (WOD)
+
+Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
+This means that the Deployment Status part of Data Quality algorithm can only be used to characterise the deployment of a weather station.
+
+### a. Indoors Station Detector (ISD)
+The purpose of this mechanism is to identify all the stations located in a house or a box.
+This process requires solar irradiance, latitude, longitude and day of the year.
+
+### b. Solar Obstacle Detector (SOD)
+This process examines the solar irradiance parameter comparing it with the theoretical solar irradiance expected for a given location and day of the year. Note that the theoretical solar irradiance is the total amount of solar irradiance that arrives at a horizontal surface on the Earth under clear sky conditions. 
+Because of that, a long period of data is required for detecting a totally clear-sky day. This method:
+
+- Detects a clear sky day
+- Compares theoretical and observed solar irradiance on a clear-sky day
+- Compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)
+
+The limitations of this method are that:
+- Only south horizon of a station can be examined for obstacles
+- The solar angle is different from a season to another, thus different obstacles may be visible at different period of the year
+
+Despite of such limitations, it is still a useful method for detecting obstacles that may affect solar irradiance, but also the other parameters.
+
+### c. Wind Obstacle Detector (WOD)
+As wind is the most demanding (in terms of fulfilling the WMO deployment criteria) parameter, this method should be able to identify any significant obstacles around a weather station.
+
+The basic idea is that we collect measurements of significant wind (e.g., >5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.
+
+This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
+
+## Data Quality Threshold
+Data_Quality_Threshold is a rational number in the range [0,1]. 
+This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
+
+## Data Quality Components Outcome
+>![The Data Quality Components](image)
+
+:::note
+Data Quality score is a rational number in the range [0,1]
+:::  
+
+## References
+- [WeatherXM Network](https://weatherxm.network/)
+- [Data Quality Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
+- [Technical description of the process for Data Quality v1.0](https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub)
