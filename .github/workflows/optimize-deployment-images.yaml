@@ -1,0 +1,134 @@
+name: Optimize deployment example images
+
+on:
+  push:
+    branches:
+      - optimize-deployment-images
+    paths:
+      - ".github/workflows/optimize-deployment-images.yaml"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: optimize-deployment-images
+
+      - name: Install image tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick webp
+
+      - name: Convert deployment images to WebP
+        shell: bash
+        run: |
+          set -euo pipefail
+          dir="static/img/wxm-devices/deployments"
+          before=$(find "$dir" -maxdepth 1 -type f \( -name '*.jpg' -o -name '*.png' \) -printf '%s\n' | awk '{s+=$1} END {print s+0}')
+
+          find "$dir" -maxdepth 1 -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
+          while IFS= read -r -d '' f; do
+            out="${f%.*}.webp"
+            convert "$f" \
+              -auto-orient \
+              -resize '1600x1600>' \
+              -strip \
+              -quality 82 \
+              -define webp:method=6 \
+              "$out"
+            rm "$f"
+          done
+
+          after=$(find "$dir" -maxdepth 1 -type f -name '*.webp' -printf '%s\n' | awk '{s+=$1} END {print s+0}')
+          {
+            echo "### Deployment image optimization"
+            echo "- Before: $before bytes"
+            echo "- After: $after bytes"
+            if [ "$before" -gt 0 ]; then
+              awk -v b="$before" -v a="$after" 'BEGIN { printf "- Reduction: %.1f%%\n", (1-a/b)*100 }'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Update page image references and loading behavior
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import subprocess
+
+          page = Path("docs/wxm-devices/deployment-examples.mdx")
+          text = page.read_text()
+
+          pattern = re.compile(
+              r'<img(?:\s+[^>]*)?\s+src=\{useBaseUrl\("img/wxm-devices/deployments/([^"]+)\.(?:jpg|png)"\)\}\s*/>'
+          )
+
+          count = 0
+          def replace(match):
+              global count
+              stem = match.group(1)
+              image = Path("static/img/wxm-devices/deployments") / f"{stem}.webp"
+              dims = subprocess.check_output(
+                  ["identify", "-format", "%w %h", str(image)], text=True
+              ).strip().split()
+              width, height = dims
+              attrs = [
+                  'className="deployment-image"',
+                  f'width="{width}"',
+                  f'height="{height}"',
+                  f'src={{useBaseUrl("img/wxm-devices/deployments/{stem}.webp")}}',
+                  'decoding="async"',
+              ]
+              if count > 0:
+                  attrs.append('loading="lazy"')
+              count += 1
+              return "<img " + " ".join(attrs) + " />"
+
+          updated, replacements = pattern.subn(replace, text)
+          if replacements != 19:
+              raise SystemExit(f"Expected 19 deployment images, updated {replacements}")
+
+          page.write_text(updated)
+
+          css = Path("src/css/custom.css")
+          css_text = css.read_text()
+          block = """
+          
+          /* Keep deployment examples readable while reserving image aspect ratios. */
+          .deployment-image {
+            height: auto;
+            max-height: 640px;
+          }
+
+          @media only screen and (max-width: 996px) {
+            .deployment-image {
+              max-height: 70vh;
+            }
+          }
+          """
+          if ".deployment-image {" not in css_text:
+              css.write_text(css_text.rstrip() + block + "\n")
+          PY
+
+      - name: Verify generated assets
+        run: |
+          set -euo pipefail
+          test "$(find static/img/wxm-devices/deployments -maxdepth 1 -name '*.webp' | wc -l)" -eq 19
+          test "$(find static/img/wxm-devices/deployments -maxdepth 1 \( -name '*.jpg' -o -name '*.png' \) | wc -l)" -eq 0
+          grep -q 'loading="lazy"' docs/wxm-devices/deployment-examples.mdx
+          grep -q 'deployment-image' src/css/custom.css
+
+      - name: Remove one-shot workflow and commit optimized assets
+        run: |
+          set -euo pipefail
+          rm .github/workflows/optimize-deployment-images.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Optimize deployment example images"
+          git push origin HEAD:optimize-deployment-images
