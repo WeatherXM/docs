@@ -1,0 +1,80 @@
+# installation-best-practices-ws100x
+
+Canonical: https://docs.weatherxm.com/wxm-devices/installation-best-practices-ws100x
+
+## Best Practices for Proper Station Installation
+
+It is very important that your weather station collects quality measurements.
+This turns the weather station into a powerful tool for yourself and WeatherXM.
+
+The values of the various meteorological parameters measured by a weather station can significantly differ depending on the obstacles
+and the material of the surfaces existing around the sensors. For this reason, there is a series of criteria that should be fulfilled:
+
+:::info
+Not sure of your installation point? Check deployment examples [here](/wxm-devices/deployment-examples).
+:::
+
+### Pole's Height
+The pole’s height, on which the weather station will be mounted, should be at least 2m/6.5ft.
+This means that the weather station should be placed at least 2m/6.5ft above the ground and any other horizontal
+or almost horizontal surface (e.g., roof) above the station. The maximum acceptable pole height is 5m/16.5ft.
+
+  
+    
+    
+  
+
+<hr/>
+
+### Pole specifications
+
+  
+    The pole’s height, on which the weather station will be mounted, should be at least 2m/6.5ft.
+      This means that the weather station should be placed at least 2m/6.5ft above the ground and any other horizontal
+      or almost horizontal surface (e.g., roof) above the station. The maximum acceptable pole height is 5m/16.5ft.
+
+<hr/>
+
+### Tighten Pole
+The pole should be adequately tightened in order to prevent any pole oscillations in cases of strong winds.
+This will prevent the rain gauge spoon from swinging and collecting faulty precipitation measurements.
+
+  
+
+<hr/>
+
+### Installation Point
+
+The pole together with the weather station should be placed in an installation point, which:
+
+<h4>1. Is away from heat sources</h4>
+Is not affected by the air or smoke flowing out of any chimney or ventilation system
+(as an illustration, consider that wind of a certain direction may move warm smoke towards the station).
+An advisable distance from a heat source is >5 meters/16.4ft.
+
+<section class="control">
+  
+</section>
+
+<h4>2. Does not get in shadowed areas</h4>
+Is not shadowed by any obstacle during the day (consider that the sun is typically higher during summer and lower during winter affecting the shadow caused by an item).
+<section class="explanation horizontal">
+  
+    
+    
+  
+</section>
+
+<h4>3. Adequate Distance</h4>
+Has a distance from any obstacles around, which 2-4 times larger than the height of the highest obstacle
+(e.g., if the highest obstacle around the installation point is a 6m/20ft tree, ht=6m/20ft,
+and the pole of the outdoor sensor is 2m/6.5ft, hp=2m/6.5ft, then the pole should be placed at a distance (dp) of 8-16m/26-52.5ft,
+2 x (ht-hp) &#60; dp &#60; 4 x (ht-hp). In case the pole is placed on a building’s roof,
+then the building’s height should be added to the pole’s height).
+Note that in cases of obstacles with a height >8m/26ft, you should consider placing the outdoor sensor
+at a distance 30 times the width and 15 times the height of the obstacles around.
+
+:::note
+All of 1, 2 and 3 are important tips for measuring temperature and humidity as accurate as possible
+while 3. is important for avoiding faulty precipitation and wind measurements.
+:::

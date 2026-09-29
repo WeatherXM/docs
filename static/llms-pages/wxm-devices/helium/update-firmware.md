@@ -1,0 +1,62 @@
+# Update Firmware
+
+Canonical: https://docs.weatherxm.com/wxm-devices/helium/update-firmware
+
+### Prepare device for firmware update 
+
+:::info
+if you experience connection issues while claiming a WeatherXM helium device,  make sure you are near the station.
+:::
+
+  
+
+In order for your station to keep operating normally and receive WXM rewards, you must update the station.
+
+The process is done wirelessly via bluetooth and requires you to be at a distance of ~{'<'}10m/32ft from the station.
+
+This document describes the firmware update process using an Android smartphone, the process for iOS is similar.
+
+Push the reset button at the bottom of your WeatherXM device to enable bluetooth pairing.This will expire in 5 minutes. After that, you will need to push it again to restart the pairing process.
+
+:::note
+Your mobile phone must be paired to your weather station for the mobile app to be able to communicate with it. This procedure needs to take place only once. All further communications do not require any pairing as your weather station stays paired to your mobile phone as long as it was not factory reset or the pairing manually removed in your phone.
+:::
+
+:::caution
+Make sure you don't move away from your station as you might lose bluetooth connection.
+:::
+
+<hr/>
+
+### Installing update
+
+  
+  
+
+:::info
+if you experience connection issues while claiming a WeatherXM helium device,  make sure you are near the station.
+:::
+
+:::caution
+**Do not switch off the application!**
+
+Make sure you don't move away from your station as you might lose bluetooth connection.
+:::
+  
+
+<hr/>
+
+### Successful firmware update
+
+  
+  
+
+That's it! You've now claimed your new WeatherXM station and you'll be able to see its data on your WeatherXM app!
+
+All you need to do now, is to add your compatible wallet so you can receive WXM rewards. To do so, please follow the instructions in the chapter ["Add/edit wallet address"](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask).
+
+  
+
+:::caution
+Your first rewards will appear after 24 hours of the station being online.
+:::

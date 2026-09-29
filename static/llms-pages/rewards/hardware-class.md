@@ -1,0 +1,13 @@
+# Hardware Class
+
+Canonical: https://docs.weatherxm.com/rewards/hardware-class
+
+Hardware-Class Weight (HCW): HCW is a rational number > 0.
+
+Each type of approved hardware (weather station) belongs to a specific Hardware Class.
+Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
+increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network.
+
+:::note
+For the time being all Hardware Classes are considered equal.
+:::

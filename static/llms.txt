@@ -1,0 +1,42 @@
+# WeatherXM Documentation
+
+> Technical documentation for WeatherXM weather stations, deployment, data quality, rewards, WeatherXM Pro and weather science.
+
+## Canonical resources
+- Main WeatherXM site: https://weatherxm.com/
+- Weather station catalog: https://weatherxm.com/stations/
+- Data & forecasts: https://weatherxm.com/data/
+- Open technology: https://weatherxm.com/open/
+- Firmware flasher: https://flasher.weatherxm.com/
+- Network Association: https://weatherxm.network/
+- GitHub: https://github.com/WeatherXM
+
+## Key documentation
+- Homepage: https://docs.weatherxm.com/
+  - Markdown: https://docs.weatherxm.com/llms-pages/index.md
+- Help Center / FAQ: https://docs.weatherxm.com/faq
+  - Markdown: https://docs.weatherxm.com/llms-pages/faq.md
+- Glossary of Common Terms: https://docs.weatherxm.com/glossary
+  - Markdown: https://docs.weatherxm.com/llms-pages/glossary.md
+- Introduction: https://docs.weatherxm.com/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
+- Weather And Science: https://docs.weatherxm.com/weather-and-science
+  - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science.md
+- General QoD Description (OBC-SQC, ISD, SPV): https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
+  - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/general-qod-description.md
+- WeatherXM Pro: https://docs.weatherxm.com/weatherxm-pro
+  - Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md
+- Introduction of D1 bundle (WB1200): https://docs.weatherxm.com/wxm-devices/d1/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/introduction.md
+- Weather Station Deployment Examples: https://docs.weatherxm.com/wxm-devices/deployment-examples
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/deployment-examples.md
+- Introduction WeatherXM Helium station (WS2000): https://docs.weatherxm.com/wxm-devices/helium/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/helium/introduction.md
+- Introduction of Pulse bundle (WB3000): https://docs.weatherxm.com/wxm-devices/pulse/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/pulse/introduction.md
+
+## Full corpus
+- Combined text corpus: https://docs.weatherxm.com/llms-full.txt
+- Individual Markdown mirrors are under https://docs.weatherxm.com/llms-pages/
+
+Use the canonical HTML URL when citing a page. Use the Markdown mirror when a text-only representation is easier to process.

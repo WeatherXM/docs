@@ -10,7 +10,8 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "spellcheck": "cspell \"docs/**\" --show-suggestions",
-    "spellcheck-on-pr": "cspell --no-must-find-files --file-list stdin"
+    "spellcheck-on-pr": "cspell --no-must-find-files --file-list stdin",
+    "prebuild": "node scripts/generate-llms.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",

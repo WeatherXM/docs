@@ -1,0 +1,101 @@
+# Reward Boosts
+
+Canonical: https://docs.weatherxm.com/rewards/reward-boosts
+
+## Overview
+
+**Reward boosts** are additional rewards given to stations that contribute weather data during daily distribution, in addition to the [**base rewards**](/rewards/reward-mechanism#daily-rewards-calculation-process). Learn more about the daily rewards in the [Reward Mechanism (RM) ](/rewards/reward-mechanism) section.
+
+**Reward Boosts** reward stations with extra $WXM tokens for meeting specific criteria. 
+
+So far the following **Reward Boosts** are scheduled to be implemented:
+
+## Beta Rewards
+
+According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
+
+Beta rewards distribution will last 425 days.
+
+### Calculation
+
+The following calculations will take place for each station, the day before the Mainnet Launch:
+
+$$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
+A rewardable hour is an hour during which the station sent at least one valid weather data point.
+
+$$StationBetaRewards[i]$$: This is the percentage of the 3M tokens that correspond to the rewardable hours the station provided.
+$$
+StationBetaRewards[i] = \frac{3000000 \times \text{RewardableBetaHours}[i]}{\sum (\text{RewardableBetaHours of all stations})}
+$$
+
+$$DailyBetaRewards[i]$$: This is the beta rewards allocated daily to this station.
+$$
+DailyBetaRewards[i] = \frac{\text{StationBetaRewards}[i]}{365}
+$$
+
+## Beta Rewards Dilution - A fix
+
+Initially, the reward allocation formula caused dilution as the launch day was delayed, disadvantaging long-term station owners. 
+
+### Updated Beta Rewards Allocation 
+
+The updated approach involves calculating beta rewards twice: once at the end of February 2024 and again just at the end of the project's beta phase (May 27 2024).
+Each station will receive the higher reward of these two calculations, ensuring fairer distribution of rewards across both old and new stations.
+
+Read more about the Beta Rewards Dilution fix [here](https://blog.weatherxm.com/a-fix-for-beta-rewards-dilution-493f1a81a28d).
+
+### Beta Rewards Table (BRT)
+  
+The project's Beta period officially ended on May 27th (UTC). All station-hours accumulated up to this date are included in the final calculation and all stations are rewarded for participating in the Beta period with a daily Reward Boost.
+
+Download the BRT here: [CSV](https://weatherxm.network/wxm-brt-final.csv)
+
+:::info
+Each user who has a station eligible for beta rewards, must have a wallet defined to be part of the Beta Rewards allocation. Learn [how to add or edit a wallet address](/mobile-app/wallet/add-edit-wallet-address).
+:::
+
+:::note
+The Beta Rewards allocation is managed by the [WeatherXM Network](https://weatherxm.network).
+:::
+
+## Compensation Rewards
+
+Compensation Rewards are a special type of boost rewards which are meant to distribute tokens which were initially not allocated due to system and/or algorithm malfunctions.
+
+### Calculation Process
+
+For each day that an incident such as the above may have occurred, the correct network snapshot is reconstructed and the rewarding mechanism is re-ran in order to calculate
+each station's intended reward score and consequently rewardable tokens.
+
+### Incident History
+
+| Date | Number of stations affected | Tokens Distributed |
+|------|----------------------------|-------------------|
+| 2025-02-03 | 5110 | 12186.48 $WXM |
+| 2025-03-09 | 16 | 29.15 $WXM |
+| 2025-05-01 | 7470 | 3923.771 $WXM |
+
+## Cell Bounties
+
+Cell Bounties are special incentives that boost rewards for weather stations deployed in high-priority areas and are funded by consumers and partners.
+
+:::info
+Any currently open cell bounties may be viewed in [WeatherXM Explorer](https://explorer.weatherxm.com).
+:::
+
+Stations which are deployed at bounty cells within the announced participation period will be eligible to receive extra rewards. Each bounty defines a maximum number of stations
+which may share the rewards. Should the number of eligible bounty stations exceed the bounty capacity, a ranking based on [QoD scores](/weather-and-science/quality-mechanisms/general-qod-description) and seniority is used
+to distribute rewards fairly. **Stations must meet a minimum of 0.8 QoD score to receive rewards**.
+
+## Examples of reward programs that may be implemented using **Rewards Boost**, in the near future are:
+
+- Public Goods Funding, for devices that are deployed and contribute to the network in a humanitarian way, such as providing data in an underserved area or during a specific time. 
+- Devices that contribute to the network during a specific event, such as a natural disaster, may receive a boost in rewards.
+
+:::tip
+The **Reward boosts** is a mechanism that can be used to incentivise specific behavior from devices. It is a flexible mechanism that can be used to incentivise any behavior that is beneficial to the network.
+:::
+
+:::info
+All the above are **examples** of reward programs that may be implemented. 
+:::
