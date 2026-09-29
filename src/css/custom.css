@@ -467,3 +467,15 @@ details.alert.alert--info summary::before {
   }
 }
 
+/* Keep deployment examples readable while reserving image aspect ratios. */
+.deployment-image {
+  height: auto;
+  max-height: 640px;
+}
+
+@media only screen and (max-width: 996px) {
+  .deployment-image {
+    max-height: 70vh;
+  }
+}
+
