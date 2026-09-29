@@ -3399,7 +3399,7 @@ In this section you can find material that has resulted from internal research c
 ## Contents
 
 - [**Obstacle Impact on Temperature and Wind**](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx): Analysis of experimental data for the investigation of the effect of obstacles (such as walls) in close proximity around a station on temperature and wind parameters.
-- [**SQC - Constancy Analysis Report**](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx): Analysis of data from properly deployed WeatherXM stations distributed worldwide, with the aim of determining the conditions under which various parameters can remain constant for hours.
+- [**SQC - Constancy Analysis Report**](/weather-and-science/quality-mechanisms/constancy-analysis-report): Analysis of data from properly deployed WeatherXM stations distributed worldwide, with the aim of determining the conditions under which various parameters can remain constant for hours.
 - [**Theoretical Solar Irradiance**](/weather-and-science/r&d/theoretical-solar-radiation.mdx): The method used for calculating the theoretical solar irradiance for a given date of the year and location of the world.
 
 ---
@@ -5318,6 +5318,623 @@ Updated March 2025.
 :::note
 You can always contact us contact us through our [support](https://support.weatherxm.com) page for more information regarding devices without an exact frequency match to your country.
 :::
+
+---
+# Assembling WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/assemble
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/assemble.md
+
+Setting up the weather station is a process of several steps in order to ensure the sensor array operates reliably and measures weather conditions as accurately as possible.
+
+## Prerequisites for proper assembly
+
+1. Screwdriver (not included)
+2. Metal wrench (not included)
+3. 3× AA 1.5V batteries (internal) or 6× AA batteries (external battery pack). **Non-rechargeable** (not included).
+
+:::danger 
+Do not use rechargeable batteries. They can damage the power circuitry.
+:::
+
+:::warning
+Using old and new batteries together, especially low-quality or used ones, increases fire risk. For safety, use high-quality batteries of the same age and type. Lithium batteries are strongly recommended for deployments experiencing sub-zero temperatures.
+::: 
+
+## Step by step instructions
+
+### 1. Battery Installation
+
+#### Built-in Battery Compartment
+- Unscrew the battery compartment door at the bottom of the H2 weather station.
+- Insert 3× AA batteries according to the marked `+/-` polarity.
+- Seal the door securely to maintain the IPX6 weatherproof rating.
+
+#### External Battery Pack (if used)
+
+    ![External battery box diagram](image)
+
+- **Step 1:** Slide the battery box lock switch to the unlock position. Push to open the battery box door according to the arrow direction.
+- **Step 2:** Insert 6× AA batteries according to the `+/-` polarity indicated.
+- **Step 3:** Place and lock the battery box door.
+- **Step 4:** Connect the waterproof cable to the station base.
+
+### 2. Inspect Power LED
+Once the batteries are inserted, observe the red LED indicator on the underside of the sensor array. It will flash to indicate that the microcontroller is powered on and booting.
+
+### 3. Attach Rain Funnel
+Align the rain gauge funnel over the measuring mechanism on top of the sensor body. Rotate the funnel clockwise until it firmly clicks into the locked position.
+
+### 4. Adjust Solar Panel
+Loosen the hinge screw on the solar collector bracket. Angle the collector toward the equator (facing South in the Northern Hemisphere, North in the Southern Hemisphere) at an angle roughly equal to your site's latitude, then retighten the screw.
+
+---
+# Box Contents WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/contents
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/contents.md
+
+## Included
+
+  ![Box contents](image)
+  
+    <h4>Included in the box</h4>
+    <ol>
+      <li>WeatherXM H2 Open Edition weather station (WS2001)</li>
+      <li>External battery box</li>
+      <li>Mounting bracket, U-bolts and metal hardware</li>
+      <li>Device sticker with factory LoRaWAN credentials (DevEUI, AppEUI/JoinEUI, AppKey)</li>
+    </ol>
+  
+
+<hr/>
+
+## Not Included
+
+You will also need:
+1. **Batteries:** 1.5V **non-rechargeable** AA batteries (3× AA internal, or 6× AA with external battery pack). High-quality Lithium batteries are recommended for sub-zero temperatures.
+2. **Mounting Pole:** Metal mounting pole (recommended 30–40mm / 1.2–1.57in diameter and at least 2m / 6.56ft height).
+3. **Tools:** Screwdriver and wrench to secure mounting clamps.
+
+:::danger
+Do not use rechargeable batteries. They can damage the power circuitry.
+:::
+
+<hr/>
+
+### Weather Station Components
+
+The weather station integrates eight meteorological sensors into a single low-power outdoor unit:
+
+    ![Station components](image)
+
+    <h4>Components</h4>
+    
+      <ol>
+      <li>Rain gauge funnel</li>
+      <li>Bubble balance indicator</li>
+      <li>UV and light intensity sensor</li>
+      <li>Wind vane</li>
+      <li>Wind speed cups</li>
+      <li>Internal LoRaWAN sub-GHz antenna</li>
+      <li>Adjustable solar panel</li>
+      <li>Radiation shield (temperature, humidity, barometric pressure)</li>
+      <li>Drain holes</li>
+      <li>Built-in battery compartment</li>
+      <li>Red LED indicator</li>
+      <li>Config / join button</li>
+      <li>Mounting clamp</li>
+      <li>Adjustable hinge for solar collector</li>
+      <li>Tipping bucket mechanism</li>
+      <li>Rain sensor</li>
+      </ol>
+    
+
+:::note
+For optimal observation accuracy, follow our [Station Installation Guide](/wxm-devices/h2-open/install-weather-station).
+:::
+
+<hr/>
+
+## Help & Support
+
+Join the community on our <Link to="https://weatherxm.com/discord">Discord Server</Link> or reach out via [support](https://support.weatherxm.com).
+
+---
+# Installing WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/install-weather-station
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/install-weather-station.md
+
+## Prerequisites for proper installation
+1. Mounting pole of at least 2m (6.56ft) height (not included)
+2. Sturdy mounting base or U-bolts to secure in place (included / hardware accessories)
+3. Compass or phone GPS for True North direction alignment
+
+:::info
+Proper mechanical installation and siting are essential to collect high-quality, representative weather observations. Obstacles, heat plumes, or mechanical vibration can distort temperature, wind, and precipitation readings.
+:::
+
+## Best Practices for Station Siting
+
+The values of meteorological parameters measured by a weather station can significantly differ depending on surrounding obstacles and ground surfaces.
+
+### 1. Mounting Pole Height
+Mount the station on a pole at least 2m (6.56ft) above the ground or roof level. The maximum recommended pole height is 5m (16.5ft).
+
+    ![Ground height diagram](image)
+    ![Roof deployment diagram](image)
+
+<hr/>
+
+### 2. Secure and Tighten the Pole
+The pole should be firmly anchored to prevent oscillation in strong winds. Any pole swaying can cause the rain gauge tipping mechanism to trigger false precipitation counts.
+
+    ![Tighten pole diagram](image)
+
+<hr/>
+
+### 3. Installation Location Guidelines
+
+<h4>Away from Heat Sources</h4>
+Ensure the sensor array is at least 5m (16.4ft) away from artificial heat sources, chimneys, exhausts, air conditioning condensers, or ventilation ducts that could falsely elevate temperature measurements.
+
+<section class="control">
+  ![Away from heat sources](image)
+</section>
+
+<h4>Clear of Shadows</h4>
+Ensure the station is not shaded by nearby buildings or trees during any part of the day. Solar radiation and UV measurements require direct, unshaded sunlight.
+
+<section class="explanation horizontal">
+  
+    ![Building siting](image)
+    ![Shadow avoidance](image)
+  
+</section>
+
+<h4>Distance from Obstacles</h4>
+Position the pole at a distance from surrounding obstacles (trees, walls, roof ridges) at least 2–4 times the height difference between the obstacle and the sensor. For large obstacles (>8m), maintain a distance of 10–15 times the obstacle height when possible.
+
+<hr/>
+
+### 4. Direction Alignment & Leveling
+
+    ![Direction alignment](image)
+    
+    Install the weather station in an open location with no obstructions above and around the sensor.
+    Locate the <strong>North (N)</strong> marker embossed on the top casing of the weather station. Using a compass or phone GPS, rotate the entire assembly so the marker points precisely towards True North.
+    <br/><br/>
+    Check the integrated <strong>spirit bubble level</strong> on top of the sensor body. Ensure the bubble is centered before tightening mounting pole clamps to prevent rain gauge measurement tilt error and guarantee accurate wind direction tracking.
+
+---
+# Introduction WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/introduction
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/introduction.md
+
+<h2 className="subtitle">Autonomous 8-in-1 LoRaWAN weather sensor for private LoRaWAN networks, The Things Network (TTN), and ChirpStack.</h2>
+
+    ![WeatherXM H2 Weather Station](image)
+
+<hr />
+
+:::info Hardware Compatibility Note
+The WeatherXM H2 sensor array shares its industrial-grade hardware platform with the [SenseCAP S2120 8-in-1 Weather Sensor](https://www.seeedstudio.com/sensecap-s2120-lorawan-8-in-1-weather-sensor-p-5436.html), featuring optimized low-power firmware. 
+
+The **H2 Open Edition** operates completely independently of the WeatherXM reward network. It transmits standard LoRaWAN uplinks using customer-controlled OTAA credentials directly to your network server of choice (The Things Network, ChirpStack, or any private LoRaWAN gateway).
+:::
+
+## Overview & Next Steps
+
+Getting started with your H2 Open Edition involves assembling the sensor, registering its OTAA credentials in your LoRaWAN Network Server (LNS), verifying frequency and uplinks, and mounting the station for accurate meteorological observations.
+
+---
+
+### Step 1: Check Box Contents & Credentials
+
+Locate the device label on the underside of your weather sensor or on the packaging box. It contains the factory credentials required for OTAA (Over-The-Air Activation):
+- **DevEUI:** 16-character hexadecimal unique identifier
+- **AppEUI / JoinEUI:** 16-character hexadecimal join identifier
+- **AppKey:** 32-character hexadecimal application key
+
+#### What's in the box:
+1. WeatherXM H2 all-in-one sensor array (wind vane, wind cups, rain collector, solar collector, thermo-hygrometer sensor radiation shield)
+2. External battery pack & mounting accessories
+3. Mounting U-bolts and metal clamps
+
+#### What you will need:
+- **Batteries:** 3× AA batteries (or 6× AA with external pack). Non-rechargeable 1.5V Lithium batteries are recommended for sub-zero operating environments.
+- **Mounting Pole:** A rigid pole of at least 2m (6.5 ft) height and 30–40mm (1.2–1.6 in) outer diameter.
+- **LoRaWAN Gateway Coverage:** Coverage from a public network (such as The Things Network Community Edition) or your own private LoRaWAN gateway connected to ChirpStack or TTN.
+
+---
+
+### Step 2: Register Device in your LoRaWAN Network Server
+
+Add the station to your application in The Things Stack Console, ChirpStack, or your private LoRaWAN Network Server.
+
+#### Manual OTAA Registration Parameters
+
+| Parameter | Recommended Value |
+| :--- | :--- |
+| **Activation Mode** | Over-The-Air Activation (OTAA) |
+| **LoRaWAN Version** | Specification 1.0.2 |
+| **Regional Parameters** | RP001 Regional Parameters 1.0.2 Rev B |
+| **Device Class** | Class A |
+
+#### Regional Frequency Plans
+Ensure you select the frequency plan matching your hardware model and region:
+- **Europe (EU868):** `Europe 863-870 MHz (SF9 for RX2 - recommended)`
+- **North America (US915):** `United States 902-928 MHz, FSB 2 (used by TTN)`
+- **Australia (AU915):** `Australia 915-928 MHz, FSB 2`
+
+Enter your **DevEUI**, **JoinEUI / AppEUI**, and **AppKey** from the device label and click **Register end device**.
+
+---
+
+### Step 3: Power On & Bluetooth Configuration
+
+1. **Install Batteries:** Unscrew the battery compartment door at the bottom of the H2 weather station. Insert 3× AA batteries according to the marked `+/-` polarity, then seal the door securely.
+2. **Inspect LED:** Once power is applied, the red LED indicator on the bottom will flash.
+3. **Bluetooth Configuration (if required):** Open the [WeatherXM BLE Web Flasher](https://flasher.weatherxm.com) in a Web-Bluetooth-supported browser (such as Chrome) to inspect device status, verify firmware, or adjust regional frequency plans.
+4. **Trigger Network Join:** Press the configuration button on the bottom of the sensor once. The device will transmit an OTAA Join Request to your LoRaWAN network.
+
+---
+
+### Step 4: Siting & Physical Installation
+
+Proper mechanical alignment ensures high observation accuracy and prevents measurement artifacts:
+
+1. **True North Alignment:** Locate the **N** arrow embossed on the top of the weather sensor casing. Rotate the entire assembly so the arrow points precisely towards True North using a compass or phone GPS. This calibrates wind direction accuracy.
+2. **Bubble Level:** Check the integrated spirit bubble level on top of the sensor body. Ensure the bubble is perfectly centered before tightening the mounting clamps to prevent rain gauge measurement tilt error.
+3. **Rain Funnel:** Align the rain gauge funnel over the measuring mechanism and rotate clockwise until it firmly clicks into the locked position.
+4. **Solar Panel Tilt:** Loosen the solar bracket screw and angle the solar collector toward the equator (facing South in the Northern Hemisphere, North in the Southern Hemisphere) at an angle roughly equal to your local latitude.
+5. **Pole Elevation:** Mount the sensor on a pole at least 2m (6.5 ft) above ground or roof level, away from chimneys, heat sources, and wind obstructions.
+
+---
+
+### Step 5: Verify Telemetry Uplinks
+
+In your LoRaWAN Network Server console (e.g. The Things Stack Console > **Live data** tab), confirm that the join request was accepted and uplinks are arriving:
+
+```text
+14:02:10 - Accept join-request
+14:02:11 - Successfully joined the network
+14:02:15 - Forward uplink data: FPort 1, Payload: 01 01 10 00 E4 02 01 ...
+```
+
+Once you observe the first `Forward uplink data`, the station is actively communicating with the network.
+
+---
+
+### Step 6: Payload Formatter (Decoder)
+
+To decode the raw hex payload into standard meteorological units, paste the following JavaScript decoder into your network server's **Payload formatters > Uplink** section:
+
+```javascript
+function decodeUplink(input) {
+  var bytes = input.bytes;
+  var data = {};
+
+  // Standard S2120 / H2 sensor packet decoder
+  if (bytes.length >= 15) {
+    // Air Temperature (0.1 °C, signed)
+    var rawTemp = (bytes[3] << 8) | bytes[4];
+    if (rawTemp > 0x7FFF) rawTemp -= 0x10000;
+    data.temperature = +(rawTemp / 10).toFixed(1);
+
+    // Relative Humidity (%)
+    data.humidity = bytes[5];
+
+    // Barometric Pressure (0.1 hPa)
+    if (bytes.length > 8) {
+      var rawPress = (bytes[7] << 8) | bytes[8];
+      data.pressure = +(rawPress / 10).toFixed(1);
+    }
+
+    // Wind Speed (0.1 m/s) & Direction (deg)
+    if (bytes.length > 12) {
+      data.wind_speed = +(((bytes[9] << 8) | bytes[10]) / 10).toFixed(1);
+      data.wind_direction = (bytes[11] << 8) | bytes[12];
+    }
+
+    // Rain accumulation & Solar radiation
+    if (bytes.length > 18) {
+      data.rain_accumulation = +(((bytes[13] << 8) | bytes[14]) / 10).toFixed(1);
+      data.solar_radiation = (bytes[15] << 8) | bytes[16];
+      data.uv_index = bytes[17] / 10;
+    }
+
+    // Battery voltage / status
+    if (bytes.length > 20) {
+      data.battery_voltage = +(((bytes[19] << 8) | bytes[20]) / 1000).toFixed(2);
+    }
+  }
+
+  return {
+    data: data,
+    warnings: [],
+    errors: []
+  };
+}
+```
+
+---
+
+## Features and Specifications
+
+### H2 Open Edition Weather Station (WS2001)
+
+<Tabs
+  defaultValue="metric"
+  values={[
+    { label: 'Metric', value: 'metric', },
+    { label: 'Imperial', value: 'imperial', },
+  ]
+}>
+
+<TabItem value="metric">
+
+Powered via an integrated solar panel with AA battery backup.
+Typical communication range is 2 to 10 km depending on gateway height, line-of-sight, and regional terrain.
+
+- #### Air Temperature:
+    - Range: -40.0 to 80.0 °C
+    - Accuracy: ±0.5 °C (0 to 80 °C), ±0.6 °C (-40 to 0 °C)
+    - Resolution: 0.1 °C
+
+- #### Air Humidity:
+    - Range: 1 to 99% RH
+    - Accuracy: ±3% (1 to 90% RH), ±4% (90 to 99% RH)
+    - Resolution: 1% RH
+
+- #### Rain Hourly Rate:
+    - Range: 0 to 450 mm/h
+    - Accuracy: ±7%
+    - Resolution: 0.254 mm/h
+
+- #### Barometric Pressure:
+    - Range: 540 to 1100 hPa
+    - Accuracy: ±5 hPa (700 to 1100 hPa), ±8 hPa (540 to 699 hPa)
+    - Resolution: 1 hPa
+
+- #### Wind Speed:
+    - Range: 0 to 50.0 m/s
+    - Accuracy: ±0.5 m/s (&lt;5 m/s), ±10% (&gt;5 m/s)
+    - Resolution: 0.1 m/s
+
+- #### Wind Direction:
+    - Range: 0 to 360°
+    - Accuracy: ±8°
+    - Resolution: 1°
+
+- #### Light Intensity:
+    - Range: 0 to 200,000 lux
+    - Accuracy: ±5%
+    - Resolution: 1 lux
+
+- #### UV Index:
+    - Range: 0 to 16.0
+    - Accuracy: ±10%
+    - Resolution: 0.1
+
+### General Parameters
+
+- #### Radio Architecture:
+    - Semtech LR1110 LoRaWAN sub-GHz transceiver
+    - LoRaWAN 1.0.2 Class A
+    - OTAA join with custom DevEUI / AppEUI / AppKey
+    - Regional frequency bands: EU868, US915, AU915, AS923
+
+- #### Operating Temperature:
+    - -20 to +60 °C (Alkaline batteries)
+    - -40 to +60 °C (Lithium batteries)
+
+- #### Operating Humidity:
+    - 0 to 99% RH
+
+- #### Device Weight:
+    - 1.5 kg (3.3 lb)
+
+- #### Certifications:
+    - CE / FCC / RoHS / IPX6 weatherproof housing
+
+- #### Solar Panel:
+    - 0.5W high-efficiency integrated collector
+
+- #### Battery Type:
+    - 3× AA 1.5V batteries (internal) / 6× AA with external pack (non-rechargeable Lithium recommended)
+
+- #### Battery Life:
+    - >1 year autonomous operation with solar panel assist (at standard 10–20 min uplink intervals)
+
+</TabItem>
+
+<TabItem value="imperial">
+
+Powered via an integrated solar panel with AA battery backup.
+Typical communication range is 1.2 to 6.2 miles depending on gateway height, line-of-sight, and regional terrain.
+
+- #### Air Temperature:
+    - Range: -40.0 to 176.0 °F
+    - Accuracy: ±0.5 °F (32 to 176 °F), ±0.6 °F (-40 to 32 °F)
+    - Resolution: 0.1 °F
+
+- #### Air Humidity:
+    - Range: 1 to 99% RH
+    - Accuracy: ±3% (1 to 90% RH), ±4% (90 to 99% RH)
+    - Resolution: 1% RH
+
+- #### Rain Hourly Rate:
+    - Range: 0 to 17.7 in/h
+    - Accuracy: ±7%
+    - Resolution: 0.01 in/h
+
+- #### Barometric Pressure:
+    - Range: 540 to 1100 hPa
+    - Accuracy: ±5 hPa (700 to 1100 hPa), ±8 hPa (540 to 699 hPa)
+    - Resolution: 1 hPa
+
+- #### Wind Speed:
+    - Range: 0 to 111.8 mph
+    - Accuracy: ±0.5 mph (&lt;11.1 mph), ±10% (&gt;11.1 mph)
+    - Resolution: 0.1 mph
+
+- #### Wind Direction:
+    - Range: 0 to 360°
+    - Accuracy: ±8°
+    - Resolution: 1°
+
+- #### Light Intensity:
+    - Range: 0 to 200,000 lux
+    - Accuracy: ±5%
+    - Resolution: 1 lux
+
+- #### UV Index:
+    - Range: 0 to 16.0
+    - Accuracy: ±10%
+    - Resolution: 0.1
+
+### General Parameters
+
+- #### Radio Architecture:
+    - Semtech LR1110 LoRaWAN sub-GHz transceiver
+    - LoRaWAN 1.0.2 Class A
+    - OTAA join with custom DevEUI / AppEUI / AppKey
+    - Regional frequency bands: EU868, US915, AU915, AS923
+
+- #### Operating Temperature:
+    - -4 to +140 °F (Alkaline batteries)
+    - -40 to +140 °F (Lithium batteries)
+
+- #### Operating Humidity:
+    - 0 to 99% RH
+
+- #### Device Weight:
+    - 3.3 lb (1.5 kg)
+
+- #### Certifications:
+    - CE / FCC / RoHS / IPX6 weatherproof housing
+
+- #### Solar Panel:
+    - 0.5W high-efficiency integrated collector
+
+- #### Battery Type:
+    - 3× AA 1.5V batteries (internal) / 6× AA with external pack (non-rechargeable Lithium recommended)
+
+- #### Battery Life:
+    - >1 year autonomous operation with solar panel assist (at standard 10–20 min uplink intervals)
+
+</TabItem>
+
+</Tabs>
+
+---
+# Maintenance of WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/maintenance
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/maintenance.md
+
+Periodic maintenance ensures that the sensor array continues to record accurate observations and that the solar collector and power systems operate without disruption.
+
+The recommended maintenance routine is summarised below:
+
+### 1. Rain Gauge Funnel & Tipping Bucket
+Clean the rain gauge at least once every 3 months.
+- Rotate the rain funnel counter-clockwise and lift it off to expose the tipping bucket mechanism.
+- Clean the funnel and internal cavity with a damp cloth, removing leaves, dirt, dust, and insects.
+- Check the small drain holes at the bottom of the sensor housing to ensure rainwater drains freely.
+- Ensure the tipping spoon moves freely without obstruction.
+
+  ![Maintenance diagram](image)
+
+:::caution
+Do not manually swing the tipping spoon vigorously while the station is in service if your downstream application triggers alerts on sudden high rainfall rates.
+:::
+
+### 2. Solar Panel
+Wipe the surface of the solar collector at least once every 3 months using a damp cloth. Dust, bird droppings, or pollen build-up can reduce charging efficiency during overcast winter days.
+
+### 3. Radiation Shield & Sensors
+Inspect the radiation shield every 6 to 12 months. Remove any spiderwebs, debris, or insects lodging between the louvers to maintain unrestricted natural airflow around the temperature, humidity, and barometric pressure sensors.
+
+### 4. Battery Inspection
+- Inspect the AA batteries annually (or every 3–6 months in extreme freezing environments).
+- If battery voltage drops (monitored via your decoded LoRaWAN battery telemetry field or the [BLE web flasher](https://flasher.weatherxm.com)), replace all AA batteries with a fresh set of non-rechargeable 1.5V batteries (Lithium recommended).
+
+---
+# Troubleshooting WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/troubleshooting
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/troubleshooting.md
+
+This guide covers common troubleshooting scenarios when deploying and registering the WeatherXM H2 Open Edition weather station on The Things Network, ChirpStack, or private LoRaWAN gateways.
+
+---
+
+### 1. Station Does Not Power On / LED Does Not Flash
+
+When batteries are first installed, the red LED indicator on the underside of the sensor array should flash briefly.
+
+- **Check Battery Polarity:** Ensure all 3× AA batteries (or 6× AA in the external pack) are aligned correctly matching the `+/-` markings.
+- **Check Battery Voltage:** Ensure you are using fresh, high-quality 1.5V non-rechargeable batteries (Lithium recommended).
+- **Inspect Contacts:** Check that battery springs and contacts are clean and dry.
+
+:::danger
+Never use rechargeable batteries (e.g. NiMH, Li-ion 3.7V). They can damage the power circuitry.
+:::
+
+---
+
+### 2. Device Fails to Join the LoRaWAN Network (OTAA Timeout)
+
+If your LoRaWAN Network Server (The Things Stack Console, ChirpStack) shows no Join Request or Join Accept:
+
+1. **Verify Gateway Coverage & Proximity:** Ensure there is an active LoRaWAN gateway in range. Check your gateway's live traffic log to verify whether uplink packets are being received.
+2. **Double-Check EUI and Keys:**
+   - **DevEUI:** Exactly 16 hexadecimal characters matching the device label.
+   - **AppEUI / JoinEUI:** Exactly 16 hexadecimal characters.
+   - **AppKey:** Exactly 32 hexadecimal characters. A single typo in the AppKey prevents cryptographic derivation of session keys during the OTAA handshake.
+3. **Verify Regional Frequency Plan:**
+   - **Europe:** EU863-870
+   - **North America:** US902-928 (FSB 2 for TTN)
+   - **Australia:** AU915-928 (FSB 2)
+4. **Trigger Manual Join:** Press the configuration / join button on the underside of the weather station once to trigger an immediate OTAA Join Request.
+
+---
+
+### 3. Web Bluetooth (BLE) Flasher Troubleshooting
+
+When connecting the sensor to [flasher.weatherxm.com](https://flasher.weatherxm.com) to verify firmware or adjust frequency plans:
+
+- **Browser Requirement:** Web Bluetooth requires a compatible browser such as Google Chrome, Microsoft Edge, or Chromium on desktop or Android.
+- **5-Minute Pairing Window:** For security and battery conservation, the station enables Bluetooth advertising for **5 minutes** after inserting batteries or pressing the configuration button. If connection fails, press the configuration button or power-cycle the device and retry scanning immediately.
+- **Pairing PIN:** When prompted by your operating system, enter the default pairing PIN: `000000`.
+
+---
+
+### 4. Telemetry Uplinks Arrive but Payload Is Not Decoded
+
+If your network server receives raw hex uplinks (e.g., `01 01 10 00 E4 02 01 ...`) on `FPort 1` but displays unparsed bytes:
+
+- Ensure you have pasted the custom JavaScript payload formatter into your application settings under **Payload formatters > Uplink**.
+- Refer to [Introduction & Setup Guide](/wxm-devices/h2-open/introduction#step-6-payload-formatter-decoder) for the complete, tested decoder script.
+
+---
+
+### 5. Inaccurate Wind Direction
+
+If wind direction measurements appear offset:
+
+- Ensure the **North (N)** arrow embossed on top of the sensor casing points precisely towards True North. Use a magnetic compass corrected for local magnetic declination, or a smartphone GPS compass app.
+
+---
+
+### 6. Rain Gauge Tipping Bucket False Triggers
+
+- **Pole Oscillation:** If wind causes high rainfall rates during dry windy conditions, ensure the mounting pole is securely braced and rigid. Mechanical swaying can oscillate the internal tipping spoon.
+- **Leveling:** Check that the spirit bubble level on top of the casing is perfectly centered.
+
+---
+
+## Community & Support
+
+Join fellow builders in the <Link to="https://weatherxm.com/discord">WeatherXM Discord Server</Link> or contact our team via [WeatherXM Support](https://support.weatherxm.com).
 
 ---
 # Assembling WS2000 Weather Station
