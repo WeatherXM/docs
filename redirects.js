@@ -190,5 +190,33 @@ module.exports = [
   {
     to: "/wxm-devices/m5/usb-flasher",
     from: "/wxm-devices/wifi-m5-bundle/m5-usb-flasher"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/general-qod-description",
+    from: "/weather-and-science/quality-mechanisms/general-qod-description.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/constancy-analysis-report",
+    from: "/weather-and-science/quality-mechanisms/constancy-analysis-report.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/obc-sqc-annotations",
+    from: "/weather-and-science/quality-mechanisms/obc-sqc-annotations.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/obc-sqc-documentation",
+    from: "/weather-and-science/quality-mechanisms/obc-sqc-documentation.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/isd-full-documentation",
+    from: "/weather-and-science/quality-mechanisms/isd-full-documentation.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/spv-full-documentation",
+    from: "/weather-and-science/quality-mechanisms/spv-full-documentation.mdx"
+  },
+  {
+    to: "/weather-and-science/quality-mechanisms/obc-sqc-score-calculation",
+    from: "/weather-and-science/quality-mechanisms/obc-sqc-score-calculation.mdx"
   }
 ]

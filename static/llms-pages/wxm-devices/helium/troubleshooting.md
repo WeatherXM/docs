@@ -1,0 +1,129 @@
+# Troubleshooting of WeatherXM Helium station (WS2000)
+
+Canonical: https://docs.weatherxm.com/wxm-devices/helium/troubleshooting
+
+:::info
+**if you experience connection issues while claiming a WeatherXM Helium station,  make sure you are near the station.**
+:::
+
+### The updating process lasts forever
+
+If the process hangs and does not proceed or if pairing fails, try a [factory reset](/wxm-devices/helium/troubleshooting#factory-reset).
+
+<hr/>
+
+### Asks to pair but fails
+
+  
+
+Restart your station. Pairing is only allowed in the first 5 minutes after the station is started. After 5 minutes the station refuses pairing. If the problem persists, do a [factory reset](/wxm-devices/helium/troubleshooting#factory-reset) and try again.
+
+<hr/>
+
+### No location (GPS) data
+
+  
+
+If your station reports "No location data" please make sure your station is installed properly as per the installation instructions. 
+
+:::note
+Your station reports its location a few times per day depending on network and battery status and thus it might take some time until the location is confirmed by the WeatherXM platform.
+:::
+
+<hr/>
+
+### Location not verified
+You receive a "location not verified" error on your mobile app when the [Proof of Location (PoL) mechanism](/rewards/proof-of-location) flags your weather station because the location reported by its **GPS receiver(s)** is different than the location you declared during the setup and claiming of the station. This happens because either you moved the station from its initial installation site, or you declared a wrong location during the onboarding of the station on your mobile app.
+
+This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
+
+<hr/>
+
+### My station is not detected during scanning
+
+  
+  
+
+Make sure the device has started.  Press the reset button at the bottom of the weather station. The light at the bottom of the station will flash a few times indicating that the restart was successful. 
+If it continues to go undetected, try scanning again from a closer distance. The operating bluetooth range of the station is around 10m/32ft with few obstacles.
+
+<hr/>
+
+### The process does not start or is stopped before it is completed
+
+  
+  
+
+Close the application and start the process again. If the problem persists, press the reset button at the bottom of the weather station and try again. Finally, try doing a factory reset.
+
+<hr/>
+
+### The app cannot connect to the station after successfully pairing
+
+  
+  
+    If the claiming process is repeated more than twice without completion, attempt to unpair your weather station and start over. If you encounter connection problems during the claiming, make sure that you are near to the weather station at all times. The solution to the above is to visit the Bluetooth settings of the mobile phone, find the station in the paired devices and "forget the device". This flow is different on Android and iOS.
+  
+
+<h3>How to forget/unpair your device</h3>
+
+<Tabs
+  defaultValue="android"
+  values={[
+    { label: 'Android', value: 'android', },
+    { label: 'iOS', value: 'ios', },
+  ]
+}>
+
+<TabItem value="android">
+  
+    
+    
+    
+  
+</TabItem>
+
+<TabItem value="ios">
+  
+    
+    
+    
+  
+</TabItem>
+</Tabs>
+
+### Factory reset
+
+  
+
+During factory reset all settings are reverted to the factory state, this includes the **frequency** configuration as well as the erasing of all **bonded mobile devices**.
+
+The erasing of the bonding information from the station results in the station "forgetting" all the mobile devices that have paired to it, so they will not be able to connect to the station anymore as they still hold old bonding data that is now outdated. In order to be able to pair with the station again **the station must be unpaired on the mobile device as well**, by removing it from the Bluetooth paired devices menu.
+
+:::warning
+It is recommended to unpair the station from your mobile device's bluetooth menu, **right before** performing the factory reset. This ensures you’ll be able to successfully pair again after the reset, during which the station will reboot and remain in pairing mode for a few minutes.
+::: 
+
+After factory reset is complete and the station is paired to the mobile device again, the **frequency** needs to be set to the proper frequency used in your region via the station settings menu on your app or your station will not be able to join the network.
+
+To perform the factory reset, hold down the middle button on the bottom of the weather station, count to ~10 and release. The LED will start flashing very quickly as an indication that the factory reset has succeeded and then the station will restart.
+
+## Other Issues
+
+### How to see if there is Helium coverage in your area. 
+
+You can check the Helium coverage in your location by either using [Hotspotty](https://app.hotspotty.net/hotspots/statistics) or [Helium's Explorer](https://explorer.helium.com/).
+
+<hr />
+
+### Can a WeatherXM Helium station paired with more than one device?
+
+Yes, it can be paired with multiple devices.
+
+<hr />
+
+### In order for the WeatherXM Helium stations to work, should they be in a Helium hexagon or the principle is the same as for the WiFi stations?
+
+WeatherXM Helium weather stations transmit data by using the helium network. In order to work properly they should be in a place where there is Helium coverage.
+  
+<hr />

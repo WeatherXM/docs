@@ -1,0 +1,33 @@
+# Maintenance of WS1001 Weather Station
+
+Canonical: https://docs.weatherxm.com/wxm-devices/d1/maintenance
+
+The maintenance of the weather station is an important process, which should be conducted meticulously over the suggested period of time.
+This process includes the cleaning of certain parts of the outdoor unit and the replacement of batteries.
+
+In order to avoid faulty measurements, you may turn off the WG1200 Gateway until finishing the entire process.
+
+The maintenance process is summarised in the following steps.
+
+### Rain Gauge
+Clean the rain gauge at least once every 3 months.
+Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism
+and clean with a damp cloth. Remove any dirt, debris and insects.
+If bug infestation is an issue, spray the array lightly with insecticide.
+It is important not to swing the rain gauge spoon during this process,
+as the weather station will measure and record faulty precipitation.
+The sketch below shows how to open the rain gauge.
+
+  
+
+### Solar Panel
+Clean the solar panel at least every 3 months with a damp cloth.
+
+### Thermo-Hygro Sensor
+Remove any dirt, debris and insects from the [thermo-hygro sensor](/wxm-devices/d1/contents#outdoor-weather-station) every 12 months. It may be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.
+
+<hr />
+:::note
+You should occasionally check the battery level of the weather station via the settings menu on the mobile app. If the battery level is low, you should replace the batteries.
+In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
+:::

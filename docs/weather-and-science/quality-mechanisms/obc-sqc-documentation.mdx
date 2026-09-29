@@ -2,7 +2,7 @@
 id: obc-sqc-documentation
 title: Out-of-Bounds (OBC) and Self Quality Checks (SQC)
 sidebar_label: Out-of-Bounds (OBC) and Self Quality Checks (SQC)
-slug: /weather-and-science/quality-mechanisms/obc-sqc-documentation.mdx
+slug: /weather-and-science/quality-mechanisms/obc-sqc-documentation
 ---
 
 # Obstacle Impact on Temperature and Wind
@@ -18,7 +18,7 @@ Data Quality v1 is able to process:
 - Time series with an interval &lt;30 seconds (High Temporal Resolution Time series - **HTRT**)
 - Time series with a time interval ≥1 minute (Low Temporal Resolution Time series - **LTRT**). We consider that the value provided on this time interval (e.g., 3 minutes) time interval is the outcome derived from the averaging of a sequence of internally recorded measurements.
 
-The **final output of the Data Quality mechanism** is an hourly **percentage** of valid/available data and the corresponding **text annotations per meteorological variable** (temperature, relative humidity, wind speed, wind direction, atmospheric pressure, illuminance and precipitation). However, there is a [post Data Quality score process](/weather-and-science/quality-mechanisms/obc-sqc-score-calculation.mdx) that aggregates all the annotations and scores into a daily output per station.
+The **final output of the Data Quality mechanism** is an hourly **percentage** of valid/available data and the corresponding **text annotations per meteorological variable** (temperature, relative humidity, wind speed, wind direction, atmospheric pressure, illuminance and precipitation). However, there is a [post Data Quality score process](/weather-and-science/quality-mechanisms/obc-sqc-score-calculation) that aggregates all the annotations and scores into a daily output per station.
 
 Before moving forward to the description of the Data Quality mechanism, we should note that the input data has been standardised over time (resampling). Weather stations may transmit data at varying non-fixed time intervals. This implies that even if a station's specification indicates a recording frequency of 16 seconds, the actual interval can fluctuate, ranging from a few seconds to several minutes. To ensure that the quality control operates on a time-normalised dataset, a new timeframe is established with a fixed interval (determined by the theoretical recording frequency (fr) of the station model, such as 16’’ for the WG1000 - M5 model).
 
