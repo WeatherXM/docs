@@ -37,6 +37,10 @@ Do this together with [Connect to Your Network](/wxm-devices/h2-open/connect-to-
 
 <TabItem value="register">
 
+:::tip Faster: import file from the web flasher
+In the [web flasher](https://flasher.weatherxm.com), fill in the network form (click **Generate Random** for the AppKey) and click **Download TTN import file (.json)**. In your TTN application open **End devices > Import end devices**, choose **The Things Stack JSON**, select the file and click **Import end devices**. The file sets the DevEUI, JoinEUI, AppKey, LoRaWAN version and frequency plan, so you can skip the manual steps below. It contains your AppKey: keep it private.
+:::
+
 1. In the [TTN Console](https://console.cloud.thethings.network/), choose your cluster (for example **Europe 1**) and open or create an **Application**.
 1. Click **Register end device** and select **Enter end device specifics manually**.
 1. **Frequency plan:** the plan of your region, for example `Europe 863-870 MHz (SF9 for RX2 - recommended)` or `United States 902-928 MHz, FSB 2 (used by TTN)`.
