@@ -1,0 +1,347 @@
+---
+title: The Things Network and ChirpStack with WeatherXM H2 Open Edition (WS2001)
+sidebar_label: TTN and ChirpStack
+---
+
+import Link from "@docusaurus/Link";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+This page shows how to register the H2 Open Edition on **The Things Network (TTN)** and **ChirpStack**, and how to decode its data with the WeatherXM payload decoder.
+
+Do this together with [Connect to Your Network](/wxm-devices/h2-open/connect-to-your-network): you take the **DevEUI** from the web flasher, and give the flasher the **JoinEUI** and **AppKey** you registered here.
+
+## Device settings
+
+| Setting | Value |
+| :--- | :--- |
+| Activation | OTAA |
+| LoRaWAN version | **1.0.4** (MAC V1.0.4) |
+| Regional Parameters | **RP002 Regional Parameters 1.0.3** |
+| Device class | Class A |
+| DevEUI | From the web flasher (16 hex characters, the last 6 are in the station's Bluetooth name) |
+| JoinEUI / AppEUI | Your choice, for example `0000000000000000` on TTN |
+| AppKey | Your choice: generate it on your network server, then enter it in the web flasher |
+| Uplink port | **FPort 99** (24-byte WeatherXM frame) |
+
+## The Things Network (TTN)
+
+<Tabs
+  defaultValue="register"
+  values={[
+    { label: '1. Register the device', value: 'register', },
+    { label: '2. Add the decoder', value: 'decoder', },
+    { label: '3. Check live data', value: 'live', },
+  ]
+}>
+
+<TabItem value="register">
+
+1. In the [TTN Console](https://console.cloud.thethings.network/), choose your cluster (for example **Europe 1**) and open or create an **Application**.
+1. Click **Register end device** and select **Enter end device specifics manually**.
+1. **Frequency plan:** the plan of your region, for example `Europe 863-870 MHz (SF9 for RX2 - recommended)` or `United States 902-928 MHz, FSB 2 (used by TTN)`.
+1. **LoRaWAN version:** `LoRaWAN Specification 1.0.4`.
+1. **Regional Parameters version:** `RP002 Regional Parameters 1.0.3`.
+1. **JoinEUI:** enter `0000000000000000` (or your own) and click **Confirm**.
+1. **DevEUI:** paste the DevEUI shown in the web flasher.
+1. **AppKey:** click **Generate**, then copy the key (eye icon, then copy). You will enter it in the web flasher.
+1. **End device ID:** for example `ws2001-8000e6`. Click **Register end device**.
+
+Now enter the same JoinEUI and AppKey in the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
+
+</TabItem>
+
+<TabItem value="decoder">
+
+1. Open the device (or the whole application) and go to **Payload formatters > Uplink**.
+1. **Formatter type:** `Custom Javascript formatter`.
+1. Paste the [WeatherXM decoder](#payload-decoder) (or use the **TTN v3** copy button in the web flasher).
+1. To test it, paste this example into **Byte payload**, set **FPort** to `99` and click **Test decoder**:
+
+```text
+F0454E0519EB00710E181F3400393000000C0031D4009427
+```
+
+1. Click **Save changes**.
+
+</TabItem>
+
+<TabItem value="live">
+
+Open the device's **Live data** tab. After the station restarts you should see:
+
+```text
+Accept join-request
+Forward uplink data message   FPort 99   Payload  { "temperature": 23.5, "wind_gust": 5.2, ... }
+```
+
+The first uplink arrives within a few minutes of the join, then one every upload interval.
+
+</TabItem>
+
+</Tabs>
+
+:::caution TTN fair use
+The Things Network community edition allows **30 seconds of airtime per device per day**. A 24-byte uplink takes about 82 ms at SF7, so a 3-minute interval (about 39 s/day) exceeds it. Use the default **5 minutes** (about 24 s/day), and **10 minutes or more** when the station is far from the gateway and uses a slower data rate (SF9 to SF12). Private ChirpStack servers have no such limit.
+:::
+
+## ChirpStack
+
+<Tabs
+  defaultValue="v4"
+  values={[
+    { label: 'ChirpStack v4', value: 'v4', },
+    { label: 'ChirpStack v3', value: 'v3', },
+  ]
+}>
+
+<TabItem value="v4">
+
+**1. Device profile** (once for all your H2 stations): **Device profiles > Add device profile**
+
+- **General:** name `WeatherXM H2 Open (WS2001)`, region of your gateway, **MAC version** `LoRaWAN 1.0.4`, **Regional parameters revision** `RP002-1.0.3`, ADR algorithm default.
+- **Join (OTAA / ABP):** tick **Device supports OTAA**.
+- **Class-B / Class-C:** leave both off (Class A).
+- **Codec:** **Payload codec** `JavaScript functions`, then replace the template with the [WeatherXM decoder](#payload-decoder) (or the **ChirpStack v4** copy button in the web flasher). The same `decodeUplink` function works in ChirpStack v4.
+
+**2. Device:** **Applications > your application > Add device**
+
+- **Device EUI:** the DevEUI from the web flasher.
+- **Join EUI:** your JoinEUI (any 16 hex characters, for example `0000000000000000`).
+- **Device profile:** the profile above. Click **Submit**.
+- On the **OTAA keys** tab enter or generate the **Application key**, then enter the same key in the web flasher.
+
+**3. Check:** the device's **Events** tab shows the `join` and then `up` events; the decoded values appear under `object`.
+
+</TabItem>
+
+<TabItem value="v3">
+
+- **Device-profiles > Create:** LoRaWAN MAC version `1.0.3` (closest available), Regional Parameters revision `B`, **Device supports OTAA**.
+- **Codec:** `Custom JavaScript codec functions`, paste the [WeatherXM decoder](#payload-decoder) (or the **ChirpStack v3** copy button in the web flasher). ChirpStack v3 uses the `Decode(fPort, bytes, variables)` function, which is included in the same script.
+- **Applications > your application > Devices > Create:** Device EUI from the web flasher, the profile above, then on **Keys (OTAA)** set the **Application key**.
+
+</TabItem>
+
+</Tabs>
+
+## Payload format
+
+Uplinks on **FPort 99**. Values marked "invalid" are sent when a sensor reports an error, and decode to `null`.
+
+| Bytes | Field | Encoding |
+| :--- | :--- | :--- |
+| 0 | Frame type | `0xF0` weather, `0xF1` weather + 64-byte signature, `0xF2` boot, `0xF3` GNSS scan |
+| 1 | Firmware version | High nibble major, low nibble minor (`0x45` = V4.5) |
+| 2 | Hardware / TX power | Bits 7-5: hardware minor + 1, bits 4-0: TX power |
+| 3 | Interval / battery | Bits 6-0: upload interval in minutes, bit 7: battery low |
+| 4 | Samples | Number of 12-second samples in the interval |
+| 5-6 | Temperature | int16 little-endian, 0.1 °C (`0x7FFF` invalid) |
+| 7-8 | Humidity / wind direction | uint16 big-endian: bits 15-9 %RH (`0x7F` invalid), bits 8-0 degrees (`0x1FF` invalid) |
+| 9-10 | UV / wind speed | uint16 big-endian: bits 15-11 UV index (`0x1F` invalid), bits 10-0 0.1 m/s average (`0x7FF` invalid) |
+| 11-12 | **Wind gust** | uint16 little-endian, 0.1 m/s, highest 12-second peak of the interval (`0xFFFF` invalid) |
+| 13-16 | **Rain total** | uint32 little-endian, 0.001 mm, lifetime counter (`0x7FFFFFFF` invalid) |
+| 17-18 | Rain rate | uint16 little-endian, 0.1 mm/h, maximum of the interval |
+| 19-21 | Light | uint24 little-endian, lux (`0x7FFFFF` invalid) |
+| 22-23 | Pressure | uint16 little-endian, 0.1 hPa (`0xFFFF` invalid) |
+
+- **Signed frames (`0xF1`)** carry the same 24 bytes followed by a 64-byte ECDSA P-256 signature from the station's secure element. They are sent once after start-up and then every 7,200 uplinks. They need 88 bytes, which is possible from EU868 DR3 (SF9) upwards.
+- **Boot frames (`0xF2`)** are sent once after start-up with the firmware version and the sensor protocol version.
+- **GNSS frames (`0xF3`)** carry a raw LR1110 satellite scan; resolve them with a GNSS solver if you need the position.
+- **Rain:** compute rain over any period from the difference of two `rain_accumulated` values.
+
+### Decoded example
+
+The example payload above decodes to:
+
+```json
+{
+  "firmware_version": "4.5",
+  "hardware_version": "1.1",
+  "tx_power": 14,
+  "frame": "weather",
+  "upload_interval_min": 5,
+  "battery_low": false,
+  "samples": 25,
+  "temperature": 23.5,
+  "humidity": 56,
+  "wind_direction": 270,
+  "uv_index": 3,
+  "wind_speed": 3.1,
+  "wind_gust": 5.2,
+  "rain_accumulated": 12.345,
+  "rain_rate": 1.2,
+  "lux": 54321,
+  "pressure": 1013.2,
+  "pressure_pa": 101320
+}
+```
+
+## Payload decoder
+
+One script works in **The Things Stack v3**, **ChirpStack v4** (`decodeUplink`) and **ChirpStack v3** (`Decode`). It decodes the WeatherXM frame on FPort 99 and, for stations configured with older tools, the legacy format on FPort 3. The web flasher has copy buttons for the same script.
+
+<details class="accordion">
+
+<summary>WeatherXM H2 / WS2001 uplink decoder (JavaScript)</summary>
+
+```javascript
+// WeatherXM WS2001 / WS2000 uplink decoder (WeatherXM firmware V3.x - V4.5+)
+//
+// Paste this whole file as-is into:
+//   - The Things Stack v3:  Application > Payload formatters > Uplink > Custom JavaScript
+//   - ChirpStack v4:        Device profile > Codec > JavaScript functions
+//   - ChirpStack v3:        Device profile > Codec > Custom JavaScript (uses Decode() below)
+//
+// Frames on FPort 99 (WeatherXM format, AT+TESTMODE_TYPE=0, the default):
+//   0xF0  24-byte weather frame (1 Helium data credit)
+//   0xF1  same, followed by a 64-byte ECDSA P-256 signature from the station's secure element
+//   0xF2  12-byte boot frame (firmware/hardware version, sensor protocol version)
+//   0xF3  GNSS scan (raw LR1110 NAV message; resolve with a GNSS solver)
+// Frames on FPort 3 (legacy "Open LoRaWAN" TLV, AT+TESTMODE_TYPE=1) are decoded too.
+//
+// Source of truth: ws2001-firmware/tools/decoders/ws2001_uplink_decoder.js
+// (byte layout: application/smtc_board/bsp/peripherals/ccl_sensor/sensor_data.c)
+
+function wxmHex(bytes, start, end) {
+  var s = "";
+  for (var i = start; i < end && i < bytes.length; i++) {
+    s += (bytes[i] < 16 ? "0" : "") + bytes[i].toString(16);
+  }
+  return s;
+}
+
+function wxmU16le(b, i) { return b[i] | (b[i + 1] << 8); }
+function wxmU24le(b, i) { return b[i] | (b[i + 1] << 8) | (b[i + 2] << 16); }
+function wxmU32le(b, i) { return (b[i] | (b[i + 1] << 8) | (b[i + 2] << 16) | (b[i + 3] << 24)) >>> 0; }
+
+function wxmDecodeWeatherXM(bytes) {
+  var data = {};
+  var tag = bytes[0];
+  if (bytes.length < 3) return { errors: ["frame too short"] };
+  data.firmware_version = (bytes[1] >> 4) + "." + (bytes[1] & 0x0f);
+  var hw = (bytes[2] >> 5) & 0x07;
+  data.hardware_version = hw > 0 ? "1." + (hw - 1) : "unknown";
+  data.tx_power = bytes[2] & 0x1f;
+
+  if (tag === 0xf2) {
+    data.frame = "boot";
+    if (bytes.length >= 12) {
+      data.boot_nonce = wxmHex(bytes, 3, 11);
+      data.sensor_protocol_version = bytes[11];
+    }
+    return { data: data };
+  }
+  if (tag === 0xf3) {
+    return { data: { frame: "gnss_scan", gnss_status: bytes[1], gnss_length: bytes[2], gnss_raw: wxmHex(bytes, 3, bytes.length) } };
+  }
+  if (tag !== 0xf0 && tag !== 0xf1) return { errors: ["unknown frame tag 0x" + wxmHex(bytes, 0, 1)] };
+  if (bytes.length < 24) return { errors: ["weather frame must be 24 bytes, got " + bytes.length] };
+
+  data.frame = tag === 0xf1 ? "weather_signed" : "weather";
+  data.upload_interval_min = bytes[3] & 0x7f;
+  data.battery_low = (bytes[3] & 0x80) !== 0;
+  data.samples = bytes[4];
+
+  var t = wxmU16le(bytes, 5);
+  data.temperature = t === 0x7fff ? null : (t & 0x8000 ? t - 0x10000 : t) / 10;          // °C
+
+  var hd = (bytes[7] << 8) | bytes[8];
+  data.humidity = (hd >> 9) === 0x7f ? null : hd >> 9;                                     // %RH
+  data.wind_direction = (hd & 0x1ff) === 0x1ff ? null : hd & 0x1ff;                       // degrees
+
+  var uw = (bytes[9] << 8) | bytes[10];
+  data.uv_index = (uw >> 11) === 0x1f ? null : uw >> 11;
+  data.wind_speed = (uw & 0x7ff) === 0x7ff ? null : (uw & 0x7ff) / 10;                    // m/s, mean of 12 s averages
+
+  var g = wxmU16le(bytes, 11);
+  data.wind_gust = g === 0xffff ? null : g / 10;                                           // m/s, max of 12 s peaks
+
+  var r = wxmU32le(bytes, 13);
+  data.rain_accumulated = r === 0x7fffffff ? null : r / 1000;                              // mm, lifetime counter
+  data.rain_rate = wxmU16le(bytes, 17) / 10;                                               // mm/h, max over the interval
+
+  var lx = wxmU24le(bytes, 19);
+  data.lux = lx === 0x7fffff ? null : lx;
+
+  var p = wxmU16le(bytes, 22);
+  data.pressure = p === 0xffff ? null : p / 10;                                            // hPa
+  data.pressure_pa = p === 0xffff ? null : p * 10;
+
+  if (tag === 0xf1 && bytes.length >= 88) data.signature = wxmHex(bytes, 24, 88);
+  return { data: data };
+}
+
+function wxmDecodeLegacyTlv(bytes) {
+  var data = {};
+  var i = 0;
+  while (i < bytes.length) {
+    var id = bytes[i++];
+    if (id === 0x01 && i + 10 <= bytes.length) {
+      var rawTemp = (bytes[i] << 8) | bytes[i + 1];
+      if (rawTemp & 0x8000) rawTemp -= 0x10000;
+      data.temperature = rawTemp / 10;
+      data.humidity = bytes[i + 2];
+      data.lux = ((bytes[i + 3] << 24) >>> 0) + (bytes[i + 4] << 16) + (bytes[i + 5] << 8) + bytes[i + 6];
+      data.uv_index = bytes[i + 7] / 10;
+      data.wind_speed = ((bytes[i + 8] << 8) | bytes[i + 9]) / 10;
+      i += 10;
+    } else if (id === 0x02 && i + 8 <= bytes.length) {
+      data.wind_direction = (bytes[i] << 8) | bytes[i + 1];
+      var rawRain = ((bytes[i + 2] << 24) >>> 0) + (bytes[i + 3] << 16) + (bytes[i + 4] << 8) + bytes[i + 5];
+      data.rain_rate = rawRain / 1000;
+      var rawPress = (bytes[i + 6] << 8) | bytes[i + 7];
+      data.pressure = rawPress / 10;
+      data.pressure_pa = rawPress * 10;
+      i += 8;
+    } else if (id === 0x03 && i + 1 <= bytes.length) {
+      data.battery = bytes[i++];
+    } else if (id === 0x04 && i + 9 <= bytes.length) {
+      data.battery = bytes[i];
+      data.hardware_version = bytes[i + 1] + "." + bytes[i + 2];
+      data.firmware_version = bytes[i + 3] + "." + bytes[i + 4];
+      data.upload_interval_min = (bytes[i + 5] << 8) | bytes[i + 6];
+      data.gps_interval_min = (bytes[i + 7] << 8) | bytes[i + 8];
+      i += 9;
+    } else if (id === 0x05 && i + 4 <= bytes.length) {
+      data.upload_interval_min = (bytes[i] << 8) | bytes[i + 1];
+      data.gps_interval_min = (bytes[i + 2] << 8) | bytes[i + 3];
+      i += 4;
+    } else if (id === 0x06 && i + 1 <= bytes.length) {
+      data.sensor_error_code = bytes[i++];
+    } else {
+      break;
+    }
+  }
+  data.frame = "legacy_tlv";
+  return { data: data, warnings: ["Legacy Open LoRaWAN format (no wind gust / rain total). Set AT+TESTMODE_TYPE=0 for the WeatherXM frame."] };
+}
+
+function wxmDecode(bytes, fPort) {
+  if (!bytes || bytes.length === 0) return { data: {} };
+  if (fPort === 3) return wxmDecodeLegacyTlv(bytes);
+  if (fPort === 99 || bytes[0] === 0xf0 || bytes[0] === 0xf1 || bytes[0] === 0xf2 || bytes[0] === 0xf3) {
+    return wxmDecodeWeatherXM(bytes);
+  }
+  return { data: {}, warnings: ["Unexpected FPort " + fPort] };
+}
+
+// The Things Stack v3 and ChirpStack v4
+function decodeUplink(input) {
+  return wxmDecode(input.bytes, input.fPort);
+}
+
+// ChirpStack v3
+function Decode(fPort, bytes, variables) {
+  var r = wxmDecode(bytes, fPort);
+  return r.data || {};
+}
+```
+
+</details>
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.

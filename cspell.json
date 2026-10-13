@@ -6,6 +6,13 @@
   "language": "en-GB",
   // words - list of words to be always considered correct
   "words": [
+    "OTAA",
+    "RSSI",
+    "Seeed",
+    "chirpstack",
+    "Targ",
+    "TESTMODE",
+    "smtc",
     "tokenomics",
     "Keppas",
     "IPFS",

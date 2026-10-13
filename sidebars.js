@@ -42,6 +42,8 @@ module.exports = {
             "wxm-devices/h2-open/introduction",
             "wxm-devices/h2-open/contents",
             "wxm-devices/h2-open/assemble",
+            "wxm-devices/h2-open/connect-to-your-network",
+            "wxm-devices/h2-open/ttn-and-chirpstack",
             "wxm-devices/h2-open/install-weather-station",
             "wxm-devices/h2-open/maintenance",
             "wxm-devices/h2-open/troubleshooting"

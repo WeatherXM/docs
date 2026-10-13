@@ -6,75 +6,104 @@ sidebar_label: Troubleshooting
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 
-This guide covers common troubleshooting scenarios when deploying and registering the WeatherXM H2 Open Edition weather station on The Things Network, ChirpStack, or private LoRaWAN gateways.
-
----
-
-### 1. Station Does Not Power On / LED Does Not Flash
-
-When batteries are first installed, the red LED indicator on the underside of the sensor array should flash briefly.
-
-- **Check Battery Polarity:** Ensure all 3× AA batteries (or 6× AA in the external pack) are aligned correctly matching the `+/-` markings.
-- **Check Battery Voltage:** Ensure you are using fresh, high-quality 1.5V non-rechargeable batteries (Lithium recommended).
-- **Inspect Contacts:** Check that battery springs and contacts are clean and dry.
-
-:::danger
-Never use rechargeable batteries (e.g. NiMH, Li-ion 3.7V). They can damage the power circuitry.
+:::info
+**If you experience connection issues with the web flasher, make sure you are near the station** (Bluetooth range is about 10m/32ft with few obstacles).
 :::
 
----
+## Bluetooth and the web flasher
 
-### 2. Device Fails to Join the LoRaWAN Network (OTAA Timeout)
+### The station is not listed when I click Connect
 
-If your LoRaWAN Network Server (The Things Stack Console, ChirpStack) shows no Join Request or Join Accept:
+<div class="explanation small-big">
+  <img src={useBaseUrl("img/wxm-devices/helium/no-device-found.jpg")} />
+  <span>
 
-1. **Verify Gateway Coverage & Proximity:** Ensure there is an active LoRaWAN gateway in range. Check your gateway's live traffic log to verify whether uplink packets are being received.
-2. **Double-Check EUI and Keys:**
-   - **DevEUI:** Exactly 16 hexadecimal characters matching the device label.
-   - **AppEUI / JoinEUI:** Exactly 16 hexadecimal characters.
-   - **AppKey:** Exactly 32 hexadecimal characters. A single typo in the AppKey prevents cryptographic derivation of session keys during the OTAA handshake.
-3. **Verify Regional Frequency Plan:**
-   - **Europe:** EU863-870
-   - **North America:** US902-928 (FSB 2 for TTN)
-   - **Australia:** AU915-928 (FSB 2)
-4. **Trigger Manual Join:** Press the configuration / join button on the underside of the weather station once to trigger an immediate OTAA Join Request.
+Make sure the station has started: press the reset button at the bottom of the weather station once. The LED flashes a few times when it restarts. Then try again from closer.
 
----
+Use **Chrome** or **Edge** on a computer or an Android phone. Safari, Firefox and iPhone/iPad browsers do not support Web Bluetooth.
 
-### 3. Web Bluetooth (BLE) Flasher Troubleshooting
+</span>
+</div>
 
-When connecting the sensor to [flasher.weatherxm.com](https://flasher.weatherxm.com) to verify firmware or adjust frequency plans:
+<hr/>
 
-- **Browser Requirement:** Web Bluetooth requires a compatible browser such as Google Chrome, Microsoft Edge, or Chromium on desktop or Android.
-- **5-Minute Pairing Window:** For security and battery conservation, the station enables Bluetooth advertising for **5 minutes** after inserting batteries or pressing the configuration button. If connection fails, press the configuration button or power-cycle the device and retry scanning immediately.
-- **Pairing PIN:** When prompted by your operating system, enter the default pairing PIN: `000000`.
+### It asks to pair but fails, or it connects and then nothing happens
 
----
+Pairing is only allowed in the **first 5 minutes after the station starts**. Restart the station (one short press of the reset button) and connect within 5 minutes.
 
-### 4. Telemetry Uplinks Arrive but Payload Is Not Decoded
+If your computer or phone paired with this station before a [factory reset](#factory-reset), remove the station from its Bluetooth settings ("Forget" / "Remove device") and pair again.
 
-If your network server receives raw hex uplinks (e.g., `01 01 10 00 E4 02 01 ...`) on `FPort 1` but displays unparsed bytes:
+If the flasher stays on **Discovering…**, disconnect, wait a few seconds and connect again. If Windows shows a pairing prompt, accept it.
 
-- Ensure you have pasted the custom JavaScript payload formatter into your application settings under **Payload formatters > Uplink**.
-- Refer to [Introduction & Setup Guide](/wxm-devices/h2-open/introduction#step-6-payload-formatter-decoder) for the complete, tested decoder script.
+<hr/>
 
----
+### I can't find the station during the firmware update
 
-### 5. Inaccurate Wind Direction
+During a firmware update the station restarts into update mode and appears in the Bluetooth list as **DfuWX** plus six characters (for example **DfuWX467063**), or as **DfuTarg**, not as "WeatherXM WS2001 …". Select that name.
 
-If wind direction measurements appear offset:
+The station stays in update mode for about 2 minutes and keeps its current firmware until the new one is installed. If the update is interrupted, click **Try again** in the flasher to resume. If the 2 minutes have passed, the station restarts with its current firmware: connect again and start the update again.
 
-- Ensure the **North (N)** arrow embossed on top of the sensor casing points precisely towards True North. Use a magnetic compass corrected for local magnetic declination, or a smartphone GPS compass app.
+<hr/>
 
----
+### The update says the station "already runs a newer firmware"
 
-### 6. Rain Gauge Tipping Bucket False Triggers
+The station refuses older firmware than it has installed. Nothing was changed; you can keep using the station.
 
-- **Pole Oscillation:** If wind causes high rainfall rates during dry windy conditions, ensure the mounting pole is securely braced and rigid. Mechanical swaying can oscillate the internal tipping spoon.
-- **Leveling:** Check that the spirit bubble level on top of the casing is perfectly centered.
+<hr/>
 
----
+## LoRaWAN
 
-## Community & Support
+### The station does not join my network
 
-Join fellow builders in the <Link to="https://weatherxm.com/discord">WeatherXM Discord Server</Link> or contact our team via [WeatherXM Support](https://support.weatherxm.com).
+While joining, the red LED breathes (fades in and out). If it keeps breathing:
+
+1. **Gateway coverage:** check that your gateway is online and receives the station. On TTN, open the gateway's **Live data**; on ChirpStack, the gateway's **LoRaWAN frames**. If the gateway sees nothing, the station is out of range: move it, the gateway, or both.
+1. **Region:** the region set in the flasher must match your gateway and the device's frequency plan on the network server (for example EU868 everywhere, or US915 with Sub-Band 2).
+1. **Keys:** the DevEUI, JoinEUI and AppKey must be identical in the flasher and on the network server. A single wrong character in the AppKey makes the network server drop the join request (TTN shows this in the device's live data).
+1. **LoRaWAN version:** register the device as **LoRaWAN 1.0.4** (RP002 1.0.3).
+
+Each time you disconnect the flasher the station restarts and joins again.
+
+<hr/>
+
+### Uplinks arrive but are not decoded
+
+- Install the [WeatherXM decoder](/wxm-devices/h2-open/ttn-and-chirpstack#payload-decoder) as the uplink payload formatter (TTN) or codec (ChirpStack).
+- WeatherXM frames arrive on **FPort 99**. Decoders made for the SenseCAP S2120 do not understand them.
+- Uplinks on **FPort 3** mean the station still uses the legacy format from older tools: connect it with the web flasher and apply your settings again to switch to the WeatherXM frame.
+
+<hr/>
+
+### Uplinks are missing or TTN warns about airtime
+
+On The Things Network each device may use 30 seconds of airtime per day. Use an upload interval of **5 minutes or more**, and 10 minutes or more when the station is far from the gateway. See [TTN fair use](/wxm-devices/h2-open/ttn-and-chirpstack#the-things-network-ttn).
+
+<hr/>
+
+### I want the station back on the WeatherXM network
+
+Connect with the web flasher and click **Switch back to WeatherXM**. See [Switch back](/wxm-devices/h2-open/connect-to-your-network#switch-back-to-the-weatherxm-network).
+
+<hr/>
+
+## Factory reset
+
+<div class="explanation small-big">
+  <span>
+
+A factory reset restores the factory settings, **erases all paired (bonded) computers and phones**, resets the rain counter, and returns the station to its **WeatherXM network profile**. Your own network profile stays stored; to use your network again, apply your settings with the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
+
+:::warning
+Remove the station from your computer's or phone's Bluetooth settings **right before** the factory reset, so you can pair again afterwards. After the reset the station restarts and accepts new pairings for 5 minutes.
+:::
+
+To perform the factory reset, hold down the middle button on the bottom of the weather station, count to ~10 and release. The LED flashes very quickly to confirm the reset, then the station restarts.
+<img src={useBaseUrl("img/wxm-devices/helium/reset-station.svg")} />
+</span>
+</div>
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.

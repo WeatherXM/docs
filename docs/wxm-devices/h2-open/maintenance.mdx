@@ -5,31 +5,31 @@ sidebar_label: Maintenance
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Periodic maintenance ensures that the sensor array continues to record accurate observations and that the solar collector and power systems operate without disruption.
+The maintenance of the weather station is an important process, which should be conducted meticulously over the suggested period of time.
+This process includes the cleaning of certain parts of the outdoor unit and the replacement of batteries.
 
-The recommended maintenance routine is summarised below:
+The maintenance process is summarised in the following steps.
 
-### 1. Rain Gauge Funnel & Tipping Bucket
+### Rain Gauge
 Clean the rain gauge at least once every 3 months.
-- Rotate the rain funnel counter-clockwise and lift it off to expose the tipping bucket mechanism.
-- Clean the funnel and internal cavity with a damp cloth, removing leaves, dirt, dust, and insects.
-- Check the small drain holes at the bottom of the sensor housing to ensure rainwater drains freely.
-- Ensure the tipping spoon moves freely without obstruction.
-
+Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism
+and clean with a damp cloth. Remove any dirt, debris and insects.
+If bug infestation is an issue, spray the array lightly with insecticide.
+It is important not to swing the rain gauge spoon during this process,
+as the weather station will measure and record faulty precipitation.
+The sketch below shows how to open the rain gauge.
 <div class="explanation">
-  <img src={useBaseUrl("img/wxm-devices/helium/maintenance.svg")} alt="Maintenance diagram" />
+  <img src={useBaseUrl("img/wxm-devices/helium/maintenance.svg")} />
 </div>
 
-:::caution
-Do not manually swing the tipping spoon vigorously while the station is in service if your downstream application triggers alerts on sudden high rainfall rates.
+### Solar Panel
+Clean the solar panel at least every 3 months with a damp cloth.
+
+### Thermo-Hygro Sensor
+Remove any dirt, debris and insects from the [thermo-hygro sensor](/wxm-devices/h2-open/contents#weather-station) every 12 months. It may be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.
+
+<hr />
+:::note
+You should occasionally check the battery status of the weather station: the decoded uplink includes `battery_low` (see [Payload format](/wxm-devices/h2-open/ttn-and-chirpstack#payload-format)), and the [web flasher](https://flasher.weatherxm.com) shows the battery on the station card. If the battery is low, replace all batteries with new ones of the same type.
+In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
 :::
-
-### 2. Solar Panel
-Wipe the surface of the solar collector at least once every 3 months using a damp cloth. Dust, bird droppings, or pollen build-up can reduce charging efficiency during overcast winter days.
-
-### 3. Radiation Shield & Sensors
-Inspect the radiation shield every 6 to 12 months. Remove any spiderwebs, debris, or insects lodging between the louvers to maintain unrestricted natural airflow around the temperature, humidity, and barometric pressure sensors.
-
-### 4. Battery Inspection
-- Inspect the AA batteries annually (or every 3–6 months in extreme freezing environments).
-- If battery voltage drops (monitored via your decoded LoRaWAN battery telemetry field or the [BLE web flasher](https://flasher.weatherxm.com)), replace all AA batteries with a fresh set of non-rechargeable 1.5V batteries (Lithium recommended).
