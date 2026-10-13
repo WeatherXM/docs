@@ -13,7 +13,7 @@
 <script>!function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2542811,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document)</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4e722177.css">
-<script src="/assets/js/runtime~main.5bfab66d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.e511795c.js" defer="defer"></script>
 <script src="/assets/js/main.ecf6f9c4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -40,7 +40,8 @@
 <ul>
 <li class="">A computer or phone that has <strong>never</strong> connected to this station can only pair during the <strong>first 5 minutes after the station starts</strong>. Restart the station (one short press of the reset button) and connect within 5 minutes.</li>
 <li class="">If the station was <a href="#factory-reset" class="">factory reset</a> since your last connection, remove it from your computer&#x27;s or phone&#x27;s Bluetooth settings (&quot;Forget&quot; / &quot;Remove device&quot;) and pair again.</li>
-<li class="">If the flasher stays on <strong>Discovering…</strong>, click Disconnect (or reload the page), wait a few seconds and connect again. If your operating system shows a pairing prompt, accept it.</li>
+<li class="">The first pairing on a computer can take up to half a minute: the flasher shows <strong>Waiting for Bluetooth pairing…</strong>. If your operating system shows a pairing prompt, accept it.</li>
+<li class="">If the connection hangs, click <strong>Cancel and disconnect</strong> (or reload the page), wait a few seconds and connect again.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-cant-find-the-station-during-the-firmware-update">I can&#x27;t find the station during the firmware update<a href="#i-cant-find-the-station-during-the-firmware-update" class="hash-link" aria-label="Direct link to I can&#x27;t find the station during the firmware update" title="Direct link to I can&#x27;t find the station during the firmware update" translate="no">​</a></h3>
@@ -65,6 +66,7 @@
 <li class="">Install the <a class="" href="/wxm-devices/h2-open/ttn-and-chirpstack#payload-decoder">WeatherXM decoder</a> as the uplink payload formatter (TTN) or the codec of the device profile (ChirpStack).</li>
 <li class="">WeatherXM frames arrive on <strong>FPort 99</strong>. Decoders written for the SenseCAP S2120 do not understand them.</li>
 <li class="">Uplinks on <strong>FPort 3</strong> mean the station still uses the legacy format set by older tools. Connect it with the web flasher and apply your settings again to switch to the WeatherXM frame.</li>
+<li class="">Uplinks on <strong>FPort 199</strong> come from firmware older than V4.6, which kept sending background messages meant for the WeatherXM network. Connect with the web flasher to update the station; the decoder labels these messages <code>modem_service</code>.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="uplinks-are-missing-or-the-network-warns-about-airtime">Uplinks are missing, or the network warns about airtime<a href="#uplinks-are-missing-or-the-network-warns-about-airtime" class="hash-link" aria-label="Direct link to Uplinks are missing, or the network warns about airtime" title="Direct link to Uplinks are missing, or the network warns about airtime" translate="no">​</a></h3>
