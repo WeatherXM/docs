@@ -78,36 +78,11 @@ On The Things Network each device may use 30 seconds of airtime per day. Use an 
 
 <hr/>
 
-## Return to the WeatherXM (Helium) network
+## Return to the WeatherXM network
 
-The H2 can go back to the WeatherXM network, which uses the Helium LoRaWAN network, at any time. How depends on the firmware the station had when it was moved to your network.
+The station keeps its WeatherXM settings, so it can potentially return to the WeatherXM network. The **Switch back to WeatherXM** button in the [web flasher](https://flasher.weatherxm.com) activates them and restarts the station; a [factory reset](#factory-reset) does the same.
 
-### Stations with firmware V4.5 or later
-
-The WeatherXM keys are kept on the station, so switching back takes one click:
-
-1. Open [flasher.weatherxm.com](https://flasher.weatherxm.com), choose **WS2001 (H2)** and connect to the station.
-1. The station card shows **This station is on your own LoRaWAN network**. Click **Switch back to WeatherXM** and confirm.
-1. The station reactivates its WeatherXM keys and its WeatherXM upload interval, keeps the WeatherXM data frame, and restarts. The LED breathes while it joins and turns off once it has joined.
-
-Your own network settings stay stored on the station, so you can move it to your network again later with [Connect to Your Network](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
-
-A [factory reset](#factory-reset) also returns a V4.5 station to the WeatherXM network.
-
-### Stations moved with older tools (firmware before V4.5)
-
-Before V4.5 the station had a single set of keys, and moving it to your network replaced the WeatherXM keys. To return:
-
-1. Connect with the web flasher. It first **updates the station to the latest firmware** (keep **Update the station firmware automatically** ticked).
-1. Perform a [factory reset](#factory-reset). This restores the network settings the station was delivered with.
-1. If the station still does not join the WeatherXM network after a few minutes, contact [WeatherXM support](https://support.weatherxm.com) with the station's DevEUI (shown in the web flasher): the WeatherXM keys can be provisioned again.
-
-### After the station is back
-
-- The station uses the region currently set on it. If you changed it for your own network, set the region used by the WeatherXM network in your area (see [frequency plans](/wxm-devices/frequency-plans)).
-- To see the station in the WeatherXM app and receive $WXM rewards, it must be claimed in your WeatherXM account. If it is not, follow [Connect and Claim](/wxm-devices/helium/connect-and-claim).
-- Switching back may affect proofs, Quality of Data (QoD) and $WXM rewards for the time the station was away.
-- Remove the device from your TTN or ChirpStack application if you no longer use it there.
+If the station does not rejoin the WeatherXM network, contact [WeatherXM support](https://support.weatherxm.com) with its DevEUI (shown in the web flasher).
 
 <hr/>
 
@@ -116,7 +91,7 @@ Before V4.5 the station had a single set of keys, and moving it to your network 
 <div className="explanation small-big">
   <span>
 
-A factory reset restores the factory settings, **erases all paired (bonded) computers and phones**, resets the rain counter and returns the station to its **WeatherXM network profile**. On firmware V4.5 or later your own network profile stays stored; to use your network again, apply your settings with the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
+A factory reset restores the factory settings, **erases all paired (bonded) computers and phones**, resets the rain counter and activates the station's **WeatherXM network settings**, so it stops using your network. Your own network settings stay stored; to use your network again, apply your settings with the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
 
 :::warning
 Remove the station from your computer's or phone's Bluetooth settings **right before** the factory reset, so you can pair again afterwards. After the reset the station restarts and accepts new pairings for 5 minutes.

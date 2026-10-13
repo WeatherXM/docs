@@ -12,7 +12,7 @@ The station is configured over Bluetooth with the **WeatherXM web flasher** at [
 
 - **It keeps the station up to date.** When you connect a station with older firmware, the flasher updates it to the latest WeatherXM release first. The update keeps all settings, keys and the rain counter.
 - **It points the station at your network** in one step: region, JoinEUI, AppKey and upload interval.
-- **It keeps the WeatherXM keys.** From firmware V4.5 the station stores two network profiles: the WeatherXM one and yours. Switching between them never deletes either set of keys, so you can [switch back](#switch-back-to-the-weatherxm-network) to the WeatherXM network at any time.
+- **It keeps the WeatherXM settings.** The station stores your network settings as a separate profile next to the WeatherXM one, so it can potentially return to the WeatherXM network later. Stations with older firmware must be updated first; the flasher does not move them to your network before the update.
 - **It keeps the full WeatherXM data frame.** Your network receives the same 24-byte frame as the WeatherXM network, including wind gust and rain total, and the flasher gives you the matching [decoder for TTN and ChirpStack](/wxm-devices/h2-open/ttn-and-chirpstack).
 
 ## What you need
@@ -76,7 +76,7 @@ In the **LoRaWAN Network Configuration** form:
 
 Click **Apply & Connect to My Network**, tick **I understand** and confirm. The flasher:
 
-- selects the station's **custom network profile** (the WeatherXM keys stay stored),
+- selects the station's **custom network profile** (the WeatherXM settings are not overwritten),
 - writes the region, JoinEUI, AppKey and interval,
 - keeps the **WeatherXM 24-byte payload on FPort 99**,
 - restarts the station so it joins your network.
@@ -101,14 +101,9 @@ Disconnecting from the flasher always restarts the station, which then joins aga
 
 ## Switch back to the WeatherXM network
 
-1. Connect to the station with the flasher as in step 1.
-1. The station card shows **This station is on your own LoRaWAN network**. Click **Switch back to WeatherXM** and confirm.
+When the station is on your own network, the station card in the flasher shows a **Switch back to WeatherXM** button. It activates the WeatherXM settings stored on the station and restarts it, so the station can potentially rejoin the WeatherXM network. Your own network settings stay stored on the station.
 
-The station reactivates its WeatherXM keys and its WeatherXM upload interval, keeps the WeatherXM payload, and restarts to join the WeatherXM network. Your own network profile stays stored on the station; to move back to your network later, repeat [step 4](#4-enter-your-network-settings).
-
-:::info
-Switching back to the WeatherXM network may affect proofs, Quality of Data (QoD) and $WXM rewards for the time the station was away.
-:::
+If the station does not rejoin the WeatherXM network, contact [WeatherXM support](https://support.weatherxm.com) with its DevEUI.
 
 ## Help & Support
 

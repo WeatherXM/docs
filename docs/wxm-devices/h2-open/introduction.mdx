@@ -28,11 +28,11 @@ The hardware is the same as the Seeed Studio SenseCAP S2120 8-in-1 station, but 
 - Everything fits in **one compact 24-byte frame**. Periodically the frame is **signed** by the station's secure element, so you can prove that the data came from that station.
 - **Only your data on your network.** On your own network the station sends nothing but its own frames on FPort 99: no background modem traffic that your network server could not answer (firmware V4.6 and later).
 - **Optional GNSS location.** If you switch it on, the station sends a raw satellite scan about once a day that you can store and solve later (firmware V4.7 and later, off by default).
-- **Your keys, your data.** You choose the JoinEUI and AppKey. The WeatherXM keys stay stored on the station, so it can switch back to the WeatherXM network at any time (firmware V4.5 and later).
+- **Your keys, your data.** You choose the JoinEUI and AppKey. The station keeps its WeatherXM settings, so it can potentially return to the WeatherXM network later.
 - **Firmware updates over Bluetooth** from your browser, using [flasher.weatherxm.com](https://flasher.weatherxm.com). The flasher brings older stations to the latest firmware automatically.
 
 :::info
-While the station is on your own network it is **not** part of the WeatherXM network: it does not earn $WXM rewards and its data does not appear in the WeatherXM app. You can switch it back at any time with the [web flasher](/wxm-devices/h2-open/connect-to-your-network#switch-back-to-the-weatherxm-network).
+While the station is on your own network it is **not** part of the WeatherXM network: it does not earn $WXM rewards and its data does not appear in the WeatherXM app. It can potentially return to the WeatherXM network later, see [Return to the WeatherXM network](/wxm-devices/h2-open/troubleshooting#return-to-the-weatherxm-network).
 :::
 
 ## Next steps
