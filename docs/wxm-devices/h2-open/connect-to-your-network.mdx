@@ -36,7 +36,8 @@ Do **not** hold the reset button for 10 seconds. That performs a [factory reset]
 1. Open [flasher.weatherxm.com](https://flasher.weatherxm.com) and choose **WS2001 (H2)**.
 1. Leave **Update the station firmware automatically** ticked (recommended).
 1. Click **Connect to WS2001 (H2)**. In the Bluetooth list, select **WeatherXM WS2001 XXXXXX** (older units may show **WeatherXM WS2000 XXXXXX**). `XXXXXX` is the end of the station's DevEUI.
-1. If your computer asks to pair, accept it.
+1. If your computer asks to pair, accept it. The first pairing on a computer can take up to half a minute: the flasher shows **Waiting for Bluetooth pairing…** and keeps the connection open meanwhile.
+1. If the connection hangs, click **Cancel and disconnect**, wait a few seconds and connect again.
 
 The flasher shows the station's **DevEUI**, network, region, firmware version, battery and upload interval. Copy the **DevEUI**: you need it to register the station on your network server.
 
@@ -71,6 +72,7 @@ In the **LoRaWAN Network Configuration** form:
 | JoinEUI / AppEUI | 16 hex characters, as registered on your server (TTN accepts `0000000000000000`) |
 | AppKey | 32 hex characters, as registered on your server (or click **Generate Random** and register that key) |
 | Upload Interval | **5 minutes** (default). Use 10 minutes or more on TTN if the station is far from the gateway |
+| Send GNSS location scans | Optional, **off** by default (firmware V4.7 and later). See [GNSS location](#gnss-location-optional) |
 
 Click **Apply & Connect to My Network**, tick **I understand** and confirm. The flasher:
 
@@ -78,6 +80,16 @@ Click **Apply & Connect to My Network**, tick **I understand** and confirm. The 
 - writes the region, JoinEUI, AppKey and interval,
 - keeps the **WeatherXM 24-byte payload on FPort 99**,
 - restarts the station so it joins your network.
+
+On your network the station only sends its own frames on FPort 99. The background messages that the WeatherXM network uses (time sync, device status) stay off, so they don't use your airtime (firmware V4.6 and later).
+
+### GNSS location (optional)
+
+From firmware V4.7 the station can send a raw GNSS satellite scan (`0xF3` frame on FPort 99) about once a day. It is **off by default**; tick **Send GNSS location scans** in the flasher to turn it on.
+
+- The scan is not a position: store it and resolve it later with a GNSS solver if you need the location.
+- The scan needs the current time, which the station asks your network server for with the standard LoRaWAN **DeviceTimeReq** command. The Things Network and ChirpStack answer it, but the answer is a downlink, so your gateway must be able to transmit.
+- If the network server does not answer after 3 attempts, the station turns GNSS off until it restarts, so it doesn't keep asking.
 
 ### 5. Watch it join
 

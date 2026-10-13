@@ -31,7 +31,8 @@ If the station is connected to another computer or phone, it does not appear: on
 
 - A computer or phone that has **never** connected to this station can only pair during the **first 5 minutes after the station starts**. Restart the station (one short press of the reset button) and connect within 5 minutes.
 - If the station was [factory reset](#factory-reset) since your last connection, remove it from your computer's or phone's Bluetooth settings ("Forget" / "Remove device") and pair again.
-- If the flasher stays on **Discovering…**, click Disconnect (or reload the page), wait a few seconds and connect again. If your operating system shows a pairing prompt, accept it.
+- The first pairing on a computer can take up to half a minute: the flasher shows **Waiting for Bluetooth pairing…**. If your operating system shows a pairing prompt, accept it.
+- If the connection hangs, click **Cancel and disconnect** (or reload the page), wait a few seconds and connect again.
 
 <hr/>
 
@@ -67,6 +68,7 @@ If the LED keeps breathing, the station cannot complete the join:
 - Install the [WeatherXM decoder](/wxm-devices/h2-open/ttn-and-chirpstack#payload-decoder) as the uplink payload formatter (TTN) or the codec of the device profile (ChirpStack).
 - WeatherXM frames arrive on **FPort 99**. Decoders written for the SenseCAP S2120 do not understand them.
 - Uplinks on **FPort 3** mean the station still uses the legacy format set by older tools. Connect it with the web flasher and apply your settings again to switch to the WeatherXM frame.
+- Uplinks on **FPort 199** come from firmware older than V4.6, which kept sending background messages meant for the WeatherXM network. Connect with the web flasher to update the station; the decoder labels these messages `modem_service`.
 
 <hr/>
 
