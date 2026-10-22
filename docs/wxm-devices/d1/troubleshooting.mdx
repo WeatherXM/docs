@@ -41,12 +41,7 @@ The solution may be as simple as powering down and up the WG1200 Gateway. Make s
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 
 :::tip Diagnose RF Reception in the Local Web Console
-When the WG1200 Gateway is connected to Wi-Fi, you can open its built-in **Local Web Console** at `http://<gateway-ip>/` and navigate to the **Settings** tab to:
-- Inspect the **Live LoRa Packet Sniffer** (`/packet_log`) to see incoming station packets, frequencies, RSSI, SNR, and decoded sensor payloads in real time.
-- Check the **Station Pairing** panel (`CLOUD`, `LOCAL`, `SCAN`, or `OFF` modes) or trigger a multi-channel discovery scan (~11 minutes) if the gateway needs to re-discover your station.
-- Note that if a paired station goes offline temporarily, the gateway's automated multi-phase fallback recovery will continue listening and automatically restore your paired station profile as soon as its signal returns.
-
-See the [WG1200 Firmware Pairing Lifecycle Guide](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/pairing_states.md) on GitHub for more details.
+When the WG1200 Gateway is connected to Wi-Fi, you can open `http://<gateway-ip>/` (**Settings** tab) to inspect the **Live LoRa Packet Sniffer** and **Station Pairing** controls, check signal quality (RSSI/SNR), or run a discovery scan. See the [WG1200 Firmware repository](https://github.com/WeatherXM/wg1200-firmware) for more details.
 :::
 
 <hr />
@@ -166,12 +161,10 @@ This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weat
 
 ### My microSD card shows as "Unformatted / Unusable" or is not logging weather history
 
-The WG1200 Gateway logs 5-minute weather history (`history_v1_YYYY_MM_DD.csv`) and daily/GPS metadata (`metadata_v1_YYYY_MM_DD.csv`) to a FAT-formatted microSD card.
-- **Unformatted or unsupported filesystem (exFAT / NTFS / ext4):** The gateway pre-inspects the card in raw SPI mode so an unsupported card never interrupts normal weather uploads. Open the Local Web Console (`http://<gateway-ip>/`), go to **History & SD Card** (or **Settings -> SD Card Storage**), and click **Format SD Card** to format it as FAT with a live capacity-based ETA (~4.2 seconds per GB).
-- **Safe removal and re-insertion:** Before removing the microSD card, click **Eject SD Card** in the Web Console or use the touchscreen prompt so background writes pause cleanly. When you re-insert the card into the slot, the gateway automatically detects it, remounts `/sdcard`, and flushes any queued 24-hour RAM history.
-- **Hardware SPI diagnostics:** If a card is not detected, open `http://<gateway-ip>/sd/diagnose` (or click **Refresh** in the SD Card Management panel) to inspect card-detect pin state and SPI command telemetry.
+- **Formatting the card:** Open the Local Web Console (`http://<gateway-ip>/`), go to **History & SD Card**, and click **Format SD Card** to format the card as FAT with a live progress estimate.
+- **Safe removal:** Before removing the microSD card, click **Eject SD Card** in the Web Console or use the touchscreen prompt. Re-inserting the card automatically remounts it.
 
-For complete details on the microSD storage architecture, CSV schemas, and quality flags, see [`docs/sd_weather_storage.md`](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/sd_weather_storage.md) in the [WeatherXM/wg1200-firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware).
+For more details on microSD storage and CSV files, visit [github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware).
 
 <hr />
 

@@ -57,35 +57,13 @@ In order to receive WXM rewards, you will need to connect an ERC20 compatible wa
 
 ### WG1200 Gateway
 
-- **Display:** 3.95" capacitive touchscreen (LVGL UI) with live weather tiles, 40-minute live sparklines, and a detailed dashboard displaying **Daily Min/Max Extremes** (`↓ min ↑ max`), cumulative daily rainfall, and peak wind gusts
-- **MCU & Radio:** ESP32-S3 with SX1262 sub-GHz LoRa/FSK transceiver (868 / 915 / 923 MHz) and 2.4 GHz Wi-Fi + BLE
-- **Onboard Sensor:** Integrated barometric pressure sensor
-- **Security & Reliability:** Hardware cryptographic signing (ATECC608 / secure identity) and zero-wear `RTC_NOINIT_ATTR` SRAM retention for daily extremes and rain baselines (>98% NVS flash wear reduction)
-- **Local Storage:** Built-in microSD card slot for asynchronous 5-minute weather history (`history_v1_YYYY_MM_DD.csv`) and station/GPS data-quality metadata (`metadata_v1_YYYY_MM_DD.csv`) logging, with automatic 24-hour chart hydration on boot
-- **Local Web Console & REST API:** Built-in, gzip-compressed HTTP web dashboard (`http://<gateway-ip>/`) with mDNS auto-discovery (`_weatherxm._tcp`), **Home Assistant** integration, and a `/llms.txt` AI agent reference
-- **Off-Grid Mesh Support:** Optional collision-free **Meshtastic** and **MeshCore** LoRa weather beacon broadcasting
-- **Power & Updates:** Powered by USB-C (power adapter not included); Over-The-Air (OTA) and USB Web Serial ([flasher.weatherxm.com](https://flasher.weatherxm.com)) firmware upgradable
-- **Open-Source Firmware:** Licensed under Apache-2.0 at [github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware)
-
-### WG1200 Firmware Feature Highlights
-
-Recent WG1200 firmware releases (up to `v0.8.37`) bring a rich local analytics, storage, and integration suite directly to the gateway:
-
-- **Built-in Local Web Console (`http://<gateway-ip>/`):**
-  - **Live Dashboard:** Real-time RF link telemetry, latest weather cards (including *Feels Like*, *Dew Point*, *Daily Rain* accumulation, and onboard barometer), and 15-minute high-frequency multi-axis trends.
-  - **24-Hour Historical Weather Trends & Hourly Wind Ribbon:** Interactive 5-minute aggregated charts over the previous 24 hours (288 slots) featuring a speed-weighted **Hourly Prevailing Wind Direction Ribbon** (`N`, `NNE`, `SW`, etc.), dual-axis **Precipitation Rate & Cumulative** charts, color-coded summary pills (*Min / Avg / Max*, *Peak Gust*, *Prevailing Wind*, *3h Pressure Trend*, *Total Rain & Wet Time*), and synchronized crosshairs & drag-to-zoom across all charts.
-  - **Bidirectional LCD ↔ Web Display Units Sync:** Change temperature (`°C`/`°F`), wind speed (`m/s`, `km/h`, `mph`, `ft/s`, `bft`, `kn`), precipitation (`mm`/`in`), or pressure (`hPa`, `mmHg`, `inHg`) units on either the touchscreen LCD or the Web Console (`POST /set_units`, `GET/POST /api/v1/units`) and both interfaces immediately update and rescale all live sparklines, dashboard cards, and historical charts.
-- **microSD Weather History, Browser CSV Viewer & Safe Eject:**
-  - **Browser CSV Viewer (`/sd/view`):** Inspect stored daily weather and metadata CSV files directly in your browser with interactive charts, hourly wind ribbons, searchable newest-first tables, and data-quality flag highlighting—without downloading files first.
-  - **Safe Eject / Mount & Auto-Remount:** Dedicated **Eject SD Card** / **Mount SD Card** controls in the Web Console (`/sd/eject`, `/sd/mount`) and on the LCD touchscreen pause SPI writes for safe card removal and automatically detect physical card re-insertion (`EXPANDER_IO_SD_DET`) to remount and flush queued RAM history.
-  - **Hardware SPI Diagnostics & Guided Formatting:** Pre-inspects card partition tables in raw SPI mode to detect unformatted or unsupported cards (e.g. exFAT/NTFS) without interrupting gateway operation, with capacity-based dynamic formatting ETA (`~4.2s/GB`) and command-level diagnostics (`/sd/diagnose`).
-- **Home Assistant, Local REST API & AI Agent Support (`/llms.txt`):**
-  - Broadcasts `_weatherxm._tcp` over mDNS on port 80 for automatic local discovery.
-  - Exposes structured JSON endpoints (`/status`, `/api/v1/info`, `/api/v1/observations`, `/api/v1/history`, `/api/v1/units`), an interactive REST API explorer with a one-click **Home Assistant YAML generator**, and a machine-readable `/llms.txt` endpoint for AI coding and automation agents.
-- **Meshtastic & MeshCore Off-Grid LoRa Beaconing:**
-  - Shares the SX1262 LoRa radio via a phase-aligned post-RX radio lease and Listen-Before-Talk (Channel Activity Detection) to broadcast standardized **Meshtastic** (`Environment Telemetry`, `NodeInfo` with hardware X.509 certificate fingerprint, `DeviceMetrics`, and `Position` on `LongFast`) and **MeshCore** weather beacons to local mesh networks without missing 20-second station uplinks.
-- **Smart Station Pairing & Live LoRa Packet Sniffer:**
-  - Independently persisted **Cloud** and **Local** station profiles (`CLOUD`, `LOCAL`, `SCAN`, and `OFF` monitor-only mode), targeted **Pair on Reboot**, multi-phase autonomous fallback recovery, and a live **LoRa Packet Sniffer** (`/packet_log`) in the Web Console.
+- **3.95" capacitive touch screen** with live weather tiles, trend charts, and daily min/max extremes
+- **Integrated barometric pressure sensor** and ATECC608 hardware encryption
+- **Wi-Fi, BLE & LoRa** connectivity (forwards weather data via 2.4 GHz Wi-Fi)
+- **microSD card slot** for local weather history logging (CSV) with safe eject and an in-browser chart viewer
+- **Built-in Local Web Console (`http://<gateway-ip>/`)** featuring live & 24-hour interactive weather charts, hourly wind direction ribbons, and two-way display unit sync with the gateway screen
+- **Local API, Home Assistant & Mesh Support:** Local REST API with automatic **Home Assistant** discovery, `/llms.txt` support for AI agents, and optional **Meshtastic** / **MeshCore** off-grid LoRa weather beacons
+- **Powered by USB-C** (power adapter not included) and **over-the-air (OTA)** or browser ([flasher.weatherxm.com](https://flasher.weatherxm.com)) firmware upgradable
 
 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '12px', marginTop: '20px', marginBottom: '20px' }}>
   <img className="control" src={useBaseUrl("/img/wxm-devices/d1/webui_dashboard.png")} alt="WG1200 Web Console Live Dashboard" style={{ width: '48%', height: 'auto', borderRadius: '12px' }} />
@@ -94,13 +72,8 @@ Recent WG1200 firmware releases (up to `v0.8.37`) bring a rich local analytics, 
   <img className="control" src={useBaseUrl("/img/wxm-devices/d1/webui_api_docs.png")} alt="WG1200 Web Console Local REST API & llms.txt" style={{ width: '48%', height: 'auto', borderRadius: '12px' }} />
 </div>
 
-:::info Open-Source Firmware & Developer Documentation
-The WG1200 Gateway firmware is fully open source (Apache-2.0) and includes an eFuse-safe **Open / Community Edition (`wg1200_open`)** for developers and system integrators. For source code, architecture deep-dives, local REST API specifications, custom firmware build instructions, and the full release changelog, visit the GitHub repository:
-- **[github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware)**
-- **[Custom & Community Firmware Guide (`CUSTOM_FIRMWARE.md`)](https://github.com/WeatherXM/wg1200-firmware/blob/main/CUSTOM_FIRMWARE.md)**
-- **[SD Weather Storage & CSV Schema (`docs/sd_weather_storage.md`)](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/sd_weather_storage.md)**
-- **[Meshtastic Integration Guide (`docs/meshtastic_integration.md`)](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/meshtastic_integration.md)**
-- **[Release Changelog (`CHANGELOG.md`)](https://github.com/WeatherXM/wg1200-firmware/blob/main/CHANGELOG.md)**
+:::info Open-Source Firmware & Technical Details
+The WG1200 Gateway runs open-source firmware (Apache-2.0). For full feature details, local REST API documentation, Home Assistant & Meshtastic guides, custom firmware builds, and the release changelog, visit **[github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware)**.
 :::
 
 ### WS1001 Weather Station

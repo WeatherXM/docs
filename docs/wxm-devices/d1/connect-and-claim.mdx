@@ -197,14 +197,12 @@ Usually, it takes up to 30 minutes for the station to appear on the [explorer](h
 
 <hr/>
 
-## Local Web Console, Home Assistant & Advanced Features
+## Local Web Console & Integrations
 
-Once your WG1200 Gateway is connected to your 2.4 GHz Wi-Fi network, it automatically serves a built-in **Local Web Console & REST API** at `http://<gateway-ip>/` (and advertises `_weatherxm._tcp` over mDNS for automatic discovery in **Home Assistant**).
+Once your WG1200 Gateway is connected to Wi-Fi, you can open `http://<gateway-ip>/` in a browser on the same local network to access its built-in **Local Web Console**:
+- **Live & 24-Hour Weather Charts:** View real-time observations, 24-hour historical trends, hourly wind direction ribbons, and daily min/max extremes.
+- **Display Units Sync:** Change measurement units (`°C`/`°F`, wind speed, rain, pressure) on either the touchscreen or the Web Console and both stay in sync.
+- **microSD History & Safe Eject:** View or download stored daily CSV weather files directly in the browser, format cards, and safely eject/mount your microSD card.
+- **Home Assistant, Local API & Mesh:** Connect to **Home Assistant**, explore the local REST API and `/llms.txt` reference, or enable optional **Meshtastic** / **MeshCore** LoRa weather beacons.
 
-From the Local Web Console and touchscreen you can:
-- **View Live & 24-Hour Historical Weather Trends:** Inspect 15-minute live trends and 24-hour 5-minute aggregated charts featuring an **Hourly Prevailing Wind Direction Ribbon**, *Feels Like* & *Dew Point* series, dual-axis precipitation rate & cumulative totals, and daily min/max extremes (`↓ min ↑ max`).
-- **Synchronize Display Units (Web ↔ LCD):** Change temperature (`°C`/`°F`), wind speed (`m/s`, `km/h`, `mph`, `ft/s`, `bft`, `kn`), precipitation (`mm`/`in`), or pressure (`hPa`, `mmHg`, `inHg`) units on either the touchscreen or the Web Console and both interfaces immediately update and rescale all charts and tiles.
-- **Manage microSD Weather History:** Browse, plot, and download daily weather (`history_v1_YYYY_MM_DD.csv`) and metadata (`metadata_v1_YYYY_MM_DD.csv`) files directly in your browser (`/sd/view`), format cards with live ETA progress, and use **Safe Eject / Mount** before removing the card.
-- **Configure Meshtastic, MeshCore & Local Integrations:** Enable optional off-grid LoRa weather beacons for **Meshtastic** and **MeshCore** mesh networks, generate a ready-to-use **Home Assistant** YAML configuration, or query the local REST API (`/status`, `/api/v1/info`, `/api/v1/observations`, `/api/v1/history`, `/llms.txt`).
-
-For full technical documentation, API reference, and open-source firmware details, see the [WeatherXM WG1200 Firmware repository on GitHub](https://github.com/WeatherXM/wg1200-firmware).
+For more details, visit the [WeatherXM WG1200 Firmware repository on GitHub](https://github.com/WeatherXM/wg1200-firmware).
