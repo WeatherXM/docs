@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 
 ## Included
 
-<div class="explanation">
+<div className="explanation">
 <img src={useBaseUrl("/img/wxm-devices/d1/d1-contents-included.svg")}
      style={{width: '50%', height: 'auto'}} />
   <div>
@@ -56,7 +56,7 @@ The outdoor sensor is responsible for:
 1. the collection of measurements of local temperature, humidity, rain, wind speed and wind direction, and
 1. the wireless transmission of the data to the weather miner.
 
-<div class="explanation two-columns">
+<div className="explanation two-columns">
   <img src={useBaseUrl("img/wxm-devices/ws1000/parts.svg")} />
   <div>
     <h4>Components</h4>
@@ -84,14 +84,16 @@ The above figures show a sketch of the outdoor sensor. The sketch comes with a d
 
 ### WG1200 Gateway (D1 WiFi)
 
-<div class="control">
+<div className="control">
   <img src={useBaseUrl("/img/wxm-devices/d1/wg1200-gateway-side.png")} style={{ width: '50%', height: 'auto' }} />
 </div>
-The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network.
+The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network. It features a 3.95" capacitive touchscreen display, an integrated barometric pressure sensor, a microSD card slot for local weather history logging, and a built-in Local Web Console & REST API (`http://<gateway-ip>/`).
 
 The D1 Gateway is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer).
 
 The D1 Gateway should be permanently connected to power and powered on in order to be able to receive, record and upload measurements to the Internet.
+
+For detailed firmware documentation, local API specifications, and source code, visit the [WeatherXM WG1200 Firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware).
 
 <hr/>
 

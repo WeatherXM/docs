@@ -81,6 +81,15 @@
     "updateable",
     "SADC",
     "CRASA",
-    "Leste"
+    "Leste",
+    "LVGL",
+    "Meshtastic",
+    "meshtastic",
+    "NOINIT",
+    "crosshairs",
+    "llms",
+    "sdcard",
+    "sparklines",
+    "webui"
   ]
 }

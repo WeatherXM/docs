@@ -13,8 +13,8 @@ import Link from "@docusaurus/Link";
 <img object-fit="contain" src={useBaseUrl("/img/wxm-devices/d1/wg1200-gateway-side.png")} style={{ width: '50%', height: 'auto' }}/>
 
 The weather station comes together with the WG1200 Gateway.
-The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
-and displays them on its screen.
+The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 20 seconds by the outdoor sensor,
+and displays them on its touchscreen and built-in local web console.
 
 In this chapter, you will find guidance to set up the WG1200 Gateway.
 <hr/>
@@ -194,3 +194,15 @@ Your first rewards will appear after 24 hours of the station being online.
 :::info 
 Usually, it takes up to 30 minutes for the station to appear on the [explorer](https://explorer.weatherxm.com/stats)
 :::
+
+<hr/>
+
+## Local Web Console & Integrations
+
+Once your WG1200 Gateway is connected to Wi-Fi, you can open `http://<gateway-ip>/` in a browser on the same local network to access its built-in **Local Web Console**:
+- **Live & 24-Hour Weather Charts:** View real-time observations, 24-hour historical trends, hourly wind direction ribbons, and daily min/max extremes.
+- **Display Units Sync:** Change measurement units (`°C`/`°F`, wind speed, rain, pressure) on either the touchscreen or the Web Console and both stay in sync.
+- **microSD History & Safe Eject:** View or download stored daily CSV weather files directly in the browser, format cards, and safely eject/mount your microSD card.
+- **Home Assistant, Local API & Mesh:** Connect to **Home Assistant**, explore the local REST API and `/llms.txt` reference, or enable optional **Meshtastic** / **MeshCore** LoRa weather beacons.
+
+For more details, visit the [WeatherXM WG1200 Firmware repository on GitHub](https://github.com/WeatherXM/wg1200-firmware).
