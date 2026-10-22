@@ -40,6 +40,15 @@ The solution may be as simple as powering down and up the WG1200 Gateway. Make s
    Relocate the weather station and WG1200 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 
+:::tip Diagnose RF Reception in the Local Web Console
+When the WG1200 Gateway is connected to Wi-Fi, you can open its built-in **Local Web Console** at `http://<gateway-ip>/` and navigate to the **Settings** tab to:
+- Inspect the **Live LoRa Packet Sniffer** (`/packet_log`) to see incoming station packets, frequencies, RSSI, SNR, and decoded sensor payloads in real time.
+- Check the **Station Pairing** panel (`CLOUD`, `LOCAL`, `SCAN`, or `OFF` modes) or trigger a multi-channel discovery scan (~11 minutes) if the gateway needs to re-discover your station.
+- Note that if a paired station goes offline temporarily, the gateway's automated multi-phase fallback recovery will continue listening and automatically restore your paired station profile as soon as its signal returns.
+
+See the [WG1200 Firmware Pairing Lifecycle Guide](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/pairing_states.md) on GitHub for more details.
+:::
+
 <hr />
 
 ### Device Alert: "Station Signal is Low"
@@ -74,7 +83,7 @@ If you are still experiencing issues, please contact us through [support](https:
 
 If your WG1200 Gateway displays "Station Battery Level is Low" on the screen, the weather station will run out of battery soon.
 
-Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments. Once fresh batteries are installed and valid station packets are received, the low-battery alert on the WG1200 Gateway clears automatically.
 
 <hr />
 
@@ -151,6 +160,21 @@ You receive a "location not verified" error on your mobile app when the [Proof o
 
 This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
 
+<hr />
+
+## microSD Card & Local Web Console
+
+### My microSD card shows as "Unformatted / Unusable" or is not logging weather history
+
+The WG1200 Gateway logs 5-minute weather history (`history_v1_YYYY_MM_DD.csv`) and daily/GPS metadata (`metadata_v1_YYYY_MM_DD.csv`) to a FAT-formatted microSD card.
+- **Unformatted or unsupported filesystem (exFAT / NTFS / ext4):** The gateway pre-inspects the card in raw SPI mode so an unsupported card never interrupts normal weather uploads. Open the Local Web Console (`http://<gateway-ip>/`), go to **History & SD Card** (or **Settings -> SD Card Storage**), and click **Format SD Card** to format it as FAT with a live capacity-based ETA (~4.2 seconds per GB).
+- **Safe removal and re-insertion:** Before removing the microSD card, click **Eject SD Card** in the Web Console or use the touchscreen prompt so background writes pause cleanly. When you re-insert the card into the slot, the gateway automatically detects it, remounts `/sdcard`, and flushes any queued 24-hour RAM history.
+- **Hardware SPI diagnostics:** If a card is not detected, open `http://<gateway-ip>/sd/diagnose` (or click **Refresh** in the SD Card Management panel) to inspect card-detect pin state and SPI command telemetry.
+
+For complete details on the microSD storage architecture, CSV schemas, and quality flags, see [`docs/sd_weather_storage.md`](https://github.com/WeatherXM/wg1200-firmware/blob/main/docs/sd_weather_storage.md) in the [WeatherXM/wg1200-firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware).
+
+<hr />
+
 ## Other Issues
 
 ### My WG1200 Gateway is stuck/unresponsive.
@@ -172,5 +196,5 @@ Assuming that the WG1200 Gateway unit is powered on, this may be due to a bad in
 <hr />
  
 :::note
-if you are still experiencing issues, please contact us through [support](https://support.weatherxm.com)
+If you are still experiencing issues, please contact us through [support](https://support.weatherxm.com) or consult the [WG1200 Firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware) for technical documentation and release notes.
 :::

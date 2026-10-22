@@ -13,8 +13,8 @@ import Link from "@docusaurus/Link";
 <img object-fit="contain" src={useBaseUrl("/img/wxm-devices/d1/wg1200-gateway-side.png")} style={{ width: '50%', height: 'auto' }}/>
 
 The weather station comes together with the WG1200 Gateway.
-The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
-and displays them on its screen.
+The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 20 seconds by the outdoor sensor,
+and displays them on its touchscreen and built-in local web console.
 
 In this chapter, you will find guidance to set up the WG1200 Gateway.
 <hr/>
@@ -194,3 +194,17 @@ Your first rewards will appear after 24 hours of the station being online.
 :::info 
 Usually, it takes up to 30 minutes for the station to appear on the [explorer](https://explorer.weatherxm.com/stats)
 :::
+
+<hr/>
+
+## Local Web Console, Home Assistant & Advanced Features
+
+Once your WG1200 Gateway is connected to your 2.4 GHz Wi-Fi network, it automatically serves a built-in **Local Web Console & REST API** at `http://<gateway-ip>/` (and advertises `_weatherxm._tcp` over mDNS for automatic discovery in **Home Assistant**).
+
+From the Local Web Console and touchscreen you can:
+- **View Live & 24-Hour Historical Weather Trends:** Inspect 15-minute live trends and 24-hour 5-minute aggregated charts featuring an **Hourly Prevailing Wind Direction Ribbon**, *Feels Like* & *Dew Point* series, dual-axis precipitation rate & cumulative totals, and daily min/max extremes (`↓ min ↑ max`).
+- **Synchronize Display Units (Web ↔ LCD):** Change temperature (`°C`/`°F`), wind speed (`m/s`, `km/h`, `mph`, `ft/s`, `bft`, `kn`), precipitation (`mm`/`in`), or pressure (`hPa`, `mmHg`, `inHg`) units on either the touchscreen or the Web Console and both interfaces immediately update and rescale all charts and tiles.
+- **Manage microSD Weather History:** Browse, plot, and download daily weather (`history_v1_YYYY_MM_DD.csv`) and metadata (`metadata_v1_YYYY_MM_DD.csv`) files directly in your browser (`/sd/view`), format cards with live ETA progress, and use **Safe Eject / Mount** before removing the card.
+- **Configure Meshtastic, MeshCore & Local Integrations:** Enable optional off-grid LoRa weather beacons for **Meshtastic** and **MeshCore** mesh networks, generate a ready-to-use **Home Assistant** YAML configuration, or query the local REST API (`/status`, `/api/v1/info`, `/api/v1/observations`, `/api/v1/history`, `/llms.txt`).
+
+For full technical documentation, API reference, and open-source firmware details, see the [WeatherXM WG1200 Firmware repository on GitHub](https://github.com/WeatherXM/wg1200-firmware).
