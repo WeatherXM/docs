@@ -3,8 +3,7 @@
 Canonical: https://docs.weatherxm.com/rewards/rewards-claiming
 
 :::tip
-Allocated and claimed tokens displayed in our mobile apps, are only those linked to your current wallet.
-This does not include any wallets you may have used in the past.
+Allocated and claimed tokens displayed in the **[WeatherXM Web App](https://app.weatherxm.com)** and Mobile Apps are only those linked to your **currently connected wallet**. This does not include rewards allocated to wallets you may have used in the past.
 :::
 
 ## Prerequisites for claiming rewards
