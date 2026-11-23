@@ -68,6 +68,7 @@ const keyRoutes = new Set([
   "/",
   "/introduction",
   "/mobile-app/web-app",
+  "/mobile-app/mobile-apps",
   "/rewards/reward-mechanism",
   "/rewards/data-quality",
   "/rewards/rewards-troubleshooting",
