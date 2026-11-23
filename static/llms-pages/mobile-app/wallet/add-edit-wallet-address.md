@@ -3,10 +3,16 @@
 Canonical: https://docs.weatherxm.com/mobile-app/wallet/add-edit-wallet-address
 
 :::tip
-If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) first. You can add or update your EVM (`0x…`) rewards wallet from either the **[WeatherXM Web App](https://app.weatherxm.com/profile)** or the **WeatherXM Mobile App**.
 :::
 
-## Add wallet address for the first time  
+## Via Web App (`app.weatherxm.com`)
+
+1. Sign in at **[app.weatherxm.com](https://app.weatherxm.com)** and open **[Profile](https://app.weatherxm.com/profile)**.
+2. In the **Rewards wallet** section, paste your EVM-compatible (`0x…`) wallet address (for example, your MetaMask address on Arbitrum One).
+3. Confirm that you own and control the wallet, then save.
+
+## Add wallet address for the first time (Mobile App)
 
 To add your wallet address, go to settings screen and tap "My wallet", then fill or scan your wallet address where you can find at your metamask account, read and accept the terms and services and acknowledge that you have ownership and full access to this wallet.
 

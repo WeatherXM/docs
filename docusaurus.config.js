@@ -64,6 +64,11 @@ const config = {
       },
       items: [
           {
+            href: "https://app.weatherxm.com/",
+            label: "Web App",
+            position: "right"
+          },
+          {
             href: "https://explorer.weatherxm.com/",
             label: "Explorer",
             position: "right"

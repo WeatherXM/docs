@@ -61,6 +61,10 @@ This documentation site attempts to explain various aspects of the WeatherXM pro
 <h4>Thank you for supporting WeatherXM!</h4>
 <h5 class="quickLinks">Quick Links</h5>
 
+<Link to="https://app.weatherxm.com">&#8226; WeatherXM Web App (Station Cockpit)</Link>
+<br></br>
+<Link to="/mobile-app/web-app">&#8226; Web App Guide</Link>
+<br></br>
 <Link to="/tokenomics">&#8226; The $WXM Token</Link>
 <br></br>
 <Link to="/weatherxm-pro/">&#8226; WeatherXM Pro</Link>

@@ -19,6 +19,12 @@ This **will not delete**:
 If you have any questions regarding your data and the deletion of your account, please contact our  [support team](https://support.weatherxm.com)
 :::
 
+## Via Web App (`app.weatherxm.com`)
+
+Sign in at **[app.weatherxm.com](https://app.weatherxm.com)**, open **[Profile](https://app.weatherxm.com/profile)**, and click **Delete account** (or navigate directly to **[app.weatherxm.com/accountdeletion](https://app.weatherxm.com/accountdeletion)**). Read the confirmation prompt carefully — **this procedure is irreversible**.
+
+## Via Mobile App
+
 <section class="explanation small-big">
   
   

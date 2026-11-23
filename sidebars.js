@@ -101,8 +101,9 @@ module.exports = {
     },
 	  {
       type: "category",
-      label: "Mobile App",
+      label: "Web & Mobile Apps",
       items: [
+        "mobile-app/web-app",
         {
           type: "category",
           label: "Wallet",

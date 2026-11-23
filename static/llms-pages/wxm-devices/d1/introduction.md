@@ -4,7 +4,7 @@ Canonical: https://docs.weatherxm.com/wxm-devices/d1/introduction
 
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
-   
+   ![WeatherXM D1 Bundle (WB1200)](image)
 
 <hr />
 
@@ -43,16 +43,28 @@ In order to receive WXM rewards, you will need to connect an ERC20 compatible wa
 
 <Link to="/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask">View Wallet Addition Instructions</Link>
 
+<hr />
+
 ## Features and Specifications
 
 ### WG1200 Gateway
 
-- 3.95" Capacitive touch screen
-- ATECC608 hardware encryption
-- BLE + LoRa
-- Forwards weather data via WiFi
-- Powered by USB (power adapter not included)
-- Over-the-air firmware upgradable
+- **3.95" capacitive touch screen** with live weather tiles, trend charts, and daily min/max extremes
+- **Integrated barometric pressure sensor** and ATECC608 hardware encryption
+- **Wi-Fi, BLE & LoRa** connectivity (forwards weather data via 2.4 GHz Wi-Fi)
+- **microSD card slot** for local weather history logging (CSV) with safe eject and an in-browser chart viewer
+- **Built-in Local Web Console (`http://<gateway-ip>/`)** featuring live & 24-hour interactive weather charts, hourly wind direction ribbons, and two-way display unit sync with the gateway screen
+- **Local API, Home Assistant & Mesh Support:** Local REST API with automatic **Home Assistant** discovery, `/llms.txt` support for AI agents, and optional **Meshtastic** / **MeshCore** off-grid LoRa weather beacons
+- **Powered by USB-C** (power adapter not included) and **over-the-air (OTA)** or browser ([flasher.weatherxm.com](https://flasher.weatherxm.com)) firmware upgradable
+
+  ![WG1200 Web Console Live Dashboard](image)
+  ![WG1200 Web Console 24h History & SD Card](image)
+  ![WG1200 Web Console Settings, Mesh & Pairing](image)
+  ![WG1200 Web Console Local REST API & llms.txt](image)
+
+:::info Open-Source Firmware & Technical Details
+The WG1200 Gateway runs open-source firmware (Apache-2.0). For full feature details, local REST API documentation, Home Assistant & Meshtastic guides, custom firmware builds, and the release changelog, visit **[github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware)**.
+:::
 
 ### WS1001 Weather Station
 
@@ -105,7 +117,8 @@ The maximum distance between this station and the WG1200 is 100m with line of si
   - Accuracy: ±3.9Pa
   - Resolution: 0.06Pa
 
-- #### Sensor :
+- #### Sensor:
+  - GPS sensor Integrated
   - Reporting Interval: 20sec
 
 </TabItem>
@@ -133,7 +146,7 @@ The maximum distance between this station and the WG1200 Gateway is 328ft with l
 
 - #### Wind Speed:
 
-  - Range: 0 ~ 3.2 ft/s
+  - Range: 0 ~ 164 ft/s (111.8 mph)
   - Accuracy: ±3.2 ft/s (wind speed < 16.4 ft/s), ±10% (wind speed > 16.4 ft/s)
 
 - #### Wind Direction:
@@ -151,7 +164,7 @@ The maximum distance between this station and the WG1200 Gateway is 328ft with l
   - Accuracy: ±3.9Pa
   - Resolution: 0.06Pa
 
-- #### Sensor :
+- #### Sensor:
   - GPS sensor Integrated
   - Reporting Interval: 20sec
 
