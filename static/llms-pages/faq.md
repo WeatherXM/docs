@@ -12,7 +12,7 @@ Remember that you can always contact us through [Support](https://support.weathe
 
 ### Is there a chance for my host/friend to be able to have access to my station's data?
 
-Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favorite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
+Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favourite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
 
 <hr />
 

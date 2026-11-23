@@ -1,11 +1,11 @@
 ---
 title: Data Quality
 sidebar_label: Data Quality
-description: "How QoD v3 scores your weather station's data daily — sanity checks, neighbor cross-validation and annotations — and how to improve your score."
+description: "How QoD v3 scores your weather station's data daily — sanity checks, neighbour cross-validation and annotations — and how to improve your score."
 ---
 
 :::info
-WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
+WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbour cross-validation and 2-day confirmation hysteresis.
 :::
 
 **Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
@@ -27,12 +27,12 @@ Checks performed on your station's own telemetry stream for every meteorological
 - **Suspicious Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive readings (gap-aware so brief transmission drops do not cause false positives).
 - **Flatline / Stagnation (`LONG_CONST`):** Flags sensors stuck at an unchanging value for an unrealistic duration.
 
-### 2. Spatial Neighbor Cross-Validation (CQC)
+### 2. Spatial Neighbour Cross-Validation (CQC)
 Compares your station against trusted nearby WeatherXM stations using adaptive search radii (**25 km → 50 km → 100 km**):
 
 - **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Detects persistent multi-degree temperature bias or broken/drifting barometers that simple range checks cannot catch.
 - **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation estimates are **not** unfairly penalized for a steady altitude offset as long as they track hour-by-hour synoptic pressure changes accurately (they receive an informational `PRESSURE_OFFSET_ADVISORY` instead).
-- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbors.
+- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbours.
 
 ### 3. Deployment Classification & 2-Day Hysteresis
 Evaluates whether a station is deployed outdoors, indoors, or surrounded by heavy obstacles using daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics:

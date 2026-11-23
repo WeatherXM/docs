@@ -98,7 +98,7 @@ Remember that you can always contact us through [Support](https://support.weathe
 
 ### Is there a chance for my host/friend to be able to have access to my station's data?
 
-Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favorite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
+Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favourite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
 
 <hr />
 
@@ -472,7 +472,7 @@ On desktop, the Web App uses a split-pane layout:
 
 | Tab | Available To | What You Can Do |
 |---|---|---|
-| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature sparkline, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
+| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature trend chart, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
 | **Forecast** | Owned & Followed | Hyperlocal hourly and 5-day forecast with multi-element switcher (temperature, wind, precipitation, pressure, solar/UV) and 3-hourly breakdown. |
 | **History** | Owned & Followed | Day-by-day historical charts for temperature (with feels-like & dew point), humidity, wind speed & gust (plus wind direction), pressure, precipitation, and solar/UV. |
 | **Rewards** | Owned only | Latest day, 30-day, and lifetime WXM totals, interactive 30-day bar chart, and per-day breakdown of **Base reward**, **Data Quality (QoD)**, **Boosts**, and **Cell position**. |
@@ -506,7 +506,7 @@ From the bottom of the Fleet Rail or your profile avatar, you can also manage yo
 
 - **Profile (`/profile`):** View your account details, add or update your EVM rewards wallet address, or initiate account deletion.
 - **Settings (`/settings`):** Choose your preferred measurement units (temperature, wind speed, pressure, precipitation) and light/dark/system appearance.
-- **Password Reset (`/forgotpassword`):** Request a password reset email when logged out.
+- **Password Reset (the **Forgot Password** flow):** Request a password reset email when logged out.
 
 ## Web App vs Mobile App
 
@@ -558,7 +558,7 @@ Canonical: https://docs.weatherxm.com/rewards/data-quality
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/data-quality.md
 
 :::info
-WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
+WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbour cross-validation and 2-day confirmation hysteresis.
 :::
 
 **Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
@@ -580,12 +580,12 @@ Checks performed on your station's own telemetry stream for every meteorological
 - **Suspicious Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive readings (gap-aware so brief transmission drops do not cause false positives).
 - **Flatline / Stagnation (`LONG_CONST`):** Flags sensors stuck at an unchanging value for an unrealistic duration.
 
-### 2. Spatial Neighbor Cross-Validation (CQC)
+### 2. Spatial Neighbour Cross-Validation (CQC)
 Compares your station against trusted nearby WeatherXM stations using adaptive search radii (**25 km → 50 km → 100 km**):
 
 - **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Detects persistent multi-degree temperature bias or broken/drifting barometers that simple range checks cannot catch.
 - **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation estimates are **not** unfairly penalized for a steady altitude offset as long as they track hour-by-hour synoptic pressure changes accurately (they receive an informational `PRESSURE_OFFSET_ADVISORY` instead).
-- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbors.
+- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbours.
 
 ### 3. Deployment Classification & 2-Day Hysteresis
 Evaluates whether a station is deployed outdoors, indoors, or surrounded by heavy obstacles using daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics:
@@ -861,7 +861,7 @@ To be eligible for daily base rewards, a station must meet three baseline criter
 
 #### Scoring Factors
 
-- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbor cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
+- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbour cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
 - **[Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation):** Applied directly inside the Reward Mechanism (separate from meteorological QoD). Stations with invalid SPV (`SPV_INVALID`) receive a `0.5×` reward multiplier until valid installation photos are approved.
 - **[Proof of Location (PoL)](/rewards/proof-of-location):** Verifies that GPS/location packets match the declared station location. Relocating a station triggers a temporary relocation penalty and resets cell seniority.
 - **[Hardware Class (HC)](/rewards/hardware-class):** Groups approved weather station bundles (`M5`, `D1`, `Pulse`, `Helium H1/H2`). Currently all Hardware Classes carry equal weight (`1.0`).
@@ -931,7 +931,7 @@ All daily base and boost rewards are accumulated per connected wallet address. A
 
 ## Withdrawing Rewards
 
-Station owners can claim any portion of their accumulated rewards at any time — with no lockups or expiry — via:
+Station owners can claim any portion of their accumulated rewards at any time — with no lock-ups or expiry — via:
 
 - **[claim.weatherxm.com](https://claim.weatherxm.com/)** (desktop/mobile browser with MetaMask or WalletConnect)
 - **WeatherXM Mobile App** (My Profile → Claim)

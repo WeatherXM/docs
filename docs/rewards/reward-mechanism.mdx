@@ -31,7 +31,7 @@ To be eligible for daily base rewards, a station must meet three baseline criter
 
 #### Scoring Factors
 
-- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbor cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
+- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbour cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
 - **[Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation):** Applied directly inside the Reward Mechanism (separate from meteorological QoD). Stations with invalid SPV (`SPV_INVALID`) receive a `0.5×` reward multiplier until valid installation photos are approved.
 - **[Proof of Location (PoL)](/rewards/proof-of-location):** Verifies that GPS/location packets match the declared station location. Relocating a station triggers a temporary relocation penalty and resets cell seniority.
 - **[Hardware Class (HC)](/rewards/hardware-class):** Groups approved weather station bundles (`M5`, `D1`, `Pulse`, `Helium H1/H2`). Currently all Hardware Classes carry equal weight (`1.0`).
@@ -101,7 +101,7 @@ All daily base and boost rewards are accumulated per connected wallet address. A
 
 ## Withdrawing Rewards
 
-Station owners can claim any portion of their accumulated rewards at any time — with no lockups or expiry — via:
+Station owners can claim any portion of their accumulated rewards at any time — with no lock-ups or expiry — via:
 
 - **[claim.weatherxm.com](https://claim.weatherxm.com/)** (desktop/mobile browser with MetaMask or WalletConnect)
 - **WeatherXM Mobile App** (My Profile → Claim)
