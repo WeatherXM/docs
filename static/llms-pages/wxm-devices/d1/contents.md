@@ -76,11 +76,13 @@ The above figures show a sketch of the outdoor sensor. The sketch comes with a d
 
   
 
-The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network.
+The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network. It features a 3.95" capacitive touchscreen display, an integrated barometric pressure sensor, a microSD card slot for local weather history logging, and a built-in Local Web Console & REST API (`http://<gateway-ip>/`).
 
 The D1 Gateway is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer).
 
 The D1 Gateway should be permanently connected to power and powered on in order to be able to receive, record and upload measurements to the Internet.
+
+For detailed firmware documentation, local API specifications, and source code, visit the [WeatherXM WG1200 Firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware).
 
 <hr/>
 
