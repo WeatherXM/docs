@@ -2,6 +2,12 @@
 
 Canonical: https://docs.weatherxm.com/wxm-devices/d1/introduction
 
+Get started with the WeatherXM D1 (WB1200) Wi-Fi weather station: box contents, assembly, installation, connecting, claiming and earning rewards.
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
+
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
    ![WeatherXM D1 Bundle (WB1200)](image)

@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/mobile-app/web-app
 
+Use the WeatherXM Web App to monitor your stations, view history and forecasts, track rewards and Data Quality, and diagnose offline hardware.
+
 The **[WeatherXM Web App](https://app.weatherxm.com)** is the browser-based **Station Cockpit** for monitoring your weather stations, inspecting historical data and forecasts, tracking daily WXM rewards and Data Quality (QoD), and diagnosing offline or underperforming hardware — from any desktop or mobile browser.
 
 Sign in at **[app.weatherxm.com](https://app.weatherxm.com)** using the same account email and password you use in the WeatherXM iOS or Android app.
@@ -19,7 +21,7 @@ On desktop, the Web App uses a split-pane layout:
 
 | Tab | Available To | What You Can Do |
 |---|---|---|
-| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature sparkline, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
+| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature trend chart, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
 | **Forecast** | Owned & Followed | Hyperlocal hourly and 5-day forecast with multi-element switcher (temperature, wind, precipitation, pressure, solar/UV) and 3-hourly breakdown. |
 | **History** | Owned & Followed | Day-by-day historical charts for temperature (with feels-like & dew point), humidity, wind speed & gust (plus wind direction), pressure, precipitation, and solar/UV. |
 | **Rewards** | Owned only | Latest day, 30-day, and lifetime WXM totals, interactive 30-day bar chart, and per-day breakdown of **Base reward**, **Data Quality (QoD)**, **Boosts**, and **Cell position**. |
@@ -53,7 +55,7 @@ From the bottom of the Fleet Rail or your profile avatar, you can also manage yo
 
 - **Profile (`/profile`):** View your account details, add or update your EVM rewards wallet address, or initiate account deletion.
 - **Settings (`/settings`):** Choose your preferred measurement units (temperature, wind speed, pressure, precipitation) and light/dark/system appearance.
-- **Password Reset (`/forgotpassword`):** Request a password reset email when logged out.
+- **Password Reset (the **Forgot Password** flow):** Request a password reset email when logged out.
 
 ## Web App vs Mobile App
 

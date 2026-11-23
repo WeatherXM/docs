@@ -4,67 +4,69 @@ Canonical site: https://docs.weatherxm.com/
 Generated from the public WeatherXM documentation source at build time.
 
 ---
-# Homepage
+# WeatherXM Docs: Weather Stations, Rewards & Pro Weather API
 Canonical: https://docs.weatherxm.com/
 Markdown: https://docs.weatherxm.com/llms-pages/index.md
 
-## Welcome aboard
+## Welcome to WeatherXM Docs
 
-WeatherXM is a community-powered weather network that rewards weather station owners and provides accurate weather services to Web3 enterprises.
-WeatherXM weather stations are the world’s first to natively support Web3 technologies.
-  
- <section class="product-container">
-  
-    <Link to="/wxm-devices/m5/introduction">
-      
-      
-        <h4>WeatherXM M5 bundle (WB1000)</h4>
-        This is our developer friendly, local weather data miner bundled with an easy to set up all-in-one weather station.
-      
-    </Link>
-  
-  
-    <Link to="/wxm-devices/helium/introduction">
-      
-      
-        <h4>WeatherXM Helium station (WS2000)</h4>
-        Compatible all-in-one weather station. Connects to Helium network and submits weather data to WeatherXM.
-      
-    </Link>
-  
-</section>
+WeatherXM is a global network of community-run weather stations delivering verified, hyperlocal weather data to businesses, developers, and forecasters — and rewarding the station owners who keep it running.
 
- <section class="product-container">
+  <Link className="cta-card" to="https://weatherxm.com/stations">
+    <strong>Get a Station →</strong>
+    Compare D1, Pulse and H2 and order your weather station.
+  </Link>
+  <Link className="cta-card" to="https://app.weatherxm.com">
+    <strong>Manage your Station →</strong>
+    Live data, Data Quality, diagnostics and rewards in the Web App.
+  </Link>
+  <Link className="cta-card" to="/weatherxm-pro">
+    <strong>Weather Data & Pro API →</strong>
+    Hyperlocal observations, forecasts and verified accuracy via WeatherXM Pro.
+  </Link>
+
+Looking for forecast accuracy proof? Explore independent model benchmarks on <Link to="https://fact.weatherxm.com">FACT (fact.weatherxm.com)</Link>.
+
+<h3>Current weather stations</h3>
+
+<section class="product-container three">
   
     <Link to="/wxm-devices/d1/introduction">
+      ![WeatherXM D1 bundle (WB1200)](image)
       
-      
-        <h4>WeatherXM D1 bundle (WB1200)</h4>
-        The WB1200 is a bundle product that combines the WS1001 weather station with our open source WeatherXM WG1200 Gateway.
+        <h4>D1 bundle (WB1200)</h4>
+        Wi-Fi weather station with the open source WG1200 gateway — the simplest way to start at home.
       
     </Link>
   
   
     <Link to="/wxm-devices/pulse/introduction">
+      ![WeatherXM Pulse bundle (WB3000)](image)
       
+        <h4>Pulse bundle (WB3000)</h4>
+        4G/LTE weather station for sites without Wi-Fi — farms, rooftops and remote locations.
       
-        <h4>WeatherXM Pulse bundle (WB3000)</h4>
-        The WB3000 is a bundle product, that combines the WS1001 weather station with our WG3000 Gateway which uses 4G - LTE.
+    </Link>
+  
+  
+    <Link to="/wxm-devices/h2-open/introduction">
+      ![WeatherXM H2 Open Edition](image)
+      
+        <h4>H2 Open Edition</h4>
+        8-in-1 LoRaWAN weather station for your own network: TTN, ChirpStack or any LoRaWAN Network Server.
       
     </Link>
   
 </section>
 
-<h3>WeatherXM Project</h3>
+<Link to="https://weatherxm.com/stations"><strong>Compare all stations →</strong></Link>
 
-WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.
+**Legacy devices:** [M5 bundle (WB1000)](/wxm-devices/m5/introduction) · [Helium station (WS2000)](/wxm-devices/helium/introduction)
 
-They are all-in-one, easy to deploy, energy and communication autonomous, and designed for large-scale deployment.
-WeatherXM makes weather-related smart contracts on-chain a reality.
+<h3>How WeatherXM works</h3>
 
-This documentation site attempts to explain various aspects of the WeatherXM project.
+Station owners deploy all-in-one, easy-to-install weather stations. Every reading is cryptographically signed at the source and location-verified by GPS, then scored daily by [QoD v3](/rewards/data-quality). Owners earn `$WXM` rewards for high-quality data, while businesses and developers use the verified network data through [WeatherXM Pro](/weatherxm-pro).
 
-<h4>Thank you for supporting WeatherXM!</h4>
 <h5 class="quickLinks">Quick Links</h5>
 
 <Link to="https://app.weatherxm.com">&#8226; WeatherXM Web App (Station Cockpit)</Link>
@@ -96,7 +98,7 @@ Remember that you can always contact us through [Support](https://support.weathe
 
 ### Is there a chance for my host/friend to be able to have access to my station's data?
 
-Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favorite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
+Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favourite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
 
 <hr />
 
@@ -201,7 +203,7 @@ You can request a refund by contacting [Support](https://support.weatherxm.com) 
 
 ### How can I purchase more than 2 weather stations?
 
-For bulk or enterprise orders, submit our [bulk order form](https://pages.weatherxm.com/bulk-order-form) and our team will get back to you promptly.
+Compare current models at [weatherxm.com/stations](https://weatherxm.com/stations). For bulk or enterprise orders, contact our team through [Support](https://support.weatherxm.com) and we will get back to you promptly.
 
 <hr />
 
@@ -238,7 +240,7 @@ Markdown: https://docs.weatherxm.com/llms-pages/glossary.md
 Canonical: https://docs.weatherxm.com/introduction
 Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
 
-<h1></h1>
+<h1>Introduction to WeatherXM</h1>
     <h2 className="subtitle">
       WeatherXM creates an entirely new weather data economy that rewards people
       who deploy and maintain weather stations.
@@ -249,16 +251,12 @@ Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
 
 ## Introduction
 
-**_Enter Weather 3.0_**
-
 **WeatherXM** is a unique weather network that relies on the power of the community to deploy and maintain weather stations.
 By doing so, participants not only contribute to the network's growth but also get rewarded with the WXM token.
 The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 
 WeatherXM has a vision to become the largest, most decentralised, and most distributed weather network in the world.
 You can stay updated on the current state of the network on the [Explorer](https://explorer.weatherxm.com), and manage your own stations, live diagnostics, history, and rewards in the [WeatherXM Web App](https://app.weatherxm.com) ([see guide](/mobile-app/web-app)).
-
-Some significant milestones we have achieved so far:
 
 ### Reward Mechanism
 
@@ -296,12 +294,15 @@ and integration-ready tools — designed for professionals, developers, and busi
 
 ### WeatherXM Devices
 
-Currently we use 4 main types of devices:
+Current WeatherXM station families:
 
-- [WeatherXM M5 Bundle (WB1000)](/wxm-devices/m5/introduction) which is the WiFi version
-- [WeatherXM Helium Version (WS2000) ](/wxm-devices/helium/introduction) which is the Helium version
-- [WeatherXM D1 bundle (WB1200)](/wxm-devices/d1/introduction) which is the upgraded WiFi version
-- [WeatherXM Pulse bundle (WB3000)](/wxm-devices/pulse/introduction) which is the 4G/LTE version
+- [WeatherXM D1 bundle (WB1200)](/wxm-devices/d1/introduction) — Wi-Fi
+- [WeatherXM Pulse bundle (WB3000)](/wxm-devices/pulse/introduction) — 4G/LTE
+- [WeatherXM H2 / H2 Open Edition](/wxm-devices/h2-open/introduction) — LoRaWAN
+
+Legacy devices: [M5 bundle (WB1000)](/wxm-devices/m5/introduction) (Wi-Fi) and [Helium station (WS2000)](/wxm-devices/helium/introduction) (Helium LoRaWAN).
+
+Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
 
 ---
 # How to change password to your account
@@ -471,7 +472,7 @@ On desktop, the Web App uses a split-pane layout:
 
 | Tab | Available To | What You Can Do |
 |---|---|---|
-| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature sparkline, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
+| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature trend chart, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
 | **Forecast** | Owned & Followed | Hyperlocal hourly and 5-day forecast with multi-element switcher (temperature, wind, precipitation, pressure, solar/UV) and 3-hourly breakdown. |
 | **History** | Owned & Followed | Day-by-day historical charts for temperature (with feels-like & dew point), humidity, wind speed & gust (plus wind direction), pressure, precipitation, and solar/UV. |
 | **Rewards** | Owned only | Latest day, 30-day, and lifetime WXM totals, interactive 30-day bar chart, and per-day breakdown of **Base reward**, **Data Quality (QoD)**, **Boosts**, and **Cell position**. |
@@ -505,7 +506,7 @@ From the bottom of the Fleet Rail or your profile avatar, you can also manage yo
 
 - **Profile (`/profile`):** View your account details, add or update your EVM rewards wallet address, or initiate account deletion.
 - **Settings (`/settings`):** Choose your preferred measurement units (temperature, wind speed, pressure, precipitation) and light/dark/system appearance.
-- **Password Reset (`/forgotpassword`):** Request a password reset email when logged out.
+- **Password Reset (the **Forgot Password** flow):** Request a password reset email when logged out.
 
 ## Web App vs Mobile App
 
@@ -557,7 +558,7 @@ Canonical: https://docs.weatherxm.com/rewards/data-quality
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/data-quality.md
 
 :::info
-WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
+WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbour cross-validation and 2-day confirmation hysteresis.
 :::
 
 **Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
@@ -579,12 +580,12 @@ Checks performed on your station's own telemetry stream for every meteorological
 - **Suspicious Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive readings (gap-aware so brief transmission drops do not cause false positives).
 - **Flatline / Stagnation (`LONG_CONST`):** Flags sensors stuck at an unchanging value for an unrealistic duration.
 
-### 2. Spatial Neighbor Cross-Validation (CQC)
+### 2. Spatial Neighbour Cross-Validation (CQC)
 Compares your station against trusted nearby WeatherXM stations using adaptive search radii (**25 km → 50 km → 100 km**):
 
 - **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Detects persistent multi-degree temperature bias or broken/drifting barometers that simple range checks cannot catch.
 - **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation estimates are **not** unfairly penalized for a steady altitude offset as long as they track hour-by-hour synoptic pressure changes accurately (they receive an informational `PRESSURE_OFFSET_ADVISORY` instead).
-- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbors.
+- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbours.
 
 ### 3. Deployment Classification & 2-Day Hysteresis
 Evaluates whether a station is deployed outdoors, indoors, or surrounded by heavy obstacles using daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics:
@@ -860,7 +861,7 @@ To be eligible for daily base rewards, a station must meet three baseline criter
 
 #### Scoring Factors
 
-- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbor cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
+- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbour cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
 - **[Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation):** Applied directly inside the Reward Mechanism (separate from meteorological QoD). Stations with invalid SPV (`SPV_INVALID`) receive a `0.5×` reward multiplier until valid installation photos are approved.
 - **[Proof of Location (PoL)](/rewards/proof-of-location):** Verifies that GPS/location packets match the declared station location. Relocating a station triggers a temporary relocation penalty and resets cell seniority.
 - **[Hardware Class (HC)](/rewards/hardware-class):** Groups approved weather station bundles (`M5`, `D1`, `Pulse`, `Helium H1/H2`). Currently all Hardware Classes carry equal weight (`1.0`).
@@ -930,7 +931,7 @@ All daily base and boost rewards are accumulated per connected wallet address. A
 
 ## Withdrawing Rewards
 
-Station owners can claim any portion of their accumulated rewards at any time — with no lockups or expiry — via:
+Station owners can claim any portion of their accumulated rewards at any time — with no lock-ups or expiry — via:
 
 - **[claim.weatherxm.com](https://claim.weatherxm.com/)** (desktop/mobile browser with MetaMask or WalletConnect)
 - **WeatherXM Mobile App** (My Profile → Claim)
@@ -3747,11 +3748,20 @@ After investigating a few couples of WeatherXM, we draw the following conclusion
 - In the end, it seems that we are still in the pursuit of publically available reference/ground truth observations of precipitation
 
 ---
-# WeatherXM Pro
+# WeatherXM Pro: Hyperlocal Weather API, Forecasts & FACT
 Canonical: https://docs.weatherxm.com/weatherxm-pro
 Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md
 
 ## Access Hyperlocal Weather Data
+
+  <Link className="cta-card" to="https://pro.weatherxm.com">
+    <strong>Start with WeatherXM Pro API →</strong>
+    Real-time, historical and forecast data from verified WeatherXM stations.
+  </Link>
+  <Link className="cta-card" to="https://fact.weatherxm.com">
+    <strong>Explore FACT Forecast Benchmarks →</strong>
+    See which forecast models perform best, verified against ground stations.
+  </Link>
 
 Improve your forecasts and weather-driven operations with WeatherXM's global weather station network.
 Explore **[WeatherXM Pro](https://pro.weatherxm.com)** to inspect nearby station telemetry via the web interface, or integrate real-time, historical, and forecast data directly through our **[Pro API](https://pro.weatherxm.com/docs)**.
@@ -4288,6 +4298,10 @@ It is imperative that you properly install your weather station. This will creat
 # Introduction of D1 bundle (WB1200)
 Canonical: https://docs.weatherxm.com/wxm-devices/d1/introduction
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/introduction.md
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
 
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
@@ -5753,6 +5767,10 @@ Check that the station reaches your gateway **from its final position**: the ant
 # Introduction WeatherXM H2 Open Edition (WS2001)
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/introduction
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/introduction.md
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
 
 <h2 className="subtitle">An 8-in-1 LoRaWAN weather station for your own network: The Things Network (TTN), ChirpStack or any LoRaWAN Network Server.</h2>
 
@@ -8992,6 +9010,10 @@ It is imperative that you properly install your weather station. This will creat
 # Introduction of Pulse bundle (WB3000)
 Canonical: https://docs.weatherxm.com/wxm-devices/pulse/introduction
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/pulse/introduction.md
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
 
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 

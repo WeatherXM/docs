@@ -2,7 +2,9 @@
 
 Canonical: https://docs.weatherxm.com/introduction
 
-<h1></h1>
+How the WeatherXM network works — signed, GPS-verified station data, QoD v3 data quality, daily $WXM rewards, WeatherXM Pro, and current station models.
+
+<h1>Introduction to WeatherXM</h1>
     <h2 className="subtitle">
       WeatherXM creates an entirely new weather data economy that rewards people
       who deploy and maintain weather stations.
@@ -13,16 +15,12 @@ Canonical: https://docs.weatherxm.com/introduction
 
 ## Introduction
 
-**_Enter Weather 3.0_**
-
 **WeatherXM** is a unique weather network that relies on the power of the community to deploy and maintain weather stations.
 By doing so, participants not only contribute to the network's growth but also get rewarded with the WXM token.
 The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 
 WeatherXM has a vision to become the largest, most decentralised, and most distributed weather network in the world.
 You can stay updated on the current state of the network on the [Explorer](https://explorer.weatherxm.com), and manage your own stations, live diagnostics, history, and rewards in the [WeatherXM Web App](https://app.weatherxm.com) ([see guide](/mobile-app/web-app)).
-
-Some significant milestones we have achieved so far:
 
 ### Reward Mechanism
 
@@ -60,9 +58,12 @@ and integration-ready tools — designed for professionals, developers, and busi
 
 ### WeatherXM Devices
 
-Currently we use 4 main types of devices:
+Current WeatherXM station families:
 
-- [WeatherXM M5 Bundle (WB1000)](/wxm-devices/m5/introduction) which is the WiFi version
-- [WeatherXM Helium Version (WS2000) ](/wxm-devices/helium/introduction) which is the Helium version
-- [WeatherXM D1 bundle (WB1200)](/wxm-devices/d1/introduction) which is the upgraded WiFi version
-- [WeatherXM Pulse bundle (WB3000)](/wxm-devices/pulse/introduction) which is the 4G/LTE version
+- [WeatherXM D1 bundle (WB1200)](/wxm-devices/d1/introduction) — Wi-Fi
+- [WeatherXM Pulse bundle (WB3000)](/wxm-devices/pulse/introduction) — 4G/LTE
+- [WeatherXM H2 / H2 Open Edition](/wxm-devices/h2-open/introduction) — LoRaWAN
+
+Legacy devices: [M5 bundle (WB1000)](/wxm-devices/m5/introduction) (Wi-Fi) and [Helium station (WS2000)](/wxm-devices/helium/introduction) (Helium LoRaWAN).
+
+Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
