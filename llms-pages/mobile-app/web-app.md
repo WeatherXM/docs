@@ -73,3 +73,7 @@ Most day-to-day monitoring, diagnostics, and account management tasks work seaml
 | **Claim & onboard a new station (Bluetooth / QR)** | Redirects to Mobile App QR (`/claim`) | **Yes** |
 | **Relocate an existing station** | No | **Yes** |
 | **Upload new SPV installation photos** | View gallery & guide | **Yes** |
+
+:::tip Looking for iOS, Android, or Solana Mobile?
+Get direct download links and app previews on the **[WeatherXM Mobile Apps (iOS, Android & Solana)](/mobile-app/mobile-apps)** page.
+:::
