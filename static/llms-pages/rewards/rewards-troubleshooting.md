@@ -2,7 +2,11 @@
 
 Canonical: https://docs.weatherxm.com/rewards/rewards-troubleshooting
 
-A guide to interpreting mobile app error messages, understanding their meanings, and taking appropriate actions to resolve them.
+A guide to interpreting **WeatherXM Web App (`app.weatherxm.com`)** and **Mobile App** error messages and QoD v3 annotations, understanding their meanings, and taking appropriate actions to resolve them.
+
+:::tip Quick Hardware Check in the Web App
+Before troubleshooting manually, open your station in **[app.weatherxm.com](https://app.weatherxm.com)** and check the **Health** tab. It separates **Outdoor Station** health from **Gateway** health, displays your signal chain, battery, firmware, and GPS lock, and lets you copy a diagnostic summary for Support in one click.
+:::
 
 ## No wallet
 
@@ -157,10 +161,34 @@ If the battery is low, the connection between your station and the WG1000 gatewa
 
 <hr/>
 
-## Bad Station Deployment
+## Bad Station Deployment (`INDOORS_CONFIRMED` / `BAD_DEPLOYMENT_CONFIRMED`)
 
-It appears that your weather station could benefit from some improvements in terms of its deployment. The [Data Quality algorithm](/rewards/data-quality) evaluates all data packet received by a weather station every day, so a proper installation becomes mandatory to receive the maximum amount of rewards.
-We recommend that you take a look at our [Deployment Examples](/wxm-devices/deployment-examples) and [Best Practices](/wxm-devices/m5/install-weather-station#best-practices-for-proper-station-installation) for inspiration on how and where to install your station.
+It appears that your weather station could benefit from improvements in its physical deployment. Under **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)**, deployment classifications use **2-day confirmation hysteresis**:
+- A single anomalous day produces an **advisory** warning (`INDOORS` or `BAD_DEPLOYMENT`) with **no score penalty**.
+- **2 consecutive days** confirm the classification (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier).
+- Once you improve the placement (for example, moving the station outdoors or raising the mast clear of nearby obstacles), **2 consecutive clean days** clear the penalty automatically — no 7-day wait.
+
+We recommend checking our [Deployment Examples](/wxm-devices/deployment-examples) and [Best Practices](/wxm-devices/m5/install-weather-station#best-practices-for-proper-station-installation) for guidance on proper outdoor siting.
+
+<hr/>
+
+## QoD v3 Sensor Drift & Advisory Annotations
+
+QoD v3 cross-validates your station against nearby trusted stations (`25–100 km`) and separates **score-reducing** codes from **advisory** warnings:
+
+#### Temperature Drift (`TEMP_DRIFT`)
+Your temperature readings show a persistent bias compared to nearby trusted stations. Check that the station is not mounted directly above an air-conditioning exhaust, chimney, or heat-trapping dark surface, and verify the radiation shield is clean and unobstructed.
+
+#### Pressure Drift (`PRESSURE_DRIFT`)
+Your barometer either reported physically impossible values or failed to track hour-by-hour synoptic pressure changes seen by nearby stations. Try a full **power cycle**; if `PRESSURE_DRIFT` persists across multiple days, contact [Support](https://support.weatherxm.com).
+
+#### Advisory Codes (No QoD Penalty)
+The following QoD v3 annotations are **informational only** and do **not** reduce your daily QoD score, but are worth inspecting early:
+- **`T_OVERHEAT`:** Midday solar overheating signature — consider raising the mast further from hot roof/wall surfaces.
+- **`PRESSURE_OFFSET_ADVISORY`:** Steady altitude or console offset while accurately tracking synoptic pressure changes (no penalty; common on highland stations).
+- **`WIND_STUCK` / `BLOCKED_RAIN`:** Suspected stuck anemometer or clogged rain funnel compared to nearby windy/wet stations — inspect the wind cups/vane and clean the rain collector funnel.
+
+For the full list of active annotation codes, see **[QoD v3 Full Documentation](/weather-and-science/quality-mechanisms/qod-v3-documentation#6-complete-qod-v3-annotation-code-reference)**.
 
 <hr/>
 

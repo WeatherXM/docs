@@ -1,83 +1,85 @@
-# General QoD Description (OBC-SQC, ISD, SPV)
+# General QoD Description (QoD v3 & SPV)
 
 Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
 
-# General QoD Description (OBC-SQC, ISD, SPV)
+# General QoD Description (QoD v3 & SPV)
 
-At the moment, there are three data quality mechanisms being applied at WeatherXM. These mechanisms are designed to assess both the quality of the data itself and the status of the station deployments. Each mechanism follows a different approach to evaluate the reliability of a station’s data, and they ultimately work complementarily, contributing to a more comprehensive evaluation of each station. Although the final result of these data quality mechanisms affects user rewards, their primary objectives are:
-- To determine which stations produce data reliable enough to be used internally by the company, as well as by third-party companies and organizations as a product.
-- To motivate users to improve their deployments, aiming for the highest possible measurement quality.
-- To ensure that the data is of high enough quality to be used for improving the weather forecasts that WeatherXM produces at station locations.
+WeatherXM evaluates station data reliability and deployment quality using two complementary mechanisms:
 
-Currently, the following three data quality mechanisms are used to classify and assess stations and their data:
-- Out-of-Bounds Check (OBC) and Self Quality Check (SQC)
-- Indoors Station Detector (ISD)
-- Station Photo Verification (SPV)
+- **Quality of Data (QoD v3):** A daily, deterministic meteorological quality engine that evaluates sensor telemetry, cross-validates readings against nearby trusted stations, and classifies deployment quality with 2-day confirmation hysteresis.
+- **Station Photo Verification (SPV):** A human-reviewed evaluation of installation photos submitted by the station owner against World Meteorological Organization (WMO) siting guidelines.
 
-## Out-of-Bounds Check (OBC) and Self Quality Check (SQC)
+Although both mechanisms affect daily rewards, their primary objectives are:
+- To determine which stations produce data reliable enough for internal WeatherXM analytics as well as third-party B2B/enterprise weather products.
+- To motivate station owners to improve their deployments and maintain healthy sensors.
+- To ensure observations are high enough quality to improve hyperlocal weather forecasts.
 
-Both OBC and SQC aim to detect suspicious data at the raw, minute, and hourly level. This means that these mechanisms can identify unusual variations in different station parameters caused by faulty deployments or malfunctioning sensors, when such variations occur and when the prevailing meteorological conditions allow them to be detected.
+## Quality of Data (QoD v3)
 
-For example, a sudden temperature change caused by using a very short mast that keeps the station too close to the surface of a rooftop will be detected primarily on a calm day with alternating sunshine and cloud cover. Under such conditions, the station will record very abrupt temperature changes; otherwise, detection would not be possible.
+**QoD v3** (`version 3.0.0`) runs once per day for the previous UTC day and evaluates all seven meteorological parameters (temperature, humidity, pressure, wind speed, wind direction, precipitation, and solar irradiance/illuminance). It combines three layers into a single daily meteorological `qod_score` (`0` to `1`):
 
-OBC and SQC therefore flag specific raw data points that appear suspicious (they do not label an entire deployment as problematic). These two mechanisms run within a unified algorithm every day, assessing the data from the previous day. The checks performed are as follows:
+### 1. Self-Sanity Checks (OBC & SQC)
+Evaluates each station's own telemetry stream at hardware-appropriate intervals:
+- **Out-of-Bounds (`OBC`):** Flags values outside physical or manufacturer specifications.
+- **Data Completeness (`NO_DATA`):** Measures missing telemetry relative to the station model's expected cadence.
+- **Gap-Aware Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive measurements.
+- **Flatline / Stagnation (`LONG_CONST`):** Detects sensors stuck at constant values over extended windows.
 
-**A. Out-of-Bounds Check**
-OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor. As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
+### 2. Spatial Neighbor Cross-Validation (CQC)
+Compares each station against trusted nearby WeatherXM stations across adaptive tiers (`25 km`, `50 km`, `100 km`):
+- **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Catches persistent sensor bias and drifting barometers that remain inside manufacturer range limits.
+- **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation metadata are not penalized for a constant altitude offset if they accurately track hour-by-hour synoptic pressure changes (`PRESSURE_OFFSET_ADVISORY`).
+- **Stuck Wind & Clogged Rain Checks (`WIND_STUCK`, `BLOCKED_RAIN`):** Flags anemometers reading zero during regional windy events and rain gauges reading zero during regional storms.
 
-**B. Self Quality Check (SQC)**
-This mechanism uses the data from the station itself (and therefore does not rely on third-party data for comparison) to detect unexpected changes in various parameters, which may be due either to poor placement of the weather station or to a malfunction in one of its sensors.
+### 3. Deployment Classification & 2-Day Hysteresis
+Replaces the legacy 7-day rolling ISD window with daily classification plus **2-day confirmation hysteresis**:
+- A single anomalous day emits an **advisory** flag only (`INDOORS` / `BAD_DEPLOYMENT`) with **zero penalty**.
+- **2 consecutive days** confirm the classification (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier).
+- **2 consecutive clean days** clear the penalty once the deployment is fixed.
+- **Sub-zero winter protection (`avg_T ≤ 0°C`):** Prevents frozen anemometers in winter from triggering false `INDOORS` or `WIND_STUCK` penalties.
 
-The checks performed are:
-- **Check for stagnation** (lack of variability) in the parameters. For example, a constant recording of zero wind speed and an unchanging wind direction for six hours, combined with low relative humidity, is an indication that the station is located in a place where air circulation is not as expected, or that the anemometer has frozen (if the temperature has been &gt;0°C for several hours). 
-- **Check for suspicious spikes** over short time intervals, which may occur either due to poor station placement or because of a faulty sensor. For example, a temperature change &gt;3°C within 1 minute is considered unrealistic. If the station’s sampling interval is greater than 1 minute, the respective threshold is increased linearly, provided that the sampling rate remains below 10 minutes.
-- **Check for gaps in the data**. Each station model, according to its specifications, is capable of sending data packets at a specific time interval. If the number of packets received on an hourly basis is lower than the threshold set by the specifications, this indicates a problem in data transmission (e.g., poor 4G/Wi-Fi/Helium signal).
+For full thresholds, state transitions, and the complete annotation reference, see **[QoD v3 Full Documentation](/weather-and-science/quality-mechanisms/qod-v3-documentation)**.
 
-Similar checks (for stagnation and spikes), but with different time windows (based on WMO –[Guide to the Global Observing System (WMO-No. 488), pg.200](https://library.wmo.int/viewer/35699/?offset=#page=214&viewer=picture&o=search&n=0&q=suspicious)– guidelines as well as our [own data analysis](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx)), are carried out for all parameters (see [full documentation](/weather-and-science/quality-mechanisms/obc-sqc-documentation)).
+Table 1. Key QoD v3 annotations and their impact on daily QoD score.
 
-Finally, the ratio of invalid to expected valid data is calculated on an hourly basis in order to determine the final score of successful meteorological observations.
+| QoD v3 Annotation | Short Description | Impact on QoD Score |
+|---|---|---|
+| `NO_DATA` | Missing packets below expected hardware cadence | **YES** (per-sensor) |
+| `OBC` | Sensor readings outside physical/manufacturer bounds | **YES** (per-sensor) |
+| `SPIKE_INST` | Unrealistic instantaneous jump between readings | **YES** (per-sensor) |
+| `LONG_CONST` | Sensor stuck at a constant value for too long | **YES** (per-sensor) |
+| `TEMP_DRIFT` | Persistent temperature bias vs nearby trusted stations | **YES** (temperature) |
+| `PRESSURE_DRIFT` | Broken/drifting barometer or failure to track synoptic pressure | **YES** (pressure) |
+| `PROBLEMATIC_ILL_SENSOR` | Corrupted or spiking solar/illuminance sensor | **YES** (illuminance) |
+| `INDOORS_CONFIRMED` | Confirmed indoor station (`2` consecutive days) | **YES** (`qod = 0`) |
+| `BAD_DEPLOYMENT_CONFIRMED` | Confirmed heavily obstructed deployment (`2` consecutive days) | **YES** (`qod × 0.5`) |
+| `INDOORS` / `BAD_DEPLOYMENT` | Single-day (day 1) deployment warning | **NO** (advisory) |
+| `T_OVERHEAT` | Midday radiative overheating signature | **NO** (advisory) |
+| `WIND_STUCK` / `BLOCKED_RAIN` | Suspected stuck anemometer or clogged rain gauge | **NO** (advisory) |
+| `PRESSURE_OFFSET_ADVISORY` | Steady altitude/console offset with good synoptic tracking | **NO** (advisory) |
+| `PRESSURE_REFERENCE_UNCERTAIN` | Missing/unverified elevation prevents sea-level pressure comparison | **NO** (advisory) |
+| `LOW_SUN` / `ISOLATED` | High-latitude low sun or `< 3` nearby peers within `100 km` | **NO** (informational) |
 
-## Indoors Station Detector (ISD)
-
-The ISD is a mechanism primarily aimed at identifying stations that are active but have not been placed outdoors. However, there is a range of other classifications that can be assigned to a station’s deployment status. The ISD mechanism runs once per day and evaluates the data from the entire previous day, but for the final evaluation result it also takes into account the outcomes from the last seven days in order to provide a fairer classification of the station’s deployment. The key difference compared to OBC-SQC is that ISD evaluates the entire day as a whole, assigning a single annotation related to the station’s deployment status. 
-
-For deployment assessment, the ISD uses solar radiation analysis techniques, comparing actual measurements with theoretical radiation values for each location on the planet and for each day of the year. In parallel, various combined thresholds are applied to temperature, wind direction/speed, and relative humidity (thresholds derived from exploratory data analysis) in order to identify certain significantly problematic deployment cases. It should be noted, however, that ISD is able to detect only a small subset of problematic deployments, as its main focus is on identifying stations that are located indoors. The classifications resulting from the ISD mechanism are shown in Table 1. See full [ISD documentation here](/weather-and-science/quality-mechanisms/isd-full-documentation).
-
-Table 1. ISD annotations, their short description, and their impact on the quality score.  
-Note that the short description is statistically derived, and the actual status of the station may differ.
-
-| ISD Annotation            | Short Description                                                                 | Impact on Score |
-|----------------------------|-----------------------------------------------------------------------------------|-----------------|
-| OUTDOORS                   | Well deployed                                                                    | NO              |
-| INDOORS                    | In a house or a very closed area                                                 | YES             |
-| ALMOST INDOORS             | In a closed area e.g., a balcony                                                  | YES             |
-| BAD DEPLOYMENT             | In an area surrounded by significant obstacles                                   | YES             |
-| PROBABLY BAD DEPLOYMENT    | In an area that has some obstacles that may affect mainly wind, precipitation and solar irradiance observations | YES |
-| INCLINED POLE NORTH        | On a north-tilted pole or the light sensor needs cleaning                         | YES             |
-| INCLINED POLE EAST         | On an east-tilted pole                                                            | YES             |
-| INCLINED POLE SOUTH        | On a south-tilted pole                                                            | YES             |
-| INCLINED POLE WEST         | On a west-tilted pole                                                             | YES             |
-| PROBLEMATIC LIGHT SENSOR   | Weird spikes in solar irradiance                                                  | NO              |
-| REPLACE ILLUMINANCE        | Solar irradiance is always 0                                                      | YES             |
-| ALMOST NIGHT               | The station is located in a high-latitude region that experiences darkness during the winter months, with little to no sunlight | NO |
-| INDOORS FROZEN             | The station looks like indoors due to freezing conditions                         | NO              |
-| INDOORS ALMOST FROZEN      | The station looks like indoors almost due to freezing conditions                  | NO              |
-| BAD DEPLOYMENT FROZEN      | The station looks like bad deployment due to freezing conditions                  | NO              |
-| PROBABLY DEPLOYMENT FROZEN | The station looks like probably bad deployment due to freezing conditions         | NO              |
-| UNKNOWN                    | Less than 40% of the expected data during the period of the day with solar irradiance >0.1 W m<sup>−2</sup> | NO |
+:::info Legacy QoD v1 Documentation
+Looking for the original OBC-SQC and 7-day ISD specifications? They remain available for historical reference under [Quality Mechanisms](/weather-and-science/quality-mechanisms/).
+:::
 
 ## Station Photo Verification (SPV)
 
-At WeatherXM, we aim to ensure that all station installations in our network follow, as closely as possible, the guidelines set by the <a href="https://www.eoas.ubc.ca/courses/atsc303/Instruments/wmo_guides/CIMO_Guide_2014-Met_Site_Classification.pdf" target="_blank">World Meteorological Organization (WMO)</a> (see also [our obstacle experiment](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx)). The SPV mechanism evaluates the deployment of each station as depicted in the photos submitted by the user through the mobile app. Through SPV, seven key aspects of the photos are examined in order to assess both the overall deployment and the extent to which each parameter can be measured accurately. This mechanism assigns a score to the station each time the user submits a set of photos, which is then evaluated internally by company staff. The 7 aspects and how they affect the SPV score are described in Table 2. Each aspect is assessed separately based on the condition shown in the photo under evaluation, unless an issue is identified that affects the station’s measurements regardless of orientation. Each photo receives a score for each of the 5 aspects that can be scored, and then the average score per photo is calculated. Finally, the average score of the 4 photos (one for each cardinal direction) is computed, which determines the final SPV score. It should be noted that if there is no photo for a specific cardinal direction, the score for that direction is considered to be zero. The SPV scoring rules and guidelines are comprehensively described in [this document](/weather-and-science/quality-mechanisms/spv-full-documentation).
+At WeatherXM, we aim to ensure that all station installations in our network follow, as closely as possible, the guidelines set by the <a href="https://www.eoas.ubc.ca/courses/atsc303/Instruments/wmo_guides/CIMO_Guide_2014-Met_Site_Classification.pdf" target="_blank">World Meteorological Organization (WMO)</a> (see also [our obstacle experiment](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx)). The SPV mechanism evaluates the deployment of each station as depicted in the photos submitted by the user through the mobile app. Through SPV, seven key aspects of the photos are examined in order to assess both the overall deployment and the extent to which each parameter can be measured accurately.
+
+In QoD v3, **SPV is cleanly separated from meteorological QoD**: your station's meteorological `qod_score` reflects pure sensor and siting telemetry quality, while SPV reward policy (such as the `0.5×` multiplier for invalid SPV) is applied separately in the [Reward Mechanism](/rewards/reward-mechanism).
+
+Each photo receives a score for each of the 5 scorable aspects, and then the average score per photo is calculated. Finally, the average score of the 4 photos (one for each cardinal direction) determines the final SPV score. If there is no photo for a specific cardinal direction, the score for that direction is considered zero. The SPV scoring rules and guidelines are comprehensively described in [this document](/weather-and-science/quality-mechanisms/spv-full-documentation).
 
 Table 2. The SPV aspects, their short description and the available score options.
 
-| SPV Aspect                  | Short Description                                                                 | Score Options |
-|------------------------------|-----------------------------------------------------------------------------------|---------------|
-| Photo Validity               | Evaluation of whether the photo meets the standards set by the company            | 0, 0.5, 1     |
-| Temperature/Relative Humidity| Evaluation of the validity of the temperature and relative humidity measurements | 0, 0.5, 1     |
-| Wind                         | Evaluation of the validity of the wind measurements                               | 0, 0.5, 1     |
-| Precipitation                | Evaluation of the validity of the precipitation measurements                      | 0, 0.5, 1     |
-| Solar Irradiance             | Evaluation of the validity of the solar irradiance measurements                   | 0, 0.5, 1     |
-| Mast Height                  | Evaluation of the relative mast height in relation to the objects in the surrounding area | -     |
-| Mast Inclination             | Classification of a visibly tilted mast toward a specific direction               | -             |
+| SPV Aspect | Short Description | Score Options |
+|---|---|---|
+| Photo Validity | Evaluation of whether the photo meets the standards set by the company | 0, 0.5, 1 |
+| Temperature/Relative Humidity | Evaluation of the validity of the temperature and relative humidity measurements | 0, 0.5, 1 |
+| Wind | Evaluation of the validity of the wind measurements | 0, 0.5, 1 |
+| Precipitation | Evaluation of the validity of the precipitation measurements | 0, 0.5, 1 |
+| Solar Irradiance | Evaluation of the validity of the solar irradiance measurements | 0, 0.5, 1 |
+| Mast Height | Evaluation of the relative mast height in relation to the objects in the surrounding area | - |
+| Mast Inclination | Classification of a visibly tilted mast toward a specific direction | - |
