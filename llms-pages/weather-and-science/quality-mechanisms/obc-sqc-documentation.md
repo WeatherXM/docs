@@ -4,6 +4,10 @@ Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/obc
 
 # Obstacle Impact on Temperature and Wind
 
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** OBC/SQC pipeline and is retained for historical reference. WeatherXM now runs **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)** (`version 3.0.0`).
+:::
+
 Data quality serves as the mechanism used to differentiate between accurate and erroneous data recorded by a weather station. To achieve this, we employ a series of techniques and processes that scrutinise different aspects related to data quality.
 The current iteration of the Data Quality algorithm incorporates control checks to pinpoint instances where a sensor records values beyond the limits specified by the manufacturer, identifies unusual jumps, recognises constant values, or determines if there is insufficient data to compute an average.
 
