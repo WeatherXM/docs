@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/faq
 
+Answers to common WeatherXM questions on station data, hardware, installation, connectivity, rewards, wallets, and ordering weather stations.
+
 :::tip
 Remember that you can always contact us through [Support](https://support.weatherxm.com) for any questions or issues you may have.
 :::
@@ -10,7 +12,7 @@ Remember that you can always contact us through [Support](https://support.weathe
 
 ### Is there a chance for my host/friend to be able to have access to my station's data?
 
-Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favorite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
+Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favourite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
 
 <hr />
 
@@ -115,7 +117,7 @@ You can request a refund by contacting [Support](https://support.weatherxm.com) 
 
 ### How can I purchase more than 2 weather stations?
 
-For bulk or enterprise orders, submit our [bulk order form](https://pages.weatherxm.com/bulk-order-form) and our team will get back to you promptly.
+Compare current models at [weatherxm.com/stations](https://weatherxm.com/stations). For bulk or enterprise orders, contact our team through [Support](https://support.weatherxm.com) and we will get back to you promptly.
 
 <hr />
 

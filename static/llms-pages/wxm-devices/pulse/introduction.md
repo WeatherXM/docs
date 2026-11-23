@@ -2,6 +2,12 @@
 
 Canonical: https://docs.weatherxm.com/wxm-devices/pulse/introduction
 
+Get started with the WeatherXM Pulse (WB3000) 4G/LTE weather station: box contents, assembly, installation, claiming and earning $WXM rewards.
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
+
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
    

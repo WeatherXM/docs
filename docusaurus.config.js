@@ -7,7 +7,7 @@ import rehypeKatex from "rehype-katex";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "WeatherXM Docs",
-  tagline: "WeatherXM Documentation Page",
+  tagline: "Hyperlocal weather stations, QoD v3 data quality, rewards, and Pro Weather API documentation.",
   url: "https://docs.weatherxm.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -24,6 +24,20 @@ const config = {
       {
         redirects: require("./redirects.js")
       }
+    ]
+  ],
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: "/",
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true
+      })
     ]
   ],
   presets: [
@@ -48,6 +62,8 @@ const config = {
     ],
   ],
   themeConfig: {
+    image: "img/social-card.png",
+    metadata: [{ name: "twitter:site", content: "@WeatherXM" }],
     hotjar: {
       applicationId: 2542811
     },
@@ -63,53 +79,90 @@ const config = {
         srcDark: "img/wxm-logo-wide-notagline-white.svg"
       },
       items: [
-          {
-            href: "https://app.weatherxm.com/",
-            label: "Web App",
-            position: "right"
-          },
-          {
-            href: "https://explorer.weatherxm.com/",
-            label: "Explorer",
-            position: "right"
-          },
-          {
-            href: "https://claim.weatherxm.com/",
-            label: "Claim Rewards",
-            position: "right"
-          },
-          {
-            href: "https://weatherxm.com/whitepaper",
-            label: "Whitepaper",
-            position: "right"
-          },
-          {
-            href: "https://github.com/WeatherXM/docs",
-            label: "GitHub",
-            position: "right"
-          },
-          {
-            href: "https://support.weatherxm.com",
-            label: "Help Center",
-            position: "right"
-          },
-          {
-            href: "https://weatherxm.network",
-            label: "WeatherXM Network Association",
-            position: "right",
-          },
-          {
-            href: "https://shop.weatherxm.com",
-            label: "Shop",
-            position: "right",
-            id: "docs"
-          },
-        ],
-      },
-      footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} WeatherXM`,
-        style: "light"
-      },
+        {
+          href: "https://app.weatherxm.com/",
+          label: "Web App",
+          position: "right"
+        },
+        {
+          href: "https://explorer.weatherxm.com/",
+          label: "Explorer",
+          position: "right"
+        },
+        {
+          href: "https://claim.weatherxm.com/",
+          label: "Claim Rewards",
+          position: "right"
+        },
+        {
+          href: "https://pro.weatherxm.com/",
+          label: "Pro API",
+          position: "right"
+        },
+        {
+          href: "https://support.weatherxm.com",
+          label: "Help Center",
+          position: "right"
+        },
+        {
+          type: "dropdown",
+          label: "More",
+          position: "right",
+          items: [
+            {
+              href: "https://weatherxm.com/whitepaper",
+              label: "Whitepaper"
+            },
+            {
+              href: "https://github.com/WeatherXM/docs",
+              label: "GitHub"
+            },
+            {
+              href: "https://weatherxm.network",
+              label: "WeatherXM Network Association"
+            }
+          ]
+        },
+        {
+          href: "https://weatherxm.com/stations",
+          label: "Get a Station",
+          position: "right",
+          id: "docs"
+        }
+      ]
+    },
+    footer: {
+      style: "light",
+      links: [
+        {
+          title: "Products",
+          items: [
+            { label: "Stations", href: "https://weatherxm.com/stations" },
+            { label: "Web App", href: "https://app.weatherxm.com" },
+            { label: "WeatherXM Pro", href: "https://pro.weatherxm.com" },
+            { label: "FACT", href: "https://fact.weatherxm.com" },
+            { label: "Explorer", href: "https://explorer.weatherxm.com" }
+          ]
+        },
+        {
+          title: "Developers",
+          items: [
+            { label: "Pro API Docs", href: "https://pro.weatherxm.com/docs" },
+            { label: "GitHub", href: "https://github.com/WeatherXM/docs" },
+            { label: "llms.txt", href: "https://docs.weatherxm.com/llms.txt" }
+          ]
+        },
+        {
+          title: "Community",
+          items: [
+            { label: "Discord", href: "https://weatherxm.com/discord" },
+            { label: "Support", href: "https://support.weatherxm.com" },
+            { label: "WeatherXM Network Association", href: "https://weatherxm.network" }
+          ]
+        }
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} WeatherXM`
+    }
   },
   stylesheets: [
     {

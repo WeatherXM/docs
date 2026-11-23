@@ -1,70 +1,75 @@
 ---
-title: Homepage
-hide_title: true
+title: "WeatherXM Docs: Weather Stations, Rewards & Pro Weather API"
 sidebar_label: Home
 slug: /
+hide_title: true
+description: Set up D1, Pulse and H2 weather stations, track QoD v3 data quality and rewards, and access hyperlocal weather data via WeatherXM Pro and FACT.
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 
-## Welcome aboard
+## Welcome to WeatherXM Docs
 
-WeatherXM is a community-powered weather network that rewards weather station owners and provides accurate weather services to Web3 enterprises.
-WeatherXM weather stations are the world’s first to natively support Web3 technologies.
-  
- <section class="product-container">
-  <div class="device">
-    <Link to="/wxm-devices/m5/introduction">
-      <img src={useBaseUrl("img/home/m5-bundle.png")} />
-      <div class="device-info">
-        <h4>WeatherXM M5 bundle (WB1000)</h4>
-        <p>This is our developer friendly, local weather data miner bundled with an easy to set up all-in-one weather station.</p>
-      </div>
-    </Link>
-  </div>
-  <div class="device">
-    <Link to="/wxm-devices/helium/introduction">
-      <img src={useBaseUrl("/img/home/helium.png")} />
-      <div class="device-info">
-        <h4>WeatherXM Helium station (WS2000)</h4>
-        <p>Compatible all-in-one weather station. Connects to Helium network and submits weather data to WeatherXM.</p>
-      </div>
-    </Link>
-  </div>
-</section>
+WeatherXM is a global network of community-run weather stations delivering verified, hyperlocal weather data to businesses, developers, and forecasters — and rewarding the station owners who keep it running.
 
- <section class="product-container">
-  <div class="device" >
+<div className="cta-bar">
+  <Link className="cta-card" to="https://weatherxm.com/stations">
+    <strong>Get a Station →</strong>
+    <span>Compare D1, Pulse and H2 and order your weather station.</span>
+  </Link>
+  <Link className="cta-card" to="https://app.weatherxm.com">
+    <strong>Manage your Station →</strong>
+    <span>Live data, Data Quality, diagnostics and rewards in the Web App.</span>
+  </Link>
+  <Link className="cta-card" to="/weatherxm-pro">
+    <strong>Weather Data & Pro API →</strong>
+    <span>Hyperlocal observations, forecasts and verified accuracy via WeatherXM Pro.</span>
+  </Link>
+</div>
+
+Looking for forecast accuracy proof? Explore independent model benchmarks on <Link to="https://fact.weatherxm.com">FACT (fact.weatherxm.com)</Link>.
+
+<h3>Current weather stations</h3>
+
+<section class="product-container three">
+  <div class="device">
     <Link to="/wxm-devices/d1/introduction">
-      <img src={useBaseUrl("/img/home/d1-bundle.png")} />
-      <div class="device-info" >
-        <h4>WeatherXM D1 bundle (WB1200)</h4>
-        <p>The WB1200 is a bundle product that combines the WS1001 weather station with our open source WeatherXM WG1200 Gateway.</p>
+      <img src={useBaseUrl("/img/home/d1-bundle.png")} alt="WeatherXM D1 bundle (WB1200)" />
+      <div class="device-info">
+        <h4>D1 bundle (WB1200)</h4>
+        <p>Wi-Fi weather station with the open source WG1200 gateway — the simplest way to start at home.</p>
       </div>
     </Link>
   </div>
   <div class="device">
     <Link to="/wxm-devices/pulse/introduction">
-      <img src={useBaseUrl("/img/home/pulse-bundle.png")} />
+      <img src={useBaseUrl("/img/home/pulse-bundle.png")} alt="WeatherXM Pulse bundle (WB3000)" />
       <div class="device-info">
-        <h4>WeatherXM Pulse bundle (WB3000)</h4>
-        <p>The WB3000 is a bundle product, that combines the WS1001 weather station with our WG3000 Gateway which uses 4G - LTE.</p>
+        <h4>Pulse bundle (WB3000)</h4>
+        <p>4G/LTE weather station for sites without Wi-Fi — farms, rooftops and remote locations.</p>
+      </div>
+    </Link>
+  </div>
+  <div class="device">
+    <Link to="/wxm-devices/h2-open/introduction">
+      <img src={useBaseUrl("/img/home/helium.png")} alt="WeatherXM H2 Open Edition" />
+      <div class="device-info">
+        <h4>H2 Open Edition</h4>
+        <p>8-in-1 LoRaWAN weather station for your own network: TTN, ChirpStack or any LoRaWAN Network Server.</p>
       </div>
     </Link>
   </div>
 </section>
 
-<h3>WeatherXM Project</h3>
+<Link to="https://weatherxm.com/stations"><strong>Compare all stations →</strong></Link>
 
-WeatherXM creates an entirely new weather data economy that rewards people who deploy and maintain weather stations.
+**Legacy devices:** [M5 bundle (WB1000)](/wxm-devices/m5/introduction) · [Helium station (WS2000)](/wxm-devices/helium/introduction)
 
-They are all-in-one, easy to deploy, energy and communication autonomous, and designed for large-scale deployment.
-WeatherXM makes weather-related smart contracts on-chain a reality.
+<h3>How WeatherXM works</h3>
 
-This documentation site attempts to explain various aspects of the WeatherXM project.
+Station owners deploy all-in-one, easy-to-install weather stations. Every reading is cryptographically signed at the source and location-verified by GPS, then scored daily by [QoD v3](/rewards/data-quality). Owners earn `$WXM` rewards for high-quality data, while businesses and developers use the verified network data through [WeatherXM Pro](/weatherxm-pro).
 
-<h4>Thank you for supporting WeatherXM!</h4>
 <h5 class="quickLinks">Quick Links</h5>
 
 <Link to="https://app.weatherxm.com">&#8226; WeatherXM Web App (Station Cockpit)</Link>
@@ -82,4 +87,3 @@ This documentation site attempts to explain various aspects of the WeatherXM pro
 <Link to="/rewards/proof-of-location/">&#8226; Proof of Location (PoL)</Link>
 <br></br><br></br>
 Join our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
-

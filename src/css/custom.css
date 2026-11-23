@@ -479,3 +479,53 @@ details.alert.alert--info summary::before {
   }
 }
 
+
+/* Homepage: audience quick-start CTA bar and 3-up current station cards. */
+.cta-bar {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0 16px;
+}
+
+.cta-bar .cta-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: var(--ifm-menu-color-background-active);
+  border: 2px solid var(--ifm-color-primary);
+  box-shadow: 0 20px 24px -14px #00000039;
+  transition: all .3s ease-out;
+}
+
+.cta-bar .cta-card:hover {
+  background: var(--ifm-color-bluetint);
+  transform: translate3d(0, -2px, 0);
+}
+
+.cta-bar .cta-card span {
+  color: var(--textColor);
+  font-size: 14px;
+  line-height: 1.4rem;
+}
+
+.product-container.three {
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.product-container.three .device {
+  max-width: calc(33.333% - 11px);
+}
+
+@media only screen and (max-width: 996px) {
+  .cta-bar, .product-container.three {
+    flex-direction: column;
+  }
+
+  .product-container.three .device {
+    max-width: 100%;
+  }
+}
