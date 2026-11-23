@@ -4,66 +4,74 @@ Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/contents
 
 ## Included
 
-  ![Box contents](image)
+  
   
     <h4>Included in the box</h4>
     <ol>
-      <li>WeatherXM H2 Open Edition weather station (WS2001)</li>
+      <li>WeatherXM H2 weather station (WS2001)</li>
       <li>External battery box</li>
-      <li>Mounting bracket, U-bolts and metal hardware</li>
-      <li>Device sticker with factory LoRaWAN credentials (DevEUI, AppEUI/JoinEUI, AppKey)</li>
+      <li>Metal zip ties</li>
     </ol>
   
+
+:::info Station sticker
+Every H2 comes with a sticker that shows its **EUI** (DevEUI), **KEY**, **BT ID** and **S/N**. Register the station on your network server with its **DevEUI**. For your own network you choose the JoinEUI and AppKey yourself and write them to the station with the [web flasher](/wxm-devices/h2-open/connect-to-your-network), so you don't need the KEY from the sticker. Keep the **S/N** for support requests.
+:::
 
 <hr/>
 
 ## Not Included
 
-You will also need:
-1. **Batteries:** 1.5V **non-rechargeable** AA batteries (3× AA internal, or 6× AA with external battery pack). High-quality Lithium batteries are recommended for sub-zero temperatures.
-2. **Mounting Pole:** Metal mounting pole (recommended 30–40mm / 1.2–1.57in diameter and at least 2m / 6.56ft height).
-3. **Tools:** Screwdriver and wrench to secure mounting clamps.
+You would also need:
+1. Batteries  1.5V **not rechargeable** (x6 AA)
+1. Metal mounting pole (recommended 40mm/1.57in pole diameter & at least 2m/6.56ft height)
+1. Tools and parts to secure the pole
+1. A computer or Android phone with Bluetooth and Chrome or Edge, for the [web flasher](https://flasher.weatherxm.com)
+1. A LoRaWAN gateway in range, connected to your network server (for example The Things Network or ChirpStack)
 
 :::danger
-Do not use rechargeable batteries. They can damage the power circuitry.
+If you use rechargeable batteries, you may harm your device
 :::
 
 <hr/>
 
-### Weather Station Components
+### Weather Station
 
-The weather station integrates eight meteorological sensors into a single low-power outdoor unit:
+The weather station is a set of sensors encased in a plastic shell that ensures the proper function of the device.
 
-    ![Station components](image)
+The weather station is responsible for the collection of measurements of temperature, humidity, rain rate, wind speed, wind direction, atmospheric pressure, light intensity and UV index.
+
+    
 
     <h4>Components</h4>
-    
-      <ol>
-      <li>Rain gauge funnel</li>
-      <li>Bubble balance indicator</li>
-      <li>UV and light intensity sensor</li>
-      <li>Wind vane</li>
-      <li>Wind speed cups</li>
-      <li>Internal LoRaWAN sub-GHz antenna</li>
-      <li>Adjustable solar panel</li>
-      <li>Radiation shield (temperature, humidity, barometric pressure)</li>
-      <li>Drain holes</li>
-      <li>Built-in battery compartment</li>
-      <li>Red LED indicator</li>
-      <li>Config / join button</li>
-      <li>Mounting clamp</li>
-      <li>Adjustable hinge for solar collector</li>
-      <li>Tipping bucket mechanism</li>
-      <li>Rain sensor</li>
-      </ol>
-    
+        
+          <ol>
+          <li>Rain gauge</li>
+          <li>Balance indicator</li>
+          <li>UV and light intensity sensor</li>
+          <li>Wind vane</li>
+          <li>Wind cups</li>
+          <li>Antenna</li>
+          <li>Solar panel</li>
+          <li>Radiation shield, temp/humidity, barometric pressure sensor</li>
+          <li>Drain holes</li>
+          <li>Built-in battery box</li>
+          <li>Red LED indicator</li>
+          <li>Config / reset button</li>
+          <li>Mounting clamp</li>
+          <li>Adjustable hinge of solar panel</li>
+          <li>Tipping bucket</li>
+          <li>Rain sensor</li>
+          </ol>
+        
 
 :::note
-For optimal observation accuracy, follow our [Station Installation Guide](/wxm-devices/h2-open/install-weather-station).
+For further details about an advisable installation of the weather station, please see [Installing the WeatherXM H2 Open Edition](/wxm-devices/h2-open/install-weather-station).
 :::
-
 <hr/>
 
 ## Help & Support
 
-Join the community on our <Link to="https://weatherxm.com/discord">Discord Server</Link> or reach out via [support](https://support.weatherxm.com).
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.

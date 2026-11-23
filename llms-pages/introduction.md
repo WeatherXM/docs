@@ -20,7 +20,7 @@ By doing so, participants not only contribute to the network's growth but also g
 The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 
 WeatherXM has a vision to become the largest, most decentralised, and most distributed weather network in the world.
-You can stay updated on the current state of the network by checking out our [explorer](https://explorer.weatherxm.com).
+You can stay updated on the current state of the network on the [Explorer](https://explorer.weatherxm.com), and manage your own stations, live diagnostics, history, and rewards in the [WeatherXM Web App](https://app.weatherxm.com) ([see guide](/mobile-app/web-app)).
 
 Some significant milestones we have achieved so far:
 

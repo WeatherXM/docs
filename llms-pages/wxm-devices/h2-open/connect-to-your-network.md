@@ -1,0 +1,108 @@
+# Connect WeatherXM H2 Open Edition (WS2001) to your LoRaWAN network
+
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/connect-to-your-network
+
+The station is configured over Bluetooth with the **WeatherXM web flasher** at [flasher.weatherxm.com](https://flasher.weatherxm.com). There is nothing to install: it runs in your browser.
+
+## Why use the web flasher
+
+- **It keeps the station up to date.** When you connect a station with older firmware, the flasher updates it to the latest WeatherXM release first. The update keeps all settings, keys and the rain counter.
+- **It points the station at your network** in one step: region, JoinEUI, AppKey and upload interval.
+- **It keeps the WeatherXM settings.** The station stores your network settings as a separate profile next to the WeatherXM one, so it can potentially return to the WeatherXM network later. Stations with older firmware must be updated first; the flasher does not move them to your network before the update.
+- **It keeps the full WeatherXM data frame.** Your network receives the same 24-byte frame as the WeatherXM network, including wind gust and rain total, and the flasher gives you the matching [decoder for TTN and ChirpStack](/wxm-devices/h2-open/ttn-and-chirpstack).
+
+## What you need
+
+- A computer (Windows, macOS, Linux, ChromeOS) or an Android phone with **Bluetooth** and **Google Chrome or Microsoft Edge**. Safari, Firefox and iPhone/iPad browsers do not support Web Bluetooth.
+- To be **within a few metres** of the station (the Bluetooth range is about 10m/32ft with few obstacles).
+- An account on your LoRaWAN Network Server, for example [The Things Network](https://console.cloud.thethings.network/) or your own [ChirpStack](https://www.chirpstack.io/), and a LoRaWAN gateway in range of the station.
+
+:::info Pairing window
+The station accepts a **new** Bluetooth pairing only during the **first 5 minutes after it starts**. If your computer or phone has never connected to this station before, press the **reset button once** (a short press) at the bottom of the station to restart it, then connect within 5 minutes. Devices that are already paired can connect at any time.
+:::
+
+:::caution
+Do **not** hold the reset button for 10 seconds. That performs a [factory reset](/wxm-devices/h2-open/troubleshooting#factory-reset).
+:::
+
+## Step by step
+
+### 1. Open the flasher and connect
+
+1. Open [flasher.weatherxm.com](https://flasher.weatherxm.com) and choose **WS2001 (H2)**.
+1. Leave **Update the station firmware automatically** ticked (recommended).
+1. Click **Connect to WS2001 (H2)**. In the Bluetooth list, select **WeatherXM WS2001 XXXXXX** (older units may show **WeatherXM WS2000 XXXXXX**). `XXXXXX` is the end of the station's DevEUI.
+1. If your computer asks to pair, accept it. The first pairing on a computer can take up to half a minute: the flasher shows **Waiting for Bluetooth pairing…** and keeps the connection open meanwhile.
+1. If the connection hangs, click **Cancel and disconnect**, wait a few seconds and connect again.
+
+The flasher shows the station's **DevEUI**, network, region, firmware version, battery and upload interval. Copy the **DevEUI**: you need it to register the station on your network server.
+
+### 2. Firmware update (automatic)
+
+If the station runs an older firmware than the latest WeatherXM release, the flasher updates it right away:
+
+1. The flasher downloads the release and checks that it is genuine (signed for the WS2001 bootloader).
+1. The station restarts into its **update mode**.
+1. Click **Continue** and select the station **again** in the Bluetooth list.
+
+:::tip The station has a different name during the update
+In update mode the station appears in the Bluetooth list as **DfuWX** followed by six characters (for example **DfuWX467063**), or as **DfuTarg**. It does **not** appear as "WeatherXM WS2001 …". Only update-mode devices are listed in this step. After the update it returns to its normal name.
+:::
+
+The update takes about a minute. Keep the station powered and stay nearby. If the connection drops, click **Try again**: the update resumes and the station keeps its previous firmware until the new one is fully installed. When it finishes, click **Reconnect to the station**.
+
+You can also update (or reinstall) manually at any time with the **Update** button on the station card.
+
+### 3. Register the station on your network server
+
+Create the device in TTN or ChirpStack using the DevEUI from step 1, and note the **JoinEUI** and **AppKey** you choose. The [TTN and ChirpStack guide](/wxm-devices/h2-open/ttn-and-chirpstack) walks you through both.
+
+### 4. Enter your network settings
+
+In the **LoRaWAN Network Configuration** form:
+
+| Field | What to enter |
+| :--- | :--- |
+| Frequency Region | The plan of your gateway: EU868, US915, AU915, AS923-1, IN865, KR920 or RU864 |
+| Channel Sub-Band | US915 / AU915 only. Sub-Band 2 (channels 8-15) for TTN and most ChirpStack setups |
+| JoinEUI / AppEUI | 16 hex characters, as registered on your server (TTN accepts `0000000000000000`) |
+| AppKey | 32 hex characters, as registered on your server (or click **Generate Random** and register that key) |
+| Upload Interval | **5 minutes** (default). Use 10 minutes or more on TTN if the station is far from the gateway |
+| Send GNSS location scans | Optional, **off** by default (firmware V4.7 and later). See [GNSS location](#gnss-location-optional) |
+
+Click **Apply & Connect to My Network**, tick **I understand** and confirm. The flasher:
+
+- selects the station's **custom network profile** (the WeatherXM settings are not overwritten),
+- writes the region, JoinEUI, AppKey and interval,
+- keeps the **WeatherXM 24-byte payload on FPort 99**,
+- restarts the station so it joins your network.
+
+On your network the station only sends its own frames on FPort 99. The background messages that the WeatherXM network uses (time sync, device status) stay off, so they don't use your airtime (firmware V4.6 and later).
+
+### GNSS location (optional)
+
+From firmware V4.7 the station can send a raw GNSS satellite scan (`0xF3` frame on FPort 99) about once a day. It is **off by default**; tick **Send GNSS location scans** in the flasher to turn it on.
+
+- The scan is not a position: store it and resolve it later with a GNSS solver if you need the location.
+- The scan needs the current time, which the station asks your network server for with the standard LoRaWAN **DeviceTimeReq** command. The Things Network and ChirpStack answer it, but the answer is a downlink, so your gateway must be able to transmit.
+- If the network server does not answer after 3 attempts, the station turns GNSS off until it restarts, so it doesn't keep asking.
+
+### 5. Watch it join
+
+While the station is joining, the **red LED breathes** (slowly fades in and out). When the join succeeds the LED turns **off**. On your network server you will see the join followed by the first uplink on FPort 99 within a few minutes.
+
+:::note
+Disconnecting from the flasher always restarts the station, which then joins again. This is normal.
+:::
+
+## Switch back to the WeatherXM network
+
+When the station is on your own network, the station card in the flasher shows a **Switch back to WeatherXM** button. It activates the WeatherXM settings stored on the station and restarts it, so the station can potentially rejoin the WeatherXM network. Your own network settings stay stored on the station.
+
+If the station does not rejoin the WeatherXM network, contact [WeatherXM support](https://support.weatherxm.com) with its DevEUI.
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
