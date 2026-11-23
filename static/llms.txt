@@ -17,7 +17,7 @@
 - GitHub: https://github.com/WeatherXM
 
 ## Key documentation
-- Homepage: https://docs.weatherxm.com/
+- WeatherXM Docs: Weather Stations, Rewards & Pro Weather API: https://docs.weatherxm.com/
   - Markdown: https://docs.weatherxm.com/llms-pages/index.md
 - Help Center / FAQ: https://docs.weatherxm.com/faq
   - Markdown: https://docs.weatherxm.com/llms-pages/faq.md
@@ -43,7 +43,7 @@
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/general-qod-description.md
 - QoD v3 Full Documentation: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/qod-v3-documentation
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/qod-v3-documentation.md
-- WeatherXM Pro: https://docs.weatherxm.com/weatherxm-pro
+- WeatherXM Pro: Hyperlocal Weather API, Forecasts & FACT: https://docs.weatherxm.com/weatherxm-pro
   - Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md
 - Introduction of D1 bundle (WB1200): https://docs.weatherxm.com/wxm-devices/d1/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/introduction.md

@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/rewards/rewards-claiming
 
+Step-by-step guide to claiming your $WXM rewards on Arbitrum One via claim.weatherxm.com, including wallet setup and gas fee requirements.
+
 :::tip
 Allocated and claimed tokens displayed in the **[WeatherXM Web App](https://app.weatherxm.com)** and Mobile Apps are only those linked to your **currently connected wallet**. This does not include rewards allocated to wallets you may have used in the past.
 :::

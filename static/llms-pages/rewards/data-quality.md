@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/rewards/data-quality
 
+How QoD v3 scores your weather station's data daily — sanity checks, neighbor cross-validation and annotations — and how to improve your score.
+
 :::info
 WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
 :::

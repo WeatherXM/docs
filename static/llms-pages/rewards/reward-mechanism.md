@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/rewards/reward-mechanism
 
+How WeatherXM Reward Mechanism v2.0 calculates daily $WXM rewards using QoD v3, Proof of Location, photo verification, cell capacity and boosts.
+
 ## Introduction
 
 :::info

@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/tokenomics
 
+Learn how the $WXM ERC-20 token on Arbitrum One powers WeatherXM: tokenomics, supply, governance, and rewards for weather station owners.
+
 ## The token that enables the WeatherXM ecosystem
 
 `$WXM`, issued by the [WeatherXM Network Association](https://weatherxm.network/), is the ERC-20 token that powers the WeatherXM ecosystem on **Arbitrum One**.

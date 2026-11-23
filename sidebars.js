@@ -8,30 +8,29 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "M5 (WB1000)",
+          label: "D1 (WB1200)",
           items: [
-            "wxm-devices/m5/introduction",
-            "wxm-devices/m5/contents",
-            "wxm-devices/m5/assemble",
-            "wxm-devices/m5/install-weather-station",
-            "wxm-devices/m5/connect-and-claim",
-            "wxm-devices/m5/maintenance",
-            "wxm-devices/m5/troubleshooting"
+            "wxm-devices/d1/introduction",
+            "wxm-devices/d1/contents",
+            "wxm-devices/d1/assemble",
+            "wxm-devices/d1/install-weather-station",
+            "wxm-devices/d1/connect-and-claim",
+            "wxm-devices/d1/maintenance",
+            "wxm-devices/d1/troubleshooting"
           ],
           collapsed: true
         },
         {
           type: "category",
-          label: "Helium (WS2000/1)" ,
+          label: "Pulse (WB3000)",
           items: [
-            "wxm-devices/helium/introduction",
-            "wxm-devices/helium/contents",
-            "wxm-devices/helium/assemble",
-            "wxm-devices/helium/connect-and-claim",
-            "wxm-devices/helium/update-firmware",
-            "wxm-devices/helium/install-weather-station",
-            "wxm-devices/helium/maintenance",
-            "wxm-devices/helium/troubleshooting"
+            "wxm-devices/pulse/introduction",
+            "wxm-devices/pulse/contents",
+            "wxm-devices/pulse/assemble",
+            "wxm-devices/pulse/install-weather-station",
+            "wxm-devices/pulse/connect-and-claim",
+            "wxm-devices/pulse/maintenance",
+            "wxm-devices/pulse/troubleshooting"
           ],
           collapsed: true
         },
@@ -52,32 +51,33 @@ module.exports = {
         },
         {
           type: "category",
-          label: "D1 (WB1200)",
+          label: "Helium (WS2000/1)" ,
           items: [
-            "wxm-devices/d1/introduction",
-            "wxm-devices/d1/contents",
-            "wxm-devices/d1/assemble",
-            "wxm-devices/d1/install-weather-station",
-            "wxm-devices/d1/connect-and-claim",
-            "wxm-devices/d1/maintenance",
-            "wxm-devices/d1/troubleshooting"
+            "wxm-devices/helium/introduction",
+            "wxm-devices/helium/contents",
+            "wxm-devices/helium/assemble",
+            "wxm-devices/helium/connect-and-claim",
+            "wxm-devices/helium/update-firmware",
+            "wxm-devices/helium/install-weather-station",
+            "wxm-devices/helium/maintenance",
+            "wxm-devices/helium/troubleshooting"
           ],
           collapsed: true
-          },
-          {
-            type: "category",
-            label: "Pulse (WB3000)",
-            items: [
-              "wxm-devices/pulse/introduction",
-              "wxm-devices/pulse/contents",
-              "wxm-devices/pulse/assemble",
-              "wxm-devices/pulse/install-weather-station",
-              "wxm-devices/pulse/connect-and-claim",
-              "wxm-devices/pulse/maintenance",
-              "wxm-devices/pulse/troubleshooting"
-            ],
-            collapsed: true
-          },
+        },
+        {
+          type: "category",
+          label: "M5 (WB1000)",
+          items: [
+            "wxm-devices/m5/introduction",
+            "wxm-devices/m5/contents",
+            "wxm-devices/m5/assemble",
+            "wxm-devices/m5/install-weather-station",
+            "wxm-devices/m5/connect-and-claim",
+            "wxm-devices/m5/maintenance",
+            "wxm-devices/m5/troubleshooting"
+          ],
+          collapsed: true
+        },
           "wxm-devices/deployment-examples",
           "wxm-devices/frequency-plans",
         ],

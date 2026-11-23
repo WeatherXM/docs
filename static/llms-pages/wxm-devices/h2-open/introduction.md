@@ -2,6 +2,12 @@
 
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/introduction
 
+Set up the WeatherXM H2 Open Edition 8-in-1 LoRaWAN weather station on The Things Network, ChirpStack or any LoRaWAN Network Server.
+
+:::tip
+Looking to deploy a station? Compare current models and order at [weatherxm.com/stations](https://weatherxm.com/stations).
+:::
+
 <h2 className="subtitle">An 8-in-1 LoRaWAN weather station for your own network: The Things Network (TTN), ChirpStack or any LoRaWAN Network Server.</h2>
 
     ![WeatherXM H2 weather station](image)

@@ -2,6 +2,8 @@
 
 Canonical: https://docs.weatherxm.com/mobile-app/web-app
 
+Use the WeatherXM Web App to monitor your stations, view history and forecasts, track rewards and Data Quality, and diagnose offline hardware.
+
 The **[WeatherXM Web App](https://app.weatherxm.com)** is the browser-based **Station Cockpit** for monitoring your weather stations, inspecting historical data and forecasts, tracking daily WXM rewards and Data Quality (QoD), and diagnosing offline or underperforming hardware — from any desktop or mobile browser.
 
 Sign in at **[app.weatherxm.com](https://app.weatherxm.com)** using the same account email and password you use in the WeatherXM iOS or Android app.
