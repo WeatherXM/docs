@@ -85,148 +85,124 @@ Canonical: https://docs.weatherxm.com/faq
 Markdown: https://docs.weatherxm.com/llms-pages/faq.md
 
 :::tip
-Remember that you always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
+Remember that you can always contact us through [Support](https://support.weatherxm.com) for any questions or issues you may have.
 :::
 
 ## <Highlight color="#68a4f9">Data</Highlight>
 
 ### Is there a chance for my host/friend to be able to have access to my station's data?
 
-Yes! It was a common feature request so we have implemented it. You can share your station's data with your friends by using the share button on the station's page on the [explorer](https://explorer.weatherxm.com/). Also, you can "favourite" any station you like by clicking on the heart shaped button while using our mobile App.
-The station will appear in your station list.
+Yes! You can share your station's live data by sharing its page from the [WeatherXM Explorer](https://explorer.weatherxm.com/). Anyone can also follow or favorite public stations in the **[WeatherXM Web App](https://app.weatherxm.com)** or Mobile App so they appear in their station list.
 
 <hr />
 
 ### How do you know people are not faking the location of their station on the map?
 
-In addition to the cryptographic proofs from all station data sent to the WeatherXM Network, we have designed and implemented a unique Proof of Location algorithm to safeguard the accuracy of the weather station location. Read more at the [PoL section of the documentation](/rewards/proof-of-location).
+In addition to cryptographic proofs from all station data sent to the WeatherXM Network, we run a dedicated Proof of Location (PoL) algorithm to verify station location accuracy and consistency. Read more in the [PoL documentation](/rewards/proof-of-location).
 
 ## <Highlight color="#68a4f9">Hardware</Highlight>
 
-### Can I connect my WXM station with a 3rd party station?
+### Can I connect a 3rd party weather station to WeatherXM?
 
-Our weather stations are custom built, they are developed to connect to our network with our firmware and software implementations. The SDR receiver is no longer on our roadmap.
-
-<hr />
-
-### What are the differences between the WG1000 gateway  station and the WXM Helium compatible station?
-
-1. The WeatherXM Helium station has an integrated (located within the weather station) Helium-compatible LoRaWAN chip, crypto chip, and GPS while the Wi-Fi bundle has a Wi-Fi gateway, crypto chip, and GPS located within the external WG1000 gateway.
-1. WeatherXM Helium station can only connect to the Helium Network while the Wi-Fi bundle can only connect to Wi-Fi.
-1. The WeatherXM helium weather station has a larger solar panel which allows it to do processing standalone (in the station itself) while the Wi-Fi bundle's station has a smaller solar panel since the processing is done by the external WG1000 display and Wi-Fi gateway (located indoors) which the station communicates to over RF.
-1. The WeatherXM Helium bundle does not contain any type of display to view weather data. Weather data will have to be viewed from the WeatherXM app.
+WeatherXM stations use custom firmware and hardware security components designed to sign and transmit verified observations to the WeatherXM Network, so standard 3rd-party consumer weather stations are not directly supported. For open-network LoRaWAN integrations, check out our [H2 Open documentation](/wxm-devices/h2-open/introduction).
 
 <hr />
 
-### Can I connect my WeatherXM Helium compatible station to any Helium around or should I request access from someone?
+### What are the differences between WeatherXM station models?
 
-You can connect your WeatherXM Helium compatible station anywhere with Helium network coverage or near a Helium gateway. The gateway that will handle your packet is usually the fastest to respond but this is influenced by numerous factors. This means that the closest Helium gateway will not necessarily be the one that will pick up your packet, nor you can choose or influence this.
+WeatherXM offers weather stations across three connectivity families depending on where you deploy:
+
+- **Wi-Fi (M5 / D1):** An outdoor sensor array paired with an indoor Wi-Fi gateway and display — ideal for homes, offices, and rooftops with Wi-Fi and power.
+- **Cellular 4G (Pulse):** Built-in 4G LTE connectivity with solar power for remote or off-grid sites without Wi-Fi.
+- **LoRaWAN / Helium (H1 / H2 / H2 Open):** Standalone solar-powered outdoor stations using LoRaWAN connectivity — great for areas with Helium or LoRaWAN network coverage.
+
+For a full side-by-side comparison and current availability, visit **[weatherxm.com/stations](https://weatherxm.com/stations)**.
+
+<hr />
+
+### Can I connect my WeatherXM Helium station to any Helium gateway around, or should I request access?
+
+You can deploy your WeatherXM Helium station anywhere with Helium network coverage. Packets are automatically routed through whichever nearby Helium gateway receives them best — you do not need to request permission or manually pair with a specific gateway.
 
 <hr />
 
 ### Will it make a big difference if I place my station on the balcony instead of the roof?
 
-It is mandatory that you place your station on the roof and the reason is because there aren't so many obstacles as there are on a balcony (e.g walls), that will reduce the quality of your data, therefore the amount of your rewards.
-You can also check the [deployment examples](/wxm-devices/deployment-examples) for inspiration.
-
-<hr />
-
-### Is any of your stations suitable for very cold climates?
-
-For very cold climates that have snow most of the year, we will be launching soon a special weather station with a heater suitable for these weather conditions.
+Yes. Placing your station on an unobstructed rooftop (or open mast) rather than a balcony is critical because nearby walls, overhangs, and heat-reflecting surfaces degrade temperature, wind, solar, and rain accuracy, which directly reduces your [Data Quality (QoD v3)](/rewards/data-quality) score and daily rewards.
+Check our [Deployment Examples](/wxm-devices/deployment-examples) for best practices.
 
 <hr />
 
 ### Which is the recommended frequency for my country?
 
-You can refer to the mapping table that provides detailed information on the frequency allocations per country by visiting the  [frequencies plans](/wxm-devices/frequency-plans) page.
+You can check the regional frequency mapping table on the [Frequency Plans](/wxm-devices/frequency-plans) page.
 
 ## <Highlight color="#68a4f9">Rewards</Highlight>
 
 ### How can I start receiving rewards?
 
-If you have already set up your station and claimed your device via the app, please add Metamask and follow the instructions [here](/mobile-app/wallet/add-edit-wallet-address) and then follow this guide to [claim your rewards](/rewards/rewards-claiming).
+Once you have installed and claimed your station, connect an Arbitrum One-compatible EVM wallet (`0x…`) via the **[WeatherXM Web App](https://app.weatherxm.com/profile)** or Mobile App ([wallet setup guide](/mobile-app/wallet/add-edit-wallet-address)), and then follow our [How to Claim Rewards](/rewards/rewards-claiming) guide.
 
 <hr />
 
 ### How can I check my rewards?
 
-You can check your rewards by using our mobile App and follow this guide to [claim your rewards](/rewards/rewards-claiming).
+You can inspect daily station rewards, streaks, and QoD/PoL/SPV breakdowns in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or the Mobile App, and claim accumulated `$WXM` tokens at [claim.weatherxm.com](https://claim.weatherxm.com).
 
 <hr />
 
 ### Do I have to pay for the HNT/DC fees?
 
-We are covering the HNT/DC fees.
+No — WeatherXM covers the Helium Data Credit (DC) fees.
 
 <hr />
 
 ### Can I change my wallet address in the future?
 
-You can change your wallet address in the future. Just so you know, rewards are allocated daily per your wallet, if you change wallet in the future then the rewards up to that moment are allocated to your previous wallet.
-Unclaimed rewards cannot be transferred to a new wallet and can only be claimed by the connected wallet address at the time of rewards allocation.
+Yes. Daily rewards are allocated to whichever wallet address is connected at the time of distribution. If you switch wallets, any previously allocated unclaimed rewards remain claimable by your previous wallet and cannot be transferred to the new wallet.
 
 <hr />
 
 ### How many stations are allowed in a Hex?
 
-Such details will be defined in by the [WeatherXM Network](https://weatherxm.network/).
+Each H3 cell has a predefined **[Cell Capacity (CC)](/rewards/cell-capacity)** based on its geospatial characteristics. You can check any cell's capacity and current active stations on the [WeatherXM Explorer](https://explorer.weatherxm.com/). If more eligible stations are active than the cell's capacity, the highest-scoring stations (and earliest claimed in case of a tie) receive rewards.
 
 <hr />
 
-## <Highlight color="#68a4f9">Sales</Highlight>
+## <Highlight color="#68a4f9">Sales & Shipping</Highlight>
+
+### Where do you ship from, and when will my order ship?
+
+We ship **every day from our EU and US warehouses**.
+
+<hr />
 
 ### Can I receive my invoice before my order ships?
 
-You will receive your invoice and receipt when your order ships. If you need an invoice earlier you can contact us through [support](https://support.weatherxm.com).
-
-<hr />
-
-### When will my order ship?
-
-We are improving our logistic methods and you will receive your order in 1-2 weeks.
+You will receive your invoice and receipt when your order ships. If you need an invoice earlier, contact [Support](https://support.weatherxm.com).
 
 <hr />
 
 ### Can I change my shipping address?
 
-As long as your order hasn't shipped you can contact us through [support](https://support.weatherxm.com) and we will change it for you.
+As long as your order has not shipped yet, contact [Support](https://support.weatherxm.com) and we will update it for you.
 
 <hr />
 
-### Can I request a refund?
+### Can I request a refund or cancel a shipped order?
 
-You can request a refund by sending us a message through [support](https://support.weatherxm.com) and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
-
-<hr />
-
-### Can I cancel my order if it has already been shipped?
-
-You can not cancel it if it has already been shipped but you can deny the delivery when it reaches to your door and we will refund you according to our [refund policy](https://weatherxm.com/terms-conditions/).
-
-<hr />
-
-### Where do you ship the devices from?
-
-We ship from China and then the devices are distributed to our warehouses in US/CA/UK/EU.
+You can request a refund by contacting [Support](https://support.weatherxm.com) in accordance with our [Terms & Conditions](https://weatherxm.com/terms-conditions/). If an order has already shipped, it cannot be canceled in transit, but you may refuse delivery and we will process a refund per our refund policy. Refunds typically take 3–15 working days to appear in your bank account.
 
 <hr />
 
 ### How can I purchase more than 2 weather stations?
 
-You can complete our [bulk sales](https://pages.weatherxm.com/bulk-order-form) form and we will contact you as soon as possible.
-
-<hr />
-
-### How much time does it take for the refund to reflect to my bank account?
-
-Note that refunds take 3-15 working days to reflect on your bank account.
-If it hasn't been reflected in your bank account after 15 days you should contact us by sending a message through [support](https://support.weatherxm.com)
+For bulk or enterprise orders, submit our [bulk order form](https://pages.weatherxm.com/bulk-order-form) and our team will get back to you promptly.
 
 <hr />
 
 :::tip
-Remember that you always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
+Need more help? Reach out anytime through [Support](https://support.weatherxm.com).
 :::
 
 ---
@@ -234,19 +210,24 @@ Remember that you always contact us through [support](https://support.weatherxm.
 Canonical: https://docs.weatherxm.com/glossary
 Markdown: https://docs.weatherxm.com/llms-pages/glossary.md
 
-| Term                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Barometer               | A barometer is a device that measures the pressure of the air pushing on it—this measurement is called the barometric pressure. We don’t actually feel the barometric pressure because the air pressure is pushing equally in every direction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| HectoPascals (hPa)      | This is an international standard (SI system) for measuring air pressure. It used to be referred to as milli-bar (mb) and sometimes still is. They are equivalent.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Hygrometer              | The instrument that measures the relative humidity of the air. This is expressed as a percentage between 0% and 100%.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Millimetres (mm)        | This is the unit in which the rain amount is measured. 1 mm corresponds to 1kg/m² of water.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Rain Rate               | Rain rate is a measurement of the intensity of rainfall. It gives the amount of rain that would fall over a time period if the rain rate was constant over that time period. It is usually measured in millimetres per hour (mm/h).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Relative Air Pressure   | Relative air pressure is the absolute air pressure compensated for the altitude of the barometer. The result is what the air pressure would be at sea level. This measurement appears on the WXM-M5 screen.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Relative Humidity (RH)  | It is a measure of the water vapour content of air. In particular, RH is the percentage (%RH) of water vapour that is present in a sample of air to the amount needed to achieve saturation at the same temperature.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Ultra Violet (UV) Index | The ultraviolet index or UV-Index (UVI) is an international standard measurement of the strength of sunburn-producing ultraviolet (UV) radiation at a particular place and time. The purpose of the UV Index is to help people effectively protect themselves from UV radiation. The UV Index is a linear scale, with higher values representing a greater risk of sunburn (which is correlated with other health risks) due to UV exposure. An index of 0 corresponds to zero UV radiation, as is essentially the case at night. An index of 10 corresponds roughly to midday summer sunlight with a clear sky when the UV Index was originally designed, but values above 10 are sometimes possible. Levels above 8 are considered “very high” and above 11 are considered “extreme.” |
-| Wind Direction          | Wind direction is defined as the direction the wind is coming from.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Wind Speed              | Wind speed is the speed of the weather-related air movement from one place to the next.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Wind Gust               | Highest measured wind speed over a 10 minute period.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Term | Description |
+| --- | --- |
+| Barometer | A device that measures atmospheric air pressure (barometric pressure). |
+| Cell Capacity (CC) | The maximum number of weather stations eligible to earn daily base rewards within a single H3 cell. See [Cell Capacity](/rewards/cell-capacity). |
+| H3 Cell | A hexagonal geospatial cell (resolution 7) from Uber's H3 grid used by WeatherXM to organize station coverage, Explorer maps, and Cell Capacity. |
+| HectoPascals (hPa) | The SI unit for measuring atmospheric air pressure. Equivalent to millibars (mb). |
+| Hygrometer | The instrument that measures relative humidity (RH), expressed as a percentage between `0%` and `100%`. |
+| Millimetres (mm) | The unit used to measure accumulated rainfall (`1 mm` equals `1 kg/m²` or `1 L/m²` of water). |
+| Proof of Location (PoL) | WeatherXM's daily algorithm verifying that a station's reported GPS location matches its declared installation site. See [Proof of Location](/rewards/proof-of-location). |
+| Quality of Data (QoD v3) | WeatherXM's daily meteorological quality engine that scores station telemetry (`0–1`) using self-sanity checks, spatial neighbor cross-validation, and 2-day deployment hysteresis. See [Data Quality](/rewards/data-quality). |
+| Rain Rate | The intensity of rainfall, measured in millimetres per hour (`mm/h`). |
+| Relative Air Pressure | Absolute barometric pressure adjusted to sea level for the station's elevation. |
+| Relative Humidity (RH) | The percentage (`%RH`) of water vapor present in air relative to saturation at the same temperature. |
+| Station Photo Verification (SPV) | Human review of a station's 4 directional installation photos against WMO siting guidelines. See [SPV](/weather-and-science/quality-mechanisms/spv-full-documentation). |
+| Ultra Violet (UV) Index | A linear international standard scale measuring sunburn-producing UV radiation (`0` at night, `8+` very high, `11+` extreme). |
+| Wind Direction | The compass direction the wind is blowing **from**. |
+| Wind Gust | The highest measured wind speed over a short sampling period (typically 10 minutes). |
+| Wind Speed | The speed of horizontal air movement past the anemometer. |
 
 ---
 # Introduction
@@ -384,7 +365,7 @@ Canonical: https://docs.weatherxm.com/mobile-app/wallet/add-edit-wallet-address
 Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/wallet/add-edit-wallet-address.md
 
 :::tip
-If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+If you don't have a wallet yet, [create one first](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) so you can connect it and claim your `$WXM` rewards on Arbitrum One.
 :::
 
 ## Add wallet address for the first time  
@@ -1432,78 +1413,35 @@ Markdown: https://docs.weatherxm.com/llms-pages/tokenomics.md
 
 ## The token that enables the WeatherXM ecosystem
 
-$WXM, issued by the [WeatherXM Network Association](https://weatherxm.network/), is the token that enables the WeatherXM ecosystem.
+`$WXM`, issued by the [WeatherXM Network Association](https://weatherxm.network/), is the ERC-20 token that powers the WeatherXM ecosystem on **Arbitrum One**.
 
-\$WXM will be used to govern the Network and will be required to license weather data for commercial uses. Station owners are awarded \$WXM for providing high-quality weather data to the Network.
+`$WXM` is used for network governance and to reward weather station owners for contributing verified, high-quality weather observations to the Network.
 
-View detailed analytics about the $WXM token, including rewards and revenue, on [Dune Analytics](https://dune.com/weatherxm/network-stats).
+View live analytics on `$WXM` rewards, supply, and network stats on [Dune Analytics](https://dune.com/weatherxm/network-stats).
 
 ## Tokenomics
 
- **$WXM** is an ERC20 token to power the weather data economy.
-
 :::note
-WeatherXM is deployed on Arbitrum One Network. You can find the contract at [Arbitrum One Explorer](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6)
+`$WXM` is deployed as an ERC-20 token on **Arbitrum One**: [`0xb6093b61544572ab42a0e43af08abafd41bf25a6`](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 :::
 
-### New approach in crowdsourcing weather data
-WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
-$WXM is currently implemented in [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6) as an ERC20 token.
+### Crowdsourcing Global Weather Data
 
-Like most networks, the value of our Network is greater than the sum of its parts. Station owners are rewarded with $WXM tokens (governance participation) based on the data they contribute on a daily basis.
+WeatherXM rewards people who deploy and maintain weather stations with daily `$WXM` emissions governed by smart contracts. Daily allocations depend on [Data Quality (QoD v3)](/rewards/data-quality), [Proof of Location (PoL)](/rewards/proof-of-location), [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation), and [Cell Capacity (CC)](/rewards/cell-capacity).
 
-To implement this logic, we introduce a smart contract that distributes a fixed budget of tokens (the \$WXM token) to station owners and other stakeholders daily. Any customer who wants to use the Network’s data or services will have to acquire \$WXM.
+### `$WXM` Token Distribution
 
-### $WXM Token Distribution
+**Total supply of `$WXM` is fixed at 100,000,000 (100M) tokens**, minted at Mainnet launch (May 2024):
 
-**Total supply of the $WXM token is 100M (100,000,000) tokens.**
-
-#### 55% - Station Rewards:
-Tokens will be used for station owners rewards. 3M of this amount will be used to gradually reward beta users.
-
-#### 30% - Initial Supporters:
-30M tokens will be allocated to initial supporters of the project. These tokens will be locked and they will be unlocked during a period of four (4) years, linearly with one year cliff.
-
-#### 10% - Treasury
-10M tokens will be allocated to the DAO treasury to support the WeatherXM ecosystem development. Tokens will be unlocked linearly during a 5 year period, starting from the day of the token launch.
-
-#### 5% - Liquidity support:
-5M tokens will be provided to token exchanges as a way to allow other interested parties to join the WeatherXM ecosystem governance and/or license data.
-
-#### 3% Beta Rewards:
-3 million tokens will be used to reward stations that contributed data to the Network during the beta phase. This is not a marketing activity intended to create buzz and awareness, but a reward mechanism for the stations that participated and formed the Network before a reward mechanism was in place.
-
-More specifically, the 3,000,000 tokens will be allocated to stations based on the percentage of rewardable station-hours each station provided to the Network.
-
-A rewardable station hour is an hour during which the station sent at least one valid weather data package to the network. Proof-of-Location (PoL) is not taken into account during the calculation of the Beta Rewards.
-
-This provides an additional incentive for the early Network adopters to remain in the network, maximising their station data value due to seniority and providing additional incentive for early members to actively participate in future Network governance.
-
-:::note
-To understand better the "Beta rewards" you can read the related blog post [here](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7).
-:::
-
-### Token Emissions
-
-**Distributed over the next 10 years**
-
-WeatherXM is a long-term project. The total supply of 100M $WXM tokens is unlocked and distributed based on a predefined 10-year schedule.
-
-The token distribution is designed to incentivise station owners to provide data to the Network and to reward early supporters of the project.
-
-All tokens will be minted on token launch. More specifically:
-- 52M tokens will be distributed to station owners every day for providing data to the Network.
-- 30M tokens will be allocated to initial supporters of the project
-- 3M  tokens will be distributed to station owners that participated in the Network during its beta phase. See more at [Reward Boosts](/rewards/reward-boosts.mdx)
-- 10M tokens are reserved in the Association's treasury. They will be used to support the WeatherXM ecosystem development.
-- A one-off issuance of 5M tokens will take place on token launch. These tokens will be used to provide market liquidity.
-
-### Locked tokens
-- **Treasury** tokens will be locked and they will be unlocked linearly during a 5 year period, starting from the day of the token launch.
-- **Initial Supporters** tokens will be locked and they will be unlocked linearly during a four (4) year period with one (1) year cliff.
+- **55% — Station Rewards (`55M`):** Allocated to weather station owners over a 10-year schedule:
+  - **52% (`52M`) — Daily Station Rewards:** Distributed daily to active stations contributing verified weather data.
+  - **3% (`3M`) — Beta Rewards (Completed):** Allocated to early stations that contributed valid weather data during the pre-Mainnet Beta period (ended May 27, 2024; 425-day distribution completed). See [Reward Boosts](/rewards/reward-boosts) and the [Beta Rewards announcement](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7).
+- **30% — Initial Supporters (`30M`):** Allocated to initial supporters of the project, unlocking linearly over 4 years with a 1-year cliff from token launch.
+- **10% — Treasury (`10M`):** Reserved in the Association / DAO treasury to support WeatherXM ecosystem development, unlocking linearly over 5 years from token launch.
+- **5% — Liquidity Support (`5M`):** Issued at token launch to support market liquidity and ecosystem participation.
 
 :::tip
-You can always read more at the [WeatherXM Network](https://weatherxm.network/)  website.
+Learn more about governance and the WeatherXM Network Association at [weatherxm.network](https://weatherxm.network/).
 :::
 
 ---
@@ -3779,52 +3717,39 @@ Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md
 
 ## Access Hyperlocal Weather Data
 
-Improve your forecasts with our global weather station network.
-Access hyperlocal data to optimize decisions and boost efficiency. Explore the [Pro](https://pro.weatherxm.com) **for free** and view nearby station data!
-You can use either our user-friendly web interface, or easily integrate it with your solution via our API.
+Improve your forecasts and weather-driven operations with WeatherXM's global weather station network.
+Explore **[WeatherXM Pro](https://pro.weatherxm.com)** to inspect nearby station telemetry via the web interface, or integrate real-time, historical, and forecast data directly through our **[Pro API](https://pro.weatherxm.com/docs)**.
 
 :::note
-Explore our WeatherXM Pro at [pro.weatherxm.com](https://pro.weatherxm.com) or [view its API documentation](https://pro.weatherxm.com/docs).
+Get started at **[pro.weatherxm.com](https://pro.weatherxm.com)**, explore forecast model benchmarks on **[FACT (fact.weatherxm.com)](https://fact.weatherxm.com)**, or browse the **[Pro API documentation](https://pro.weatherxm.com/docs)**.
 :::
 
 ## Features
 
 ### Historical & Real-Time Data
-Access real-time and historical weather data from any WeatherXM station across the globe — delivered
-seamlessly to your app for immediate insights and long-term analysis.
+Access real-time and historical weather observations from WeatherXM stations across the globe — quality-scored daily by [QoD v3](/rewards/data-quality) for operational reliability.
 
-### Forecast Accuracy Tracking
+### Forecast Accuracy Tracking (FACT)
 
   <section>
-    Continuously monitor and compare the performance of 40+ leading global weather models to identify the most accurate forecasts for your specific location.
-    This empowers you to make smarter, weather-driven decisions and optimize operations with confidence.
+    Continuously monitor and compare the performance of leading global and regional weather models against real ground-truth station observations to identify the most accurate forecast for any location via **[FACT](https://fact.weatherxm.com)**.
 
     For example:
-    - Agriculture: Choose the most reliable forecast to plan irrigation, planting, or harvest timing and reduce crop risk due to unexpected weather shifts.
-    - Energy: Improve load forecasting and renewable generation planning by using the most accurate model for wind or solar predictions.
+    - **Agriculture:** Choose the most reliable forecast to plan irrigation, planting, or harvest timing and reduce crop risk.
+    - **Energy:** Improve load forecasting and renewable generation planning using the best-performing wind and solar models for each site.
   </section>
   
 
 ### Hyperlocal Station Forecasts
 
   <section>
-    Get hyperlocal forecasts tailored to specific locations by leveraging our global network of weather stations.
-    Unlike traditional models, the Pro improves forecasts using real-world, ground-truth data from local stations.
-
-    Our QoD mechanism ensures high data reliability by motivating and rewarding station owners to maintain their devices.
-    The better the station’s performance, the more rewards they earn—ensuring consistently high-quality data for businesses.
+    Get hyperlocal forecasts tailored to specific locations by leveraging our global network of ground-truth weather stations.
+    Our [QoD v3](/rewards/data-quality) mechanism continuously scores station accuracy and rewards station owners for maintaining healthy, properly sited hardware — ensuring consistent, enterprise-grade observations.
   </section>
   
 
-### Access hyperlocal weather data via API
-Access real-time, historical and forecast weather data effortlessly with our [developer-friendly API](https://pro.weatherxm.com/docs)
-— built for seamless integration into your apps, platforms, and operational workflows.
-Tap into high-quality data from a trusted global network, with 90%+ coverage reliability and quality.
-[View our Pro API documentation here.](https://pro.weatherxm.com/docs)
-
-:::note
-Explore our WeatherXM Pro at [pro.weatherxm.com](https://pro.weatherxm.com) or [view its API documentation](https://pro.weatherxm.com/docs).
-:::
+### Developer-Friendly Weather API
+Access real-time observations, historical datasets, and hyperlocal forecasts via the **[WeatherXM Pro API](https://pro.weatherxm.com/docs)** — built for seamless integration into apps, analytics pipelines, and automated operational workflows.
 
 ---
 # Assembling WS1001 Weather Station
@@ -4010,8 +3935,8 @@ Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/connect-and-claim
 ## WG1200 Gateway
 
 The weather station comes together with the WG1200 Gateway.
-The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 16 seconds by the outdoor sensor
-and displays them on its screen.
+The WG1200 Gateway receives all the meteorological data plus the location of the weather station, which are measured and transmitted every 20 seconds by the outdoor sensor,
+and displays them on its touchscreen and built-in local web console.
 
 In this chapter, you will find guidance to set up the WG1200 Gateway.
 <hr/>
@@ -4183,6 +4108,18 @@ Your first rewards will appear after 24 hours of the station being online.
 Usually, it takes up to 30 minutes for the station to appear on the [explorer](https://explorer.weatherxm.com/stats)
 :::
 
+<hr/>
+
+## Local Web Console & Integrations
+
+Once your WG1200 Gateway is connected to Wi-Fi, you can open `http://<gateway-ip>/` in a browser on the same local network to access its built-in **Local Web Console**:
+- **Live & 24-Hour Weather Charts:** View real-time observations, 24-hour historical trends, hourly wind direction ribbons, and daily min/max extremes.
+- **Display Units Sync:** Change measurement units (`°C`/`°F`, wind speed, rain, pressure) on either the touchscreen or the Web Console and both stay in sync.
+- **microSD History & Safe Eject:** View or download stored daily CSV weather files directly in the browser, format cards, and safely eject/mount your microSD card.
+- **Home Assistant, Local API & Mesh:** Connect to **Home Assistant**, explore the local REST API and `/llms.txt` reference, or enable optional **Meshtastic** / **MeshCore** LoRa weather beacons.
+
+For more details, visit the [WeatherXM WG1200 Firmware repository on GitHub](https://github.com/WeatherXM/wg1200-firmware).
+
 ---
 # Box Contents of D1 bundle (WB1200)
 Canonical: https://docs.weatherxm.com/wxm-devices/d1/contents
@@ -4262,11 +4199,13 @@ The above figures show a sketch of the outdoor sensor. The sketch comes with a d
 
   
 
-The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network.
+The WG1200 Gateway (D1 WiFi) is the device responsible for receiving weather measurements from the outdoor sensor and transmitting them via WiFi to the WeatherXM network. It features a 3.95" capacitive touchscreen display, an integrated barometric pressure sensor, a microSD card slot for local weather history logging, and a built-in Local Web Console & REST API (`http://<gateway-ip>/`).
 
 The D1 Gateway is advised to be placed indoors, in an environment of relatively constant temperature (ideally within a daily range of &#60;4°C/7°F for proper functioning of the barometer).
 
 The D1 Gateway should be permanently connected to power and powered on in order to be able to receive, record and upload measurements to the Internet.
+
+For detailed firmware documentation, local API specifications, and source code, visit the [WeatherXM WG1200 Firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware).
 
 <hr/>
 
@@ -4316,7 +4255,7 @@ Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/introduction.md
 
 <h2 className="subtitle">You're now the proud owner of a WeatherXM Station. Welcome to the People's Weather Network!</h2>
 
-   
+   ![WeatherXM D1 Bundle (WB1200)](image)
 
 <hr />
 
@@ -4355,16 +4294,28 @@ In order to receive WXM rewards, you will need to connect an ERC20 compatible wa
 
 <Link to="/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask">View Wallet Addition Instructions</Link>
 
+<hr />
+
 ## Features and Specifications
 
 ### WG1200 Gateway
 
-- 3.95" Capacitive touch screen
-- ATECC608 hardware encryption
-- BLE + LoRa
-- Forwards weather data via WiFi
-- Powered by USB (power adapter not included)
-- Over-the-air firmware upgradable
+- **3.95" capacitive touch screen** with live weather tiles, trend charts, and daily min/max extremes
+- **Integrated barometric pressure sensor** and ATECC608 hardware encryption
+- **Wi-Fi, BLE & LoRa** connectivity (forwards weather data via 2.4 GHz Wi-Fi)
+- **microSD card slot** for local weather history logging (CSV) with safe eject and an in-browser chart viewer
+- **Built-in Local Web Console (`http://<gateway-ip>/`)** featuring live & 24-hour interactive weather charts, hourly wind direction ribbons, and two-way display unit sync with the gateway screen
+- **Local API, Home Assistant & Mesh Support:** Local REST API with automatic **Home Assistant** discovery, `/llms.txt` support for AI agents, and optional **Meshtastic** / **MeshCore** off-grid LoRa weather beacons
+- **Powered by USB-C** (power adapter not included) and **over-the-air (OTA)** or browser ([flasher.weatherxm.com](https://flasher.weatherxm.com)) firmware upgradable
+
+  ![WG1200 Web Console Live Dashboard](image)
+  ![WG1200 Web Console 24h History & SD Card](image)
+  ![WG1200 Web Console Settings, Mesh & Pairing](image)
+  ![WG1200 Web Console Local REST API & llms.txt](image)
+
+:::info Open-Source Firmware & Technical Details
+The WG1200 Gateway runs open-source firmware (Apache-2.0). For full feature details, local REST API documentation, Home Assistant & Meshtastic guides, custom firmware builds, and the release changelog, visit **[github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware)**.
+:::
 
 ### WS1001 Weather Station
 
@@ -4417,7 +4368,8 @@ The maximum distance between this station and the WG1200 is 100m with line of si
   - Accuracy: ±3.9Pa
   - Resolution: 0.06Pa
 
-- #### Sensor :
+- #### Sensor:
+  - GPS sensor Integrated
   - Reporting Interval: 20sec
 
 </TabItem>
@@ -4445,7 +4397,7 @@ The maximum distance between this station and the WG1200 Gateway is 328ft with l
 
 - #### Wind Speed:
 
-  - Range: 0 ~ 3.2 ft/s
+  - Range: 0 ~ 164 ft/s (111.8 mph)
   - Accuracy: ±3.2 ft/s (wind speed < 16.4 ft/s), ±10% (wind speed > 16.4 ft/s)
 
 - #### Wind Direction:
@@ -4463,7 +4415,7 @@ The maximum distance between this station and the WG1200 Gateway is 328ft with l
   - Accuracy: ±3.9Pa
   - Resolution: 0.06Pa
 
-- #### Sensor :
+- #### Sensor:
   - GPS sensor Integrated
   - Reporting Interval: 20sec
 
@@ -4544,6 +4496,10 @@ The solution may be as simple as powering down and up the WG1200 Gateway. Make s
    Relocate the weather station and WG1200 Gateway as necessary to avoid obstacles.
    Depending on natural barriers you may also have to move the weather station higher and/or closer.
 
+:::tip Diagnose RF Reception in the Local Web Console
+When the WG1200 Gateway is connected to Wi-Fi, you can open `http://<gateway-ip>/` (**Settings** tab) to inspect the **Live LoRa Packet Sniffer** and **Station Pairing** controls, check signal quality (RSSI/SNR), or run a discovery scan. See the [WG1200 Firmware repository](https://github.com/WeatherXM/wg1200-firmware) for more details.
+:::
+
 <hr />
 
 ### Device Alert: "Station Signal is Low"
@@ -4578,7 +4534,7 @@ If you are still experiencing issues, please contact us through [support](https:
 
 If your WG1200 Gateway displays "Station Battery Level is Low" on the screen, the weather station will run out of battery soon.
 
-Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments.
+Replace the batteries of the weather station. Make sure you use lithium non-rechargeable batteries, especially in case of cold weather environments. Once fresh batteries are installed and valid station packets are received, the low-battery alert on the WG1200 Gateway clears automatically.
 
 <hr />
 
@@ -4655,6 +4611,19 @@ You receive a "location not verified" error on your mobile app when the [Proof o
 
 This incurs a "relocation penalty" (as mentioned in [the whitepaper](http://weatherxm.com/whitepaper)) meaning your station will be exempt from reward distribution until the weather station is moved back to the declared location or the location is updated by using the "relocate station" function on your mobile app. After the passing of **7 days** from fixing your location, the relocation penalty will be lifted and your station will start generating rewards as usual.
 
+<hr />
+
+## microSD Card & Local Web Console
+
+### My microSD card shows as "Unformatted / Unusable" or is not logging weather history
+
+- **Formatting the card:** Open the Local Web Console (`http://<gateway-ip>/`), go to **History & SD Card**, and click **Format SD Card** to format the card as FAT with a live progress estimate.
+- **Safe removal:** Before removing the microSD card, click **Eject SD Card** in the Web Console or use the touchscreen prompt. Re-inserting the card automatically remounts it.
+
+For more details on microSD storage and CSV files, visit [github.com/WeatherXM/wg1200-firmware](https://github.com/WeatherXM/wg1200-firmware).
+
+<hr />
+
 ## Other Issues
 
 ### My WG1200 Gateway is stuck/unresponsive.
@@ -4676,7 +4645,7 @@ Assuming that the WG1200 Gateway unit is powered on, this may be due to a bad in
 <hr />
  
 :::note
-if you are still experiencing issues, please contact us through [support](https://support.weatherxm.com)
+If you are still experiencing issues, please contact us through [support](https://support.weatherxm.com) or consult the [WG1200 Firmware GitHub repository](https://github.com/WeatherXM/wg1200-firmware) for technical documentation and release notes.
 :::
 
 ---
@@ -5324,48 +5293,239 @@ You can always contact us contact us through our [support](https://support.weath
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/assemble
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/assemble.md
 
-Setting up the weather station is a process of several steps in order to ensure the sensor array operates reliably and measures weather conditions as accurately as possible.
+Setting up the weather station is a process of several steps in order to make this system work properly
+and measure weather conditions as accurately as possible.
 
 ## Prerequisites for proper assembly
 
 1. Screwdriver (not included)
 2. Metal wrench (not included)
-3. 3× AA 1.5V batteries (internal) or 6× AA batteries (external battery pack). **Non-rechargeable** (not included).
+3. Batteries  1.5V **not rechargeable** (x6 AA) (not included)
 
 :::danger 
-Do not use rechargeable batteries. They can damage the power circuitry.
+If you use rechargeable batteries, you may harm your device.
+:::
+
+:::caution
+In order to properly deploy the weather station, you will need six (x6) AA batteries. These are not included in the box.
 :::
 
 :::warning
-Using old and new batteries together, especially low-quality or used ones, increases fire risk. For safety, use high-quality batteries of the same age and type. Lithium batteries are strongly recommended for deployments experiencing sub-zero temperatures.
+Using old and new batteries together, especially low-quality ones or used, increases fire risk. For safety, use high-quality batteries of the same age and type.
 ::: 
 
 ## Step by step instructions
 
-### 1. Battery Installation
+### Battery installation diagram (external box)
 
-#### Built-in Battery Compartment
-- Unscrew the battery compartment door at the bottom of the H2 weather station.
-- Insert 3× AA batteries according to the marked `+/-` polarity.
-- Seal the door securely to maintain the IPX6 weatherproof rating.
+    
 
-#### External Battery Pack (if used)
+- **Step 1:** Slide the battery box lock switch to unlock position. Push to open the battery box door according to the arrow direction.
+- **Step 2:** Insert the 6 AA batteries according to the +/- polarity indicated.
+- **Step 3:**  Place and lock the battery box door.
 
-    ![External battery box diagram](image)
+  
 
-- **Step 1:** Slide the battery box lock switch to the unlock position. Push to open the battery box door according to the arrow direction.
-- **Step 2:** Insert 6× AA batteries according to the `+/-` polarity indicated.
-- **Step 3:** Place and lock the battery box door.
-- **Step 4:** Connect the waterproof cable to the station base.
+- **Step 4:**  Unscrew the battery door at the bottom of the weather station.
+- **Step 5:**  Insert the dummy battery to the battery compartment, make sure the  +/- polarity is correct.
+- **Step 6:**  Replace the battery door which comes along with the external battery box, then tighten the battery door screw.
 
-### 2. Inspect Power LED
-Once the batteries are inserted, observe the red LED indicator on the underside of the sensor array. It will flash to indicate that the microcontroller is powered on and booting.
+:::warning
+Using old and new batteries together, especially low-quality ones or used, increases fire risk. For safety, use high-quality batteries of the same age and type.
+::: 
 
-### 3. Attach Rain Funnel
-Align the rain gauge funnel over the measuring mechanism on top of the sensor body. Rotate the funnel clockwise until it firmly clicks into the locked position.
+:::caution
+If the dummy battery is not installed in the correct orientation, no power will be provided and the LED indicator will not be flashing.
+:::
 
-### 4. Adjust Solar Panel
-Loosen the hinge screw on the solar collector bracket. Angle the collector toward the equator (facing South in the Northern Hemisphere, North in the Southern Hemisphere) at an angle roughly equal to your site's latitude, then retighten the screw.
+:::danger
+**Rechargeable batteries should not be used**, as they provide lower voltages and lose power over time.
+Solar panel is not trying to charge the batteries, but only provides power to an internal super capacitor,
+thus no point using rechargeable ones.
+:::
+
+:::danger
+Batteries should not be installed backwards. This may permanently damage the weather station.
+:::
+
+Although alkaline batteries are sufficient for most climates, lithium non-rechargeable batteries could be used for cold weather climates.
+
+The primary power source for the weather station is the solar panel. When solar power is available (sun light) a super capacitor is charged
+and is later used during night and when there is insufficient solar light.
+In climates that frequently sustain temperatures below 0°C or 32°F the use of lithium batteries is recommended
+as these are performing better than alkaline batteries under such circumstances, but depend on battery manufacturer and quality.
+
+:::note
+In case that LED is permanently on or does not light up at all,
+make sure that the batteries are inserted fully and in the correct way.
+:::
+
+<hr/>
+
+### LED of sensor working status
+
+At the bottom of the weather station there are buttons and indicators:
+
+    
+
+  Once the batteries are inserted the station starts. The red LED shows its status:
+
+  - **Slowly fading in and out ("breathing"):** the station is joining a LoRaWAN network.
+  - **Off:** the station has joined and sends data at every upload interval.
+  - **Short blinks:** a phone or computer is connected over Bluetooth.
+
+  The station only joins your network after you have [connected it to your network](/wxm-devices/h2-open/connect-to-your-network) with the web flasher.
+
+<hr/>
+
+### Adjust the solar panel
+
+The tilting angle of the solar panel can be adjusted vertically from 0° into 15°, 30°, 45° and 60° positions depending on the area you are living in. For optimal power output year-round,
+please set the tilt angle that is closest to your latitude.
+
+<details className="accordion">
+
+<summary>Set tilt angle of solar panel related to your location</summary>
+
+| Location ( latitude, longitude)  | Solar panel tilt angle    |
+| -----------------------           | ------------------------  |
+| Hamburg (53.558, 9.7874)          | 60°                       |
+| Chicago (42.1146, -88.0464)       | 45°                       |
+| Houston (29.7711, -95.3552)       | 30°                       |
+| Bangkok (14.2752, 100.5684)       | 15°                       |
+| Sydney (-33.5738, 151.3053) *     | 0°                       |
+
+***Sensors installed in southern hemisphere must have their solar panels flat to ensure maximum solar efficiency.**
+
+<section className="explanation small-big">
+    
+</section>
+
+</details>
+
+  
+
+:::danger
+If the screw holding the solar panel is not released for the adjustment, there is a risk of breaking the plastic enclosure.
+:::
+:::caution
+Do not remove solar panel protection film before assemble battery box properly.
+:::
+
+- **Step 1:** Remove the solar panel protection film.
+- **Step 2:** Loosen the screw lightly until the gears on the opposite side separated from lock position.
+- **Step 3:** Adjust the vertical angle of the solar panel (0°, 15°, 30°, 45°, 60°) according to the latitude of your location.
+- **Step 4:** Push the gear and tighten the screw until the gears are securely locked.
+
+---
+# Connect WeatherXM H2 Open Edition (WS2001) to your LoRaWAN network
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/connect-to-your-network
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/connect-to-your-network.md
+
+The station is configured over Bluetooth with the **WeatherXM web flasher** at [flasher.weatherxm.com](https://flasher.weatherxm.com). There is nothing to install: it runs in your browser.
+
+## Why use the web flasher
+
+- **It keeps the station up to date.** When you connect a station with older firmware, the flasher updates it to the latest WeatherXM release first. The update keeps all settings, keys and the rain counter.
+- **It points the station at your network** in one step: region, JoinEUI, AppKey and upload interval.
+- **It keeps the WeatherXM settings.** The station stores your network settings as a separate profile next to the WeatherXM one, so it can potentially return to the WeatherXM network later. Stations with older firmware must be updated first; the flasher does not move them to your network before the update.
+- **It keeps the full WeatherXM data frame.** Your network receives the same 24-byte frame as the WeatherXM network, including wind gust and rain total, and the flasher gives you the matching [decoder for TTN and ChirpStack](/wxm-devices/h2-open/ttn-and-chirpstack).
+
+## What you need
+
+- A computer (Windows, macOS, Linux, ChromeOS) or an Android phone with **Bluetooth** and **Google Chrome or Microsoft Edge**. Safari, Firefox and iPhone/iPad browsers do not support Web Bluetooth.
+- To be **within a few metres** of the station (the Bluetooth range is about 10m/32ft with few obstacles).
+- An account on your LoRaWAN Network Server, for example [The Things Network](https://console.cloud.thethings.network/) or your own [ChirpStack](https://www.chirpstack.io/), and a LoRaWAN gateway in range of the station.
+
+:::info Pairing window
+The station accepts a **new** Bluetooth pairing only during the **first 5 minutes after it starts**. If your computer or phone has never connected to this station before, press the **reset button once** (a short press) at the bottom of the station to restart it, then connect within 5 minutes. Devices that are already paired can connect at any time.
+:::
+
+:::caution
+Do **not** hold the reset button for 10 seconds. That performs a [factory reset](/wxm-devices/h2-open/troubleshooting#factory-reset).
+:::
+
+## Step by step
+
+### 1. Open the flasher and connect
+
+1. Open [flasher.weatherxm.com](https://flasher.weatherxm.com) and choose **WS2001 (H2)**.
+1. Leave **Update the station firmware automatically** ticked (recommended).
+1. Click **Connect to WS2001 (H2)**. In the Bluetooth list, select **WeatherXM WS2001 XXXXXX** (older units may show **WeatherXM WS2000 XXXXXX**). `XXXXXX` is the end of the station's DevEUI.
+1. If your computer asks to pair, accept it. The first pairing on a computer can take up to half a minute: the flasher shows **Waiting for Bluetooth pairing…** and keeps the connection open meanwhile.
+1. If the connection hangs, click **Cancel and disconnect**, wait a few seconds and connect again.
+
+The flasher shows the station's **DevEUI**, network, region, firmware version, battery and upload interval. Copy the **DevEUI**: you need it to register the station on your network server.
+
+### 2. Firmware update (automatic)
+
+If the station runs an older firmware than the latest WeatherXM release, the flasher updates it right away:
+
+1. The flasher downloads the release and checks that it is genuine (signed for the WS2001 bootloader).
+1. The station restarts into its **update mode**.
+1. Click **Continue** and select the station **again** in the Bluetooth list.
+
+:::tip The station has a different name during the update
+In update mode the station appears in the Bluetooth list as **DfuWX** followed by six characters (for example **DfuWX467063**), or as **DfuTarg**. It does **not** appear as "WeatherXM WS2001 …". Only update-mode devices are listed in this step. After the update it returns to its normal name.
+:::
+
+The update takes about a minute. Keep the station powered and stay nearby. If the connection drops, click **Try again**: the update resumes and the station keeps its previous firmware until the new one is fully installed. When it finishes, click **Reconnect to the station**.
+
+You can also update (or reinstall) manually at any time with the **Update** button on the station card.
+
+### 3. Register the station on your network server
+
+Create the device in TTN or ChirpStack using the DevEUI from step 1, and note the **JoinEUI** and **AppKey** you choose. The [TTN and ChirpStack guide](/wxm-devices/h2-open/ttn-and-chirpstack) walks you through both.
+
+### 4. Enter your network settings
+
+In the **LoRaWAN Network Configuration** form:
+
+| Field | What to enter |
+| :--- | :--- |
+| Frequency Region | The plan of your gateway: EU868, US915, AU915, AS923-1, IN865, KR920 or RU864 |
+| Channel Sub-Band | US915 / AU915 only. Sub-Band 2 (channels 8-15) for TTN and most ChirpStack setups |
+| JoinEUI / AppEUI | 16 hex characters, as registered on your server (TTN accepts `0000000000000000`) |
+| AppKey | 32 hex characters, as registered on your server (or click **Generate Random** and register that key) |
+| Upload Interval | **5 minutes** (default). Use 10 minutes or more on TTN if the station is far from the gateway |
+| Send GNSS location scans | Optional, **off** by default (firmware V4.7 and later). See [GNSS location](#gnss-location-optional) |
+
+Click **Apply & Connect to My Network**, tick **I understand** and confirm. The flasher:
+
+- selects the station's **custom network profile** (the WeatherXM settings are not overwritten),
+- writes the region, JoinEUI, AppKey and interval,
+- keeps the **WeatherXM 24-byte payload on FPort 99**,
+- restarts the station so it joins your network.
+
+On your network the station only sends its own frames on FPort 99. The background messages that the WeatherXM network uses (time sync, device status) stay off, so they don't use your airtime (firmware V4.6 and later).
+
+### GNSS location (optional)
+
+From firmware V4.7 the station can send a raw GNSS satellite scan (`0xF3` frame on FPort 99) about once a day. It is **off by default**; tick **Send GNSS location scans** in the flasher to turn it on.
+
+- The scan is not a position: store it and resolve it later with a GNSS solver if you need the location.
+- The scan needs the current time, which the station asks your network server for with the standard LoRaWAN **DeviceTimeReq** command. The Things Network and ChirpStack answer it, but the answer is a downlink, so your gateway must be able to transmit.
+- If the network server does not answer after 3 attempts, the station turns GNSS off until it restarts, so it doesn't keep asking.
+
+### 5. Watch it join
+
+While the station is joining, the **red LED breathes** (slowly fades in and out). When the join succeeds the LED turns **off**. On your network server you will see the join followed by the first uplink on FPort 99 within a few minutes.
+
+:::note
+Disconnecting from the flasher always restarts the station, which then joins again. This is normal.
+:::
+
+## Switch back to the WeatherXM network
+
+When the station is on your own network, the station card in the flasher shows a **Switch back to WeatherXM** button. It activates the WeatherXM settings stored on the station and restarts it, so the station can potentially rejoin the WeatherXM network. Your own network settings stay stored on the station.
+
+If the station does not rejoin the WeatherXM network, contact [WeatherXM support](https://support.weatherxm.com) with its DevEUI.
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
 
 ---
 # Box Contents WeatherXM H2 Open Edition (WS2001)
@@ -5374,69 +5534,77 @@ Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/contents.md
 
 ## Included
 
-  ![Box contents](image)
+  
   
     <h4>Included in the box</h4>
     <ol>
-      <li>WeatherXM H2 Open Edition weather station (WS2001)</li>
+      <li>WeatherXM H2 weather station (WS2001)</li>
       <li>External battery box</li>
-      <li>Mounting bracket, U-bolts and metal hardware</li>
-      <li>Device sticker with factory LoRaWAN credentials (DevEUI, AppEUI/JoinEUI, AppKey)</li>
+      <li>Metal zip ties</li>
     </ol>
   
+
+:::info Station sticker
+Every H2 comes with a sticker that shows its **EUI** (DevEUI), **KEY**, **BT ID** and **S/N**. Register the station on your network server with its **DevEUI**. For your own network you choose the JoinEUI and AppKey yourself and write them to the station with the [web flasher](/wxm-devices/h2-open/connect-to-your-network), so you don't need the KEY from the sticker. Keep the **S/N** for support requests.
+:::
 
 <hr/>
 
 ## Not Included
 
-You will also need:
-1. **Batteries:** 1.5V **non-rechargeable** AA batteries (3× AA internal, or 6× AA with external battery pack). High-quality Lithium batteries are recommended for sub-zero temperatures.
-2. **Mounting Pole:** Metal mounting pole (recommended 30–40mm / 1.2–1.57in diameter and at least 2m / 6.56ft height).
-3. **Tools:** Screwdriver and wrench to secure mounting clamps.
+You would also need:
+1. Batteries  1.5V **not rechargeable** (x6 AA)
+1. Metal mounting pole (recommended 40mm/1.57in pole diameter & at least 2m/6.56ft height)
+1. Tools and parts to secure the pole
+1. A computer or Android phone with Bluetooth and Chrome or Edge, for the [web flasher](https://flasher.weatherxm.com)
+1. A LoRaWAN gateway in range, connected to your network server (for example The Things Network or ChirpStack)
 
 :::danger
-Do not use rechargeable batteries. They can damage the power circuitry.
+If you use rechargeable batteries, you may harm your device
 :::
 
 <hr/>
 
-### Weather Station Components
+### Weather Station
 
-The weather station integrates eight meteorological sensors into a single low-power outdoor unit:
+The weather station is a set of sensors encased in a plastic shell that ensures the proper function of the device.
 
-    ![Station components](image)
+The weather station is responsible for the collection of measurements of temperature, humidity, rain rate, wind speed, wind direction, atmospheric pressure, light intensity and UV index.
+
+    
 
     <h4>Components</h4>
-    
-      <ol>
-      <li>Rain gauge funnel</li>
-      <li>Bubble balance indicator</li>
-      <li>UV and light intensity sensor</li>
-      <li>Wind vane</li>
-      <li>Wind speed cups</li>
-      <li>Internal LoRaWAN sub-GHz antenna</li>
-      <li>Adjustable solar panel</li>
-      <li>Radiation shield (temperature, humidity, barometric pressure)</li>
-      <li>Drain holes</li>
-      <li>Built-in battery compartment</li>
-      <li>Red LED indicator</li>
-      <li>Config / join button</li>
-      <li>Mounting clamp</li>
-      <li>Adjustable hinge for solar collector</li>
-      <li>Tipping bucket mechanism</li>
-      <li>Rain sensor</li>
-      </ol>
-    
+        
+          <ol>
+          <li>Rain gauge</li>
+          <li>Balance indicator</li>
+          <li>UV and light intensity sensor</li>
+          <li>Wind vane</li>
+          <li>Wind cups</li>
+          <li>Antenna</li>
+          <li>Solar panel</li>
+          <li>Radiation shield, temp/humidity, barometric pressure sensor</li>
+          <li>Drain holes</li>
+          <li>Built-in battery box</li>
+          <li>Red LED indicator</li>
+          <li>Config / reset button</li>
+          <li>Mounting clamp</li>
+          <li>Adjustable hinge of solar panel</li>
+          <li>Tipping bucket</li>
+          <li>Rain sensor</li>
+          </ol>
+        
 
 :::note
-For optimal observation accuracy, follow our [Station Installation Guide](/wxm-devices/h2-open/install-weather-station).
+For further details about an advisable installation of the weather station, please see [Installing the WeatherXM H2 Open Edition](/wxm-devices/h2-open/install-weather-station).
 :::
-
 <hr/>
 
 ## Help & Support
 
-Join the community on our <Link to="https://weatherxm.com/discord">Discord Server</Link> or reach out via [support](https://support.weatherxm.com).
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
 
 ---
 # Installing WeatherXM H2 Open Edition (WS2001)
@@ -5444,219 +5612,168 @@ Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/install-weather-statio
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/install-weather-station.md
 
 ## Prerequisites for proper installation
-1. Mounting pole of at least 2m (6.56ft) height (not included)
-2. Sturdy mounting base or U-bolts to secure in place (included / hardware accessories)
-3. Compass or phone GPS for True North direction alignment
+1. Pole of at least 2m/6.5ft (not included)
+1. Base or bolts to secure in place (not included)
+1. Location and spacing [Best Practices for Proper Station Installation](/wxm-devices/h2-open/install-weather-station#best-practices-for-proper-station-installation)
 
-:::info
-Proper mechanical installation and siting are essential to collect high-quality, representative weather observations. Obstacles, heat plumes, or mechanical vibration can distort temperature, wind, and precipitation readings.
+:::caution
+It is imperative that you properly install your weather station. This will create the necessary conditions for quality weather data collection. A faulty installation results in inaccurate temperature, wind and rain measurements.
 :::
 
-## Best Practices for Station Siting
+## Best Practices for Proper Station Installation
 
-The values of meteorological parameters measured by a weather station can significantly differ depending on surrounding obstacles and ground surfaces.
+It is very important that your weather station collects quality measurements.
+This turns the weather station into a powerful tool for you and your applications.
 
-### 1. Mounting Pole Height
-Mount the station on a pole at least 2m (6.56ft) above the ground or roof level. The maximum recommended pole height is 5m (16.5ft).
+The values of the various meteorological parameters measured by a weather station can significantly differ depending on the obstacles
+and the material of the surfaces existing around the sensors. For this reason, there is a series of criteria that should be fulfilled:
 
-    ![Ground height diagram](image)
-    ![Roof deployment diagram](image)
+:::info
+Not sure of your installation point? Check deployment examples [here](/wxm-devices/deployment-examples).
+:::
 
-<hr/>
+### Pole's Height
+The pole’s height, on which the weather station will be mounted, should be at least 2m/6.5ft.
+This means that the weather station should be placed at least 2m/6.5ft above the ground and any other horizontal
+or almost horizontal surface (e.g., roof) above the station. The maximum acceptable pole height is 5m/16.5ft.
 
-### 2. Secure and Tighten the Pole
-The pole should be firmly anchored to prevent oscillation in strong winds. Any pole swaying can cause the rain gauge tipping mechanism to trigger false precipitation counts.
-
-    ![Tighten pole diagram](image)
-
-<hr/>
-
-### 3. Installation Location Guidelines
-
-<h4>Away from Heat Sources</h4>
-Ensure the sensor array is at least 5m (16.4ft) away from artificial heat sources, chimneys, exhausts, air conditioning condensers, or ventilation ducts that could falsely elevate temperature measurements.
-
-<section class="control">
-  ![Away from heat sources](image)
-</section>
-
-<h4>Clear of Shadows</h4>
-Ensure the station is not shaded by nearby buildings or trees during any part of the day. Solar radiation and UV measurements require direct, unshaded sunlight.
-
-<section class="explanation horizontal">
-  
-    ![Building siting](image)
-    ![Shadow avoidance](image)
-  
-</section>
-
-<h4>Distance from Obstacles</h4>
-Position the pole at a distance from surrounding obstacles (trees, walls, roof ridges) at least 2–4 times the height difference between the obstacle and the sensor. For large obstacles (>8m), maintain a distance of 10–15 times the obstacle height when possible.
-
-<hr/>
-
-### 4. Direction Alignment & Leveling
-
-    ![Direction alignment](image)
     
-    Install the weather station in an open location with no obstructions above and around the sensor.
-    Locate the <strong>North (N)</strong> marker embossed on the top casing of the weather station. Using a compass or phone GPS, rotate the entire assembly so the marker points precisely towards True North.
-    <br/><br/>
-    Check the integrated <strong>spirit bubble level</strong> on top of the sensor body. Ensure the bubble is centered before tightening mounting pole clamps to prevent rain gauge measurement tilt error and guarantee accurate wind direction tracking.
+    
+
+<hr/>
+
+### Tighten Pole
+The pole should be adequately tightened in order to prevent any pole oscillations in cases of strong winds.
+This will prevent the rain gauge spoon from swinging and collecting faulty precipitation measurements.
+
+    
+
+<hr/>
+
+### Installation Point
+
+The pole together with the weather station should be placed in an installation point, which:
+
+<h4>1. Is away from heat sources</h4>
+
+Is not affected by the air or smoke flowing out of any chimney or ventilation system
+(as an illustration, consider that wind of a certain direction may move warm smoke towards the station).
+An advisable distance from a heat source is >5 meters/16.4ft.
+
+<section className="control">
+  
+</section>
+
+<h4>2. Does not get in shadowed areas</h4>
+
+Is not shadowed by any obstacle during the day (consider that the sun is typically higher during summer and lower during winter affecting the shadow caused by an item).
+
+<section className="explanation horizontal">
+  
+    
+    
+  
+</section>
+
+<h4>3. Adequate Distance</h4>
+
+Has a distance from any obstacle around, which 2-4 times larger than the height of the highest obstacle
+(e.g., if the highest obstacle around the installation point is a 6m/20ft tree, ht=6m/20ft,
+and the pole of the weather station is 2m/6.56ft, hp=2m/6.56ft, then the pole should be placed at a distance (dp) of 8-16m/26-52ft,
+2 x (ht-hp) &#60; dp &#60; 4 x (ht-hp). In case the pole is placed on a building’s roof,
+then the building’s height should be added to the pole’s height).
+Note that in cases of obstacles with a height >8m/26ft, you should consider placing the weather station
+at a distance 30 times the width and 15 times the height of the obstacles around.
+
+:::note
+All of 1, 2 and 3 are important tips for measuring temperature and humidity as accurate as possible
+while 3. is important for avoiding faulty precipitation and wind measurements.
+:::
+
+<hr/>
+
+### Direction Alignment
+
+    
+    
+
+    Install the weather station in an open location with no obstructions above and around the
+    sensor for accurate rain and wind measurement.
+    Locate the North (N) marker on top of the weather station and align the marker to point North
+    upon final installation with a compass or GPS. Tighten the mounting bracket around a 30-40mm 
+    or 1.1-1.57in diameter pole (not included) using the two screws and nuts provided.
+    Use the bubble level on the weather station to make sure the sensor is completely level for
+    proper measurement of precipitation, wind direction, UV and light intensity.
+
+    
+
+<hr/>
+
+### LoRaWAN coverage
+
+Check that the station reaches your gateway **from its final position**: the antenna is inside the station, so walls, roofs and the mounting height all change the range. After mounting, watch your network server for a few uplinks and check their signal (RSSI and SNR). If uplinks are missing, move the gateway or the station, or increase the upload interval so the station can use slower, longer-range data rates within your network's airtime limits.
 
 ---
 # Introduction WeatherXM H2 Open Edition (WS2001)
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/introduction
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/introduction.md
 
-<h2 className="subtitle">Autonomous 8-in-1 LoRaWAN weather sensor for private LoRaWAN networks, The Things Network (TTN), and ChirpStack.</h2>
+<h2 className="subtitle">An 8-in-1 LoRaWAN weather station for your own network: The Things Network (TTN), ChirpStack or any LoRaWAN Network Server.</h2>
 
-    ![WeatherXM H2 Weather Station](image)
+    ![WeatherXM H2 weather station](image)
 
 <hr />
 
-:::info Hardware Compatibility Note
-The WeatherXM H2 sensor array shares its industrial-grade hardware platform with the [SenseCAP S2120 8-in-1 Weather Sensor](https://www.seeedstudio.com/sensecap-s2120-lorawan-8-in-1-weather-sensor-p-5436.html), featuring optimized low-power firmware. 
+## What is the H2 Open Edition?
 
-The **H2 Open Edition** operates completely independently of the WeatherXM reward network. It transmits standard LoRaWAN uplinks using customer-controlled OTAA credentials directly to your network server of choice (The Things Network, ChirpStack, or any private LoRaWAN gateway).
+The H2 Open Edition is the WeatherXM H2 (WS2001) weather station connected to **your own LoRaWAN network** instead of the WeatherXM network.
+
+The hardware is the same as the Seeed Studio SenseCAP S2120 8-in-1 station, but the H2 runs **WeatherXM's own firmware**, which does more:
+
+- **Every 12 seconds** the station samples all sensors and aggregates them into one uplink per interval.
+- **Wind gust** (the highest 12-second peak in the interval) is reported next to the average wind speed.
+- **Rain total** (a lifetime counter) and the **maximum rain rate** of the interval are both reported.
+- Everything fits in **one compact 24-byte frame**. Periodically the frame is **signed** by the station's secure element, so you can prove that the data came from that station.
+- **Only your data on your network.** On your own network the station sends nothing but its own frames on FPort 99: no background modem traffic that your network server could not answer (firmware V4.6 and later).
+- **Optional GNSS location.** If you switch it on, the station sends a raw satellite scan about once a day that you can store and solve later (firmware V4.7 and later, off by default).
+- **Your keys, your data.** You choose the JoinEUI and AppKey. The station keeps its WeatherXM settings, so it can potentially return to the WeatherXM network later.
+- **Firmware updates over Bluetooth** from your browser, using [flasher.weatherxm.com](https://flasher.weatherxm.com). The flasher brings older stations to the latest firmware automatically.
+
+:::info
+While the station is on your own network it is **not** part of the WeatherXM network: it does not earn $WXM rewards and its data does not appear in the WeatherXM app. It can potentially return to the WeatherXM network later, see [Return to the WeatherXM network](/wxm-devices/h2-open/troubleshooting#return-to-the-weatherxm-network).
 :::
 
-## Overview & Next Steps
+## Next steps
 
-Getting started with your H2 Open Edition involves assembling the sensor, registering its OTAA credentials in your LoRaWAN Network Server (LNS), verifying frequency and uplinks, and mounting the station for accurate meteorological observations.
+### Check the box contents
 
----
+Make sure that everything is in order and you're all set to proceed with station assembly.
 
-### Step 1: Check Box Contents & Credentials
+<Link to="/wxm-devices/h2-open/contents">View Contents</Link>
 
-Locate the device label on the underside of your weather sensor or on the packaging box. It contains the factory credentials required for OTAA (Over-The-Air Activation):
-- **DevEUI:** 16-character hexadecimal unique identifier
-- **AppEUI / JoinEUI:** 16-character hexadecimal join identifier
-- **AppKey:** 32-character hexadecimal application key
+### Assemble your weather station
 
-#### What's in the box:
-1. WeatherXM H2 all-in-one sensor array (wind vane, wind cups, rain collector, solar collector, thermo-hygrometer sensor radiation shield)
-2. External battery pack & mounting accessories
-3. Mounting U-bolts and metal clamps
+Assemble all parts and make sure all sensors work as expected. For this step, **you will need 6 AA batteries that are not included in the box.**
 
-#### What you will need:
-- **Batteries:** 3× AA batteries (or 6× AA with external pack). Non-rechargeable 1.5V Lithium batteries are recommended for sub-zero operating environments.
-- **Mounting Pole:** A rigid pole of at least 2m (6.5 ft) height and 30–40mm (1.2–1.6 in) outer diameter.
-- **LoRaWAN Gateway Coverage:** Coverage from a public network (such as The Things Network Community Edition) or your own private LoRaWAN gateway connected to ChirpStack or TTN.
+<Link to="/wxm-devices/h2-open/assemble">View Station Assembly Instructions</Link>
 
----
+### Connect the station to your network
 
-### Step 2: Register Device in your LoRaWAN Network Server
+Use the web flasher at [flasher.weatherxm.com](https://flasher.weatherxm.com) to bring the station to the latest firmware and point it at your network: choose the region, enter your JoinEUI and AppKey, and set the upload interval. **You will need a computer or Android phone with Chrome or Edge and Bluetooth.**
 
-Add the station to your application in The Things Stack Console, ChirpStack, or your private LoRaWAN Network Server.
+<Link to="/wxm-devices/h2-open/connect-to-your-network">View Connect Instructions</Link>
 
-#### Manual OTAA Registration Parameters
+### Register the station and decode its data
 
-| Parameter | Recommended Value |
-| :--- | :--- |
-| **Activation Mode** | Over-The-Air Activation (OTAA) |
-| **LoRaWAN Version** | Specification 1.0.2 |
-| **Regional Parameters** | RP001 Regional Parameters 1.0.2 Rev B |
-| **Device Class** | Class A |
+Add the station to The Things Network or ChirpStack, install the WeatherXM payload decoder, and watch the first measurements arrive.
 
-#### Regional Frequency Plans
-Ensure you select the frequency plan matching your hardware model and region:
-- **Europe (EU868):** `Europe 863-870 MHz (SF9 for RX2 - recommended)`
-- **North America (US915):** `United States 902-928 MHz, FSB 2 (used by TTN)`
-- **Australia (AU915):** `Australia 915-928 MHz, FSB 2`
+<Link to="/wxm-devices/h2-open/ttn-and-chirpstack">View TTN and ChirpStack Instructions</Link>
 
-Enter your **DevEUI**, **JoinEUI / AppEUI**, and **AppKey** from the device label and click **Register end device**.
+### Install your weather station
 
----
+This is one of the most important steps, as proper installation is key in order to collect valid weather data. For this step, **you will need a pole that is at least 2m/6.5ft and a way to secure it in place (both not included in the box).** Here you will also see the best practices on how to properly install the station according to WMO.
 
-### Step 3: Power On & Bluetooth Configuration
-
-1. **Install Batteries:** Unscrew the battery compartment door at the bottom of the H2 weather station. Insert 3× AA batteries according to the marked `+/-` polarity, then seal the door securely.
-2. **Inspect LED:** Once power is applied, the red LED indicator on the bottom will flash.
-3. **Bluetooth Configuration (if required):** Open the [WeatherXM BLE Web Flasher](https://flasher.weatherxm.com) in a Web-Bluetooth-supported browser (such as Chrome) to inspect device status, verify firmware, or adjust regional frequency plans.
-4. **Trigger Network Join:** Press the configuration button on the bottom of the sensor once. The device will transmit an OTAA Join Request to your LoRaWAN network.
-
----
-
-### Step 4: Siting & Physical Installation
-
-Proper mechanical alignment ensures high observation accuracy and prevents measurement artifacts:
-
-1. **True North Alignment:** Locate the **N** arrow embossed on the top of the weather sensor casing. Rotate the entire assembly so the arrow points precisely towards True North using a compass or phone GPS. This calibrates wind direction accuracy.
-2. **Bubble Level:** Check the integrated spirit bubble level on top of the sensor body. Ensure the bubble is perfectly centered before tightening the mounting clamps to prevent rain gauge measurement tilt error.
-3. **Rain Funnel:** Align the rain gauge funnel over the measuring mechanism and rotate clockwise until it firmly clicks into the locked position.
-4. **Solar Panel Tilt:** Loosen the solar bracket screw and angle the solar collector toward the equator (facing South in the Northern Hemisphere, North in the Southern Hemisphere) at an angle roughly equal to your local latitude.
-5. **Pole Elevation:** Mount the sensor on a pole at least 2m (6.5 ft) above ground or roof level, away from chimneys, heat sources, and wind obstructions.
-
----
-
-### Step 5: Verify Telemetry Uplinks
-
-In your LoRaWAN Network Server console (e.g. The Things Stack Console > **Live data** tab), confirm that the join request was accepted and uplinks are arriving:
-
-```text
-14:02:10 - Accept join-request
-14:02:11 - Successfully joined the network
-14:02:15 - Forward uplink data: FPort 1, Payload: 01 01 10 00 E4 02 01 ...
-```
-
-Once you observe the first `Forward uplink data`, the station is actively communicating with the network.
-
----
-
-### Step 6: Payload Formatter (Decoder)
-
-To decode the raw hex payload into standard meteorological units, paste the following JavaScript decoder into your network server's **Payload formatters > Uplink** section:
-
-```javascript
-function decodeUplink(input) {
-  var bytes = input.bytes;
-  var data = {};
-
-  // Standard S2120 / H2 sensor packet decoder
-  if (bytes.length >= 15) {
-    // Air Temperature (0.1 °C, signed)
-    var rawTemp = (bytes[3] << 8) | bytes[4];
-    if (rawTemp > 0x7FFF) rawTemp -= 0x10000;
-    data.temperature = +(rawTemp / 10).toFixed(1);
-
-    // Relative Humidity (%)
-    data.humidity = bytes[5];
-
-    // Barometric Pressure (0.1 hPa)
-    if (bytes.length > 8) {
-      var rawPress = (bytes[7] << 8) | bytes[8];
-      data.pressure = +(rawPress / 10).toFixed(1);
-    }
-
-    // Wind Speed (0.1 m/s) & Direction (deg)
-    if (bytes.length > 12) {
-      data.wind_speed = +(((bytes[9] << 8) | bytes[10]) / 10).toFixed(1);
-      data.wind_direction = (bytes[11] << 8) | bytes[12];
-    }
-
-    // Rain accumulation & Solar radiation
-    if (bytes.length > 18) {
-      data.rain_accumulation = +(((bytes[13] << 8) | bytes[14]) / 10).toFixed(1);
-      data.solar_radiation = (bytes[15] << 8) | bytes[16];
-      data.uv_index = bytes[17] / 10;
-    }
-
-    // Battery voltage / status
-    if (bytes.length > 20) {
-      data.battery_voltage = +(((bytes[19] << 8) | bytes[20]) / 1000).toFixed(2);
-    }
-  }
-
-  return {
-    data: data,
-    warnings: [],
-    errors: []
-  };
-}
-```
-
----
+<Link to="/wxm-devices/h2-open/install-weather-station">View Station Installation Instructions</Link>
 
 ## Features and Specifications
 
@@ -5672,155 +5789,223 @@ function decodeUplink(input) {
 
 <TabItem value="metric">
 
-Powered via an integrated solar panel with AA battery backup.
-Typical communication range is 2 to 10 km depending on gateway height, line-of-sight, and regional terrain.
+Powered via a small solar panel.
+The maximum communication distance is 2 to 10km depending on the environment and the position of your gateway.
 
 - #### Air Temperature:
-    - Range: -40.0 to 80.0 °C
-    - Accuracy: ±0.5 °C (0 to 80 °C), ±0.6 °C (-40 to 0 °C)
+
+    - Range: -40.0 - 80.0 °C
+    - Accuracy: ±0.5 °C (0 - 80 °C) ±0.6 °C (-40 - 0 °C)
     - Resolution: 0.1 °C
 
 - #### Air Humidity:
-    - Range: 1 to 99% RH
-    - Accuracy: ±3% (1 to 90% RH), ±4% (90 to 99% RH)
+
+    - Range: 1 - 99% RH
+    - Accuracy: ±3% (1 - 90% RH) ±4% (90 - 99% RH)
     - Resolution: 1% RH
 
 - #### Rain Hourly Rate:
-    - Range: 0 to 450 mm/h
+
+    - Range: 0 - 450 mm/h
     - Accuracy: ±7%
     - Resolution: 0.254 mm/h
 
 - #### Barometric Pressure:
-    - Range: 540 to 1100 hPa
-    - Accuracy: ±5 hPa (700 to 1100 hPa), ±8 hPa (540 to 699 hPa)
+
+    - Range: 540 - 1100 hPa
+    - Accuracy: ±5 hPa(700 - 1100 hPa) ±8hPa (540 - 699 hPa)
     - Resolution: 1 hPa
 
 - #### Wind Speed:
-    - Range: 0 to 50.0 m/s
-    - Accuracy: ±0.5 m/s (&lt;5 m/s), ±10% (&gt;5 m/s)
+
+    - Range: 0 - 50.0 m/s
+    - Accuracy: ±0.5 m/s ({'<'}5 m/s) ±10% ({'>'}5 m/s)
     - Resolution: 0.1 m/s
 
 - #### Wind Direction:
-    - Range: 0 to 360°
-    - Accuracy: ±8°
+
+    - Range: 0 - 360°
+    - Accuracy: ± 8°
     - Resolution: 1°
 
 - #### Light Intensity:
-    - Range: 0 to 200,000 lux
-    - Accuracy: ±5%
+
+    - Range: 0 - 200000 lux
+    - Accuracy: ± 5%
     - Resolution: 1 lux
 
 - #### UV Index:
-    - Range: 0 to 16.0
+
+    - Range: 0 - 16.0
     - Accuracy: ±10%
     - Resolution: 0.1
 
-### General Parameters
+<h3>LoRaWAN and Data</h3>
 
-- #### Radio Architecture:
-    - Semtech LR1110 LoRaWAN sub-GHz transceiver
-    - LoRaWAN 1.0.2 Class A
-    - OTAA join with custom DevEUI / AppEUI / AppKey
-    - Regional frequency bands: EU868, US915, AU915, AS923
+- #### LoRaWAN:
+
+    - LoRaWAN 1.0.4, Class A, OTAA (JoinEUI and AppKey chosen by you)
+    - Regions: EU868, US915, AU915, AS923, IN865, KR920, RU864
+
+- #### Uplink:
+
+    - One 24-byte frame on FPort 99 per interval (temperature, humidity, pressure, wind speed, wind direction, wind gust, rain rate, rain total, light, UV, battery status)
+    - Default interval on your network: 5 minutes (within The Things Network fair-use limit), adjustable from 1 to 1440 minutes
+    - Periodically signed (ECDSA P-256) by the station's secure element
+    - Optional: a raw GNSS satellite scan about once a day (firmware V4.7 and later, off by default)
+
+<h3>General Parameters</h3>
 
 - #### Operating Temperature:
-    - -20 to +60 °C (Alkaline batteries)
-    - -40 to +60 °C (Lithium batteries)
+    - -20 to +60 °C (Use of alkaline batteries suggested)
+    - -40 to +60 °C (Lithium battery)
 
 - #### Operating Humidity:
-    - 0 to 99% RH
+
+    - 0 - 99% RH
 
 - #### Device Weight:
-    - 1.5 kg (3.3 lb)
 
-- #### Certifications:
-    - CE / FCC / RoHS / IPX6 weatherproof housing
+    - 1.5 kg
+
+- #### Certification:
+
+    - CE / FCC / RoHS
 
 - #### Solar Panel:
-    - 0.5W high-efficiency integrated collector
+
+    -  0.5W (When there is sunlight, solar panels will be used first, otherwise batteries will be used)
 
 - #### Battery Type:
-    - 3× AA 1.5V batteries (internal) / 6× AA with external pack (non-rechargeable Lithium recommended)
+
+    - AA size, 1.5 V batteries (alkaline or non-rechargeable Lithium battery)
+
+- #### Number of batteries:
+
+    - External battery box: x6 AA batteries
 
 - #### Battery Life:
-    - >1 year autonomous operation with solar panel assist (at standard 10–20 min uplink intervals)
+
+    - 1 year (solar panel with external battery box, 20 uplinks / hr)
+
+- #### External Battery Box:
+
+    - Support x6 AA 1.5V batteries
+    - Cable length: 2 m
+    - IP Rating: IPX6
+
+##### * The battery life varies with the upload interval and the distance to the gateway.
 
 </TabItem>
 
 <TabItem value="imperial">
 
-Powered via an integrated solar panel with AA battery backup.
-Typical communication range is 1.2 to 6.2 miles depending on gateway height, line-of-sight, and regional terrain.
+Powered via a small solar panel.
+The maximum communication distance is 1.2 to 6.2 mi depending on the environment and the position of your gateway.
 
 - #### Air Temperature:
-    - Range: -40.0 to 176.0 °F
-    - Accuracy: ±0.5 °F (32 to 176 °F), ±0.6 °F (-40 to 32 °F)
+
+    - Range: -40.0 - 176.0 °F
+    - Accuracy: ±0.5 °F (0 - 176 °F) ±0.6 °F (-40 - 32 °F)
     - Resolution: 0.1 °F
 
 - #### Air Humidity:
-    - Range: 1 to 99% RH
-    - Accuracy: ±3% (1 to 90% RH), ±4% (90 to 99% RH)
+
+    - Range: 1 - 99% RH
+    - Accuracy: ±3% (1 - 90% RH) ±4% (90 - 99% RH)
     - Resolution: 1% RH
 
 - #### Rain Hourly Rate:
-    - Range: 0 to 17.7 in/h
+
+    - Range: 0 - 17.7 in/h
     - Accuracy: ±7%
     - Resolution: 0.01 in/h
 
 - #### Barometric Pressure:
-    - Range: 540 to 1100 hPa
-    - Accuracy: ±5 hPa (700 to 1100 hPa), ±8 hPa (540 to 699 hPa)
+
+    - Range: 540 - 1100 hPa
+    - Accuracy: ±5 hPa(700 - 1100 hPa) ±8hPa (540 - 699 hPa)
     - Resolution: 1 hPa
 
 - #### Wind Speed:
-    - Range: 0 to 111.8 mph
-    - Accuracy: ±0.5 mph (&lt;11.1 mph), ±10% (&gt;11.1 mph)
+
+    - Range: 0 - 111.8 mph
+    - Accuracy: ±0.5 mph ({'<'}11.1mph) ±10% ({'>'}11.1 mph)
     - Resolution: 0.1 mph
 
 - #### Wind Direction:
-    - Range: 0 to 360°
-    - Accuracy: ±8°
+
+    - Range: 0 - 360°
+    - Accuracy: ± 8°
     - Resolution: 1°
 
 - #### Light Intensity:
-    - Range: 0 to 200,000 lux
-    - Accuracy: ±5%
+
+    - Range: 0 - 200000 lux
+    - Accuracy: ± 5%
     - Resolution: 1 lux
 
 - #### UV Index:
-    - Range: 0 to 16.0
+
+    - Range: 0 - 16.0
     - Accuracy: ±10%
     - Resolution: 0.1
 
-### General Parameters
+<h3>LoRaWAN and Data</h3>
 
-- #### Radio Architecture:
-    - Semtech LR1110 LoRaWAN sub-GHz transceiver
-    - LoRaWAN 1.0.2 Class A
-    - OTAA join with custom DevEUI / AppEUI / AppKey
-    - Regional frequency bands: EU868, US915, AU915, AS923
+- #### LoRaWAN:
+
+    - LoRaWAN 1.0.4, Class A, OTAA (JoinEUI and AppKey chosen by you)
+    - Regions: EU868, US915, AU915, AS923, IN865, KR920, RU864
+
+- #### Uplink:
+
+    - One 24-byte frame on FPort 99 per interval (temperature, humidity, pressure, wind speed, wind direction, wind gust, rain rate, rain total, light, UV, battery status)
+    - Default interval on your network: 5 minutes (within The Things Network fair-use limit), adjustable from 1 to 1440 minutes
+    - Periodically signed (ECDSA P-256) by the station's secure element
+    - Optional: a raw GNSS satellite scan about once a day (firmware V4.7 and later, off by default)
+
+<h3>General Parameters</h3>
 
 - #### Operating Temperature:
-    - -4 to +140 °F (Alkaline batteries)
-    - -40 to +140 °F (Lithium batteries)
+    - -4 to +140 °F (Use of alkaline batteries suggested)
+    - -40 to +140 °F (Lithium battery)
 
 - #### Operating Humidity:
-    - 0 to 99% RH
+
+    - 0 - 99% RH
 
 - #### Device Weight:
-    - 3.3 lb (1.5 kg)
 
-- #### Certifications:
-    - CE / FCC / RoHS / IPX6 weatherproof housing
+    - 3.3 lb
+
+- #### Certification:
+
+    - CE / FCC / RoHS
 
 - #### Solar Panel:
-    - 0.5W high-efficiency integrated collector
+
+    -  0.5W (When there is sunlight, solar panels will be used first, otherwise batteries will be used)
 
 - #### Battery Type:
-    - 3× AA 1.5V batteries (internal) / 6× AA with external pack (non-rechargeable Lithium recommended)
+
+    - AA size, 1.5V batteries (alkaline or non-rechargeable Lithium battery)
+
+- #### Number of batteries:
+
+    - External battery box: x6 AA batteries
 
 - #### Battery Life:
-    - >1 year autonomous operation with solar panel assist (at standard 10–20 min uplink intervals)
+
+    - 1 year (solar panel with external battery box, 20 uplinks / hr)
+
+- #### External Battery Box:
+
+    - Support x6 AA 1.5V batteries
+    - Cable length: 6.5 ft
+    - IP Rating: IPX6
+
+##### * The battery life varies with the upload interval and the distance to the gateway.
 
 </TabItem>
 
@@ -5831,110 +6016,490 @@ Typical communication range is 1.2 to 6.2 miles depending on gateway height, lin
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/maintenance
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/maintenance.md
 
-Periodic maintenance ensures that the sensor array continues to record accurate observations and that the solar collector and power systems operate without disruption.
+The maintenance of the weather station is an important process, which should be conducted meticulously over the suggested period of time.
+This process includes the cleaning of certain parts of the outdoor unit and the replacement of batteries.
 
-The recommended maintenance routine is summarised below:
+The maintenance process is summarised in the following steps.
 
-### 1. Rain Gauge Funnel & Tipping Bucket
+### Rain Gauge
 Clean the rain gauge at least once every 3 months.
-- Rotate the rain funnel counter-clockwise and lift it off to expose the tipping bucket mechanism.
-- Clean the funnel and internal cavity with a damp cloth, removing leaves, dirt, dust, and insects.
-- Check the small drain holes at the bottom of the sensor housing to ensure rainwater drains freely.
-- Ensure the tipping spoon moves freely without obstruction.
+Rotate the funnel counter-clockwise and lift to expose the rain gauge mechanism
+and clean with a damp cloth. Remove any dirt, debris and insects.
+If bug infestation is an issue, spray the array lightly with insecticide.
+It is important not to swing the rain gauge spoon during this process,
+as the weather station will measure and record faulty precipitation.
+The sketch below shows how to open the rain gauge.
 
-  ![Maintenance diagram](image)
+  
 
-:::caution
-Do not manually swing the tipping spoon vigorously while the station is in service if your downstream application triggers alerts on sudden high rainfall rates.
+### Solar Panel
+Clean the solar panel at least every 3 months with a damp cloth.
+
+### Thermo-Hygro Sensor
+Remove any dirt, debris and insects from the [thermo-hygro sensor](/wxm-devices/h2-open/contents#weather-station) every 12 months. It may be needed to open the radiation shield using a screwdriver and fully clean the thermo-hygro sensor in case there is too much debris on it.
+
+<hr />
+:::note
+You should occasionally check the battery status of the weather station: the decoded uplink includes `battery_low` (see [Payload format](/wxm-devices/h2-open/ttn-and-chirpstack#payload-format)), and the [web flasher](https://flasher.weatherxm.com) shows the battery on the station card. If the battery is low, replace all batteries with new ones of the same type.
+In harsh environments, inspect the batteries every 3 months (e.g. when cleaning the solar panel).
 :::
-
-### 2. Solar Panel
-Wipe the surface of the solar collector at least once every 3 months using a damp cloth. Dust, bird droppings, or pollen build-up can reduce charging efficiency during overcast winter days.
-
-### 3. Radiation Shield & Sensors
-Inspect the radiation shield every 6 to 12 months. Remove any spiderwebs, debris, or insects lodging between the louvers to maintain unrestricted natural airflow around the temperature, humidity, and barometric pressure sensors.
-
-### 4. Battery Inspection
-- Inspect the AA batteries annually (or every 3–6 months in extreme freezing environments).
-- If battery voltage drops (monitored via your decoded LoRaWAN battery telemetry field or the [BLE web flasher](https://flasher.weatherxm.com)), replace all AA batteries with a fresh set of non-rechargeable 1.5V batteries (Lithium recommended).
 
 ---
 # Troubleshooting WeatherXM H2 Open Edition (WS2001)
 Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/troubleshooting
 Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/troubleshooting.md
 
-This guide covers common troubleshooting scenarios when deploying and registering the WeatherXM H2 Open Edition weather station on The Things Network, ChirpStack, or private LoRaWAN gateways.
+Most issues fall into one of three groups: connecting to the station over Bluetooth, the station joining your LoRaWAN network, and decoding its data. Start with the section that matches what you see.
 
----
-
-### 1. Station Does Not Power On / LED Does Not Flash
-
-When batteries are first installed, the red LED indicator on the underside of the sensor array should flash briefly.
-
-- **Check Battery Polarity:** Ensure all 3× AA batteries (or 6× AA in the external pack) are aligned correctly matching the `+/-` markings.
-- **Check Battery Voltage:** Ensure you are using fresh, high-quality 1.5V non-rechargeable batteries (Lithium recommended).
-- **Inspect Contacts:** Check that battery springs and contacts are clean and dry.
-
-:::danger
-Never use rechargeable batteries (e.g. NiMH, Li-ion 3.7V). They can damage the power circuitry.
+:::tip Quick checks
+- Stay within a few metres of the station while using the [web flasher](https://flasher.weatherxm.com) (Bluetooth range is about 10m/32ft with few obstacles).
+- Watch the **red LED** at the bottom of the station: **breathing** (slowly fading) means it is joining a network, **off** means it has joined, **short blinks** mean a computer or phone is connected over Bluetooth.
+- Disconnecting from the web flasher always restarts the station, which then joins again. This is normal.
 :::
 
+## Bluetooth and the web flasher
+
+### The browser cannot find the station
+
+1. Use **Google Chrome** or **Microsoft Edge** on a computer or an Android phone. Safari, Firefox and iPhone/iPad browsers do not support Web Bluetooth.
+1. Check that Bluetooth is switched on, and on Windows and macOS that the browser is allowed to use it.
+1. Restart the station with **one short press** of the reset button at the bottom. The LED flashes a few times when it restarts.
+1. Click **Connect** again and look for **WeatherXM WS2001 XXXXXX** (older units: **WeatherXM WS2000 XXXXXX**), where `XXXXXX` is the end of the DevEUI.
+
+If the station is connected to another computer or phone, it does not appear: only one Bluetooth connection at a time is possible.
+
+<hr/>
+
+### Pairing fails, or it connects and then nothing happens
+
+- A computer or phone that has **never** connected to this station can only pair during the **first 5 minutes after the station starts**. Restart the station (one short press of the reset button) and connect within 5 minutes.
+- If the station was [factory reset](#factory-reset) since your last connection, remove it from your computer's or phone's Bluetooth settings ("Forget" / "Remove device") and pair again.
+- The first pairing on a computer can take up to half a minute: the flasher shows **Waiting for Bluetooth pairing…**. If your operating system shows a pairing prompt, accept it.
+- If the connection hangs, click **Cancel and disconnect** (or reload the page), wait a few seconds and connect again.
+
+<hr/>
+
+### I can't find the station during the firmware update
+
+During a firmware update the station restarts into update mode and appears in the Bluetooth list as **DfuWX** plus six characters (for example **DfuWX467063**), or as **DfuTarg**, not as "WeatherXM WS2001 …". Select that name.
+
+The station stays in update mode for about 2 minutes and keeps its current firmware until the new one is installed. If the update is interrupted, click **Try again** in the flasher to resume. If the 2 minutes have passed, the station restarts with its current firmware: connect again and start the update again.
+
+<hr/>
+
+### The update says the station "already runs a newer firmware"
+
+The station refuses firmware older than what it has installed. Nothing was changed and you can keep using the station.
+
+<hr/>
+
+## LoRaWAN network
+
+### The station does not join my network
+
+If the LED keeps breathing, the station cannot complete the join:
+
+1. **Gateway coverage:** check that your gateway is online and hears the station. On The Things Network open the gateway's **Live data**; on ChirpStack the gateway's **LoRaWAN frames**. If the gateway shows nothing from the station, it is out of range: move the station, the gateway, or both, and keep obstacles (walls, roofs, metal) out of the way.
+1. **Region:** the region set in the flasher must match your gateway and the device's frequency plan on the network server (for example EU868 everywhere, or US915 with Sub-Band 2 everywhere).
+1. **Keys:** the DevEUI, JoinEUI and AppKey must be identical in the flasher and on the network server. A single wrong character in the AppKey makes the network server reject the join (TTN shows the rejection in the device's live data).
+1. **LoRaWAN version:** register the device as **LoRaWAN 1.0.4** with **RP002 1.0.3** regional parameters.
+
+<hr/>
+
+### Uplinks arrive but are not decoded
+
+- Install the [WeatherXM decoder](/wxm-devices/h2-open/ttn-and-chirpstack#payload-decoder) as the uplink payload formatter (TTN) or the codec of the device profile (ChirpStack).
+- WeatherXM frames arrive on **FPort 99**. Decoders written for the SenseCAP S2120 do not understand them.
+- Uplinks on **FPort 3** mean the station still uses the legacy format set by older tools. Connect it with the web flasher and apply your settings again to switch to the WeatherXM frame.
+- Uplinks on **FPort 199** come from firmware older than V4.6, which kept sending background messages meant for the WeatherXM network. Connect with the web flasher to update the station; the decoder labels these messages `modem_service`.
+
+<hr/>
+
+### Uplinks are missing, or the network warns about airtime
+
+On The Things Network each device may use 30 seconds of airtime per day. Use an upload interval of **5 minutes or more**, and **10 minutes or more** when the station is far from the gateway. See [TTN fair use](/wxm-devices/h2-open/ttn-and-chirpstack#the-things-network-ttn).
+
+<hr/>
+
+## Return to the WeatherXM network
+
+The station keeps its WeatherXM settings, so it can potentially return to the WeatherXM network. The **Switch back to WeatherXM** button in the [web flasher](https://flasher.weatherxm.com) activates them and restarts the station; a [factory reset](#factory-reset) does the same.
+
+If the station does not rejoin the WeatherXM network, contact [WeatherXM support](https://support.weatherxm.com) with its DevEUI (shown in the web flasher).
+
+<hr/>
+
+## Factory reset
+
+  
+
+A factory reset restores the factory settings, **erases all paired (bonded) computers and phones**, resets the rain counter and activates the station's **WeatherXM network settings**, so it stops using your network. Your own network settings stay stored; to use your network again, apply your settings with the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
+
+:::warning
+Remove the station from your computer's or phone's Bluetooth settings **right before** the factory reset, so you can pair again afterwards. After the reset the station restarts and accepts new pairings for 5 minutes.
+:::
+
+To perform the factory reset, hold down the middle button on the bottom of the weather station, count to ~10 and release. The LED flashes very quickly to confirm the reset, then the station restarts.
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
+
 ---
+# The Things Network and ChirpStack with WeatherXM H2 Open Edition (WS2001)
+Canonical: https://docs.weatherxm.com/wxm-devices/h2-open/ttn-and-chirpstack
+Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/ttn-and-chirpstack.md
 
-### 2. Device Fails to Join the LoRaWAN Network (OTAA Timeout)
+This page shows how to register the H2 Open Edition on **The Things Network (TTN)** and **ChirpStack**, and how to decode its data with the WeatherXM payload decoder.
 
-If your LoRaWAN Network Server (The Things Stack Console, ChirpStack) shows no Join Request or Join Accept:
+Do this together with [Connect to Your Network](/wxm-devices/h2-open/connect-to-your-network): you take the **DevEUI** from the web flasher, and give the flasher the **JoinEUI** and **AppKey** you registered here.
 
-1. **Verify Gateway Coverage & Proximity:** Ensure there is an active LoRaWAN gateway in range. Check your gateway's live traffic log to verify whether uplink packets are being received.
-2. **Double-Check EUI and Keys:**
-   - **DevEUI:** Exactly 16 hexadecimal characters matching the device label.
-   - **AppEUI / JoinEUI:** Exactly 16 hexadecimal characters.
-   - **AppKey:** Exactly 32 hexadecimal characters. A single typo in the AppKey prevents cryptographic derivation of session keys during the OTAA handshake.
-3. **Verify Regional Frequency Plan:**
-   - **Europe:** EU863-870
-   - **North America:** US902-928 (FSB 2 for TTN)
-   - **Australia:** AU915-928 (FSB 2)
-4. **Trigger Manual Join:** Press the configuration / join button on the underside of the weather station once to trigger an immediate OTAA Join Request.
+## Device settings
 
----
+| Setting | Value |
+| :--- | :--- |
+| Activation | OTAA |
+| LoRaWAN version | **1.0.4** (MAC V1.0.4) |
+| Regional Parameters | **RP002 Regional Parameters 1.0.3** |
+| Device class | Class A |
+| DevEUI | From the web flasher (16 hex characters, the last 6 are in the station's Bluetooth name) |
+| JoinEUI / AppEUI | Your choice, for example `0000000000000000` on TTN |
+| AppKey | Your choice: generate it on your network server, then enter it in the web flasher |
+| Uplink port | **FPort 99** (24-byte WeatherXM frame) |
 
-### 3. Web Bluetooth (BLE) Flasher Troubleshooting
+## The Things Network (TTN)
 
-When connecting the sensor to [flasher.weatherxm.com](https://flasher.weatherxm.com) to verify firmware or adjust frequency plans:
+<Tabs
+  defaultValue="register"
+  values={[
+    { label: '1. Register the device', value: 'register', },
+    { label: '2. Add the decoder', value: 'decoder', },
+    { label: '3. Check live data', value: 'live', },
+  ]
+}>
 
-- **Browser Requirement:** Web Bluetooth requires a compatible browser such as Google Chrome, Microsoft Edge, or Chromium on desktop or Android.
-- **5-Minute Pairing Window:** For security and battery conservation, the station enables Bluetooth advertising for **5 minutes** after inserting batteries or pressing the configuration button. If connection fails, press the configuration button or power-cycle the device and retry scanning immediately.
-- **Pairing PIN:** When prompted by your operating system, enter the default pairing PIN: `000000`.
+<TabItem value="register">
 
----
+:::tip Faster: import file from the web flasher
+In the [web flasher](https://flasher.weatherxm.com), fill in the network form (click **Generate Random** for the AppKey) and click **Download TTN import file (.json)**. In your TTN application open **End devices > Import end devices**, choose **The Things Stack JSON**, select the file and click **Import end devices**. The file sets the DevEUI, JoinEUI, AppKey, LoRaWAN version and frequency plan, so you can skip the manual steps below. It contains your AppKey: keep it private.
+:::
 
-### 4. Telemetry Uplinks Arrive but Payload Is Not Decoded
+1. In the [TTN Console](https://console.cloud.thethings.network/), choose your cluster (for example **Europe 1**) and open or create an **Application**.
+1. Click **Register end device** and select **Enter end device specifics manually**.
+1. **Frequency plan:** the plan of your region, for example `Europe 863-870 MHz (SF9 for RX2 - recommended)` or `United States 902-928 MHz, FSB 2 (used by TTN)`.
+1. **LoRaWAN version:** `LoRaWAN Specification 1.0.4`.
+1. **Regional Parameters version:** `RP002 Regional Parameters 1.0.3`.
+1. **JoinEUI:** enter `0000000000000000` (or your own) and click **Confirm**.
+1. **DevEUI:** paste the DevEUI shown in the web flasher.
+1. **AppKey:** click **Generate**, then copy the key (eye icon, then copy). You will enter it in the web flasher.
+1. **End device ID:** for example `ws2001-8000e6`. Click **Register end device**.
 
-If your network server receives raw hex uplinks (e.g., `01 01 10 00 E4 02 01 ...`) on `FPort 1` but displays unparsed bytes:
+Now enter the same JoinEUI and AppKey in the [web flasher](/wxm-devices/h2-open/connect-to-your-network#4-enter-your-network-settings).
 
-- Ensure you have pasted the custom JavaScript payload formatter into your application settings under **Payload formatters > Uplink**.
-- Refer to [Introduction & Setup Guide](/wxm-devices/h2-open/introduction#step-6-payload-formatter-decoder) for the complete, tested decoder script.
+</TabItem>
 
----
+<TabItem value="decoder">
 
-### 5. Inaccurate Wind Direction
+1. Open the device (or the whole application) and go to **Payload formatters > Uplink**.
+1. **Formatter type:** `Custom Javascript formatter`.
+1. Paste the [WeatherXM decoder](#payload-decoder) (or use the **TTN v3** copy button in the web flasher).
+1. To test it, paste this example into **Byte payload**, set **FPort** to `99` and click **Test decoder**:
 
-If wind direction measurements appear offset:
+```text
+F0454E0519EB00710E181F3400393000000C0031D4009427
+```
 
-- Ensure the **North (N)** arrow embossed on top of the sensor casing points precisely towards True North. Use a magnetic compass corrected for local magnetic declination, or a smartphone GPS compass app.
+1. Click **Save changes**.
 
----
+</TabItem>
 
-### 6. Rain Gauge Tipping Bucket False Triggers
+<TabItem value="live">
 
-- **Pole Oscillation:** If wind causes high rainfall rates during dry windy conditions, ensure the mounting pole is securely braced and rigid. Mechanical swaying can oscillate the internal tipping spoon.
-- **Leveling:** Check that the spirit bubble level on top of the casing is perfectly centered.
+Open the device's **Live data** tab. After the station restarts you should see:
 
----
+```text
+Accept join-request
+Forward uplink data message   FPort 99   Payload  { "temperature": 23.5, "wind_gust": 5.2, ... }
+```
 
-## Community & Support
+The first uplink arrives within a few minutes of the join, then one every upload interval.
 
-Join fellow builders in the <Link to="https://weatherxm.com/discord">WeatherXM Discord Server</Link> or contact our team via [WeatherXM Support](https://support.weatherxm.com).
+</TabItem>
+
+</Tabs>
+
+:::caution TTN fair use
+The Things Network community edition allows **30 seconds of airtime per device per day**. A 24-byte uplink takes about 82 ms at SF7, so a 3-minute interval (about 39 s/day) exceeds it. Use the default **5 minutes** (about 24 s/day), and **10 minutes or more** when the station is far from the gateway and uses a slower data rate (SF9 to SF12). Private ChirpStack servers have no such limit.
+:::
+
+## ChirpStack
+
+<Tabs
+  defaultValue="v4"
+  values={[
+    { label: 'ChirpStack v4', value: 'v4', },
+    { label: 'ChirpStack v3', value: 'v3', },
+  ]
+}>
+
+<TabItem value="v4">
+
+**1. Device profile** (once for all your H2 stations): **Device profiles > Add device profile**
+
+- **General:** name `WeatherXM H2 Open (WS2001)`, region of your gateway, **MAC version** `LoRaWAN 1.0.4`, **Regional parameters revision** `RP002-1.0.3`, ADR algorithm default.
+- **Join (OTAA / ABP):** tick **Device supports OTAA**.
+- **Class-B / Class-C:** leave both off (Class A).
+- **Codec:** **Payload codec** `JavaScript functions`, then replace the template with the [WeatherXM decoder](#payload-decoder) (or the **ChirpStack v4** copy button in the web flasher). The same `decodeUplink` function works in ChirpStack v4.
+
+**2. Device:** **Applications > your application > Add device**
+
+- **Device EUI:** the DevEUI from the web flasher.
+- **Join EUI:** your JoinEUI (any 16 hex characters, for example `0000000000000000`).
+- **Device profile:** the profile above. Click **Submit**.
+- On the **OTAA keys** tab enter or generate the **Application key**, then enter the same key in the web flasher.
+
+**3. Check:** the device's **Events** tab shows the `join` and then `up` events; the decoded values appear under `object`.
+
+</TabItem>
+
+<TabItem value="v3">
+
+- **Device-profiles > Create:** LoRaWAN MAC version `1.0.3` (closest available), Regional Parameters revision `B`, **Device supports OTAA**.
+- **Codec:** `Custom JavaScript codec functions`, paste the [WeatherXM decoder](#payload-decoder) (or the **ChirpStack v3** copy button in the web flasher). ChirpStack v3 uses the `Decode(fPort, bytes, variables)` function, which is included in the same script.
+- **Applications > your application > Devices > Create:** Device EUI from the web flasher, the profile above, then on **Keys (OTAA)** set the **Application key**.
+
+</TabItem>
+
+</Tabs>
+
+## Payload format
+
+Uplinks on **FPort 99**. Values marked "invalid" are sent when a sensor reports an error, and decode to `null`.
+
+| Bytes | Field | Encoding |
+| :--- | :--- | :--- |
+| 0 | Frame type | `0xF0` weather, `0xF1` weather + 64-byte signature, `0xF2` boot, `0xF3` GNSS scan |
+| 1 | Firmware version | High nibble major, low nibble minor (`0x45` = V4.5) |
+| 2 | Hardware / TX power | Bits 7-5: hardware minor + 1, bits 4-0: TX power |
+| 3 | Interval / battery | Bits 6-0: upload interval in minutes, bit 7: battery low |
+| 4 | Samples | Number of 12-second samples in the interval |
+| 5-6 | Temperature | int16 little-endian, 0.1 °C (`0x7FFF` invalid) |
+| 7-8 | Humidity / wind direction | uint16 big-endian: bits 15-9 %RH (`0x7F` invalid), bits 8-0 degrees (`0x1FF` invalid) |
+| 9-10 | UV / wind speed | uint16 big-endian: bits 15-11 UV index (`0x1F` invalid), bits 10-0 0.1 m/s average (`0x7FF` invalid) |
+| 11-12 | **Wind gust** | uint16 little-endian, 0.1 m/s, highest 12-second peak of the interval (`0xFFFF` invalid) |
+| 13-16 | **Rain total** | uint32 little-endian, 0.001 mm, lifetime counter (`0x7FFFFFFF` invalid) |
+| 17-18 | Rain rate | uint16 little-endian, 0.1 mm/h, maximum of the interval |
+| 19-21 | Light | uint24 little-endian, lux (`0x7FFFFF` invalid) |
+| 22-23 | Pressure | uint16 little-endian, 0.1 hPa (`0xFFFF` invalid) |
+
+- **Signed frames (`0xF1`)** carry the same 24 bytes followed by a 64-byte ECDSA P-256 signature from the station's secure element. They are sent once after start-up and then every 7,200 uplinks. They need 88 bytes, which is possible from EU868 DR3 (SF9) upwards; at slower data rates, or if the secure element cannot sign, the station sends the normal 24-byte frame instead (firmware V4.6 and later).
+- **Boot frames (`0xF2`)** are sent once after start-up with the firmware version and the sensor protocol version.
+- **GNSS frames (`0xF3`)** carry a raw LR1110 satellite scan; resolve them with a GNSS solver if you need the position. They are off by default on your own network (firmware V4.7 and later, see [GNSS location](/wxm-devices/h2-open/connect-to-your-network#gnss-location-optional)).
+- **FPort 199** is used only on the WeatherXM network (time sync and device status for its backend). From firmware V4.6 the station sends nothing on FPort 199 on your own network; the decoder labels any such message as `modem_service`.
+- **Rain:** compute rain over any period from the difference of two `rain_accumulated` values.
+
+### Decoded example
+
+The example payload above decodes to:
+
+```json
+{
+  "firmware_version": "4.5",
+  "hardware_version": "1.1",
+  "tx_power": 14,
+  "frame": "weather",
+  "upload_interval_min": 5,
+  "battery_low": false,
+  "samples": 25,
+  "temperature": 23.5,
+  "humidity": 56,
+  "wind_direction": 270,
+  "uv_index": 3,
+  "wind_speed": 3.1,
+  "wind_gust": 5.2,
+  "rain_accumulated": 12.345,
+  "rain_rate": 1.2,
+  "lux": 54321,
+  "pressure": 1013.2,
+  "pressure_pa": 101320
+}
+```
+
+## Payload decoder
+
+One script works in **The Things Stack v3**, **ChirpStack v4** (`decodeUplink`) and **ChirpStack v3** (`Decode`). It decodes the WeatherXM frame on FPort 99, labels FPort 199 messages from older firmware as `modem_service`, and, for stations configured with older tools, reads the legacy format on FPort 3. The web flasher can show, copy and download the same script.
+
+<details className="accordion">
+
+<summary>WeatherXM H2 / WS2001 uplink decoder (JavaScript)</summary>
+
+```javascript
+// WeatherXM WS2001 / WS2000 uplink decoder (WeatherXM firmware V3.x - V4.5+)
+//
+// Paste this whole file as-is into:
+//   - The Things Stack v3:  Application > Payload formatters > Uplink > Custom JavaScript
+//   - ChirpStack v4:        Device profile > Codec > JavaScript functions
+//   - ChirpStack v3:        Device profile > Codec > Custom JavaScript (uses Decode() below)
+//
+// Frames on FPort 99 (WeatherXM format, AT+TESTMODE_TYPE=0, the default):
+//   0xF0  24-byte weather frame (1 Helium data credit)
+//   0xF1  same, followed by a 64-byte ECDSA P-256 signature from the station's secure element
+//   0xF2  12-byte boot frame (firmware/hardware version, sensor protocol version)
+//   0xF3  GNSS scan (raw LR1110 NAV message; resolve with a GNSS solver)
+// Frames on FPort 3 (legacy "Open LoRaWAN" TLV, AT+TESTMODE_TYPE=1) are decoded too.
+// FPort 199 carries LoRa Basics Modem service messages (time sync for GNSS, device
+// management); they hold no weather data and are returned as { frame: "modem_service" }.
+//
+// Source of truth: ws2001-firmware/tools/decoders/ws2001_uplink_decoder.js
+// (byte layout: application/smtc_board/bsp/peripherals/ccl_sensor/sensor_data.c)
+
+function wxmHex(bytes, start, end) {
+  var s = "";
+  for (var i = start; i < end && i < bytes.length; i++) {
+    s += (bytes[i] < 16 ? "0" : "") + bytes[i].toString(16);
+  }
+  return s;
+}
+
+function wxmU16le(b, i) { return b[i] | (b[i + 1] << 8); }
+function wxmU24le(b, i) { return b[i] | (b[i + 1] << 8) | (b[i + 2] << 16); }
+function wxmU32le(b, i) { return (b[i] | (b[i + 1] << 8) | (b[i + 2] << 16) | (b[i + 3] << 24)) >>> 0; }
+
+function wxmDecodeWeatherXM(bytes) {
+  var data = {};
+  var tag = bytes[0];
+  if (bytes.length < 3) return { errors: ["frame too short"] };
+  data.firmware_version = (bytes[1] >> 4) + "." + (bytes[1] & 0x0f);
+  var hw = (bytes[2] >> 5) & 0x07;
+  data.hardware_version = hw > 0 ? "1." + (hw - 1) : "unknown";
+  data.tx_power = bytes[2] & 0x1f;
+
+  if (tag === 0xf2) {
+    data.frame = "boot";
+    if (bytes.length >= 12) {
+      data.boot_nonce = wxmHex(bytes, 3, 11);
+      data.sensor_protocol_version = bytes[11];
+    }
+    return { data: data };
+  }
+  if (tag === 0xf3) {
+    return { data: { frame: "gnss_scan", gnss_status: bytes[1], gnss_length: bytes[2], gnss_raw: wxmHex(bytes, 3, bytes.length) } };
+  }
+  if (tag !== 0xf0 && tag !== 0xf1) return { errors: ["unknown frame tag 0x" + wxmHex(bytes, 0, 1)] };
+  if (bytes.length < 24) return { errors: ["weather frame must be 24 bytes, got " + bytes.length] };
+
+  data.frame = tag === 0xf1 ? "weather_signed" : "weather";
+  data.upload_interval_min = bytes[3] & 0x7f;
+  data.battery_low = (bytes[3] & 0x80) !== 0;
+  data.samples = bytes[4];
+
+  var t = wxmU16le(bytes, 5);
+  data.temperature = t === 0x7fff ? null : (t & 0x8000 ? t - 0x10000 : t) / 10;          // °C
+
+  var hd = (bytes[7] << 8) | bytes[8];
+  data.humidity = (hd >> 9) === 0x7f ? null : hd >> 9;                                     // %RH
+  data.wind_direction = (hd & 0x1ff) === 0x1ff ? null : hd & 0x1ff;                       // degrees
+
+  var uw = (bytes[9] << 8) | bytes[10];
+  data.uv_index = (uw >> 11) === 0x1f ? null : uw >> 11;
+  data.wind_speed = (uw & 0x7ff) === 0x7ff ? null : (uw & 0x7ff) / 10;                    // m/s, mean of 12 s averages
+
+  var g = wxmU16le(bytes, 11);
+  data.wind_gust = g === 0xffff ? null : g / 10;                                           // m/s, max of 12 s peaks
+
+  var r = wxmU32le(bytes, 13);
+  data.rain_accumulated = r === 0x7fffffff ? null : r / 1000;                              // mm, lifetime counter
+  data.rain_rate = wxmU16le(bytes, 17) / 10;                                               // mm/h, max over the interval
+
+  var lx = wxmU24le(bytes, 19);
+  data.lux = lx === 0x7fffff ? null : lx;
+
+  var p = wxmU16le(bytes, 22);
+  data.pressure = p === 0xffff ? null : p / 10;                                            // hPa
+  data.pressure_pa = p === 0xffff ? null : p * 10;
+
+  if (tag === 0xf1 && bytes.length >= 88) data.signature = wxmHex(bytes, 24, 88);
+  return { data: data };
+}
+
+function wxmDecodeLegacyTlv(bytes) {
+  var data = {};
+  var i = 0;
+  while (i < bytes.length) {
+    var id = bytes[i++];
+    if (id === 0x01 && i + 10 <= bytes.length) {
+      var rawTemp = (bytes[i] << 8) | bytes[i + 1];
+      if (rawTemp & 0x8000) rawTemp -= 0x10000;
+      data.temperature = rawTemp / 10;
+      data.humidity = bytes[i + 2];
+      data.lux = ((bytes[i + 3] << 24) >>> 0) + (bytes[i + 4] << 16) + (bytes[i + 5] << 8) + bytes[i + 6];
+      data.uv_index = bytes[i + 7] / 10;
+      data.wind_speed = ((bytes[i + 8] << 8) | bytes[i + 9]) / 10;
+      i += 10;
+    } else if (id === 0x02 && i + 8 <= bytes.length) {
+      data.wind_direction = (bytes[i] << 8) | bytes[i + 1];
+      var rawRain = ((bytes[i + 2] << 24) >>> 0) + (bytes[i + 3] << 16) + (bytes[i + 4] << 8) + bytes[i + 5];
+      data.rain_rate = rawRain / 1000;
+      var rawPress = (bytes[i + 6] << 8) | bytes[i + 7];
+      data.pressure = rawPress / 10;
+      data.pressure_pa = rawPress * 10;
+      i += 8;
+    } else if (id === 0x03 && i + 1 <= bytes.length) {
+      data.battery = bytes[i++];
+    } else if (id === 0x04 && i + 9 <= bytes.length) {
+      data.battery = bytes[i];
+      data.hardware_version = bytes[i + 1] + "." + bytes[i + 2];
+      data.firmware_version = bytes[i + 3] + "." + bytes[i + 4];
+      data.upload_interval_min = (bytes[i + 5] << 8) | bytes[i + 6];
+      data.gps_interval_min = (bytes[i + 7] << 8) | bytes[i + 8];
+      i += 9;
+    } else if (id === 0x05 && i + 4 <= bytes.length) {
+      data.upload_interval_min = (bytes[i] << 8) | bytes[i + 1];
+      data.gps_interval_min = (bytes[i + 2] << 8) | bytes[i + 3];
+      i += 4;
+    } else if (id === 0x06 && i + 1 <= bytes.length) {
+      data.sensor_error_code = bytes[i++];
+    } else {
+      break;
+    }
+  }
+  data.frame = "legacy_tlv";
+  return { data: data, warnings: ["Legacy Open LoRaWAN format (no wind gust / rain total). Set AT+TESTMODE_TYPE=0 for the WeatherXM frame."] };
+}
+
+function wxmDecode(bytes, fPort) {
+  if (fPort === 199) {
+    return { data: { frame: "modem_service", raw: wxmHex(bytes || [], 0, bytes ? bytes.length : 0) } };
+  }
+  if (!bytes || bytes.length === 0) return { data: {} };
+  if (fPort === 3) return wxmDecodeLegacyTlv(bytes);
+  if (fPort === 99 || bytes[0] === 0xf0 || bytes[0] === 0xf1 || bytes[0] === 0xf2 || bytes[0] === 0xf3) {
+    return wxmDecodeWeatherXM(bytes);
+  }
+  return { data: {}, warnings: ["Unexpected FPort " + fPort] };
+}
+
+// The Things Stack v3 and ChirpStack v4
+function decodeUplink(input) {
+  return wxmDecode(input.bytes, input.fPort);
+}
+
+// ChirpStack v3
+function Decode(fPort, bytes, variables) {
+  var r = wxmDecode(bytes, fPort);
+  return r.data || {};
+}
+```
+
+</details>
+
+## Help & Support
+
+You can find our team in our <Link to="https://weatherxm.com/discord">Discord Community Server</Link>.
+
+Alternatively, you can always contact us through [support](https://support.weatherxm.com) for any questions or issues you may have.
 
 ---
 # Assembling WS2000 Weather Station

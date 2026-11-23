@@ -3,7 +3,7 @@
 Canonical: https://docs.weatherxm.com/mobile-app/wallet/add-edit-wallet-address
 
 :::tip
-If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+If you don't have a wallet yet, [create one first](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) so you can connect it and claim your `$WXM` rewards on Arbitrum One.
 :::
 
 ## Add wallet address for the first time  
