@@ -4,49 +4,36 @@ Canonical: https://docs.weatherxm.com/weatherxm-pro
 
 ## Access Hyperlocal Weather Data
 
-Improve your forecasts with our global weather station network.
-Access hyperlocal data to optimize decisions and boost efficiency. Explore the [Pro](https://pro.weatherxm.com) **for free** and view nearby station data!
-You can use either our user-friendly web interface, or easily integrate it with your solution via our API.
+Improve your forecasts and weather-driven operations with WeatherXM's global weather station network.
+Explore **[WeatherXM Pro](https://pro.weatherxm.com)** to inspect nearby station telemetry via the web interface, or integrate real-time, historical, and forecast data directly through our **[Pro API](https://pro.weatherxm.com/docs)**.
 
 :::note
-Explore our WeatherXM Pro at [pro.weatherxm.com](https://pro.weatherxm.com) or [view its API documentation](https://pro.weatherxm.com/docs).
+Get started at **[pro.weatherxm.com](https://pro.weatherxm.com)**, explore forecast model benchmarks on **[FACT (fact.weatherxm.com)](https://fact.weatherxm.com)**, or browse the **[Pro API documentation](https://pro.weatherxm.com/docs)**.
 :::
 
 ## Features
 
 ### Historical & Real-Time Data
-Access real-time and historical weather data from any WeatherXM station across the globe — delivered
-seamlessly to your app for immediate insights and long-term analysis.
+Access real-time and historical weather observations from WeatherXM stations across the globe — quality-scored daily by [QoD v3](/rewards/data-quality) for operational reliability.
 
-### Forecast Accuracy Tracking
+### Forecast Accuracy Tracking (FACT)
 
   <section>
-    Continuously monitor and compare the performance of 40+ leading global weather models to identify the most accurate forecasts for your specific location.
-    This empowers you to make smarter, weather-driven decisions and optimize operations with confidence.
+    Continuously monitor and compare the performance of leading global and regional weather models against real ground-truth station observations to identify the most accurate forecast for any location via **[FACT](https://fact.weatherxm.com)**.
 
     For example:
-    - Agriculture: Choose the most reliable forecast to plan irrigation, planting, or harvest timing and reduce crop risk due to unexpected weather shifts.
-    - Energy: Improve load forecasting and renewable generation planning by using the most accurate model for wind or solar predictions.
+    - **Agriculture:** Choose the most reliable forecast to plan irrigation, planting, or harvest timing and reduce crop risk.
+    - **Energy:** Improve load forecasting and renewable generation planning using the best-performing wind and solar models for each site.
   </section>
   
 
 ### Hyperlocal Station Forecasts
 
   <section>
-    Get hyperlocal forecasts tailored to specific locations by leveraging our global network of weather stations.
-    Unlike traditional models, the Pro improves forecasts using real-world, ground-truth data from local stations.
-
-    Our QoD mechanism ensures high data reliability by motivating and rewarding station owners to maintain their devices.
-    The better the station’s performance, the more rewards they earn—ensuring consistently high-quality data for businesses.
+    Get hyperlocal forecasts tailored to specific locations by leveraging our global network of ground-truth weather stations.
+    Our [QoD v3](/rewards/data-quality) mechanism continuously scores station accuracy and rewards station owners for maintaining healthy, properly sited hardware — ensuring consistent, enterprise-grade observations.
   </section>
   
 
-### Access hyperlocal weather data via API
-Access real-time, historical and forecast weather data effortlessly with our [developer-friendly API](https://pro.weatherxm.com/docs)
-— built for seamless integration into your apps, platforms, and operational workflows.
-Tap into high-quality data from a trusted global network, with 90%+ coverage reliability and quality.
-[View our Pro API documentation here.](https://pro.weatherxm.com/docs)
-
-:::note
-Explore our WeatherXM Pro at [pro.weatherxm.com](https://pro.weatherxm.com) or [view its API documentation](https://pro.weatherxm.com/docs).
-:::
+### Developer-Friendly Weather API
+Access real-time observations, historical datasets, and hyperlocal forecasts via the **[WeatherXM Pro API](https://pro.weatherxm.com/docs)** — built for seamless integration into apps, analytics pipelines, and automated operational workflows.

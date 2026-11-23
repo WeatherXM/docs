@@ -4,76 +4,33 @@ Canonical: https://docs.weatherxm.com/tokenomics
 
 ## The token that enables the WeatherXM ecosystem
 
-$WXM, issued by the [WeatherXM Network Association](https://weatherxm.network/), is the token that enables the WeatherXM ecosystem.
+`$WXM`, issued by the [WeatherXM Network Association](https://weatherxm.network/), is the ERC-20 token that powers the WeatherXM ecosystem on **Arbitrum One**.
 
-\$WXM will be used to govern the Network and will be required to license weather data for commercial uses. Station owners are awarded \$WXM for providing high-quality weather data to the Network.
+`$WXM` is used for network governance and to reward weather station owners for contributing verified, high-quality weather observations to the Network.
 
-View detailed analytics about the $WXM token, including rewards and revenue, on [Dune Analytics](https://dune.com/weatherxm/network-stats).
+View live analytics on `$WXM` rewards, supply, and network stats on [Dune Analytics](https://dune.com/weatherxm/network-stats).
 
 ## Tokenomics
 
- **$WXM** is an ERC20 token to power the weather data economy.
-
 :::note
-WeatherXM is deployed on Arbitrum One Network. You can find the contract at [Arbitrum One Explorer](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6)
+`$WXM` is deployed as an ERC-20 token on **Arbitrum One**: [`0xb6093b61544572ab42a0e43af08abafd41bf25a6`](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 :::
 
-### New approach in crowdsourcing weather data
-WeatherXM creates an entirely new weather data economy that rewards the people who deploy and maintain weather stations.
-$WXM is currently implemented in [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6) as an ERC20 token.
+### Crowdsourcing Global Weather Data
 
-Like most networks, the value of our Network is greater than the sum of its parts. Station owners are rewarded with $WXM tokens (governance participation) based on the data they contribute on a daily basis.
+WeatherXM rewards people who deploy and maintain weather stations with daily `$WXM` emissions governed by smart contracts. Daily allocations depend on [Data Quality (QoD v3)](/rewards/data-quality), [Proof of Location (PoL)](/rewards/proof-of-location), [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation), and [Cell Capacity (CC)](/rewards/cell-capacity).
 
-To implement this logic, we introduce a smart contract that distributes a fixed budget of tokens (the \$WXM token) to station owners and other stakeholders daily. Any customer who wants to use the Network’s data or services will have to acquire \$WXM.
+### `$WXM` Token Distribution
 
-### $WXM Token Distribution
+**Total supply of `$WXM` is fixed at 100,000,000 (100M) tokens**, minted at Mainnet launch (May 2024):
 
-**Total supply of the $WXM token is 100M (100,000,000) tokens.**
-
-#### 55% - Station Rewards:
-Tokens will be used for station owners rewards. 3M of this amount will be used to gradually reward beta users.
-
-#### 30% - Initial Supporters:
-30M tokens will be allocated to initial supporters of the project. These tokens will be locked and they will be unlocked during a period of four (4) years, linearly with one year cliff.
-
-#### 10% - Treasury
-10M tokens will be allocated to the DAO treasury to support the WeatherXM ecosystem development. Tokens will be unlocked linearly during a 5 year period, starting from the day of the token launch.
-
-#### 5% - Liquidity support:
-5M tokens will be provided to token exchanges as a way to allow other interested parties to join the WeatherXM ecosystem governance and/or license data.
-
-#### 3% Beta Rewards:
-3 million tokens will be used to reward stations that contributed data to the Network during the beta phase. This is not a marketing activity intended to create buzz and awareness, but a reward mechanism for the stations that participated and formed the Network before a reward mechanism was in place.
-
-More specifically, the 3,000,000 tokens will be allocated to stations based on the percentage of rewardable station-hours each station provided to the Network.
-
-A rewardable station hour is an hour during which the station sent at least one valid weather data package to the network. Proof-of-Location (PoL) is not taken into account during the calculation of the Beta Rewards.
-
-This provides an additional incentive for the early Network adopters to remain in the network, maximising their station data value due to seniority and providing additional incentive for early members to actively participate in future Network governance.
-
-:::note
-To understand better the "Beta rewards" you can read the related blog post [here](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7).
-:::
-
-### Token Emissions
-
-**Distributed over the next 10 years**
-
-WeatherXM is a long-term project. The total supply of 100M $WXM tokens is unlocked and distributed based on a predefined 10-year schedule.
-
-The token distribution is designed to incentivise station owners to provide data to the Network and to reward early supporters of the project.
-
-All tokens will be minted on token launch. More specifically:
-- 52M tokens will be distributed to station owners every day for providing data to the Network.
-- 30M tokens will be allocated to initial supporters of the project
-- 3M  tokens will be distributed to station owners that participated in the Network during its beta phase. See more at [Reward Boosts](/rewards/reward-boosts.mdx)
-- 10M tokens are reserved in the Association's treasury. They will be used to support the WeatherXM ecosystem development.
-- A one-off issuance of 5M tokens will take place on token launch. These tokens will be used to provide market liquidity.
-
-### Locked tokens
-- **Treasury** tokens will be locked and they will be unlocked linearly during a 5 year period, starting from the day of the token launch.
-- **Initial Supporters** tokens will be locked and they will be unlocked linearly during a four (4) year period with one (1) year cliff.
+- **55% — Station Rewards (`55M`):** Allocated to weather station owners over a 10-year schedule:
+  - **52% (`52M`) — Daily Station Rewards:** Distributed daily to active stations contributing verified weather data.
+  - **3% (`3M`) — Beta Rewards (Completed):** Allocated to early stations that contributed valid weather data during the pre-Mainnet Beta period (ended May 27, 2024; 425-day distribution completed). See [Reward Boosts](/rewards/reward-boosts) and the [Beta Rewards announcement](https://blog.weatherxm.com/beta-user-rewards-b2e27b1727d7).
+- **30% — Initial Supporters (`30M`):** Allocated to initial supporters of the project, unlocking linearly over 4 years with a 1-year cliff from token launch.
+- **10% — Treasury (`10M`):** Reserved in the Association / DAO treasury to support WeatherXM ecosystem development, unlocking linearly over 5 years from token launch.
+- **5% — Liquidity Support (`5M`):** Issued at token launch to support market liquidity and ecosystem participation.
 
 :::tip
-You can always read more at the [WeatherXM Network](https://weatherxm.network/)  website.
+Learn more about governance and the WeatherXM Network Association at [weatherxm.network](https://weatherxm.network/).
 :::
