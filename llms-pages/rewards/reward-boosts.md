@@ -8,17 +8,19 @@ Canonical: https://docs.weatherxm.com/rewards/reward-boosts
 
 **Reward Boosts** reward stations with extra $WXM tokens for meeting specific criteria. 
 
-So far the following **Reward Boosts** are scheduled to be implemented:
+The following **Reward Boost** programs have been implemented:
 
-## Beta Rewards
+## Beta Rewards (Completed — Historical)
 
-According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
+:::info Completed Program
+The Beta phase ended on **May 27, 2024 (UTC)** and the 425-day Beta Rewards distribution has completed. This section is kept for historical reference.
+:::
 
-Beta rewards distribution will last 425 days.
+According to the [Token Allocation table](/tokenomics), 3M `$WXM` were reserved to reward stations that participated in the network before Mainnet Launch ("Beta period") over a 425-day distribution schedule.
 
 ### Calculation
 
-The following calculations will take place for each station, the day before the Mainnet Launch:
+For each eligible station prior to Mainnet Launch:
 
 $$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.

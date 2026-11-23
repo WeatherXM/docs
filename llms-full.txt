@@ -550,13 +550,8 @@ Markdown: https://docs.weatherxm.com/llms-pages/rewards/cell-capacity.md
 
 **Cell Capacity (CC)** is a parameter that is used to define the maximum number of stations that may receive rewards in a specific cell.
 
-Each cell has a predetermined capacity that depends on its unique geospatial features. The capacity of a cell is the maximum number of weather stations that are eligible for rewards in that particular cell. 
-If there are 'N' rewardable weather stations in a cell with a capacity of 'CC' on a given day, and if N exceeds CC, then only the first N stations 
-(ordered first by their reward score, defined in the [Reward Mechanism (RM) ](/rewards/reward-mechanism) section, and then by seniority) will receive rewards.
-
-:::tip
-Cell capacity is a parameter that is used to define the maximum number of stations that are eligible for rewards in a specific cell. Every cell has a predefined capacity that depends on its geospatial characteristics*.
-:::
+Each cell has a predetermined capacity that depends on its unique geospatial features. The capacity of a cell is the maximum number of weather stations that are eligible for rewards in that particular cell.
+If there are `N` rewardable weather stations in a cell with a capacity of `CC` on a given day, and `N > CC`, then only the first `CC` stations (ordered first by their `reward_score`, defined in the [Reward Mechanism (RM)](/rewards/reward-mechanism) section, and then by seniority) will receive rewards.
 
 ### Last Claim Time (LCT): 
 Claim time is a unix timestamp (integer).
@@ -666,7 +661,7 @@ Canonical: https://docs.weatherxm.com/rewards/how-to-join-arbitrum-and-see-your-
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/how-to-join-arbitrum-and-see-your-tokens.md
 
 :::tip
-If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+If you don’t have a wallet yet, [create one first](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) so you can connect it and claim your `$WXM` rewards on Arbitrum One.
 :::
 
 ## Add Arbitrum One Network to Metamask
@@ -732,7 +727,7 @@ PoL is a dynamic value, and is recalculated every time a station’s location is
 ### Calculation:
 Currently, PoL is calculated daily using Location Packets.
 - For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.
-- For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.
+- For H1 and H2 (Helium / LoRaWAN) stations, at least one accurate Location Packet from the previous day is required to determine the location; if none is available, the PoL algorithm falls back to data from the day before.
 
 ## Relocation
 It is important for the Network that a station remains at the same location throughout its lifetime.
@@ -758,17 +753,19 @@ Markdown: https://docs.weatherxm.com/llms-pages/rewards/reward-boosts.md
 
 **Reward Boosts** reward stations with extra $WXM tokens for meeting specific criteria. 
 
-So far the following **Reward Boosts** are scheduled to be implemented:
+The following **Reward Boost** programs have been implemented:
 
-## Beta Rewards
+## Beta Rewards (Completed — Historical)
 
-According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
+:::info Completed Program
+The Beta phase ended on **May 27, 2024 (UTC)** and the 425-day Beta Rewards distribution has completed. This section is kept for historical reference.
+:::
 
-Beta rewards distribution will last 425 days.
+According to the [Token Allocation table](/tokenomics), 3M `$WXM` were reserved to reward stations that participated in the network before Mainnet Launch ("Beta period") over a 425-day distribution schedule.
 
 ### Calculation
 
-The following calculations will take place for each station, the day before the Mainnet Launch:
+For each eligible station prior to Mainnet Launch:
 
 $$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
@@ -858,295 +855,135 @@ Markdown: https://docs.weatherxm.com/llms-pages/rewards/reward-mechanism.md
 ## Introduction
 
 :::info
-The Reward Mechanism is currently at **version 2.0**. This page serves as both an informational resource about its current status and a how we got here.
+WeatherXM runs **Reward Mechanism v2.0** on Arbitrum One, combining daily **QoD v3** meteorological scoring, **Proof of Location (PoL)**, **Station Photo Verification (SPV)**, **Cell Capacity (CC)**, **Business Boosts**, and verifiable **Merkle Tree** claims via **[claim.weatherxm.com](https://claim.weatherxm.com)**.
 :::
 
-The Reward Mechanism has undergone a progressive evolution across its versions, each iteration introducing refinements to bolster fairness and transparency in the rewarding process for weather station owners contributing data to the network.
+Every day, the Reward Mechanism evaluates all claimed weather stations for the previous UTC day, allocates daily base rewards and any active boost rewards to each owner's connected wallet, and publishes a Merkle root on-chain to the **RewardPool** smart contract. Station owners can inspect their daily breakdown in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or Mobile App, and withdraw accumulated `$WXM` tokens whenever they choose.
 
-- In its inaugural version (v1.0), the mechanism primarily gauged a station's eligibility based on its connection status to the network and the requirement for active wallet ownership, resulting in a somewhat simplistic reward calculation. In this version, the users received in a daily basis the WXM testnet rewards at their wallets.
-- The subsequent release, v1.5, marked a significant advancement by expanding the criteria for reward eligibility. This version incorporated additional factors such as the Data Quality, Proof-of-Location (PoL), Hardware-Classes (HC) and the Cell-Capacity (CP). 
- These additions contributed to a more sophisticated and equitable system, ensuring that rewards were allocated based on data quality, accurate location proof, and user engagement. 
-- The third iteration, v2.0, will introduce substantial enhancements, including the incorporation of Business Boost rewards and the implementation of a Merkle Tree structure for transparent reward distribution. The utilization of Merkle Tree will lead users in withdrawing, whenever they choose to do, their rewards from the smart contract.
- Business Boost rewards added an additional layer of fairness by incorporating predefined criteria, while the Merkle Tree structure facilitated a verifiable and transparent mechanism for users to validate the distribution of their rewards.
- This evolutionary trajectory underscores a commitment to refining the Reward Mechanism, making it more inclusive, nuanced, and transparent to build trust among weather station owners participating in the network.
+## Daily Rewards Calculation Process
 
-## Reward mechanism v2.0
+Each daily run executes four phases:
 
-The Reward Mechanism v2.0 is the latest iteration of the rewarding mechanism. It is a significant advancement over the previous version, v1.5, and it introduces the following enhancements:
+1. **Base Rewards Calculation**
+2. **Reward Boosts Calculation**
+3. **Cumulative Rewards Allocation (per Wallet)**
+4. **Merkle Tree Generation & On-Chain Root Submission**
 
-### High-level flow
+### 1. Base Rewards Calculation
 
-Every day, the reward algorithm assesses the performance of all weather stations, calculates additional rewards originating from Business Boost use cases, bundles them together with the users' wallet addresses, and creates a Merkle Tree, the root hash of which is submitted to the RewardPool.
+To be eligible for daily base rewards, a station must meet three baseline criteria:
 
-Users have the option to withdraw their rewards either by accessing the Merkle proof on the WeatherXM Platform or by retrieving the Merkle proof from IPFS and programmatically initiating the procedure. At any given time users have the flexibility to withdraw any amount they desire, provided it does not exceed the total allocated amount.
+- **Connected EVM Wallet:** The station owner has an active EVM (`0x…`) wallet address configured in **[app.weatherxm.com/profile](https://app.weatherxm.com/profile)** or the Mobile App. (If no wallet is set, daily rewards are not allocated.)
+- **Data Quality (QoD v3) ≥ `data_quality_threshold`:** Daily meteorological data quality score (`0` to `1`) produced by [QoD v3](/rewards/data-quality).
+- **Proof of Location (PoL) ≥ `pol_threshold`:** Daily location verification score (`0` to `1`) produced by [Proof of Location](/rewards/proof-of-location).
 
-### Daily Rewards Calculation Process
+#### Scoring Factors
 
-The Reward Mechanism calculates the amount of tokens that will be allocated to users by completing the following phases:
+- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbor cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
+- **[Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation):** Applied directly inside the Reward Mechanism (separate from meteorological QoD). Stations with invalid SPV (`SPV_INVALID`) receive a `0.5×` reward multiplier until valid installation photos are approved.
+- **[Proof of Location (PoL)](/rewards/proof-of-location):** Verifies that GPS/location packets match the declared station location. Relocating a station triggers a temporary relocation penalty and resets cell seniority.
+- **[Hardware Class (HC)](/rewards/hardware-class):** Groups approved weather station bundles (`M5`, `D1`, `Pulse`, `Helium H1/H2`). Currently all Hardware Classes carry equal weight (`1.0`).
+- **[Cell Capacity (CC)](/rewards/cell-capacity):** Each H3 resolution-7 cell has a maximum number of rewardable stations (`capacity`). If more than `capacity` eligible stations are active in a cell, stations are ranked first by `reward_score` and then by seniority (`claimedAt`), and only the top `capacity` stations earn base rewards.
 
-1. Base Rewards calculation
-2. Business Boost Rewards calculation
-3. Cumulative Rewards calculation
-4. Merkle Tree creation
+#### Daily Calculation Flow
 
-Let's take a deep dive into each one of these.
-
-#### 1. Base Rewards calculation
-
-Base rewards calculation follows the **Actual Rewards Calculation** already introduced in **Reward Mechanism v1.5**.
-
-#### 2. Business Boost rewards calculation
-
-The business boost use cases reward specific devices with a predefined amount of tokens from the Business Development Pool for a period of time. In this phase, all business boost rewards are calculated for each active business boost use case and they are assigned to the eligible devices.
-
-#### 3. Cumulative Rewards Calculation
-
-In the third phase of the rewarding mechanism, the cumulative rewards per user are calculated. The cumulative rewards are the sum of all base and business boost rewards that each user's weather station  owns.
-
-```
-cumulative_rewards_per_customer = sum(base_reward[i] + business_boost_reward[i]), i = 1..n where n = total number of devices per user
-```
-
-#### 4. Merkle Tree Creation
-
-In the final phase, the cumulative rewards coupled with the users' wallet addresses are utilised to create the Merkle tree. The root hash of the Merkle tree is submitted daily in the smart contract to enable $WXM rewards withdrawal by the users.
-
-#### Pseudocode
-
-To sum up all of the above in pseudocode:
-
-```
-// base reward
-rewardable = {
-  'Helium': {
-    count: 0,
-    weight: 0.9,
-    devices: []
-  },
-  'M5': {
-    count: 0,
-    weight: 1.1,
-    devices: []
-  }
-}
-
+```text
+// 1. Evaluate eligibility & reward score per station
 for cell in cells:
-  cell_devices = []
+  eligible = []
   for device in cell:
     if isEmpty(device.owner.wallet):
-      device.reward_score = 0
       device.reward_reason = 'NO_WALLET'
-      device.base_reward = 0
       continue
-    if data_quality_score < data_quality_threshold:
-      device.reward_score = 0
+    if device.qod_score < data_quality_threshold:
       device.reward_reason = 'DATA_QUALITY_THRESHOLD'
-      device.base_reward = 0
       continue
-    if pol_score < pol_threshold:
-      device.reward_score = 0
+    if device.pol_score < pol_threshold:
       device.reward_reason = 'POL_THRESHOLD'
-      device.base_reward = 0
       continue
-    device.reward_score = reward_algorithm(device.pol_score, device.data_quality_score)
-    cell_devices.push(device)
-    rewardable[device.hardware_class].count += 1
-    rewardable[device.hardware_class].push(device)
 
-  cell_devices.sort( (x, y):  
-    if x.reward_score == y.reward_score:
-      return x.claimedAt - y.claimedAt
-    return y.reward_score - x.reward_score 
+    spv_multiplier = 0.5 if device.spv_status == 'SPV_INVALID' else 1.0
+    device.reward_score = device.pol_score * device.qod_score * spv_multiplier
+    eligible.push(device)
+
+  // 2. Enforce Cell Capacity (ranked by reward_score, tie-break by claimedAt seniority)
+  eligible.sort((a, b) =>
+    a.reward_score == b.reward_score ? a.claimedAt - b.claimedAt : b.reward_score - a.reward_score
   )
 
-  for (device, i) in cell_devices:
-    device.bb_reward = 0
-    if i >= cell.capacity:
+  for (device, rank) in eligible:
+    if rank >= cell.capacity:
       device.reward_score = 0
       device.reward_reason = 'MAX_CAPACITY_REACHED'
       device.base_reward = 0
+    else:
+      rewardable[device.hardware_class].push(device)
 
-total_weights = 0
-for key in rewardable.keys:
-  hc = rewardable[key]
-  total_weights += hc.count * hc.weight 
-
-for key in rewardable.keys:
-  hc = rewardable[key]
-  hc.max_rewards = daily_emission * hc.weight / total_weights 
+// 3. Allocate daily emission across rewardable stations by Hardware Class weight
+total_weights = sum(hc.count * hc.weight for hc in rewardable)
+for hc in rewardable:
+  hc.max_reward = daily_emission * hc.weight / total_weights
   for device in hc.devices:
-    device.base_reward = device.reward_score * hc.max_rewards
+    device.base_reward = device.reward_score * hc.max_reward
 
-// business boost
-for bb in business_boosts:
-  for device in bb.devices:
-    device.bb_reward += bb.daily_reward
+// 4. Add active Reward Boosts (e.g., Cell Bounties, Compensation Rewards)
+for boost in active_boosts:
+  for device in boost.devices:
+    device.boost_reward += boost.daily_reward
 
-// cumulative calculation
+// 5. Sum per active wallet & submit Merkle root on-chain
 for user in users:
-  daily_cumulative_rewards = 0
-  for device in user.devices:
-    daily_cumulative_rewards = device.bb_reward + device.base_reward
-  if not user.active_wallet:
-    continue
-  user.wallets[user.active_wallet] = daily_cumulative_rewards
+  if user.active_wallet:
+    wallet_cumulative[user.active_wallet] += sum(d.base_reward + d.boost_reward for d in user.devices)
 
-// merkle tree
-tree = []
-for user in users:
-  for wallet in wallets:
-    tree.push([wallet, user[wallet].cumulative])
-
-// blockchain tx
-submit(tree.root_hash())
+submit_merkle_root(build_merkle_tree(wallet_cumulative))
 ```
 
-### Withdrawing Rewards
+### 2. Reward Boosts Calculation
 
-Station owners have the freedom to withdraw their rewards at their discretion, without any time restrictions or other limitations.
+In addition to base rewards, eligible devices can earn extra `$WXM` tokens from active [Reward Boosts](/rewards/reward-boosts) (such as **Cell Bounties** or **Compensation Rewards**), funded from the Business Development Pool.
 
-Each owner may initiate the withdrawal process by signing a transaction using the private key that corresponds to the blockchain address they have connected to their station. A user-friendly front-end that can be used in conjunction with a wallet like Metamask will be provided, but station owners can also interact programmatically with the **RewardPool** smart contract to withdraw their rewards directly.
+### 3. Cumulative Rewards & Merkle Tree Distribution
 
-### Smart Contracts and Rewarding Mechanism
+All daily base and boost rewards are accumulated per connected wallet address. A Merkle Tree of `(wallet, cumulative_amount)` leaves is constructed daily and its root hash is submitted on-chain to the **RewardPool** smart contract on Arbitrum One.
 
-The smart contracts and wallets associated with the rewarding mechanism are the following:
+## Withdrawing Rewards
 
-* `WeatherXM`: ERC20 token
-* `RewardPool`: smart contract holding users' allocated $WXM rewards
-* `RewardVault`: smart contract holding the total amount of $WXM rewards to be allocated
-* `BusinessDevelopmentPool`: wallet holding all $WXM leftovers from daily rewards
+Station owners can claim any portion of their accumulated rewards at any time — with no lockups or expiry — via:
 
-The lifecycle of rewards from the rewarding mechanism to the users' wallets:
+- **[claim.weatherxm.com](https://claim.weatherxm.com/)** (desktop/mobile browser with MetaMask or WalletConnect)
+- **WeatherXM Mobile App** (My Profile → Claim)
+- Direct interaction with the **RewardPool** smart contract using Merkle proofs.
 
-* The **Reward Mechanism** calculates all rewards and allocates them to **RewardPool**
-* The **RewardPool** holds all allocated rewards
-* The **RewardVault** funds the **RewardPool** with the daily emission of $WXM
-* The **Business Development Pool** funds daily the **RewardPool** with the business boost of $WXM
-* The station owners withdraw their rewards programmatically or through the WeatherXM Platform by interacting with the **RewardPool**
+See the step-by-step **[How to Claim Rewards](/rewards/rewards-claiming)** guide.
 
-## Reward mechanism v1.5 
-This section describes the updated **Reward Mechanism** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network. (deprecated)
+## Smart Contracts Architecture
 
-:::note Important Notes
-* Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-* Criteria that should be met for a weather station to be rewardable:
-  * Data quality over data_quality_threshold
-  * PoL over pol_threshold
-  * weather station’s owner should have an active wallet
+- **`WeatherXM` (`$WXM`):** ERC-20 token contract on Arbitrum One (`0xb6093b61544572ab42a0e43af08abafd41bf25a6`).
+- **`RewardPool`:** Smart contract holding allocated `$WXM` rewards and verifying Merkle proofs on withdrawal.
+- **`RewardVault`:** Smart contract holding the emission pool that funds `RewardPool` daily.
+- **`BusinessDevelopmentPool`:** Wallet funding active Boost programs and holding unallocated daily leftovers.
 
-:::
+## Historical Versions (Deprecated)
 
-### Daily Rewards Calculation Process
-The Reward Mechanism calculates the amount of tokens that will be distributed to users by completing the following phase:
+<details>
+<summary>Reward Mechanism v1.5 &amp; v1.0 (Pre-Mainnet / Historical Reference)</summary>
 
-#### Actual Rewards calculation
-Actual rewards are calculated taking into account the performance of the weather station for the previous day. 
+- **Reward Mechanism v1.5 (Deprecated):** Introduced Data Quality (`v1.0`), Proof-of-Location (PoL), Hardware Classes (HC), and Cell Capacity (CC) for daily base reward scoring (`reward_score = pol_score * data_quality_score`), prior to Merkle Tree withdrawals, Business Boosts, and SPV integration.
+- **Reward Mechanism v1.0 (Deprecated — Testnet):** Initial testnet mechanism that distributed daily testnet tokens via bulk transfers based solely on hourly connectivity (`reward_score = hours_with_data / 24`) and having a connected wallet.
 
-This is a short summary of the criteria used:
+</details>
 
-* **Proof-of-Location (PoL)**: An algorithm that evaluates the data about the location of the weather station, its accuracy, consistency, and unison with the location the owner registered on the weather station claiming. 
-It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
-When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/rewards/proof-of-location).
+## Related Guides
 
-* **Data Quality**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
- WeatherXM values weather stations that produce meaningful and usable data and the Data Quality score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
- guidelines in order to consistently achieve the best Data Quality score possible. Read more about the [Data Quality algorithm](/rewards/data-quality).
-
-* **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
-increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](/rewards/hardware-class).
-
-* **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
-If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](/rewards/cell-capacity).
-
-We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
-
-a. The following variables have known values at the start of each day:
-
-* `daily_emission`: the amount of tokens that are available for allocation on the given day
-* `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
-* `pol_threshold`: the number denoting the cut-off threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `data_quality_threshold`: the number denoting the cut-off threshold for Data Quality: weather stations with `data_quality_score < data_quality_threshold` are **excluded** from rewarding
-* `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
-
-b. To calculate the rewardable count of devices per **HC**:
-
-* we exclude weather stations that are owned by users with no wallet address specified
-* we count the weather stations with **data_quality_score** and **pol_score** over the respected specified thresholds, `data_quality_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
-
-c. To calculate the **max_reward_per_hardware_class (MRPHC)**:
-
-```
-total_weights = sum(rewardable_count_per_hardware_class[i] * weight_per_hardware_class[i]), i = 1..n, where n = total number of HC
-```
-
-For every HC:
-
-```
-tokens_per_hardware_class = daily_emission * (rewardable_count_per_hardware_class * weight_per_hardware_class) / total_weights
-
-max_reward_per_hardware_class = tokens_per_hardware_class / rewardable_count_per_hardware_class
-```
-
-d. To calculate the **reward_score** and **actual_reward**:
-
-```
-reward_score = pol_score * data_quality_score
-
-actual_reward = reward_score * max_reward_per_hardware_class
-```
-
-e. To identify overcrowded cells and decide which of the weather stations will be excluded from rewarding:
-
-* we iterate over available cells and check whether it is overcrowded
-* in case it is indeed overcrowded, we sort the neighbouring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
-
-## Reward mechanism v1.0
-
-The first iteration of **Reward Mechanism** operates in the following way: only taking into account whether or not a station is connected to the network. (deprecated)
-
-The reward distribution mechanism has two parts:
-  - **The reward algorithm** which calculates the `actual_reward` for each weather station by evaluating its weather data for the previous day
-  - The daily **reward distribution** of rewards to the station owners
-
-:::note Important
-Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-:::
-
-### How Often does the Reward Algorithm run?
-The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
-
-### Calculation of the Reward Score
-`reward_score = array_of_hourly_weather_data / 24`
-
-### Explanation
-In the calculation of the `reward_score` step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
-  - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
-   with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects,
-  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
-
-That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `reward_score` of `0.0` to `1.0`.
-
-After the calculation of the `reward_score` step, the algorithm takes the `reward_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather
-station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
-
-The formulas which are used to calculate the daily reward per weather station is the following:
-```
-rewardable_count = Count(all_provisioned_weather_stations)
-max_daily_reward = daily_emission / rewardable_count
-weather_station_reward = reward_score * max_daily_reward
-```
-### Reward Distribution Mechanism
-All daily `actual_reward` per weather station are transferred to the wallet address already set by the user.
-This is a bulk transfer operations which happens once in a daily schedule and as a result the users get their daily rewards to their wallets.
-Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards.
-
-## Links
-- [WeatherXM Network](https://weatherxm.network/)
-- [Data Quality algorithm](/rewards/data-quality)
-- [Proof of Location (PoL) mechanism](/rewards/proof-of-location)
+- [Data Quality (QoD v3)](/rewards/data-quality)
+- [Proof of Location (PoL)](/rewards/proof-of-location)
+- [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation)
 - [Cell Capacity (CC)](/rewards/cell-capacity)
-- [Hardware class](/rewards/hardware-class)
+- [Hardware Class](/rewards/hardware-class)
+- [Reward Boosts](/rewards/reward-boosts)
+- [How to Claim Rewards](/rewards/rewards-claiming)
+- [Rewards Troubleshooting](/rewards/rewards-troubleshooting)
 
 ---
 # How to Claim Rewards
@@ -1154,8 +991,7 @@ Canonical: https://docs.weatherxm.com/rewards/rewards-claiming
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/rewards-claiming.md
 
 :::tip
-Allocated and claimed tokens displayed in our mobile apps, are only those linked to your current wallet.
-This does not include any wallets you may have used in the past.
+Allocated and claimed tokens displayed in the **[WeatherXM Web App](https://app.weatherxm.com)** and Mobile Apps are only those linked to your **currently connected wallet**. This does not include rewards allocated to wallets you may have used in the past.
 :::
 
 ## Prerequisites for claiming rewards

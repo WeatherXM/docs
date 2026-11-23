@@ -13,7 +13,7 @@
 <script>!function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2542811,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document)</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4e722177.css">
-<script src="/assets/js/runtime~main.a15fba8d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ff0b258f.js" defer="defer"></script>
 <script src="/assets/js/main.30d6f0a7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@ PoL is a dynamic value, and is recalculated every time a station’s location is
 <p>Currently, PoL is calculated daily using Location Packets.</p>
 <ul>
 <li class="">For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.</li>
-<li class="">For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.</li>
+<li class="">For H1 and H2 (Helium / LoRaWAN) stations, at least one accurate Location Packet from the previous day is required to determine the location; if none is available, the PoL algorithm falls back to data from the day before.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="relocation">Relocation<a href="#relocation" class="hash-link" aria-label="Direct link to Relocation" title="Direct link to Relocation" translate="no">​</a></h2>
 <p>It is important for the Network that a station remains at the same location throughout its lifetime.
