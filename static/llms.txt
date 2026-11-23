@@ -1,9 +1,14 @@
 # WeatherXM Documentation
 
-> Technical documentation for WeatherXM weather stations, deployment, data quality, rewards, WeatherXM Pro and weather science.
+> Technical documentation for WeatherXM weather stations, Web & Mobile Apps, deployment, QoD v3 data quality, Reward Mechanism v2.0, WeatherXM Pro, and weather science.
 
 ## Canonical resources
 - Main WeatherXM site: https://weatherxm.com/
+- WeatherXM Web App (Station Cockpit): https://app.weatherxm.com/
+- WeatherXM Explorer: https://explorer.weatherxm.com/
+- WeatherXM Pro & API: https://pro.weatherxm.com/
+- FACT (Forecast Accuracy Comparison): https://fact.weatherxm.com/
+- Claim Rewards dApp: https://claim.weatherxm.com/
 - Weather station catalog: https://weatherxm.com/stations/
 - Data & forecasts: https://weatherxm.com/data/
 - Open technology: https://weatherxm.com/open/
@@ -20,18 +25,36 @@
   - Markdown: https://docs.weatherxm.com/llms-pages/glossary.md
 - Introduction: https://docs.weatherxm.com/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
+- WeatherXM Web App (app.weatherxm.com): https://docs.weatherxm.com/mobile-app/web-app
+  - Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/web-app.md
+- Data Quality: https://docs.weatherxm.com/rewards/data-quality
+  - Markdown: https://docs.weatherxm.com/llms-pages/rewards/data-quality.md
+- Reward Mechanism: https://docs.weatherxm.com/rewards/reward-mechanism
+  - Markdown: https://docs.weatherxm.com/llms-pages/rewards/reward-mechanism.md
+- How to Claim Rewards: https://docs.weatherxm.com/rewards/rewards-claiming
+  - Markdown: https://docs.weatherxm.com/llms-pages/rewards/rewards-claiming.md
+- Rewards Troubleshooting: https://docs.weatherxm.com/rewards/rewards-troubleshooting
+  - Markdown: https://docs.weatherxm.com/llms-pages/rewards/rewards-troubleshooting.md
+- The $WXM Token: https://docs.weatherxm.com/tokenomics
+  - Markdown: https://docs.weatherxm.com/llms-pages/tokenomics.md
 - Weather And Science: https://docs.weatherxm.com/weather-and-science
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science.md
 - General QoD Description (QoD v3 & SPV): https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/general-qod-description.md
+- QoD v3 Full Documentation: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/qod-v3-documentation
+  - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/qod-v3-documentation.md
 - WeatherXM Pro: https://docs.weatherxm.com/weatherxm-pro
   - Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md
 - Introduction of D1 bundle (WB1200): https://docs.weatherxm.com/wxm-devices/d1/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/d1/introduction.md
 - Weather Station Deployment Examples: https://docs.weatherxm.com/wxm-devices/deployment-examples
   - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/deployment-examples.md
+- Introduction WeatherXM H2 Open Edition (WS2001): https://docs.weatherxm.com/wxm-devices/h2-open/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/h2-open/introduction.md
 - Introduction WeatherXM Helium station (WS2000): https://docs.weatherxm.com/wxm-devices/helium/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/helium/introduction.md
+- Introduction of M5 bundle (WB1000): https://docs.weatherxm.com/wxm-devices/m5/introduction
+  - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/m5/introduction.md
 - Introduction of Pulse bundle (WB3000): https://docs.weatherxm.com/wxm-devices/pulse/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/wxm-devices/pulse/introduction.md
 
