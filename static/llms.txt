@@ -22,7 +22,7 @@
   - Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
 - Weather And Science: https://docs.weatherxm.com/weather-and-science
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science.md
-- General QoD Description (OBC-SQC, ISD, SPV): https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
+- General QoD Description (QoD v3 & SPV): https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
   - Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/general-qod-description.md
 - WeatherXM Pro: https://docs.weatherxm.com/weatherxm-pro
   - Markdown: https://docs.weatherxm.com/llms-pages/weatherxm-pro.md

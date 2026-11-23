@@ -3,128 +3,67 @@ title: Data Quality
 sidebar_label: Data Quality
 ---
 
-import useBaseUrl from "@docusaurus/useBaseUrl";
-
 :::info
-Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future.
+WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
 :::
 
-**Data Quality** is an algorithm that evaluates the quality of weather data provided by a weather station. 
-The calculated score indicates the confidence level in the quality of the weather data received from a station. 
-We need meaningful and usable data and the Data Quality score is an attempt to quantify this metric. 
-The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
-achieve the best Data Quality score possible.
+**Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
 
-><img src={useBaseUrl("/img/rewards/data-quality-v1.png")} alt="QoD current state" />
+1. **Reliable Weather Data:** Identifies high-confidence station observations for WeatherXM forecasts, analytics, and commercial data products.
+2. **Fair Daily Rewards:** Encourages proper outdoor installation and sensor maintenance so well-deployed stations consistently earn maximum rewards.
 
-It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
-Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
+You can inspect your station's daily QoD score and any quality annotations in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or the WeatherXM Mobile App.
 
-This mechanism includes the following 3 control points and their respective checks:
-1. Self Check
-    * Out-of-Bounds Check (OBC) (Data Quality v1.0)
-    * Self Quality Check (SQC) (Data Quality v1.0) 
-2. Reference Check
-    * Comparative Quality Control (CQC) (Data Quality v1.3)
-3. Deployment status 
-    * Indoor Station Detector (ISD) (Data Quality v1.1)
-    * Solar Obstacle Detector (SOD) (Data Quality v1.2)
-    * Wind Obstacle Detector (WOD) (TBD)
+## How QoD v3 Evaluates Your Station
 
-The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
+Every day (for the previous UTC day), QoD v3 evaluates your station across **four complementary layers**:
 
-<img src={useBaseUrl("/img/rewards/data-quality-components-categories.png")}/>
+### 1. Self-Sanity Checks (OBC & SQC)
+Checks performed on your station's own telemetry stream for every meteorological sensor (temperature, humidity, pressure, wind speed, wind direction, precipitation, and solar irradiance/illuminance):
 
-## 1. Self Check
-Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
+- **Out-of-Bounds Check (OBC):** Flags values outside the sensor's physical or manufacturer specifications.
+- **Data Completeness (`NO_DATA`):** Measures how many expected packets arrived based on your station model's transmission cadence.
+- **Suspicious Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive readings (gap-aware so brief transmission drops do not cause false positives).
+- **Flatline / Stagnation (`LONG_CONST`):** Flags sensors stuck at an unchanging value for an unrealistic duration.
 
-### a. Out-of-Bounds Check (OBC)
-OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
-As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
+### 2. Spatial Neighbor Cross-Validation (CQC)
+Compares your station against trusted nearby WeatherXM stations using adaptive search radii (**25 km → 50 km → 100 km**):
 
-### b. Self Quality Check (SQC)
-SQC is the process that identifies unexpected behaviour in the measured parameters, which could be attributed to a defective sensor or an improper station deployment. 
-It should be noted that OBC is included in SQC as the first step of this process. 
-The final result of this process is the annotation of the data in 3 levels:
+- **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Detects persistent multi-degree temperature bias or broken/drifting barometers that simple range checks cannot catch.
+- **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation estimates are **not** unfairly penalized for a steady altitude offset as long as they track hour-by-hour synoptic pressure changes accurately (they receive an informational `PRESSURE_OFFSET_ADVISORY` instead).
+- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbors.
 
-- Raw (16’’ or else depending on weather station’s specs)
-- Minute (1’ or 2’ depending on the parameter)
-- Hourly (aiming to reward each of 24 slots of a day)
+### 3. Deployment Classification & 2-Day Hysteresis
+Evaluates whether a station is deployed outdoors, indoors, or surrounded by heavy obstacles using daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics:
 
-The following processes take place (excluding OBC):
+- **No more 7-day lag:** Unlike legacy QoD v1 (which used a trailing 7-day window and kept stations penalized for nearly a week after fixing an issue), QoD v3 runs daily with **2-day confirmation hysteresis**.
+- **2 consecutive days to confirm, 2 clean days to clear:** A single bad day emits an **advisory** flag only (zero deployment penalty). Two consecutive days of `INDOORS` or `BAD_DEPLOYMENT` confirm the penalty (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier). Once you fix the station, **2 consecutive clean days** clear the penalty.
+- **Sub-Zero Winter Protection:** When daily average temperature is `≤ 0°C`, freezing vetoes prevent false `INDOORS` or `WIND_STUCK` penalties caused by frozen anemometers.
 
-- Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
-- Looking for time-slots with no data
-- Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
-- Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
-- Calculating the percentage of valid data within a certain period (minute, hour)
+### 4. Separation of QoD and Station Photo Verification (SPV)
+In QoD v3, **QoD measures purely meteorological data quality**. Station Photo Verification (**SPV**) is applied separately inside the [Reward Mechanism](/rewards/reward-mechanism) (for example, `SPV_INVALID` applies a `0.5×` reward multiplier in the rewarding pipeline without altering your station's underlying meteorological QoD score).
 
-The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
+## Score-Reducing vs Advisory Annotations
 
-## 2. Reference Check
-This part of Data Quality algorithm focuses on comparing the data of a weather station with:
+Not every annotation reduces your rewards. QoD v3 explicitly separates **score-reducing** flags from **advisory** (informational) flags:
 
-a. Another neighbouring reliable weather station of the WXM network<br></br>
-b. Another neighbouring reliable 3rd party weather station<br></br>
-c. 3rd party post-processed modelled weather data (a process similar to data assimilation)
+| Category | Annotation Codes | Impact on QoD Score |
+|---|---|---|
+| **Score-Reducing (Sensor)** | `NO_DATA`, `OBC`, `SPIKE_INST`, `LONG_CONST`, `TEMP_DRIFT`, `PRESSURE_DRIFT`, `PROBLEMATIC_ILL_SENSOR` | Reduces the affected sensor's daily score |
+| **Score-Reducing (Deployment)** | `INDOORS_CONFIRMED` (`0×`), `BAD_DEPLOYMENT_CONFIRMED` (`0.5×`) | Reduces overall daily QoD after 2 consecutive confirmed days |
+| **Advisory / Informational** | `T_OVERHEAT`, `WIND_STUCK`, `BLOCKED_RAIN`, `PRESSURE_OFFSET_ADVISORY`, `PRESSURE_REFERENCE_UNCERTAIN`, `INDOORS` (day 1), `BAD_DEPLOYMENT` (day 1), `SPV_INVALID`, `SPV_OBSTRUCTION`, `NO_LOCATION`, `NO_ELEVATION`, `LOW_SUN`, `ISOLATED` | **No QoD penalty** — early warnings to help you inspect your station before hardware or placement degrades |
 
-The Reference Check may be able to detect abnormal behaviour of the parameters measured by a station. 
-Such a control could give insight in the quality of both data and deployment 
-(e.g., temperature diurnal cycle of a station agrees with a reference timeseries, temperature of a station is usually higher because it is close to a chimney etc).
-
-### Comparative Quality Control (CQC)
-In order to apply this control we deploy the Comparative Quality Control (CQC), 
-which falls into an internal and external version depending on the type of data used for the analysis 
-(internal -using data owned by WXM- and external -using 3rd party data-). 
-Reference Check should run once per day together with Self Check.
-
-## 3. Deployment Status
-The Deployment Status control can be used as an identifier of the obstacles around a weather station. As solar irradiance and wind are parameters that are fairly sensitive to obstacle interventions, two different processes have been designed to determine the quality of deployment:
-
-a. Indoor Station Detector (ISD)<br></br>
-b. Solar Obstacle Detector (SOD)<br></br>
-c. Wind Obstacle Detector (WOD)
-
-Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
-This means that the Deployment Status part of Data Quality algorithm can only be used to characterise the deployment of a weather station.
-
-### a. Indoors Station Detector (ISD)
-The purpose of this mechanism is to identify all the stations located in a house or a box.
-This process requires solar irradiance, latitude, longitude and day of the year.
-
-### b. Solar Obstacle Detector (SOD)
-This process examines the solar irradiance parameter comparing it with the theoretical solar irradiance expected for a given location and day of the year. Note that the theoretical solar irradiance is the total amount of solar irradiance that arrives at a horizontal surface on the Earth under clear sky conditions. 
-Because of that, a long period of data is required for detecting a totally clear-sky day. This method:
-
-- Detects a clear sky day
-- Compares theoretical and observed solar irradiance on a clear-sky day
-- Compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)
-
-The limitations of this method are that:
-- Only south horizon of a station can be examined for obstacles
-- The solar angle is different from a season to another, thus different obstacles may be visible at different period of the year
-
-Despite of such limitations, it is still a useful method for detecting obstacles that may affect solar irradiance, but also the other parameters.
-
-### c. Wind Obstacle Detector (WOD)
-As wind is the most demanding (in terms of fulfilling the WMO deployment criteria) parameter, this method should be able to identify any significant obstacles around a weather station.
-
-The basic idea is that we collect measurements of significant wind (e.g., >5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.
-
-This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
+:::tip
+If you see an annotation on your station, open the **Health** tab in **[app.weatherxm.com](https://app.weatherxm.com)** or check the [Rewards Troubleshooting](/rewards/rewards-troubleshooting) guide for concrete fixes.
+:::
 
 ## Data Quality Threshold
-Data_Quality_Threshold is a rational number in the range [0,1]. 
-This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
 
-## Data Quality Components Outcome
-><img src={useBaseUrl("/img/rewards/data-quality-components-data-annotations.png")} alt="The Data Quality Components" />
+Each day, a station's **Data Quality score** is a number in `[0, 1]`. Your daily reward scales directly with this score (combined with [Proof of Location](/rewards/proof-of-location), [Cell Capacity](/rewards/cell-capacity), and [Station Photo Verification](/weather-and-science/quality-mechanisms/spv-full-documentation)).
 
-:::note
-Data Quality score is a rational number in the range [0,1]
-:::  
+## Further Reading
 
-## References
+- [General QoD Description (QoD v3 & SPV)](/weather-and-science/quality-mechanisms/general-qod-description)
+- [Rewards Troubleshooting](/rewards/rewards-troubleshooting)
+- [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation)
 - [WeatherXM Network](https://weatherxm.network/)
-- [Data Quality Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
-- [Technical description of the process for Data Quality v1.0](https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub)

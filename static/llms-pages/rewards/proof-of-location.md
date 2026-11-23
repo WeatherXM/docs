@@ -12,7 +12,7 @@ PoL is a dynamic value, and is recalculated every time a station’s location is
 ### Calculation:
 Currently, PoL is calculated daily using Location Packets.
 - For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.
-- For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.
+- For H1 and H2 (Helium / LoRaWAN) stations, at least one accurate Location Packet from the previous day is required to determine the location; if none is available, the PoL algorithm falls back to data from the day before.
 
 ## Relocation
 It is important for the Network that a station remains at the same location throughout its lifetime.

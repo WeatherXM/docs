@@ -4,6 +4,10 @@ Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/obc
 
 # Out-of-Bounds (OBC) and Self Quality Checks (SQC) Score Calculation
 
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** score calculation and is retained for historical reference. WeatherXM now runs **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)** (`version 3.0.0`).
+:::
+
 QoD v1.0.0 includes three control processes:
     a. OBC (Out-of-Bounds Check)
     b. SQC (Self-Quality Check)

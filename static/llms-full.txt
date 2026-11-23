@@ -67,6 +67,10 @@ This documentation site attempts to explain various aspects of the WeatherXM pro
 <h4>Thank you for supporting WeatherXM!</h4>
 <h5 class="quickLinks">Quick Links</h5>
 
+<Link to="https://app.weatherxm.com">&#8226; WeatherXM Web App (Station Cockpit)</Link>
+<br></br>
+<Link to="/mobile-app/web-app">&#8226; Web App Guide</Link>
+<br></br>
 <Link to="/tokenomics">&#8226; The $WXM Token</Link>
 <br></br>
 <Link to="/weatherxm-pro/">&#8226; WeatherXM Pro</Link>
@@ -252,7 +256,7 @@ By doing so, participants not only contribute to the network's growth but also g
 The network is EVM compatible and is deployed on [Arbitrum One](https://arbiscan.io/token/0xb6093b61544572ab42a0e43af08abafd41bf25a6).
 
 WeatherXM has a vision to become the largest, most decentralised, and most distributed weather network in the world.
-You can stay updated on the current state of the network by checking out our [explorer](https://explorer.weatherxm.com).
+You can stay updated on the current state of the network on the [Explorer](https://explorer.weatherxm.com), and manage your own stations, live diagnostics, history, and rewards in the [WeatherXM Web App](https://app.weatherxm.com) ([see guide](/mobile-app/web-app)).
 
 Some significant milestones we have achieved so far:
 
@@ -304,7 +308,17 @@ Currently we use 4 main types of devices:
 Canonical: https://docs.weatherxm.com/mobile-app/change-password
 Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/change-password.md
 
-In order to change your account's password you need to use our mobile app. There are different methods of resetting your password whether you are logged in or out.
+You can reset your account's password using either the **[WeatherXM Web App](https://app.weatherxm.com/forgotpassword)** or the **WeatherXM Mobile App**.
+
+## Via Web App (`app.weatherxm.com`)
+
+- Go to **[app.weatherxm.com/forgotpassword](https://app.weatherxm.com/forgotpassword)** (or click **Forgot password?** on the login screen).
+- Enter your account's email address and submit.
+- Open the reset link sent to your email to choose a new password.
+
+## Via Mobile App
+
+There are two ways to reset your password in the mobile app depending on whether you are logged in or out.
 
 :::caution
 The confirmation email to change your account password normally arrives within some minutes.
@@ -351,6 +365,12 @@ This **will not delete**:
 If you have any questions regarding your data and the deletion of your account, please contact our  [support team](https://support.weatherxm.com)
 :::
 
+## Via Web App (`app.weatherxm.com`)
+
+Sign in at **[app.weatherxm.com](https://app.weatherxm.com)**, open **[Profile](https://app.weatherxm.com/profile)**, and click **Delete account** (or navigate directly to **[app.weatherxm.com/accountdeletion](https://app.weatherxm.com/accountdeletion)**). Read the confirmation prompt carefully — **this procedure is irreversible**.
+
+## Via Mobile App
+
 <section class="explanation small-big">
   
   
@@ -365,10 +385,16 @@ Canonical: https://docs.weatherxm.com/mobile-app/wallet/add-edit-wallet-address
 Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/wallet/add-edit-wallet-address.md
 
 :::tip
-If you don't have a wallet yet, [create one first](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) so you can connect it and claim your `$WXM` rewards on Arbitrum One.
+If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) first. You can add or update your EVM (`0x…`) rewards wallet from either the **[WeatherXM Web App](https://app.weatherxm.com/profile)** or the **WeatherXM Mobile App**.
 :::
 
-## Add wallet address for the first time  
+## Via Web App (`app.weatherxm.com`)
+
+1. Sign in at **[app.weatherxm.com](https://app.weatherxm.com)** and open **[Profile](https://app.weatherxm.com/profile)**.
+2. In the **Rewards wallet** section, paste your EVM-compatible (`0x…`) wallet address (for example, your MetaMask address on Arbitrum One).
+3. Confirm that you own and control the wallet, then save.
+
+## Add wallet address for the first time (Mobile App)
 
 To add your wallet address, go to settings screen and tap "My wallet", then fill or scan your wallet address where you can find at your metamask account, read and accept the terms and services and acknowledge that you have ownership and full access to this wallet.
 
@@ -424,19 +450,89 @@ If you want to confirm the existence of your tokens in your preferred wallet, yo
 :::
 
 ---
+# WeatherXM Web App (app.weatherxm.com)
+Canonical: https://docs.weatherxm.com/mobile-app/web-app
+Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/web-app.md
+
+The **[WeatherXM Web App](https://app.weatherxm.com)** is the browser-based **Station Cockpit** for monitoring your weather stations, inspecting historical data and forecasts, tracking daily WXM rewards and Data Quality (QoD), and diagnosing offline or underperforming hardware — from any desktop or mobile browser.
+
+Sign in at **[app.weatherxm.com](https://app.weatherxm.com)** using the same account email and password you use in the WeatherXM iOS or Android app.
+
+## Fleet Rail & Station Cockpit
+
+On desktop, the Web App uses a split-pane layout:
+
+- **Fleet Rail (left):** Shows all your owned and followed stations grouped by status (**Needs attention** at the top, followed by **Healthy · Owned** and **Following**), with live temperatures, offline duration, latest daily rewards, and instant search by station name or serial.
+- **Station Cockpit (right):** Displays the selected station's live status, firmware version, H3 cell rank, and 7 focused tabs.
+
+![WeatherXM Web App Station Overview](image)
+
+## Station Tabs
+
+| Tab | Available To | What You Can Do |
+|---|---|---|
+| **Overview** | Owned & Followed | Live weather conditions, 24-hour temperature sparkline, 5-day thermal range forecast, hardware & signal summary, and a 30-day rewards bar strip. |
+| **Forecast** | Owned & Followed | Hyperlocal hourly and 5-day forecast with multi-element switcher (temperature, wind, precipitation, pressure, solar/UV) and 3-hourly breakdown. |
+| **History** | Owned & Followed | Day-by-day historical charts for temperature (with feels-like & dew point), humidity, wind speed & gust (plus wind direction), pressure, precipitation, and solar/UV. |
+| **Rewards** | Owned only | Latest day, 30-day, and lifetime WXM totals, interactive 30-day bar chart, and per-day breakdown of **Base reward**, **Data Quality (QoD)**, **Boosts**, and **Cell position**. |
+| **Health** | Owned only | Full **Offline Station Debugger** separating outdoor station health from gateway health, live signal chain, battery, firmware status, GPS lock, and one-click support diagnostics. |
+| **Photos** | Owned only | View your uploaded **Station Photo Verification (SPV)** photos alongside deployment guidelines. |
+| **Settings** | Owned & Followed | Set a personal friendly name for the station, view hardware metadata, or unfollow a followed station. |
+
+### Diagnosing Issues with the Health Tab
+
+The **Health** tab visualizes the exact path your data travels — **Outdoor Station → Gateway → WeatherXM Cloud** — so you can immediately tell whether an outage is on the outdoor sensor unit (e.g., low battery or RF link) or on the indoor gateway (e.g., Wi-Fi/4G connectivity, firmware, or GPS lock on M5).
+
+If you need help from Support, click **Copy diagnostics** to copy a structured hardware and telemetry summary to your clipboard.
+
+![WeatherXM Web App Health and Offline Station Debugger](image)
+
+### Tracking Rewards & Data Quality
+
+The **Rewards** tab shows your daily WXM earnings across the last 30 days. Clicking any bar opens that day's breakdown — including your QoD score, active boosts, cell rank, and any reward-reducing or advisory quality annotations.
+
+![WeatherXM Web App Rewards Breakdown](image)
+
+### Exploring Historical Weather Data
+
+The **History** tab lets you step through any past date in the station's local timezone and inspect multi-parameter charts for temperature, humidity, wind, pressure, precipitation, and solar irradiance.
+
+![WeatherXM Web App Historical Charts](image)
+
+## Account, Wallet & Preferences
+
+From the bottom of the Fleet Rail or your profile avatar, you can also manage your account directly in the browser:
+
+- **Profile (`/profile`):** View your account details, add or update your EVM rewards wallet address, or initiate account deletion.
+- **Settings (`/settings`):** Choose your preferred measurement units (temperature, wind speed, pressure, precipitation) and light/dark/system appearance.
+- **Password Reset (`/forgotpassword`):** Request a password reset email when logged out.
+
+## Web App vs Mobile App
+
+Most day-to-day monitoring, diagnostics, and account management tasks work seamlessly in **both** the Web App and the Mobile App. A few hardware-proximity actions remain exclusive to the iOS/Android Mobile App:
+
+| Action | Web App (`app.weatherxm.com`) | Mobile App (iOS / Android) |
+|---|---|---|
+| Monitor live weather, 5-day forecast & history | Yes | Yes |
+| Fleet management & multi-station search | Yes (Split-Pane Fleet Rail) | Yes |
+| Hardware Health & Offline Station Debugger | Yes (with Copy Diagnostics) | Basic status |
+| View daily rewards, QoD score & annotations | Yes | Yes |
+| Add / edit EVM wallet address | Yes (`/profile`) | Yes |
+| Change password / delete account | Yes | Yes |
+| Configure units & dark/light theme | Yes (`/settings`) | Yes |
+| **Claim & onboard a new station (Bluetooth / QR)** | Redirects to Mobile App QR (`/claim`) | **Yes** |
+| **Relocate an existing station** | No | **Yes** |
+| **Upload new SPV installation photos** | View gallery & guide | **Yes** |
+
+---
 # Cell Capacity (CC)
 Canonical: https://docs.weatherxm.com/rewards/cell-capacity
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/cell-capacity.md
 
 **Cell Capacity (CC)** is a parameter that is used to define the maximum number of stations that may receive rewards in a specific cell.
 
-Each cell has a predetermined capacity that depends on its unique geospatial features. The capacity of a cell is the maximum number of weather stations that are eligible for rewards in that particular cell. 
-If there are 'N' rewardable weather stations in a cell with a capacity of 'CC' on a given day, and if N exceeds CC, then only the first N stations 
-(ordered first by their reward score, defined in the [Reward Mechanism (RM) ](/rewards/reward-mechanism) section, and then by seniority) will receive rewards.
-
-:::tip
-Cell capacity is a parameter that is used to define the maximum number of stations that are eligible for rewards in a specific cell. Every cell has a predefined capacity that depends on its geospatial characteristics*.
-:::
+Each cell has a predetermined capacity that depends on its unique geospatial features. The capacity of a cell is the maximum number of weather stations that are eligible for rewards in that particular cell.
+If there are `N` rewardable weather stations in a cell with a capacity of `CC` on a given day, and `N > CC`, then only the first `CC` stations (ordered first by their `reward_score`, defined in the [Reward Mechanism (RM)](/rewards/reward-mechanism) section, and then by seniority) will receive rewards.
 
 ### Last Claim Time (LCT): 
 Claim time is a unix timestamp (integer).
@@ -461,126 +557,69 @@ Canonical: https://docs.weatherxm.com/rewards/data-quality
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/data-quality.md
 
 :::info
-Data Quality algorithm is currently on version 1.0. This page serves as both an informational resource about its current status and a glimpse into its future.
+WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbor cross-validation and 2-day confirmation hysteresis.
 :::
 
-**Data Quality** is an algorithm that evaluates the quality of weather data provided by a weather station. 
-The calculated score indicates the confidence level in the quality of the weather data received from a station. 
-We need meaningful and usable data and the Data Quality score is an attempt to quantify this metric. 
-The end goal is to encourage weather station owners to do their best to comply with the Network's guidelines in order to consistently 
-achieve the best Data Quality score possible.
+**Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
 
->![QoD current state](image)
+1. **Reliable Weather Data:** Identifies high-confidence station observations for WeatherXM forecasts, analytics, and commercial data products.
+2. **Fair Daily Rewards:** Encourages proper outdoor installation and sensor maintenance so well-deployed stations consistently earn maximum rewards.
 
-It’s the method we use to assess the quality of each data point we receive from WeatherXM stations. 
-Data Quality algorithm involves a series of techniques and processes designed to help us distinguish between expected and unexpected data behaviors.
+You can inspect your station's daily QoD score and any quality annotations in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or the WeatherXM Mobile App.
 
-This mechanism includes the following 3 control points and their respective checks:
-1. Self Check
-    * Out-of-Bounds Check (OBC) (Data Quality v1.0)
-    * Self Quality Check (SQC) (Data Quality v1.0) 
-2. Reference Check
-    * Comparative Quality Control (CQC) (Data Quality v1.3)
-3. Deployment status 
-    * Indoor Station Detector (ISD) (Data Quality v1.1)
-    * Solar Obstacle Detector (SOD) (Data Quality v1.2)
-    * Wind Obstacle Detector (WOD) (TBD)
+## How QoD v3 Evaluates Your Station
 
-The Data Quality algorithm is designed to be a daily process, with the exception of the Deployment Status.
+Every day (for the previous UTC day), QoD v3 evaluates your station across **four complementary layers**:
 
-## 1. Self Check
-Self-check is the basic component of the Data Quality algorithm, designed to identify common faults within datasets using only the data from the weather station being investigated. Self-check should run once per day. The following steps are included:
+### 1. Self-Sanity Checks (OBC & SQC)
+Checks performed on your station's own telemetry stream for every meteorological sensor (temperature, humidity, pressure, wind speed, wind direction, precipitation, and solar irradiance/illuminance):
 
-### a. Out-of-Bounds Check (OBC)
-OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor.
-As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
+- **Out-of-Bounds Check (OBC):** Flags values outside the sensor's physical or manufacturer specifications.
+- **Data Completeness (`NO_DATA`):** Measures how many expected packets arrived based on your station model's transmission cadence.
+- **Suspicious Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive readings (gap-aware so brief transmission drops do not cause false positives).
+- **Flatline / Stagnation (`LONG_CONST`):** Flags sensors stuck at an unchanging value for an unrealistic duration.
 
-### b. Self Quality Check (SQC)
-SQC is the process that identifies unexpected behaviour in the measured parameters, which could be attributed to a defective sensor or an improper station deployment. 
-It should be noted that OBC is included in SQC as the first step of this process. 
-The final result of this process is the annotation of the data in 3 levels:
+### 2. Spatial Neighbor Cross-Validation (CQC)
+Compares your station against trusted nearby WeatherXM stations using adaptive search radii (**25 km → 50 km → 100 km**):
 
-- Raw (16’’ or else depending on weather station’s specs)
-- Minute (1’ or 2’ depending on the parameter)
-- Hourly (aiming to reward each of 24 slots of a day)
+- **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Detects persistent multi-degree temperature bias or broken/drifting barometers that simple range checks cannot catch.
+- **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation estimates are **not** unfairly penalized for a steady altitude offset as long as they track hour-by-hour synoptic pressure changes accurately (they receive an informational `PRESSURE_OFFSET_ADVISORY` instead).
+- **Stuck Anemometer & Clogged Rain Gauge Checks:** Cross-checks zero wind during regional windy events and zero rain during regional storms against wet/windy neighbors.
 
-The following processes take place (excluding OBC):
+### 3. Deployment Classification & 2-Day Hysteresis
+Evaluates whether a station is deployed outdoors, indoors, or surrounded by heavy obstacles using daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics:
 
-- Re-framing the timescale of raw data at a fixed time interval (as raw data may not always be measured at a constant time-step)
-- Looking for time-slots with no data
-- Looking for constant data over a certain period (e.g., constant temperature over an hour, or constant wind speed/direction over an hour under freezing -or not- conditions)
-- Looking for unexpected jumps of consecutive raw data or averaged values of consecutive minutes
-- Calculating the percentage of valid data within a certain period (minute, hour)
+- **No more 7-day lag:** Unlike legacy QoD v1 (which used a trailing 7-day window and kept stations penalized for nearly a week after fixing an issue), QoD v3 runs daily with **2-day confirmation hysteresis**.
+- **2 consecutive days to confirm, 2 clean days to clear:** A single bad day emits an **advisory** flag only (zero deployment penalty). Two consecutive days of `INDOORS` or `BAD_DEPLOYMENT` confirm the penalty (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier). Once you fix the station, **2 consecutive clean days** clear the penalty.
+- **Sub-Zero Winter Protection:** When daily average temperature is `≤ 0°C`, freezing vetoes prevent false `INDOORS` or `WIND_STUCK` penalties caused by frozen anemometers.
 
-The final result is text/numerical annotations and percentage of valid data over each time-slot in raw/minute/hourly level. Validity for meteorological purposes may differ compared to validity for reward purposes. Thus, there is a final annotation of each hour slot for meteorological and reward purposes.
+### 4. Separation of QoD and Station Photo Verification (SPV)
+In QoD v3, **QoD measures purely meteorological data quality**. Station Photo Verification (**SPV**) is applied separately inside the [Reward Mechanism](/rewards/reward-mechanism) (for example, `SPV_INVALID` applies a `0.5×` reward multiplier in the rewarding pipeline without altering your station's underlying meteorological QoD score).
 
-## 2. Reference Check
-This part of Data Quality algorithm focuses on comparing the data of a weather station with:
+## Score-Reducing vs Advisory Annotations
 
-a. Another neighbouring reliable weather station of the WXM network<br></br>
-b. Another neighbouring reliable 3rd party weather station<br></br>
-c. 3rd party post-processed modelled weather data (a process similar to data assimilation)
+Not every annotation reduces your rewards. QoD v3 explicitly separates **score-reducing** flags from **advisory** (informational) flags:
 
-The Reference Check may be able to detect abnormal behaviour of the parameters measured by a station. 
-Such a control could give insight in the quality of both data and deployment 
-(e.g., temperature diurnal cycle of a station agrees with a reference timeseries, temperature of a station is usually higher because it is close to a chimney etc).
+| Category | Annotation Codes | Impact on QoD Score |
+|---|---|---|
+| **Score-Reducing (Sensor)** | `NO_DATA`, `OBC`, `SPIKE_INST`, `LONG_CONST`, `TEMP_DRIFT`, `PRESSURE_DRIFT`, `PROBLEMATIC_ILL_SENSOR` | Reduces the affected sensor's daily score |
+| **Score-Reducing (Deployment)** | `INDOORS_CONFIRMED` (`0×`), `BAD_DEPLOYMENT_CONFIRMED` (`0.5×`) | Reduces overall daily QoD after 2 consecutive confirmed days |
+| **Advisory / Informational** | `T_OVERHEAT`, `WIND_STUCK`, `BLOCKED_RAIN`, `PRESSURE_OFFSET_ADVISORY`, `PRESSURE_REFERENCE_UNCERTAIN`, `INDOORS` (day 1), `BAD_DEPLOYMENT` (day 1), `SPV_INVALID`, `SPV_OBSTRUCTION`, `NO_LOCATION`, `NO_ELEVATION`, `LOW_SUN`, `ISOLATED` | **No QoD penalty** — early warnings to help you inspect your station before hardware or placement degrades |
 
-### Comparative Quality Control (CQC)
-In order to apply this control we deploy the Comparative Quality Control (CQC), 
-which falls into an internal and external version depending on the type of data used for the analysis 
-(internal -using data owned by WXM- and external -using 3rd party data-). 
-Reference Check should run once per day together with Self Check.
-
-## 3. Deployment Status
-The Deployment Status control can be used as an identifier of the obstacles around a weather station. As solar irradiance and wind are parameters that are fairly sensitive to obstacle interventions, two different processes have been designed to determine the quality of deployment:
-
-a. Indoor Station Detector (ISD)<br></br>
-b. Solar Obstacle Detector (SOD)<br></br>
-c. Wind Obstacle Detector (WOD)
-
-Both processes require a long timeseries typically of a few weeks to a few months, thus they should run once per a few months or a year. 
-This means that the Deployment Status part of Data Quality algorithm can only be used to characterise the deployment of a weather station.
-
-### a. Indoors Station Detector (ISD)
-The purpose of this mechanism is to identify all the stations located in a house or a box.
-This process requires solar irradiance, latitude, longitude and day of the year.
-
-### b. Solar Obstacle Detector (SOD)
-This process examines the solar irradiance parameter comparing it with the theoretical solar irradiance expected for a given location and day of the year. Note that the theoretical solar irradiance is the total amount of solar irradiance that arrives at a horizontal surface on the Earth under clear sky conditions. 
-Because of that, a long period of data is required for detecting a totally clear-sky day. This method:
-
-- Detects a clear sky day
-- Compares theoretical and observed solar irradiance on a clear-sky day
-- Compares observed solar irradiance within a short period (e.g., a 5-day window), in order to find similarities (i.e., systematically decreased solar irradiance at a certain period of day)
-
-The limitations of this method are that:
-- Only south horizon of a station can be examined for obstacles
-- The solar angle is different from a season to another, thus different obstacles may be visible at different period of the year
-
-Despite of such limitations, it is still a useful method for detecting obstacles that may affect solar irradiance, but also the other parameters.
-
-### c. Wind Obstacle Detector (WOD)
-As wind is the most demanding (in terms of fulfilling the WMO deployment criteria) parameter, this method should be able to identify any significant obstacles around a weather station.
-
-The basic idea is that we collect measurements of significant wind (e.g., >5m/s) of all the 16 direction of wind and then we compare them with wind measurements of a reference station or post processed modelled data. Then, the directions at which wind speed is significantly underestimated are suspicious for obstacles.
-
-This mechanism can be used to characterise the general deployment of a weather station, but can also identify the directions that wind measurements may not be reliable.
+:::tip
+If you see an annotation on your station, open the **Health** tab in **[app.weatherxm.com](https://app.weatherxm.com)** or check the [Rewards Troubleshooting](/rewards/rewards-troubleshooting) guide for concrete fixes.
+:::
 
 ## Data Quality Threshold
-Data_Quality_Threshold is a rational number in the range [0,1]. 
-This number indicates the minimum Data Quality score a station must have on a given day in order to be eligible for rewards.
 
-## Data Quality Components Outcome
->![The Data Quality Components](image)
+Each day, a station's **Data Quality score** is a number in `[0, 1]`. Your daily reward scales directly with this score (combined with [Proof of Location](/rewards/proof-of-location), [Cell Capacity](/rewards/cell-capacity), and [Station Photo Verification](/weather-and-science/quality-mechanisms/spv-full-documentation)).
 
-:::note
-Data Quality score is a rational number in the range [0,1]
-:::  
+## Further Reading
 
-## References
+- [General QoD Description (QoD v3 & SPV)](/weather-and-science/quality-mechanisms/general-qod-description)
+- [Rewards Troubleshooting](/rewards/rewards-troubleshooting)
+- [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation)
 - [WeatherXM Network](https://weatherxm.network/)
-- [Data Quality Simplified - Medium article](https://medium.com/weatherxm/weatherxm-qod-quality-of-data-simplified-b5a42aee7367)
-- [Technical description of the process for Data Quality v1.0](https://docs.google.com/document/d/e/2PACX-1vR5UTaVXtmoXnbnpukE5ocFOcYjZAiuFH4mZU6Wgkj0OP7sAVYh5ep3PgMxyJe61uqaq9TAdHPbi-TU/pub)
 
 ---
 # Hardware Class
@@ -603,7 +642,7 @@ Canonical: https://docs.weatherxm.com/rewards/how-to-join-arbitrum-and-see-your-
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/how-to-join-arbitrum-and-see-your-tokens.md
 
 :::tip
-If you don’t have a wallet, [create one](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) which is recommended if you want to see test tokens.
+If you don’t have a wallet yet, [create one first](/mobile-app/wallet/add-edit-wallet-address#how-to-create-wallet-on-metamask) so you can connect it and claim your `$WXM` rewards on Arbitrum One.
 :::
 
 ## Add Arbitrum One Network to Metamask
@@ -669,7 +708,7 @@ PoL is a dynamic value, and is recalculated every time a station’s location is
 ### Calculation:
 Currently, PoL is calculated daily using Location Packets.
 - For M5, D1 and Pulse, at least one accurate Location Packet from the previous day is required to determine the Location.
-- For H1 stations, at least one accurate Location Packet from the previous day is required to determine the Location, if no Location Packets are available, the PoL algorithm will rely on data from the day before.
+- For H1 and H2 (Helium / LoRaWAN) stations, at least one accurate Location Packet from the previous day is required to determine the location; if none is available, the PoL algorithm falls back to data from the day before.
 
 ## Relocation
 It is important for the Network that a station remains at the same location throughout its lifetime.
@@ -695,17 +734,19 @@ Markdown: https://docs.weatherxm.com/llms-pages/rewards/reward-boosts.md
 
 **Reward Boosts** reward stations with extra $WXM tokens for meeting specific criteria. 
 
-So far the following **Reward Boosts** are scheduled to be implemented:
+The following **Reward Boost** programs have been implemented:
 
-## Beta Rewards
+## Beta Rewards (Completed — Historical)
 
-According to the [Token Allocation table](https://weatherxm.network/docs/wxm-token.html#token-allocation), 3M $WXM are reserved to reward stations that participated to the network before the Mainnet Launch Day ("Beta period").
+:::info Completed Program
+The Beta phase ended on **May 27, 2024 (UTC)** and the 425-day Beta Rewards distribution has completed. This section is kept for historical reference.
+:::
 
-Beta rewards distribution will last 425 days.
+According to the [Token Allocation table](/tokenomics), 3M `$WXM` were reserved to reward stations that participated in the network before Mainnet Launch ("Beta period") over a 425-day distribution schedule.
 
 ### Calculation
 
-The following calculations will take place for each station, the day before the Mainnet Launch:
+For each eligible station prior to Mainnet Launch:
 
 $$RewardableBetaHours[i]$$: This is the total number of hours the station provided valid data during the Beta period.
 A rewardable hour is an hour during which the station sent at least one valid weather data point.
@@ -795,295 +836,135 @@ Markdown: https://docs.weatherxm.com/llms-pages/rewards/reward-mechanism.md
 ## Introduction
 
 :::info
-The Reward Mechanism is currently at **version 2.0**. This page serves as both an informational resource about its current status and a how we got here.
+WeatherXM runs **Reward Mechanism v2.0** on Arbitrum One, combining daily **QoD v3** meteorological scoring, **Proof of Location (PoL)**, **Station Photo Verification (SPV)**, **Cell Capacity (CC)**, **Business Boosts**, and verifiable **Merkle Tree** claims via **[claim.weatherxm.com](https://claim.weatherxm.com)**.
 :::
 
-The Reward Mechanism has undergone a progressive evolution across its versions, each iteration introducing refinements to bolster fairness and transparency in the rewarding process for weather station owners contributing data to the network.
+Every day, the Reward Mechanism evaluates all claimed weather stations for the previous UTC day, allocates daily base rewards and any active boost rewards to each owner's connected wallet, and publishes a Merkle root on-chain to the **RewardPool** smart contract. Station owners can inspect their daily breakdown in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or Mobile App, and withdraw accumulated `$WXM` tokens whenever they choose.
 
-- In its inaugural version (v1.0), the mechanism primarily gauged a station's eligibility based on its connection status to the network and the requirement for active wallet ownership, resulting in a somewhat simplistic reward calculation. In this version, the users received in a daily basis the WXM testnet rewards at their wallets.
-- The subsequent release, v1.5, marked a significant advancement by expanding the criteria for reward eligibility. This version incorporated additional factors such as the Data Quality, Proof-of-Location (PoL), Hardware-Classes (HC) and the Cell-Capacity (CP). 
- These additions contributed to a more sophisticated and equitable system, ensuring that rewards were allocated based on data quality, accurate location proof, and user engagement. 
-- The third iteration, v2.0, will introduce substantial enhancements, including the incorporation of Business Boost rewards and the implementation of a Merkle Tree structure for transparent reward distribution. The utilization of Merkle Tree will lead users in withdrawing, whenever they choose to do, their rewards from the smart contract.
- Business Boost rewards added an additional layer of fairness by incorporating predefined criteria, while the Merkle Tree structure facilitated a verifiable and transparent mechanism for users to validate the distribution of their rewards.
- This evolutionary trajectory underscores a commitment to refining the Reward Mechanism, making it more inclusive, nuanced, and transparent to build trust among weather station owners participating in the network.
+## Daily Rewards Calculation Process
 
-## Reward mechanism v2.0
+Each daily run executes four phases:
 
-The Reward Mechanism v2.0 is the latest iteration of the rewarding mechanism. It is a significant advancement over the previous version, v1.5, and it introduces the following enhancements:
+1. **Base Rewards Calculation**
+2. **Reward Boosts Calculation**
+3. **Cumulative Rewards Allocation (per Wallet)**
+4. **Merkle Tree Generation & On-Chain Root Submission**
 
-### High-level flow
+### 1. Base Rewards Calculation
 
-Every day, the reward algorithm assesses the performance of all weather stations, calculates additional rewards originating from Business Boost use cases, bundles them together with the users' wallet addresses, and creates a Merkle Tree, the root hash of which is submitted to the RewardPool.
+To be eligible for daily base rewards, a station must meet three baseline criteria:
 
-Users have the option to withdraw their rewards either by accessing the Merkle proof on the WeatherXM Platform or by retrieving the Merkle proof from IPFS and programmatically initiating the procedure. At any given time users have the flexibility to withdraw any amount they desire, provided it does not exceed the total allocated amount.
+- **Connected EVM Wallet:** The station owner has an active EVM (`0x…`) wallet address configured in **[app.weatherxm.com/profile](https://app.weatherxm.com/profile)** or the Mobile App. (If no wallet is set, daily rewards are not allocated.)
+- **Data Quality (QoD v3) ≥ `data_quality_threshold`:** Daily meteorological data quality score (`0` to `1`) produced by [QoD v3](/rewards/data-quality).
+- **Proof of Location (PoL) ≥ `pol_threshold`:** Daily location verification score (`0` to `1`) produced by [Proof of Location](/rewards/proof-of-location).
 
-### Daily Rewards Calculation Process
+#### Scoring Factors
 
-The Reward Mechanism calculates the amount of tokens that will be allocated to users by completing the following phases:
+- **[Data Quality (QoD v3)](/rewards/data-quality):** Evaluates meteorological reliability via self-sanity checks, spatial neighbor cross-validation (`25–100 km`), and 2-day deployment hysteresis (`INDOORS_CONFIRMED` sets `qod_score = 0`; `BAD_DEPLOYMENT_CONFIRMED` applies `0.5×`).
+- **[Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation):** Applied directly inside the Reward Mechanism (separate from meteorological QoD). Stations with invalid SPV (`SPV_INVALID`) receive a `0.5×` reward multiplier until valid installation photos are approved.
+- **[Proof of Location (PoL)](/rewards/proof-of-location):** Verifies that GPS/location packets match the declared station location. Relocating a station triggers a temporary relocation penalty and resets cell seniority.
+- **[Hardware Class (HC)](/rewards/hardware-class):** Groups approved weather station bundles (`M5`, `D1`, `Pulse`, `Helium H1/H2`). Currently all Hardware Classes carry equal weight (`1.0`).
+- **[Cell Capacity (CC)](/rewards/cell-capacity):** Each H3 resolution-7 cell has a maximum number of rewardable stations (`capacity`). If more than `capacity` eligible stations are active in a cell, stations are ranked first by `reward_score` and then by seniority (`claimedAt`), and only the top `capacity` stations earn base rewards.
 
-1. Base Rewards calculation
-2. Business Boost Rewards calculation
-3. Cumulative Rewards calculation
-4. Merkle Tree creation
+#### Daily Calculation Flow
 
-Let's take a deep dive into each one of these.
-
-#### 1. Base Rewards calculation
-
-Base rewards calculation follows the **Actual Rewards Calculation** already introduced in **Reward Mechanism v1.5**.
-
-#### 2. Business Boost rewards calculation
-
-The business boost use cases reward specific devices with a predefined amount of tokens from the Business Development Pool for a period of time. In this phase, all business boost rewards are calculated for each active business boost use case and they are assigned to the eligible devices.
-
-#### 3. Cumulative Rewards Calculation
-
-In the third phase of the rewarding mechanism, the cumulative rewards per user are calculated. The cumulative rewards are the sum of all base and business boost rewards that each user's weather station  owns.
-
-```
-cumulative_rewards_per_customer = sum(base_reward[i] + business_boost_reward[i]), i = 1..n where n = total number of devices per user
-```
-
-#### 4. Merkle Tree Creation
-
-In the final phase, the cumulative rewards coupled with the users' wallet addresses are utilised to create the Merkle tree. The root hash of the Merkle tree is submitted daily in the smart contract to enable $WXM rewards withdrawal by the users.
-
-#### Pseudocode
-
-To sum up all of the above in pseudocode:
-
-```
-// base reward
-rewardable = {
-  'Helium': {
-    count: 0,
-    weight: 0.9,
-    devices: []
-  },
-  'M5': {
-    count: 0,
-    weight: 1.1,
-    devices: []
-  }
-}
-
+```text
+// 1. Evaluate eligibility & reward score per station
 for cell in cells:
-  cell_devices = []
+  eligible = []
   for device in cell:
     if isEmpty(device.owner.wallet):
-      device.reward_score = 0
       device.reward_reason = 'NO_WALLET'
-      device.base_reward = 0
       continue
-    if data_quality_score < data_quality_threshold:
-      device.reward_score = 0
+    if device.qod_score < data_quality_threshold:
       device.reward_reason = 'DATA_QUALITY_THRESHOLD'
-      device.base_reward = 0
       continue
-    if pol_score < pol_threshold:
-      device.reward_score = 0
+    if device.pol_score < pol_threshold:
       device.reward_reason = 'POL_THRESHOLD'
-      device.base_reward = 0
       continue
-    device.reward_score = reward_algorithm(device.pol_score, device.data_quality_score)
-    cell_devices.push(device)
-    rewardable[device.hardware_class].count += 1
-    rewardable[device.hardware_class].push(device)
 
-  cell_devices.sort( (x, y):  
-    if x.reward_score == y.reward_score:
-      return x.claimedAt - y.claimedAt
-    return y.reward_score - x.reward_score 
+    spv_multiplier = 0.5 if device.spv_status == 'SPV_INVALID' else 1.0
+    device.reward_score = device.pol_score * device.qod_score * spv_multiplier
+    eligible.push(device)
+
+  // 2. Enforce Cell Capacity (ranked by reward_score, tie-break by claimedAt seniority)
+  eligible.sort((a, b) =>
+    a.reward_score == b.reward_score ? a.claimedAt - b.claimedAt : b.reward_score - a.reward_score
   )
 
-  for (device, i) in cell_devices:
-    device.bb_reward = 0
-    if i >= cell.capacity:
+  for (device, rank) in eligible:
+    if rank >= cell.capacity:
       device.reward_score = 0
       device.reward_reason = 'MAX_CAPACITY_REACHED'
       device.base_reward = 0
+    else:
+      rewardable[device.hardware_class].push(device)
 
-total_weights = 0
-for key in rewardable.keys:
-  hc = rewardable[key]
-  total_weights += hc.count * hc.weight 
-
-for key in rewardable.keys:
-  hc = rewardable[key]
-  hc.max_rewards = daily_emission * hc.weight / total_weights 
+// 3. Allocate daily emission across rewardable stations by Hardware Class weight
+total_weights = sum(hc.count * hc.weight for hc in rewardable)
+for hc in rewardable:
+  hc.max_reward = daily_emission * hc.weight / total_weights
   for device in hc.devices:
-    device.base_reward = device.reward_score * hc.max_rewards
+    device.base_reward = device.reward_score * hc.max_reward
 
-// business boost
-for bb in business_boosts:
-  for device in bb.devices:
-    device.bb_reward += bb.daily_reward
+// 4. Add active Reward Boosts (e.g., Cell Bounties, Compensation Rewards)
+for boost in active_boosts:
+  for device in boost.devices:
+    device.boost_reward += boost.daily_reward
 
-// cumulative calculation
+// 5. Sum per active wallet & submit Merkle root on-chain
 for user in users:
-  daily_cumulative_rewards = 0
-  for device in user.devices:
-    daily_cumulative_rewards = device.bb_reward + device.base_reward
-  if not user.active_wallet:
-    continue
-  user.wallets[user.active_wallet] = daily_cumulative_rewards
+  if user.active_wallet:
+    wallet_cumulative[user.active_wallet] += sum(d.base_reward + d.boost_reward for d in user.devices)
 
-// merkle tree
-tree = []
-for user in users:
-  for wallet in wallets:
-    tree.push([wallet, user[wallet].cumulative])
-
-// blockchain tx
-submit(tree.root_hash())
+submit_merkle_root(build_merkle_tree(wallet_cumulative))
 ```
 
-### Withdrawing Rewards
+### 2. Reward Boosts Calculation
 
-Station owners have the freedom to withdraw their rewards at their discretion, without any time restrictions or other limitations.
+In addition to base rewards, eligible devices can earn extra `$WXM` tokens from active [Reward Boosts](/rewards/reward-boosts) (such as **Cell Bounties** or **Compensation Rewards**), funded from the Business Development Pool.
 
-Each owner may initiate the withdrawal process by signing a transaction using the private key that corresponds to the blockchain address they have connected to their station. A user-friendly front-end that can be used in conjunction with a wallet like Metamask will be provided, but station owners can also interact programmatically with the **RewardPool** smart contract to withdraw their rewards directly.
+### 3. Cumulative Rewards & Merkle Tree Distribution
 
-### Smart Contracts and Rewarding Mechanism
+All daily base and boost rewards are accumulated per connected wallet address. A Merkle Tree of `(wallet, cumulative_amount)` leaves is constructed daily and its root hash is submitted on-chain to the **RewardPool** smart contract on Arbitrum One.
 
-The smart contracts and wallets associated with the rewarding mechanism are the following:
+## Withdrawing Rewards
 
-* `WeatherXM`: ERC20 token
-* `RewardPool`: smart contract holding users' allocated $WXM rewards
-* `RewardVault`: smart contract holding the total amount of $WXM rewards to be allocated
-* `BusinessDevelopmentPool`: wallet holding all $WXM leftovers from daily rewards
+Station owners can claim any portion of their accumulated rewards at any time — with no lockups or expiry — via:
 
-The lifecycle of rewards from the rewarding mechanism to the users' wallets:
+- **[claim.weatherxm.com](https://claim.weatherxm.com/)** (desktop/mobile browser with MetaMask or WalletConnect)
+- **WeatherXM Mobile App** (My Profile → Claim)
+- Direct interaction with the **RewardPool** smart contract using Merkle proofs.
 
-* The **Reward Mechanism** calculates all rewards and allocates them to **RewardPool**
-* The **RewardPool** holds all allocated rewards
-* The **RewardVault** funds the **RewardPool** with the daily emission of $WXM
-* The **Business Development Pool** funds daily the **RewardPool** with the business boost of $WXM
-* The station owners withdraw their rewards programmatically or through the WeatherXM Platform by interacting with the **RewardPool**
+See the step-by-step **[How to Claim Rewards](/rewards/rewards-claiming)** guide.
 
-## Reward mechanism v1.5 
-This section describes the updated **Reward Mechanism** that will be used to allocate $WXM rewards to station owners for contributing weather data to the network. (deprecated)
+## Smart Contracts Architecture
 
-:::note Important Notes
-* Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-* Criteria that should be met for a weather station to be rewardable:
-  * Data quality over data_quality_threshold
-  * PoL over pol_threshold
-  * weather station’s owner should have an active wallet
+- **`WeatherXM` (`$WXM`):** ERC-20 token contract on Arbitrum One (`0xb6093b61544572ab42a0e43af08abafd41bf25a6`).
+- **`RewardPool`:** Smart contract holding allocated `$WXM` rewards and verifying Merkle proofs on withdrawal.
+- **`RewardVault`:** Smart contract holding the emission pool that funds `RewardPool` daily.
+- **`BusinessDevelopmentPool`:** Wallet funding active Boost programs and holding unallocated daily leftovers.
 
-:::
+## Historical Versions (Deprecated)
 
-### Daily Rewards Calculation Process
-The Reward Mechanism calculates the amount of tokens that will be distributed to users by completing the following phase:
+<details>
+<summary>Reward Mechanism v1.5 &amp; v1.0 (Pre-Mainnet / Historical Reference)</summary>
 
-#### Actual Rewards calculation
-Actual rewards are calculated taking into account the performance of the weather station for the previous day. 
+- **Reward Mechanism v1.5 (Deprecated):** Introduced Data Quality (`v1.0`), Proof-of-Location (PoL), Hardware Classes (HC), and Cell Capacity (CC) for daily base reward scoring (`reward_score = pol_score * data_quality_score`), prior to Merkle Tree withdrawals, Business Boosts, and SPV integration.
+- **Reward Mechanism v1.0 (Deprecated — Testnet):** Initial testnet mechanism that distributed daily testnet tokens via bulk transfers based solely on hourly connectivity (`reward_score = hours_with_data / 24`) and having a connected wallet.
 
-This is a short summary of the criteria used:
+</details>
 
-* **Proof-of-Location (PoL)**: An algorithm that evaluates the data about the location of the weather station, its accuracy, consistency, and unison with the location the owner registered on the weather station claiming. 
-It generates a score that denotes confidence about the weather station's location. WeatherXM places great importance on station continuity, necessitating that a station remains stationed at a single location. 
-When a weather station undergoes relocation, its PoL score reduces to 0 and its seniority in the Cell is reset, aiming to discourage frequent movements and sustain a stable Network. Read more about the [Proof of Location (PoL) mechanism](/rewards/proof-of-location).
+## Related Guides
 
-* **Data Quality**: An algorithm that evaluates the quality of weather data provided by a weather station. It generates a score that denotes the confidence about the quality of the weather data for each weather station.
- WeatherXM values weather stations that produce meaningful and usable data and the Data Quality score is an attempt to quantify this metric. The end goal is to encourage weather station owners to do their best to comply with WeatherXM's 
- guidelines in order to consistently achieve the best Data Quality score possible. Read more about the [Data Quality algorithm](/rewards/data-quality).
-
-* **Hardware-Class (HC)**: Each type of approved hardware (weather station) belongs to a specific Hardware Class. Hardware Classes are used to award more tokens to weather stations that have special capabilities, 
-increased sensor accuracy or range, new sensor types, or other capabilities that make them more valuable to the network. For the time being all Hardware Classes are considered equal. Read more about the [Hardware class](/rewards/hardware-class).
-
-* **Cell Capacity (CC)**: Each cell has a pre-defined **cell capacity** that depends on its geospatial characteristics. The cell's **capacity** is the maximum number of stations that may receive rewards in a specific cell. 
-If `N` weather stations are active in a cell with a capacity `X` during a specific day, with `N > X`, only the first `N` stations (ordered first by **reward_score**, then by seniority) will receive rewards. Read more about the [Cell Capacity (CC)](/rewards/cell-capacity).
-
-We will split the process into 5 distinct steps in an attempt to make everything as clear as possible. 
-
-a. The following variables have known values at the start of each day:
-
-* `daily_emission`: the amount of tokens that are available for allocation on the given day
-* `weight_per_hardware_class`: the number denoting how important an HC is compared to all the other HC
-* `pol_threshold`: the number denoting the cut-off threshold for PoL: weather stations with `pol_score`` < pol_threshold` are **excluded** from rewarding
-* `data_quality_threshold`: the number denoting the cut-off threshold for Data Quality: weather stations with `data_quality_score < data_quality_threshold` are **excluded** from rewarding
-* `capacity` per cell: the maximum number of weather stations that will be rewarded in a cell - the rest are **excluded** from rewarding
-
-b. To calculate the rewardable count of devices per **HC**:
-
-* we exclude weather stations that are owned by users with no wallet address specified
-* we count the weather stations with **data_quality_score** and **pol_score** over the respected specified thresholds, `data_quality_threshold`, `pol_threshold` The number of stations that pass this evaluation are eligible for rewards.
-
-c. To calculate the **max_reward_per_hardware_class (MRPHC)**:
-
-```
-total_weights = sum(rewardable_count_per_hardware_class[i] * weight_per_hardware_class[i]), i = 1..n, where n = total number of HC
-```
-
-For every HC:
-
-```
-tokens_per_hardware_class = daily_emission * (rewardable_count_per_hardware_class * weight_per_hardware_class) / total_weights
-
-max_reward_per_hardware_class = tokens_per_hardware_class / rewardable_count_per_hardware_class
-```
-
-d. To calculate the **reward_score** and **actual_reward**:
-
-```
-reward_score = pol_score * data_quality_score
-
-actual_reward = reward_score * max_reward_per_hardware_class
-```
-
-e. To identify overcrowded cells and decide which of the weather stations will be excluded from rewarding:
-
-* we iterate over available cells and check whether it is overcrowded
-* in case it is indeed overcrowded, we sort the neighbouring weather stations first by `reward_score` and then by seniority (`claimed_time`). Only the `N` first will be rewarded, where `N = capacity`
-
-## Reward mechanism v1.0
-
-The first iteration of **Reward Mechanism** operates in the following way: only taking into account whether or not a station is connected to the network. (deprecated)
-
-The reward distribution mechanism has two parts:
-  - **The reward algorithm** which calculates the `actual_reward` for each weather station by evaluating its weather data for the previous day
-  - The daily **reward distribution** of rewards to the station owners
-
-:::note Important
-Connecting a wallet is mandatory to receive rewards. If a user has not connected a wallet, the rewards will be lost.
-:::
-
-### How Often does the Reward Algorithm run?
-The algorithm runs every day to reward weather stations that were actively sending data to the network for the previous day.
-
-### Calculation of the Reward Score
-`reward_score = array_of_hourly_weather_data / 24`
-
-### Explanation
-In the calculation of the `reward_score` step, the algorithm takes into account the weather data for each hour of the previous day for any given weather station.
-  - If the weather station has successfully sent data for each hour of the previous day, then the algorithm's input is an array of 24 objects,
-   with each object being the station's weather data.
-  - If the weather station hasn't sent any weather data for 1 or more hours the previous day, then the algorithm's input is an array of (`24 - X`) objects,
-  with each object being the station's weather data and `X` being the number of hours that the station hasn't communicated with our system.
-
-That input is then being used by dividing its length by 24 (the maximum hours per day) to get a `reward_score` of `0.0` to `1.0`.
-
-After the calculation of the `reward_score` step, the algorithm takes the `reward_score` for any given weather station in our network, multiplies it with the `max_daily_reward` that the weather
-station can get, and the result is the amount of WXM tokens that the algorithm distributes to the user who owns that weather station.
-
-The formulas which are used to calculate the daily reward per weather station is the following:
-```
-rewardable_count = Count(all_provisioned_weather_stations)
-max_daily_reward = daily_emission / rewardable_count
-weather_station_reward = reward_score * max_daily_reward
-```
-### Reward Distribution Mechanism
-All daily `actual_reward` per weather station are transferred to the wallet address already set by the user.
-This is a bulk transfer operations which happens once in a daily schedule and as a result the users get their daily rewards to their wallets.
-Due to blockchain limitations on the number of atomic transfer transactions that may take place with each bulk transfer, as many as needed bulk transfers can be executed for the purpose of everyone getting the daily rewards.
-
-## Links
-- [WeatherXM Network](https://weatherxm.network/)
-- [Data Quality algorithm](/rewards/data-quality)
-- [Proof of Location (PoL) mechanism](/rewards/proof-of-location)
+- [Data Quality (QoD v3)](/rewards/data-quality)
+- [Proof of Location (PoL)](/rewards/proof-of-location)
+- [Station Photo Verification (SPV)](/weather-and-science/quality-mechanisms/spv-full-documentation)
 - [Cell Capacity (CC)](/rewards/cell-capacity)
-- [Hardware class](/rewards/hardware-class)
+- [Hardware Class](/rewards/hardware-class)
+- [Reward Boosts](/rewards/reward-boosts)
+- [How to Claim Rewards](/rewards/rewards-claiming)
+- [Rewards Troubleshooting](/rewards/rewards-troubleshooting)
 
 ---
 # How to Claim Rewards
@@ -1091,8 +972,7 @@ Canonical: https://docs.weatherxm.com/rewards/rewards-claiming
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/rewards-claiming.md
 
 :::tip
-Allocated and claimed tokens displayed in our mobile apps, are only those linked to your current wallet.
-This does not include any wallets you may have used in the past.
+Allocated and claimed tokens displayed in the **[WeatherXM Web App](https://app.weatherxm.com)** and Mobile Apps are only those linked to your **currently connected wallet**. This does not include rewards allocated to wallets you may have used in the past.
 :::
 
 ## Prerequisites for claiming rewards
@@ -1191,7 +1071,11 @@ However, once on Arbitrum you can enjoy lower gas fees. Once the amount is corre
 Canonical: https://docs.weatherxm.com/rewards/rewards-troubleshooting
 Markdown: https://docs.weatherxm.com/llms-pages/rewards/rewards-troubleshooting.md
 
-A guide to interpreting mobile app error messages, understanding their meanings, and taking appropriate actions to resolve them.
+A guide to interpreting **WeatherXM Web App (`app.weatherxm.com`)** and **Mobile App** error messages and QoD v3 annotations, understanding their meanings, and taking appropriate actions to resolve them.
+
+:::tip Quick Hardware Check in the Web App
+Before troubleshooting manually, open your station in **[app.weatherxm.com](https://app.weatherxm.com)** and check the **Health** tab. It separates **Outdoor Station** health from **Gateway** health, displays your signal chain, battery, firmware, and GPS lock, and lets you copy a diagnostic summary for Support in one click.
+:::
 
 ## No wallet
 
@@ -1346,10 +1230,34 @@ If the battery is low, the connection between your station and the WG1000 gatewa
 
 <hr/>
 
-## Bad Station Deployment
+## Bad Station Deployment (`INDOORS_CONFIRMED` / `BAD_DEPLOYMENT_CONFIRMED`)
 
-It appears that your weather station could benefit from some improvements in terms of its deployment. The [Data Quality algorithm](/rewards/data-quality) evaluates all data packet received by a weather station every day, so a proper installation becomes mandatory to receive the maximum amount of rewards.
-We recommend that you take a look at our [Deployment Examples](/wxm-devices/deployment-examples) and [Best Practices](/wxm-devices/m5/install-weather-station#best-practices-for-proper-station-installation) for inspiration on how and where to install your station.
+It appears that your weather station could benefit from improvements in its physical deployment. Under **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)**, deployment classifications use **2-day confirmation hysteresis**:
+- A single anomalous day produces an **advisory** warning (`INDOORS` or `BAD_DEPLOYMENT`) with **no score penalty**.
+- **2 consecutive days** confirm the classification (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier).
+- Once you improve the placement (for example, moving the station outdoors or raising the mast clear of nearby obstacles), **2 consecutive clean days** clear the penalty automatically — no 7-day wait.
+
+We recommend checking our [Deployment Examples](/wxm-devices/deployment-examples) and [Best Practices](/wxm-devices/m5/install-weather-station#best-practices-for-proper-station-installation) for guidance on proper outdoor siting.
+
+<hr/>
+
+## QoD v3 Sensor Drift & Advisory Annotations
+
+QoD v3 cross-validates your station against nearby trusted stations (`25–100 km`) and separates **score-reducing** codes from **advisory** warnings:
+
+#### Temperature Drift (`TEMP_DRIFT`)
+Your temperature readings show a persistent bias compared to nearby trusted stations. Check that the station is not mounted directly above an air-conditioning exhaust, chimney, or heat-trapping dark surface, and verify the radiation shield is clean and unobstructed.
+
+#### Pressure Drift (`PRESSURE_DRIFT`)
+Your barometer either reported physically impossible values or failed to track hour-by-hour synoptic pressure changes seen by nearby stations. Try a full **power cycle**; if `PRESSURE_DRIFT` persists across multiple days, contact [Support](https://support.weatherxm.com).
+
+#### Advisory Codes (No QoD Penalty)
+The following QoD v3 annotations are **informational only** and do **not** reduce your daily QoD score, but are worth inspecting early:
+- **`T_OVERHEAT`:** Midday solar overheating signature — consider raising the mast further from hot roof/wall surfaces.
+- **`PRESSURE_OFFSET_ADVISORY`:** Steady altitude or console offset while accurately tracking synoptic pressure changes (no penalty; common on highland stations).
+- **`WIND_STUCK` / `BLOCKED_RAIN`:** Suspected stuck anemometer or clogged rain funnel compared to nearby windy/wet stations — inspect the wind cups/vane and clean the rain collector funnel.
+
+For the full list of active annotation codes, see **[QoD v3 Full Documentation](/weather-and-science/quality-mechanisms/qod-v3-documentation#6-complete-qod-v3-annotation-code-reference)**.
 
 <hr/>
 
@@ -1852,16 +1760,22 @@ Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mech
 
 # Quality Mechanisms
 
-In this section, all the available quality mechanisms are fully described.
+This section documents the meteorological quality mechanisms used by WeatherXM to evaluate station telemetry and physical deployments.
 
-## Contents
+## Current Mechanisms (Active)
 
-- [**General QoD Description (OBC-SQC, ISD, SPV)**](/weather-and-science/quality-mechanisms/general-qod-description): General and brief description of all the available quality mechanisms.
-- [**Indoors Station Detector (ISD)**](/weather-and-science/quality-mechanisms/isd-full-documentation): Full documentation of the Indoors Station Detector (ISD), which is the mechanism that detects stations placed indoors, but also some other problematic situations.
-- [**OBC and SQC Annotations**](/weather-and-science/quality-mechanisms/obc-sqc-annotations): Description of the annotations produced by the OBC-SQC quality mechanism.
-- [**Out-of-Bounds (OBC) and Self Quality Checks (SQC)**](/weather-and-science/quality-mechanisms/obc-sqc-documentation): Full documentation of the Out-of-Bounds Check (OBC) and Self-Quality-Check (SQC) mechanism, which focuses on the detection of suspicious data in the transmitted raw data.
-- [**OBC and SQC Score Calculation**](/weather-and-science/quality-mechanisms/obc-sqc-score-calculation): The method of the final daily OBC-SQC score calculation.
-- [**Station Photo Verification (SPV)**](/weather-and-science/quality-mechanisms/spv-full-documentation): Full documentation of the Station Photo Verification (SPV) mechanism, which aims to evaluate the station deployments via photos.
+- [**General QoD Description (QoD v3 & SPV)**](/weather-and-science/quality-mechanisms/general-qod-description): High-level overview of how WeatherXM evaluates weather data quality and station deployments.
+- [**QoD v3 Full Documentation**](/weather-and-science/quality-mechanisms/qod-v3-documentation): Complete technical specification of the active **QoD v3** (`version 3.0.0`) engine — self-sanity checks, spatial neighbor cross-validation, elevation-safe synoptic pressure tracking, 2-day hysteresis state machine, and annotation reference.
+- [**Station Photo Verification (SPV)**](/weather-and-science/quality-mechanisms/spv-full-documentation): Full documentation of the Station Photo Verification (SPV) mechanism for evaluating station deployments via installation photos.
+
+## Legacy Documentation (QoD v1 — Historical Reference)
+
+The pages below document the original **QoD v1** (`0.0.5`) pipeline (OBC-SQC and 7-day rolling ISD), retained for historical reference:
+
+- [**Indoors Station Detector (ISD) — Legacy v1**](/weather-and-science/quality-mechanisms/isd-full-documentation)
+- [**OBC and SQC Annotations — Legacy v1**](/weather-and-science/quality-mechanisms/obc-sqc-annotations)
+- [**Out-of-Bounds (OBC) and Self Quality Checks (SQC) — Legacy v1**](/weather-and-science/quality-mechanisms/obc-sqc-documentation)
+- [**OBC and SQC Score Calculation — Legacy v1**](/weather-and-science/quality-mechanisms/obc-sqc-score-calculation)
 
 ---
 # SQC - Constancy Analysis Report
@@ -1904,89 +1818,91 @@ RH exhibits a capacity to remain constant for significantly longer durations com
     The scatter points are coloured based on the median relative humidity observed during the same constancy period.
 
 ---
-# General QoD Description (OBC-SQC, ISD, SPV)
+# General QoD Description (QoD v3 & SPV)
 Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/general-qod-description
 Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/general-qod-description.md
 
-# General QoD Description (OBC-SQC, ISD, SPV)
+# General QoD Description (QoD v3 & SPV)
 
-At the moment, there are three data quality mechanisms being applied at WeatherXM. These mechanisms are designed to assess both the quality of the data itself and the status of the station deployments. Each mechanism follows a different approach to evaluate the reliability of a station’s data, and they ultimately work complementarily, contributing to a more comprehensive evaluation of each station. Although the final result of these data quality mechanisms affects user rewards, their primary objectives are:
-- To determine which stations produce data reliable enough to be used internally by the company, as well as by third-party companies and organizations as a product.
-- To motivate users to improve their deployments, aiming for the highest possible measurement quality.
-- To ensure that the data is of high enough quality to be used for improving the weather forecasts that WeatherXM produces at station locations.
+WeatherXM evaluates station data reliability and deployment quality using two complementary mechanisms:
 
-Currently, the following three data quality mechanisms are used to classify and assess stations and their data:
-- Out-of-Bounds Check (OBC) and Self Quality Check (SQC)
-- Indoors Station Detector (ISD)
-- Station Photo Verification (SPV)
+- **Quality of Data (QoD v3):** A daily, deterministic meteorological quality engine that evaluates sensor telemetry, cross-validates readings against nearby trusted stations, and classifies deployment quality with 2-day confirmation hysteresis.
+- **Station Photo Verification (SPV):** A human-reviewed evaluation of installation photos submitted by the station owner against World Meteorological Organization (WMO) siting guidelines.
 
-## Out-of-Bounds Check (OBC) and Self Quality Check (SQC)
+Although both mechanisms affect daily rewards, their primary objectives are:
+- To determine which stations produce data reliable enough for internal WeatherXM analytics as well as third-party B2B/enterprise weather products.
+- To motivate station owners to improve their deployments and maintain healthy sensors.
+- To ensure observations are high enough quality to improve hyperlocal weather forecasts.
 
-Both OBC and SQC aim to detect suspicious data at the raw, minute, and hourly level. This means that these mechanisms can identify unusual variations in different station parameters caused by faulty deployments or malfunctioning sensors, when such variations occur and when the prevailing meteorological conditions allow them to be detected.
+## Quality of Data (QoD v3)
 
-For example, a sudden temperature change caused by using a very short mast that keeps the station too close to the surface of a rooftop will be detected primarily on a calm day with alternating sunshine and cloud cover. Under such conditions, the station will record very abrupt temperature changes; otherwise, detection would not be possible.
+**QoD v3** (`version 3.0.0`) runs once per day for the previous UTC day and evaluates all seven meteorological parameters (temperature, humidity, pressure, wind speed, wind direction, precipitation, and solar irradiance/illuminance). It combines three layers into a single daily meteorological `qod_score` (`0` to `1`):
 
-OBC and SQC therefore flag specific raw data points that appear suspicious (they do not label an entire deployment as problematic). These two mechanisms run within a unified algorithm every day, assessing the data from the previous day. The checks performed are as follows:
+### 1. Self-Sanity Checks (OBC & SQC)
+Evaluates each station's own telemetry stream at hardware-appropriate intervals:
+- **Out-of-Bounds (`OBC`):** Flags values outside physical or manufacturer specifications.
+- **Data Completeness (`NO_DATA`):** Measures missing telemetry relative to the station model's expected cadence.
+- **Gap-Aware Spikes (`SPIKE_INST`):** Flags physically unrealistic jumps between consecutive measurements.
+- **Flatline / Stagnation (`LONG_CONST`):** Detects sensors stuck at constant values over extended windows.
 
-**A. Out-of-Bounds Check**
-OBC is a simple process that involves identifying values that fall outside the specifications set by the manufacturer for each sensor. As an example, if the temperature sensor is able to measure within a temperature range of -60 to 60°C, then the value 80°C is considered as faulty.
+### 2. Spatial Neighbor Cross-Validation (CQC)
+Compares each station against trusted nearby WeatherXM stations across adaptive tiers (`25 km`, `50 km`, `100 km`):
+- **Temperature & Pressure Drift (`TEMP_DRIFT`, `PRESSURE_DRIFT`):** Catches persistent sensor bias and drifting barometers that remain inside manufacturer range limits.
+- **Elevation-Safe Synoptic Barometer Tracking:** Mountain stations or stations with coarse elevation metadata are not penalized for a constant altitude offset if they accurately track hour-by-hour synoptic pressure changes (`PRESSURE_OFFSET_ADVISORY`).
+- **Stuck Wind & Clogged Rain Checks (`WIND_STUCK`, `BLOCKED_RAIN`):** Flags anemometers reading zero during regional windy events and rain gauges reading zero during regional storms.
 
-**B. Self Quality Check (SQC)**
-This mechanism uses the data from the station itself (and therefore does not rely on third-party data for comparison) to detect unexpected changes in various parameters, which may be due either to poor placement of the weather station or to a malfunction in one of its sensors.
+### 3. Deployment Classification & 2-Day Hysteresis
+Replaces the legacy 7-day rolling ISD window with daily classification plus **2-day confirmation hysteresis**:
+- A single anomalous day emits an **advisory** flag only (`INDOORS` / `BAD_DEPLOYMENT`) with **zero penalty**.
+- **2 consecutive days** confirm the classification (`INDOORS_CONFIRMED` sets daily QoD to `0`; `BAD_DEPLOYMENT_CONFIRMED` applies a `0.5×` multiplier).
+- **2 consecutive clean days** clear the penalty once the deployment is fixed.
+- **Sub-zero winter protection (`avg_T ≤ 0°C`):** Prevents frozen anemometers in winter from triggering false `INDOORS` or `WIND_STUCK` penalties.
 
-The checks performed are:
-- **Check for stagnation** (lack of variability) in the parameters. For example, a constant recording of zero wind speed and an unchanging wind direction for six hours, combined with low relative humidity, is an indication that the station is located in a place where air circulation is not as expected, or that the anemometer has frozen (if the temperature has been &gt;0°C for several hours). 
-- **Check for suspicious spikes** over short time intervals, which may occur either due to poor station placement or because of a faulty sensor. For example, a temperature change &gt;3°C within 1 minute is considered unrealistic. If the station’s sampling interval is greater than 1 minute, the respective threshold is increased linearly, provided that the sampling rate remains below 10 minutes.
-- **Check for gaps in the data**. Each station model, according to its specifications, is capable of sending data packets at a specific time interval. If the number of packets received on an hourly basis is lower than the threshold set by the specifications, this indicates a problem in data transmission (e.g., poor 4G/Wi-Fi/Helium signal).
+For full thresholds, state transitions, and the complete annotation reference, see **[QoD v3 Full Documentation](/weather-and-science/quality-mechanisms/qod-v3-documentation)**.
 
-Similar checks (for stagnation and spikes), but with different time windows (based on WMO –[Guide to the Global Observing System (WMO-No. 488), pg.200](https://library.wmo.int/viewer/35699/?offset=#page=214&viewer=picture&o=search&n=0&q=suspicious)– guidelines as well as our [own data analysis](/weather-and-science/r&d/sqc-constancy-analysis-report.mdx)), are carried out for all parameters (see [full documentation](/weather-and-science/quality-mechanisms/obc-sqc-documentation)).
+Table 1. Key QoD v3 annotations and their impact on daily QoD score.
 
-Finally, the ratio of invalid to expected valid data is calculated on an hourly basis in order to determine the final score of successful meteorological observations.
+| QoD v3 Annotation | Short Description | Impact on QoD Score |
+|---|---|---|
+| `NO_DATA` | Missing packets below expected hardware cadence | **YES** (per-sensor) |
+| `OBC` | Sensor readings outside physical/manufacturer bounds | **YES** (per-sensor) |
+| `SPIKE_INST` | Unrealistic instantaneous jump between readings | **YES** (per-sensor) |
+| `LONG_CONST` | Sensor stuck at a constant value for too long | **YES** (per-sensor) |
+| `TEMP_DRIFT` | Persistent temperature bias vs nearby trusted stations | **YES** (temperature) |
+| `PRESSURE_DRIFT` | Broken/drifting barometer or failure to track synoptic pressure | **YES** (pressure) |
+| `PROBLEMATIC_ILL_SENSOR` | Corrupted or spiking solar/illuminance sensor | **YES** (illuminance) |
+| `INDOORS_CONFIRMED` | Confirmed indoor station (`2` consecutive days) | **YES** (`qod = 0`) |
+| `BAD_DEPLOYMENT_CONFIRMED` | Confirmed heavily obstructed deployment (`2` consecutive days) | **YES** (`qod × 0.5`) |
+| `INDOORS` / `BAD_DEPLOYMENT` | Single-day (day 1) deployment warning | **NO** (advisory) |
+| `T_OVERHEAT` | Midday radiative overheating signature | **NO** (advisory) |
+| `WIND_STUCK` / `BLOCKED_RAIN` | Suspected stuck anemometer or clogged rain gauge | **NO** (advisory) |
+| `PRESSURE_OFFSET_ADVISORY` | Steady altitude/console offset with good synoptic tracking | **NO** (advisory) |
+| `PRESSURE_REFERENCE_UNCERTAIN` | Missing/unverified elevation prevents sea-level pressure comparison | **NO** (advisory) |
+| `LOW_SUN` / `ISOLATED` | High-latitude low sun or `< 3` nearby peers within `100 km` | **NO** (informational) |
 
-## Indoors Station Detector (ISD)
-
-The ISD is a mechanism primarily aimed at identifying stations that are active but have not been placed outdoors. However, there is a range of other classifications that can be assigned to a station’s deployment status. The ISD mechanism runs once per day and evaluates the data from the entire previous day, but for the final evaluation result it also takes into account the outcomes from the last seven days in order to provide a fairer classification of the station’s deployment. The key difference compared to OBC-SQC is that ISD evaluates the entire day as a whole, assigning a single annotation related to the station’s deployment status. 
-
-For deployment assessment, the ISD uses solar radiation analysis techniques, comparing actual measurements with theoretical radiation values for each location on the planet and for each day of the year. In parallel, various combined thresholds are applied to temperature, wind direction/speed, and relative humidity (thresholds derived from exploratory data analysis) in order to identify certain significantly problematic deployment cases. It should be noted, however, that ISD is able to detect only a small subset of problematic deployments, as its main focus is on identifying stations that are located indoors. The classifications resulting from the ISD mechanism are shown in Table 1. See full [ISD documentation here](/weather-and-science/quality-mechanisms/isd-full-documentation).
-
-Table 1. ISD annotations, their short description, and their impact on the quality score.  
-Note that the short description is statistically derived, and the actual status of the station may differ.
-
-| ISD Annotation            | Short Description                                                                 | Impact on Score |
-|----------------------------|-----------------------------------------------------------------------------------|-----------------|
-| OUTDOORS                   | Well deployed                                                                    | NO              |
-| INDOORS                    | In a house or a very closed area                                                 | YES             |
-| ALMOST INDOORS             | In a closed area e.g., a balcony                                                  | YES             |
-| BAD DEPLOYMENT             | In an area surrounded by significant obstacles                                   | YES             |
-| PROBABLY BAD DEPLOYMENT    | In an area that has some obstacles that may affect mainly wind, precipitation and solar irradiance observations | YES |
-| INCLINED POLE NORTH        | On a north-tilted pole or the light sensor needs cleaning                         | YES             |
-| INCLINED POLE EAST         | On an east-tilted pole                                                            | YES             |
-| INCLINED POLE SOUTH        | On a south-tilted pole                                                            | YES             |
-| INCLINED POLE WEST         | On a west-tilted pole                                                             | YES             |
-| PROBLEMATIC LIGHT SENSOR   | Weird spikes in solar irradiance                                                  | NO              |
-| REPLACE ILLUMINANCE        | Solar irradiance is always 0                                                      | YES             |
-| ALMOST NIGHT               | The station is located in a high-latitude region that experiences darkness during the winter months, with little to no sunlight | NO |
-| INDOORS FROZEN             | The station looks like indoors due to freezing conditions                         | NO              |
-| INDOORS ALMOST FROZEN      | The station looks like indoors almost due to freezing conditions                  | NO              |
-| BAD DEPLOYMENT FROZEN      | The station looks like bad deployment due to freezing conditions                  | NO              |
-| PROBABLY DEPLOYMENT FROZEN | The station looks like probably bad deployment due to freezing conditions         | NO              |
-| UNKNOWN                    | Less than 40% of the expected data during the period of the day with solar irradiance >0.1 W m<sup>−2</sup> | NO |
+:::info Legacy QoD v1 Documentation
+Looking for the original OBC-SQC and 7-day ISD specifications? They remain available for historical reference under [Quality Mechanisms](/weather-and-science/quality-mechanisms/).
+:::
 
 ## Station Photo Verification (SPV)
 
-At WeatherXM, we aim to ensure that all station installations in our network follow, as closely as possible, the guidelines set by the <a href="https://www.eoas.ubc.ca/courses/atsc303/Instruments/wmo_guides/CIMO_Guide_2014-Met_Site_Classification.pdf" target="_blank">World Meteorological Organization (WMO)</a> (see also [our obstacle experiment](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx)). The SPV mechanism evaluates the deployment of each station as depicted in the photos submitted by the user through the mobile app. Through SPV, seven key aspects of the photos are examined in order to assess both the overall deployment and the extent to which each parameter can be measured accurately. This mechanism assigns a score to the station each time the user submits a set of photos, which is then evaluated internally by company staff. The 7 aspects and how they affect the SPV score are described in Table 2. Each aspect is assessed separately based on the condition shown in the photo under evaluation, unless an issue is identified that affects the station’s measurements regardless of orientation. Each photo receives a score for each of the 5 aspects that can be scored, and then the average score per photo is calculated. Finally, the average score of the 4 photos (one for each cardinal direction) is computed, which determines the final SPV score. It should be noted that if there is no photo for a specific cardinal direction, the score for that direction is considered to be zero. The SPV scoring rules and guidelines are comprehensively described in [this document](/weather-and-science/quality-mechanisms/spv-full-documentation).
+At WeatherXM, we aim to ensure that all station installations in our network follow, as closely as possible, the guidelines set by the <a href="https://www.eoas.ubc.ca/courses/atsc303/Instruments/wmo_guides/CIMO_Guide_2014-Met_Site_Classification.pdf" target="_blank">World Meteorological Organization (WMO)</a> (see also [our obstacle experiment](/weather-and-science/r&d/obstacle-impact-on-temp-and-wind.mdx)). The SPV mechanism evaluates the deployment of each station as depicted in the photos submitted by the user through the mobile app. Through SPV, seven key aspects of the photos are examined in order to assess both the overall deployment and the extent to which each parameter can be measured accurately.
+
+In QoD v3, **SPV is cleanly separated from meteorological QoD**: your station's meteorological `qod_score` reflects pure sensor and siting telemetry quality, while SPV reward policy (such as the `0.5×` multiplier for invalid SPV) is applied separately in the [Reward Mechanism](/rewards/reward-mechanism).
+
+Each photo receives a score for each of the 5 scorable aspects, and then the average score per photo is calculated. Finally, the average score of the 4 photos (one for each cardinal direction) determines the final SPV score. If there is no photo for a specific cardinal direction, the score for that direction is considered zero. The SPV scoring rules and guidelines are comprehensively described in [this document](/weather-and-science/quality-mechanisms/spv-full-documentation).
 
 Table 2. The SPV aspects, their short description and the available score options.
 
-| SPV Aspect                  | Short Description                                                                 | Score Options |
-|------------------------------|-----------------------------------------------------------------------------------|---------------|
-| Photo Validity               | Evaluation of whether the photo meets the standards set by the company            | 0, 0.5, 1     |
-| Temperature/Relative Humidity| Evaluation of the validity of the temperature and relative humidity measurements | 0, 0.5, 1     |
-| Wind                         | Evaluation of the validity of the wind measurements                               | 0, 0.5, 1     |
-| Precipitation                | Evaluation of the validity of the precipitation measurements                      | 0, 0.5, 1     |
-| Solar Irradiance             | Evaluation of the validity of the solar irradiance measurements                   | 0, 0.5, 1     |
-| Mast Height                  | Evaluation of the relative mast height in relation to the objects in the surrounding area | -     |
-| Mast Inclination             | Classification of a visibly tilted mast toward a specific direction               | -             |
+| SPV Aspect | Short Description | Score Options |
+|---|---|---|
+| Photo Validity | Evaluation of whether the photo meets the standards set by the company | 0, 0.5, 1 |
+| Temperature/Relative Humidity | Evaluation of the validity of the temperature and relative humidity measurements | 0, 0.5, 1 |
+| Wind | Evaluation of the validity of the wind measurements | 0, 0.5, 1 |
+| Precipitation | Evaluation of the validity of the precipitation measurements | 0, 0.5, 1 |
+| Solar Irradiance | Evaluation of the validity of the solar irradiance measurements | 0, 0.5, 1 |
+| Mast Height | Evaluation of the relative mast height in relation to the objects in the surrounding area | - |
+| Mast Inclination | Classification of a visibly tilted mast toward a specific direction | - |
 
 ---
 # Indoors Station Detector (ISD)
@@ -1994,6 +1910,10 @@ Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/isd
 Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/isd-full-documentation.md
 
 # Indoor Station Detector (ISD)
+
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** 7-day rolling ISD pipeline and is retained for historical reference. Deployment classification and 2-day confirmation hysteresis are now part of **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)**.
+:::
 
 ## 1. Introduction
 
@@ -2259,6 +2179,10 @@ Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mech
 
 # Out-of-Bounds (OBC) and Self Quality Checks (SQC) Annotations
 
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** annotation schema and is retained for historical reference. See the current **[QoD v3 Annotation Reference](/weather-and-science/quality-mechanisms/qod-v3-documentation#6-complete-qod-v3-annotation-code-reference)** for active production codes.
+:::
+
 The QoD algorithm produces annotation codes associated with various weather parameters to provide a detailed description of a specific condition for each parameter. These codes serve as a standard format of communication between the various services that use them and they will be mapped to user-friendly messages on the clients.
 
 ## Parameters under Investigation
@@ -2410,6 +2334,10 @@ Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/obc
 Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/obc-sqc-documentation.md
 
 # Obstacle Impact on Temperature and Wind
+
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** OBC/SQC pipeline and is retained for historical reference. WeatherXM now runs **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)** (`version 3.0.0`).
+:::
 
 Data quality serves as the mechanism used to differentiate between accurate and erroneous data recorded by a weather station. To achieve this, we employ a series of techniques and processes that scrutinise different aspects related to data quality.
 The current iteration of the Data Quality algorithm incorporates control checks to pinpoint instances where a sensor records values beyond the limits specified by the manufacturer, identifies unusual jumps, recognises constant values, or determines if there is insufficient data to compute an average.
@@ -2760,6 +2688,10 @@ Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mech
 
 # Out-of-Bounds (OBC) and Self Quality Checks (SQC) Score Calculation
 
+:::info Legacy Documentation (QoD v1)
+This page documents the legacy **QoD v1** score calculation and is retained for historical reference. WeatherXM now runs **[QoD v3](/weather-and-science/quality-mechanisms/qod-v3-documentation)** (`version 3.0.0`).
+:::
+
 QoD v1.0.0 includes three control processes:
     a. OBC (Out-of-Bounds Check)
     b. SQC (Self-Quality Check)
@@ -2794,6 +2726,110 @@ $$
 
 Where: 
     n is the number of meteorological parameters (for now n=7)
+
+---
+# QoD v3 Full Documentation
+Canonical: https://docs.weatherxm.com/weather-and-science/quality-mechanisms/qod-v3-documentation
+Markdown: https://docs.weatherxm.com/llms-pages/weather-and-science/quality-mechanisms/qod-v3-documentation.md
+
+# Quality of Data (QoD) v3 Full Documentation
+
+**QoD v3** (`version 3.0.0`) is WeatherXM's deterministic, single-day meteorological data quality engine. Every day (for the previous UTC day), it evaluates all active weather stations across seven core meteorological parameters — **temperature**, **relative humidity**, **atmospheric pressure**, **wind speed**, **wind direction**, **accumulated precipitation**, and **solar irradiance / illuminance** — producing per-sensor scores (`0–100`), a daily station `qod_score` (`0–1`), and structured diagnostic annotations.
+
+## 1. Why QoD Evolved from v1 to v3
+
+Legacy **QoD v1** (`0.0.5`) split evaluation into a daily OBC/SQC check and a trailing 7-day rolling Indoor Station Detector (ISD). While effective for catching basic out-of-bounds and flatline faults, v1 had key structural limitations:
+
+- **7-day recovery lag:** Because ISD averaged over a 7-day trailing window, stations moved outdoors or repaired remained penalized for nearly a week.
+- **No spatial cross-validation:** Drifting barometers, biased temperature sensors, and clogged rain gauges that stayed inside manufacturer bounds still scored near `100%`.
+- **Hardware cadence edge cases:** Multi-minute LoRaWAN intervals (Helium 180s) and high-frequency intervals (Pulse 30s) required hardware-aware aggregation.
+
+**QoD v3** solves all three by combining single-day (`24h`) self-sanity checks, adaptive spatial neighbor cross-validation, elevation-safe synoptic pressure tracking, and an **immutable `D-1` state machine** with 2-day confirmation hysteresis.
+
+## 2. Architecture Overview
+
+QoD v3 runs four sequential stages per UTC day:
+
+1. **Hardware-Aware Telemetry Ingestion & Normalization:**
+   - Enforces exact UTC day boundaries and filters sensor sentinel values before aggregation.
+   - Handles each hardware bundle's native cadence cleanly (`M5`/`D1` 60s, `Helium H1/H2` 180s interval-aware precipitation recovery, `Pulse` 30s circular wind-direction vector averaging via `atan2` with an antipodal cancellation guard).
+2. **Self-Sanity Checks (OBC & SQC):**
+   - **Out-of-Bounds (`OBC`):** Flags physically impossible or out-of-spec values per sensor.
+   - **Completeness (`NO_DATA`):** Measures missing observation slots relative to each hardware model's expected cadence.
+   - **Gap-Aware Spikes (`SPIKE_INST`):** Flags abrupt, physically unrealistic step changes between consecutive readings without penalizing legitimate jumps across transmission gaps.
+   - **Flatline / Stagnation (`LONG_CONST`):** Detects sensors stuck at constant values over extended windows (evaluated carefully alongside calm-wind and winter conditions).
+3. **Spatial Neighbor Cross-Validation (CQC):**
+   - Builds a spatial reference pool of **trusted nearby stations** (stations with verified location, sufficient coverage, non-indoor status, and healthy sensors) using adaptive distance/elevation tiers:
+     - **Tier 1:** `25 km` radius (`±300 m` elevation)
+     - **Tier 2:** `50 km` radius (`±300 m` elevation)
+     - **Tier 3:** `100 km` radius (`±500 m` elevation)
+   - Requires at least `3` trusted reference neighbors sharing `≥ 12` matched hours before issuing a spatial fault. Stations without enough nearby peers receive the informational `ISOLATED` flag and are never penalized for missing neighbors.
+4. **Deployment Classification & Immutable `D-1` State Hysteresis:**
+   - Classifies daily deployment quality (`OUTDOORS`, `BAD_DEPLOYMENT`, `INDOORS`, `PROBLEMATIC_ILL_SENSOR`) from daylight solar irradiance ratios, wind exposure, and temperature/humidity dynamics.
+   - Applies multi-day confirmation rules via immutable `D-1 → D` state transitions so a single anomalous day never causes an unfair penalty.
+
+## 3. Elevation-Safe Synoptic Barometer Check
+
+Barometric pressure depends strongly on altitude (`≈12 hPa` per `100 m`). A coarse H3 cell centroid elevation or a user console sea-level pressure offset can create a steady `20–50 hPa` offset even when the barometer is physically healthy.
+
+QoD v3 separates **broken/drifting barometers** from **elevation offsets** using a two-path check:
+
+- **Elevation Trust Guard:** If a station has missing elevation metadata or an unverified `elevation = 0` placeholder with highland pressure (`650–970 hPa`), QoD emits `PRESSURE_REFERENCE_UNCERTAIN` (advisory, zero penalty) and excludes the station from serving as a pressure reference for neighbors.
+- **Path 1 — Gross Hardware Fault:** If `≥ 6` observed hours have mean raw pressure `< 650 hPa` (adjusted dynamically for stations above `2,500 m`) or `> 1060 hPa` — and is not corroborated by `≥ 3` nearby peers — the station receives `PRESSURE_DRIFT` (pressure score `0`).
+- **Path 2 — Matched-Hour Synoptic Tracking:** Against `≥ 3` trusted peers in the first qualifying tier (`25 / 50 / 100 km`), QoD computes both the steady offset (`offset_hpa`) and the hour-by-hour synoptic tracking error (`synoptic_track_err`, P90 of hourly anomaly mismatch):
+  - If `≥ 80%` of matched hours exceed the tier offset threshold (`15 / 15 / 20 hPa`) **and** either `synoptic_track_err > 5.0 hPa` or `offset_hpa > 60 hPa` → **`PRESSURE_DRIFT`** (pressure score `0`).
+  - If the offset is steady (`synoptic_track_err ≤ 5.0 hPa` and `offset_hpa ≤ 60 hPa`) → **`PRESSURE_OFFSET_ADVISORY`** (zero score penalty — indicates elevation or console calibration offset rather than a broken sensor).
+
+## 4. State Machine & Hysteresis Rules (`D-1 → D`)
+
+QoD v3 maintains a compact, deterministic per-station state carried from day `D-1` to day `D`:
+
+| Check | Confirmation Rule | Recovery / Clear Rule | Score Impact |
+|---|---|---|---|
+| **Deployment (`INDOORS` / `BAD_DEPLOYMENT`)** | **2 consecutive days** of the same class (`INDOORS` or `BAD_DEPLOYMENT`) on evaluated days | **2 consecutive `OUTDOORS` days** (or `> 7` unseen days resets to `OUTDOORS`) | `INDOORS_CONFIRMED`: daily `qod_score = 0`. `BAD_DEPLOYMENT_CONFIRMED`: `qod_score × 0.5`. Single-day flags are advisory only. |
+| **Stuck Anemometer (`WIND_STUCK`)** | **2 consecutive stuck days** during regional windy events (`t_min > 1°C`, `≥ 3` windy peers within `50 km`) | **2 consecutive normal days** (or cleared while `INDOORS` is confirmed) | Emits `WIND_STUCK_CONFIRMED` (advisory by default in `v3.0.0`). |
+| **Clogged Rain Gauge (`BLOCKED_RAIN`)** | **`≥ 2` distinct missed storms** within a 14-day window (multi-day storms count once; requires `≥ 3` wet peers within `15 km`) | **`≥ 2` distinct caught storms** (recording `≥ 0.5 mm` and `≥ 20%` of wet-neighbor median) | Emits `RAIN_BLOCKED_CONFIRMED` (advisory by default in `v3.0.0`). |
+
+### Sub-Zero Winter Protection
+When a station's daily average temperature is **`≤ 0°C`**, freezing vetoes prevent ice-locked anemometers or winter snow/cloud cover from triggering false `INDOORS` or `WIND_STUCK` penalties.
+
+## 5. Separation of QoD and Station Photo Verification (SPV)
+
+In QoD v3, **`qod_score` measures strictly meteorological data quality**.
+
+- **SPV** (`SPV_INVALID`, `SPV_OBSTRUCTION`) is logged as informational context in annotations, **never** multiplied into the meteorological `qod_score`.
+- Reward policy for SPV (such as the `0.5×` multiplier for `SPV_INVALID`) is applied exclusively inside the [Reward Mechanism](/rewards/reward-mechanism). This keeps meteorological quality scores clean and consistent for both weather forecasts and commercial data consumers.
+
+## 6. Complete QoD v3 Annotation Code Reference
+
+### Score-Reducing Codes (Affect Daily QoD Score)
+
+| Code | Scope | Meaning |
+|---|---|---|
+| `NO_DATA` | Per-sensor | Missing telemetry packets below the expected hardware cadence |
+| `OBC` | Per-sensor | Readings outside physical or sensor manufacturer bounds |
+| `SPIKE_INST` | Per-sensor | Unrealistic instantaneous jump between consecutive readings |
+| `LONG_CONST` | Per-sensor | Sensor stuck at a constant value over an extended period |
+| `TEMP_DRIFT` | Temperature | Persistent temperature bias relative to trusted nearby stations |
+| `PRESSURE_DRIFT` | Pressure | Gross barometer fault, extreme offset (`> 60 hPa`), or failure to track synoptic pressure changes (`> 5 hPa` track error) |
+| `PROBLEMATIC_ILL_SENSOR` | Illuminance | Corrupted or spiking solar/illuminance sensor readings |
+| `INDOORS_CONFIRMED` | Station-level | Confirmed indoor deployment (`2` consecutive days) — sets daily QoD to `0` |
+| `BAD_DEPLOYMENT_CONFIRMED` | Station-level | Confirmed heavily obstructed deployment (`2` consecutive days) — applies `0.5×` QoD multiplier |
+
+### Advisory & Informational Codes (Zero QoD Penalty)
+
+| Code | Scope | Meaning |
+|---|---|---|
+| `INDOORS` / `BAD_DEPLOYMENT` | Station-level | Single-day (day 1) deployment warning — not yet confirmed by 2-day hysteresis |
+| `T_OVERHEAT` | Temperature | Midday radiative overheating signature (e.g., short mast over hot roof) |
+| `WIND_STUCK` / `WIND_STUCK_CONFIRMED` | Wind | Zero or flat wind during regional windy conditions |
+| `BLOCKED_RAIN` / `RAIN_BLOCKED_CONFIRMED` | Precipitation | Zero precipitation recorded during regional storms detected by neighbors |
+| `PRESSURE_OFFSET_ADVISORY` | Pressure | Steady altitude or console offset while accurately tracking synoptic pressure changes |
+| `PRESSURE_REFERENCE_UNCERTAIN` | Pressure | Missing or unverified elevation metadata prevents spatial sea-level pressure comparison |
+| `SPV_INVALID` / `SPV_OBSTRUCTION` | Station / Sensor | Informational SPV status (reward multiplier applied separately in Reward Mechanism) |
+| `NO_LOCATION` / `NO_ELEVATION` | Station-level | Missing location or elevation metadata |
+| `LOW_SUN` | Station-level | High-latitude low solar angle / polar winter conditions |
+| `ISOLATED` | Station-level | Fewer than `3` trusted neighbors within `100 km` (spatial cross-checks abstained) |
 
 ---
 # Station Photo Verification (SPV)
