@@ -25,6 +25,8 @@
   - Markdown: https://docs.weatherxm.com/llms-pages/glossary.md
 - Introduction: https://docs.weatherxm.com/introduction
   - Markdown: https://docs.weatherxm.com/llms-pages/introduction.md
+- WeatherXM Mobile Apps (iOS, Android & Solana): https://docs.weatherxm.com/mobile-app/mobile-apps
+  - Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/mobile-apps.md
 - WeatherXM Web App (app.weatherxm.com): https://docs.weatherxm.com/mobile-app/web-app
   - Markdown: https://docs.weatherxm.com/llms-pages/mobile-app/web-app.md
 - Data Quality: https://docs.weatherxm.com/rewards/data-quality

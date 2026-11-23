@@ -529,3 +529,52 @@ details.alert.alert--info summary::before {
     max-width: 100%;
   }
 }
+
+/* Mobile apps page: store badges and Google Play preview gallery. */
+.store-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0 24px;
+}
+
+.store-badges-row img {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+
+.mobile-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+
+.mobile-preview-grid figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mobile-preview-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.28);
+}
+
+.mobile-preview-grid figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--textColor);
+}
+
+@media only screen and (max-width: 996px) {
+  .mobile-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

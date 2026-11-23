@@ -104,6 +104,7 @@ module.exports = {
       label: "Web & Mobile Apps",
       items: [
         "mobile-app/web-app",
+        "mobile-app/mobile-apps",
         {
           type: "category",
           label: "Wallet",
