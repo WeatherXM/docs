@@ -816,7 +816,7 @@ WeatherXM runs **Reward Mechanism v2.0** on Arbitrum One, combining daily **QoD 
 
 Every day, the Reward Mechanism evaluates all claimed weather stations for the previous UTC day, allocates daily base rewards and any active boost rewards to each owner's connected wallet, and publishes a Merkle root on-chain to the **RewardPool** smart contract. Station owners can inspect their daily breakdown in the **[WeatherXM Web App](https://app.weatherxm.com)** (**Rewards** tab) or Mobile App, and withdraw accumulated `$WXM` tokens whenever they choose.
 
-## Daily Rewards Calculation Process (v2.0)
+## Daily Rewards Calculation Process
 
 Each daily run executes four phases:
 
