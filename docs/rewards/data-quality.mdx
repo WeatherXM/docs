@@ -8,6 +8,15 @@ description: "How QoD v3 scores your weather station's data daily — sanity che
 WeatherXM runs **Quality of Data (QoD) v3** (`version 3.0.0`) — a deterministic, single-day meteorological quality engine with neighbour cross-validation and 2-day confirmation hysteresis.
 :::
 
+## How WeatherXM Quality-Controls Weather Data
+
+For data buyers, meteorologists, and developers evaluating WeatherXM data quality: every station observation passes automated, transparent meteorological QA/QC **before** it reaches commercial APIs and forecast pipelines:
+
+- **Self-sanity checks (OBC & SQC):** Flags out-of-bounds readings, missing packets, physically unrealistic spikes, and flatlined sensors.
+- **Spatial neighbour cross-validation (CQC):** Compares each station against trusted nearby stations (25 km → 50 km → 100 km) to catch temperature/pressure drift, stuck anemometers, and clogged rain gauges.
+- **Indoor & obstacle detection + Proof of Location (PoL):** Identifies shaded, obstructed, or indoor installations and verifies physical station coordinates via [Proof of Location](/rewards/proof-of-location).
+- **Open-source transparency:** The quality engine is published in the open-source [`qod`](https://github.com/WeatherXM/qod) repository. Explore our published siting studies and data methodology at [weatherxm.com/network/quality](https://weatherxm.com/network/quality/) or access QoD-filtered observations via [weatherxm.com/data](https://weatherxm.com/data/).
+
 **Data Quality (QoD)** is the daily algorithm that evaluates the meteorological reliability of weather data reported by every station in the WeatherXM network. Its daily score (`0` to `1`, or `0%` to `100%`) directly measures confidence in your station's readings and serves two purposes:
 
 1. **Reliable Weather Data:** Identifies high-confidence station observations for WeatherXM forecasts, analytics, and commercial data products.
